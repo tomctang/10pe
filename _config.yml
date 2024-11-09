@@ -1,0 +1,26 @@
+# _config.yml
+
+# Project information
+title: "My Jupyter Notebooks"
+author: "Your Name"
+# logo: "path/to/logo.png"  # Optional
+
+# Repository URL (for GitHub Pages)
+repository:
+  url: "https://github.com/your-username/your-repository"
+  path_to_docs: ""
+  branch: "gh-pages"  # Deployment branch for GitHub Pages
+
+# HTML and theme configuration
+#  favicon: "path/to/favicon.ico"  # Optional
+html:
+  theme:
+    name: "sphinx_book_theme"
+    options:
+      logo_only: true
+      search_bar_position: "navbar"
+      extra_navbar: '<p>My Custom Footer</p>'
+
+# Execution options
+execute:
+  execute_notebooks: "off"  # Change to "auto" to execute notebooks during the build

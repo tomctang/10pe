@@ -1,0 +1,11 @@
+# _toc.yml
+
+format: jb-book  # For Jupyter Book; adjust if using another generator
+
+# The table of contents structure
+root: index  # Defines the root page
+
+chapters:
+  - file: intro  # Refers to 'intro.ipynb'
+  - file: Py100
+
