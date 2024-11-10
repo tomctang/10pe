@@ -1,7 +1,7 @@
 format: jb-book  # For Jupyter Book; adjust if using another generator
 
 # below are the contents structure
-  root: index  # index.ipynb, defines the root page
+  root: intro  # index.ipynb, defines the root page
 
 - caption: Project Euler
   numbered: true
