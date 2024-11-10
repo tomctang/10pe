@@ -13,14 +13,22 @@ repository:
 
 # HTML and theme configuration
 #  favicon: "path/to/favicon.ico"  # Optional
-html:
-  theme:
-    name: "sphinx_book_theme"
-    options:
-      logo_only: true
-      search_bar_position: "navbar"
-      extra_navbar: '<p>My Custom Footer</p>'
+# html:
+#  theme:
+#    name: "sphinx_book_theme"
+#    options:
+#      logo_only: true
+#      search_bar_position: "navbar"
+#      extra_navbar: '<p>My Custom Footer</p>'
 
+html:
+  use_issues_button: false
+  use_repository_button: true
+
+launch_buttons:
+  binderhub_url: ""
+  colab_url: "https://colab.research.google.com"
+  
 # Execution options
 execute:
   execute_notebooks: "off"  # Change to "auto" to execute notebooks during the build

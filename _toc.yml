@@ -1,12 +1,19 @@
-# _toc.yml
-
 format: jb-book  # For Jupyter Book; adjust if using another generator
 
-# The table of contents structure
-root: index  # Defines the root page
+# below are the contents structure
+  root: index  # index.ipynb, defines the root page
 
-chapters:
-  - file: intro  # Refers to 'intro.ipynb'
+- caption: Project Euler
+  numbered: true
+  chapters:
+# - file: intro  # intro.ipynb
   - file: Py100
+  - file: Py100_FP_way
+  - file: Py200
   - file: MMA100 
+  - file: PE_hidden_math
 
+- caption: A-level Math
+  numbered: true
+  chapters:
+  - file: Alevel_math
