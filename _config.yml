@@ -1,14 +1,14 @@
 # _config.yml
 
 # Project information
-title: "My Jupyter Notebooks"
-author: "Your Name"
-# logo: "path/to/logo.png"  # Optional
+title: "Project Euler: Workbook"
+author: "Jonny & Tom"
+logo: logo.png  # Optional
 
 # Repository URL (for GitHub Pages)
 repository:
-  url: "https://github.com/your-username/your-repository"
-  path_to_docs: ""
+  url: "https://github.com/tomctang/10pe"
+  path_to_docs: "https://github.com/tomctang/10pe"
   branch: "gh-pages"  # Deployment branch for GitHub Pages
 
 # HTML and theme configuration

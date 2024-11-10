@@ -8,4 +8,5 @@ root: index  # Defines the root page
 chapters:
   - file: intro  # Refers to 'intro.ipynb'
   - file: Py100
+  - file: MMA100 
 
