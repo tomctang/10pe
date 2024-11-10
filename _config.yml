@@ -3,7 +3,7 @@
 # Project information
 title: "Project Euler: Workbook"
 author: "Jonny & Tom"
-logo: logo.png  # Optional
+# logo: logo.png  # Optional
 
 # Repository URL (for GitHub Pages)
 repository:
@@ -25,10 +25,7 @@ html:
   use_issues_button: false
   use_repository_button: true
 
-launch_buttons:
-  binderhub_url: ""
-  colab_url: "https://colab.research.google.com"
-  
+
 # Execution options
 execute:
   execute_notebooks: "off"  # Change to "auto" to execute notebooks during the build
