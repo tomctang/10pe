@@ -26,7 +26,7 @@
   },
   {
    "kind": 1,
-   "value": "#### Elementary functions & Differential Equations\r\nElementary functions are solutions to some simple Differential Equations. Given $f(x)=y$:\r\n\r\nExponential function: $\\frac{d}{dx}f(x)=f(x) \\quad\\rightarrow\\quad sol: f(x)=e^x$\r\n\r\nTrigonometry function: $\\frac{d^2}{dx^2}f(x)=-f(x) \\quad\\rightarrow\\quad sol: f(x)=sin(x), cos(x)$\r\n\r\n$e$'s Log function: $\\quad \\frac{d}{dx}f(x)=\\frac{1}{x} \\quad\\rightarrow\\quad sol: f(x)=ln(x)$\r\n\r\nPower function: $\\quad \\frac{d}{dx}f(x)=f(x)\\frac{n}{x} \\quad\\rightarrow\\quad sol: f(x)=x^n$\r\n\r\nHyperbolic trig: $\\quad \\frac{d^2}{dx^2}f(x)=f(x) \\quad\\rightarrow\\quad sol: f(x)=sinh(x), cosh(x)$",
+   "value": "### Elementary functions & Differential Equations\r\nElementary functions are solutions to some simple Differential Equations. Given $f(x)=y$:\r\n\r\nExponential function: $\\frac{d}{dx}f(x)=f(x) \\quad\\rightarrow\\quad sol: f(x)=e^x$\r\n\r\nTrigonometry function: $\\frac{d^2}{dx^2}f(x)=-f(x) \\quad\\rightarrow\\quad sol: f(x)=sin(x), cos(x)$\r\n\r\n$e$'s Log function: $\\quad \\frac{d}{dx}f(x)=\\frac{1}{x} \\quad\\rightarrow\\quad sol: f(x)=ln(x)$\r\n\r\nPower function: $\\quad \\frac{d}{dx}f(x)=f(x)\\frac{n}{x} \\quad\\rightarrow\\quad sol: f(x)=x^n$\r\n\r\nHyperbolic trig: $\\quad \\frac{d^2}{dx^2}f(x)=f(x) \\quad\\rightarrow\\quad sol: f(x)=sinh(x), cosh(x)$",
    "languageId": "markdown",
    "outputs": [],
    "metadata": {},
