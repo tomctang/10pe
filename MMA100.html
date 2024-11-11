@@ -1,0 +1,626 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>4. Mathematica## Problems 1-50 &#8212; Jonny Workbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'MMA100';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="5. PE-Hidden-MathFP in Wolfram: https://reference.wolfram.com/language/guide/FunctionalProgramming.htmlmath topic list: https://github.com/leduckhai/Awesome-Competitive-Programming?tab=readme-ov-filePE problems can be solved using multiple approaches and often involve a combination of techniques." href="PE_hidden_math.html" />
+    <link rel="prev" title="3. Python-OOP Q100-300" href="Py200.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Jonny Workbook</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Project Euler</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Py100.html">1. Python-OOP Q1-100</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Py100_FP_way.html">2. Python-FP Q1-100</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Py200.html">3. Python-OOP Q100-300</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Mathematica## Problems 1-50</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PE_hidden_math.html">5. PE-Hidden-MathFP in Wolfram: https://reference.wolfram.com/language/guide/FunctionalProgramming.htmlmath topic list: https://github.com/leduckhai/Awesome-Competitive-Programming?tab=readme-ov-filePE problems can be solved using multiple approaches and often involve a combination of techniques.</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">A-level Math</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Alevel_math_python.html">6. A-level Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Alevel_math_MMA.html">7. A-Level: Mathematica Functions</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/tomctang/10pe" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/MMA100.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Mathematica## Problems 1-50</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problems-51-100">4.1. Problems 51-100</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problems-101-200">4.2. Problems 101-200</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="mathematica-problems-1-50">
+<h1><span class="section-number">4. </span>Mathematica## Problems 1-50<a class="headerlink" href="#mathematica-problems-1-50" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(* 26 *)(* learn 4 functions:     Association[]    Module[]    KeyExistsQ[]    Mod[] *)cycleLength[d_] := Module[{rems = Association[], num = 1, pos = 1},  While[! KeyExistsQ[rems, num] &amp;&amp; num != 0,    rems[num] = pos;    num = Mod[10 num, d];    pos++   ];  If[num == 0, 0, pos - rems[num]]];SortBy[Range[888, 999], cycleLength]cycleLength[983]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(* 31 Coin Sums: use graph traversal (DFS) with memoization*)(* learn functions:    ClearAll[]     Memoization(:= ... =): store results to avoid recalculating for the same pair    Table[]: loop over each coin in validCoins *)ClearAll[graphSearchWays];validCoins = {1, 2, 5, 10, 20, 50, 100, 200};graphSearchWays[n_, maxCoin_] := graphSearchWays[n, maxCoin] =  If[n == 0,           1,    Total[Table[If[coin &lt;= maxCoin &amp;&amp; coin &lt;= n,                 graphSearchWays[n - coin, coin],                   0], {coin, validCoins}]]];graphSearchWays[200, 200] (*calculate n of total pairs*)TreeForm[ (*see logic structure*)  If[n == 0, 1,   Total[Table[If[coin &lt;= maxCoin &amp;&amp; coin &lt;= n,               graphSearchWays[n - coin, coin],               0], {coin, validCoins}]]]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(* 32 Pandigital Products    1) memoization     2) form number from digits    *)num = {1, 2, 3, 4, 5, 6, 7, 8, 9};numSearch[] := numSearch[] =    Total[Table[If[multiplicand*multiplier == product,         Fold[10#1 + #2 &amp;,  ]                numSearch[num - dig, dig], 0],  {dig, num}]]numSearch[]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(*35 Circular Sums*) rotations[n_Integer] := Module[{digits = IntegerDigits[n]},  FromDigits /@ NestList[RotateLeft, digits, Length[digits] - 1]]isCircularPrime[n_Integer] := AllTrue[rotations[n], PrimeQ] (*if all rotations of a number are prime*)circularPrimes = Select[Range[2, 999999], isCircularPrime]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(* 38 Pandigital Multiples    already presented (1,2,3) and (1,2,3,4,5)-&gt;918273645,(1,2,3,4,5,6,7,8,9)-&gt;123456789,calculated 3 options and n&gt;1    left 2 options: (1,2,3,4,5,6,7) (1,2,3,4,5,6,7,8) *)(* (1,2) *1=****, *2=1****, (1,2,3,4) *1=**, *2=**, *3=**, *4=***,  (1,2,3,4,5,6) *1=*, *2=*, *3=*, *4=**, *5=**, *6=**,   (1,2,3,4,5,6,7) and (1,2,3,4,5,6,7,8) not possible*)Select[Range[5000, 9999],   Function[n,     Length[Union[IntegerDigits[n], IntegerDigits[2 n]]] == 9 &amp;&amp;     1000 &lt;= 2 n &lt; 100000  ]]Select[Range[10, 99], Function[n, Length[Union[IntegerDigits[n #]] &amp; /@ Range[4]]] == 9]Select[Range[1, 100],   Function[n,     Length[Union[IntegerDigits[n], IntegerDigits[6 n]]] == 9 &amp;&amp;     1 &lt;= 6 n &lt; 100000  ]]Select[Range[100,1000],   Function[n,     Length[Union[IntegerDigits[n], IntegerDigits[3 n]]] == 9 &amp;&amp;     1 &lt;= 3 n &lt; 100000  ]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(* 45 Triangular, Pentagonal, and Hexagonal     what I can learn?    1) defining series     2) finding common items in lists     Faster Method???*)isTriangular[n_Integer] := Module[{k},  k = (-1 + Sqrt[1 + 8 n]) / 2;  IntegerQ[k]]isPentagonal[n_Integer] := Module[{k},  k = (1 + Sqrt[1 + 24 n]) / 6;  IntegerQ[k]]isHexagonal[n_Integer] := Module[{k},  k = (1 + Sqrt[1 + 8 n]) / 4;  IntegerQ[k]](* Example usage *)isTriangularPentagonalHexagonal[n_]:=isTriangular[n]&amp;&amp;isPentagonal[n]&amp;&amp;isHexagonal[n]lst=Table[isTriangularPentagonalHexagonal[n],{n,50000000,60000000}];Count[lst,True]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(* 47 Distinct Primes Factors*)lst=Table[FactorInteger[n],{n,134040,134050}];lst1=Length/@lst;ans=Select[Range[Length[lst1]],lst1[[#]]==4&amp;];ans1=Select[Range[3,Length[ans]],ans[[#]]==ans[[#-3]]+3&amp;]ans(* learn 5 functions:    Table[]    Length[]    FactorInteger[]    Select[]    Range[]*)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>matrix = {  {7, 53, 183, 439, 863, 497, 383, 563, 79, 973, 287, 63, 343, 169, 583},  {627, 343, 773, 959, 943, 767, 473, 103, 699, 303, 957, 703, 583, 639, 913},  {447, 283, 463, 29, 23, 487, 463, 993, 119, 883, 327, 493, 423, 159, 743},  {217, 623, 3, 399, 853, 407, 103, 983, 89, 463, 290, 516, 212, 462, 350},  {960, 376, 682, 962, 300, 780, 486, 502, 912, 800, 250, 346, 172, 812, 350},  {870, 456, 192, 162, 593, 473, 915, 45, 989, 873, 823, 965, 425, 329, 803},  {973, 965, 905, 919, 133, 673, 665, 235, 509, 613, 673, 815, 165, 992, 326},  {322, 148, 972, 962, 286, 255, 941, 541, 265, 323, 925, 281, 601, 95, 973},  {445, 721, 11, 525, 473, 65, 511, 164, 138, 672, 18, 428, 154, 448, 848},  {414, 456, 310, 312, 798, 104, 566, 520, 302, 248, 694, 976, 430, 392, 198},  {184, 829, 373, 181, 631, 101, 969, 613, 840, 740, 778, 458, 284, 760, 390},  {821, 461, 843, 513, 17, 901, 711, 993, 293, 157, 274, 94, 192, 156, 574},  {34, 124, 4, 878, 450, 476, 712, 914, 838, 669, 875, 299, 823, 329, 699},  {815, 559, 813, 459, 522, 788, 168, 586, 966, 232, 308, 833, 251, 631, 107},  {813, 883, 451, 509, 615, 77, 281, 613, 459, 205, 380, 274, 302, 35, 805}};maxRowTotal = Max[Total /@ matrix]maxColumnTotal=Max[Total /@ Transpose[matrix]]
+</pre></div>
+</div>
+</div>
+</div>
+<section id="problems-51-100">
+<h2><span class="section-number">4.1. </span>Problems 51-100<a class="headerlink" href="#problems-51-100" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(* 65 Convergents of e *)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(* 69 Totient Maximum, also called \phi function*)(* seq = Table[ n/Length[Select[Range[n], CoprimeQ[#, n] == True &amp;]]             , {n, 10}] ;   pretty slow  *)seq = Table[ n/EulerPhi[n] , {n, 1000000} ];Position[seq, Max[seq]]Max[seq]
+</pre></div>
+</div>
+</div>
+</div>
+<p>欧拉函数 Euler’s Totient Function has a general formulas as below, <span class="math notranslate nohighlight">\(p_i\)</span> is all of the coprime of x, where x is a positive integer.$<span class="math notranslate nohighlight">\(\phi(x)=x\prod_{i=1}^n(1-\frac{1}{p_i})\)</span>$</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(* 71 Ordered Fractions     Table[] gen [{numerator}, {denominator}]    Floor[] gen greatest integer &lt;= d*target    Select[] and MaximalBy[] 结构都是 list + function    [[2]] the 2nd item, #[[2]] the 2nd input of the function     *)target = 3/7;MaximalBy[Select[  Table[ {Floor[d*target], d}, {d, 2, 1000000} ],                           #[[1]]/#[[2]] &lt; target &amp; ],          #[[1]]/#[[2]] &amp; ]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(* 80 Square Root Digital Expansion*)numberDigits = RealDigits[Sqrt[2], 10, 100][[1]]lst=Complement[Range[1, 99], Table[n^2, {n, 1, Floor[Sqrt[99]]}]];totalNumberDigits=Table[RealDigits[Sqrt[i], 10, 100][[1]],{i,lst}];lst1={{1,2,3,4,5},{6,7,8,9,10}};Total[Total[lst1]]Total[Total[totalNumberDigits]](* learn 3 functions:    RealDigits[] give a list of len digit    Complement[] after excluding the subsequent lists, the complement from the first list     Total[] *)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(* 99    base^exponent =e^[exponent⋅log(base)]   [[2]] denotes the 2nd item in {{1,2},{1,2}}     *)data = Import[&quot;https://projecteuler.net/resources/documents/0099_base_exp.txt&quot;, &quot;CSV&quot;];new = Map[#[[2]] * Log[#[[1]]] &amp;, data];Position[new, Max[new]]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="problems-101-200">
+<h2><span class="section-number">4.2. </span>Problems 101-200<a class="headerlink" href="#problems-101-200" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(* 125 Palindromic Sums *)(* add Boole[] to count number of times when &lt;10^8 *)(* learnt functions:    Accumulate[]    AnyTrue[{},test] true if any input passes the test    MemberQ[{},___] true if any element in list is ___    Module[]??? *)isSumOfConsecutiveSquares[n_Integer] :=  Module[{maxK, sumsOfSquares},  maxK = Floor[Sqrt[n]];  (* Generate cumulative sums of consecutive squares starting from each k *)  sumsOfSquares = Table[    Accumulate[Table[(k + i)^2, {i, 0, maxK - k}]],    {k, 1, maxK}  ];  (* Check if any sum sequence contains n with more than one term *)  AnyTrue[sumsOfSquares, MemberQ[#, n] &amp;&amp; Length[#] &gt; 1 &amp;]]isSumSquaresPalindromic[n_Integer]:=isSumOfConsecutiveSquares[n]&amp;&amp;PalindromeQ[n]lst=Table[isSumSquaresPalindromic[n],{n,2,9999}];Count[lst,True]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(* 162 Hexadecimal Numbers *)lst=Table[(n-1)*Factorial[n-1]/Factorial[n-3]*(14^(n-3)),{n,3,16}];lst1=Table[(n-1)*Factorial[n-1]/Factorial[n-3]*(16^(n-3)),{n,3,16}];n=(Total[lst1]-Total[lst])/2;n=BaseForm[Total[lst]+n,16]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>14*Factorial[14]/Factorial[12]15*Factorial[15]/Factorial[13]2*Factorial[2]/Factorial[0]*16^0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>0123456789ABCDEF[1,A,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(* 187 Semiprimes     Q: the code takes 11min, faster??? *)Total[Table[             Boole[ Total[FactorInteger[n]][[2]] == 2 ]            , {n,3,99999999} ]     ]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(* speed up but wrong answer ?? - add {{_,2}} *)(* takes &gt;11 min??? *)Count[ FactorInteger /@ Range[3, 10^8-1]       ,{{_, 1},{_, 1}} | {{_,2}}      ]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>lst=Table[     Boole[ Length[ FactorInteger[n] ]==2 ],    {n,3,30}]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>lst={{2,5},{3,1}};Total[lst][[2]]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Py200.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Python-OOP Q100-300</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="PE_hidden_math.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>PE-Hidden-MathFP in Wolfram: https://reference.wolfram.com/language/guide/FunctionalProgramming.htmlmath topic list: https://github.com/leduckhai/Awesome-Competitive-Programming?tab=readme-ov-filePE problems can be solved using multiple approaches and often involve a combination of techniques.</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problems-51-100">4.1. Problems 51-100</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problems-101-200">4.2. Problems 101-200</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jonny, assisted by Tom
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
