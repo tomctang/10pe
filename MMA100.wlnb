@@ -2,7 +2,7 @@
  "cells": [
   {
    "kind": 1,
-   "value": "# Mathematica\r\n## Mathematica\r\n### Problems 1-50",
+   "value": "# Mathematica\r\n## Problems 1-50",
    "languageId": "markdown",
    "outputs": [],
    "metadata": {},
@@ -92,14 +92,7 @@
     }
    ],
    "metadata": {},
-   "executionSummary": {
-    "timing": {
-     "startTime": 1731205248525,
-     "endTime": 1731205255495
-    },
-    "executionOrder": 89,
-    "success": true
-   }
+   "executionSummary": {}
   },
   {
    "kind": 2,
@@ -125,14 +118,7 @@
     }
    ],
    "metadata": {},
-   "executionSummary": {
-    "timing": {
-     "startTime": 1731205183945,
-     "endTime": 1731205184282
-    },
-    "executionOrder": 86,
-    "success": true
-   }
+   "executionSummary": {}
   },
   {
    "kind": 2,
@@ -243,14 +229,7 @@
     }
    ],
    "metadata": {},
-   "executionSummary": {
-    "timing": {
-     "startTime": 1731208488359,
-     "endTime": 1731208667911
-    },
-    "executionOrder": 307,
-    "success": true
-   }
+   "executionSummary": {}
   },
   {
    "kind": 2,
@@ -301,14 +280,7 @@
     }
    ],
    "metadata": {},
-   "executionSummary": {
-    "timing": {
-     "startTime": 1731206854793,
-     "endTime": 1731206855185
-    },
-    "executionOrder": 286,
-    "success": true
-   }
+   "executionSummary": {}
   },
   {
    "kind": 1,
@@ -398,14 +370,7 @@
     }
    ],
    "metadata": {},
-   "executionSummary": {
-    "timing": {
-     "startTime": 1731203423748,
-     "endTime": 1731203440824
-    },
-    "executionOrder": 77,
-    "success": true
-   }
+   "executionSummary": {}
   },
   {
    "kind": 2,

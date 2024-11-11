@@ -10,10 +10,10 @@ parts:
   - file: Py100
   - file: Py100_FP_way
   - file: Py200
-  - file: MMA100 
-  - file: PE_hidden_math
+  - file: MMA100         # convert wlnb to ipynb
+  - file: PE_hidden_math # convert wlnb to ipynb
 
 - caption: A-level Math
   numbered: true
   chapters:
-  - file: Alevel_math
+  - file: Alevel_math # convert wlnb to ipynb
