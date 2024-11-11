@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>10pe &#8212; Project Euler: Workbook</title>
+    <title>Introduction &#8212; Jonny Workbook</title>
   
   
   
@@ -60,6 +60,8 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'README';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -142,7 +144,7 @@
   
   
   
-    <p class="title logo__title">Project Euler: Workbook</p>
+    <p class="title logo__title">Jonny Workbook</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -158,23 +160,25 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Project_Euler
+                    Introduction
                 </a>
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Project Euler</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Py100.html">1. Project Euler Solutions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Py100_FP_way.html">2. Project Euler Questions 1-100</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Py200.html">3. Project Euler Questions 100 - 300</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Py100.html">1. Python-OOP Q1-100</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Py100_FP_way.html">2. Python-FP Q1-100</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Py200.html">3. Python-OOP Q100-300</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PE_hidden_math.html">4. Number Theory- Prime numbers and factorization: 3, 7, 10, 12, 27, 35, 47, 50, 58, 67, 70, 78, 87, 92, 97, 104, 120, 123, 134, 140, 146, 158, 160, 162, 179, 187, 196- Divisibility rules and modular arithmetic: 2, 4, 5, 9, 11, 14, 17, 21, 24, 29, 31, 37, 41, 43, 46, 53, 56, 61, 65, 73, 76, 82, 85, 90, 95, 102, 108, 112, 116, 119, 125, 131, 137, 143, 149, 155, 166, 172, 178, 184, 190, 193, 199- Number sequences and series: 6, 8, 15, 22, 25, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75, 79, 83, 86, 89, 93, 96, 99, 105, 109, 113, 117, 121, 126, 132, 138, 144, 150, 156, 163, 169, 175, 181, 188, 194- Diophantine equations- Continued Fraction</a></li>
+
+
+
+
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">A-level Math</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Alevel_math.html">4. A Level Mathematics - All the Functions</a></li>
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="Alevel_math.html">10. A-level Math</a></li>
 </ul>
 
     </div>
@@ -307,7 +311,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -318,11 +324,20 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>10pe</h1>
+    <h1>Introduction</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software-and-files">Software and files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oop-to-fp">OOP to FP</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -332,8 +347,42 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="pe">
-<h1>10pe<a class="headerlink" href="#pe" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h1>
+<p><strong>Project Euler</strong></p>
+<p>Jonny’s workbook of <a class="reference external" href="https://projecteuler.net/">Project Euler</a>. Jonny loves coding, especially the PE-style (VS. CS-style) when he was 10YO. Therefore, Tom assisted him with guidance and searching hidden info and knowledge.</p>
+<p><strong>A-level Math</strong></p>
+<p>Jonny already went through 4U math (HSC in NSW) once, after that Tom chose A-level math for Jonny’s review and progress, with a approach of computational coding for A-level math.</p>
+<section id="software-and-files">
+<h2>Software and files<a class="headerlink" href="#software-and-files" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>We started this workbook using <strong>Python</strong> in VScode:</p>
+<ul>
+<li><p>Python (.ipynb): we start from Python, then we found Python’s <span class="math notranslate nohighlight">\(SageMath\)</span> - the second powerful CAS (computer algebra system).</p></li>
+</ul>
+</li>
+<li><p>We next started <strong>Mathematica</strong> (Wolfram languages, we will use MMA or Wolfram after):</p>
+<ul>
+<li><p>Mathematica   (.nb): the best CAS.</p>
+<ul>
+<li><p>.nb -&gt; .ipynb by <a class="reference external" href="https://github.com/Ludwiggle/nb2ipynb">nb2ipynb</a></p></li>
+</ul>
+</li>
+<li><p>Wolfram notebook (.wlnb): this enables us running Mathematica kernel in VScode.</p>
+<ul>
+<li><p>.wlnb -&gt; .nb, ‘export to’ after running MMA</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Next, more pure FP? Ocaml? F#? Scala? Haskell?</p></li>
+</ul>
+</section>
+<section id="oop-to-fp">
+<h2>OOP to FP<a class="headerlink" href="#oop-to-fp" title="Link to this heading">#</a></h2>
+<p>We start workbook using Python in OOP (Object-oriented Programming) way, then we move to FP (Functional Programming) way in both MMA and Python.</p>
+<p>Even though both Python and Wolfram are not pure FP, they do help us understand the FP way.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -373,6 +422,23 @@
             
             
               
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software-and-files">Software and files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oop-to-fp">OOP to FP</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
             
           </div>
           <footer class="bd-footer-content">
@@ -382,7 +448,7 @@
   <div class="footer-item">
     
 <p class="component-author">
-By Jonny & Tom
+By Jonny, assisted by Tom
 </p>
 
   </div>

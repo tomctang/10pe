@@ -1,0 +1,542 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>4. Number Theory- Prime numbers and factorization: 3, 7, 10, 12, 27, 35, 47, 50, 58, 67, 70, 78, 87, 92, 97, 104, 120, 123, 134, 140, 146, 158, 160, 162, 179, 187, 196- Divisibility rules and modular arithmetic: 2, 4, 5, 9, 11, 14, 17, 21, 24, 29, 31, 37, 41, 43, 46, 53, 56, 61, 65, 73, 76, 82, 85, 90, 95, 102, 108, 112, 116, 119, 125, 131, 137, 143, 149, 155, 166, 172, 178, 184, 190, 193, 199- Number sequences and series: 6, 8, 15, 22, 25, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75, 79, 83, 86, 89, 93, 96, 99, 105, 109, 113, 117, 121, 126, 132, 138, 144, 150, 156, 163, 169, 175, 181, 188, 194- Diophantine equations- Continued Fraction &#8212; Jonny Workbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'PE_hidden_math';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="10. A-level Math" href="Alevel_math.html" />
+    <link rel="prev" title="3. Python-OOP Q100-300" href="Py200.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Jonny Workbook</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Project Euler</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Py100.html">1. Python-OOP Q1-100</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Py100_FP_way.html">2. Python-FP Q1-100</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Py200.html">3. Python-OOP Q100-300</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Number Theory- Prime numbers and factorization: 3, 7, 10, 12, 27, 35, 47, 50, 58, 67, 70, 78, 87, 92, 97, 104, 120, 123, 134, 140, 146, 158, 160, 162, 179, 187, 196- Divisibility rules and modular arithmetic: 2, 4, 5, 9, 11, 14, 17, 21, 24, 29, 31, 37, 41, 43, 46, 53, 56, 61, 65, 73, 76, 82, 85, 90, 95, 102, 108, 112, 116, 119, 125, 131, 137, 143, 149, 155, 166, 172, 178, 184, 190, 193, 199- Number sequences and series: 6, 8, 15, 22, 25, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75, 79, 83, 86, 89, 93, 96, 99, 105, 109, 113, 117, 121, 126, 132, 138, 144, 150, 156, 163, 169, 175, 181, 188, 194- Diophantine equations- Continued Fraction</a></li>
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">A-level Math</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Alevel_math.html">10. A-level Math</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/tomctang/10pe" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/PE_hidden_math.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Number Theory- Prime numbers and factorization: 3, 7, 10, 12, 27, 35, 47, 50, 58, 67, 70, 78, 87, 92, 97, 104, 120, 123, 134, 140, 146, 158, 160, 162, 179, 187, 196- Divisibility rules and modular arithmetic: 2, 4, 5, 9, 11, 14, 17, 21, 24, 29, 31, 37, 41, 43, 46, 53, 56, 61, 65, 73, 76, 82, 85, 90, 95, 102, 108, 112, 116, 119, 125, 131, 137, 143, 149, 155, 166, 172, 178, 184, 190, 193, 199- Number sequences and series: 6, 8, 15, 22, 25, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75, 79, 83, 86, 89, 93, 96, 99, 105, 109, 113, 117, 121, 126, 132, 138, 144, 150, 156, 163, 169, 175, 181, 188, 194- Diophantine equations- Continued Fraction</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">4. Number Theory- Prime numbers and factorization: 3, 7, 10, 12, 27, 35, 47, 50, 58, 67, 70, 78, 87, 92, 97, 104, 120, 123, 134, 140, 146, 158, 160, 162, 179, 187, 196- Divisibility rules and modular arithmetic: 2, 4, 5, 9, 11, 14, 17, 21, 24, 29, 31, 37, 41, 43, 46, 53, 56, 61, 65, 73, 76, 82, 85, 90, 95, 102, 108, 112, 116, 119, 125, 131, 137, 143, 149, 155, 166, 172, 178, 184, 190, 193, 199- Number sequences and series: 6, 8, 15, 22, 25, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75, 79, 83, 86, 89, 93, 96, 99, 105, 109, 113, 117, 121, 126, 132, 138, 144, 150, 156, 163, 169, 175, 181, 188, 194- Diophantine equations- Continued Fraction</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continued-fraction-numerators-and-denominators-n-i-and-d-i-could-be-any-sequences-or-functions-d-0-cfrac-n-1-d-1-cfrac-n-2-d-k-cfrac-n-k-ddots-d-0-mathop-k-limits-i-1-infty-frac-n-i-d-i-quad-e-g-quad1-frac-1-2-frac-1-2-frac-1-ddots">4.1. Continued Fraction Numerators and denominators <span class="math notranslate nohighlight">\({N_i}\)</span> and <span class="math notranslate nohighlight">\({D_i}\)</span> could be any sequences or functions$<span class="math notranslate nohighlight">\(D_0+\cfrac{N_1}{D_1+\cfrac{N_2}{{ D_k+\cfrac{N_k}{\ddots}}}} = D_0 + \mathop{K}\limits_{i=1}^{\infty} \frac{N_i}{D_i} \quad  e.g. \quad1+\frac{1}{2+\frac{1}{{ 2+\frac{1}{\ddots}}}}\)</span>$</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#algebra-polynomial-equations-18-28-35-43-51-61-71-81-91-101-111-121-131-141-151-161-171-181-191-200-matrix-operations-44-53-62-72-82-92-102-112-122-132-142-152-162-172-182-192-number-bases-and-conversions-algebraic-identities">5. Algebra- Polynomial equations: 18, 28, 35, 43, 51, 61, 71, 81, 91, 101, 111, 121, 131, 141, 151, 161, 171, 181, 191, 200- Matrix operations: 44, 53, 62, 72, 82, 92, 102, 112, 122, 132, 142, 152, 162, 172, 182, 192- Number bases and conversions- Algebraic identities</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithms-and-data-structures-sorting-and-searching-algorithms-4-17-26-35-44-53-62-72-82-92-102-112-122-132-142-152-162-172-182-192-path-planning-algorithms-animations-dynamic-programming-18-67-187-198-202-greedy-algorithms-22-30-39-48-57-66-75-84-93-102-111-120-129-138-147-156-165-174-183-192-backtracking-29-37-45-53-61-69-77-85-93-101-109-117-125-133-141-149-157-165-173-181-189-197-recursion-13-21-29-37-45-53-61-69-77-85-93-101-109-117-125-133-141-149-157-165-173-181-189-197-data-structures-arrays-lists-stacks-queues-trees-graphs-19-27-35-43-51-59-67-75-83-91-99-107-115-123-131-139-147-155-163-171-179-187-195">6. Algorithms and Data Structures- Sorting and searching algorithms: 4, 17, 26, 35, 44, 53, 62, 72, 82, 92, 102, 112, 122, 132, 142, 152, 162, 172, 182, 192    - path-planning algorithms animations- Dynamic programming: 18, 67, 187, 198, 202- Greedy algorithms: 22, 30, 39, 48, 57, 66, 75, 84, 93, 102, 111, 120, 129, 138, 147, 156, 165, 174, 183, 192- Backtracking: 29, 37, 45, 53, 61, 69, 77, 85, 93, 101, 109, 117, 125, 133, 141, 149, 157, 165, 173, 181, 189, 197- Recursion: 13, 21, 29, 37, 45, 53, 61, 69, 77, 85, 93, 101, 109, 117, 125, 133, 141, 149, 157, 165, 173, 181, 189, 197- Data structures (arrays, lists, stacks, queues, trees, graphs): 19, 27, 35, 43, 51, 59, 67, 75, 83, 91, 99, 107, 115, 123, 131, 139, 147, 155, 163, 171, 179, 187, 195</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dp-dynamic-programming-tips-using-dynamic-programming-identify-the-overlapping-subproblems-the-first-step-is-to-identify-smaller-overlapping-subproblems-define-the-recurrence-relation-in-subproblems-you-need-to-define-a-recurrence-relation-that-relates-the-solution-to-a-larger-problem-to-the-solutions-of-smaller-subproblems-implement-the-dynamic-programming-solution-you-can-implement-the-dynamic-programming-solution-using-either-top-down-or-bottom-up-approaches-optimize-your-solution-you-can-optimize-your-solution-by-using-memoization-or-tabulation-to-avoid-redundant-calculations-practicing-problem-18-maximum-path-sum-iproblem-67-maximum-path-sum-ii-187-prime-power-triples-198-counting-paths-202-integer-replacements-219-permutations-of-a-number">6.1. DP (Dynamic Programming)tips using dynamic programming:- Identify the overlapping subproblems: The first step is to identify smaller, overlapping subproblems.- Define the recurrence relation: in subproblems, you need to define a recurrence relation that relates the solution to a larger problem to the solutions of smaller subproblems.- Implement the dynamic programming solution: You can implement the dynamic programming solution using either top-down or bottom-up approaches.- Optimize your solution: You can optimize your solution by using memoization or tabulation to avoid redundant calculations.practicing: Problem 18: Maximum path sum IProblem 67: Maximum path sum II 187: Prime power triples 198: Counting paths 202: Integer replacements 219: Permutations of a number</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#combinatorics-and-probability-permutations-and-combinations-15-24-32-40-49-59-62-68-74-80-88-94-100-106-114-122-130-139-147-159-167-176-185-192-200-probability-theory-19-26-34-44-52-64-77-91-103-115-127-135-145-153-161-170-179-189-197-combinatorial-games-graph-theory-lattice-paths">7. Combinatorics and Probability- Permutations and combinations: 15, 24, 32, 40, 49, 59, 62, 68, 74, 80, 88, 94, 100, 106, 114, 122, 130, 139, 147, 159, 167, 176, 185, 192, 200- Probability theory: 19, 26, 34, 44, 52, 64, 77, 91, 103, 115, 127, 135, 145, 153, 161, 170, 179, 189, 197- Combinatorial games- Graph theory- Lattice paths</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-theory">7.1. Graph Theory</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#geometry-geometric-sequences-and-series-16-23-31-41-50-60-70-80-90-100-110-120-130-140-150-160-170-180-190-200-pythagorean-triples-and-triangles-9-20-38-55-71-84-98-111-124-136-148-164-173-182-191-polygons-and-their-properties-circle-geometry-solid-geometry">8. Geometry- Geometric sequences and series: 16, 23, 31, 41, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200- Pythagorean triples and triangles: 9, 20, 38, 55, 71, 84, 98, 111, 124, 136, 148, 164, 173, 182, 191- Polygons and their properties- Circle geometry- Solid geometry</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#other-cryptography-numerical-analysis-calculus-game-theory">9. Other- Cryptography- Numerical analysis- Calculus- Game theory</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p>FP in Wolfram: <a class="reference external" href="https://reference.wolfram.com/language/guide/FunctionalProgramming.htmlmath">https://reference.wolfram.com/language/guide/FunctionalProgramming.htmlmath</a> topic list: <a class="github reference external" href="https://github.com/leduckhai/Awesome-Competitive-Programming?tab=readme-ov-filePE">leduckhai/Awesome-Competitive-Programming</a> problems can be solved using multiple approaches and often involve a combination of techniques.</p>
+<section id="number-theory-prime-numbers-and-factorization-3-7-10-12-27-35-47-50-58-67-70-78-87-92-97-104-120-123-134-140-146-158-160-162-179-187-196-divisibility-rules-and-modular-arithmetic-2-4-5-9-11-14-17-21-24-29-31-37-41-43-46-53-56-61-65-73-76-82-85-90-95-102-108-112-116-119-125-131-137-143-149-155-166-172-178-184-190-193-199-number-sequences-and-series-6-8-15-22-25-30-33-36-39-42-45-48-51-54-57-60-63-66-69-72-75-79-83-86-89-93-96-99-105-109-113-117-121-126-132-138-144-150-156-163-169-175-181-188-194-diophantine-equations-continued-fraction">
+<h1><span class="section-number">4. </span>Number Theory- Prime numbers and factorization: 3, 7, 10, 12, 27, 35, 47, 50, 58, 67, 70, 78, 87, 92, 97, 104, 120, 123, 134, 140, 146, 158, 160, 162, 179, 187, 196- Divisibility rules and modular arithmetic: 2, 4, 5, 9, 11, 14, 17, 21, 24, 29, 31, 37, 41, 43, 46, 53, 56, 61, 65, 73, 76, 82, 85, 90, 95, 102, 108, 112, 116, 119, 125, 131, 137, 143, 149, 155, 166, 172, 178, 184, 190, 193, 199- Number sequences and series: 6, 8, 15, 22, 25, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75, 79, 83, 86, 89, 93, 96, 99, 105, 109, 113, 117, 121, 126, 132, 138, 144, 150, 156, 163, 169, 175, 181, 188, 194- Diophantine equations- Continued Fraction<a class="headerlink" href="#number-theory-prime-numbers-and-factorization-3-7-10-12-27-35-47-50-58-67-70-78-87-92-97-104-120-123-134-140-146-158-160-162-179-187-196-divisibility-rules-and-modular-arithmetic-2-4-5-9-11-14-17-21-24-29-31-37-41-43-46-53-56-61-65-73-76-82-85-90-95-102-108-112-116-119-125-131-137-143-149-155-166-172-178-184-190-193-199-number-sequences-and-series-6-8-15-22-25-30-33-36-39-42-45-48-51-54-57-60-63-66-69-72-75-79-83-86-89-93-96-99-105-109-113-117-121-126-132-138-144-150-156-163-169-175-181-188-194-diophantine-equations-continued-fraction" title="Link to this heading">#</a></h1>
+<section id="continued-fraction-numerators-and-denominators-n-i-and-d-i-could-be-any-sequences-or-functions-d-0-cfrac-n-1-d-1-cfrac-n-2-d-k-cfrac-n-k-ddots-d-0-mathop-k-limits-i-1-infty-frac-n-i-d-i-quad-e-g-quad1-frac-1-2-frac-1-2-frac-1-ddots">
+<h2><span class="section-number">4.1. </span>Continued Fraction Numerators and denominators <span class="math notranslate nohighlight">\({N_i}\)</span> and <span class="math notranslate nohighlight">\({D_i}\)</span> could be any sequences or functions$<span class="math notranslate nohighlight">\(D_0+\cfrac{N_1}{D_1+\cfrac{N_2}{{ D_k+\cfrac{N_k}{\ddots}}}} = D_0 + \mathop{K}\limits_{i=1}^{\infty} \frac{N_i}{D_i} \quad  e.g. \quad1+\frac{1}{2+\frac{1}{{ 2+\frac{1}{\ddots}}}}\)</span>$<a class="headerlink" href="#continued-fraction-numerators-and-denominators-n-i-and-d-i-could-be-any-sequences-or-functions-d-0-cfrac-n-1-d-1-cfrac-n-2-d-k-cfrac-n-k-ddots-d-0-mathop-k-limits-i-1-infty-frac-n-i-d-i-quad-e-g-quad1-frac-1-2-frac-1-2-frac-1-ddots" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(* 连分数 Continued Fraction for Sqrt[2] *)ContinuedFraction[Sqrt[2], 10]   (*generate D series*)Convergents[ContinuedFraction[Sqrt[2], 10]] (*generate each CF*)  (*now do it manually,   Fold[f, x, {a, b, c, d}] == f{f{f{f[x,a],b},c},d}  #1 is the accumulated result; #2 is the the current element;  &#39;&amp;&#39; at the end: defining an anonymous function *)aa[x] := Fold[#2 + 1/#1 &amp;, x, Reverse[x]]; aa[ContinuedFraction[Sqrt[2], 2]]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="algebra-polynomial-equations-18-28-35-43-51-61-71-81-91-101-111-121-131-141-151-161-171-181-191-200-matrix-operations-44-53-62-72-82-92-102-112-122-132-142-152-162-172-182-192-number-bases-and-conversions-algebraic-identities">
+<h1><span class="section-number">5. </span>Algebra- Polynomial equations: 18, 28, 35, 43, 51, 61, 71, 81, 91, 101, 111, 121, 131, 141, 151, 161, 171, 181, 191, 200- Matrix operations: 44, 53, 62, 72, 82, 92, 102, 112, 122, 132, 142, 152, 162, 172, 182, 192- Number bases and conversions- Algebraic identities<a class="headerlink" href="#algebra-polynomial-equations-18-28-35-43-51-61-71-81-91-101-111-121-131-141-151-161-171-181-191-200-matrix-operations-44-53-62-72-82-92-102-112-122-132-142-152-162-172-182-192-number-bases-and-conversions-algebraic-identities" title="Link to this heading">#</a></h1>
+</section>
+<section id="algorithms-and-data-structures-sorting-and-searching-algorithms-4-17-26-35-44-53-62-72-82-92-102-112-122-132-142-152-162-172-182-192-path-planning-algorithms-animations-dynamic-programming-18-67-187-198-202-greedy-algorithms-22-30-39-48-57-66-75-84-93-102-111-120-129-138-147-156-165-174-183-192-backtracking-29-37-45-53-61-69-77-85-93-101-109-117-125-133-141-149-157-165-173-181-189-197-recursion-13-21-29-37-45-53-61-69-77-85-93-101-109-117-125-133-141-149-157-165-173-181-189-197-data-structures-arrays-lists-stacks-queues-trees-graphs-19-27-35-43-51-59-67-75-83-91-99-107-115-123-131-139-147-155-163-171-179-187-195">
+<h1><span class="section-number">6. </span>Algorithms and Data Structures- Sorting and searching algorithms: 4, 17, 26, 35, 44, 53, 62, 72, 82, 92, 102, 112, 122, 132, 142, 152, 162, 172, 182, 192    - <a class="reference external" href="https://github.com/zhm-real/PathPlanning#papers">path-planning algorithms animations</a>- Dynamic programming: 18, 67, 187, 198, 202- Greedy algorithms: 22, 30, 39, 48, 57, 66, 75, 84, 93, 102, 111, 120, 129, 138, 147, 156, 165, 174, 183, 192- Backtracking: 29, 37, 45, 53, 61, 69, 77, 85, 93, 101, 109, 117, 125, 133, 141, 149, 157, 165, 173, 181, 189, 197- Recursion: 13, 21, 29, 37, 45, 53, 61, 69, 77, 85, 93, 101, 109, 117, 125, 133, 141, 149, 157, 165, 173, 181, 189, 197- Data structures (arrays, lists, stacks, queues, trees, graphs): 19, 27, 35, 43, 51, 59, 67, 75, 83, 91, 99, 107, 115, 123, 131, 139, 147, 155, 163, 171, 179, 187, 195<a class="headerlink" href="#algorithms-and-data-structures-sorting-and-searching-algorithms-4-17-26-35-44-53-62-72-82-92-102-112-122-132-142-152-162-172-182-192-path-planning-algorithms-animations-dynamic-programming-18-67-187-198-202-greedy-algorithms-22-30-39-48-57-66-75-84-93-102-111-120-129-138-147-156-165-174-183-192-backtracking-29-37-45-53-61-69-77-85-93-101-109-117-125-133-141-149-157-165-173-181-189-197-recursion-13-21-29-37-45-53-61-69-77-85-93-101-109-117-125-133-141-149-157-165-173-181-189-197-data-structures-arrays-lists-stacks-queues-trees-graphs-19-27-35-43-51-59-67-75-83-91-99-107-115-123-131-139-147-155-163-171-179-187-195" title="Link to this heading">#</a></h1>
+<section id="dp-dynamic-programming-tips-using-dynamic-programming-identify-the-overlapping-subproblems-the-first-step-is-to-identify-smaller-overlapping-subproblems-define-the-recurrence-relation-in-subproblems-you-need-to-define-a-recurrence-relation-that-relates-the-solution-to-a-larger-problem-to-the-solutions-of-smaller-subproblems-implement-the-dynamic-programming-solution-you-can-implement-the-dynamic-programming-solution-using-either-top-down-or-bottom-up-approaches-optimize-your-solution-you-can-optimize-your-solution-by-using-memoization-or-tabulation-to-avoid-redundant-calculations-practicing-problem-18-maximum-path-sum-iproblem-67-maximum-path-sum-ii-187-prime-power-triples-198-counting-paths-202-integer-replacements-219-permutations-of-a-number">
+<h2><span class="section-number">6.1. </span>DP (Dynamic Programming)tips using dynamic programming:- Identify the overlapping subproblems: The first step is to identify smaller, overlapping subproblems.- Define the recurrence relation: in subproblems, you need to define a recurrence relation that relates the solution to a larger problem to the solutions of smaller subproblems.- Implement the dynamic programming solution: You can implement the dynamic programming solution using either top-down or bottom-up approaches.- Optimize your solution: You can optimize your solution by using memoization or tabulation to avoid redundant calculations.practicing: Problem 18: Maximum path sum IProblem 67: Maximum path sum II 187: Prime power triples 198: Counting paths 202: Integer replacements 219: Permutations of a number<a class="headerlink" href="#dp-dynamic-programming-tips-using-dynamic-programming-identify-the-overlapping-subproblems-the-first-step-is-to-identify-smaller-overlapping-subproblems-define-the-recurrence-relation-in-subproblems-you-need-to-define-a-recurrence-relation-that-relates-the-solution-to-a-larger-problem-to-the-solutions-of-smaller-subproblems-implement-the-dynamic-programming-solution-you-can-implement-the-dynamic-programming-solution-using-either-top-down-or-bottom-up-approaches-optimize-your-solution-you-can-optimize-your-solution-by-using-memoization-or-tabulation-to-avoid-redundant-calculations-practicing-problem-18-maximum-path-sum-iproblem-67-maximum-path-sum-ii-187-prime-power-triples-198-counting-paths-202-integer-replacements-219-permutations-of-a-number" title="Link to this heading">#</a></h2>
+</section>
+</section>
+<section id="combinatorics-and-probability-permutations-and-combinations-15-24-32-40-49-59-62-68-74-80-88-94-100-106-114-122-130-139-147-159-167-176-185-192-200-probability-theory-19-26-34-44-52-64-77-91-103-115-127-135-145-153-161-170-179-189-197-combinatorial-games-graph-theory-lattice-paths">
+<h1><span class="section-number">7. </span>Combinatorics and Probability- Permutations and combinations: 15, 24, 32, 40, 49, 59, 62, 68, 74, 80, 88, 94, 100, 106, 114, 122, 130, 139, 147, 159, 167, 176, 185, 192, 200- Probability theory: 19, 26, 34, 44, 52, 64, 77, 91, 103, 115, 127, 135, 145, 153, 161, 170, 179, 189, 197- Combinatorial games- Graph theory- Lattice paths<a class="headerlink" href="#combinatorics-and-probability-permutations-and-combinations-15-24-32-40-49-59-62-68-74-80-88-94-100-106-114-122-130-139-147-159-167-176-185-192-200-probability-theory-19-26-34-44-52-64-77-91-103-115-127-135-145-153-161-170-179-189-197-combinatorial-games-graph-theory-lattice-paths" title="Link to this heading">#</a></h1>
+<section id="graph-theory">
+<h2><span class="section-number">7.1. </span>Graph Theory<a class="headerlink" href="#graph-theory" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(* Mess Connex *)Graph[{entrance-&gt;A,A-&gt;A,A-&gt;B,B-&gt;C,B-&gt;exit1,C-&gt;exit2,A-&gt;C,C-&gt;A,C-&gt;A,B-&gt;A},VertexLabels-&gt;All](* Loop *)Graph[{1-&gt;2,2-&gt;3,3-&gt;1},VertexLabels-&gt;All](* System - sydney trains and metro *)Graph[{1&lt;-&gt;2,2&lt;-&gt;3,3&lt;-&gt;Central,Central&lt;-&gt;5,5&lt;-&gt;6,6&lt;-&gt;1,2&lt;-&gt;7,7&lt;-&gt;8,8&lt;-&gt;9,9&lt;-&gt;10,10&lt;-&gt;11,3&lt;-&gt;12,14&lt;-&gt;11,14&lt;-&gt;Chatswood,Central&lt;-&gt;16,16&lt;-&gt;12,12&lt;-&gt;17,17&lt;-&gt;18,18&lt;-&gt;19,19&lt;-&gt;Chatswood,Chatswood&lt;-&gt;20,20&lt;-&gt;21,21&lt;-&gt;22,22&lt;-&gt;Epping,Central&lt;-&gt;24,24&lt;-&gt;25,4&lt;-&gt;26,26&lt;-&gt;27,27&lt;-&gt;28,28&lt;-&gt;25,Epping&lt;-&gt;29,29&lt;-&gt;30,30&lt;-&gt;31,31&lt;-&gt;32,32&lt;-&gt;33,33&lt;-&gt;34,34&lt;-&gt;35,35&lt;-&gt;36,36&lt;-&gt;37,37&lt;-&gt;26,Epping&lt;-&gt;38,Epping&lt;-&gt;39,38&lt;-&gt;40,40&lt;-&gt;41,41&lt;-&gt;42,42&lt;-&gt;43,43&lt;-&gt;44,44&lt;-&gt;45,45&lt;-&gt;46,39&lt;-&gt;47,47&lt;-&gt;48,48&lt;-&gt;49,49&lt;-&gt;50,50&lt;-&gt;Hornsby,Hornsby&lt;-&gt;52,52&lt;-&gt;53,53&lt;-&gt;54,54&lt;-&gt;55,Hornsby&lt;-&gt;56,56&lt;-&gt;57,57&lt;-&gt;58,58&lt;-&gt;59,55&lt;-&gt;60,60&lt;-&gt;61,61&lt;-&gt;62,62&lt;-&gt;63,63&lt;-&gt;Chatswood,36&lt;-&gt;64,64&lt;-&gt;65,65&lt;-&gt;66,66-&gt;67,67-&gt;66,66&lt;-&gt;68,68&lt;-&gt;69,69&lt;-&gt;70,70&lt;-&gt;71,70&lt;-&gt;72,72&lt;-&gt;71,71&lt;-&gt;73,73&lt;-&gt;74,74&lt;-&gt;75,75&lt;-&gt;76,76&lt;-&gt;77},VertexLabels-&gt;All]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="geometry-geometric-sequences-and-series-16-23-31-41-50-60-70-80-90-100-110-120-130-140-150-160-170-180-190-200-pythagorean-triples-and-triangles-9-20-38-55-71-84-98-111-124-136-148-164-173-182-191-polygons-and-their-properties-circle-geometry-solid-geometry">
+<h1><span class="section-number">8. </span>Geometry- Geometric sequences and series: 16, 23, 31, 41, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200- Pythagorean triples and triangles: 9, 20, 38, 55, 71, 84, 98, 111, 124, 136, 148, 164, 173, 182, 191- Polygons and their properties- Circle geometry- Solid geometry<a class="headerlink" href="#geometry-geometric-sequences-and-series-16-23-31-41-50-60-70-80-90-100-110-120-130-140-150-160-170-180-190-200-pythagorean-triples-and-triangles-9-20-38-55-71-84-98-111-124-136-148-164-173-182-191-polygons-and-their-properties-circle-geometry-solid-geometry" title="Link to this heading">#</a></h1>
+</section>
+<section id="other-cryptography-numerical-analysis-calculus-game-theory">
+<h1><span class="section-number">9. </span>Other- Cryptography- Numerical analysis- Calculus- Game theory<a class="headerlink" href="#other-cryptography-numerical-analysis-calculus-game-theory" title="Link to this heading">#</a></h1>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Py200.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Python-OOP Q100-300</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Alevel_math.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">10. </span>A-level Math</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">4. Number Theory- Prime numbers and factorization: 3, 7, 10, 12, 27, 35, 47, 50, 58, 67, 70, 78, 87, 92, 97, 104, 120, 123, 134, 140, 146, 158, 160, 162, 179, 187, 196- Divisibility rules and modular arithmetic: 2, 4, 5, 9, 11, 14, 17, 21, 24, 29, 31, 37, 41, 43, 46, 53, 56, 61, 65, 73, 76, 82, 85, 90, 95, 102, 108, 112, 116, 119, 125, 131, 137, 143, 149, 155, 166, 172, 178, 184, 190, 193, 199- Number sequences and series: 6, 8, 15, 22, 25, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75, 79, 83, 86, 89, 93, 96, 99, 105, 109, 113, 117, 121, 126, 132, 138, 144, 150, 156, 163, 169, 175, 181, 188, 194- Diophantine equations- Continued Fraction</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continued-fraction-numerators-and-denominators-n-i-and-d-i-could-be-any-sequences-or-functions-d-0-cfrac-n-1-d-1-cfrac-n-2-d-k-cfrac-n-k-ddots-d-0-mathop-k-limits-i-1-infty-frac-n-i-d-i-quad-e-g-quad1-frac-1-2-frac-1-2-frac-1-ddots">4.1. Continued Fraction Numerators and denominators <span class="math notranslate nohighlight">\({N_i}\)</span> and <span class="math notranslate nohighlight">\({D_i}\)</span> could be any sequences or functions$<span class="math notranslate nohighlight">\(D_0+\cfrac{N_1}{D_1+\cfrac{N_2}{{ D_k+\cfrac{N_k}{\ddots}}}} = D_0 + \mathop{K}\limits_{i=1}^{\infty} \frac{N_i}{D_i} \quad  e.g. \quad1+\frac{1}{2+\frac{1}{{ 2+\frac{1}{\ddots}}}}\)</span>$</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#algebra-polynomial-equations-18-28-35-43-51-61-71-81-91-101-111-121-131-141-151-161-171-181-191-200-matrix-operations-44-53-62-72-82-92-102-112-122-132-142-152-162-172-182-192-number-bases-and-conversions-algebraic-identities">5. Algebra- Polynomial equations: 18, 28, 35, 43, 51, 61, 71, 81, 91, 101, 111, 121, 131, 141, 151, 161, 171, 181, 191, 200- Matrix operations: 44, 53, 62, 72, 82, 92, 102, 112, 122, 132, 142, 152, 162, 172, 182, 192- Number bases and conversions- Algebraic identities</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithms-and-data-structures-sorting-and-searching-algorithms-4-17-26-35-44-53-62-72-82-92-102-112-122-132-142-152-162-172-182-192-path-planning-algorithms-animations-dynamic-programming-18-67-187-198-202-greedy-algorithms-22-30-39-48-57-66-75-84-93-102-111-120-129-138-147-156-165-174-183-192-backtracking-29-37-45-53-61-69-77-85-93-101-109-117-125-133-141-149-157-165-173-181-189-197-recursion-13-21-29-37-45-53-61-69-77-85-93-101-109-117-125-133-141-149-157-165-173-181-189-197-data-structures-arrays-lists-stacks-queues-trees-graphs-19-27-35-43-51-59-67-75-83-91-99-107-115-123-131-139-147-155-163-171-179-187-195">6. Algorithms and Data Structures- Sorting and searching algorithms: 4, 17, 26, 35, 44, 53, 62, 72, 82, 92, 102, 112, 122, 132, 142, 152, 162, 172, 182, 192    - path-planning algorithms animations- Dynamic programming: 18, 67, 187, 198, 202- Greedy algorithms: 22, 30, 39, 48, 57, 66, 75, 84, 93, 102, 111, 120, 129, 138, 147, 156, 165, 174, 183, 192- Backtracking: 29, 37, 45, 53, 61, 69, 77, 85, 93, 101, 109, 117, 125, 133, 141, 149, 157, 165, 173, 181, 189, 197- Recursion: 13, 21, 29, 37, 45, 53, 61, 69, 77, 85, 93, 101, 109, 117, 125, 133, 141, 149, 157, 165, 173, 181, 189, 197- Data structures (arrays, lists, stacks, queues, trees, graphs): 19, 27, 35, 43, 51, 59, 67, 75, 83, 91, 99, 107, 115, 123, 131, 139, 147, 155, 163, 171, 179, 187, 195</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dp-dynamic-programming-tips-using-dynamic-programming-identify-the-overlapping-subproblems-the-first-step-is-to-identify-smaller-overlapping-subproblems-define-the-recurrence-relation-in-subproblems-you-need-to-define-a-recurrence-relation-that-relates-the-solution-to-a-larger-problem-to-the-solutions-of-smaller-subproblems-implement-the-dynamic-programming-solution-you-can-implement-the-dynamic-programming-solution-using-either-top-down-or-bottom-up-approaches-optimize-your-solution-you-can-optimize-your-solution-by-using-memoization-or-tabulation-to-avoid-redundant-calculations-practicing-problem-18-maximum-path-sum-iproblem-67-maximum-path-sum-ii-187-prime-power-triples-198-counting-paths-202-integer-replacements-219-permutations-of-a-number">6.1. DP (Dynamic Programming)tips using dynamic programming:- Identify the overlapping subproblems: The first step is to identify smaller, overlapping subproblems.- Define the recurrence relation: in subproblems, you need to define a recurrence relation that relates the solution to a larger problem to the solutions of smaller subproblems.- Implement the dynamic programming solution: You can implement the dynamic programming solution using either top-down or bottom-up approaches.- Optimize your solution: You can optimize your solution by using memoization or tabulation to avoid redundant calculations.practicing: Problem 18: Maximum path sum IProblem 67: Maximum path sum II 187: Prime power triples 198: Counting paths 202: Integer replacements 219: Permutations of a number</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#combinatorics-and-probability-permutations-and-combinations-15-24-32-40-49-59-62-68-74-80-88-94-100-106-114-122-130-139-147-159-167-176-185-192-200-probability-theory-19-26-34-44-52-64-77-91-103-115-127-135-145-153-161-170-179-189-197-combinatorial-games-graph-theory-lattice-paths">7. Combinatorics and Probability- Permutations and combinations: 15, 24, 32, 40, 49, 59, 62, 68, 74, 80, 88, 94, 100, 106, 114, 122, 130, 139, 147, 159, 167, 176, 185, 192, 200- Probability theory: 19, 26, 34, 44, 52, 64, 77, 91, 103, 115, 127, 135, 145, 153, 161, 170, 179, 189, 197- Combinatorial games- Graph theory- Lattice paths</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-theory">7.1. Graph Theory</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#geometry-geometric-sequences-and-series-16-23-31-41-50-60-70-80-90-100-110-120-130-140-150-160-170-180-190-200-pythagorean-triples-and-triangles-9-20-38-55-71-84-98-111-124-136-148-164-173-182-191-polygons-and-their-properties-circle-geometry-solid-geometry">8. Geometry- Geometric sequences and series: 16, 23, 31, 41, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200- Pythagorean triples and triangles: 9, 20, 38, 55, 71, 84, 98, 111, 124, 136, 148, 164, 173, 182, 191- Polygons and their properties- Circle geometry- Solid geometry</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#other-cryptography-numerical-analysis-calculus-game-theory">9. Other- Cryptography- Numerical analysis- Calculus- Game theory</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jonny, assisted by Tom
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
