@@ -2,7 +2,7 @@
  "cells": [
   {
    "kind": 1,
-   "value": "## A-Level: Mathematica Functions",
+   "value": "# A-Level: Mathematica Functions",
    "languageId": "markdown",
    "outputs": [],
    "metadata": {},
@@ -131,14 +131,7 @@
     }
    ],
    "metadata": {},
-   "executionSummary": {
-    "timing": {
-     "startTime": 1731209038031,
-     "endTime": 1731209038613
-    },
-    "executionOrder": 322,
-    "success": true
-   }
+   "executionSummary": {}
   },
   {
    "kind": 2,
