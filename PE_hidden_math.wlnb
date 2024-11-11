@@ -2,7 +2,7 @@
  "cells": [
   {
    "kind": 1,
-   "value": "FP in Wolfram: https://reference.wolfram.com/language/guide/FunctionalProgramming.html\r\n\r\nmath topic list: https://github.com/leduckhai/Awesome-Competitive-Programming?tab=readme-ov-file\r\n\r\nPE problems can be solved using multiple approaches and often involve a combination of techniques.",
+   "value": "# PE-Hidden-Math\r\n\r\nFP in Wolfram: https://reference.wolfram.com/language/guide/FunctionalProgramming.html\r\n\r\nmath topic list: https://github.com/leduckhai/Awesome-Competitive-Programming?tab=readme-ov-file\r\n\r\nPE problems can be solved using multiple approaches and often involve a combination of techniques.",
    "languageId": "markdown",
    "outputs": [],
    "metadata": {},
@@ -10,7 +10,7 @@
   },
   {
    "kind": 1,
-   "value": "### Number Theory\r\n\r\n- Prime numbers and factorization: 3, 7, 10, 12, 27, 35, 47, 50, 58, 67, 70, 78, 87, 92, 97, 104, 120, 123, 134, 140, 146, 158, 160, 162, 179, 187, 196\r\n- Divisibility rules and modular arithmetic: 2, 4, 5, 9, 11, 14, 17, 21, 24, 29, 31, 37, 41, 43, 46, 53, 56, 61, 65, 73, 76, 82, 85, 90, 95, 102, 108, 112, 116, 119, 125, 131, 137, 143, 149, 155, 166, 172, 178, 184, 190, 193, 199\r\n- Number sequences and series: 6, 8, 15, 22, 25, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75, 79, 83, 86, 89, 93, 96, 99, 105, 109, 113, 117, 121, 126, 132, 138, 144, 150, 156, 163, 169, 175, 181, 188, 194\r\n- Diophantine equations\r\n- Continued Fraction \r\n",
+   "value": "## Number Theory\r\n\r\n- Prime numbers and factorization: 3, 7, 10, 12, 27, 35, 47, 50, 58, 67, 70, 78, 87, 92, 97, 104, 120, 123, 134, 140, 146, 158, 160, 162, 179, 187, 196\r\n- Divisibility rules and modular arithmetic: 2, 4, 5, 9, 11, 14, 17, 21, 24, 29, 31, 37, 41, 43, 46, 53, 56, 61, 65, 73, 76, 82, 85, 90, 95, 102, 108, 112, 116, 119, 125, 131, 137, 143, 149, 155, 166, 172, 178, 184, 190, 193, 199\r\n- Number sequences and series: 6, 8, 15, 22, 25, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75, 79, 83, 86, 89, 93, 96, 99, 105, 109, 113, 117, 121, 126, 132, 138, 144, 150, 156, 163, 169, 175, 181, 188, 194\r\n- Diophantine equations\r\n- Continued Fraction \r\n",
    "languageId": "markdown",
    "outputs": [],
    "metadata": {},
@@ -18,7 +18,7 @@
   },
   {
    "kind": 1,
-   "value": "#### Continued Fraction \r\n\r\nNumerators and denominators ${N_i}$ and ${D_i}$ could be any sequences or functions\r\n\r\n$$D_0+\\cfrac{N_1}{D_1+\\cfrac{N_2}{{ D_k+\\cfrac{N_k}{\\ddots}}}} = D_0 + \\mathop{K}\\limits_{i=1}^{\\infty} \\frac{N_i}{D_i} \\quad  e.g. \\quad\r\n1+\\frac{1}{2+\\frac{1}{{ 2+\\frac{1}{\\ddots}}}}$$",
+   "value": "### Continued Fraction \r\n\r\nNumerators and denominators ${N_i}$ and ${D_i}$ could be any sequences or functions\r\n\r\n$$D_0+\\cfrac{N_1}{D_1+\\cfrac{N_2}{{ D_k+\\cfrac{N_k}{\\ddots}}}} = D_0 + \\mathop{K}\\limits_{i=1}^{\\infty} \\frac{N_i}{D_i} \\quad  e.g. \\quad\r\n1+\\frac{1}{2+\\frac{1}{{ 2+\\frac{1}{\\ddots}}}}$$",
    "languageId": "markdown",
    "outputs": [],
    "metadata": {},
@@ -34,7 +34,7 @@
   },
   {
    "kind": 1,
-   "value": "### Algebra\r\n\r\n- Polynomial equations: 18, 28, 35, 43, 51, 61, 71, 81, 91, 101, 111, 121, 131, 141, 151, 161, 171, 181, 191, 200\r\n- Matrix operations: 44, 53, 62, 72, 82, 92, 102, 112, 122, 132, 142, 152, 162, 172, 182, 192\r\n- Number bases and conversions\r\n- Algebraic identities",
+   "value": "## Algebra\r\n\r\n- Polynomial equations: 18, 28, 35, 43, 51, 61, 71, 81, 91, 101, 111, 121, 131, 141, 151, 161, 171, 181, 191, 200\r\n- Matrix operations: 44, 53, 62, 72, 82, 92, 102, 112, 122, 132, 142, 152, 162, 172, 182, 192\r\n- Number bases and conversions\r\n- Algebraic identities",
    "languageId": "markdown",
    "outputs": [],
    "metadata": {},
@@ -42,7 +42,7 @@
   },
   {
    "kind": 1,
-   "value": "### Algorithms and Data Structures\r\n\r\n- Sorting and searching algorithms: 4, 17, 26, 35, 44, 53, 62, 72, 82, 92, 102, 112, 122, 132, 142, 152, 162, 172, 182, 192\r\n    - [path-planning algorithms animations](https://github.com/zhm-real/PathPlanning#papers)\r\n- Dynamic programming: 18, 67, 187, 198, 202\r\n- Greedy algorithms: 22, 30, 39, 48, 57, 66, 75, 84, 93, 102, 111, 120, 129, 138, 147, 156, 165, 174, 183, 192\r\n- Backtracking: 29, 37, 45, 53, 61, 69, 77, 85, 93, 101, 109, 117, 125, 133, 141, 149, 157, 165, 173, 181, 189, 197\r\n- Recursion: 13, 21, 29, 37, 45, 53, 61, 69, 77, 85, 93, 101, 109, 117, 125, 133, 141, 149, 157, 165, 173, 181, 189, 197\r\n- Data structures (arrays, lists, stacks, queues, trees, graphs): 19, 27, 35, 43, 51, 59, 67, 75, 83, 91, 99, 107, 115, 123, 131, 139, 147, 155, 163, 171, 179, 187, 195",
+   "value": "## Algorithms and Data Structures\r\n\r\n- Sorting and searching algorithms: 4, 17, 26, 35, 44, 53, 62, 72, 82, 92, 102, 112, 122, 132, 142, 152, 162, 172, 182, 192\r\n    - [path-planning algorithms animations](https://github.com/zhm-real/PathPlanning#papers)\r\n- Dynamic programming: 18, 67, 187, 198, 202\r\n- Greedy algorithms: 22, 30, 39, 48, 57, 66, 75, 84, 93, 102, 111, 120, 129, 138, 147, 156, 165, 174, 183, 192\r\n- Backtracking: 29, 37, 45, 53, 61, 69, 77, 85, 93, 101, 109, 117, 125, 133, 141, 149, 157, 165, 173, 181, 189, 197\r\n- Recursion: 13, 21, 29, 37, 45, 53, 61, 69, 77, 85, 93, 101, 109, 117, 125, 133, 141, 149, 157, 165, 173, 181, 189, 197\r\n- Data structures (arrays, lists, stacks, queues, trees, graphs): 19, 27, 35, 43, 51, 59, 67, 75, 83, 91, 99, 107, 115, 123, 131, 139, 147, 155, 163, 171, 179, 187, 195",
    "languageId": "markdown",
    "outputs": [],
    "metadata": {},
@@ -50,7 +50,7 @@
   },
   {
    "kind": 1,
-   "value": "#### DP (Dynamic Programming)\r\n\r\ntips using dynamic programming:\r\n\r\n- Identify the overlapping subproblems: The first step is to identify smaller, overlapping subproblems.\r\n- Define the recurrence relation: in subproblems, you need to define a recurrence relation that relates the solution to a larger problem to the solutions of smaller subproblems.\r\n- Implement the dynamic programming solution: You can implement the dynamic programming solution using either top-down or bottom-up approaches.\r\n- Optimize your solution: You can optimize your solution by using memoization or tabulation to avoid redundant calculations.\r\n\r\npracticing: Problem 18: Maximum path sum I\r\nProblem 67: Maximum path sum II\r\n 187: Prime power triples\r\n 198: Counting paths\r\n 202: Integer replacements\r\n 219: Permutations of a number",
+   "value": "### DP (Dynamic Programming)\r\n\r\ntips using dynamic programming:\r\n\r\n- Identify the overlapping subproblems: The first step is to identify smaller, overlapping subproblems.\r\n- Define the recurrence relation: in subproblems, you need to define a recurrence relation that relates the solution to a larger problem to the solutions of smaller subproblems.\r\n- Implement the dynamic programming solution: You can implement the dynamic programming solution using either top-down or bottom-up approaches.\r\n- Optimize your solution: You can optimize your solution by using memoization or tabulation to avoid redundant calculations.\r\n\r\npracticing: Problem 18: Maximum path sum I\r\nProblem 67: Maximum path sum II\r\n 187: Prime power triples\r\n 198: Counting paths\r\n 202: Integer replacements\r\n 219: Permutations of a number",
    "languageId": "markdown",
    "outputs": [],
    "metadata": {},
@@ -58,7 +58,7 @@
   },
   {
    "kind": 1,
-   "value": "### Combinatorics and Probability\r\n\r\n- Permutations and combinations: 15, 24, 32, 40, 49, 59, 62, 68, 74, 80, 88, 94, 100, 106, 114, 122, 130, 139, 147, 159, 167, 176, 185, 192, 200\r\n- Probability theory: 19, 26, 34, 44, 52, 64, 77, 91, 103, 115, 127, 135, 145, 153, 161, 170, 179, 189, 197\r\n- Combinatorial games\r\n- Graph theory\r\n- Lattice paths",
+   "value": "## Combinatorics and Probability\r\n\r\n- Permutations and combinations: 15, 24, 32, 40, 49, 59, 62, 68, 74, 80, 88, 94, 100, 106, 114, 122, 130, 139, 147, 159, 167, 176, 185, 192, 200\r\n- Probability theory: 19, 26, 34, 44, 52, 64, 77, 91, 103, 115, 127, 135, 145, 153, 161, 170, 179, 189, 197\r\n- Combinatorial games\r\n- Graph theory\r\n- Lattice paths",
    "languageId": "markdown",
    "outputs": [],
    "metadata": {},
@@ -66,7 +66,7 @@
   },
   {
    "kind": 1,
-   "value": "#### Graph Theory\r\n",
+   "value": "### Graph Theory\r\n",
    "languageId": "markdown",
    "outputs": [],
    "metadata": {},
@@ -82,7 +82,7 @@
   },
   {
    "kind": 1,
-   "value": "### Geometry\r\n\r\n- Geometric sequences and series: 16, 23, 31, 41, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200\r\n- Pythagorean triples and triangles: 9, 20, 38, 55, 71, 84, 98, 111, 124, 136, 148, 164, 173, 182, 191\r\n- Polygons and their properties\r\n- Circle geometry\r\n- Solid geometry",
+   "value": "## Geometry\r\n\r\n- Geometric sequences and series: 16, 23, 31, 41, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200\r\n- Pythagorean triples and triangles: 9, 20, 38, 55, 71, 84, 98, 111, 124, 136, 148, 164, 173, 182, 191\r\n- Polygons and their properties\r\n- Circle geometry\r\n- Solid geometry",
    "languageId": "markdown",
    "outputs": [],
    "metadata": {},
@@ -90,7 +90,7 @@
   },
   {
    "kind": 1,
-   "value": "### Other\r\n\r\n- Cryptography\r\n- Numerical analysis\r\n- Calculus\r\n- Game theory",
+   "value": "## Other\r\n\r\n- Cryptography\r\n- Numerical analysis\r\n- Calculus\r\n- Game theory",
    "languageId": "markdown",
    "outputs": [],
    "metadata": {},
