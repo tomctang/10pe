@@ -18,7 +18,7 @@
   },
   {
    "kind": 1,
-   "value": "## Number Theory\r\n\r\n- Prime numbers and factorization: 3, 7, 10, 12, 27, 35, 47, 50, 58, 67, 70, 78, 87, 92, 97, 104, 120, 123, 134, 140, 146, 158, 160, 162, 179, 187, 196\r\n- Divisibility rules and modular arithmetic: 2, 4, 5, 9, 11, 14, 17, 21, 24, 29, 31, 37, 41, 43, 46, 53, 56, 61, 65, 73, 76, 82, 85, 90, 95, 102, 108, 112, 116, 119, 125, 131, 137, 143, 149, 155, 166, 172, 178, 184, 190, 193, 199\r\n- Number sequences and series: 6, 8, 15, 22, 25, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75, 79, 83, 86, 89, 93, 96, 99, 105, 109, 113, 117, 121, 126, 132, 138, 144, 150, 156, 163, 169, 175, 181, 188, 194\r\n- Diophantine equations\r\n- Continued Fraction \r\n",
+   "value": "## Number Theory",
    "languageId": "markdown",
    "outputs": [],
    "metadata": {},
@@ -26,7 +26,23 @@
   },
   {
    "kind": 1,
-   "value": "### Continued Fraction \r\n\r\nNumerators and denominators ${N_i}$ and ${D_i}$ could be any sequences or functions\r\n\r\n$$D_0+\\cfrac{N_1}{D_1+\\cfrac{N_2}{{ D_k+\\cfrac{N_k}{\\ddots}}}} = D_0 + \\mathop{K}\\limits_{i=1}^{\\infty} \\frac{N_i}{D_i} \\quad  e.g. \\quad\r\n1+\\frac{1}{2+\\frac{1}{{ 2+\\frac{1}{\\ddots}}}}$$",
+   "value": "- Prime numbers and factorization: 3, 7, 10, 12, 27, 35, 47, 50, 58, 67, 70, 78, 87, 92, 97, 104, 120, 123, 134, 140, 146, 158, 160, 162, 179, 187, 196\r\n- Divisibility rules and modular arithmetic: 2, 4, 5, 9, 11, 14, 17, 21, 24, 29, 31, 37, 41, 43, 46, 53, 56, 61, 65, 73, 76, 82, 85, 90, 95, 102, 108, 112, 116, 119, 125, 131, 137, 143, 149, 155, 166, 172, 178, 184, 190, 193, 199\r\n- Number sequences and series: 6, 8, 15, 22, 25, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75, 79, 83, 86, 89, 93, 96, 99, 105, 109, 113, 117, 121, 126, 132, 138, 144, 150, 156, 163, 169, 175, 181, 188, 194\r\n- Diophantine equations\r\n- Continued Fraction \r\n",
+   "languageId": "markdown",
+   "outputs": [],
+   "metadata": {},
+   "executionSummary": {}
+  },
+  {
+   "kind": 1,
+   "value": "### Continued Fraction ",
+   "languageId": "markdown",
+   "outputs": [],
+   "metadata": {},
+   "executionSummary": {}
+  },
+  {
+   "kind": 1,
+   "value": "Numerators and denominators ${N_i}$ and ${D_i}$ could be any sequences or functions\r\n\r\n$$D_0+\\cfrac{N_1}{D_1+\\cfrac{N_2}{{ D_k+\\cfrac{N_k}{\\ddots}}}} = D_0 + \\mathop{K}\\limits_{i=1}^{\\infty} \\frac{N_i}{D_i} \\quad  e.g. \\quad\r\n1+\\frac{1}{2+\\frac{1}{{ 2+\\frac{1}{\\ddots}}}}$$",
    "languageId": "markdown",
    "outputs": [],
    "metadata": {},
