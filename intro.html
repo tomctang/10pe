@@ -168,10 +168,10 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Project Euler</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Py100.html">1. Python-OOP Q1-100</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Py100_FP_way.html">2. Python-FP Q1-100</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Py200.html">3. Python-OOP Q100-300</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MMA100.html">4. Mathematica## Problems 1-50</a></li>
-<li class="toctree-l1"><a class="reference internal" href="PE_hidden_math.html">5. PE-Hidden-MathFP in Wolfram: https://reference.wolfram.com/language/guide/FunctionalProgramming.htmlmath topic list: https://github.com/leduckhai/Awesome-Competitive-Programming?tab=readme-ov-filePE problems can be solved using multiple approaches and often involve a combination of techniques.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Py200.html">2. Python-OOP Q100-300</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Py100_FP_way.html">3. Python-FP Q1-100</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MMA100.html">4. MMA100</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PE_hidden_math.html">5. PE-Hidden-Math</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">A-level Math</span></p>
 <ul class="nav bd-sidenav">
@@ -354,6 +354,7 @@
 <p>Jonny already went through 4U math (HSC in NSW) once, after that Tom chose A-level math for Jonny’s review and progress, with a approach of computational coding for A-level math.</p>
 <section id="software-and-files">
 <h2>Software and files<a class="headerlink" href="#software-and-files" title="Link to this heading">#</a></h2>
+<p>While a qualified coder mastering 6 programming languages (PL), how to choose PLs is really a hard decision.</p>
 <ul class="simple">
 <li><p>We started this workbook using <strong>Python</strong> in VScode:</p>
 <ul>
@@ -375,7 +376,15 @@
 </li>
 </ul>
 </li>
-<li><p>Next, more pure FP? Ocaml? F#? Scala? Haskell?</p></li>
+<li><p>Next, a PL with more FP? Ocaml? F#? Scala? Haskell? Rust? Make a comparison:</p>
+<ul>
+<li><ol class="arabic simple">
+<li><p>PL’s Coding-look in defining a Fibonacci; 2. Which FP is best for mathematics? Haskell is NO.1, but I really don’t like Haskell; 3. Math-related supports for these four languages; 4. Balance between FP and OOP; 5. Number of users in Project Euler for each PL; 6. libgen supports for each PL; 7. When the PL first appeared.</p></li>
+</ol>
+</li>
+<li><p>Decision: <strong>Rust</strong>. We will learn Rust next year.</p></li>
+</ul>
+</li>
 </ul>
 </section>
 <section id="oop-to-fp">
@@ -392,7 +401,7 @@
 
 <span class="k">def</span> <span class="nf">convert_wlnb_to_ipynb</span><span class="p">(</span><span class="n">wlnb_content</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Convert .wlnb format to .ipynb format</span>
+<span class="sd">    Convert .wlnb format to .ipynb format with output handling</span>
 <span class="sd">    </span>
 <span class="sd">    Args:</span>
 <span class="sd">        wlnb_content (str): Content of the .wlnb file</span>
@@ -400,12 +409,15 @@
 <span class="sd">        dict: Jupyter notebook format dictionary</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># Parse the WLNB content</span>
-    <span class="n">wlnb_data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">wlnb_content</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">wlnb_data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">wlnb_content</span><span class="p">)</span>
+    <span class="k">except</span> <span class="n">json</span><span class="o">.</span><span class="n">JSONDecodeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Failed to decode .wlnb content: Invalid JSON format.&quot;</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
     
     <span class="c1"># Initialize the ipynb structure</span>
     <span class="n">ipynb</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s2">&quot;cells&quot;</span><span class="p">:</span> <span class="p">[],</span>
-        <span class="s2">&quot;metadata&quot;</span><span class="p">:</span> <span class="p">{},</span>
+        <span class="s2">&quot;metadata&quot;</span><span class="p">:</span> <span class="n">wlnb_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;metadata&quot;</span><span class="p">,</span> <span class="p">{}),</span>
         <span class="s2">&quot;nbformat&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
         <span class="s2">&quot;nbformat_minor&quot;</span><span class="p">:</span> <span class="mi">5</span>
     <span class="p">}</span>
@@ -413,23 +425,48 @@
     <span class="c1"># Mapping of WLNB kind to IPython cell types</span>
     <span class="n">kind_to_cell_type</span> <span class="o">=</span> <span class="p">{</span>
         <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;markdown&quot;</span><span class="p">,</span>  <span class="c1"># Markdown cells</span>
-        <span class="mi">2</span><span class="p">:</span> <span class="s2">&quot;code&quot;</span>      <span class="c1"># Code cells</span>
+        <span class="mi">2</span><span class="p">:</span> <span class="s2">&quot;code&quot;</span>       <span class="c1"># Code cells</span>
     <span class="p">}</span>
     
     <span class="c1"># Convert each cell</span>
-    <span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">wlnb_data</span><span class="p">[</span><span class="s2">&quot;cells&quot;</span><span class="p">]:</span>
-        <span class="n">cell_type</span> <span class="o">=</span> <span class="n">kind_to_cell_type</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">cell</span><span class="p">[</span><span class="s2">&quot;kind&quot;</span><span class="p">],</span> <span class="s2">&quot;raw&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">wlnb_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;cells&quot;</span><span class="p">,</span> <span class="p">[]):</span>
+        <span class="n">cell_type</span> <span class="o">=</span> <span class="n">kind_to_cell_type</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">cell</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;kind&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="s2">&quot;raw&quot;</span><span class="p">)</span>
         
         <span class="n">new_cell</span> <span class="o">=</span> <span class="p">{</span>
             <span class="s2">&quot;cell_type&quot;</span><span class="p">:</span> <span class="n">cell_type</span><span class="p">,</span>
             <span class="s2">&quot;metadata&quot;</span><span class="p">:</span> <span class="n">cell</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;metadata&quot;</span><span class="p">,</span> <span class="p">{}),</span>
-            <span class="s2">&quot;source&quot;</span><span class="p">:</span> <span class="n">cell</span><span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\r\n</span><span class="s2">&quot;</span><span class="p">),</span>
+            <span class="s2">&quot;source&quot;</span><span class="p">:</span> <span class="n">cell</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;value&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">splitlines</span><span class="p">(),</span>
         <span class="p">}</span>
         
-        <span class="c1"># Add outputs field for code cells</span>
+        <span class="c1"># Add fields for code cells</span>
         <span class="k">if</span> <span class="n">cell_type</span> <span class="o">==</span> <span class="s2">&quot;code&quot;</span><span class="p">:</span>
-            <span class="n">new_cell</span><span class="p">[</span><span class="s2">&quot;outputs&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;outputs&quot;</span><span class="p">,</span> <span class="p">[])</span>
-            <span class="n">new_cell</span><span class="p">[</span><span class="s2">&quot;execution_count&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="c1"># Handle the outputs for code cells</span>
+            <span class="n">outputs</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">output</span> <span class="ow">in</span> <span class="n">cell</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;outputs&quot;</span><span class="p">,</span> <span class="p">[]):</span>
+                <span class="n">output_data</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="s2">&quot;output_type&quot;</span><span class="p">:</span> <span class="n">output</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;output_type&quot;</span><span class="p">,</span> <span class="s2">&quot;execute_result&quot;</span><span class="p">),</span>
+                    <span class="s2">&quot;metadata&quot;</span><span class="p">:</span> <span class="n">output</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;metadata&quot;</span><span class="p">,</span> <span class="p">{}),</span>
+                    <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="p">{}</span>
+                <span class="p">}</span>
+                
+                <span class="c1"># Extract different types of data from the WLNB output</span>
+                <span class="k">if</span> <span class="s2">&quot;text&quot;</span> <span class="ow">in</span> <span class="n">output</span><span class="p">:</span>
+                    <span class="n">output_data</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="s2">&quot;text/plain&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">output</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
+                <span class="k">if</span> <span class="s2">&quot;image/png&quot;</span> <span class="ow">in</span> <span class="n">output</span><span class="p">:</span>
+                    <span class="n">output_data</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="s2">&quot;image/png&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">output</span><span class="p">[</span><span class="s2">&quot;image/png&quot;</span><span class="p">]</span>
+                <span class="k">if</span> <span class="s2">&quot;application/json&quot;</span> <span class="ow">in</span> <span class="n">output</span><span class="p">:</span>
+                    <span class="n">output_data</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="s2">&quot;application/json&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">output</span><span class="p">[</span><span class="s2">&quot;application/json&quot;</span><span class="p">]</span>
+                
+                <span class="c1"># Handle error type with traceback information if available</span>
+                <span class="k">if</span> <span class="n">output</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;output_type&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;error&quot;</span><span class="p">:</span>
+                    <span class="n">output_data</span><span class="p">[</span><span class="s2">&quot;ename&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;ename&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+                    <span class="n">output_data</span><span class="p">[</span><span class="s2">&quot;evalue&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;evalue&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+                    <span class="n">output_data</span><span class="p">[</span><span class="s2">&quot;traceback&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;traceback&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
+                
+                <span class="n">outputs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">output_data</span><span class="p">)</span>
+            
+            <span class="n">new_cell</span><span class="p">[</span><span class="s2">&quot;outputs&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">outputs</span>
+            <span class="n">new_cell</span><span class="p">[</span><span class="s2">&quot;execution_count&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;execution_count&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
         
         <span class="n">ipynb</span><span class="p">[</span><span class="s2">&quot;cells&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_cell</span><span class="p">)</span>
     
@@ -444,8 +481,11 @@
 <span class="sd">        output_path (str): Path where the .ipynb file should be saved</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># Read the input file</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">input_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">wlnb_content</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">input_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">wlnb_content</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="k">except</span> <span class="ne">FileNotFoundError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input file not found: </span><span class="si">{</span><span class="n">input_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
     
     <span class="c1"># Convert the content</span>
     <span class="n">ipynb_data</span> <span class="o">=</span> <span class="n">convert_wlnb_to_ipynb</span><span class="p">(</span><span class="n">wlnb_content</span><span class="p">)</span>
