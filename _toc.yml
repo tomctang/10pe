@@ -7,8 +7,8 @@ parts:
   numbered: true
   chapters:
   - file: Py100
-  - file: Py100_FP_way
   - file: Py200
+  - file: Py100_FP_way
   - file: MMA100         # convert wlnb to ipynb
   - file: PE_hidden_math # convert wlnb to ipynb
 
