@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Introduction &#8212; Jonny Workbook</title>
+    <title>5. PE-Hidden-Math-Questions &#8212; Jonny Workbook</title>
   
   
   
@@ -60,9 +60,13 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'README';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'PE_hidden_math_questions';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="6. PE-Hidden-Math-Topics" href="PE_hidden_math_topics.html" />
+    <link rel="prev" title="4. MMA Q1-100" href="MMA100.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -114,8 +118,6 @@
       
       
       
-        
-      
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
@@ -163,12 +165,12 @@
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Project Euler (PE)</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Py100.html">1. Python-OOP Q1-100</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Py200.html">2. Python-OOP Q101-300</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Py100_FP_way.html">3. Python-FP Q1-100</a></li>
 <li class="toctree-l1"><a class="reference internal" href="MMA100.html">4. MMA Q1-100</a></li>
-<li class="toctree-l1"><a class="reference internal" href="PE_hidden_math_questions.html">5. PE-Hidden-Math-Questions</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">5. PE-Hidden-Math-Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="PE_hidden_math_topics.html">6. PE-Hidden-Math-Topics</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">A-level Math</span></p>
@@ -244,7 +246,7 @@
       
       
       
-      <li><a href="_sources/README.md" target="_blank"
+      <li><a href="_sources/PE_hidden_math_questions.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -254,7 +256,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -320,7 +322,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Introduction</h1>
+    <h1>PE-Hidden-Math-Questions</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -330,8 +332,7 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software-and-files">Software and files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oop-to-fp">OOP to FP</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-200">5.1. Q1-200</a></li>
 </ul>
             </nav>
         </div>
@@ -343,58 +344,19 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="introduction">
-<h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h1>
-<p>Any questions, please send me Email: <a class="reference external" href="mailto:jonny&#46;tang745&#37;&#52;&#48;education&#46;nsw&#46;gov&#46;au">jonny<span>&#46;</span>tang745<span>&#64;</span>education<span>&#46;</span>nsw<span>&#46;</span>gov<span>&#46;</span>au</a></p>
-<p><strong>Project Euler</strong></p>
-<p>Jonny’s workbook of <a class="reference external" href="https://projecteuler.net/">Project Euler</a>. Jonny loves coding, especially the PE-style (VS. CS-style) when he was 10YO. Therefore, Tom assisted him with guidance and searching hidden info and knowledge.</p>
-<p><strong>A-level Math</strong></p>
-<p>Jonny already went through 4U math (HSC in NSW) once, after that Tom chose A-level math for Jonny’s review and progress, with a approach of computational coding for A-level math.</p>
-<section id="software-and-files">
-<h2>Software and files<a class="headerlink" href="#software-and-files" title="Link to this heading">#</a></h2>
-<p>While a qualified coder mastering 6 programming languages (PL), how to choose PLs is really a hard decision.</p>
-<ul class="simple">
-<li><p>We started this workbook using <strong>Python</strong> in VScode:</p>
-<ul>
-<li><p>Python (.ipynb): we start from Python, then we found Python’s <strong>SageMath</strong> - the second powerful CAS (computer algebra system).</p></li>
-</ul>
-</li>
-<li><p>We next started <strong>Mathematica</strong> (Wolfram languages, we will use MMA or Wolfram after):</p>
-<ul>
-<li><p>Mathematica (.nb): the best CAS.</p>
-<ul>
-<li><p>.nb -&gt; .ipynb ??</p></li>
-</ul>
-</li>
-<li><p>Wolfram notebook (.wlnb): this enables us running Mathematica kernel in VScode.</p>
-<ul>
-<li><p>.wlnb -&gt; .nb, ‘export to’ after running MMA</p></li>
-<li><p>.wlnb -&gt; .ipynb, see below</p></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Next, a PL with more FP? Ocaml? F#? Scala? Haskell? Rust? Make a comparison:</p>
-<ul>
-<li><ol class="arabic simple">
-<li><p>PL’s Coding-look in defining a Fibonacci; 2. Which FP is best for mathematics? Haskell is NO.1, but I really don’t like Haskell; 3. Math-related supports for these four languages; 4. Balance between FP and OOP; 5. Number of users in Project Euler for each PL; 6. libgen supports for each PL; 7. When the PL first appeared.</p></li>
+  <section class="tex2jax_ignore mathjax_ignore" id="pe-hidden-math-questions">
+<h1><span class="section-number">5. </span>PE-Hidden-Math-Questions<a class="headerlink" href="#pe-hidden-math-questions" title="Link to this heading">#</a></h1>
+<section id="q1-200">
+<h2><span class="section-number">5.1. </span>Q1-200<a class="headerlink" href="#q1-200" title="Link to this heading">#</a></h2>
+<ol class="arabic simple" start="69">
+<li><p>Totient Maximum欧拉函数 Euler’s Totient Function (or <span class="math notranslate nohighlight">\(\phi\)</span> function) has a general formulas as below, <span class="math notranslate nohighlight">\(p_i\)</span> is all of the coprime of x, where x is a positive integer.$<span class="math notranslate nohighlight">\(\phi(x)=x\prod_{i=1}^n(1-\frac{1}{p_i})\)</span>$</p></li>
 </ol>
-</li>
-<li><p>Decision: <strong>Rust</strong>. We will learn Rust next year.</p></li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="oop-to-fp">
-<h2>OOP to FP<a class="headerlink" href="#oop-to-fp" title="Link to this heading">#</a></h2>
-<p>We started workbook using Python in OOP (Object-oriented Programming) way, then we move to FP (Functional Programming) way in both MMA and Python.</p>
-<p>Even though both Python and Wolfram are not pure FP, they do help us understand the FP way.</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://old.reddit.com/r/functionalprogramming/wiki/books">FP books</a></p></li>
-<li><p><a class="reference external" href="https://reference.wolfram.com/language/guide/FunctionalProgramming.html">FP in Wolfram</a>: official website.</p></li>
-<li><p><a class="reference external" href="https://expression.readthedocs.io/en/latest/intro.html">FP in Python</a>: a web-notebook for beginner.</p></li>
-<li><p><a class="reference external" href="https://github.com/nayuki/Project-Euler-solutions">PE code in Java, Python, Mathematica, Haskell</a>: Nayuki use OOP in Python and FP in Haskell.</p></li>
-</ul>
+<ol class="arabic simple" start="99">
+<li><p>Largest ExponentialIn this question, I learned Ordinal theory (VS. Cardinal theory):- Ordinal data only introduces a ordering/ranking (e.g. A&gt;B), but we don’t know how large A or B is.- Cardinal further tell ‘how many’ of each thing, or showing quantity (e.g. 2&gt;1)When comparing huge numbers, I don’t need to know ‘how many’ they are, I just need to where they are (their ranking). So I can use log to shrink their coordinates: $<span class="math notranslate nohighlight">\(base^{exponent} =e^{exponent⋅log(base)}\)</span>$</p></li>
+</ol>
+<ol class="arabic simple" start="187">
+<li><p>Semiprimes<a class="reference external" href="https://en.wikipedia.org/wiki/Semiprime">A semiprime-counting formula</a>:$<span class="math notranslate nohighlight">\(\pi_{2}(n)= \)</span>$</p></li>
+</ol>
 </section>
 </section>
 
@@ -428,6 +390,24 @@
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="MMA100.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>MMA Q1-100</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="PE_hidden_math_topics.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>PE-Hidden-Math-Topics</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -445,8 +425,7 @@
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software-and-files">Software and files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oop-to-fp">OOP to FP</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-200">5.1. Q1-200</a></li>
 </ul>
   </nav></div>
 
