@@ -3,14 +3,15 @@ format: jb-book  # For Jupyter Book; adjust if using another generator
 # below are the contents structure
 root: intro  # intro.ipynb, defines the root page ( Indentation not tabs)
 parts:
-- caption: Project Euler
+- caption: Project Euler (PE)
   numbered: true
   chapters:
   - file: Py100
   - file: Py200
   - file: Py100_FP_way
   - file: MMA100         # convert wlnb to ipynb
-  - file: PE_hidden_math # convert wlnb to ipynb
+  - file: PE_hidden_math_questions # convert wlnb to ipynb
+  - file: PE_hidden_math_topics    # convert wlnb to ipynb
 
 - caption: A-level Math
   numbered: true

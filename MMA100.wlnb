@@ -20,266 +20,49 @@
    "kind": 2,
    "value": "(* 26 *)\r\n(* learn 4 functions: \r\n    Association[]\r\n    Module[]\r\n    KeyExistsQ[]\r\n    Mod[] *)\r\ncycleLength[d_] := Module[{rems = Association[], num = 1, pos = 1},\r\n  While[! KeyExistsQ[rems, num] && num != 0,\r\n    rems[num] = pos;\r\n    num = Mod[10 num, d];\r\n    pos++   ];\r\n  If[num == 0, 0, pos - rems[num]]];\r\n\r\nSortBy[Range[888, 999], cycleLength]\r\ncycleLength[983]",
    "languageId": "wolfram",
-   "outputs": [
-    {
-     "items": [
-      {
-       "data": "<div class=\"wexpr\"><wrow><w></w><wb>{</wb><wrow><w></w><w>900</w><w>,</w><w>960</w><w>,</w><w>990</w><w>,</w><w>888</w><w>,</w><w>925</w><w>,</w><w>999</w><w>,</w><w>909</w><w>,</w><w>984</w><w>,</w><w>896</w><w>,</w><w>910</w><w>,</w><w>924</w><w>,</w><w>936</w><w>,</w><w>945</w><w>,</w><w>962</w><w>,</w><w>975</w><w>,</w><w>956</w><w>,</w><w>902</w><w>,</w><w>948</w><w>,</w><w>954</w><w>,</w><w>930</w><w>,</w><w>992</w><w>,</w><w>935</w><w>,</w><w>891</w><w>,</w><w>912</w><w>,</w><w>950</w><w>,</w><w>988</w><w>,</w><w>920</w><w>,</w><w>968</w><w>,</w><w>949</w><w>,</w><w>959</w><w>,</w><w>972</w><w>,</w><w>928</w><w>,</w><w>957</w><w>,</w><w>964</w><w>,</w><w>898</w><w>,</w><w>927</w><w>,</w><w>996</w><w>,</w><w>889</w><w>,</w><w>903</w><w>,</w><w>946</w><w>,</w><w>980</w><w>,</w><w>890</w><w>,</w><w>979</w><w>,</w><w>940</w><w>,</w><w>918</w><w>,</w><w>952</w><w>,</w><w>963</w><w>,</w><w>944</w><w>,</w><w>915</w><w>,</w><w>976</w><w>,</w><w>897</w><w>,</w><w>938</w><w>,</w><w>966</w><w>,</w><w>906</w><w>,</w><w>942</w><w>,</w><w>951</w><w>,</w><w>978</w><w>,</w><w>913</w><w>,</w><w>955</w><w>,</w><w>970</w><w>,</w><w>985</w><w>,</w><w>995</w><w>,</w><w>981</w><w>,</w><w>943</w><w>,</w><w>993</w><w>,</w><w>904</w><w>,</w><w>986</w><w>,</w><w>908</w><w>,</w><w>931</w><w>,</w><w>973</w><w>,</w><w>987</w><w>,</w><w>969</w><w>,</w><w>894</w><w>,</w><w>907</w><w>,</w><w>914</w><w>,</w><w>921</w><w>,</w><w>926</w><w>,</w><w>933</w><w>,</w><w>997</w><w>,</w><w>895</w><w>,</w><w>905</w><w>,</w><w>965</w><w>,</w><w>901</w><w>,</w><w>923</w><w>,</w><w>994</w><w>,</w><w>892</w><w>,</w><w>916</w><w>,</w><w>932</w><w>,</w><w>934</w><w>,</w><w>958</w><w>,</w><w>939</w><w>,</w><w>967</w><w>,</w><w>917</w><w>,</w><w>893</w><w>,</w><w>899</w><w>,</w><w>911</w><w>,</w><w>919</w><w>,</w><w>922</w><w>,</w><w>989</w><w>,</w><w>929</w><w>,</w><w>961</w><w>,</w><w>947</w><w>,</w><w>974</w><w>,</w><w>982</w><w>,</w><w>991</w><w>,</w><w>998</w><w>,</w><w>937</w><w>,</w><w>941</w><w>,</w><w>953</w><w>,</w><w>971</w><w>,</w><w>977</w><w>,</w><w>983</w></wrow><wb>}</wb></wrow></div>",
-       "mime": "x-application/wolfram-language-html"
-      },
-      {
-       "data": "{900, 960, 990, 888, 925, 999, 909, 984, 896, 910, 924, 936, 945, 962, 975, 956, 902, 948, 954, 930, 992, 935, 891, 912, 950, 988, 920, 968, 949, 959, 972, 928, 957, 964, 898, 927, 996, 889, 903, 946, 980, 890, 979, 940, 918, 952, 963, 944, 915, 976, 897, 938, 966, 906, 942, 951, 978, 913, 955, 970, 985, 995, 981, 943, 993, 904, 986, 908, 931, 973, 987, 969, 894, 907, 914, 921, 926, 933, 997, 895, 905, 965, 901, 923, 994, 892, 916, 932, 934, 958, 939, 967, 917, 893, 899, 911, 919, 922, 989, 929, 961, 947, 974, 982, 991, 998, 937, 941, 953, 971, 977, 983}",
-       "mime": "text/plain"
-      }
-     ],
-     "id": "f694ad7d-fcda-45c5-bca8-d0196fa42c4d",
-     "metadata": {
-      "cellLabel": "Out[6]= ",
-      "isBoxData": false
-     }
-    },
-    {
-     "items": [
-      {
-       "data": "<div class=\"wexpr\"><w>982</w></div>",
-       "mime": "x-application/wolfram-language-html"
-      },
-      {
-       "data": "982",
-       "mime": "text/plain"
-      }
-     ],
-     "id": "6ee43376-f164-4687-9465-02689874793b",
-     "metadata": {
-      "cellLabel": "Out[7]= ",
-      "isBoxData": false
-     }
-    }
-   ],
+   "outputs": [],
    "metadata": {},
-   "executionSummary": {
-    "timing": {
-     "startTime": 1731374471280,
-     "endTime": 1731374471764
-    },
-    "executionOrder": 5,
-    "success": true
-   }
+   "executionSummary": {}
   },
   {
    "kind": 2,
    "value": "(* 31 Coin Sums: use graph traversal (DFS) with memoization*)\r\n(* learn functions:\r\n    ClearAll[] \r\n    Memoization(:= ... =): store results to avoid recalculating for the same pair\r\n    Table[]: loop over each coin in validCoins *)\r\nClearAll[graphSearchWays];\r\nvalidCoins = {1, 2, 5, 10, 20, 50, 100, 200};\r\ngraphSearchWays[n_, maxCoin_] := graphSearchWays[n, maxCoin] =\r\n  If[n == 0, \r\n          1, \r\n   Total[Table[If[coin <= maxCoin && coin <= n, \r\n                graphSearchWays[n - coin, coin], \r\n                  0], {coin, validCoins}]]];\r\n\r\ngraphSearchWays[200, 200] (*calculate n of total pairs*)\r\nTreeForm[ (*see logic structure*)\r\n  If[n == 0, 1, \r\n  Total[Table[If[coin <= maxCoin && coin <= n, \r\n              graphSearchWays[n - coin, coin], \r\n              0], {coin, validCoins}]]]]",
    "languageId": "wolfram",
-   "outputs": [
-    {
-     "items": [
-      {
-       "data": "<div class=\"wexpr\"><w>73682</w></div>",
-       "mime": "x-application/wolfram-language-html"
-      },
-      {
-       "data": "73682",
-       "mime": "text/plain"
-      }
-     ],
-     "id": "e2196999-a874-46dc-9c5c-79b30c5b13b9",
-     "metadata": {
-      "cellLabel": "Out[11]= ",
-      "isBoxData": false
-     }
-    },
-    {
-     "items": [
-      {
-       "data": "<div class=\"wexpr\"><wgraph class=\"resizable\" style=\"width:480px;height:335px;\" aspect-ratio=\"0.697917\" tabIndex=\"-1\"><img src=\"data:image/png;base64,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\nAABJRU5ErkJggg==\n\" /></wgraph></div>",
-       "mime": "x-application/wolfram-language-html"
-      },
-      {
-       "data": "TreeForm[If[n == 0, 1, Total[Table[If[coin <= maxCoin && coin <= n, graphSearchWays[n - coin, coin], 0], {coin, validCoins}]]]]",
-       "mime": "text/plain"
-      }
-     ],
-     "id": "b0c30b3d-1b2a-413e-9f99-65f896f102a2",
-     "metadata": {
-      "cellLabel": "Out[12]//TreeForm= ",
-      "isBoxData": false
-     }
-    }
-   ],
+   "outputs": [],
    "metadata": {},
-   "executionSummary": {
-    "timing": {
-     "startTime": 1731374471764,
-     "endTime": 1731374479807
-    },
-    "executionOrder": 8,
-    "success": true
-   }
+   "executionSummary": {}
   },
   {
    "kind": 2,
    "value": "(* 32 Pandigital Products\r\n    1) memoization \r\n    2) form number from digits\r\n    *)\r\nnum = {1, 2, 3, 4, 5, 6, 7, 8, 9};\r\n\r\nnumSearch[] := numSearch[] =\r\n    Total[Table[If[multiplicand*multiplier == product, \r\n\r\n        Fold[10#1 + #2 &,  ]\r\n                numSearch[num - dig, dig], 0],  {dig, num}\r\n]]\r\nnumSearch[]",
    "languageId": "wolfram",
-   "outputs": [
-    {
-     "items": [
-      {
-       "data": "<div class=\"wexpr\"><wrow><w></w><w>9</w><w></w><wrow><w></w><w>If</w><wrow><w></w><wb>[</wb><wrow><w></w><wrow><w></w><wrow><w></w><w>multiplicand</w><w></w><w>multiplier</w></wrow><w class=\"symbol\"></w><w>product</w></wrow><w>,</w><wrow><w></w><wrow><w></w><w>Fold</w><wrow><w></w><wb>[</wb><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>10</w><w></w><w>#1</w></wrow><w>+</w><w>#2</w></wrow><w>&amp;</w></wrow><w>,</w><w>Null</w></wrow><wb>]</wb></wrow></wrow><w></w><wrow><w></w><w>numSearch</w><wrow><w></w><wb>[</wb><wrow><w></w><wrow><w></w><w>num</w><w>-</w><w>dig</w></wrow><w>,</w><w>dig</w></wrow><wb>]</wb></wrow></wrow></wrow><w>,</w><w>0</w></wrow><wb>]</wb></wrow></wrow></wrow></div>",
-       "mime": "x-application/wolfram-language-html"
-      },
-      {
-       "data": "9*If[multiplicand*multiplier == product, Fold[10*#1 + #2 & , Null]*numSearch[num - dig, dig], 0]",
-       "mime": "text/plain"
-      }
-     ],
-     "id": "ea338406-9988-4d43-a727-9d7e074cf512",
-     "metadata": {
-      "cellLabel": "Out[15]= ",
-      "isBoxData": false
-     }
-    }
-   ],
+   "outputs": [],
    "metadata": {},
-   "executionSummary": {
-    "timing": {
-     "startTime": 1731374479808,
-     "endTime": 1731374480265
-    },
-    "executionOrder": 13,
-    "success": true
-   }
+   "executionSummary": {}
   },
   {
    "kind": 2,
    "value": "(*35 Circular Sums*) \r\nrotations[n_Integer] := Module[{digits = IntegerDigits[n]},\r\n  FromDigits /@ NestList[RotateLeft, digits, Length[digits] - 1]]\r\n\r\nisCircularPrime[n_Integer] := AllTrue[rotations[n], PrimeQ] (*if all rotations of a number are prime*)\r\ncircularPrimes = Select[Range[2, 999999], isCircularPrime]",
    "languageId": "wolfram",
-   "outputs": [
-    {
-     "items": [
-      {
-       "data": "<div class=\"wexpr\"><wrow><w></w><wb>{</wb><wrow><w></w><w>2</w><w>,</w><w>3</w><w>,</w><w>5</w><w>,</w><w>7</w><w>,</w><w>11</w><w>,</w><w>13</w><w>,</w><w>17</w><w>,</w><w>31</w><w>,</w><w>37</w><w>,</w><w>71</w><w>,</w><w>73</w><w>,</w><w>79</w><w>,</w><w>97</w><w>,</w><w>113</w><w>,</w><w>131</w><w>,</w><w>197</w><w>,</w><w>199</w><w>,</w><w>311</w><w>,</w><w>337</w><w>,</w><w>373</w><w>,</w><w>719</w><w>,</w><w>733</w><w>,</w><w>919</w><w>,</w><w>971</w><w>,</w><w>991</w><w>,</w><w>1193</w><w>,</w><w>1931</w><w>,</w><w>3119</w><w>,</w><w>3779</w><w>,</w><w>7793</w><w>,</w><w>7937</w><w>,</w><w>9311</w><w>,</w><w>9377</w><w>,</w><w>11939</w><w>,</w><w>19391</w><w>,</w><w>19937</w><w>,</w><w>37199</w><w>,</w><w>39119</w><w>,</w><w>71993</w><w>,</w><w>91193</w><w>,</w><w>93719</w><w>,</w><w>93911</w><w>,</w><w>99371</w><w>,</w><w>193939</w><w>,</w><w>199933</w><w>,</w><w>319993</w><w>,</w><w>331999</w><w>,</w><w>391939</w><w>,</w><w>393919</w><w>,</w><w>919393</w><w>,</w><w>933199</w><w>,</w><w>939193</w><w>,</w><w>939391</w><w>,</w><w>993319</w><w>,</w><w>999331</w></wrow><wb>}</wb></wrow></div>",
-       "mime": "x-application/wolfram-language-html"
-      },
-      {
-       "data": "{2, 3, 5, 7, 11, 13, 17, 31, 37, 71, 73, 79, 97, 113, 131, 197, 199, 311, 337, 373, 719, 733, 919, 971, 991, 1193, 1931, 3119, 3779, 7793, 7937, 9311, 9377, 11939, 19391, 19937, 37199, 39119, 71993, 91193, 93719, 93911, 99371, 193939, 199933, 319993, 331999, 391939, 393919, 919393, 933199, 939193, 939391, 993319, 999331}",
-       "mime": "text/plain"
-      }
-     ],
-     "id": "baefd575-869b-4c67-8fca-3cd84141c815",
-     "metadata": {
-      "cellLabel": "Out[18]= ",
-      "isBoxData": false
-     }
-    }
-   ],
+   "outputs": [],
    "metadata": {},
-   "executionSummary": {
-    "timing": {
-     "startTime": 1731374480266,
-     "endTime": 1731374494458
-    },
-    "executionOrder": 16,
-    "success": true
-   }
+   "executionSummary": {}
   },
   {
    "kind": 2,
    "value": "(* 38 Pandigital Multiples\r\n    already presented (1,2,3) and (1,2,3,4,5)->918273645,(1,2,3,4,5,6,7,8,9)->123456789,calculated 3 options and n>1\r\n    left 2 options: (1,2,3,4,5,6,7) (1,2,3,4,5,6,7,8) *)\r\n(* (1,2) *1=****, *2=1****,\r\n (1,2,3,4) *1=**, *2=**, *3=**, *4=***,\r\n  (1,2,3,4,5,6) *1=*, *2=*, *3=*, *4=**, *5=**, *6=**,\r\n   (1,2,3,4,5,6,7) and (1,2,3,4,5,6,7,8) not possible*)\r\nSelect[Range[5000, 9999], \r\n  Function[n, \r\n    Length[Union[IntegerDigits[n], IntegerDigits[2 n]]] == 9 && \r\n    1000 <= 2 n < 100000\r\n  ]\r\n]\r\nSelect[Range[10, 99], Function[n, Length[Union[IntegerDigits[n #]] & /@ Range[4]]] == 9]\r\nSelect[Range[1, 100], \r\n  Function[n, \r\n    Length[Union[IntegerDigits[n], IntegerDigits[6 n]]] == 9 && \r\n    1 <= 6 n < 100000\r\n  ]\r\n]\r\nSelect[Range[100,1000], \r\n  Function[n, \r\n    Length[Union[IntegerDigits[n], IntegerDigits[3 n]]] == 9 && \r\n    1 <= 3 n < 100000\r\n  ]\r\n]",
    "languageId": "wolfram",
-   "outputs": [
-    {
-     "items": [
-      {
-       "data": "<div class=\"wexpr\"><wrow><w></w><wb>{</wb><wrow><w></w><w>5238</w><w>,</w><w>5239</w><w>,</w><w>5364</w><w>,</w><w>5382</w><w>,</w><w>5392</w><w>,</w><w>5436</w><w>,</w><w>5486</w><w>,</w><w>6354</w><w>,</w><w>6435</w><w>,</w><w>6485</w><w>,</w><w>6729</w><w>,</w><w>6792</w><w>,</w><w>6852</w><w>,</w><w>6927</w><w>,</w><w>7269</w><w>,</w><w>7293</w><w>,</w><w>7329</w><w>,</w><w>7692</w><w>,</w><w>7923</w><w>,</w><w>7932</w><w>,</w><w>8235</w><w>,</w><w>8352</w><w>,</w><w>8523</w><w>,</w><w>8532</w><w>,</w><w>8546</w><w>,</w><w>8645</w><w>,</w><w>8652</w><w>,</w><w>9235</w><w>,</w><w>9267</w><w>,</w><w>9273</w><w>,</w><w>9327</w><w>,</w><w>9352</w></wrow><wb>}</wb></wrow></div>",
-       "mime": "x-application/wolfram-language-html"
-      },
-      {
-       "data": "{5238, 5239, 5364, 5382, 5392, 5436, 5486, 6354, 6435, 6485, 6729, 6792, 6852, 6927, 7269, 7293, 7329, 7692, 7923, 7932, 8235, 8352, 8523, 8532, 8546, 8645, 8652, 9235, 9267, 9273, 9327, 9352}",
-       "mime": "text/plain"
-      }
-     ],
-     "id": "fafa70f6-2392-4300-9c75-91a7c0ed5357",
-     "metadata": {
-      "cellLabel": "Out[19]= ",
-      "isBoxData": false
-     }
-    },
-    {
-     "items": [
-      {
-       "data": "<div class=\"wexpr\"><wrow><w></w><wb>{</wb><wb>}</wb></wrow></div>",
-       "mime": "x-application/wolfram-language-html"
-      },
-      {
-       "data": "{}",
-       "mime": "text/plain"
-      }
-     ],
-     "id": "fa158115-1e0a-462c-a82d-da2af04550bb",
-     "metadata": {
-      "cellLabel": "Out[20]= ",
-      "isBoxData": false
-     }
-    },
-    {
-     "items": [
-      {
-       "data": "<div class=\"wexpr\"><wrow><w></w><wb>{</wb><wb>}</wb></wrow></div>",
-       "mime": "x-application/wolfram-language-html"
-      },
-      {
-       "data": "{}",
-       "mime": "text/plain"
-      }
-     ],
-     "id": "ec5a26e0-f1c4-403a-aee7-04ccda988631",
-     "metadata": {
-      "cellLabel": "Out[21]= ",
-      "isBoxData": false
-     }
-    },
-    {
-     "items": [
-      {
-       "data": "<div class=\"wexpr\"><wrow><w></w><wb>{</wb><wb>}</wb></wrow></div>",
-       "mime": "x-application/wolfram-language-html"
-      },
-      {
-       "data": "{}",
-       "mime": "text/plain"
-      }
-     ],
-     "id": "56350169-dc0f-4621-b1a0-7962e808265e",
-     "metadata": {
-      "cellLabel": "Out[22]= ",
-      "isBoxData": false
-     }
-    }
-   ],
+   "outputs": [],
    "metadata": {},
-   "executionSummary": {
-    "timing": {
-     "startTime": 1731374494459,
-     "endTime": 1731374495069
-    },
-    "executionOrder": 19,
-    "success": true
-   }
+   "executionSummary": {}
   },
   {
    "kind": 2,
-   "value": "(* 45 Triangular, Pentagonal, and Hexagonal \r\n    what I can learn?\r\n    1) defining series \r\n    2) finding common items in lists \r\n    Faster Method???*)\r\n\r\nisTriangular[n_Integer] := Module[{k},\r\n  k = (-1 + Sqrt[1 + 8 n]) / 2;\r\n  IntegerQ[k]\r\n]\r\n\r\nisPentagonal[n_Integer] := Module[{k},\r\n  k = (1 + Sqrt[1 + 24 n]) / 6;\r\n  IntegerQ[k]\r\n]\r\n\r\nisHexagonal[n_Integer] := Module[{k},\r\n  k = (1 + Sqrt[1 + 8 n]) / 4;\r\n  IntegerQ[k]\r\n]\r\n\r\n(* Example usage *)\r\nisTriangularPentagonalHexagonal[n_]:=isTriangular[n]&&isPentagonal[n]&&isHexagonal[n]\r\nlst=Table[isTriangularPentagonalHexagonal[n],{n,50000000,60000000}];\r\nCount[lst,True]",
+   "value": "(* 45 Triangular, Pentagonal, and Hexagonal \r\n    what I can learn?\r\n    1) defining series \r\n    2) finding common items in lists using set theory: Intersection and Union*)\r\nn=99999;\r\nTri = #(# + 1)/2 &  /@ Range[n];\r\nPen = #(3# - 1)/2 & /@ Range[n];\r\nHex = #(2# - 1) &   /@ Range[n];\r\nIntersection[Tri,Pen,Hex]",
    "languageId": "wolfram",
    "outputs": [],
    "metadata": {},
-   "executionSummary": {
-    "timing": {
-     "startTime": 1731374495069,
-     "endTime": 1731374495738
-    },
-    "executionOrder": 23,
-    "success": false
-   }
+   "executionSummary": {}
   },
   {
    "kind": 2,
@@ -287,13 +70,7 @@
    "languageId": "wolfram",
    "outputs": [],
    "metadata": {},
-   "executionSummary": {
-    "timing": {
-     "startTime": 1731374495739,
-     "endTime": 1731374495739
-    },
-    "success": false
-   }
+   "executionSummary": {}
   },
   {
    "kind": 2,
@@ -301,13 +78,7 @@
    "languageId": "wolfram",
    "outputs": [],
    "metadata": {},
-   "executionSummary": {
-    "timing": {
-     "startTime": 1731374495741,
-     "endTime": 1731374495741
-    },
-    "success": false
-   }
+   "executionSummary": {}
   },
   {
    "kind": 1,
@@ -323,13 +94,7 @@
    "languageId": "wolfram",
    "outputs": [],
    "metadata": {},
-   "executionSummary": {
-    "timing": {
-     "startTime": 1731374495742,
-     "endTime": 1731374495742
-    },
-    "success": false
-   }
+   "executionSummary": {}
   },
   {
    "kind": 2,
@@ -337,35 +102,15 @@
    "languageId": "wolfram",
    "outputs": [],
    "metadata": {},
-   "executionSummary": {
-    "timing": {
-     "startTime": 1731374495743,
-     "endTime": 1731374495744
-    },
-    "success": false
-   }
-  },
-  {
-   "kind": 1,
-   "value": "欧拉函数 Euler's Totient Function has a general formulas as below, $p_i$ is all of the coprime of x, where x is a positive integer.\r\n$$\\phi(x)=x\\prod_{i=1}^n(1-\\frac{1}{p_i})$$",
-   "languageId": "markdown",
-   "outputs": [],
-   "metadata": {},
    "executionSummary": {}
   },
   {
    "kind": 2,
-   "value": "(* 71 Ordered Fractions \r\n    Table[] gen [{numerator}, {denominator}]\r\n    Floor[] gen greatest integer <= d*target\r\n    Select[] and MaximalBy[] 结构都是 list + function\r\n    [[2]] the 2nd item, #[[2]] the 2nd input of the function \r\n    *)\r\ntarget = 3/7;\r\nMaximalBy[Select[  Table[ {Floor[d*target], d}, {d, 2, 1000000} ], \r\n                          #[[1]]/#[[2]] < target & ], \r\n         #[[1]]/#[[2]] & ]",
+   "value": "(* 71 Ordered Fractions \r\n    Table[] gen [{numerator}, {denominator}]\r\n    Floor[] gen greatest integer <= d*target\r\n    Select[] and MaximalBy[], both are [list + function]\r\n    [[2]] the 2nd item, #[[2]] the 2nd input of the function \r\n    *)\r\ntarget = 3/7;\r\nMaximalBy[Select[  Table[ {Floor[d*target], d}, {d, 2, 1000000} ], \r\n                          #[[1]]/#[[2]] < target & ], \r\n         #[[1]]/#[[2]] & ]",
    "languageId": "wolfram",
    "outputs": [],
    "metadata": {},
-   "executionSummary": {
-    "timing": {
-     "startTime": 1731374495744,
-     "endTime": 1731374495744
-    },
-    "success": false
-   }
+   "executionSummary": {}
   },
   {
    "kind": 2,
@@ -373,27 +118,15 @@
    "languageId": "wolfram",
    "outputs": [],
    "metadata": {},
-   "executionSummary": {
-    "timing": {
-     "startTime": 1731374495745,
-     "endTime": 1731374495745
-    },
-    "success": false
-   }
+   "executionSummary": {}
   },
   {
    "kind": 2,
-   "value": "(* 99 \r\n   base^exponent =e^[exponent⋅log(base)]\r\n   [[2]] denotes the 2nd item in {{1,2},{1,2}} \r\n    *)\r\ndata = Import[\"https://projecteuler.net/resources/documents/0099_base_exp.txt\", \"CSV\"];\r\nnew = Map[#[[2]] * Log[#[[1]]] &, data];\r\nPosition[new, Max[new]]",
+   "value": "(* 99 Largest Exponential\r\n   [[2]] denotes the 2nd item in {{1,2},{1,2}} *)\r\ndata = Import[\"https://projecteuler.net/resources/documents/0099_base_exp.txt\", \"CSV\"];\r\nnew = Map[#[[2]] * Log[#[[1]]] &, data];\r\nPosition[new, Max[new]]",
    "languageId": "wolfram",
    "outputs": [],
    "metadata": {},
-   "executionSummary": {
-    "timing": {
-     "startTime": 1731374495746,
-     "endTime": 1731374495746
-    },
-    "success": false
-   }
+   "executionSummary": {}
   },
   {
    "kind": 1,
@@ -409,13 +142,7 @@
    "languageId": "wolfram",
    "outputs": [],
    "metadata": {},
-   "executionSummary": {
-    "timing": {
-     "startTime": 1731374495747,
-     "endTime": 1731374495748
-    },
-    "success": false
-   }
+   "executionSummary": {}
   },
   {
    "kind": 2,
@@ -423,13 +150,7 @@
    "languageId": "wolfram",
    "outputs": [],
    "metadata": {},
-   "executionSummary": {
-    "timing": {
-     "startTime": 1731374495749,
-     "endTime": 1731374495749
-    },
-    "success": false
-   }
+   "executionSummary": {}
   },
   {
    "kind": 2,
@@ -437,13 +158,7 @@
    "languageId": "wolfram",
    "outputs": [],
    "metadata": {},
-   "executionSummary": {
-    "timing": {
-     "startTime": 1731374495749,
-     "endTime": 1731374495750
-    },
-    "success": false
-   }
+   "executionSummary": {}
   },
   {
    "kind": 2,
@@ -451,13 +166,7 @@
    "languageId": "wolfram",
    "outputs": [],
    "metadata": {},
-   "executionSummary": {
-    "timing": {
-     "startTime": 1731374495750,
-     "endTime": 1731374495751
-    },
-    "success": false
-   }
+   "executionSummary": {}
   },
   {
    "kind": 2,
@@ -465,13 +174,7 @@
    "languageId": "wolfram",
    "outputs": [],
    "metadata": {},
-   "executionSummary": {
-    "timing": {
-     "startTime": 1731374495753,
-     "endTime": 1731374495755
-    },
-    "success": false
-   }
+   "executionSummary": {}
   },
   {
    "kind": 2,
@@ -479,13 +182,7 @@
    "languageId": "wolfram",
    "outputs": [],
    "metadata": {},
-   "executionSummary": {
-    "timing": {
-     "startTime": 1731374495755,
-     "endTime": 1731374495756
-    },
-    "success": false
-   }
+   "executionSummary": {}
   },
   {
    "kind": 2,
@@ -493,13 +190,7 @@
    "languageId": "wolfram",
    "outputs": [],
    "metadata": {},
-   "executionSummary": {
-    "timing": {
-     "startTime": 1731374495757,
-     "endTime": 1731374495757
-    },
-    "success": false
-   }
+   "executionSummary": {}
   },
   {
    "kind": 2,
@@ -507,13 +198,7 @@
    "languageId": "wolfram",
    "outputs": [],
    "metadata": {},
-   "executionSummary": {
-    "timing": {
-     "startTime": 1731374495758,
-     "endTime": 1731374495758
-    },
-    "success": false
-   }
+   "executionSummary": {}
   }
  ]
 }

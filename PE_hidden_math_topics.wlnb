@@ -2,15 +2,7 @@
  "cells": [
   {
    "kind": 1,
-   "value": "# PE-Hidden-Math",
-   "languageId": "markdown",
-   "outputs": [],
-   "metadata": {},
-   "executionSummary": {}
-  },
-  {
-   "kind": 1,
-   "value": "FP in Wolfram: https://reference.wolfram.com/language/guide/FunctionalProgramming.html\r\n\r\nmath topic list: https://github.com/leduckhai/Awesome-Competitive-Programming?tab=readme-ov-file\r\n\r\nPE problems can be solved using multiple approaches and often involve a combination of techniques.",
+   "value": "# PE-Hidden-Math-Topics",
    "languageId": "markdown",
    "outputs": [],
    "metadata": {},
@@ -106,14 +98,7 @@
     }
    ],
    "metadata": {},
-   "executionSummary": {
-    "timing": {
-     "startTime": 1731374470705,
-     "endTime": 1731374471279
-    },
-    "executionOrder": 1,
-    "success": true
-   }
+   "executionSummary": {}
   },
   {
    "kind": 1,
