@@ -1,0 +1,965 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>3. PE Q51-75 &#8212; Jonny Workbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'PE75';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="5. PE Q76-100" href="PE100.html" />
+    <link rel="prev" title="2. PE Q26-50" href="PE50.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Jonny Workbook</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Project Euler (PE)</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="PE25.html">1. PE Q1-25</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PE50.html">2. PE Q26-50</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. PE Q51-75</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="PE100.html">5. PE Q76-100</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PE300.html">6. PE Q101-300</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PE_hidden_math.html">7. PE-Hidden-Math</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">A-level Math</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Alevel_math.html">8. A-level-math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Alevel_math_further.html">9. A-level-further</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/tomctang/10pe" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/PE75.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>PE Q51-75</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">3. PE Q51-75</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-51">3.1. PE 51</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-52">3.2. PE 52</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-53">3.3. PE 53</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-55">3.4. PE 55</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-56">3.5. PE 56</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-57">3.6. PE 57</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-58">3.7. PE 58</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-62">3.8. PE 62</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-63">3.9. PE 63</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-65">3.10. PE 65</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-66">3.11. PE 66</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-69">3.12. PE 69</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-71">4. PE 71</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-74">4.1. PE 74</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-75">4.2. PE 75</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="pe-q51-75">
+<h1><span class="section-number">3. </span>PE Q51-75<a class="headerlink" href="#pe-q51-75" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">run</span> <span class="n">PE_pre_running</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="pe-51">
+<h2><span class="section-number">3.1. </span>PE 51<a class="headerlink" href="#pe-51" title="Link to this heading">#</a></h2>
+</section>
+<section id="pe-52">
+<h2><span class="section-number">3.2. </span>PE 52<a class="headerlink" href="#pe-52" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#52 Permuted Multiples</span>
+<span class="k">def</span> <span class="nf">permuted</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">listnum</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)))</span>
+    <span class="n">listnum1</span><span class="o">=</span><span class="n">listnum</span><span class="p">[:]</span>
+    <span class="n">listnum1</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+    <span class="n">m</span><span class="o">=</span><span class="mi">1</span>
+    <span class="n">old</span><span class="o">=</span><span class="n">list_to_int</span><span class="p">(</span><span class="n">listnum</span><span class="p">)</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">n</span><span class="o">=</span><span class="n">old</span><span class="o">*</span><span class="p">(</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">test</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)))</span>
+        <span class="n">test</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">test</span><span class="o">!=</span><span class="n">listnum1</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="n">m</span><span class="o">+=</span><span class="mi">1</span>
+    <span class="k">return</span> <span class="n">m</span>
+<span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+    <span class="n">n</span><span class="o">=</span><span class="mi">1000</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">num</span><span class="o">=</span><span class="n">permuted</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">num</span><span class="o">&gt;=</span><span class="n">m</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="n">n</span><span class="o">+=</span><span class="mi">1</span>
+    <span class="k">return</span> <span class="n">n</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">solve</span><span class="p">(</span><span class="mi">6</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pe-53">
+<h2><span class="section-number">3.3. </span>PE 53<a class="headerlink" href="#pe-53" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 53 Combinatoric Selections</span>
+<span class="k">def</span> <span class="nf">ncr</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">factorial</span><span class="p">(</span><span class="n">r</span><span class="p">)</span><span class="o">*</span><span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">r</span><span class="p">))</span>
+
+<span class="n">over_million</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">22</span><span class="p">,</span><span class="mi">101</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">ncr</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">r</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">1000000</span><span class="p">:</span>
+            <span class="n">over_million</span><span class="o">+=</span><span class="mi">1</span>
+<span class="n">over_million</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pe-55">
+<h2><span class="section-number">3.4. </span>PE 55<a class="headerlink" href="#pe-55" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#55 Lychrel Numbers</span>
+<span class="n">MAX_ITERATIONS</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="k">def</span> <span class="nf">isPalindrome</span><span class="p">(</span><span class="n">number</span><span class="p">):</span> 
+	<span class="k">return</span> <span class="n">number</span> <span class="o">==</span> <span class="n">reverse</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">reverse</span><span class="p">(</span><span class="n">number</span><span class="p">):</span> 
+	<span class="n">reverse</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> 
+	<span class="k">while</span> <span class="p">(</span><span class="n">number</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span> 
+		<span class="n">remainder</span> <span class="o">=</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">10</span>
+		<span class="n">reverse</span> <span class="o">=</span> <span class="p">(</span><span class="n">reverse</span> <span class="o">*</span> <span class="mi">10</span><span class="p">)</span> <span class="o">+</span> <span class="n">remainder</span>
+		<span class="n">number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">number</span> <span class="o">/</span> <span class="mi">10</span><span class="p">)</span>
+	<span class="k">return</span> <span class="n">reverse</span>
+<span class="k">def</span> <span class="nf">isLychrel</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">MAX_ITERATIONS</span><span class="p">):</span> 
+		<span class="n">number</span><span class="o">+=</span><span class="n">reverse</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">isPalindrome</span><span class="p">(</span><span class="n">number</span><span class="p">)):</span> 
+			<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">return</span> <span class="kc">True</span>
+<span class="n">num_lyc</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10000</span><span class="p">):</span>
+	<span class="k">if</span> <span class="n">isLychrel</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">==</span><span class="kc">True</span><span class="p">:</span>
+		<span class="n">num_lyc</span><span class="o">+=</span><span class="mi">1</span>
+<span class="n">num_lyc</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pe-56">
+<h2><span class="section-number">3.5. </span>PE 56<a class="headerlink" href="#pe-56" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#56 Powerful Digit Sum</span>
+<span class="n">sum_num</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">):</span>
+        <span class="n">current_sum</span><span class="o">=</span><span class="mi">0</span>
+        <span class="n">power</span><span class="o">=</span><span class="n">i</span><span class="o">**</span><span class="n">j</span>
+        <span class="n">list_power</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">power</span><span class="p">)))</span>
+        <span class="k">for</span> <span class="n">digit</span> <span class="ow">in</span> <span class="n">list_power</span><span class="p">:</span>
+            <span class="n">current_sum</span><span class="o">+=</span><span class="n">digit</span>
+        <span class="k">if</span> <span class="n">current_sum</span><span class="o">&gt;</span><span class="n">sum_num</span><span class="p">:</span>
+            <span class="n">sum_num</span><span class="o">=</span><span class="n">current_sum</span>
+<span class="n">sum_num</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pe-57">
+<h2><span class="section-number">3.6. </span>PE 57<a class="headerlink" href="#pe-57" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 57 Square Root Convergents</span>
+<span class="k">def</span> <span class="nf">convergent_square_root2</span><span class="p">(</span><span class="n">term</span><span class="p">):</span>
+    <span class="n">numerator</span><span class="o">=</span><span class="mi">3</span>
+    <span class="n">denominator</span><span class="o">=</span><span class="mi">2</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">term</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">denominator1</span><span class="o">=</span><span class="n">numerator</span><span class="o">+</span><span class="n">denominator</span>
+        <span class="n">numerator</span><span class="o">=</span><span class="n">denominator</span><span class="o">+</span><span class="n">denominator1</span>
+        <span class="n">denominator</span><span class="o">=</span><span class="n">denominator1</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">numerator</span><span class="p">,</span><span class="n">denominator</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">solve</span><span class="p">():</span>
+    <span class="n">ans</span><span class="o">=</span><span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1001</span><span class="p">):</span>
+        <span class="n">fraction</span><span class="o">=</span><span class="n">convergent_square_root2</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">n</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">fraction</span><span class="p">[</span><span class="mi">0</span><span class="p">])))</span>
+        <span class="n">d</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">fraction</span><span class="p">[</span><span class="mi">1</span><span class="p">])))</span> <span class="c1">#separates number&#39;s digits into list</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">&gt;</span><span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
+            <span class="n">ans</span><span class="o">+=</span><span class="mi">1</span>
+    <span class="k">return</span> <span class="n">ans</span>
+
+<span class="n">solve</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pe-58">
+<h2><span class="section-number">3.7. </span>PE 58<a class="headerlink" href="#pe-58" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 58 Spiral Primes</span>
+<span class="c1"># find quicker solution</span>
+<span class="kn">from</span> <span class="nn">gmpy2</span> <span class="kn">import</span> <span class="n">is_prime</span>
+<span class="n">diagonal</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">n</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">x</span><span class="o">=</span><span class="mi">2</span>
+<span class="n">spiral_percentage</span><span class="o">=</span><span class="mi">100</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5000000</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">spiral_percentage</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+        <span class="n">n</span><span class="o">+=</span><span class="n">x</span>
+        <span class="n">diagonal</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="k">while</span> <span class="n">spiral_percentage</span><span class="o">&gt;=</span><span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">spiral_percentage</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+        <span class="n">n</span><span class="o">+=</span><span class="n">x</span>
+        <span class="n">diagonal</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">primes</span><span class="o">=</span><span class="mi">0</span>
+    <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">diagonal</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">is_prime</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+            <span class="n">primes</span><span class="o">+=</span><span class="mi">1</span>
+    <span class="n">spiral_percentage</span><span class="o">=</span><span class="mi">100</span><span class="o">*</span><span class="n">primes</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">diagonal</span><span class="p">)</span>
+<span class="n">n</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pe-62">
+<h2><span class="section-number">3.8. </span>PE 62<a class="headerlink" href="#pe-62" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#62 </span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">cubes</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">cube</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">3</span><span class="p">)))</span>
+    <span class="n">cubes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cube</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">cubes</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">cube</span><span class="p">)</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">((</span><span class="n">cubes</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">cube</span><span class="p">))</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>
+        <span class="k">break</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pe-63">
+<h2><span class="section-number">3.9. </span>PE 63<a class="headerlink" href="#pe-63" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 63 Powerful Digit Counts</span>
+<span class="n">num</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">22</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">length</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="n">j</span><span class="p">)</span><span class="o">==</span><span class="n">j</span><span class="p">:</span>
+            <span class="n">num</span><span class="o">+=</span><span class="mi">1</span>
+<span class="n">num</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pe-65">
+<h2><span class="section-number">3.10. </span>PE 65<a class="headerlink" href="#pe-65" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#65 Convergents of e</span>
+<span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">n</span><span class="o">=</span><span class="mi">2</span>
+    <span class="n">prev_n</span><span class="o">=</span><span class="mi">1</span>
+    <span class="n">fract</span><span class="o">=</span><span class="mi">1</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">temp</span><span class="o">=</span><span class="n">prev_n</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">k</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+            <span class="n">fract</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="nb">int</span><span class="p">(</span><span class="n">k</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">fract</span><span class="o">=</span><span class="mi">1</span>
+        <span class="n">prev_n</span><span class="o">=</span><span class="n">n</span>
+        <span class="n">n</span><span class="o">=</span><span class="n">fract</span> <span class="o">*</span> <span class="n">prev_n</span> <span class="o">+</span> <span class="n">temp</span>
+    <span class="nb">sum</span> <span class="o">=</span> <span class="n">digit_sum</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">sum</span>
+<span class="k">def</span> <span class="nf">digit_sum</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">sum</span> <span class="o">=</span> <span class="nb">sum</span> <span class="o">+</span> <span class="p">(</span><span class="n">num</span> <span class="o">%</span> <span class="mi">10</span><span class="p">)</span>
+        <span class="n">num</span> <span class="o">=</span> <span class="n">num</span> <span class="o">//</span> <span class="mi">10</span>
+    <span class="k">return</span> <span class="nb">sum</span>
+<span class="c1">#cal</span>
+<span class="n">solve</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">*</span> <span class="mi">65</span> <span class="n">Convergents</span> <span class="n">of</span> <span class="n">e</span> <span class="o">*</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pe-66">
+<h2><span class="section-number">3.11. </span>PE 66<a class="headerlink" href="#pe-66" title="Link to this heading">#</a></h2>
+<p>see <a class="reference external" href="https://en.wikipedia.org/wiki/Pell%27s_equation">https://en.wikipedia.org/wiki/Pell’s_equation</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#66 Diophantine Equation, </span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pe-69">
+<h2><span class="section-number">3.12. </span>PE 69<a class="headerlink" href="#pe-69" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#69 Totient Maximum</span>
+<span class="k">def</span> <span class="nf">factors</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">intnum</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span>
+    <span class="n">num</span><span class="o">=</span><span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">intnum</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">n</span><span class="o">%</span><span class="n">i</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+            <span class="n">num</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">num</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">n</span><span class="o">/</span><span class="n">number</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">num</span><span class="p">:</span>
+            <span class="n">num</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="n">number</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">num</span>
+<span class="k">def</span> <span class="nf">prime1</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">factors</span><span class="p">(</span><span class="n">n</span><span class="p">))</span><span class="o">==</span><span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="kc">False</span>
+<span class="k">def</span> <span class="nf">smaller</span><span class="p">(</span><span class="n">mt</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">m</span><span class="o">&lt;</span><span class="n">n</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">m</span>
+    <span class="k">elif</span> <span class="n">m</span><span class="o">&gt;</span><span class="n">n</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;same&#39;</span>
+<span class="k">def</span> <span class="nf">bcf</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="n">fac</span><span class="o">=</span><span class="n">factors</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+    <span class="n">fac1</span><span class="o">=</span><span class="n">factors</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">facs</span><span class="o">=</span><span class="n">fac</span><span class="o">+</span><span class="n">fac1</span>
+    <span class="n">facs</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+    <span class="n">facs</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">factor</span> <span class="ow">in</span> <span class="n">facs</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">factor</span> <span class="ow">in</span> <span class="n">fac</span> <span class="ow">and</span> <span class="n">factor</span> <span class="ow">in</span> <span class="n">fac1</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">factor</span>
+<span class="k">def</span> <span class="nf">coprime</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">m</span><span class="o">==</span><span class="mi">1</span> <span class="ow">or</span> <span class="n">n</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">if</span> <span class="n">prime</span><span class="p">(</span><span class="n">m</span><span class="p">)</span><span class="o">==</span><span class="kc">True</span> <span class="ow">or</span> <span class="n">prime</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">==</span><span class="kc">True</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">if</span> <span class="n">bcf</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+<span class="k">def</span> <span class="nf">phi</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">num</span><span class="o">=</span><span class="mi">1</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">coprime</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span><span class="o">==</span><span class="kc">True</span><span class="p">:</span>
+            <span class="n">num</span><span class="o">+=</span><span class="mi">1</span>
+    <span class="k">return</span> <span class="n">num</span>
+<span class="k">def</span> <span class="nf">totient</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">big</span><span class="o">=</span><span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="n">num</span><span class="o">=</span><span class="n">i</span><span class="o">/</span><span class="n">phi</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">num</span><span class="o">&gt;</span><span class="n">big</span><span class="p">:</span>
+            <span class="n">big</span><span class="o">=</span><span class="n">num</span>
+    <span class="k">return</span> <span class="n">big</span>
+<span class="n">totient</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#69 FP   欧拉函数Euler&#39;s Totient Function</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">totient</span>
+
+<span class="n">seq</span> <span class="o">=</span> <span class="p">[</span><span class="n">n</span> <span class="o">/</span> <span class="n">totient</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1000000</span><span class="p">)]</span> <span class="c1"># Generate the sequence using the totient function</span>
+<span class="n">max_value</span>    <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span>
+<span class="n">max_position</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span> <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="n">max_value</span><span class="p">]</span>
+<span class="n">max_position</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">*</span> <span class="mi">69</span> <span class="n">Totient</span> <span class="n">Maximum</span><span class="p">,</span> <span class="n">also</span> <span class="n">called</span> \<span class="n">phi</span> <span class="n">function</span><span class="o">*</span><span class="p">)</span>
+<span class="p">(</span><span class="o">*</span> <span class="n">seq</span> <span class="o">=</span> <span class="n">Table</span><span class="p">[</span> <span class="n">n</span><span class="o">/</span><span class="n">Length</span><span class="p">[</span><span class="n">Select</span><span class="p">[</span><span class="n">Range</span><span class="p">[</span><span class="n">n</span><span class="p">],</span> <span class="n">CoprimeQ</span><span class="p">[</span><span class="c1">#, n] == True &amp;]]</span>
+             <span class="p">,</span> <span class="p">{</span><span class="n">n</span><span class="p">,</span> <span class="mi">10</span><span class="p">}]</span> <span class="p">;</span>   <span class="n">pretty</span> <span class="n">slow</span>  <span class="o">*</span><span class="p">)</span>
+<span class="n">seq</span> <span class="o">=</span> <span class="n">Table</span><span class="p">[</span> <span class="n">n</span><span class="o">/</span><span class="n">EulerPhi</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="p">,</span> <span class="p">{</span><span class="n">n</span><span class="p">,</span> <span class="mi">1000000</span><span class="p">}</span> <span class="p">];</span>
+<span class="n">Position</span><span class="p">[</span><span class="n">seq</span><span class="p">,</span> <span class="n">Max</span><span class="p">[</span><span class="n">seq</span><span class="p">]]</span>
+<span class="n">Max</span><span class="p">[</span><span class="n">seq</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="pe-71">
+<h1><span class="section-number">4. </span>PE 71<a class="headerlink" href="#pe-71" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#71 Ordered Fractions </span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">floor</span>
+<span class="n">target</span> <span class="o">=</span> <span class="mi">3</span><span class="o">/</span><span class="mi">7</span>
+
+<span class="n">pairs</span> <span class="o">=</span> <span class="p">[(</span> <span class="n">floor</span><span class="p">(</span><span class="n">deno</span><span class="o">*</span><span class="n">target</span><span class="p">)</span> <span class="p">,</span> <span class="n">deno</span> <span class="p">)</span> <span class="k">for</span> <span class="n">deno</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1000000</span><span class="p">)]</span>
+
+<span class="n">fracs</span> <span class="o">=</span> <span class="p">[(</span> <span class="n">n</span><span class="p">,</span> <span class="n">deno</span> <span class="p">)</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">deno</span> <span class="ow">in</span> <span class="n">pairs</span> <span class="k">if</span> <span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="n">deno</span><span class="p">)</span><span class="o">&lt;</span><span class="n">target</span><span class="p">]</span>  <span class="c1"># Filter fractions &lt; target</span>
+
+<span class="n">maxFrac</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">fracs</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">frac</span><span class="p">:</span> <span class="n">frac</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">frac</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">)</span>
+<span class="n">maxFrac</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">*</span> <span class="mi">71</span> <span class="n">Ordered</span> <span class="n">Fractions</span> 
+    <span class="n">Table</span><span class="p">[]</span> <span class="n">gen</span> <span class="p">[{</span><span class="n">numerator</span><span class="p">},</span> <span class="p">{</span><span class="n">denominator</span><span class="p">}]</span>
+    <span class="n">Floor</span><span class="p">[]</span> <span class="n">gen</span> <span class="n">greatest</span> <span class="n">integer</span> <span class="o">&lt;=</span> <span class="n">d</span><span class="o">*</span><span class="n">target</span>
+    <span class="n">Select</span><span class="p">[]</span> <span class="ow">and</span> <span class="n">MaximalBy</span><span class="p">[],</span> <span class="n">both</span> <span class="n">are</span> <span class="p">[</span><span class="nb">list</span> <span class="o">+</span> <span class="n">function</span><span class="p">]</span>
+    <span class="p">[[</span><span class="mi">2</span><span class="p">]]</span> <span class="n">the</span> <span class="mi">2</span><span class="n">nd</span> <span class="n">item</span><span class="p">,</span> <span class="c1">#[[2]] the 2nd input of the function </span>
+    <span class="o">*</span><span class="p">)</span>
+<span class="n">target</span> <span class="o">=</span> <span class="mi">3</span><span class="o">/</span><span class="mi">7</span><span class="p">;</span>
+<span class="n">MaximalBy</span><span class="p">[</span><span class="n">Select</span><span class="p">[</span>  <span class="n">Table</span><span class="p">[</span> <span class="p">{</span><span class="n">Floor</span><span class="p">[</span><span class="n">d</span><span class="o">*</span><span class="n">target</span><span class="p">],</span> <span class="n">d</span><span class="p">},</span> <span class="p">{</span><span class="n">d</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1000000</span><span class="p">}</span> <span class="p">],</span> 
+                          <span class="c1">#[[1]]/#[[2]] &lt; target &amp; ], </span>
+         <span class="c1">#[[1]]/#[[2]] &amp; ]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="pe-74">
+<h2><span class="section-number">4.1. </span>PE 74<a class="headerlink" href="#pe-74" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#74 Factorial Chains</span>
+<span class="k">def</span> <span class="nf">fact</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span><span class="o">==</span><span class="mi">0</span> <span class="ow">or</span> <span class="n">n</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">n</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span><span class="o">*</span><span class="n">fact</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    
+<span class="n">factorials</span><span class="o">=</span><span class="p">{</span><span class="n">i</span><span class="p">:</span><span class="n">fact</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)}</span>
+
+<span class="n">num</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1000000</span><span class="p">):</span>
+    <span class="n">n</span><span class="o">=</span><span class="n">i</span>
+    <span class="n">lst</span><span class="o">=</span><span class="p">[]</span>
+    <span class="k">while</span> <span class="n">n</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">:</span>
+        <span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+        <span class="n">n</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)))</span>
+        <span class="n">n1</span><span class="o">=</span><span class="mi">0</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">n</span><span class="p">:</span>
+            <span class="n">n1</span><span class="o">+=</span><span class="n">factorials</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+        <span class="n">n</span><span class="o">=</span><span class="n">n1</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span><span class="o">==</span><span class="mi">60</span><span class="p">:</span>
+        <span class="n">num</span><span class="o">+=</span><span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pe-75">
+<h2><span class="section-number">4.2. </span>PE 75<a class="headerlink" href="#pe-75" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#75 Singular Integer Right Triangles</span>
+<span class="k">def</span> <span class="nf">sumPythagoreanTriplets</span><span class="p">(</span><span class="n">limits</span><span class="p">):</span> 
+	<span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span>
+	<span class="n">num</span><span class="o">=</span><span class="p">[]</span>
+	<span class="n">nums</span><span class="o">=</span><span class="p">[]</span>
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1000</span><span class="p">):</span>
+		<span class="n">num</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+	<span class="n">d</span><span class="o">=</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">+</span><span class="n">c</span>
+	<span class="k">while</span> <span class="n">d</span><span class="o">&lt;</span><span class="n">limits</span> <span class="p">:</span> 
+		<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
+			<span class="n">a</span><span class="o">=</span><span class="n">m</span><span class="o">*</span><span class="n">m</span><span class="o">-</span><span class="n">n</span><span class="o">*</span><span class="n">n</span> 
+			<span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="n">n</span> 
+			<span class="n">c</span><span class="o">=</span><span class="n">m</span><span class="o">*</span><span class="n">m</span><span class="o">+</span><span class="n">n</span><span class="o">*</span><span class="n">n</span>
+			<span class="n">d</span><span class="o">=</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">+</span><span class="n">c</span>
+			<span class="k">if</span> <span class="n">d</span><span class="o">&gt;</span><span class="n">limits</span><span class="p">:</span> 
+				<span class="k">break</span>
+			<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Sum of triplet :&#39;</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+			<span class="n">nums</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+			<span class="k">if</span> <span class="n">d</span><span class="o">==</span><span class="mi">1000</span><span class="p">:</span>
+				<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Special&#39;</span><span class="p">)</span>
+		<span class="n">m</span><span class="o">+=</span><span class="mi">1</span>
+	<span class="k">return</span> <span class="n">nums</span>
+<span class="n">sumPythagoreanTriplets</span><span class="p">(</span><span class="mi">150</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="PE50.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>PE Q26-50</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="PE100.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>PE Q76-100</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">3. PE Q51-75</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-51">3.1. PE 51</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-52">3.2. PE 52</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-53">3.3. PE 53</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-55">3.4. PE 55</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-56">3.5. PE 56</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-57">3.6. PE 57</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-58">3.7. PE 58</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-62">3.8. PE 62</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-63">3.9. PE 63</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-65">3.10. PE 65</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-66">3.11. PE 66</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-69">3.12. PE 69</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-71">4. PE 71</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-74">4.1. PE 74</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-75">4.2. PE 75</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jonny, assisted by Tom
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

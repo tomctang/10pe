@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>6. PE-Hidden-Math-Topics &#8212; Jonny Workbook</title>
+    <title>7. PE-Hidden-Math &#8212; Jonny Workbook</title>
   
   
   
@@ -62,11 +62,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'PE_hidden_math_topics';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'PE_hidden_math';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="7. A-level Python" href="Alevel_math_python.html" />
-    <link rel="prev" title="5. PE-Hidden-Math-Questions" href="PE_hidden_math_questions.html" />
+    <link rel="next" title="8. A-level-math" href="Alevel_math.html" />
+    <link rel="prev" title="6. PE Q101-300" href="PE300.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -166,17 +166,18 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Project Euler (PE)</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Py100.html">1. Python-OOP Q1-100</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Py200.html">2. Python-OOP Q101-300</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Py100_FP_way.html">3. Python-FP Q1-100</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MMA100.html">4. MMA Q1-100</a></li>
-<li class="toctree-l1"><a class="reference internal" href="PE_hidden_math_questions.html">5. PE-Hidden-Math-Questions</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. PE-Hidden-Math-Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PE25.html">1. PE Q1-25</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PE50.html">2. PE Q26-50</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PE75.html">3. PE Q51-75</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="PE100.html">5. PE Q76-100</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PE300.html">6. PE Q101-300</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">7. PE-Hidden-Math</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">A-level Math</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Alevel_math_python.html">7. A-level Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Alevel_math_MMA.html">8. A-Level MMA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Alevel_math.html">8. A-level-math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Alevel_math_further.html">9. A-level-further</a></li>
 </ul>
 
     </div>
@@ -246,7 +247,7 @@
       
       
       
-      <li><a href="_sources/PE_hidden_math_topics.ipynb" target="_blank"
+      <li><a href="_sources/PE_hidden_math.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -322,7 +323,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>PE-Hidden-Math-Topics</h1>
+    <h1>PE-Hidden-Math</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -332,21 +333,22 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#number-theory">6.1. Number Theory</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continued-fraction">6.1.1. Continued Fraction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-ordering">7.1. Question ordering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#number-theory">7.2. Number Theory</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continued-fraction">7.2.1. Continued Fraction</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algebra">6.2. Algebra</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithms-and-data-structures">6.3. Algorithms and Data Structures</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dp-dynamic-programming">6.3.1. DP (Dynamic Programming)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algebra">7.3. Algebra</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithms-and-data-structures">7.4. Algorithms and Data Structures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dp-dynamic-programming">7.4.1. DP (Dynamic Programming)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combinatorics-and-probability">6.4. Combinatorics and Probability</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-theory">6.4.1. Graph Theory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combinatorics-and-probability">7.5. Combinatorics and Probability</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-theory">7.5.1. Graph Theory</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometry">6.5. Geometry</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other">6.6. Other</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometry">7.6. Geometry</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other">7.7. Other</a></li>
 </ul>
             </nav>
         </div>
@@ -358,10 +360,36 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="pe-hidden-math-topics">
-<h1><span class="section-number">6. </span>PE-Hidden-Math-Topics<a class="headerlink" href="#pe-hidden-math-topics" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="pe-hidden-math">
+<h1><span class="section-number">7. </span>PE-Hidden-Math<a class="headerlink" href="#pe-hidden-math" title="Link to this heading">#</a></h1>
+<section id="question-ordering">
+<h2><span class="section-number">7.1. </span>Question ordering<a class="headerlink" href="#question-ordering" title="Link to this heading">#</a></h2>
+<ol class="arabic simple" start="69">
+<li><p>Totient Maximum</p></li>
+</ol>
+<p>欧拉函数 Euler’s Totient Function (or <span class="math notranslate nohighlight">\(\phi\)</span> function) has a general formulas as below, <span class="math notranslate nohighlight">\(p_i\)</span> is all of the coprime of x, where x is a positive integer.</p>
+<div class="math notranslate nohighlight">
+\[\phi(x)=x\prod_{i=1}^n(1-\frac{1}{p_i})\]</div>
+<ol class="arabic simple" start="99">
+<li><p>Largest Exponential</p></li>
+</ol>
+<p>In this question, I learned Ordinal theory (VS. Cardinal theory):</p>
+<ul class="simple">
+<li><p>Ordinal data only introduces a ordering/ranking (e.g. A&gt;B), but we don’t know how large A or B is.</p></li>
+<li><p>Cardinal further tell ‘how many’ of each thing, or showing quantity (e.g. 2&gt;1)</p></li>
+</ul>
+<p>When comparing huge numbers, I don’t need to know ‘how many’ they are, I just need to where they are (their ranking). So I can use log to shrink their coordinates:</p>
+<div class="math notranslate nohighlight">
+\[base^{exponent} =e^{exponent⋅log(base)}\]</div>
+<ol class="arabic simple" start="187">
+<li><p>Semiprimes</p></li>
+</ol>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Semiprime">A semiprime-counting formula</a>:</p>
+<div class="math notranslate nohighlight">
+\[\pi_{2}(n)= \]</div>
+</section>
 <section id="number-theory">
-<h2><span class="section-number">6.1. </span>Number Theory<a class="headerlink" href="#number-theory" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.2. </span>Number Theory<a class="headerlink" href="#number-theory" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Prime numbers and factorization: 3, 7, 10, 12, 27, 35, 47, 50, 58, 67, 70, 78, 87, 92, 97, 104, 120, 123, 134, 140, 146, 158, 160, 162, 179, 187, 196</p></li>
 <li><p>Divisibility rules and modular arithmetic: 2, 4, 5, 9, 11, 14, 17, 21, 24, 29, 31, 37, 41, 43, 46, 53, 56, 61, 65, 73, 76, 82, 85, 90, 95, 102, 108, 112, 116, 119, 125, 131, 137, 143, 149, 155, 166, 172, 178, 184, 190, 193, 199</p></li>
@@ -370,7 +398,7 @@
 <li><p>Continued Fraction</p></li>
 </ul>
 <section id="continued-fraction">
-<h3><span class="section-number">6.1.1. </span>Continued Fraction<a class="headerlink" href="#continued-fraction" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.2.1. </span>Continued Fraction<a class="headerlink" href="#continued-fraction" title="Link to this heading">#</a></h3>
 <p>Numerators and denominators <span class="math notranslate nohighlight">\({N_i}\)</span> and <span class="math notranslate nohighlight">\({D_i}\)</span> could be any sequences or functions</p>
 <div class="math notranslate nohighlight">
 \[D_0+\cfrac{N_1}{D_1+\cfrac{N_2}{{ D_k+\cfrac{N_k}{\ddots}}}} = D_0 + \mathop{K}\limits_{i=1}^{\infty} \frac{N_i}{D_i} \quad  e.g. \quad
@@ -404,7 +432,7 @@
 </section>
 </section>
 <section id="algebra">
-<h2><span class="section-number">6.2. </span>Algebra<a class="headerlink" href="#algebra" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.3. </span>Algebra<a class="headerlink" href="#algebra" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Polynomial equations: 18, 28, 35, 43, 51, 61, 71, 81, 91, 101, 111, 121, 131, 141, 151, 161, 171, 181, 191, 200</p></li>
 <li><p>Matrix operations: 44, 53, 62, 72, 82, 92, 102, 112, 122, 132, 142, 152, 162, 172, 182, 192</p></li>
@@ -413,7 +441,7 @@
 </ul>
 </section>
 <section id="algorithms-and-data-structures">
-<h2><span class="section-number">6.3. </span>Algorithms and Data Structures<a class="headerlink" href="#algorithms-and-data-structures" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.4. </span>Algorithms and Data Structures<a class="headerlink" href="#algorithms-and-data-structures" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Sorting and searching algorithms: 4, 17, 26, 35, 44, 53, 62, 72, 82, 92, 102, 112, 122, 132, 142, 152, 162, 172, 182, 192</p>
 <ul>
@@ -427,7 +455,7 @@
 <li><p>Data structures (arrays, lists, stacks, queues, trees, graphs): 19, 27, 35, 43, 51, 59, 67, 75, 83, 91, 99, 107, 115, 123, 131, 139, 147, 155, 163, 171, 179, 187, 195</p></li>
 </ul>
 <section id="dp-dynamic-programming">
-<h3><span class="section-number">6.3.1. </span>DP (Dynamic Programming)<a class="headerlink" href="#dp-dynamic-programming" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.4.1. </span>DP (Dynamic Programming)<a class="headerlink" href="#dp-dynamic-programming" title="Link to this heading">#</a></h3>
 <p>tips using dynamic programming:</p>
 <ul class="simple">
 <li><p>Identify the overlapping subproblems: The first step is to identify smaller, overlapping subproblems.</p></li>
@@ -444,7 +472,7 @@ Problem 67: Maximum path sum II
 </section>
 </section>
 <section id="combinatorics-and-probability">
-<h2><span class="section-number">6.4. </span>Combinatorics and Probability<a class="headerlink" href="#combinatorics-and-probability" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.5. </span>Combinatorics and Probability<a class="headerlink" href="#combinatorics-and-probability" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Permutations and combinations: 15, 24, 32, 40, 49, 59, 62, 68, 74, 80, 88, 94, 100, 106, 114, 122, 130, 139, 147, 159, 167, 176, 185, 192, 200</p></li>
 <li><p>Probability theory: 19, 26, 34, 44, 52, 64, 77, 91, 103, 115, 127, 135, 145, 153, 161, 170, 179, 189, 197</p></li>
@@ -453,7 +481,7 @@ Problem 67: Maximum path sum II
 <li><p>Lattice paths</p></li>
 </ul>
 <section id="graph-theory">
-<h3><span class="section-number">6.4.1. </span>Graph Theory<a class="headerlink" href="#graph-theory" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.5.1. </span>Graph Theory<a class="headerlink" href="#graph-theory" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">*</span> <span class="n">Mess</span> <span class="n">Connex</span> <span class="o">*</span><span class="p">)</span>
@@ -478,7 +506,7 @@ Problem 67: Maximum path sum II
 </section>
 </section>
 <section id="geometry">
-<h2><span class="section-number">6.5. </span>Geometry<a class="headerlink" href="#geometry" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.6. </span>Geometry<a class="headerlink" href="#geometry" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Geometric sequences and series: 16, 23, 31, 41, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200</p></li>
 <li><p>Pythagorean triples and triangles: 9, 20, 38, 55, 71, 84, 98, 111, 124, 136, 148, 164, 173, 182, 191</p></li>
@@ -488,7 +516,7 @@ Problem 67: Maximum path sum II
 </ul>
 </section>
 <section id="other">
-<h2><span class="section-number">6.6. </span>Other<a class="headerlink" href="#other" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.7. </span>Other<a class="headerlink" href="#other" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Cryptography</p></li>
 <li><p>Numerical analysis</p></li>
@@ -529,20 +557,20 @@ Problem 67: Maximum path sum II
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="PE_hidden_math_questions.html"
+       href="PE300.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">5. </span>PE-Hidden-Math-Questions</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>PE Q101-300</p>
       </div>
     </a>
     <a class="right-next"
-       href="Alevel_math_python.html"
+       href="Alevel_math.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">7. </span>A-level Python</p>
+        <p class="prev-next-title"><span class="section-number">8. </span>A-level-math</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -563,21 +591,22 @@ Problem 67: Maximum path sum II
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#number-theory">6.1. Number Theory</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continued-fraction">6.1.1. Continued Fraction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-ordering">7.1. Question ordering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#number-theory">7.2. Number Theory</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continued-fraction">7.2.1. Continued Fraction</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algebra">6.2. Algebra</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithms-and-data-structures">6.3. Algorithms and Data Structures</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dp-dynamic-programming">6.3.1. DP (Dynamic Programming)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algebra">7.3. Algebra</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithms-and-data-structures">7.4. Algorithms and Data Structures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dp-dynamic-programming">7.4.1. DP (Dynamic Programming)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combinatorics-and-probability">6.4. Combinatorics and Probability</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-theory">6.4.1. Graph Theory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combinatorics-and-probability">7.5. Combinatorics and Probability</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-theory">7.5.1. Graph Theory</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometry">6.5. Geometry</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other">6.6. Other</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometry">7.6. Geometry</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other">7.7. Other</a></li>
 </ul>
   </nav></div>
 

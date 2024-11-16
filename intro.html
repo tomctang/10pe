@@ -65,7 +65,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1. Python-OOP Q1-100" href="Py100.html" />
+    <link rel="next" title="1. PE Q1-25" href="PE25.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -167,17 +167,18 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Project Euler (PE)</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Py100.html">1. Python-OOP Q1-100</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Py200.html">2. Python-OOP Q101-300</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Py100_FP_way.html">3. Python-FP Q1-100</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MMA100.html">4. MMA Q1-100</a></li>
-<li class="toctree-l1"><a class="reference internal" href="PE_hidden_math_questions.html">5. PE-Hidden-Math-Questions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="PE_hidden_math_topics.html">6. PE-Hidden-Math-Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PE25.html">1. PE Q1-25</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PE50.html">2. PE Q26-50</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PE75.html">3. PE Q51-75</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="PE100.html">5. PE Q76-100</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PE300.html">6. PE Q101-300</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PE_hidden_math.html">7. PE-Hidden-Math</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">A-level Math</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Alevel_math_python.html">7. A-level Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Alevel_math_MMA.html">8. A-Level MMA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Alevel_math.html">8. A-level-math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Alevel_math_further.html">9. A-level-further</a></li>
 </ul>
 
     </div>
@@ -337,7 +338,6 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-level-math">A-level Math</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software-and-files">Software and files</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oop-to-fp">OOP to FP</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-wlnb-to-ipynb">Convert wlnb to ipynb</a></li>
 </ul>
             </nav>
         </div>
@@ -379,25 +379,16 @@
 <li><p>Python (.ipynb): we start from Python, then we found Python’s <strong>SageMath</strong> - the second powerful CAS (computer algebra system).</p></li>
 </ul>
 </li>
-<li><p>We next started <strong>Mathematica</strong> (Wolfram languages, we will use MMA or Wolfram after):</p>
+<li><p>We then started <strong>Mathematica (Wolfram languages, MMA or Wolfram</strong> after):</p>
 <ul>
-<li><p>Mathematica (.nb): the best CAS.</p>
-<ul>
-<li><p>.nb -&gt; .ipynb ??</p></li>
-</ul>
-</li>
-<li><p>Wolfram notebook (.wlnb): this enables us running Mathematica kernel in VScode.</p>
-<ul>
-<li><p>.wlnb -&gt; .nb, ‘export to’ after running MMA</p></li>
-<li><p>.wlnb -&gt; .ipynb, see below</p></li>
-</ul>
-</li>
+<li><p>Mathematica (.nb): the best CAS. Shall we convert .nb -&gt; .ipynb ??</p></li>
 </ul>
 </li>
 <li><p>Next, a PL with more FP? Ocaml? F#? Scala? Haskell? Rust? Make a comparison:</p>
 <ul>
 <li><p>1. PL’s Coding-look in defining a Fibonacci; 2. Which FP is best for mathematics? Haskell is NO.1, but I really don’t like Haskell; 3. Math-related supports for these four languages; 4. Balance between FP and OOP; 5. Number of users in Project Euler for each PL; 6. libgen supports for each PL; 7. When the PL first appeared.</p></li>
-<li><p>Decision: <strong>Haskell and F#</strong> in the next year.</p></li>
+<li><p>Decision: <strong>Haskell &amp; Rust</strong> in the next year.</p></li>
+<li><p>Google support <a class="reference external" href="https://code.world/">Codeworld - Educational Haskell programming platform</a> with <a class="reference external" href="https://github.com/google/codeworld/tree/master">Github Repository</a></p></li>
 </ul>
 </li>
 </ul>
@@ -412,141 +403,6 @@
 <li><p><a class="reference external" href="https://expression.readthedocs.io/en/latest/intro.html">FP in Python</a>: a web-notebook for beginner.</p></li>
 <li><p><a class="reference external" href="https://github.com/nayuki/Project-Euler-solutions">PE code in Java, Python, Mathematica, Haskell</a>: Nayuki use OOP in Python and FP in Haskell.</p></li>
 </ul>
-</section>
-<section id="convert-wlnb-to-ipynb">
-<h2>Convert wlnb to ipynb<a class="headerlink" href="#convert-wlnb-to-ipynb" title="Link to this heading">#</a></h2>
-<p>Github Actions can’t use .wlnb for website-building-publishing, so using the Python code below I converted .wlnb to .ipynb files before pushing Github changes</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-mathematica notranslate"><div class="highlight"><pre><span></span><span class="n">import</span><span class="w"> </span><span class="n">json</span>
-
-<span class="n">def</span><span class="w"> </span><span class="nv">convert_wlnb_to_ipynb</span><span class="p">(</span><span class="nv">wlnb_content</span><span class="p">)</span><span class="err">:</span>
-<span class="w">    </span><span class="s">&quot;&quot;</span><span class="err">&quot;</span>
-<span class="w">    </span><span class="n">Convert</span><span class="w"> </span><span class="err">.</span><span class="n">wlnb</span><span class="w"> </span><span class="n">format</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="err">.</span><span class="n">ipynb</span><span class="w"> </span><span class="n">format</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">improved</span><span class="w"> </span><span class="n">Markdown</span><span class="w"> </span><span class="n">syntax</span><span class="w"> </span><span class="n">handling</span>
-<span class="w">    </span>
-<span class="w">    </span><span class="n">Args</span><span class="err">:</span>
-<span class="w">        </span><span class="nv">wlnb_content</span><span class="w"> </span><span class="p">(</span><span class="n">str</span><span class="p">)</span><span class="err">:</span><span class="w"> </span><span class="n">Content</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="err">.</span><span class="n">wlnb</span><span class="w"> </span><span class="n">file</span>
-<span class="w">    </span><span class="n">Returns</span><span class="err">:</span>
-<span class="w">        </span><span class="n">dict</span><span class="err">:</span><span class="w"> </span><span class="n">Jupyter</span><span class="w"> </span><span class="n">notebook</span><span class="w"> </span><span class="n">format</span><span class="w"> </span><span class="n">dictionary</span>
-<span class="w">    </span><span class="s">&quot;&quot;</span><span class="err">&quot;</span>
-<span class="w">    </span><span class="nv">#</span><span class="w"> </span><span class="n">Parse</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">WLNB</span><span class="w"> </span><span class="n">content</span>
-<span class="w">    </span><span class="n">try</span><span class="err">:</span>
-<span class="w">        </span><span class="nv">wlnb_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">json</span><span class="err">.</span><span class="n">loads</span><span class="p">(</span><span class="nv">wlnb_content</span><span class="p">)</span>
-<span class="w">    </span><span class="n">except</span><span class="w"> </span><span class="n">json</span><span class="err">.</span><span class="n">JSONDecodeError</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">e</span><span class="err">:</span>
-<span class="w">        </span><span class="n">raise</span><span class="w"> </span><span class="n">ValueError</span><span class="p">(</span><span class="s">&quot;Failed to decode .wlnb content: Invalid JSON format.&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">e</span>
-<span class="w">    </span>
-<span class="w">    </span><span class="nv">#</span><span class="w"> </span><span class="n">Initialize</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">ipynb</span><span class="w"> </span><span class="n">structure</span>
-<span class="w">    </span><span class="n">ipynb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="s">&quot;cells&quot;</span><span class="err">:</span><span class="w"> </span><span class="p">[],</span>
-<span class="w">        </span><span class="s">&quot;metadata&quot;</span><span class="err">:</span><span class="w"> </span><span class="nv">wlnb_data</span><span class="err">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;metadata&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{}),</span>
-<span class="w">        </span><span class="s">&quot;nbformat&quot;</span><span class="err">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
-<span class="w">        </span><span class="s">&quot;nbformat_minor&quot;</span><span class="err">:</span><span class="w"> </span><span class="mi">5</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span>
-<span class="w">    </span><span class="nv">#</span><span class="w"> </span><span class="n">Mapping</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">WLNB</span><span class="w"> </span><span class="n">kind</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">IPython</span><span class="w"> </span><span class="n">cell</span><span class="w"> </span><span class="n">types</span>
-<span class="w">    </span><span class="nv">kind_to_cell_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="mi">1</span><span class="err">:</span><span class="w"> </span><span class="s">&quot;markdown&quot;</span><span class="p">,</span><span class="w">  </span><span class="nv">#</span><span class="w"> </span><span class="n">Markdown</span><span class="w"> </span><span class="n">cells</span>
-<span class="w">        </span><span class="mi">2</span><span class="err">:</span><span class="w"> </span><span class="s">&quot;code&quot;</span><span class="w">       </span><span class="nv">#</span><span class="w"> </span><span class="n">Code</span><span class="w"> </span><span class="n">cells</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span>
-<span class="w">    </span><span class="nv">#</span><span class="w"> </span><span class="n">Convert</span><span class="w"> </span><span class="n">each</span><span class="w"> </span><span class="n">cell</span>
-<span class="w">    </span><span class="n">for</span><span class="w"> </span><span class="n">cell</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="nv">wlnb_data</span><span class="err">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;cells&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[])</span><span class="err">:</span>
-<span class="w">        </span><span class="nv">cell_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">kind_to_cell_type</span><span class="err">.</span><span class="n">get</span><span class="p">(</span><span class="n">cell</span><span class="err">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;kind&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;raw&quot;</span><span class="p">)</span>
-<span class="w">        </span>
-<span class="w">        </span><span class="nv">#</span><span class="w"> </span><span class="n">Handle</span><span class="w"> </span><span class="n">Markdown</span><span class="w"> </span><span class="n">cells</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">Markdown</span><span class="w"> </span><span class="n">syntax</span>
-<span class="w">        </span><span class="n">if</span><span class="w"> </span><span class="nv">cell_type</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;markdown&quot;</span><span class="err">:</span>
-<span class="w">            </span><span class="nv">#</span><span class="w"> </span><span class="n">Split</span><span class="w"> </span><span class="n">content</span><span class="w"> </span><span class="n">into</span><span class="w"> </span><span class="n">lines</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">ensure</span><span class="w"> </span><span class="n">proper</span><span class="w"> </span><span class="n">Markdown</span><span class="w"> </span><span class="n">formatting</span>
-<span class="w">            </span><span class="nv">markdown_content</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cell</span><span class="err">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;value&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">)</span>
-<span class="w">            </span><span class="nv">formatted_content</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[]</span>
-<span class="w">            </span><span class="n">for</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="nv">markdown_content</span><span class="err">.</span><span class="n">splitlines</span><span class="p">()</span><span class="err">:</span>
-<span class="w">                </span><span class="nv">#</span><span class="w"> </span><span class="n">Handle</span><span class="w"> </span><span class="n">inline</span><span class="w"> </span><span class="n">code</span>
-<span class="w">                </span><span class="n">if</span><span class="w"> </span><span class="s">&quot;`&quot;</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">line</span><span class="err">:</span>
-<span class="w">                    </span><span class="n">line</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">line</span><span class="err">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&quot;`&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;``&quot;</span><span class="p">)</span><span class="w">  </span><span class="nv">#</span><span class="w"> </span><span class="n">Escape</span><span class="w"> </span><span class="n">backticks</span>
-<span class="w">                </span><span class="nv">formatted_content</span><span class="err">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
-<span class="w">            </span><span class="nv">new_cell</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="s">&quot;cell_type&quot;</span><span class="err">:</span><span class="w"> </span><span class="s">&quot;markdown&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="s">&quot;metadata&quot;</span><span class="err">:</span><span class="w"> </span><span class="n">cell</span><span class="err">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;metadata&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{}),</span>
-<span class="w">                </span><span class="s">&quot;source&quot;</span><span class="err">:</span><span class="w"> </span><span class="nv">formatted_content</span><span class="p">,</span>
-<span class="w">            </span><span class="p">}</span>
-<span class="w">        </span>
-<span class="w">        </span><span class="nv">#</span><span class="w"> </span><span class="n">Handle</span><span class="w"> </span><span class="n">Code</span><span class="w"> </span><span class="n">cells</span>
-<span class="w">        </span><span class="n">elif</span><span class="w"> </span><span class="nv">cell_type</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;code&quot;</span><span class="err">:</span>
-<span class="w">            </span><span class="nv">new_cell</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="s">&quot;cell_type&quot;</span><span class="err">:</span><span class="w"> </span><span class="s">&quot;code&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="s">&quot;metadata&quot;</span><span class="err">:</span><span class="w"> </span><span class="n">cell</span><span class="err">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;metadata&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{}),</span>
-<span class="w">                </span><span class="s">&quot;source&quot;</span><span class="err">:</span><span class="w"> </span><span class="n">cell</span><span class="err">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;value&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">)</span><span class="err">.</span><span class="n">splitlines</span><span class="p">(),</span>
-<span class="w">                </span><span class="s">&quot;outputs&quot;</span><span class="err">:</span><span class="w"> </span><span class="p">[],</span>
-<span class="w">                </span><span class="s">&quot;execution_count&quot;</span><span class="err">:</span><span class="w"> </span><span class="n">cell</span><span class="err">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;execution_count&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">None</span><span class="p">)</span>
-<span class="w">            </span><span class="p">}</span>
-<span class="w">            </span>
-<span class="w">            </span><span class="nv">#</span><span class="w"> </span><span class="n">Process</span><span class="w"> </span><span class="n">outputs</span><span class="w"> </span><span class="n">for</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="n">cells</span>
-<span class="w">            </span><span class="n">for</span><span class="w"> </span><span class="n">output</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">cell</span><span class="err">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;outputs&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[])</span><span class="err">:</span>
-<span class="w">                </span><span class="nv">output_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                    </span><span class="s">&quot;output_type&quot;</span><span class="err">:</span><span class="w"> </span><span class="n">output</span><span class="err">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;output_type&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;execute_result&quot;</span><span class="p">),</span>
-<span class="w">                    </span><span class="s">&quot;metadata&quot;</span><span class="err">:</span><span class="w"> </span><span class="n">output</span><span class="err">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;metadata&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{}),</span>
-<span class="w">                    </span><span class="s">&quot;data&quot;</span><span class="err">:</span><span class="w"> </span><span class="p">{}</span>
-<span class="w">                </span><span class="p">}</span>
-<span class="w">                </span>
-<span class="w">                </span><span class="nv">#</span><span class="w"> </span><span class="n">Extract</span><span class="w"> </span><span class="n">different</span><span class="w"> </span><span class="n">types</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">WLNB</span><span class="w"> </span><span class="n">output</span>
-<span class="w">                </span><span class="n">if</span><span class="w"> </span><span class="s">&quot;text&quot;</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">output</span><span class="err">:</span>
-<span class="w">                    </span><span class="nv">output_data</span><span class="p">[</span><span class="s">&quot;data&quot;</span><span class="p">][</span><span class="s">&quot;text/plain&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">output</span><span class="p">[</span><span class="s">&quot;text&quot;</span><span class="p">]</span><span class="err">.</span><span class="n">splitlines</span><span class="p">()</span>
-<span class="w">                </span><span class="n">if</span><span class="w"> </span><span class="s">&quot;image/png&quot;</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">output</span><span class="err">:</span>
-<span class="w">                    </span><span class="nv">output_data</span><span class="p">[</span><span class="s">&quot;data&quot;</span><span class="p">][</span><span class="s">&quot;image/png&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">output</span><span class="p">[</span><span class="s">&quot;image/png&quot;</span><span class="p">]</span>
-<span class="w">                </span><span class="n">if</span><span class="w"> </span><span class="s">&quot;application/json&quot;</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">output</span><span class="err">:</span>
-<span class="w">                    </span><span class="nv">output_data</span><span class="p">[</span><span class="s">&quot;data&quot;</span><span class="p">][</span><span class="s">&quot;application/json&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">output</span><span class="p">[</span><span class="s">&quot;application/json&quot;</span><span class="p">]</span>
-<span class="w">                </span>
-<span class="w">                </span><span class="nv">#</span><span class="w"> </span><span class="n">Handle</span><span class="w"> </span><span class="n">error</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">traceback</span><span class="w"> </span><span class="n">information</span><span class="w"> </span><span class="n">if</span><span class="w"> </span><span class="n">available</span>
-<span class="w">                </span><span class="n">if</span><span class="w"> </span><span class="n">output</span><span class="err">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;output_type&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;error&quot;</span><span class="err">:</span>
-<span class="w">                    </span><span class="nv">output_data</span><span class="p">[</span><span class="s">&quot;ename&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">output</span><span class="err">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;ename&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">)</span>
-<span class="w">                    </span><span class="nv">output_data</span><span class="p">[</span><span class="s">&quot;evalue&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">output</span><span class="err">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;evalue&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">)</span>
-<span class="w">                    </span><span class="nv">output_data</span><span class="p">[</span><span class="s">&quot;traceback&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">output</span><span class="err">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;traceback&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">)</span><span class="err">.</span><span class="n">splitlines</span><span class="p">()</span>
-<span class="w">                </span>
-<span class="w">                </span><span class="nv">new_cell</span><span class="p">[</span><span class="s">&quot;outputs&quot;</span><span class="p">]</span><span class="err">.</span><span class="n">append</span><span class="p">(</span><span class="nv">output_data</span><span class="p">)</span>
-<span class="w">        </span>
-<span class="w">        </span><span class="nv">#</span><span class="w"> </span><span class="n">For</span><span class="w"> </span><span class="n">any</span><span class="w"> </span><span class="n">other</span><span class="w"> </span><span class="n">cell</span><span class="w"> </span><span class="n">type</span><span class="p">,</span><span class="w"> </span><span class="n">treat</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">raw</span><span class="w"> </span><span class="n">content</span>
-<span class="w">        </span><span class="n">else</span><span class="err">:</span>
-<span class="w">            </span><span class="nv">new_cell</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="s">&quot;cell_type&quot;</span><span class="err">:</span><span class="w"> </span><span class="s">&quot;raw&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="s">&quot;metadata&quot;</span><span class="err">:</span><span class="w"> </span><span class="n">cell</span><span class="err">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;metadata&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{}),</span>
-<span class="w">                </span><span class="s">&quot;source&quot;</span><span class="err">:</span><span class="w"> </span><span class="n">cell</span><span class="err">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;value&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">)</span><span class="err">.</span><span class="n">splitlines</span><span class="p">(),</span>
-<span class="w">            </span><span class="p">}</span>
-<span class="w">        </span>
-<span class="w">        </span><span class="n">ipynb</span><span class="p">[</span><span class="s">&quot;cells&quot;</span><span class="p">]</span><span class="err">.</span><span class="n">append</span><span class="p">(</span><span class="nv">new_cell</span><span class="p">)</span>
-<span class="w">    </span>
-<span class="w">    </span><span class="n">return</span><span class="w"> </span><span class="n">ipynb</span>
-
-<span class="n">def</span><span class="w"> </span><span class="nv">convert_file</span><span class="p">(</span><span class="nv">input_path</span><span class="p">,</span><span class="w"> </span><span class="nv">output_path</span><span class="p">)</span><span class="err">:</span>
-<span class="w">    </span><span class="s">&quot;&quot;</span><span class="err">&quot;</span>
-<span class="w">    </span><span class="n">Convert</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="err">.</span><span class="n">wlnb</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="err">.</span><span class="n">ipynb</span><span class="w"> </span><span class="n">file</span>
-<span class="w">    </span>
-<span class="w">    </span><span class="n">Args</span><span class="err">:</span>
-<span class="w">        </span><span class="nv">input_path</span><span class="w"> </span><span class="p">(</span><span class="n">str</span><span class="p">)</span><span class="err">:</span><span class="w"> </span><span class="n">Path</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">input</span><span class="w"> </span><span class="err">.</span><span class="n">wlnb</span><span class="w"> </span><span class="n">file</span>
-<span class="w">        </span><span class="nv">output_path</span><span class="w"> </span><span class="p">(</span><span class="n">str</span><span class="p">)</span><span class="err">:</span><span class="w"> </span><span class="n">Path</span><span class="w"> </span><span class="n">where</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="err">.</span><span class="n">ipynb</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="n">should</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">saved</span>
-<span class="w">    </span><span class="s">&quot;&quot;</span><span class="err">&quot;</span>
-<span class="w">    </span><span class="nv">#</span><span class="w"> </span><span class="n">Read</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">input</span><span class="w"> </span><span class="n">file</span>
-<span class="w">    </span><span class="n">try</span><span class="err">:</span>
-<span class="w">        </span><span class="n">with</span><span class="w"> </span><span class="n">open</span><span class="p">(</span><span class="nv">input_path</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;</span><span class="n">r</span><span class="err">&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">encoding</span><span class="o">=</span><span class="err">&#39;</span><span class="n">utf</span><span class="mi">-8</span><span class="err">&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">f</span><span class="err">:</span>
-<span class="w">            </span><span class="nv">wlnb_content</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="err">.</span><span class="n">read</span><span class="p">()</span>
-<span class="w">    </span><span class="n">except</span><span class="w"> </span><span class="n">FileNotFoundError</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">e</span><span class="err">:</span>
-<span class="w">        </span><span class="n">raise</span><span class="w"> </span><span class="n">FileNotFoundError</span><span class="p">(</span><span class="n">f</span><span class="s">&quot;Input file not found: {input_path}&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">e</span>
-<span class="w">    </span>
-<span class="w">    </span><span class="nv">#</span><span class="w"> </span><span class="n">Convert</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">content</span>
-<span class="w">    </span><span class="nv">ipynb_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">convert_wlnb_to_ipynb</span><span class="p">(</span><span class="nv">wlnb_content</span><span class="p">)</span>
-<span class="w">    </span>
-<span class="w">    </span><span class="nv">#</span><span class="w"> </span><span class="n">Write</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">output</span><span class="w"> </span><span class="n">file</span>
-<span class="w">    </span><span class="n">with</span><span class="w"> </span><span class="n">open</span><span class="p">(</span><span class="nv">output_path</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;</span><span class="n">w</span><span class="err">&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">encoding</span><span class="o">=</span><span class="err">&#39;</span><span class="n">utf</span><span class="mi">-8</span><span class="err">&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">f</span><span class="err">:</span>
-<span class="w">        </span><span class="n">json</span><span class="err">.</span><span class="n">dump</span><span class="p">(</span><span class="nv">ipynb_data</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-
-<span class="nv">#</span><span class="w"> </span><span class="n">Example</span><span class="w"> </span><span class="n">usage</span>
-<span class="n">if</span><span class="w"> </span><span class="nv">__name__</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;__main__&quot;</span><span class="err">:</span>
-<span class="w">    </span><span class="nv">convert_file</span><span class="p">(</span><span class="s">&quot;PE_hidden_math_topics.wlnb&quot;</span><span class="p">,</span><span class="w">    </span><span class="s">&quot;PE_hidden_math_topics.ipynb&quot;</span><span class="p">)</span>
-<span class="w">    </span><span class="nv">convert_file</span><span class="p">(</span><span class="s">&quot;PE_hidden_math_questions.wlnb&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;PE_hidden_math_questions.ipynb&quot;</span><span class="p">)</span>
-<span class="w">    </span><span class="nv">convert_file</span><span class="p">(</span><span class="s">&quot;Alevel_math_MMA.wlnb&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Alevel_math_MMA.ipynb&quot;</span><span class="p">)</span>
-<span class="w">    </span><span class="nv">convert_file</span><span class="p">(</span><span class="s">&quot;MMA100.wlnb&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;MMA100.ipynb&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 <div class="toctree-wrapper compound">
 </div>
@@ -585,11 +441,11 @@
                   
 <div class="prev-next-area">
     <a class="right-next"
-       href="Py100.html"
+       href="PE25.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1. </span>Python-OOP Q1-100</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>PE Q1-25</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -614,7 +470,6 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-level-math">A-level Math</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software-and-files">Software and files</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oop-to-fp">OOP to FP</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-wlnb-to-ipynb">Convert wlnb to ipynb</a></li>
 </ul>
   </nav></div>
 
