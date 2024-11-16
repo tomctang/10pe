@@ -6,15 +6,15 @@ parts:
 - caption: Project Euler (PE)
   numbered: true
   chapters:
-  - file: Py100
-  - file: Py200
-  - file: Py100_FP_way
-  - file: MMA100         # convert wlnb to ipynb
-  - file: PE_hidden_math_questions # convert wlnb to ipynb
-  - file: PE_hidden_math_topics    # convert wlnb to ipynb
+  - file: PE25
+  - file: PE50
+  - file: PE75
+  - file: PE100
+  - file: PE300         
+  - file: PE_hidden_math
 
 - caption: A-level Math
   numbered: true
   chapters:
-  - file: Alevel_math_python
-  - file: Alevel_math_MMA # convert wlnb to ipynb
+  - file: Alevel_math
+  - file: Alevel_math_further

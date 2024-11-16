@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     32792,        667]
-NotebookOptionsPosition[     31330,        634]
-NotebookOutlinePosition[     31828,        652]
-CellTagsIndexPosition[     31785,        649]
+NotebookDataLength[     33260,        681]
+NotebookOptionsPosition[     31797,        648]
+NotebookOutlinePosition[     32295,        666]
+CellTagsIndexPosition[     32252,        663]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -620,20 +620,34 @@ Cell[BoxData[
           RowBox[{"[", "1", "]"}], "]"}], "/", 
          RowBox[{"#", "[", 
           RowBox[{"[", "2", "]"}], "]"}]}], "&"}]}], "]"}]}], ";"}], "\n", 
-   "\[IndentingNewLine]", "bestFraction"}]}]], "Input",
+   "\[IndentingNewLine]", 
+   RowBox[{"bestFraction", "|"}]}]}]], "Input",
  CellChangeTimes->{{3.939665326424223*^9, 3.939665332845606*^9}, {
-   3.939681046561051*^9, 3.9396810497989864`*^9}, 
-   3.939681100537168*^9},ExpressionUUID->"adeba303-99f7-4549-9515-\
+   3.939681046561051*^9, 3.9396810497989864`*^9}, 3.939681100537168*^9, 
+   3.940699834118311*^9},ExpressionUUID->"adeba303-99f7-4549-9515-\
 3ede715f492d"],
 
-Cell[BoxData["Get"], "Input",
- CellChangeTimes->{{3.940372990829239*^9, 
-  3.940373004154085*^9}},ExpressionUUID->"37c62d02-4c74-1c41-93b0-\
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"n", "=", "1777"}], ";"}], "\n", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"i", "=", "1"}], ",", 
+   RowBox[{"i", "<", "1857"}], ",", 
+   RowBox[{"i", "++"}], ",", 
+   RowBox[{"n", "=", 
+    RowBox[{"Mod", "[", 
+     RowBox[{
+      RowBox[{"1777", "^", "n"}], ",", "1000"}], "]"}]}]}], 
+  "]"}], "\n", "n"}], "Input",
+ CellChangeTimes->{{3.940372990829239*^9, 3.940373004154085*^9}, {
+  3.94069974007337*^9, 3.9406997444159336`*^9}, {3.9406998013359585`*^9, 
+  3.9406998088489666`*^9}},ExpressionUUID->"37c62d02-4c74-1c41-93b0-\
 0e7ba2279443"]
 }, Open  ]]
 },
-WindowSize->{749.25, 771},
-WindowMargins->{{Automatic, -7.5}, {Automatic, 0}},
+WindowSize->{749.25, 765.75},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
 Magnification->0.75,
 FrontEndVersion->"14.0 for Microsoft Windows (64-bit) (December 12, 2023)",
 StyleDefinitions->FrontEnd`FileName[{"Report"}, "StandardReport.nb", 
@@ -666,8 +680,8 @@ Cell[CellGroupData[{
 Cell[28229, 551, 607, 17, 175, "ExternalLanguage",ExpressionUUID->"6e661e1f-0506-8140-81c4-8fe34a9c5ead"],
 Cell[28839, 570, 921, 14, 58, "Output",ExpressionUUID->"ba0520bc-7fbe-e34a-8823-1369dd598535"]
 }, Open  ]],
-Cell[29775, 587, 1381, 39, 87, "Input",ExpressionUUID->"adeba303-99f7-4549-9515-3ede715f492d"],
-Cell[31159, 628, 155, 3, 30, "Input",ExpressionUUID->"37c62d02-4c74-1c41-93b0-0e7ba2279443"]
+Cell[29775, 587, 1422, 40, 88, "Input",ExpressionUUID->"adeba303-99f7-4549-9515-3ede715f492d"],
+Cell[31200, 629, 581, 16, 58, "Input",ExpressionUUID->"37c62d02-4c74-1c41-93b0-0e7ba2279443"]
 }, Open  ]]
 }
 ]
