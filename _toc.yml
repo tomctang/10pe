@@ -18,3 +18,17 @@ parts:
   chapters:
   - file: Alevel_math
   - file: Alevel_math_further
+
+- caption: MIT CS-Courses
+  numbered: true
+  chapters:
+  - file: MIT_CS6001-Python
+  - file: MIT_CS6002-thinking
+
+- caption: Notebook
+  numbered: true
+  chapters:
+  - file: nb_Jonny_notebook
+  - file: nb_Geo
+  - file: nb_lottery_simulator
+  -
