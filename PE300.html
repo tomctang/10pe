@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>6. PE Q101-300 &#8212; Jonny Workbook</title>
+    <title>5. PE Q101-300 &#8212; Jonny Workbook</title>
   
   
   
@@ -63,8 +63,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'PE300';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="7. PE-Hidden-Math" href="PE_hidden_math.html" />
-    <link rel="prev" title="5. PE Q76-100" href="PE100.html" />
+    <link rel="next" title="6. PE-Hidden-Math" href="PE_hidden_math.html" />
+    <link rel="prev" title="4. PE Q76-100" href="PE100.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -167,15 +167,25 @@
 <li class="toctree-l1"><a class="reference internal" href="PE25.html">1. PE Q1-25</a></li>
 <li class="toctree-l1"><a class="reference internal" href="PE50.html">2. PE Q26-50</a></li>
 <li class="toctree-l1"><a class="reference internal" href="PE75.html">3. PE Q51-75</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="PE100.html">5. PE Q76-100</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. PE Q101-300</a></li>
-<li class="toctree-l1"><a class="reference internal" href="PE_hidden_math.html">7. PE-Hidden-Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PE100.html">4. PE Q76-100</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">5. PE Q101-300</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PE_hidden_math.html">6. PE-Hidden-Math</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">A-level Math</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Alevel_math.html">8. A-level-math</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Alevel_math_further.html">9. A-level-further</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Alevel_math.html">7. A-level-math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Alevel_math_further.html">8. A-level-further</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">MIT CS-Courses</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="MIT_CS6001-Python.html">9. 6.00.1x</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MIT_CS6002-thinking.html">10. 6.00.2.x</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notebook</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="nb_Jonny_notebook.html">11. Jonny notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nb_Geo.html">12. Jonny Geo-Graph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nb_lottery_simulator.html">13. 1. A Mathematical Understanding of the Powerball Lottery</a></li>
 </ul>
 
     </div>
@@ -331,9 +341,9 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-104">6.1. PE 104</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-187">6.2. PE 187</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-188">6.3. PE 188</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-104">5.1. PE 104</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-187">5.2. PE 187</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-188">5.3. PE 188</a></li>
 </ul>
             </nav>
         </div>
@@ -346,83 +356,83 @@
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="pe-q101-300">
-<h1><span class="section-number">6. </span>PE Q101-300<a class="headerlink" href="#pe-q101-300" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">5. </span>PE Q101-300<a class="headerlink" href="#pe-q101-300" title="Link to this heading">#</a></h1>
 <section id="pe-104">
-<h2><span class="section-number">6.1. </span>PE 104<a class="headerlink" href="#pe-104" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">5.1. </span>PE 104<a class="headerlink" href="#pe-104" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 104 Pandigital Fibonacci Ends</span>
-<span class="c1"># find quicker solution</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">set_int_max_str_digits</span><span class="p">(</span><span class="mi">1000000</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">fib_pandigital_front</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="n">fib</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">fastFib</span><span class="p">(</span><span class="n">n</span><span class="p">))))</span>
-    <span class="n">fib</span><span class="o">=</span><span class="n">fib</span><span class="p">[:</span><span class="mi">9</span><span class="p">]</span>
-    <span class="n">fib</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
-    <span class="k">if</span> <span class="n">fib</span><span class="o">==</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]:</span>
-        <span class="k">return</span> <span class="kc">True</span>
-    <span class="k">return</span> <span class="kc">False</span>
+<div class="highlight-mathematica notranslate"><div class="highlight"><pre><span></span><span class="nv">#</span><span class="w"> </span><span class="mi">104</span><span class="w"> </span><span class="n">Pandigital</span><span class="w"> </span><span class="n">Fibonacci</span><span class="w"> </span><span class="n">Ends</span>
+<span class="nv">#</span><span class="w"> </span><span class="n">find</span><span class="w"> </span><span class="n">quicker</span><span class="w"> </span><span class="n">solution</span>
+<span class="n">import</span><span class="w"> </span><span class="n">sys</span>
+<span class="n">sys</span><span class="err">.</span><span class="nv">set_int_max_str_digits</span><span class="p">(</span><span class="mi">1000000</span><span class="p">)</span>
+<span class="n">def</span><span class="w"> </span><span class="nv">fib_pandigital_front</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="err">:</span>
+<span class="w">    </span><span class="n">fib</span><span class="o">=</span><span class="n">list</span><span class="p">(</span><span class="n">map</span><span class="p">(</span><span class="n">int</span><span class="p">,</span><span class="n">str</span><span class="p">(</span><span class="n">fastFib</span><span class="p">(</span><span class="n">n</span><span class="p">))))</span>
+<span class="w">    </span><span class="n">fib</span><span class="o">=</span><span class="n">fib</span><span class="p">[</span><span class="err">:</span><span class="mi">9</span><span class="p">]</span>
+<span class="w">    </span><span class="n">fib</span><span class="err">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="w">    </span><span class="n">if</span><span class="w"> </span><span class="n">fib</span><span class="o">==</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]</span><span class="err">:</span>
+<span class="w">        </span><span class="n">return</span><span class="w"> </span><span class="n">True</span>
+<span class="w">    </span><span class="n">return</span><span class="w"> </span><span class="n">False</span>
 
-<span class="k">def</span> <span class="nf">fib_pandigital_back</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="n">fib</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">fastFib</span><span class="p">(</span><span class="n">n</span><span class="p">))))</span>
-    <span class="n">fib</span><span class="o">=</span><span class="n">fib</span><span class="p">[</span><span class="o">-</span><span class="mi">9</span><span class="p">:]</span>
-    <span class="n">fib</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
-    <span class="k">if</span> <span class="n">fib</span><span class="o">==</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]:</span>
-        <span class="k">return</span> <span class="kc">True</span>
-    <span class="k">return</span> <span class="kc">False</span>
+<span class="n">def</span><span class="w"> </span><span class="nv">fib_pandigital_back</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="err">:</span>
+<span class="w">    </span><span class="n">fib</span><span class="o">=</span><span class="n">list</span><span class="p">(</span><span class="n">map</span><span class="p">(</span><span class="n">int</span><span class="p">,</span><span class="n">str</span><span class="p">(</span><span class="n">fastFib</span><span class="p">(</span><span class="n">n</span><span class="p">))))</span>
+<span class="w">    </span><span class="n">fib</span><span class="o">=</span><span class="n">fib</span><span class="p">[</span><span class="mi">-9</span><span class="err">:</span><span class="p">]</span>
+<span class="w">    </span><span class="n">fib</span><span class="err">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="w">    </span><span class="n">if</span><span class="w"> </span><span class="n">fib</span><span class="o">==</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]</span><span class="err">:</span>
+<span class="w">        </span><span class="n">return</span><span class="w"> </span><span class="n">True</span>
+<span class="w">    </span><span class="n">return</span><span class="w"> </span><span class="n">False</span>
 
 <span class="n">n</span><span class="o">=</span><span class="mi">89000</span>
-<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">fib_pandigital_back</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="ow">and</span> <span class="n">fib_pandigital_front</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-        <span class="ne">KeyboardInterrupt</span><span class="p">()</span>
-    <span class="n">n</span><span class="o">+=</span><span class="mi">1</span>
+<span class="n">while</span><span class="w"> </span><span class="n">True</span><span class="err">:</span>
+<span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="w">    </span><span class="n">if</span><span class="w"> </span><span class="nv">fib_pandigital_back</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="nv">fib_pandigital_front</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="err">:</span>
+<span class="w">        </span><span class="n">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="w">        </span><span class="n">KeyboardInterrupt</span><span class="p">()</span>
+<span class="w">    </span><span class="n">n</span><span class="o">+=</span><span class="mi">1</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#112 Bouncy Numbers</span>
-<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">time</span>
+<div class="highlight-mathematica notranslate"><div class="highlight"><pre><span></span><span class="nv">#112</span><span class="w"> </span><span class="n">Bouncy</span><span class="w"> </span><span class="n">Numbers</span>
+<span class="n">from</span><span class="w"> </span><span class="n">time</span><span class="w"> </span><span class="n">import</span><span class="w"> </span><span class="n">time</span>
 <span class="n">start</span><span class="o">=</span><span class="n">time</span><span class="p">()</span>
-<span class="k">def</span> <span class="nf">listint</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
-    <span class="n">integer</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
-    <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">num</span><span class="p">:</span>
-        <span class="n">integer</span><span class="o">=</span><span class="n">integer</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
-    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">integer</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">bouncy</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="nb">input</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)))</span>
-    <span class="n">output</span><span class="o">=</span><span class="nb">input</span><span class="p">[:]</span>
-    <span class="n">output</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
-    <span class="k">if</span> <span class="nb">input</span><span class="o">==</span><span class="n">output</span><span class="p">:</span>
-        <span class="k">return</span> <span class="kc">False</span>
-    <span class="n">output</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
-    <span class="k">if</span> <span class="nb">input</span><span class="o">==</span><span class="n">output</span><span class="p">:</span>
-        <span class="k">return</span> <span class="kc">False</span>
-    <span class="k">return</span> <span class="kc">True</span>
-<span class="k">def</span> <span class="nf">bouncy_percentage</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="n">sum_bouncy</span><span class="o">=</span><span class="mi">0</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">bouncy</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">==</span><span class="kc">True</span><span class="p">:</span>
-            <span class="n">sum_bouncy</span><span class="o">+=</span><span class="mi">1</span>
-    <span class="n">ratio</span><span class="o">=</span><span class="n">sum_bouncy</span><span class="o">/</span><span class="n">n</span>
-    <span class="k">return</span> <span class="n">ratio</span><span class="o">*</span><span class="mi">100</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">bouncy_percentage</span><span class="p">(</span><span class="mi">1587000</span><span class="p">))</span>
+<span class="n">def</span><span class="w"> </span><span class="n">listint</span><span class="p">(</span><span class="n">num</span><span class="p">)</span><span class="err">:</span>
+<span class="w">    </span><span class="n">integer</span><span class="o">=</span><span class="err">&#39;&#39;</span>
+<span class="w">    </span><span class="n">for</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">num</span><span class="err">:</span>
+<span class="w">        </span><span class="n">integer</span><span class="o">=</span><span class="n">integer</span><span class="o">+</span><span class="n">str</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+<span class="w">    </span><span class="n">return</span><span class="w"> </span><span class="n">int</span><span class="p">(</span><span class="n">integer</span><span class="p">)</span>
+<span class="n">def</span><span class="w"> </span><span class="n">bouncy</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="err">:</span>
+<span class="w">    </span><span class="n">input</span><span class="o">=</span><span class="n">list</span><span class="p">(</span><span class="n">map</span><span class="p">(</span><span class="n">int</span><span class="p">,</span><span class="w"> </span><span class="n">str</span><span class="p">(</span><span class="n">n</span><span class="p">)))</span>
+<span class="w">    </span><span class="n">output</span><span class="o">=</span><span class="n">input</span><span class="p">[</span><span class="err">:</span><span class="p">]</span>
+<span class="w">    </span><span class="n">output</span><span class="err">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="w">    </span><span class="n">if</span><span class="w"> </span><span class="n">input</span><span class="o">==</span><span class="n">output</span><span class="err">:</span>
+<span class="w">        </span><span class="n">return</span><span class="w"> </span><span class="n">False</span>
+<span class="w">    </span><span class="n">output</span><span class="err">.</span><span class="n">reverse</span><span class="p">()</span>
+<span class="w">    </span><span class="n">if</span><span class="w"> </span><span class="n">input</span><span class="o">==</span><span class="n">output</span><span class="err">:</span>
+<span class="w">        </span><span class="n">return</span><span class="w"> </span><span class="n">False</span>
+<span class="w">    </span><span class="n">return</span><span class="w"> </span><span class="n">True</span>
+<span class="n">def</span><span class="w"> </span><span class="nv">bouncy_percentage</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="err">:</span>
+<span class="w">    </span><span class="nv">sum_bouncy</span><span class="o">=</span><span class="mi">0</span>
+<span class="w">    </span><span class="n">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="err">:</span>
+<span class="w">        </span><span class="n">if</span><span class="w"> </span><span class="n">bouncy</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">==</span><span class="n">True</span><span class="err">:</span>
+<span class="w">            </span><span class="nv">sum_bouncy</span><span class="o">+=</span><span class="mi">1</span>
+<span class="w">    </span><span class="n">ratio</span><span class="o">=</span><span class="nv">sum_bouncy</span><span class="o">/</span><span class="n">n</span>
+<span class="w">    </span><span class="n">return</span><span class="w"> </span><span class="n">ratio</span><span class="o">*</span><span class="mi">100</span>
+<span class="n">print</span><span class="p">(</span><span class="nv">bouncy_percentage</span><span class="p">(</span><span class="mi">1587000</span><span class="p">))</span>
 <span class="n">end</span><span class="o">=</span><span class="n">time</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">end</span><span class="o">-</span><span class="n">start</span><span class="p">)</span>
-<span class="c1"># ans - 1587000</span>
+<span class="n">print</span><span class="p">(</span><span class="n">end</span><span class="o">-</span><span class="n">start</span><span class="p">)</span>
+<span class="nv">#</span><span class="w"> </span><span class="n">ans</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1587000</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">*</span> <span class="mi">121</span> <span class="n">Disc</span> <span class="n">Game</span> <span class="n">Prize</span> <span class="n">Fund</span> 
-    <span class="n">Person</span> <span class="n">will</span> <span class="n">have</span> <span class="n">to</span> <span class="n">pull</span> <span class="n">out</span> <span class="n">blue</span> <span class="o">&gt;=</span><span class="mi">8</span> <span class="n">times</span><span class="o">*</span><span class="p">)</span>
-<span class="n">ncr</span><span class="p">[</span><span class="n">n_</span><span class="p">,</span><span class="n">r_</span><span class="p">]</span><span class="o">:=</span><span class="n">n</span><span class="err">!</span><span class="o">/</span><span class="p">(</span><span class="n">r</span><span class="err">!</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">r</span><span class="p">)</span><span class="err">!</span><span class="p">)</span> <span class="p">(</span><span class="o">*</span><span class="n">n</span> <span class="n">choose</span> <span class="n">r</span> <span class="n">combinatorics</span> <span class="n">function</span><span class="o">*</span><span class="p">)</span>
-<span class="n">blueChance</span><span class="p">[</span><span class="n">blues_</span><span class="p">]</span><span class="o">:=</span>
+<div class="highlight-mathematica notranslate"><div class="highlight"><pre><span></span><span class="c">(* 121 Disc Game Prize Fund </span>
+<span class="c">    Person will have to pull out blue &gt;=8 times*)</span>
+<span class="n">ncr</span><span class="p">[</span><span class="nv">n_</span><span class="p">,</span><span class="nv">r_</span><span class="p">]</span><span class="o">:=</span><span class="n">n</span><span class="o">!/</span><span class="p">(</span><span class="n">r</span><span class="o">!*</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">r</span><span class="p">)</span><span class="o">!</span><span class="p">)</span><span class="w"> </span><span class="c">(*n choose r combinatorics function*)</span>
+<span class="n">blueChance</span><span class="p">[</span><span class="nv">blues_</span><span class="p">]</span><span class="o">:=</span>
 <span class="n">lst</span><span class="o">=</span><span class="n">Table</span><span class="p">[</span><span class="n">blueChance</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">*</span><span class="n">ncr</span><span class="p">[</span><span class="mi">15</span><span class="p">,</span><span class="n">n</span><span class="p">],{</span><span class="n">n</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">15</span><span class="p">}]</span>
 <span class="n">n</span><span class="o">=</span><span class="n">Floor</span><span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">Total</span><span class="p">[</span><span class="n">lst</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span><span class="o">^</span><span class="mi">15</span><span class="p">)]</span>
 </pre></div>
@@ -431,65 +441,65 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 124 Ordered Radicals</span>
-<span class="c1"># find quicker solution</span>
-<span class="k">def</span> <span class="nf">prime_factors</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="n">factors</span><span class="o">=</span><span class="p">[]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">prime</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="ow">and</span> <span class="n">n</span><span class="o">%</span><span class="n">i</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
-            <span class="n">factors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">factors</span>
+<div class="highlight-mathematica notranslate"><div class="highlight"><pre><span></span><span class="nv">#</span><span class="w"> </span><span class="mi">124</span><span class="w"> </span><span class="n">Ordered</span><span class="w"> </span><span class="n">Radicals</span>
+<span class="nv">#</span><span class="w"> </span><span class="n">find</span><span class="w"> </span><span class="n">quicker</span><span class="w"> </span><span class="n">solution</span>
+<span class="n">def</span><span class="w"> </span><span class="nv">prime_factors</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="err">:</span>
+<span class="w">    </span><span class="n">factors</span><span class="o">=</span><span class="p">[]</span>
+<span class="w">    </span><span class="n">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="err">:</span>
+<span class="w">        </span><span class="n">if</span><span class="w"> </span><span class="n">prime</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">n</span><span class="err">%</span><span class="n">i</span><span class="o">==</span><span class="mi">0</span><span class="err">:</span>
+<span class="w">            </span><span class="n">factors</span><span class="err">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="w">    </span><span class="n">return</span><span class="w"> </span><span class="n">factors</span>
 
-<span class="k">def</span> <span class="nf">rad</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">n</span><span class="o">==</span><span class="mi">1</span> <span class="ow">or</span> <span class="n">prime</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">n</span>
-    <span class="n">fac</span><span class="o">=</span><span class="n">prime_factors</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-    <span class="n">ans</span><span class="o">=</span><span class="n">fac</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">fac</span><span class="p">)):</span>
-        <span class="n">ans</span><span class="o">*=</span><span class="n">fac</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">ans</span>
+<span class="n">def</span><span class="w"> </span><span class="n">rad</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="err">:</span>
+<span class="w">    </span><span class="n">if</span><span class="w"> </span><span class="n">n</span><span class="o">==</span><span class="mi">1</span><span class="w"> </span><span class="n">or</span><span class="w"> </span><span class="n">prime</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="err">:</span>
+<span class="w">        </span><span class="n">return</span><span class="w"> </span><span class="n">n</span>
+<span class="w">    </span><span class="n">fac</span><span class="o">=</span><span class="nv">prime_factors</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="w">    </span><span class="n">ans</span><span class="o">=</span><span class="n">fac</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="w">    </span><span class="n">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">len</span><span class="p">(</span><span class="n">fac</span><span class="p">))</span><span class="err">:</span>
+<span class="w">        </span><span class="n">ans</span><span class="o">*=</span><span class="n">fac</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="w">    </span><span class="n">return</span><span class="w"> </span><span class="n">ans</span>
 
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3000</span><span class="p">):</span>
-    <span class="n">rad</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="n">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3000</span><span class="p">)</span><span class="err">:</span>
+<span class="w">    </span><span class="n">rad</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">*</span> <span class="mi">125</span> <span class="n">Palindromic</span> <span class="n">Sums</span> <span class="o">*</span><span class="p">)</span>
-<span class="p">(</span><span class="o">*</span> <span class="n">add</span> <span class="n">Boole</span><span class="p">[]</span> <span class="n">to</span> <span class="n">count</span> <span class="n">number</span> <span class="n">of</span> <span class="n">times</span> <span class="n">when</span> <span class="o">&lt;</span><span class="mi">10</span><span class="o">^</span><span class="mi">8</span> <span class="o">*</span><span class="p">)</span>
-<span class="p">(</span><span class="o">*</span> <span class="n">learnt</span> <span class="n">functions</span><span class="p">:</span>
-    <span class="n">Accumulate</span><span class="p">[]</span>
-    <span class="n">AnyTrue</span><span class="p">[{},</span><span class="n">test</span><span class="p">]</span> <span class="n">true</span> <span class="k">if</span> <span class="nb">any</span> <span class="nb">input</span> <span class="n">passes</span> <span class="n">the</span> <span class="n">test</span>
-    <span class="n">MemberQ</span><span class="p">[{},</span><span class="n">___</span><span class="p">]</span> <span class="n">true</span> <span class="k">if</span> <span class="nb">any</span> <span class="n">element</span> <span class="ow">in</span> <span class="nb">list</span> <span class="ow">is</span> <span class="n">___</span>
-    <span class="n">Module</span><span class="p">[]</span><span class="err">???</span> <span class="o">*</span><span class="p">)</span>
-<span class="n">isSumOfConsecutiveSquares</span><span class="p">[</span><span class="n">n_Integer</span><span class="p">]</span> <span class="o">:=</span> 
- <span class="n">Module</span><span class="p">[{</span><span class="n">maxK</span><span class="p">,</span> <span class="n">sumsOfSquares</span><span class="p">},</span>
-  <span class="n">maxK</span> <span class="o">=</span> <span class="n">Floor</span><span class="p">[</span><span class="n">Sqrt</span><span class="p">[</span><span class="n">n</span><span class="p">]];</span>
+<div class="highlight-mathematica notranslate"><div class="highlight"><pre><span></span><span class="c">(* 125 Palindromic Sums *)</span>
+<span class="c">(* add Boole[] to count number of times when &lt;10^8 *)</span>
+<span class="c">(* learnt functions:</span>
+<span class="c">    Accumulate[]</span>
+<span class="c">    AnyTrue[{},test] true if any input passes the test</span>
+<span class="c">    MemberQ[{},___] true if any element in list is ___</span>
+<span class="c">    Module[]??? *)</span>
+<span class="n">isSumOfConsecutiveSquares</span><span class="p">[</span><span class="nv">n_Integer</span><span class="p">]</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span>
+<span class="w"> </span><span class="n">Module</span><span class="p">[{</span><span class="n">maxK</span><span class="p">,</span><span class="w"> </span><span class="n">sumsOfSquares</span><span class="p">},</span>
+<span class="w">  </span><span class="n">maxK</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Floor</span><span class="p">[</span><span class="n">Sqrt</span><span class="p">[</span><span class="n">n</span><span class="p">]];</span>
 
-  <span class="p">(</span><span class="o">*</span> <span class="n">Generate</span> <span class="n">cumulative</span> <span class="n">sums</span> <span class="n">of</span> <span class="n">consecutive</span> <span class="n">squares</span> <span class="n">starting</span> <span class="kn">from</span> <span class="nn">each</span> <span class="n">k</span> <span class="o">*</span><span class="p">)</span>
-  <span class="n">sumsOfSquares</span> <span class="o">=</span> <span class="n">Table</span><span class="p">[</span>
-    <span class="n">Accumulate</span><span class="p">[</span><span class="n">Table</span><span class="p">[(</span><span class="n">k</span> <span class="o">+</span> <span class="n">i</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="p">{</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">maxK</span> <span class="o">-</span> <span class="n">k</span><span class="p">}]],</span>
-    <span class="p">{</span><span class="n">k</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">maxK</span><span class="p">}</span>
-  <span class="p">];</span>
+<span class="w">  </span><span class="c">(* Generate cumulative sums of consecutive squares starting from each k *)</span>
+<span class="w">  </span><span class="n">sumsOfSquares</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Table</span><span class="p">[</span>
+<span class="w">    </span><span class="n">Accumulate</span><span class="p">[</span><span class="n">Table</span><span class="p">[(</span><span class="n">k</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">maxK</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">k</span><span class="p">}]],</span>
+<span class="w">    </span><span class="p">{</span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">maxK</span><span class="p">}</span>
+<span class="w">  </span><span class="p">];</span>
 
-  <span class="p">(</span><span class="o">*</span> <span class="n">Check</span> <span class="k">if</span> <span class="nb">any</span> <span class="nb">sum</span> <span class="n">sequence</span> <span class="n">contains</span> <span class="n">n</span> <span class="k">with</span> <span class="n">more</span> <span class="n">than</span> <span class="n">one</span> <span class="n">term</span> <span class="o">*</span><span class="p">)</span>
-  <span class="n">AnyTrue</span><span class="p">[</span><span class="n">sumsOfSquares</span><span class="p">,</span> <span class="n">MemberQ</span><span class="p">[</span><span class="c1">#, n] &amp;&amp; Length[#] &gt; 1 &amp;]</span>
+<span class="w">  </span><span class="c">(* Check if any sum sequence contains n with more than one term *)</span>
+<span class="w">  </span><span class="n">AnyTrue</span><span class="p">[</span><span class="n">sumsOfSquares</span><span class="p">,</span><span class="w"> </span><span class="n">MemberQ</span><span class="p">[</span><span class="nv">#</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">Length</span><span class="p">[</span><span class="nv">#</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">&amp;</span><span class="p">]</span>
 <span class="p">]</span>
 
-<span class="n">isSumSquaresPalindromic</span><span class="p">[</span><span class="n">n_Integer</span><span class="p">]</span><span class="o">:=</span><span class="n">isSumOfConsecutiveSquares</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">&amp;&amp;</span><span class="n">PalindromeQ</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+<span class="n">isSumSquaresPalindromic</span><span class="p">[</span><span class="nv">n_Integer</span><span class="p">]</span><span class="o">:=</span><span class="n">isSumOfConsecutiveSquares</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">&amp;&amp;</span><span class="n">PalindromeQ</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
 <span class="n">lst</span><span class="o">=</span><span class="n">Table</span><span class="p">[</span><span class="n">isSumSquaresPalindromic</span><span class="p">[</span><span class="n">n</span><span class="p">],{</span><span class="n">n</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">9999</span><span class="p">}];</span>
-<span class="n">Count</span><span class="p">[</span><span class="n">lst</span><span class="p">,</span><span class="kc">True</span><span class="p">]</span>
+<span class="n">Count</span><span class="p">[</span><span class="n">lst</span><span class="p">,</span><span class="n">True</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">*</span> <span class="mi">162</span> <span class="n">Hexadecimal</span> <span class="n">Numbers</span> <span class="o">*</span><span class="p">)</span>
-<span class="n">lst</span><span class="o">=</span><span class="n">Table</span><span class="p">[(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">Factorial</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">Factorial</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="mi">14</span><span class="o">^</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">3</span><span class="p">)),{</span><span class="n">n</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">16</span><span class="p">}];</span>
-<span class="n">lst1</span><span class="o">=</span><span class="n">Table</span><span class="p">[(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">Factorial</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">Factorial</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="mi">16</span><span class="o">^</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">3</span><span class="p">)),{</span><span class="n">n</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">16</span><span class="p">}];</span>
+<div class="highlight-mathematica notranslate"><div class="highlight"><pre><span></span><span class="c">(* 162 Hexadecimal Numbers *)</span>
+<span class="n">lst</span><span class="o">=</span><span class="n">Table</span><span class="p">[(</span><span class="n">n</span><span class="mi">-1</span><span class="p">)</span><span class="o">*</span><span class="n">Factorial</span><span class="p">[</span><span class="n">n</span><span class="mi">-1</span><span class="p">]</span><span class="o">/</span><span class="n">Factorial</span><span class="p">[</span><span class="n">n</span><span class="mi">-3</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="mi">14</span><span class="o">^</span><span class="p">(</span><span class="n">n</span><span class="mi">-3</span><span class="p">)),{</span><span class="n">n</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">16</span><span class="p">}];</span>
+<span class="n">lst1</span><span class="o">=</span><span class="n">Table</span><span class="p">[(</span><span class="n">n</span><span class="mi">-1</span><span class="p">)</span><span class="o">*</span><span class="n">Factorial</span><span class="p">[</span><span class="n">n</span><span class="mi">-1</span><span class="p">]</span><span class="o">/</span><span class="n">Factorial</span><span class="p">[</span><span class="n">n</span><span class="mi">-3</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="mi">16</span><span class="o">^</span><span class="p">(</span><span class="n">n</span><span class="mi">-3</span><span class="p">)),{</span><span class="n">n</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">16</span><span class="p">}];</span>
 <span class="n">n</span><span class="o">=</span><span class="p">(</span><span class="n">Total</span><span class="p">[</span><span class="n">lst1</span><span class="p">]</span><span class="o">-</span><span class="n">Total</span><span class="p">[</span><span class="n">lst</span><span class="p">])</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
 <span class="n">n</span><span class="o">=</span>
 <span class="n">BaseForm</span><span class="p">[</span><span class="n">Total</span><span class="p">[</span><span class="n">lst</span><span class="p">]</span><span class="o">+</span><span class="n">n</span><span class="p">,</span><span class="mi">16</span><span class="p">]</span>
@@ -499,18 +509,18 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 179</span>
-<span class="k">def</span> <span class="nf">len_factors</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">factors</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+<div class="highlight-mathematica notranslate"><div class="highlight"><pre><span></span><span class="nv">#</span><span class="w"> </span><span class="mi">179</span>
+<span class="n">def</span><span class="w"> </span><span class="nv">len_factors</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="err">:</span>
+<span class="w">    </span><span class="n">return</span><span class="w"> </span><span class="n">len</span><span class="p">(</span><span class="n">factors</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
 <span class="n">num</span><span class="o">=</span><span class="mi">1</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10000000</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">prime</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">==</span><span class="kc">True</span> <span class="ow">or</span> <span class="n">prime</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">==</span><span class="kc">True</span><span class="p">:</span>
-        <span class="k">pass</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">len_factors</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">==</span><span class="n">len_factors</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-            <span class="n">num</span><span class="o">+=</span><span class="mi">1</span>
-        <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="mi">10000</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="n">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">10000000</span><span class="p">)</span><span class="err">:</span>
+<span class="w">    </span><span class="n">if</span><span class="w"> </span><span class="n">prime</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">==</span><span class="n">True</span><span class="w"> </span><span class="n">or</span><span class="w"> </span><span class="n">prime</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">==</span><span class="n">True</span><span class="err">:</span>
+<span class="w">        </span><span class="n">pass</span>
+<span class="w">    </span><span class="n">else</span><span class="err">:</span>
+<span class="w">        </span><span class="n">if</span><span class="w"> </span><span class="nv">len_factors</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">==</span><span class="nv">len_factors</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="err">:</span>
+<span class="w">            </span><span class="n">num</span><span class="o">+=</span><span class="mi">1</span>
+<span class="w">        </span><span class="n">if</span><span class="w"> </span><span class="n">i</span><span class="err">%</span><span class="mi">10000</span><span class="o">==</span><span class="mi">0</span><span class="err">:</span>
+<span class="w">            </span><span class="n">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 <span class="n">num</span>
 </pre></div>
 </div>
@@ -518,14 +528,14 @@
 </div>
 </section>
 <section id="pe-187">
-<h2><span class="section-number">6.2. </span>PE 187<a class="headerlink" href="#pe-187" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">5.2. </span>PE 187<a class="headerlink" href="#pe-187" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#187 FP way</span>
-<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">factorint</span>
-<span class="n">limit</span> <span class="o">=</span> <span class="mi">999999</span>
-<span class="n">count_two_prime_factors</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">limit</span> <span class="p">)</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">factorint</span><span class="p">(</span><span class="n">n</span><span class="p">))</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">count_two_prime_factors</span>
+<div class="highlight-mathematica notranslate"><div class="highlight"><pre><span></span><span class="nv">#187</span><span class="w"> </span><span class="n">FP</span><span class="w"> </span><span class="n">way</span>
+<span class="n">from</span><span class="w"> </span><span class="n">sympy</span><span class="w"> </span><span class="n">import</span><span class="w"> </span><span class="n">factorint</span>
+<span class="n">limit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">999999</span>
+<span class="nv">count_two_prime_factors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sum</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="n">for</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="n">limit</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">if</span><span class="w"> </span><span class="n">len</span><span class="p">(</span><span class="n">factorint</span><span class="p">(</span><span class="n">n</span><span class="p">))</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+<span class="nv">count_two_prime_factors</span>
 </pre></div>
 </div>
 </div>
@@ -537,39 +547,39 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">*</span> <span class="mi">187</span> <span class="n">Semiprimes</span> 
-    <span class="n">Q</span><span class="p">:</span> <span class="n">the</span> <span class="n">code</span> <span class="n">takes</span> <span class="mi">11</span><span class="nb">min</span><span class="p">,</span> <span class="n">faster</span><span class="err">???</span> <span class="o">*</span><span class="p">)</span>
-<span class="n">Total</span><span class="p">[</span><span class="n">Table</span><span class="p">[</span> 
-            <span class="n">Boole</span><span class="p">[</span> <span class="n">Total</span><span class="p">[</span><span class="n">FactorInteger</span><span class="p">[</span><span class="n">n</span><span class="p">]][[</span><span class="mi">2</span><span class="p">]]</span> <span class="o">==</span> <span class="mi">2</span> <span class="p">]</span>
-            <span class="p">,</span> <span class="p">{</span><span class="n">n</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">99999999</span><span class="p">}</span> <span class="p">]</span> 
-    <span class="p">]</span>
+<div class="highlight-mathematica notranslate"><div class="highlight"><pre><span></span><span class="c">(* 187 Semiprimes </span>
+<span class="c">    Q: the code takes 11min, faster??? *)</span>
+<span class="n">Total</span><span class="p">[</span><span class="n">Table</span><span class="p">[</span><span class="w"> </span>
+<span class="w">            </span><span class="n">Boole</span><span class="p">[</span><span class="w"> </span><span class="n">Total</span><span class="p">[</span><span class="n">FactorInteger</span><span class="p">[</span><span class="n">n</span><span class="p">]][[</span><span class="mi">2</span><span class="p">]]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">]</span>
+<span class="w">            </span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">n</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">99999999</span><span class="p">}</span><span class="w"> </span><span class="p">]</span><span class="w"> </span>
+<span class="w">    </span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">*</span> <span class="n">speed</span> <span class="n">up</span> <span class="n">but</span> <span class="n">wrong</span> <span class="n">answer</span> <span class="err">??</span> <span class="o">-</span> <span class="n">add</span> <span class="p">{{</span><span class="n">_</span><span class="p">,</span><span class="mi">2</span><span class="p">}}</span> <span class="o">*</span><span class="p">)</span>
-<span class="p">(</span><span class="o">*</span> <span class="n">takes</span> <span class="o">&gt;</span><span class="mi">11</span> <span class="nb">min</span><span class="err">???</span> <span class="o">*</span><span class="p">)</span>
-<span class="n">Count</span><span class="p">[</span> <span class="n">FactorInteger</span> <span class="o">/@</span> <span class="n">Range</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="o">^</span><span class="mi">8</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> 
-      <span class="p">,{{</span><span class="n">_</span><span class="p">,</span> <span class="mi">1</span><span class="p">},{</span><span class="n">_</span><span class="p">,</span> <span class="mi">1</span><span class="p">}}</span> <span class="o">|</span> <span class="p">{{</span><span class="n">_</span><span class="p">,</span><span class="mi">2</span><span class="p">}}</span>
-      <span class="p">]</span>
+<div class="highlight-mathematica notranslate"><div class="highlight"><pre><span></span><span class="c">(* speed up but wrong answer ?? - add {{_,2}} *)</span>
+<span class="c">(* takes &gt;11 min??? *)</span>
+<span class="n">Count</span><span class="p">[</span><span class="w"> </span><span class="n">FactorInteger</span><span class="w"> </span><span class="o">/@</span><span class="w"> </span><span class="n">Range</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="o">^</span><span class="mi">8-1</span><span class="p">]</span><span class="w"> </span>
+<span class="w">      </span><span class="p">,{{</span><span class="nv">_</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">},{</span><span class="nv">_</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">}}</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">{{</span><span class="nv">_</span><span class="p">,</span><span class="mi">2</span><span class="p">}}</span>
+<span class="w">      </span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span><span class="o">=</span><span class="n">Table</span><span class="p">[</span> 
-    <span class="n">Boole</span><span class="p">[</span> <span class="n">Length</span><span class="p">[</span> <span class="n">FactorInteger</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="p">]</span><span class="o">==</span><span class="mi">2</span> <span class="p">],</span>
-    <span class="p">{</span><span class="n">n</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">30</span><span class="p">}]</span>
+<div class="highlight-mathematica notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span><span class="o">=</span><span class="n">Table</span><span class="p">[</span><span class="w"> </span>
+<span class="w">    </span><span class="n">Boole</span><span class="p">[</span><span class="w"> </span><span class="n">Length</span><span class="p">[</span><span class="w"> </span><span class="n">FactorInteger</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="w"> </span><span class="p">]</span><span class="o">==</span><span class="mi">2</span><span class="w"> </span><span class="p">],</span>
+<span class="w">    </span><span class="p">{</span><span class="n">n</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">30</span><span class="p">}]</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span><span class="o">=</span><span class="p">{{</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">},{</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">}};</span>
+<div class="highlight-mathematica notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span><span class="o">=</span><span class="p">{{</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">},{</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">}};</span>
 <span class="n">Total</span><span class="p">[</span><span class="n">lst</span><span class="p">][[</span><span class="mi">2</span><span class="p">]]</span>
 </pre></div>
 </div>
@@ -577,68 +587,92 @@
 </div>
 </section>
 <section id="pe-188">
-<h2><span class="section-number">6.3. </span>PE 188<a class="headerlink" href="#pe-188" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">5.3. </span>PE 188<a class="headerlink" href="#pe-188" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">=</span><span class="mi">7</span>
-<span class="kn">import</span> <span class="nn">math</span>
-<span class="k">def</span> <span class="nf">mod</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns remainder when m is divided by n&quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">m</span><span class="o">-</span><span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">e</span><span class="o">**</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">m</span><span class="p">)</span><span class="o">-</span><span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">n</span><span class="p">)))</span><span class="o">*</span><span class="n">n</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1856</span><span class="p">):</span>
-    <span class="n">n</span><span class="o">=</span><span class="n">mod</span><span class="p">(</span><span class="mi">7</span><span class="o">**</span><span class="n">n</span><span class="p">,</span><span class="mi">100000</span><span class="p">)</span>
+<div class="highlight-mathematica notranslate"><div class="highlight"><pre><span></span><span class="mi">7</span><span class="o">**</span><span class="mi">7</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>823543
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">m</span><span class="o">=</span><span class="mi">8123674</span>
+<div class="highlight-mathematica notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">=</span><span class="mi">7</span>
+<span class="n">n</span><span class="o">=</span><span class="mi">7</span><span class="o">**</span><span class="n">n</span><span class="w"> </span><span class="err">%</span><span class="w"> </span><span class="mi">1000000000</span>
+<span class="n">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>823543
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-mathematica notranslate"><div class="highlight"><pre><span></span><span class="n">m</span><span class="o">=</span><span class="mi">8123674</span>
 <span class="n">n</span><span class="o">=</span><span class="mi">1798</span>
-<span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">m</span><span class="o">/</span><span class="n">n</span><span class="p">)</span>
+<span class="n">math</span><span class="err">.</span><span class="n">floor</span><span class="p">(</span><span class="n">m</span><span class="o">/</span><span class="n">n</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">=</span><span class="mi">1777</span><span class="p">;</span>
-<span class="n">For</span><span class="p">[</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">1857</span><span class="p">,</span><span class="n">i</span><span class="o">++</span><span class="p">,</span><span class="n">n</span><span class="o">=</span><span class="n">Mod</span><span class="p">[</span><span class="mi">1777</span><span class="o">^</span><span class="n">n</span><span class="p">,</span><span class="mi">100000</span><span class="p">]]</span>
+<div class="highlight-mathematica notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">=</span><span class="mi">1777</span><span class="p">;</span>
+<span class="n">For</span><span class="p">[</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">1856</span><span class="p">,</span><span class="n">i</span><span class="o">++</span><span class="p">,</span><span class="n">n</span><span class="o">=</span><span class="n">Mod</span><span class="p">[</span><span class="mi">1777</span><span class="o">^</span><span class="n">n</span><span class="p">,</span><span class="mi">10000000</span><span class="p">]]</span>
 <span class="n">n</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><pre style="&#102;&#111;&#110;&#116;&#45;&#102;&#97;&#109;&#105;&#108;&#121;&#58;&#32;&#34;&#67;&#111;&#117;&#114;&#105;&#101;&#114;&#32;&#78;&#101;&#119;&#34;&#44;&#67;&#111;&#117;&#114;&#105;&#101;&#114;&#44;&#109;&#111;&#110;&#111;&#115;&#112;&#97;&#99;&#101;&#59;">&#53;&#57;&#54;&#50;&#48;&#57;&#55;</pre></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Mod</span><span class="p">[</span><span class="mi">1777</span><span class="o">^</span><span class="mi">1777</span><span class="p">,</span><span class="mi">100000000</span><span class="p">]</span>
+<div class="highlight-mathematica notranslate"><div class="highlight"><pre><span></span><span class="mi">62097</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><pre style="&#102;&#111;&#110;&#116;&#45;&#102;&#97;&#109;&#105;&#108;&#121;&#58;&#32;&#34;&#67;&#111;&#117;&#114;&#105;&#101;&#114;&#32;&#78;&#101;&#119;&#34;&#44;&#67;&#111;&#117;&#114;&#105;&#101;&#114;&#44;&#109;&#111;&#110;&#111;&#115;&#112;&#97;&#99;&#101;&#59;">&#54;&#50;&#48;&#57;&#55;</pre></div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-mathematica notranslate"><div class="highlight"><pre><span></span><span class="n">Mod</span><span class="p">[</span><span class="mi">1777</span><span class="o">^</span><span class="mi">1777</span><span class="p">,</span><span class="mi">100000000</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">00001777</span><span class="p">,</span><span class="mi">87955697</span><span class="p">,</span><span class="mi">70132343</span><span class="p">,</span><span class="mi">33172343</span><span class="p">,</span><span class="mi">65172343</span><span class="p">,</span><span class="mi">5172343</span>
+<div class="highlight-mathematica notranslate"><div class="highlight"><pre><span></span><span class="mi">00001777</span><span class="p">,</span><span class="mi">87955697</span><span class="p">,</span><span class="mi">70132343</span><span class="p">,</span><span class="mi">33172343</span><span class="p">,</span><span class="mi">65172343</span><span class="p">,</span><span class="mi">5172343</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 243 Resilience</span>
-<span class="k">def</span> <span class="nf">resilient</span><span class="p">(</span><span class="n">n</span><span class="p">:</span><span class="nb">int</span><span class="p">):</span>
-    <span class="n">res</span><span class="o">=</span><span class="mi">1</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">coprime</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
-            <span class="n">res</span><span class="o">+=</span><span class="mi">1</span>
-    <span class="k">return</span> <span class="n">res</span><span class="o">/</span><span class="n">n</span>
+<div class="highlight-mathematica notranslate"><div class="highlight"><pre><span></span><span class="nv">#</span><span class="w"> </span><span class="mi">243</span><span class="w"> </span><span class="n">Resilience</span>
+<span class="n">def</span><span class="w"> </span><span class="n">resilient</span><span class="p">(</span><span class="n">n</span><span class="err">:</span><span class="n">int</span><span class="p">)</span><span class="err">:</span>
+<span class="w">    </span><span class="n">res</span><span class="o">=</span><span class="mi">1</span>
+<span class="w">    </span><span class="n">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="err">:</span>
+<span class="w">        </span><span class="n">if</span><span class="w"> </span><span class="n">coprime</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="err">:</span>
+<span class="w">            </span><span class="n">res</span><span class="o">+=</span><span class="mi">1</span>
+<span class="w">    </span><span class="n">return</span><span class="w"> </span><span class="n">res</span><span class="o">/</span><span class="n">n</span>
 
-<span class="k">def</span> <span class="nf">solve</span><span class="p">():</span>
-    <span class="n">n</span><span class="o">=</span><span class="mi">24</span>
-    <span class="k">while</span> <span class="n">resilient</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="mf">0.2</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-        <span class="n">n</span><span class="o">+=</span><span class="mi">1</span>
-    <span class="k">return</span> <span class="n">n</span>
+<span class="n">def</span><span class="w"> </span><span class="n">solve</span><span class="p">()</span><span class="err">:</span>
+<span class="w">    </span><span class="n">n</span><span class="o">=</span><span class="mi">24</span>
+<span class="w">    </span><span class="n">while</span><span class="w"> </span><span class="n">resilient</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span><span class="err">:</span>
+<span class="w">        </span><span class="n">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="w">        </span><span class="n">n</span><span class="o">+=</span><span class="mi">1</span>
+<span class="w">    </span><span class="n">return</span><span class="w"> </span><span class="n">n</span>
 
 <span class="n">solve</span><span class="p">()</span>
 </pre></div>
@@ -647,26 +681,26 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">*</span> <span class="mi">345</span> <span class="o">*</span><span class="p">)</span>
-<span class="n">matrix</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="p">{</span><span class="mi">7</span><span class="p">,</span> <span class="mi">53</span><span class="p">,</span> <span class="mi">183</span><span class="p">,</span> <span class="mi">439</span><span class="p">,</span> <span class="mi">863</span><span class="p">,</span> <span class="mi">497</span><span class="p">,</span> <span class="mi">383</span><span class="p">,</span> <span class="mi">563</span><span class="p">,</span> <span class="mi">79</span><span class="p">,</span> <span class="mi">973</span><span class="p">,</span> <span class="mi">287</span><span class="p">,</span> <span class="mi">63</span><span class="p">,</span> <span class="mi">343</span><span class="p">,</span> <span class="mi">169</span><span class="p">,</span> <span class="mi">583</span><span class="p">},</span>
-  <span class="p">{</span><span class="mi">627</span><span class="p">,</span> <span class="mi">343</span><span class="p">,</span> <span class="mi">773</span><span class="p">,</span> <span class="mi">959</span><span class="p">,</span> <span class="mi">943</span><span class="p">,</span> <span class="mi">767</span><span class="p">,</span> <span class="mi">473</span><span class="p">,</span> <span class="mi">103</span><span class="p">,</span> <span class="mi">699</span><span class="p">,</span> <span class="mi">303</span><span class="p">,</span> <span class="mi">957</span><span class="p">,</span> <span class="mi">703</span><span class="p">,</span> <span class="mi">583</span><span class="p">,</span> <span class="mi">639</span><span class="p">,</span> <span class="mi">913</span><span class="p">},</span>
-  <span class="p">{</span><span class="mi">447</span><span class="p">,</span> <span class="mi">283</span><span class="p">,</span> <span class="mi">463</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">487</span><span class="p">,</span> <span class="mi">463</span><span class="p">,</span> <span class="mi">993</span><span class="p">,</span> <span class="mi">119</span><span class="p">,</span> <span class="mi">883</span><span class="p">,</span> <span class="mi">327</span><span class="p">,</span> <span class="mi">493</span><span class="p">,</span> <span class="mi">423</span><span class="p">,</span> <span class="mi">159</span><span class="p">,</span> <span class="mi">743</span><span class="p">},</span>
-  <span class="p">{</span><span class="mi">217</span><span class="p">,</span> <span class="mi">623</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">399</span><span class="p">,</span> <span class="mi">853</span><span class="p">,</span> <span class="mi">407</span><span class="p">,</span> <span class="mi">103</span><span class="p">,</span> <span class="mi">983</span><span class="p">,</span> <span class="mi">89</span><span class="p">,</span> <span class="mi">463</span><span class="p">,</span> <span class="mi">290</span><span class="p">,</span> <span class="mi">516</span><span class="p">,</span> <span class="mi">212</span><span class="p">,</span> <span class="mi">462</span><span class="p">,</span> <span class="mi">350</span><span class="p">},</span>
-  <span class="p">{</span><span class="mi">960</span><span class="p">,</span> <span class="mi">376</span><span class="p">,</span> <span class="mi">682</span><span class="p">,</span> <span class="mi">962</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">780</span><span class="p">,</span> <span class="mi">486</span><span class="p">,</span> <span class="mi">502</span><span class="p">,</span> <span class="mi">912</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">346</span><span class="p">,</span> <span class="mi">172</span><span class="p">,</span> <span class="mi">812</span><span class="p">,</span> <span class="mi">350</span><span class="p">},</span>
-  <span class="p">{</span><span class="mi">870</span><span class="p">,</span> <span class="mi">456</span><span class="p">,</span> <span class="mi">192</span><span class="p">,</span> <span class="mi">162</span><span class="p">,</span> <span class="mi">593</span><span class="p">,</span> <span class="mi">473</span><span class="p">,</span> <span class="mi">915</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">989</span><span class="p">,</span> <span class="mi">873</span><span class="p">,</span> <span class="mi">823</span><span class="p">,</span> <span class="mi">965</span><span class="p">,</span> <span class="mi">425</span><span class="p">,</span> <span class="mi">329</span><span class="p">,</span> <span class="mi">803</span><span class="p">},</span>
-  <span class="p">{</span><span class="mi">973</span><span class="p">,</span> <span class="mi">965</span><span class="p">,</span> <span class="mi">905</span><span class="p">,</span> <span class="mi">919</span><span class="p">,</span> <span class="mi">133</span><span class="p">,</span> <span class="mi">673</span><span class="p">,</span> <span class="mi">665</span><span class="p">,</span> <span class="mi">235</span><span class="p">,</span> <span class="mi">509</span><span class="p">,</span> <span class="mi">613</span><span class="p">,</span> <span class="mi">673</span><span class="p">,</span> <span class="mi">815</span><span class="p">,</span> <span class="mi">165</span><span class="p">,</span> <span class="mi">992</span><span class="p">,</span> <span class="mi">326</span><span class="p">},</span>
-  <span class="p">{</span><span class="mi">322</span><span class="p">,</span> <span class="mi">148</span><span class="p">,</span> <span class="mi">972</span><span class="p">,</span> <span class="mi">962</span><span class="p">,</span> <span class="mi">286</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">941</span><span class="p">,</span> <span class="mi">541</span><span class="p">,</span> <span class="mi">265</span><span class="p">,</span> <span class="mi">323</span><span class="p">,</span> <span class="mi">925</span><span class="p">,</span> <span class="mi">281</span><span class="p">,</span> <span class="mi">601</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">973</span><span class="p">},</span>
-  <span class="p">{</span><span class="mi">445</span><span class="p">,</span> <span class="mi">721</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">525</span><span class="p">,</span> <span class="mi">473</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">511</span><span class="p">,</span> <span class="mi">164</span><span class="p">,</span> <span class="mi">138</span><span class="p">,</span> <span class="mi">672</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">428</span><span class="p">,</span> <span class="mi">154</span><span class="p">,</span> <span class="mi">448</span><span class="p">,</span> <span class="mi">848</span><span class="p">},</span>
-  <span class="p">{</span><span class="mi">414</span><span class="p">,</span> <span class="mi">456</span><span class="p">,</span> <span class="mi">310</span><span class="p">,</span> <span class="mi">312</span><span class="p">,</span> <span class="mi">798</span><span class="p">,</span> <span class="mi">104</span><span class="p">,</span> <span class="mi">566</span><span class="p">,</span> <span class="mi">520</span><span class="p">,</span> <span class="mi">302</span><span class="p">,</span> <span class="mi">248</span><span class="p">,</span> <span class="mi">694</span><span class="p">,</span> <span class="mi">976</span><span class="p">,</span> <span class="mi">430</span><span class="p">,</span> <span class="mi">392</span><span class="p">,</span> <span class="mi">198</span><span class="p">},</span>
-  <span class="p">{</span><span class="mi">184</span><span class="p">,</span> <span class="mi">829</span><span class="p">,</span> <span class="mi">373</span><span class="p">,</span> <span class="mi">181</span><span class="p">,</span> <span class="mi">631</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">969</span><span class="p">,</span> <span class="mi">613</span><span class="p">,</span> <span class="mi">840</span><span class="p">,</span> <span class="mi">740</span><span class="p">,</span> <span class="mi">778</span><span class="p">,</span> <span class="mi">458</span><span class="p">,</span> <span class="mi">284</span><span class="p">,</span> <span class="mi">760</span><span class="p">,</span> <span class="mi">390</span><span class="p">},</span>
-  <span class="p">{</span><span class="mi">821</span><span class="p">,</span> <span class="mi">461</span><span class="p">,</span> <span class="mi">843</span><span class="p">,</span> <span class="mi">513</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">901</span><span class="p">,</span> <span class="mi">711</span><span class="p">,</span> <span class="mi">993</span><span class="p">,</span> <span class="mi">293</span><span class="p">,</span> <span class="mi">157</span><span class="p">,</span> <span class="mi">274</span><span class="p">,</span> <span class="mi">94</span><span class="p">,</span> <span class="mi">192</span><span class="p">,</span> <span class="mi">156</span><span class="p">,</span> <span class="mi">574</span><span class="p">},</span>
-  <span class="p">{</span><span class="mi">34</span><span class="p">,</span> <span class="mi">124</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">878</span><span class="p">,</span> <span class="mi">450</span><span class="p">,</span> <span class="mi">476</span><span class="p">,</span> <span class="mi">712</span><span class="p">,</span> <span class="mi">914</span><span class="p">,</span> <span class="mi">838</span><span class="p">,</span> <span class="mi">669</span><span class="p">,</span> <span class="mi">875</span><span class="p">,</span> <span class="mi">299</span><span class="p">,</span> <span class="mi">823</span><span class="p">,</span> <span class="mi">329</span><span class="p">,</span> <span class="mi">699</span><span class="p">},</span>
-  <span class="p">{</span><span class="mi">815</span><span class="p">,</span> <span class="mi">559</span><span class="p">,</span> <span class="mi">813</span><span class="p">,</span> <span class="mi">459</span><span class="p">,</span> <span class="mi">522</span><span class="p">,</span> <span class="mi">788</span><span class="p">,</span> <span class="mi">168</span><span class="p">,</span> <span class="mi">586</span><span class="p">,</span> <span class="mi">966</span><span class="p">,</span> <span class="mi">232</span><span class="p">,</span> <span class="mi">308</span><span class="p">,</span> <span class="mi">833</span><span class="p">,</span> <span class="mi">251</span><span class="p">,</span> <span class="mi">631</span><span class="p">,</span> <span class="mi">107</span><span class="p">},</span>
-  <span class="p">{</span><span class="mi">813</span><span class="p">,</span> <span class="mi">883</span><span class="p">,</span> <span class="mi">451</span><span class="p">,</span> <span class="mi">509</span><span class="p">,</span> <span class="mi">615</span><span class="p">,</span> <span class="mi">77</span><span class="p">,</span> <span class="mi">281</span><span class="p">,</span> <span class="mi">613</span><span class="p">,</span> <span class="mi">459</span><span class="p">,</span> <span class="mi">205</span><span class="p">,</span> <span class="mi">380</span><span class="p">,</span> <span class="mi">274</span><span class="p">,</span> <span class="mi">302</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">805</span><span class="p">}</span>
+<div class="highlight-mathematica notranslate"><div class="highlight"><pre><span></span><span class="c">(* 345 *)</span>
+<span class="n">matrix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="p">{</span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">53</span><span class="p">,</span><span class="w"> </span><span class="mi">183</span><span class="p">,</span><span class="w"> </span><span class="mi">439</span><span class="p">,</span><span class="w"> </span><span class="mi">863</span><span class="p">,</span><span class="w"> </span><span class="mi">497</span><span class="p">,</span><span class="w"> </span><span class="mi">383</span><span class="p">,</span><span class="w"> </span><span class="mi">563</span><span class="p">,</span><span class="w"> </span><span class="mi">79</span><span class="p">,</span><span class="w"> </span><span class="mi">973</span><span class="p">,</span><span class="w"> </span><span class="mi">287</span><span class="p">,</span><span class="w"> </span><span class="mi">63</span><span class="p">,</span><span class="w"> </span><span class="mi">343</span><span class="p">,</span><span class="w"> </span><span class="mi">169</span><span class="p">,</span><span class="w"> </span><span class="mi">583</span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="mi">627</span><span class="p">,</span><span class="w"> </span><span class="mi">343</span><span class="p">,</span><span class="w"> </span><span class="mi">773</span><span class="p">,</span><span class="w"> </span><span class="mi">959</span><span class="p">,</span><span class="w"> </span><span class="mi">943</span><span class="p">,</span><span class="w"> </span><span class="mi">767</span><span class="p">,</span><span class="w"> </span><span class="mi">473</span><span class="p">,</span><span class="w"> </span><span class="mi">103</span><span class="p">,</span><span class="w"> </span><span class="mi">699</span><span class="p">,</span><span class="w"> </span><span class="mi">303</span><span class="p">,</span><span class="w"> </span><span class="mi">957</span><span class="p">,</span><span class="w"> </span><span class="mi">703</span><span class="p">,</span><span class="w"> </span><span class="mi">583</span><span class="p">,</span><span class="w"> </span><span class="mi">639</span><span class="p">,</span><span class="w"> </span><span class="mi">913</span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="mi">447</span><span class="p">,</span><span class="w"> </span><span class="mi">283</span><span class="p">,</span><span class="w"> </span><span class="mi">463</span><span class="p">,</span><span class="w"> </span><span class="mi">29</span><span class="p">,</span><span class="w"> </span><span class="mi">23</span><span class="p">,</span><span class="w"> </span><span class="mi">487</span><span class="p">,</span><span class="w"> </span><span class="mi">463</span><span class="p">,</span><span class="w"> </span><span class="mi">993</span><span class="p">,</span><span class="w"> </span><span class="mi">119</span><span class="p">,</span><span class="w"> </span><span class="mi">883</span><span class="p">,</span><span class="w"> </span><span class="mi">327</span><span class="p">,</span><span class="w"> </span><span class="mi">493</span><span class="p">,</span><span class="w"> </span><span class="mi">423</span><span class="p">,</span><span class="w"> </span><span class="mi">159</span><span class="p">,</span><span class="w"> </span><span class="mi">743</span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="mi">217</span><span class="p">,</span><span class="w"> </span><span class="mi">623</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">399</span><span class="p">,</span><span class="w"> </span><span class="mi">853</span><span class="p">,</span><span class="w"> </span><span class="mi">407</span><span class="p">,</span><span class="w"> </span><span class="mi">103</span><span class="p">,</span><span class="w"> </span><span class="mi">983</span><span class="p">,</span><span class="w"> </span><span class="mi">89</span><span class="p">,</span><span class="w"> </span><span class="mi">463</span><span class="p">,</span><span class="w"> </span><span class="mi">290</span><span class="p">,</span><span class="w"> </span><span class="mi">516</span><span class="p">,</span><span class="w"> </span><span class="mi">212</span><span class="p">,</span><span class="w"> </span><span class="mi">462</span><span class="p">,</span><span class="w"> </span><span class="mi">350</span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="mi">960</span><span class="p">,</span><span class="w"> </span><span class="mi">376</span><span class="p">,</span><span class="w"> </span><span class="mi">682</span><span class="p">,</span><span class="w"> </span><span class="mi">962</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w"> </span><span class="mi">780</span><span class="p">,</span><span class="w"> </span><span class="mi">486</span><span class="p">,</span><span class="w"> </span><span class="mi">502</span><span class="p">,</span><span class="w"> </span><span class="mi">912</span><span class="p">,</span><span class="w"> </span><span class="mi">800</span><span class="p">,</span><span class="w"> </span><span class="mi">250</span><span class="p">,</span><span class="w"> </span><span class="mi">346</span><span class="p">,</span><span class="w"> </span><span class="mi">172</span><span class="p">,</span><span class="w"> </span><span class="mi">812</span><span class="p">,</span><span class="w"> </span><span class="mi">350</span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="mi">870</span><span class="p">,</span><span class="w"> </span><span class="mi">456</span><span class="p">,</span><span class="w"> </span><span class="mi">192</span><span class="p">,</span><span class="w"> </span><span class="mi">162</span><span class="p">,</span><span class="w"> </span><span class="mi">593</span><span class="p">,</span><span class="w"> </span><span class="mi">473</span><span class="p">,</span><span class="w"> </span><span class="mi">915</span><span class="p">,</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span><span class="w"> </span><span class="mi">989</span><span class="p">,</span><span class="w"> </span><span class="mi">873</span><span class="p">,</span><span class="w"> </span><span class="mi">823</span><span class="p">,</span><span class="w"> </span><span class="mi">965</span><span class="p">,</span><span class="w"> </span><span class="mi">425</span><span class="p">,</span><span class="w"> </span><span class="mi">329</span><span class="p">,</span><span class="w"> </span><span class="mi">803</span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="mi">973</span><span class="p">,</span><span class="w"> </span><span class="mi">965</span><span class="p">,</span><span class="w"> </span><span class="mi">905</span><span class="p">,</span><span class="w"> </span><span class="mi">919</span><span class="p">,</span><span class="w"> </span><span class="mi">133</span><span class="p">,</span><span class="w"> </span><span class="mi">673</span><span class="p">,</span><span class="w"> </span><span class="mi">665</span><span class="p">,</span><span class="w"> </span><span class="mi">235</span><span class="p">,</span><span class="w"> </span><span class="mi">509</span><span class="p">,</span><span class="w"> </span><span class="mi">613</span><span class="p">,</span><span class="w"> </span><span class="mi">673</span><span class="p">,</span><span class="w"> </span><span class="mi">815</span><span class="p">,</span><span class="w"> </span><span class="mi">165</span><span class="p">,</span><span class="w"> </span><span class="mi">992</span><span class="p">,</span><span class="w"> </span><span class="mi">326</span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="mi">322</span><span class="p">,</span><span class="w"> </span><span class="mi">148</span><span class="p">,</span><span class="w"> </span><span class="mi">972</span><span class="p">,</span><span class="w"> </span><span class="mi">962</span><span class="p">,</span><span class="w"> </span><span class="mi">286</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mi">941</span><span class="p">,</span><span class="w"> </span><span class="mi">541</span><span class="p">,</span><span class="w"> </span><span class="mi">265</span><span class="p">,</span><span class="w"> </span><span class="mi">323</span><span class="p">,</span><span class="w"> </span><span class="mi">925</span><span class="p">,</span><span class="w"> </span><span class="mi">281</span><span class="p">,</span><span class="w"> </span><span class="mi">601</span><span class="p">,</span><span class="w"> </span><span class="mi">95</span><span class="p">,</span><span class="w"> </span><span class="mi">973</span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="mi">445</span><span class="p">,</span><span class="w"> </span><span class="mi">721</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">525</span><span class="p">,</span><span class="w"> </span><span class="mi">473</span><span class="p">,</span><span class="w"> </span><span class="mi">65</span><span class="p">,</span><span class="w"> </span><span class="mi">511</span><span class="p">,</span><span class="w"> </span><span class="mi">164</span><span class="p">,</span><span class="w"> </span><span class="mi">138</span><span class="p">,</span><span class="w"> </span><span class="mi">672</span><span class="p">,</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w"> </span><span class="mi">428</span><span class="p">,</span><span class="w"> </span><span class="mi">154</span><span class="p">,</span><span class="w"> </span><span class="mi">448</span><span class="p">,</span><span class="w"> </span><span class="mi">848</span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="mi">414</span><span class="p">,</span><span class="w"> </span><span class="mi">456</span><span class="p">,</span><span class="w"> </span><span class="mi">310</span><span class="p">,</span><span class="w"> </span><span class="mi">312</span><span class="p">,</span><span class="w"> </span><span class="mi">798</span><span class="p">,</span><span class="w"> </span><span class="mi">104</span><span class="p">,</span><span class="w"> </span><span class="mi">566</span><span class="p">,</span><span class="w"> </span><span class="mi">520</span><span class="p">,</span><span class="w"> </span><span class="mi">302</span><span class="p">,</span><span class="w"> </span><span class="mi">248</span><span class="p">,</span><span class="w"> </span><span class="mi">694</span><span class="p">,</span><span class="w"> </span><span class="mi">976</span><span class="p">,</span><span class="w"> </span><span class="mi">430</span><span class="p">,</span><span class="w"> </span><span class="mi">392</span><span class="p">,</span><span class="w"> </span><span class="mi">198</span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="mi">184</span><span class="p">,</span><span class="w"> </span><span class="mi">829</span><span class="p">,</span><span class="w"> </span><span class="mi">373</span><span class="p">,</span><span class="w"> </span><span class="mi">181</span><span class="p">,</span><span class="w"> </span><span class="mi">631</span><span class="p">,</span><span class="w"> </span><span class="mi">101</span><span class="p">,</span><span class="w"> </span><span class="mi">969</span><span class="p">,</span><span class="w"> </span><span class="mi">613</span><span class="p">,</span><span class="w"> </span><span class="mi">840</span><span class="p">,</span><span class="w"> </span><span class="mi">740</span><span class="p">,</span><span class="w"> </span><span class="mi">778</span><span class="p">,</span><span class="w"> </span><span class="mi">458</span><span class="p">,</span><span class="w"> </span><span class="mi">284</span><span class="p">,</span><span class="w"> </span><span class="mi">760</span><span class="p">,</span><span class="w"> </span><span class="mi">390</span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="mi">821</span><span class="p">,</span><span class="w"> </span><span class="mi">461</span><span class="p">,</span><span class="w"> </span><span class="mi">843</span><span class="p">,</span><span class="w"> </span><span class="mi">513</span><span class="p">,</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span><span class="w"> </span><span class="mi">901</span><span class="p">,</span><span class="w"> </span><span class="mi">711</span><span class="p">,</span><span class="w"> </span><span class="mi">993</span><span class="p">,</span><span class="w"> </span><span class="mi">293</span><span class="p">,</span><span class="w"> </span><span class="mi">157</span><span class="p">,</span><span class="w"> </span><span class="mi">274</span><span class="p">,</span><span class="w"> </span><span class="mi">94</span><span class="p">,</span><span class="w"> </span><span class="mi">192</span><span class="p">,</span><span class="w"> </span><span class="mi">156</span><span class="p">,</span><span class="w"> </span><span class="mi">574</span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="mi">34</span><span class="p">,</span><span class="w"> </span><span class="mi">124</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">878</span><span class="p">,</span><span class="w"> </span><span class="mi">450</span><span class="p">,</span><span class="w"> </span><span class="mi">476</span><span class="p">,</span><span class="w"> </span><span class="mi">712</span><span class="p">,</span><span class="w"> </span><span class="mi">914</span><span class="p">,</span><span class="w"> </span><span class="mi">838</span><span class="p">,</span><span class="w"> </span><span class="mi">669</span><span class="p">,</span><span class="w"> </span><span class="mi">875</span><span class="p">,</span><span class="w"> </span><span class="mi">299</span><span class="p">,</span><span class="w"> </span><span class="mi">823</span><span class="p">,</span><span class="w"> </span><span class="mi">329</span><span class="p">,</span><span class="w"> </span><span class="mi">699</span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="mi">815</span><span class="p">,</span><span class="w"> </span><span class="mi">559</span><span class="p">,</span><span class="w"> </span><span class="mi">813</span><span class="p">,</span><span class="w"> </span><span class="mi">459</span><span class="p">,</span><span class="w"> </span><span class="mi">522</span><span class="p">,</span><span class="w"> </span><span class="mi">788</span><span class="p">,</span><span class="w"> </span><span class="mi">168</span><span class="p">,</span><span class="w"> </span><span class="mi">586</span><span class="p">,</span><span class="w"> </span><span class="mi">966</span><span class="p">,</span><span class="w"> </span><span class="mi">232</span><span class="p">,</span><span class="w"> </span><span class="mi">308</span><span class="p">,</span><span class="w"> </span><span class="mi">833</span><span class="p">,</span><span class="w"> </span><span class="mi">251</span><span class="p">,</span><span class="w"> </span><span class="mi">631</span><span class="p">,</span><span class="w"> </span><span class="mi">107</span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="mi">813</span><span class="p">,</span><span class="w"> </span><span class="mi">883</span><span class="p">,</span><span class="w"> </span><span class="mi">451</span><span class="p">,</span><span class="w"> </span><span class="mi">509</span><span class="p">,</span><span class="w"> </span><span class="mi">615</span><span class="p">,</span><span class="w"> </span><span class="mi">77</span><span class="p">,</span><span class="w"> </span><span class="mi">281</span><span class="p">,</span><span class="w"> </span><span class="mi">613</span><span class="p">,</span><span class="w"> </span><span class="mi">459</span><span class="p">,</span><span class="w"> </span><span class="mi">205</span><span class="p">,</span><span class="w"> </span><span class="mi">380</span><span class="p">,</span><span class="w"> </span><span class="mi">274</span><span class="p">,</span><span class="w"> </span><span class="mi">302</span><span class="p">,</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w"> </span><span class="mi">805</span><span class="p">}</span>
 <span class="p">};</span>
-<span class="n">maxRowTotal</span> <span class="o">=</span> <span class="n">Max</span><span class="p">[</span><span class="n">Total</span> <span class="o">/@</span> <span class="n">matrix</span><span class="p">]</span>
-<span class="n">maxColumnTotal</span><span class="o">=</span><span class="n">Max</span><span class="p">[</span><span class="n">Total</span> <span class="o">/@</span> <span class="n">Transpose</span><span class="p">[</span><span class="n">matrix</span><span class="p">]]</span>
+<span class="n">maxRowTotal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Max</span><span class="p">[</span><span class="n">Total</span><span class="w"> </span><span class="o">/@</span><span class="w"> </span><span class="n">matrix</span><span class="p">]</span>
+<span class="n">maxColumnTotal</span><span class="o">=</span><span class="n">Max</span><span class="p">[</span><span class="n">Total</span><span class="w"> </span><span class="o">/@</span><span class="w"> </span><span class="n">Transpose</span><span class="p">[</span><span class="n">matrix</span><span class="p">]]</span>
 </pre></div>
 </div>
 </div>
@@ -683,16 +717,16 @@
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "wolframlanguage14"
         },
         kernelOptions: {
-            name: "python3",
+            name: "wolframlanguage14",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'wolframlanguage14'</script>
 
                 </article>
               
@@ -710,7 +744,7 @@
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">5. </span>PE Q76-100</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>PE Q76-100</p>
       </div>
     </a>
     <a class="right-next"
@@ -718,7 +752,7 @@
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">7. </span>PE-Hidden-Math</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>PE-Hidden-Math</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -739,9 +773,9 @@
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-104">6.1. PE 104</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-187">6.2. PE 187</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-188">6.3. PE 188</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-104">5.1. PE 104</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-187">5.2. PE 187</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-188">5.3. PE 188</a></li>
 </ul>
   </nav></div>
 
