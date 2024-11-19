@@ -31,4 +31,3 @@ parts:
   - file: nb_Jonny_notebook
   - file: nb_Geo
   - file: nb_lottery_simulator
-  -
