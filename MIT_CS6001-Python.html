@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>9. 6.00.1x &#8212; Jonny Workbook</title>
+    <title>9. MIT_CS6001-Python &#8212; Jonny Workbook</title>
   
   
   
@@ -63,7 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'MIT_CS6001-Python';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="10. 6.00.2.x" href="MIT_CS6002-thinking.html" />
+    <link rel="next" title="10. MIT_CS6002-CS" href="MIT_CS6002-thinking.html" />
     <link rel="prev" title="8. A-level-further" href="Alevel_math_further.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -178,14 +178,14 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">MIT CS-Courses</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">9. 6.00.1x</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MIT_CS6002-thinking.html">10. 6.00.2.x</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">9. MIT_CS6001-Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MIT_CS6002-thinking.html">10. MIT_CS6002-CS</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Notebook</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="nb_Jonny_notebook.html">11. Jonny notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nb_Jonny_notebook.html">11. Combo notebook</a></li>
 <li class="toctree-l1"><a class="reference internal" href="nb_Geo.html">12. Jonny Geo-Graph</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nb_lottery_simulator.html">13. 1. A Mathematical Understanding of the Powerball Lottery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nb_lottery_simulator.html">13. Lottery Math</a></li>
 </ul>
 
     </div>
@@ -331,7 +331,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>6.00.1x</h1>
+    <h1>MIT_CS6001-Python</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -341,21 +341,23 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-basics">9.1. Python basics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-program">9.2. Simple program</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structured-types">9.3. Structured Types</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oop-object-oriented-programming">9.4. OOP(Object Oriented Programming)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classes-and-inheritance">9.4.1. Classes and inheritance</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-extended-example">9.4.2. An extended example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-basics">9.1. Python basics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-program">9.1.1. Simple program</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structured-types">9.1.2. Structured Types</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oop-object-oriented-programming">9.1.3. OOP(Object Oriented Programming)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#classes-and-inheritance">9.1.3.1. Classes and inheritance</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#an-extended-example">9.1.3.2. An extended example</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithmic-complexity">9.5. Algorithmic Complexity</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computational-complexity">9.5.1. Computational Complexity</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#searching-and-sorting-algorithms">9.5.2. Searching and Sorting Algorithms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithmic-complexity">9.1.4. Algorithmic Complexity</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#computational-complexity">9.1.4.1. Computational Complexity</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#searching-and-sorting-algorithms">9.1.4.2. Searching and Sorting Algorithms</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting">9.6. Plotting</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-exam">9.7. Final Exam</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting">9.1.5. Plotting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#final-exam">9.1.6. Final Exam</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -367,8 +369,8 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="x">
-<h1><span class="section-number">9. </span>6.00.1x<a class="headerlink" href="#x" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="mit-cs6001-python">
+<h1><span class="section-number">9. </span>MIT_CS6001-Python<a class="headerlink" href="#mit-cs6001-python" title="Link to this heading">#</a></h1>
 <section id="python-basics">
 <h2><span class="section-number">9.1. </span>Python basics<a class="headerlink" href="#python-basics" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
@@ -537,9 +539,8 @@
 </div>
 </div>
 </div>
-</section>
 <section id="simple-program">
-<h2><span class="section-number">9.2. </span>Simple program<a class="headerlink" href="#simple-program" title="Link to this heading">#</a></h2>
+<h3><span class="section-number">9.1.1. </span>Simple program<a class="headerlink" href="#simple-program" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">=</span><span class="mi">0</span>
@@ -673,7 +674,7 @@
 </div>
 </section>
 <section id="structured-types">
-<h2><span class="section-number">9.3. </span>Structured Types<a class="headerlink" href="#structured-types" title="Link to this heading">#</a></h2>
+<h3><span class="section-number">9.1.2. </span>Structured Types<a class="headerlink" href="#structured-types" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="o">=</span><span class="s1">&#39;pneumonoultramicroscopicsilicovolcanoconiosis&#39;</span>
@@ -1783,9 +1784,9 @@ Iteration 4; count is: 1
 </div>
 </section>
 <section id="oop-object-oriented-programming">
-<h2><span class="section-number">9.4. </span>OOP(Object Oriented Programming)<a class="headerlink" href="#oop-object-oriented-programming" title="Link to this heading">#</a></h2>
+<h3><span class="section-number">9.1.3. </span>OOP(Object Oriented Programming)<a class="headerlink" href="#oop-object-oriented-programming" title="Link to this heading">#</a></h3>
 <section id="classes-and-inheritance">
-<h3><span class="section-number">9.4.1. </span>Classes and inheritance<a class="headerlink" href="#classes-and-inheritance" title="Link to this heading">#</a></h3>
+<h4><span class="section-number">9.1.3.1. </span>Classes and inheritance<a class="headerlink" href="#classes-and-inheritance" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Clock</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
@@ -1927,7 +1928,7 @@ Iteration 4; count is: 1
 </div>
 </section>
 <section id="an-extended-example">
-<h3><span class="section-number">9.4.2. </span>An extended example<a class="headerlink" href="#an-extended-example" title="Link to this heading">#</a></h3>
+<h4><span class="section-number">9.1.3.2. </span>An extended example<a class="headerlink" href="#an-extended-example" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Spell</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
@@ -2623,9 +2624,9 @@ Iteration 4; count is: 1
 </section>
 </section>
 <section id="algorithmic-complexity">
-<h2><span class="section-number">9.5. </span>Algorithmic Complexity<a class="headerlink" href="#algorithmic-complexity" title="Link to this heading">#</a></h2>
+<h3><span class="section-number">9.1.4. </span>Algorithmic Complexity<a class="headerlink" href="#algorithmic-complexity" title="Link to this heading">#</a></h3>
 <section id="computational-complexity">
-<h3><span class="section-number">9.5.1. </span>Computational Complexity<a class="headerlink" href="#computational-complexity" title="Link to this heading">#</a></h3>
+<h4><span class="section-number">9.1.4.1. </span>Computational Complexity<a class="headerlink" href="#computational-complexity" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">search_for_elmt</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">e</span><span class="p">):</span>
@@ -2759,7 +2760,7 @@ Iteration 4; count is: 1
 </div>
 </section>
 <section id="searching-and-sorting-algorithms">
-<h3><span class="section-number">9.5.2. </span>Searching and Sorting Algorithms<a class="headerlink" href="#searching-and-sorting-algorithms" title="Link to this heading">#</a></h3>
+<h4><span class="section-number">9.1.4.2. </span>Searching and Sorting Algorithms<a class="headerlink" href="#searching-and-sorting-algorithms" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
@@ -3331,7 +3332,7 @@ Iteration 4; count is: 1
 </section>
 </section>
 <section id="plotting">
-<h2><span class="section-number">9.6. </span>Plotting<a class="headerlink" href="#plotting" title="Link to this heading">#</a></h2>
+<h3><span class="section-number">9.1.5. </span>Plotting<a class="headerlink" href="#plotting" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pylab</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -3431,7 +3432,7 @@ Iteration 4; count is: 1
 </div>
 </section>
 <section id="final-exam">
-<h2><span class="section-number">9.7. </span>Final Exam<a class="headerlink" href="#final-exam" title="Link to this heading">#</a></h2>
+<h3><span class="section-number">9.1.6. </span>Final Exam<a class="headerlink" href="#final-exam" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
@@ -3973,6 +3974,7 @@ Iteration 4; count is: 1
 </div>
 </section>
 </section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -4018,7 +4020,7 @@ Iteration 4; count is: 1
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">10. </span>6.00.2.x</p>
+        <p class="prev-next-title"><span class="section-number">10. </span>MIT_CS6002-CS</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -4039,21 +4041,23 @@ Iteration 4; count is: 1
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-basics">9.1. Python basics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-program">9.2. Simple program</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structured-types">9.3. Structured Types</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oop-object-oriented-programming">9.4. OOP(Object Oriented Programming)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classes-and-inheritance">9.4.1. Classes and inheritance</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-extended-example">9.4.2. An extended example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-basics">9.1. Python basics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-program">9.1.1. Simple program</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structured-types">9.1.2. Structured Types</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oop-object-oriented-programming">9.1.3. OOP(Object Oriented Programming)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#classes-and-inheritance">9.1.3.1. Classes and inheritance</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#an-extended-example">9.1.3.2. An extended example</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithmic-complexity">9.5. Algorithmic Complexity</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computational-complexity">9.5.1. Computational Complexity</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#searching-and-sorting-algorithms">9.5.2. Searching and Sorting Algorithms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithmic-complexity">9.1.4. Algorithmic Complexity</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#computational-complexity">9.1.4.1. Computational Complexity</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#searching-and-sorting-algorithms">9.1.4.2. Searching and Sorting Algorithms</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting">9.6. Plotting</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-exam">9.7. Final Exam</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting">9.1.5. Plotting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#final-exam">9.1.6. Final Exam</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

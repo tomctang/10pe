@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>13. 1. A Mathematical Understanding of the Powerball Lottery &#8212; Jonny Workbook</title>
+    <title>13. Lottery Math &#8212; Jonny Workbook</title>
   
   
   
@@ -177,14 +177,14 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">MIT CS-Courses</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="MIT_CS6001-Python.html">9. 6.00.1x</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MIT_CS6002-thinking.html">10. 6.00.2.x</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MIT_CS6001-Python.html">9. MIT_CS6001-Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MIT_CS6002-thinking.html">10. MIT_CS6002-CS</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Notebook</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="nb_Jonny_notebook.html">11. Jonny notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nb_Jonny_notebook.html">11. Combo notebook</a></li>
 <li class="toctree-l1"><a class="reference internal" href="nb_Geo.html">12. Jonny Geo-Graph</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">13. 1. A Mathematical Understanding of the Powerball Lottery</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">13. Lottery Math</a></li>
 </ul>
 
     </div>
@@ -330,7 +330,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>1. A Mathematical Understanding of the Powerball Lottery</h1>
+    <h1>Lottery Math</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -340,12 +340,12 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-the-total-number-of-combinations-permutations">13.1. 1.1 Calculating the Total number of Combinations &amp; Permutations</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-the-total-number-of-combinations-permutations">13.1. Calculating the Total number of Combinations &amp; Permutations</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#total-number-of-combinations-and-permutations">13.1.1. Total Number of Combinations and Permutations</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#total-number-of-combinations">13.1.2. Total Number of Combinations</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-the-odds-of-each-ticket-combination">13.2. 1.2 Calculating the Odds of Each Ticket Combination</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-the-odds-of-each-ticket-combination">13.2. Calculating the Odds of Each Ticket Combination</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-the-odds-of-the-powerball-from-october-2015-current">13.2.1. Calculating the odds of the Powerball from October 2015 - Current</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-quick-clean">13.2.2. A Quick Clean</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-odds-with-getting-the-correct-powerball">13.2.3. The Odds with getting the correct Powerball</a></li>
@@ -355,11 +355,11 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-odds-without-getting-the-correct-powerball-2012-2015">13.2.7. The Odds without getting the correct Powerball (2012-2015)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-quick-comparison-between-the-two-odds">13.3. 1.3 A Quick Comparison between the two Odds</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-quick-comparison-between-the-two-odds">13.3. A Quick Comparison between the two Odds</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-change-in-2015">13.3.1. The change in 2015</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#god-s-view">13.4. 1.4 God’s view</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#god-s-view">13.4. God’s view</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prize-quantity-won-barplot-log">13.4.1. Prize Quantity Won &amp; Barplot 图调整log坐标</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prize-quantity-won-barplot-linear">13.4.2. Prize Quantity Won &amp; Barplot linear坐标不调整</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-much-money-won-for-per-prize-barplot-linear">13.4.3. How much money Won for per Prize &amp; Barplot linear</a></li>
@@ -378,11 +378,11 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="a-mathematical-understanding-of-the-powerball-lottery">
-<h1><span class="section-number">13. </span>1. A Mathematical Understanding of the Powerball Lottery<a class="headerlink" href="#a-mathematical-understanding-of-the-powerball-lottery" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="lottery-math">
+<h1><span class="section-number">13. </span>Lottery Math<a class="headerlink" href="#lottery-math" title="Link to this heading">#</a></h1>
 <p>This is the accompaying Jupyter Notebook to <a class="reference external" href="http://urbanscientist.cool/articles/19/Mathematics-of-the-Powerball-blog/">my article 网站已失效</a>. Here we will take a quick computational walkthrough the article and the functions defined within it. 来自：<a class="github reference external" href="https://github.com/UrbanScientist">UrbanScientist</a></p>
 <section id="calculating-the-total-number-of-combinations-permutations">
-<h2><span class="section-number">13.1. </span>1.1 Calculating the Total number of Combinations &amp; Permutations<a class="headerlink" href="#calculating-the-total-number-of-combinations-permutations" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">13.1. </span>Calculating the Total number of Combinations &amp; Permutations<a class="headerlink" href="#calculating-the-total-number-of-combinations-permutations" title="Link to this heading">#</a></h2>
 <p>As in the article I am quick to point out that factorials are computationally ineffecient. We will use them for simple explanation’s sake. Using the defined n, and k within equation in the article. We us them below to arrive at the total number of combinations including permutations, or just combinations within the Powerball lottery.</p>
 <ul class="simple">
 <li><p><em>n = denotes the maximum value in a range from (1,n)</em></p></li>
@@ -438,7 +438,7 @@
 </section>
 </section>
 <section id="calculating-the-odds-of-each-ticket-combination">
-<h2><span class="section-number">13.2. </span>1.2 Calculating the Odds of Each Ticket Combination<a class="headerlink" href="#calculating-the-odds-of-each-ticket-combination" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">13.2. </span>Calculating the Odds of Each Ticket Combination<a class="headerlink" href="#calculating-the-odds-of-each-ticket-combination" title="Link to this heading">#</a></h2>
 <p>This function gives us the ability to calcluate the range of odds of drawing X correct balls in a non-powerball or one-powerball style lottery. The function takes the n,k,and pmax parameters as inputs and 2 lists with the calculated odds of winning with the powerball or without the powerball. In a lottery without the powerball pool it returns an empty list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -599,7 +599,7 @@
 </section>
 </section>
 <section id="a-quick-comparison-between-the-two-odds">
-<h2><span class="section-number">13.3. </span>1.3 A Quick Comparison between the two Odds<a class="headerlink" href="#a-quick-comparison-between-the-two-odds" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">13.3. </span>A Quick Comparison between the two Odds<a class="headerlink" href="#a-quick-comparison-between-the-two-odds" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">difference</span> <span class="o">=</span> <span class="p">[</span><span class="n">Odds_W</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">Odds_W59</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
@@ -622,7 +622,7 @@
 </section>
 </section>
 <section id="god-s-view">
-<h2><span class="section-number">13.4. </span>1.4 God’s view<a class="headerlink" href="#god-s-view" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">13.4. </span>God’s view<a class="headerlink" href="#god-s-view" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importing modules</span>
@@ -1231,12 +1231,12 @@ total jackpot:                     $ 197,000,000
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-the-total-number-of-combinations-permutations">13.1. 1.1 Calculating the Total number of Combinations &amp; Permutations</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-the-total-number-of-combinations-permutations">13.1. Calculating the Total number of Combinations &amp; Permutations</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#total-number-of-combinations-and-permutations">13.1.1. Total Number of Combinations and Permutations</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#total-number-of-combinations">13.1.2. Total Number of Combinations</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-the-odds-of-each-ticket-combination">13.2. 1.2 Calculating the Odds of Each Ticket Combination</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-the-odds-of-each-ticket-combination">13.2. Calculating the Odds of Each Ticket Combination</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-the-odds-of-the-powerball-from-october-2015-current">13.2.1. Calculating the odds of the Powerball from October 2015 - Current</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-quick-clean">13.2.2. A Quick Clean</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-odds-with-getting-the-correct-powerball">13.2.3. The Odds with getting the correct Powerball</a></li>
@@ -1246,11 +1246,11 @@ total jackpot:                     $ 197,000,000
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-odds-without-getting-the-correct-powerball-2012-2015">13.2.7. The Odds without getting the correct Powerball (2012-2015)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-quick-comparison-between-the-two-odds">13.3. 1.3 A Quick Comparison between the two Odds</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-quick-comparison-between-the-two-odds">13.3. A Quick Comparison between the two Odds</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-change-in-2015">13.3.1. The change in 2015</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#god-s-view">13.4. 1.4 God’s view</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#god-s-view">13.4. God’s view</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prize-quantity-won-barplot-log">13.4.1. Prize Quantity Won &amp; Barplot 图调整log坐标</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prize-quantity-won-barplot-linear">13.4.2. Prize Quantity Won &amp; Barplot linear坐标不调整</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-much-money-won-for-per-prize-barplot-linear">13.4.3. How much money Won for per Prize &amp; Barplot linear</a></li>

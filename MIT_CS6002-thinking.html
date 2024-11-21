@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>10. 6.00.2.x &#8212; Jonny Workbook</title>
+    <title>10. MIT_CS6002-CS &#8212; Jonny Workbook</title>
   
   
   
@@ -63,8 +63,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'MIT_CS6002-thinking';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="11. Jonny notebook" href="nb_Jonny_notebook.html" />
-    <link rel="prev" title="9. 6.00.1x" href="MIT_CS6001-Python.html" />
+    <link rel="next" title="11. Combo notebook" href="nb_Jonny_notebook.html" />
+    <link rel="prev" title="9. MIT_CS6001-Python" href="MIT_CS6001-Python.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -178,14 +178,14 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">MIT CS-Courses</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="MIT_CS6001-Python.html">9. 6.00.1x</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">10. 6.00.2.x</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MIT_CS6001-Python.html">9. MIT_CS6001-Python</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">10. MIT_CS6002-CS</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Notebook</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="nb_Jonny_notebook.html">11. Jonny notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nb_Jonny_notebook.html">11. Combo notebook</a></li>
 <li class="toctree-l1"><a class="reference internal" href="nb_Geo.html">12. Jonny Geo-Graph</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nb_lottery_simulator.html">13. 1. A Mathematical Understanding of the Powerball Lottery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nb_lottery_simulator.html">13. Lottery Math</a></li>
 </ul>
 
     </div>
@@ -331,7 +331,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>6.00.2.x</h1>
+    <h1>MIT_CS6002-CS</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -341,40 +341,43 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">10.1. Imports</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-1-optimization-problems">10.2. Unit 1 - Optimization Problems</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#knapsack-problem">10.2.1. Knapsack Problem</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brute-force">10.2.2. Brute Force</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-theory">10.2.3. Graph Theory</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-set-1">10.2.4. Problem Set 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mod-1">10.1. Mod 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">10.1.1. Imports</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-1-optimization-problems">10.1.2. Unit 1 - Optimization Problems</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#knapsack-problem">10.1.2.1. Knapsack Problem</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#brute-force">10.1.2.2. Brute Force</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-theory">10.1.2.3. Graph Theory</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-set-1">10.1.2.4. Problem Set 1</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-2-stochastic-thinking-and-random-walks">10.3. Unit 2 - Stochastic Thinking and Random Walks</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting">10.3.1. Plotting</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stochastic-thinking">10.3.2. Stochastic Thinking</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#random-walks">10.3.3. Random Walks</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-set-2">10.3.4. Problem Set 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-2-stochastic-thinking-and-random-walks">10.1.3. Unit 2 - Stochastic Thinking and Random Walks</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting">10.1.3.1. Plotting</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#stochastic-thinking">10.1.3.2. Stochastic Thinking</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#random-walks">10.1.3.3. Random Walks</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-set-2">10.1.3.4. Problem Set 2</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-3-inferential-statistics-and-monte-carlo-simulations">10.4. Unit 3 - Inferential Statistics and Monte Carlo Simulations</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferential-statistics">10.4.1. Inferential Statistics</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#monte-carlo-simulations">10.4.2. Monte Carlo Simulations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-set-3">10.4.3. Problem Set 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-3-inferential-statistics-and-monte-carlo-simulations">10.1.4. Unit 3 - Inferential Statistics and Monte Carlo Simulations</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#inferential-statistics">10.1.4.1. Inferential Statistics</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#monte-carlo-simulations">10.1.4.2. Monte Carlo Simulations</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-set-3">10.1.4.3. Problem Set 3</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#midterm-exam">10.5. Midterm Exam</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-4-experimental-data">10.6. Unit 4 - Experimental Data</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#experimental-data-part-1">10.6.1. Experimental Data Part 1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#experimental-data-part-2">10.6.2. Experimental Data Part 2</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-set-4">10.6.3. Problem Set 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#midterm-exam">10.1.5. Midterm Exam</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-4-experimental-data">10.1.6. Unit 4 - Experimental Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#experimental-data-part-1">10.1.6.1. Experimental Data Part 1</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#experimental-data-part-2">10.1.6.2. Experimental Data Part 2</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-set-4">10.1.6.3. Problem Set 4</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-5-machine-learning-and-statistical-fallacies">10.7. Unit 5 - Machine Learning and Statistical Fallacies</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning">10.7.1. Machine Learning</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-fallacies">10.7.2. Statistical Fallacies</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-5-machine-learning-and-statistical-fallacies">10.1.7. Unit 5 - Machine Learning and Statistical Fallacies</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning">10.1.7.1. Machine Learning</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-fallacies">10.1.7.2. Statistical Fallacies</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-exam">10.8. Final Exam</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#final-exam">10.1.8. Final Exam</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -386,10 +389,12 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="x">
-<h1><span class="section-number">10. </span>6.00.2.x<a class="headerlink" href="#x" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="mit-cs6002-cs">
+<h1><span class="section-number">10. </span>MIT_CS6002-CS<a class="headerlink" href="#mit-cs6002-cs" title="Link to this heading">#</a></h1>
+<section id="mod-1">
+<h2><span class="section-number">10.1. </span>Mod 1<a class="headerlink" href="#mod-1" title="Link to this heading">#</a></h2>
 <section id="imports">
-<h2><span class="section-number">10.1. </span>Imports<a class="headerlink" href="#imports" title="Link to this heading">#</a></h2>
+<h3><span class="section-number">10.1.1. </span>Imports<a class="headerlink" href="#imports" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">rebound</span>
@@ -563,9 +568,9 @@
 </div>
 </section>
 <section id="unit-1-optimization-problems">
-<h2><span class="section-number">10.2. </span>Unit 1 - Optimization Problems<a class="headerlink" href="#unit-1-optimization-problems" title="Link to this heading">#</a></h2>
+<h3><span class="section-number">10.1.2. </span>Unit 1 - Optimization Problems<a class="headerlink" href="#unit-1-optimization-problems" title="Link to this heading">#</a></h3>
 <section id="knapsack-problem">
-<h3><span class="section-number">10.2.1. </span>Knapsack Problem<a class="headerlink" href="#knapsack-problem" title="Link to this heading">#</a></h3>
+<h4><span class="section-number">10.1.2.1. </span>Knapsack Problem<a class="headerlink" href="#knapsack-problem" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">class</span><span class="o">./</span><span class="n">kkFood</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
@@ -713,7 +718,7 @@
 </div>
 </section>
 <section id="brute-force">
-<h3><span class="section-number">10.2.2. </span>Brute Force<a class="headerlink" href="#brute-force" title="Link to this heading">#</a></h3>
+<h4><span class="section-number">10.1.2.2. </span>Brute Force<a class="headerlink" href="#brute-force" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Food</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
@@ -853,7 +858,7 @@
 </div>
 </section>
 <section id="graph-theory">
-<h3><span class="section-number">10.2.3. </span>Graph Theory<a class="headerlink" href="#graph-theory" title="Link to this heading">#</a></h3>
+<h4><span class="section-number">10.1.2.3. </span>Graph Theory<a class="headerlink" href="#graph-theory" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Node</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
@@ -1119,7 +1124,7 @@
 </div>
 </section>
 <section id="problem-set-1">
-<h3><span class="section-number">10.2.4. </span>Problem Set 1<a class="headerlink" href="#problem-set-1" title="Link to this heading">#</a></h3>
+<h4><span class="section-number">10.1.2.4. </span>Problem Set 1<a class="headerlink" href="#problem-set-1" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">load_cows</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
@@ -1426,9 +1431,9 @@
 </section>
 </section>
 <section id="unit-2-stochastic-thinking-and-random-walks">
-<h2><span class="section-number">10.3. </span>Unit 2 - Stochastic Thinking and Random Walks<a class="headerlink" href="#unit-2-stochastic-thinking-and-random-walks" title="Link to this heading">#</a></h2>
+<h3><span class="section-number">10.1.3. </span>Unit 2 - Stochastic Thinking and Random Walks<a class="headerlink" href="#unit-2-stochastic-thinking-and-random-walks" title="Link to this heading">#</a></h3>
 <section id="plotting">
-<h3><span class="section-number">10.3.1. </span>Plotting<a class="headerlink" href="#plotting" title="Link to this heading">#</a></h3>
+<h4><span class="section-number">10.1.3.1. </span>Plotting<a class="headerlink" href="#plotting" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>
@@ -1492,7 +1497,7 @@
 </div>
 </section>
 <section id="stochastic-thinking">
-<h3><span class="section-number">10.3.2. </span>Stochastic Thinking<a class="headerlink" href="#stochastic-thinking" title="Link to this heading">#</a></h3>
+<h4><span class="section-number">10.1.3.2. </span>Stochastic Thinking<a class="headerlink" href="#stochastic-thinking" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
@@ -1583,7 +1588,7 @@
 </div>
 </section>
 <section id="random-walks">
-<h3><span class="section-number">10.3.3. </span>Random Walks<a class="headerlink" href="#random-walks" title="Link to this heading">#</a></h3>
+<h4><span class="section-number">10.1.3.3. </span>Random Walks<a class="headerlink" href="#random-walks" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Location</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
@@ -1780,7 +1785,7 @@
 </div>
 </section>
 <section id="problem-set-2">
-<h3><span class="section-number">10.3.4. </span>Problem Set 2<a class="headerlink" href="#problem-set-2" title="Link to this heading">#</a></h3>
+<h4><span class="section-number">10.1.3.4. </span>Problem Set 2<a class="headerlink" href="#problem-set-2" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Position</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
@@ -2615,9 +2620,9 @@
 </section>
 </section>
 <section id="unit-3-inferential-statistics-and-monte-carlo-simulations">
-<h2><span class="section-number">10.4. </span>Unit 3 - Inferential Statistics and Monte Carlo Simulations<a class="headerlink" href="#unit-3-inferential-statistics-and-monte-carlo-simulations" title="Link to this heading">#</a></h2>
+<h3><span class="section-number">10.1.4. </span>Unit 3 - Inferential Statistics and Monte Carlo Simulations<a class="headerlink" href="#unit-3-inferential-statistics-and-monte-carlo-simulations" title="Link to this heading">#</a></h3>
 <section id="inferential-statistics">
-<h3><span class="section-number">10.4.1. </span>Inferential Statistics<a class="headerlink" href="#inferential-statistics" title="Link to this heading">#</a></h3>
+<h4><span class="section-number">10.1.4.1. </span>Inferential Statistics<a class="headerlink" href="#inferential-statistics" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
@@ -2727,7 +2732,7 @@
 </div>
 </section>
 <section id="monte-carlo-simulations">
-<h3><span class="section-number">10.4.2. </span>Monte Carlo Simulations<a class="headerlink" href="#monte-carlo-simulations" title="Link to this heading">#</a></h3>
+<h4><span class="section-number">10.1.4.2. </span>Monte Carlo Simulations<a class="headerlink" href="#monte-carlo-simulations" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Pylab Array</span>
@@ -2797,7 +2802,7 @@
 </div>
 </section>
 <section id="problem-set-3">
-<h3><span class="section-number">10.4.3. </span>Problem Set 3<a class="headerlink" href="#problem-set-3" title="Link to this heading">#</a></h3>
+<h4><span class="section-number">10.1.4.3. </span>Problem Set 3<a class="headerlink" href="#problem-set-3" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">NoChildException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
@@ -3668,7 +3673,7 @@
 </section>
 </section>
 <section id="midterm-exam">
-<h2><span class="section-number">10.5. </span>Midterm Exam<a class="headerlink" href="#midterm-exam" title="Link to this heading">#</a></h2>
+<h3><span class="section-number">10.1.5. </span>Midterm Exam<a class="headerlink" href="#midterm-exam" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span><span class="p">,</span> <span class="n">seed</span>
@@ -3904,9 +3909,9 @@
 </div>
 </section>
 <section id="unit-4-experimental-data">
-<h2><span class="section-number">10.6. </span>Unit 4 - Experimental Data<a class="headerlink" href="#unit-4-experimental-data" title="Link to this heading">#</a></h2>
+<h3><span class="section-number">10.1.6. </span>Unit 4 - Experimental Data<a class="headerlink" href="#unit-4-experimental-data" title="Link to this heading">#</a></h3>
 <section id="experimental-data-part-1">
-<h3><span class="section-number">10.6.1. </span>Experimental Data Part 1<a class="headerlink" href="#experimental-data-part-1" title="Link to this heading">#</a></h3>
+<h4><span class="section-number">10.1.6.1. </span>Experimental Data Part 1<a class="headerlink" href="#experimental-data-part-1" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span><span class="o">=</span><span class="mf">0.15</span>
@@ -3970,7 +3975,7 @@
 </div>
 </section>
 <section id="experimental-data-part-2">
-<h3><span class="section-number">10.6.2. </span>Experimental Data Part 2<a class="headerlink" href="#experimental-data-part-2" title="Link to this heading">#</a></h3>
+<h4><span class="section-number">10.1.6.2. </span>Experimental Data Part 2<a class="headerlink" href="#experimental-data-part-2" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">tempDatum</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
@@ -4036,7 +4041,7 @@
 </div>
 </section>
 <section id="problem-set-4">
-<h3><span class="section-number">10.6.3. </span>Problem Set 4<a class="headerlink" href="#problem-set-4" title="Link to this heading">#</a></h3>
+<h4><span class="section-number">10.1.6.3. </span>Problem Set 4<a class="headerlink" href="#problem-set-4" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -4246,9 +4251,9 @@
 </section>
 </section>
 <section id="unit-5-machine-learning-and-statistical-fallacies">
-<h2><span class="section-number">10.7. </span>Unit 5 - Machine Learning and Statistical Fallacies<a class="headerlink" href="#unit-5-machine-learning-and-statistical-fallacies" title="Link to this heading">#</a></h2>
+<h3><span class="section-number">10.1.7. </span>Unit 5 - Machine Learning and Statistical Fallacies<a class="headerlink" href="#unit-5-machine-learning-and-statistical-fallacies" title="Link to this heading">#</a></h3>
 <section id="machine-learning">
-<h3><span class="section-number">10.7.1. </span>Machine Learning<a class="headerlink" href="#machine-learning" title="Link to this heading">#</a></h3>
+<h4><span class="section-number">10.1.7.1. </span>Machine Learning<a class="headerlink" href="#machine-learning" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importing modules</span>
@@ -4376,7 +4381,7 @@
 </div>
 </section>
 <section id="statistical-fallacies">
-<h3><span class="section-number">10.7.2. </span>Statistical Fallacies<a class="headerlink" href="#statistical-fallacies" title="Link to this heading">#</a></h3>
+<h4><span class="section-number">10.1.7.2. </span>Statistical Fallacies<a class="headerlink" href="#statistical-fallacies" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
@@ -4402,7 +4407,7 @@
 </section>
 </section>
 <section id="final-exam">
-<h2><span class="section-number">10.8. </span>Final Exam<a class="headerlink" href="#final-exam" title="Link to this heading">#</a></h2>
+<h3><span class="section-number">10.1.8. </span>Final Exam<a class="headerlink" href="#final-exam" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span><span class="o">,</span> <span class="nn">pylab</span>
@@ -4711,6 +4716,7 @@
 </div>
 </section>
 </section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -4748,7 +4754,7 @@
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">9. </span>6.00.1x</p>
+        <p class="prev-next-title"><span class="section-number">9. </span>MIT_CS6001-Python</p>
       </div>
     </a>
     <a class="right-next"
@@ -4756,7 +4762,7 @@
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">11. </span>Jonny notebook</p>
+        <p class="prev-next-title"><span class="section-number">11. </span>Combo notebook</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -4777,40 +4783,43 @@
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">10.1. Imports</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-1-optimization-problems">10.2. Unit 1 - Optimization Problems</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#knapsack-problem">10.2.1. Knapsack Problem</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brute-force">10.2.2. Brute Force</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-theory">10.2.3. Graph Theory</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-set-1">10.2.4. Problem Set 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mod-1">10.1. Mod 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">10.1.1. Imports</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-1-optimization-problems">10.1.2. Unit 1 - Optimization Problems</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#knapsack-problem">10.1.2.1. Knapsack Problem</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#brute-force">10.1.2.2. Brute Force</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-theory">10.1.2.3. Graph Theory</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-set-1">10.1.2.4. Problem Set 1</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-2-stochastic-thinking-and-random-walks">10.3. Unit 2 - Stochastic Thinking and Random Walks</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting">10.3.1. Plotting</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stochastic-thinking">10.3.2. Stochastic Thinking</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#random-walks">10.3.3. Random Walks</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-set-2">10.3.4. Problem Set 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-2-stochastic-thinking-and-random-walks">10.1.3. Unit 2 - Stochastic Thinking and Random Walks</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting">10.1.3.1. Plotting</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#stochastic-thinking">10.1.3.2. Stochastic Thinking</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#random-walks">10.1.3.3. Random Walks</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-set-2">10.1.3.4. Problem Set 2</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-3-inferential-statistics-and-monte-carlo-simulations">10.4. Unit 3 - Inferential Statistics and Monte Carlo Simulations</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferential-statistics">10.4.1. Inferential Statistics</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#monte-carlo-simulations">10.4.2. Monte Carlo Simulations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-set-3">10.4.3. Problem Set 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-3-inferential-statistics-and-monte-carlo-simulations">10.1.4. Unit 3 - Inferential Statistics and Monte Carlo Simulations</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#inferential-statistics">10.1.4.1. Inferential Statistics</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#monte-carlo-simulations">10.1.4.2. Monte Carlo Simulations</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-set-3">10.1.4.3. Problem Set 3</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#midterm-exam">10.5. Midterm Exam</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-4-experimental-data">10.6. Unit 4 - Experimental Data</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#experimental-data-part-1">10.6.1. Experimental Data Part 1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#experimental-data-part-2">10.6.2. Experimental Data Part 2</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-set-4">10.6.3. Problem Set 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#midterm-exam">10.1.5. Midterm Exam</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-4-experimental-data">10.1.6. Unit 4 - Experimental Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#experimental-data-part-1">10.1.6.1. Experimental Data Part 1</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#experimental-data-part-2">10.1.6.2. Experimental Data Part 2</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-set-4">10.1.6.3. Problem Set 4</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-5-machine-learning-and-statistical-fallacies">10.7. Unit 5 - Machine Learning and Statistical Fallacies</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning">10.7.1. Machine Learning</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-fallacies">10.7.2. Statistical Fallacies</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-5-machine-learning-and-statistical-fallacies">10.1.7. Unit 5 - Machine Learning and Statistical Fallacies</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning">10.1.7.1. Machine Learning</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-fallacies">10.1.7.2. Statistical Fallacies</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-exam">10.8. Final Exam</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#final-exam">10.1.8. Final Exam</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
