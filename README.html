@@ -343,6 +343,7 @@
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software-and-files">Software and files</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oop-to-fp">OOP to FP</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#image-within-citations">Image &amp; Within-citations</a></li>
 </ul>
             </nav>
         </div>
@@ -357,10 +358,24 @@
   <section class="tex2jax_ignore mathjax_ignore" id="introduction">
 <h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h1>
 <p>Any questions, please send me Email: <a class="reference external" href="mailto:jonny&#46;tang745&#37;&#52;&#48;education&#46;nsw&#46;gov&#46;au">jonny<span>&#46;</span>tang745<span>&#64;</span>education<span>&#46;</span>nsw<span>&#46;</span>gov<span>&#46;</span>au</a></p>
-<p><strong>Project Euler</strong></p>
-<p>Jonny’s workbook of <a class="reference external" href="https://projecteuler.net/">Project Euler</a>. Jonny loves coding, especially the PE-style (VS. CS-style) when he was 10YO. Therefore, Tom assisted him with guidance and searching hidden info and knowledge.</p>
-<p><strong>A-level Math</strong></p>
-<p>Jonny already went through 4U math (HSC in NSW) once, after that Tom chose A-level math for Jonny’s review and progress, with a approach of computational coding for A-level math.</p>
+<blockquote>
+<div><p><strong>Project Euler (PE)</strong></p>
+</div></blockquote>
+<p>Jonny’s workbook of <a class="reference external" href="https://projecteuler.net/">Project Euler</a>. Jonny loves coding and number theory, especially the PE-style (VS. CS-style) when he was 10YO. Therefore, Tom assisted him with guidance and searching hidden info and knowledge.</p>
+<p>PE problems can be solved using multiple approaches and often involve a combination of techniques.</p>
+<ul class="simple">
+<li><p>Sometimes, I face math problems while coding is easy, e.g. 99-Largest Exponential</p></li>
+<li><p>Sometimes, I face computational (or programming) problems while math is easy, e.g. 187-Semiprimes (very time-consuming)</p></li>
+</ul>
+<p>So, I need two streams of knowledge to solve PE:</p>
+<ul class="simple">
+<li><p>Math: see <strong>PE-Hidden-Math</strong> where I present math by PE questions and math-topics</p></li>
+<li><p><a class="reference external" href="https://github.com/leduckhai/Awesome-Competitive-Programming?tab=readme-ov-file">CS or Programming</a></p></li>
+</ul>
+<blockquote>
+<div><p><strong>A-level Math</strong></p>
+</div></blockquote>
+<p>After Jonny already went through 4U math (HSC in NSW) once, Tom chose A-level math for Jonny’s review and progress, with a approach of computational coding for A-level math. In this workbook, Jonny worked on A-level and A-level further which are transitional-math between secondary and tertiary education.</p>
 <section id="software-and-files">
 <h2>Software and files<a class="headerlink" href="#software-and-files" title="Link to this heading">#</a></h2>
 <p>While a qualified coder mastering 6 programming languages (PL), how to choose PLs is really a hard decision.</p>
@@ -370,28 +385,20 @@
 <li><p>Python (.ipynb): we start from Python, then we found Python’s <strong>SageMath</strong> - the second powerful CAS (computer algebra system).</p></li>
 </ul>
 </li>
-<li><p>We next started <strong>Mathematica</strong> (Wolfram languages, we will use MMA or Wolfram after):</p>
+<li><p>We then started <strong>Mathematica (Wolfram languages, MMA or Wolfram</strong> after):</p>
 <ul>
-<li><p>Mathematica (.nb): the best CAS.</p>
-<ul>
-<li><p>.nb -&gt; .ipynb ??</p></li>
-</ul>
-</li>
-<li><p>Wolfram notebook (.wlnb): this enables us running Mathematica kernel in VScode.</p>
-<ul>
-<li><p>.wlnb -&gt; .nb, ‘export to’ after running MMA</p></li>
-<li><p>.wlnb -&gt; .ipynb, see below</p></li>
-</ul>
-</li>
+<li><p>Mathematica (.nb): the best CAS. Shall we convert .nb -&gt; .ipynb ??</p></li>
 </ul>
 </li>
 <li><p>Next, a PL with more FP? Ocaml? F#? Scala? Haskell? Rust? Make a comparison:</p>
 <ul>
-<li><ol class="arabic simple">
-<li><p>PL’s Coding-look in defining a Fibonacci; 2. Which FP is best for mathematics? Haskell is NO.1, but I really don’t like Haskell; 3. Math-related supports for these four languages; 4. Balance between FP and OOP; 5. Number of users in Project Euler for each PL; 6. libgen supports for each PL; 7. When the PL first appeared.</p></li>
-</ol>
+<li><p>1. PL’s Coding-look in defining a Fibonacci; 2. Which FP is best for mathematics? Haskell is NO.1, but I really don’t like Haskell; 3. Math-related supports for these four languages; 4. Balance between FP and OOP; 5. Number of users in Project Euler for each PL; 6. libgen supports for each PL; 7. When the PL first appeared.</p></li>
+<li><p>Decision: <strong>Rust &amp; Haskell</strong> in the next year.</p>
+<ul>
+<li><p>I spent one day to install Haskell locally and failed:(</p></li>
+</ul>
 </li>
-<li><p>Decision: <strong>Rust</strong>. We will learn Rust next year.</p></li>
+<li><p>Google endorse <a class="reference external" href="https://code.world/">Codeworld - Educational Haskell programming platform</a> with <a class="reference external" href="https://github.com/google/codeworld/tree/master">Github Repository</a></p></li>
 </ul>
 </li>
 </ul>
@@ -400,12 +407,36 @@
 <h2>OOP to FP<a class="headerlink" href="#oop-to-fp" title="Link to this heading">#</a></h2>
 <p>We started workbook using Python in OOP (Object-oriented Programming) way, then we move to FP (Functional Programming) way in both MMA and Python.</p>
 <p>Even though both Python and Wolfram are not pure FP, they do help us understand the FP way.</p>
-<ul class="simple">
+<p>FP</p>
+<ol class="arabic simple">
 <li><p><a class="reference external" href="https://old.reddit.com/r/functionalprogramming/wiki/books">FP books</a></p></li>
-<li><p><a class="reference external" href="https://reference.wolfram.com/language/guide/FunctionalProgramming.html">FP in Wolfram</a>: official website.</p></li>
-<li><p><a class="reference external" href="https://expression.readthedocs.io/en/latest/intro.html">FP in Python</a>: a web-notebook for beginner.</p></li>
+<li><p><a class="reference external" href="https://adabeat.com/fp/ease-into-functional-programming/?_gl=1*1r4s1nz*_up*MQ..*_ga*NDgxNzc4NDQ0LjE3MzA4MTAwMTg.*_ga_6RQG15HSGT*MTczMDgxMDAxNy4xLjAuMTczMDgxMDAxNy4wLjAuMA..">Adabeat - Ease into</a></p></li>
 <li><p><a class="reference external" href="https://github.com/nayuki/Project-Euler-solutions">PE code in Java, Python, Mathematica, Haskell</a>: Nayuki use OOP in Python and FP in Haskell.</p></li>
-</ul>
+</ol>
+<p>Python FP</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://expression.readthedocs.io/en/latest/intro.html">FP in Python</a>: a web-notebook for beginner.</p></li>
+<li><p><a class="reference external" href="https://doc.sagemath.org/html/en/thematic_tutorials/functional_programming.html#">SageMath - FP4Mathematicians</a></p></li>
+<li><p><a class="reference external" href="https://adabeat.com/fp/functional-programming-in-python/?_gl=1*qsc6fw*_up*MQ..*_ga*MjAzMjkwMTE5MC4xNzMwOTQxODgx*_ga_6RQG15HSGT*MTczMDk0MTg4MC4xLjAuMTczMDk0MTg4MC4wLjAuMA..">Adabeat - FP in Python</a></p></li>
+</ol>
+<p>Wolfram FP</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://reference.wolfram.com/language/guide/FunctionalProgramming.html">FP in Wolfram</a>: official website.</p></li>
+</ol>
+</section>
+<section id="image-within-citations">
+<h2>Image &amp; Within-citations<a class="headerlink" href="#image-within-citations" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>Image-Hosting</p>
+</div></blockquote>
+<p>All figures are synchronised in Tom’s GitHub folder <code class="docutils literal notranslate"><span class="pre">./NB_img/</span></code>. Using codes to insert pic:</p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;img</span> <span class="pre">src=&quot;https://raw.githubusercontent.com/tomctang/NB_img/main/3bias.png&quot;</span> <span class="pre">alt=&quot;Causality-confounder&quot;</span> <span class="pre">width=&quot;500&quot;&gt;</span></code></p>
+<p>Markdown image center:</p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;div</span> <span class="pre">align=center&gt;![Figure.</span> <span class="pre">Various</span> <span class="pre">treatments</span> <span class="pre">choice</span> <span class="pre">for</span> <span class="pre">OA](https://raw.githubusercontent.com/ctang83/NB_img/main/EPS_OAtreat.jpg){width=60%}</span></code></p>
+<blockquote>
+<div><p>Within-citations</p>
+</div></blockquote>
+<p>Add {#mathFP} after titles, then use <code class="docutils literal notranslate"><span class="pre">[anytext](#mathFP)</span></code> in citing</p>
 </section>
 </section>
 
@@ -458,6 +489,7 @@
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software-and-files">Software and files</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oop-to-fp">OOP to FP</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#image-within-citations">Image &amp; Within-citations</a></li>
 </ul>
   </nav></div>
 
