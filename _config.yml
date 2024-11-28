@@ -13,17 +13,20 @@ repository:
 
 # HTML and theme configuration
 #  favicon: "path/to/favicon.ico"  # Optional
-# html:
-#  theme:
-#    name: "sphinx_book_theme"
-#    options:
+html:
+  theme:
+    name: "sphinx_book_theme"
+    options:
+      body_max_width: "80%"  # Adjusts the width of the main content (default is "none")
+      font_size: "16px"      # Base font size (can also be set in custom CSS)
+
 #      logo_only: true
 #      search_bar_position: "navbar"
 #      extra_navbar: '<p>My Custom Footer</p>'
 
-html:
-  use_issues_button: false
-  use_repository_button: true
+#html:
+#  use_issues_button: false
+#  use_repository_button: true
 
 
 # Execution options
