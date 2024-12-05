@@ -3,7 +3,7 @@ body {
 }
 
 div.body, body, .content {
-    max-width: 1200px !important; /* Ensure the rule is applied */
+    max-width: 1800px !important; /* Ensure the rule is applied */
     width: 100% !important;        /* Force percentage width */
     margin: 0 auto !important;    /* Center horizontally */
 }
