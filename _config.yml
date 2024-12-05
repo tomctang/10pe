@@ -42,4 +42,4 @@ mathjax:
 
 # Execution options
 execute:
-  execute_notebooks: "auto"  # Change to "auto" to execute notebooks during the build
+  execute_notebooks: "off"  # Change to "auto" to execute notebooks during the build
