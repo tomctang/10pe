@@ -13,14 +13,19 @@ repository:
 
 # HTML and theme configuration
 #  favicon: "path/to/favicon.ico"  # Optional
+
 html:
-  theme:
-    name: "sphinx_book_theme"
-    options:
-      body_max_width: "90%"  # Adjusts the width of the main content (default is "none")
-      font_size: "16px"      # Base font size (can also be set in custom CSS)
-      use_repository_button: true
-      use_edit_page_button: true  # Adds "Edit this page" link
+  use_issues_button: false
+  use_repository_button: true
+
+#html:
+#  theme:
+#    name: "sphinx_book_theme"
+#    options:
+#      use_repository_button: true
+#      body_max_width: "90%"  # Adjusts the width of the main content (default is "none")
+#      font_size: "16px"      # Base font size (can also be set in custom CSS)
+#      use_edit_page_button: true  # Adds "Edit this page" link
 
 #      logo_only: true
 #      search_bar_position: "navbar"
@@ -37,4 +42,4 @@ mathjax:
 
 # Execution options
 execute:
-  execute_notebooks: "off"  # Change to "auto" to execute notebooks during the build
+  execute_notebooks: "auto"  # Change to "auto" to execute notebooks during the build
