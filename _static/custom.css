@@ -7,3 +7,15 @@ div.body, body, .content {
     width: 100% !important;        /* Force percentage width */
     margin: 0 auto !important;    /* Center horizontally */
 }
+
+/* Left sidebar (Index)      
+    position: fixed;
+    height: 100%;    */
+div.sphinxsidebar {
+    float: left;
+    width: 180px;
+    margin-left: -20%;
+    font-size: 90%;
+    word-wrap: break-word;
+    overflow-wrap : break-word;
+}
