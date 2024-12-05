@@ -1,12 +1,9 @@
-div.body {
-    max-width: 1200px; /* Set the desired width */
-    width: 90%;        /* Adjust percentage-based width */
-    margin: 0 auto;    /* Center the content horizontally */
+body {
+    line-height: 1.3; /* Adjust line spacing */
 }
 
-body {
-    line-height: 1.2; /* Adjust line spacing */
-}
-.content {
-    max-width: 90%; /* Adjust content width */
+div.body, body, .content {
+    max-width: 1200px !important; /* Ensure the rule is applied */
+    width: 100% !important;        /* Force percentage width */
+    margin: 0 auto !important;    /* Center horizontally */
 }
