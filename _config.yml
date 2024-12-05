@@ -13,13 +13,10 @@ repository:
 
 # HTML and theme configuration
 #  favicon: "path/to/favicon.ico"  # Optional
-
 html:
   use_issues_button: false
   use_repository_button: true
   extra_css: ["_static/custom.css"]
-  extra_css: ["_static/custom.css"]
-
 
 #html:
 #  theme:
