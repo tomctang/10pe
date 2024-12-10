@@ -345,7 +345,10 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software-and-files">Software and files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software-and-files">Software and files</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scientific-computing-environment-sce">Scientific Computing Environment (SCE)</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oop-to-fp">OOP to FP</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#image-within-citations">Image &amp; Within-citations</a></li>
 </ul>
@@ -395,12 +398,12 @@
 <section id="software-and-files">
 <h2>Software and files<a class="headerlink" href="#software-and-files" title="Link to this heading">#</a></h2>
 <p>While a qualified coder mastering 6 programming languages (PL), how to choose PLs is really a hard decision.</p>
-<ul class="simple">
+<ol class="arabic simple">
 <li><p>We started this workbook using <strong>Python</strong> in VScode:</p>
 <ol class="arabic simple">
 <li><p>Python (.ipynb): we start from Python, then we found <a class="reference external" href="https://doc.sagemath.org/html/en/thematic_tutorials/index.html">SageMath tutorial</a> - the second powerful CAS (computer algebra system).</p></li>
 <li><p>SageMath isn’t a <code class="docutils literal notranslate"><span class="pre">pip</span></code>-installable package, instead it’s large and requires C/Fortran/Python… lots of pre-installed environments</p>
-<ul>
+<ul class="simple">
 <li><p><a class="reference external" href="https://cocalc.com/projects">CoCalc (.ipynb)</a> online platform includes all open-source computing environments, so surprising!!</p></li>
 <li><p><a class="reference external" href="https://stackoverflow.com/questions/49685498/how-do-you-import-sagemath-in-google-colaboratory/77440661">Google Colab</a> can also install SageMath, but <a class="reference external" href="https://github.com/demining/Install-SageMath-in-Google-Colab">with problems</a></p></li>
 </ul>
@@ -408,7 +411,7 @@
 </ol>
 </li>
 <li><p>We then started <strong>Mathematica (Wolfram languages, MMA or Wolfram</strong> after):</p>
-<ul>
+<ul class="simple">
 <li><p>Now, we are running Wolfram in <code class="docutils literal notranslate"><span class="pre">ipynb</span></code>-file using VScode</p></li>
 <li><p>Mathematica (.nb): the best CAS. Shall we convert .nb -&gt; .ipynb ??</p></li>
 </ul>
@@ -417,20 +420,35 @@
 <ol class="arabic simple">
 <li><p>PL’s Coding-look in defining a Fibonacci; 2. Which FP is best for mathematics? Haskell is NO.1, but I really don’t like Haskell; 3. Math-related supports for these four languages; 4. Balance between FP and OOP; 5. Number of users in Project Euler for each PL; 6. libgen supports for each PL; 7. When the PL first appeared.</p></li>
 <li><p>Decision: <strong>Rust &amp; Haskell</strong> in the next year.</p>
-<ul>
-<li><p>Run Haskell in <code class="docutils literal notranslate"><span class="pre">ipynb</span></code> use <a class="reference external" href="https://cocalc.com/software">Cocalc-Executables</a> - I spent one day to install Haskell locally and failed:(</p>
+<ul class="simple">
+<li><p>Haskell in <code class="docutils literal notranslate"><span class="pre">ipynb</span></code> using <a class="reference internal" href="#"><span class="xref myst">Google Colab</span></a> and <a class="reference external" href="https://cocalc.com/software">Cocalc-Executables</a> - I spent one day to install Haskell locally and failed:(</p>
 <ul>
 <li><p>Google endorse <a class="reference external" href="https://code.world/">Codeworld - Educational Haskell programming platform</a> with <a class="reference external" href="https://github.com/google/codeworld/tree/master">Github Repository</a></p></li>
 </ul>
 </li>
-<li><p>Rust also use <a class="reference external" href="https://cocalc.com/projects">CoCalc</a> <code class="docutils literal notranslate"><span class="pre">ipynb</span></code></p></li>
-<li><p><strong>Julia</strong> ?? or GNU Octave(Matlab alternative)??</p></li>
+<li><p>Rust using <a class="reference external" href="https://cocalc.com/projects">CoCalc</a> <code class="docutils literal notranslate"><span class="pre">ipynb</span></code>. <strong>Julia</strong> or GNU <strong>Octave</strong>(Matlab alternative)??</p></li>
 </ul>
 </li>
 </ol>
 </li>
+</ol>
+<section id="scientific-computing-environment-sce">
+<h3>Scientific Computing Environment (SCE)<a class="headerlink" href="#scientific-computing-environment-sce" title="Link to this heading">#</a></h3>
+<p>Self-installing is impossible for advanced scientific computation. For personal study, building a Scientific Computing Environment is the first step to learning programming</p>
+<ol class="arabic simple">
+<li><p>Cloud Computing - <strong>Google Colab, Cocalc, <a class="reference external" href="https://mybinder.org/v2/gh/tomctang/10pe/HEAD">Binder</a></strong> - are good, but Colab and Binder require further installation (originally Python)</p></li>
+<li><p><strong>Docker</strong>’s images and containers (self-maintained not self-installation) are the best</p>
+<ul class="simple">
+<li><p>I already build SageMath and IHaskell using Docker, both are in <code class="docutils literal notranslate"><span class="pre">ipynb</span></code></p></li>
 </ul>
-<p>Now, google colab run Haskell, cocalc run sagemath done</p>
+</li>
+</ol>
+<p>Science reproducibility - managing Environment and Container</p>
+<ol class="arabic simple">
+<li><p>Use one environment(or Container) per project! Creating environments to accommodate specific workflows/projects — and to do so early on</p></li>
+<li><p>Containers is better, which package tools with underlying operating system, are larger and more complicated than environments, but are more portable</p></li>
+</ol>
+</section>
 </section>
 <section id="oop-to-fp">
 <h2>OOP to FP<a class="headerlink" href="#oop-to-fp" title="Link to this heading">#</a></h2>
@@ -529,7 +547,10 @@
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software-and-files">Software and files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software-and-files">Software and files</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scientific-computing-environment-sce">Scientific Computing Environment (SCE)</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oop-to-fp">OOP to FP</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#image-within-citations">Image &amp; Within-citations</a></li>
 </ul>
