@@ -30,7 +30,7 @@
   <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -390,7 +390,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#52 Permuted Multiples</span>
-<span class="k">def</span> <span class="nf">permuted</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">permuted</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="n">listnum</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)))</span>
     <span class="n">listnum1</span><span class="o">=</span><span class="n">listnum</span><span class="p">[:]</span>
     <span class="n">listnum1</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
@@ -404,7 +404,7 @@
             <span class="k">break</span>
         <span class="n">m</span><span class="o">+=</span><span class="mi">1</span>
     <span class="k">return</span> <span class="n">m</span>
-<span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">solve</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
     <span class="n">n</span><span class="o">=</span><span class="mi">1000</span>
     <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
         <span class="n">num</span><span class="o">=</span><span class="n">permuted</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
@@ -423,7 +423,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 53 Combinatoric Selections</span>
-<span class="k">def</span> <span class="nf">ncr</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">ncr</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">factorial</span><span class="p">(</span><span class="n">r</span><span class="p">)</span><span class="o">*</span><span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">r</span><span class="p">))</span>
 
 <span class="n">over_million</span><span class="o">=</span><span class="mi">0</span>
@@ -443,16 +443,16 @@
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#55 Lychrel Numbers</span>
 <span class="n">MAX_ITERATIONS</span> <span class="o">=</span> <span class="mi">50</span>
-<span class="k">def</span> <span class="nf">isPalindrome</span><span class="p">(</span><span class="n">number</span><span class="p">):</span> 
+<span class="k">def</span><span class="w"> </span><span class="nf">isPalindrome</span><span class="p">(</span><span class="n">number</span><span class="p">):</span> 
 	<span class="k">return</span> <span class="n">number</span> <span class="o">==</span> <span class="n">reverse</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">reverse</span><span class="p">(</span><span class="n">number</span><span class="p">):</span> 
+<span class="k">def</span><span class="w"> </span><span class="nf">reverse</span><span class="p">(</span><span class="n">number</span><span class="p">):</span> 
 	<span class="n">reverse</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> 
 	<span class="k">while</span> <span class="p">(</span><span class="n">number</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span> 
 		<span class="n">remainder</span> <span class="o">=</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">10</span>
 		<span class="n">reverse</span> <span class="o">=</span> <span class="p">(</span><span class="n">reverse</span> <span class="o">*</span> <span class="mi">10</span><span class="p">)</span> <span class="o">+</span> <span class="n">remainder</span>
 		<span class="n">number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">number</span> <span class="o">/</span> <span class="mi">10</span><span class="p">)</span>
 	<span class="k">return</span> <span class="n">reverse</span>
-<span class="k">def</span> <span class="nf">isLychrel</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">isLychrel</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
 	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">MAX_ITERATIONS</span><span class="p">):</span> 
 		<span class="n">number</span><span class="o">+=</span><span class="n">reverse</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
 		<span class="k">if</span> <span class="p">(</span><span class="n">isPalindrome</span><span class="p">(</span><span class="n">number</span><span class="p">)):</span> 
@@ -494,7 +494,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 57 Square Root Convergents</span>
-<span class="k">def</span> <span class="nf">convergent_square_root2</span><span class="p">(</span><span class="n">term</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">convergent_square_root2</span><span class="p">(</span><span class="n">term</span><span class="p">):</span>
     <span class="n">numerator</span><span class="o">=</span><span class="mi">3</span>
     <span class="n">denominator</span><span class="o">=</span><span class="mi">2</span>
     <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">term</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
@@ -503,7 +503,7 @@
         <span class="n">denominator</span><span class="o">=</span><span class="n">denominator1</span>
     <span class="k">return</span> <span class="p">[</span><span class="n">numerator</span><span class="p">,</span><span class="n">denominator</span><span class="p">]</span>
 
-<span class="k">def</span> <span class="nf">solve</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">solve</span><span class="p">():</span>
     <span class="n">ans</span><span class="o">=</span><span class="mi">0</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1001</span><span class="p">):</span>
         <span class="n">fraction</span><span class="o">=</span><span class="n">convergent_square_root2</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
@@ -525,7 +525,7 @@
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 58 Spiral Primes</span>
 <span class="c1"># find quicker solution</span>
-<span class="kn">from</span> <span class="nn">gmpy2</span> <span class="kn">import</span> <span class="n">is_prime</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">gmpy2</span><span class="w"> </span><span class="kn">import</span> <span class="n">is_prime</span>
 <span class="n">diagonal</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 <span class="n">n</span><span class="o">=</span><span class="mi">1</span>
 <span class="n">x</span><span class="o">=</span><span class="mi">2</span>
@@ -556,7 +556,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#62 </span>
-<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
 <span class="n">cubes</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
@@ -595,7 +595,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#65 Convergents of e</span>
-<span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">solve</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
     <span class="n">n</span><span class="o">=</span><span class="mi">2</span>
     <span class="n">prev_n</span><span class="o">=</span><span class="mi">1</span>
     <span class="n">fract</span><span class="o">=</span><span class="mi">1</span>
@@ -609,7 +609,7 @@
         <span class="n">n</span><span class="o">=</span><span class="n">fract</span> <span class="o">*</span> <span class="n">prev_n</span> <span class="o">+</span> <span class="n">temp</span>
     <span class="nb">sum</span> <span class="o">=</span> <span class="n">digit_sum</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
     <span class="k">return</span> <span class="nb">sum</span>
-<span class="k">def</span> <span class="nf">digit_sum</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">digit_sum</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
     <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">while</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
         <span class="nb">sum</span> <span class="o">=</span> <span class="nb">sum</span> <span class="o">+</span> <span class="p">(</span><span class="n">num</span> <span class="o">%</span> <span class="mi">10</span><span class="p">)</span>
@@ -645,7 +645,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#69 Totient Maximum</span>
-<span class="k">def</span> <span class="nf">factors</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">factors</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="n">intnum</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span>
     <span class="n">num</span><span class="o">=</span><span class="p">[]</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">intnum</span><span class="p">):</span>
@@ -655,18 +655,18 @@
         <span class="k">if</span> <span class="n">n</span><span class="o">/</span><span class="n">number</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">num</span><span class="p">:</span>
             <span class="n">num</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="n">number</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">num</span>
-<span class="k">def</span> <span class="nf">prime1</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">prime1</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">factors</span><span class="p">(</span><span class="n">n</span><span class="p">))</span><span class="o">==</span><span class="mi">2</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">True</span>
     <span class="k">return</span> <span class="kc">False</span>
-<span class="k">def</span> <span class="nf">smaller</span><span class="p">(</span><span class="n">mt</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">smaller</span><span class="p">(</span><span class="n">mt</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">m</span><span class="o">&lt;</span><span class="n">n</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">m</span>
     <span class="k">elif</span> <span class="n">m</span><span class="o">&gt;</span><span class="n">n</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">n</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="s1">&#39;same&#39;</span>
-<span class="k">def</span> <span class="nf">bcf</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">bcf</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
     <span class="n">fac</span><span class="o">=</span><span class="n">factors</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
     <span class="n">fac1</span><span class="o">=</span><span class="n">factors</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
     <span class="n">facs</span><span class="o">=</span><span class="n">fac</span><span class="o">+</span><span class="n">fac1</span>
@@ -675,7 +675,7 @@
     <span class="k">for</span> <span class="n">factor</span> <span class="ow">in</span> <span class="n">facs</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">factor</span> <span class="ow">in</span> <span class="n">fac</span> <span class="ow">and</span> <span class="n">factor</span> <span class="ow">in</span> <span class="n">fac1</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">factor</span>
-<span class="k">def</span> <span class="nf">coprime</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">coprime</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">m</span><span class="o">==</span><span class="mi">1</span> <span class="ow">or</span> <span class="n">n</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">False</span>
     <span class="k">if</span> <span class="n">prime</span><span class="p">(</span><span class="n">m</span><span class="p">)</span><span class="o">==</span><span class="kc">True</span> <span class="ow">or</span> <span class="n">prime</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">==</span><span class="kc">True</span><span class="p">:</span>
@@ -684,13 +684,13 @@
         <span class="k">return</span> <span class="kc">True</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">False</span>
-<span class="k">def</span> <span class="nf">phi</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">phi</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="n">num</span><span class="o">=</span><span class="mi">1</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">coprime</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span><span class="o">==</span><span class="kc">True</span><span class="p">:</span>
             <span class="n">num</span><span class="o">+=</span><span class="mi">1</span>
     <span class="k">return</span> <span class="n">num</span>
-<span class="k">def</span> <span class="nf">totient</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">totient</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="n">big</span><span class="o">=</span><span class="mi">0</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
         <span class="n">num</span><span class="o">=</span><span class="n">i</span><span class="o">/</span><span class="n">phi</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
@@ -706,7 +706,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#69 FP   欧拉函数Euler&#39;s Totient Function</span>
-<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">totient</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="kn">import</span> <span class="n">totient</span>
 
 <span class="n">seq</span> <span class="o">=</span> <span class="p">[</span><span class="n">n</span> <span class="o">/</span> <span class="n">totient</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1000000</span><span class="p">)]</span> <span class="c1"># Generate the sequence using the totient function</span>
 <span class="n">max_value</span>    <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span>
@@ -734,7 +734,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#71 Ordered Fractions </span>
-<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">floor</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">floor</span>
 <span class="n">target</span> <span class="o">=</span> <span class="mi">3</span><span class="o">/</span><span class="mi">7</span>
 
 <span class="n">pairs</span> <span class="o">=</span> <span class="p">[(</span> <span class="n">floor</span><span class="p">(</span><span class="n">deno</span><span class="o">*</span><span class="n">target</span><span class="p">)</span> <span class="p">,</span> <span class="n">deno</span> <span class="p">)</span> <span class="k">for</span> <span class="n">deno</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1000000</span><span class="p">)]</span>
@@ -769,7 +769,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#74 Factorial Chains</span>
-<span class="k">def</span> <span class="nf">fact</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">fact</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">n</span><span class="o">==</span><span class="mi">0</span> <span class="ow">or</span> <span class="n">n</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
         <span class="k">return</span> <span class="mi">1</span>
     <span class="k">elif</span> <span class="n">n</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">:</span>
@@ -803,7 +803,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#75 Singular Integer Right Triangles</span>
-<span class="k">def</span> <span class="nf">sumPythagoreanTriplets</span><span class="p">(</span><span class="n">limits</span><span class="p">):</span> 
+<span class="k">def</span><span class="w"> </span><span class="nf">sumPythagoreanTriplets</span><span class="p">(</span><span class="n">limits</span><span class="p">):</span> 
 	<span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span>
 	<span class="n">num</span><span class="o">=</span><span class="p">[]</span>
 	<span class="n">nums</span><span class="o">=</span><span class="p">[]</span>

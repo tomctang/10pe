@@ -30,7 +30,7 @@
   <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -387,8 +387,8 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#80 Square Root Digital Expansion</span>
-<span class="kn">from</span> <span class="nn">re</span> <span class="kn">import</span> <span class="n">findall</span>
-<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">re</span><span class="w"> </span><span class="kn">import</span> <span class="n">findall</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">sqrt</span>
 <span class="n">num</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">100</span><span class="p">))</span>
 <span class="n">num1</span><span class="o">=</span><span class="p">[]</span>
 <span class="n">num</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
@@ -430,7 +430,7 @@
 <span class="n">Total</span><span class="p">[</span><span class="n">Total</span><span class="p">[</span><span class="n">totalNumberDigits</span><span class="p">]]</span>
 <span class="p">(</span><span class="o">*</span> <span class="n">learn</span> <span class="mi">3</span> <span class="n">functions</span><span class="p">:</span>
     <span class="n">RealDigits</span><span class="p">[]</span> <span class="n">give</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="nb">len</span> <span class="n">digit</span>
-    <span class="n">Complement</span><span class="p">[]</span> <span class="n">after</span> <span class="n">excluding</span> <span class="n">the</span> <span class="n">subsequent</span> <span class="n">lists</span><span class="p">,</span> <span class="n">the</span> <span class="n">complement</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">first</span> <span class="nb">list</span> 
+    <span class="n">Complement</span><span class="p">[]</span> <span class="n">after</span> <span class="n">excluding</span> <span class="n">the</span> <span class="n">subsequent</span> <span class="n">lists</span><span class="p">,</span> <span class="n">the</span> <span class="n">complement</span> <span class="kn">from</span><span class="w"> </span><span class="nn">the</span> <span class="n">first</span> <span class="nb">list</span> 
     <span class="n">Total</span><span class="p">[]</span> <span class="o">*</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -442,7 +442,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#92 Square Digit Chains</span>
-<span class="k">def</span> <span class="nf">chain</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">chain</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="k">while</span> <span class="n">n</span><span class="o">!=</span><span class="mi">1</span> <span class="ow">and</span> <span class="n">n</span><span class="o">!=</span><span class="mi">89</span><span class="p">:</span>
         <span class="n">num</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)))</span>
         <span class="n">squared</span><span class="o">=</span><span class="mi">0</span>
@@ -467,8 +467,8 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 99 Largest Exponential</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
 <span class="c1"># sys.set_int_max_str_digits(4000000)</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://projecteuler.net/resources/documents/0099_base_exp.txt&quot;</span><span class="p">)</span>
 <span class="n">content</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span>     <span class="c1"># Read the content of the response</span>

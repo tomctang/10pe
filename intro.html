@@ -30,7 +30,7 @@
   <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -351,7 +351,10 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software-and-files">Software and files</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scientific-computing-environment-sce">Scientific Computing Environment (SCE)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#haskell">Haskell</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cas-sce-cientific-computing-environment">CAS &amp; SCE(cientific Computing Environment)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ubuntu-system">Ubuntu system</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more">More</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oop-to-fp">OOP to FP</a></li>
@@ -405,27 +408,40 @@
 <p>While a qualified coder mastering 6 programming languages (PL), how to choose PLs is really a hard decision.</p>
 <ol class="arabic simple">
 <li><p>We started this workbook using <strong>Python</strong> in VScode:</p>
-<ol class="arabic simple">
-<li><p>Python (.ipynb): we start from Python, then we found <a class="reference external" href="https://doc.sagemath.org/html/en/thematic_tutorials/index.html">SageMath tutorial</a> - the second powerful CAS (computer algebra system).</p></li>
-<li><p>SageMath isn’t a <code class="docutils literal notranslate"><span class="pre">pip</span></code>-installable package, instead it’s large and requires C/Fortran/Python… lots of pre-installed environments</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://cocalc.com/projects">CoCalc (.ipynb)</a> online platform includes all open-source computing environments, so surprising!!</p></li>
-<li><p><a class="reference external" href="https://stackoverflow.com/questions/49685498/how-do-you-import-sagemath-in-google-colaboratory/77440661">Google Colab</a> can also install SageMath, but <a class="reference external" href="https://github.com/demining/Install-SageMath-in-Google-Colab">with problems</a></p></li>
+<li><p>Python: we began from Python, then we found SageMath - the second powerful <strong>CAS</strong> (computer algebra system).</p></li>
+<li><p>Jupyter notebooks (.ipynb): interactive computational notebooks that make it easy to prototype, create visualizations and interactive presentations</p>
+<ul>
+<li><p>writing natural language and math formulus: MarkDown and Latex</p></li>
 </ul>
 </li>
-</ol>
+</ul>
 </li>
 <li><p>We then started <strong>Mathematica (Wolfram languages, MMA or Wolfram</strong> after):</p>
 <ul class="simple">
-<li><p>Now, we are running Wolfram in <code class="docutils literal notranslate"><span class="pre">ipynb</span></code>-file using VScode</p></li>
+<li><p>We are running Wolfram in <code class="docutils literal notranslate"><span class="pre">ipynb</span></code>-file using VScode</p></li>
 <li><p>Mathematica (.nb): the best CAS. Shall we convert .nb -&gt; .ipynb ??</p></li>
 </ul>
 </li>
-<li><p>Next, a PL with more FP? Ocaml? F#? Scala? Haskell? Rust? Make a comparison:</p>
-<ol class="arabic simple">
+<li><p>SageMath isn’t a <code class="docutils literal notranslate"><span class="pre">pip</span></code>-installable package, instead it’s large and requires C/Fortran/Python… lots of pre-installed environments</p>
+<ul class="simple">
+<li><p>SageMath is the best open-source CAS</p></li>
+<li><p><a class="reference external" href="https://cocalc.com/projects">CoCalc (.ipynb)</a> online platform includes all open-source computing environments, so surprising!!</p></li>
+<li><p><a class="reference external" href="https://stackoverflow.com/questions/49685498/how-do-you-import-sagemath-in-google-colaboratory/77440661">Google Colab</a> can also install SageMath, but <a class="reference external" href="https://github.com/demining/Install-SageMath-in-Google-Colab">with problems</a></p></li>
+<li><p>Finally, we use <strong>Docker + SageMath + JupyterLab</strong> to work with symbolic mathematics programmatically</p></li>
+<li><p>For SageMath resources:</p>
+<ul>
+<li><p><a class="reference external" href="https://wiki.sagemath.org/interact">Sage Interactions</a></p></li>
+<li><p><a class="reference external" href="https://doc.sagemath.org/">All SageMath tutorials</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Next, a PL with more FP? Ocaml? F#(Fsharp)? Scala? Haskell? Rust? Make a comparison:</p>
+<ul class="simple">
 <li><p>PL’s Coding-look in defining a Fibonacci; 2. Which FP is best for mathematics? Haskell is NO.1, but I really don’t like Haskell; 3. Math-related supports for these four languages; 4. Balance between FP and OOP; 5. Number of users in Project Euler for each PL; 6. libgen supports for each PL; 7. When the PL first appeared.</p></li>
 <li><p>Decision: <strong>Rust &amp; Haskell</strong> in the next year.</p>
-<ul class="simple">
+<ul>
 <li><p>Haskell in <code class="docutils literal notranslate"><span class="pre">ipynb</span></code> using <a class="reference internal" href="#"><span class="xref myst">Google Colab</span></a> and <a class="reference external" href="https://cocalc.com/software">Cocalc-Executables</a> - I spent one day to install Haskell locally and failed:(</p>
 <ul>
 <li><p>Google endorse <a class="reference external" href="https://code.world/">Codeworld - Educational Haskell programming platform</a> with <a class="reference external" href="https://github.com/google/codeworld/tree/master">Github Repository</a></p></li>
@@ -434,15 +450,56 @@
 <li><p>Rust using <a class="reference external" href="https://cocalc.com/projects">CoCalc</a> <code class="docutils literal notranslate"><span class="pre">ipynb</span></code>. <strong>Julia</strong> or GNU <strong>Octave</strong>(Matlab alternative)??</p></li>
 </ul>
 </li>
-</ol>
+</ul>
 </li>
 </ol>
-<section id="scientific-computing-environment-sce">
-<h3>Scientific Computing Environment (SCE)<a class="headerlink" href="#scientific-computing-environment-sce" title="Link to this heading">#</a></h3>
+<section id="haskell">
+<h3>Haskell<a class="headerlink" href="#haskell" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p>IHaskell in docker:</p>
+</div></blockquote>
+<ol class="arabic simple">
+<li><p>IHaskell computation = <strong>Docker + Haskell + Jupyter</strong> (Docker building: 1. download <a class="reference external" href="https://github.com/IHaskell/IHaskell">zip</a>, 2. go to Docker terminal, run <code class="docutils literal notranslate"><span class="pre">&quot;docker</span> <span class="pre">build</span> <span class="pre">-t</span> <span class="pre">ihaskell:latest</span> <span class="pre">.&quot;</span></code>)</p>
+<ul class="simple">
+<li><p>Haskell’s interpreter: IHaskell, <a class="reference external" href="https://github.com/HeinrichApfelmus/hyper-haskell">HyperHaskell</a>, ptGHCi</p></li>
+<li><p>I am using <a class="reference external" href="https://github.com/IHaskell/ihaskell-notebook">ihaskell-notebook Docker image</a>: JupyterLab version is low, unable to use AutoCompletion.</p></li>
+<li><p>can also use <a class="reference external" href="https://github.com/IHaskell/IHaskell">IHaskell docker</a> and <a class="reference external" href="https://gist.github.com/brandonchinn178/928d6137bfd17961b9584a8f96c18827">Docker build py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/IHaskell/IHaskell/issues/715">IHaskell disscusion</a> for reference</p></li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<div><p>wsl2-Ubuntu-Haskell in windows:</p>
+</div></blockquote>
+<ol class="arabic simple">
+<li><p>Microsoft Store -&gt; search ‘Ubuntu’ and install (345 MB)</p></li>
+<li><p>Open Ubuntu in Windows, update by:</p>
+<ul class="simple">
+<li><p>sudo apt update</p></li>
+<li><p>sudo apt install build-essential -y</p></li>
+<li><p>sudo apt install make -y</p></li>
+<li><p>sudo apt install automake -y</p></li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<div><p>windows-msys2-Haskell in powershell:</p>
+</div></blockquote>
+<ol class="arabic simple">
+<li><p>Two lauch commands:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ghci</span></code> is the interactive environment of the GHC compiler itself</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">stack</span> <span class="pre">ghci</span></code> is the interactive environment of the Stack build tool: 1) automatically handles dependency and installation (VS. GHC and Cabal), 2) config to install packages C:\Users\tangc\AppData\Roaming\stack\global-project\stack.yaml</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="cas-sce-cientific-computing-environment">
+<h3>CAS &amp; SCE(cientific Computing Environment)<a class="headerlink" href="#cas-sce-cientific-computing-environment" title="Link to this heading">#</a></h3>
 <p>Self-installing is impossible for advanced scientific computation. For personal study, building a Scientific Computing Environment is the first step to learning programming</p>
 <ol class="arabic simple">
 <li><p>Cloud Computing - <strong>Google Colab, Cocalc, <a class="reference external" href="https://mybinder.org/v2/gh/tomctang/10pe/HEAD">Binder</a></strong> - are good, but Colab and Binder require further installation (originally Python)</p></li>
-<li><p><strong>Docker</strong>’s images and containers (self-maintained not self-installation) are the best</p>
+<li><p>Self-built - <strong>Docker</strong>’s images and containers (self-maintained not self-installation) are the best</p>
 <ul class="simple">
 <li><p>I already build SageMath and IHaskell using Docker, both are in <code class="docutils literal notranslate"><span class="pre">ipynb</span></code></p></li>
 </ul>
@@ -452,6 +509,70 @@
 <ol class="arabic simple">
 <li><p>Use one environment(or Container) per project! Creating environments to accommodate specific workflows/projects — and to do so early on</p></li>
 <li><p>Containers is better, which package tools with underlying operating system, are larger and more complicated than environments, but are more portable</p></li>
+</ol>
+</section>
+<section id="ubuntu-system">
+<h3>Ubuntu system<a class="headerlink" href="#ubuntu-system" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Install docker</p>
+<ul class="simple">
+<li><p>curl -fsSL <a class="reference external" href="https://get.docker.com">https://get.docker.com</a> -o <a class="reference external" href="http://get-docker.sh">get-docker.sh</a></p></li>
+<li><p>sh <a class="reference external" href="http://get-docker.sh">get-docker.sh</a></p></li>
+<li><p><a class="reference external" href="http://dockerd-rootless-setuptool.sh">dockerd-rootless-setuptool.sh</a> install</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span> <span class="pre">;</span> <span class="pre">docker</span> <span class="pre">images</span> <span class="pre">;</span> </code></p></li>
+</ul>
+</li>
+<li><p>My PC has two disks, I installed Ubuntu goes along original windows in the first disk (original sys). Now the second disk can’t seen as Ubuntu still hardly manage Microsoft Windows dynamic disk (LDM). Solutions:</p>
+<ul class="simple">
+<li><p>ldmtool to read data in Ubuntu, or wait Ubuntu updates in the future</p></li>
+<li><p>convert LDM to basic disk while lossing all data</p></li>
+</ul>
+</li>
+<li><p>Install Haskell <code class="docutils literal notranslate"><span class="pre">curl</span> <span class="pre">--proto</span> <span class="pre">'=https'</span> <span class="pre">--tlsv1.2</span> <span class="pre">-sSf</span> <span class="pre">https://get-ghcup.haskell.org</span> <span class="pre">|</span> <span class="pre">sh</span></code></p>
+<ul class="simple">
+<li><p>run <code class="docutils literal notranslate"><span class="pre">ghci</span></code> or <code class="docutils literal notranslate"><span class="pre">cabal</span> <span class="pre">init</span> <span class="pre">--interactive</span></code>(Haskell project)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:q</span></code> quit from ghci</p></li>
+</ul>
+</li>
+<li><p>Basic Ubuntu commands:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-a</span> <span class="pre">;</span>&#160; <span class="pre">env</span>&#160; <span class="pre">;</span>&#160; <span class="pre">pwd</span>&#160; <span class="pre">;</span> <span class="pre">rm</span> <span class="pre">;</span> <span class="pre">echo</span> <span class="pre">&gt;</span> <span class="pre">aa.hs</span> <span class="pre">(create</span> <span class="pre">file);</span> <span class="pre">nano</span> <span class="pre">aa.hs</span> <span class="pre">(edit</span> <span class="pre">file,</span> <span class="pre">Ctrl+X</span> <span class="pre">for</span> <span class="pre">quit)</span></code></p></li>
+<li><p>If we run above in GHCI, add <code class="docutils literal notranslate"><span class="pre">:!</span></code> ahead</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="more">
+<h3>More<a class="headerlink" href="#more" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Mathematics and Self-Study Roadmaps</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=OmJ-4B-mS-Y">The Map of Mathematics</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=byNaO_zn2fI">How to self study pure math - a step-by-step guide</a></p></li>
+</ul>
+</li>
+<li><p>Python packages</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://diagrams.mingrammer.com/">diagrams</a>: Coding diagrams</p></li>
+<li><p><a class="reference external" href="https://www.manim.community/">manim</a>: Math Animation</p></li>
+<li><p><a class="reference external" href="https://github.com/connorferster/handcalcs">handcalcs</a>: render calculation as if it were written with a pencil: write the symbolic formula, then numeric substitutions, and then show result automatically</p></li>
+</ul>
+</li>
+<li><p>Website Management</p>
+<ul class="simple">
+<li><p>Git and GitHub</p></li>
+</ul>
+</li>
+<li><p>Project Management</p>
+<ul class="simple">
+<li><p>Visual Studio Code</p></li>
+</ul>
+</li>
+<li><p>Citations and Bibliographies</p>
+<ul class="simple">
+<li><p>Zotero: a free, easy-to-use tool to help you collect, organize, cite, and share research. I use Zotero to generate .bib files</p></li>
+</ul>
+</li>
 </ol>
 </section>
 </section>
@@ -505,16 +626,16 @@
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "wolframlanguage14"
+            mode: "python"
         },
         kernelOptions: {
-            name: "wolframlanguage14",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'wolframlanguage14'</script>
+    <script>kernelName = 'python3'</script>
 
                 </article>
               
@@ -553,7 +674,10 @@
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software-and-files">Software and files</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scientific-computing-environment-sce">Scientific Computing Environment (SCE)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#haskell">Haskell</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cas-sce-cientific-computing-environment">CAS &amp; SCE(cientific Computing Environment)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ubuntu-system">Ubuntu system</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more">More</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oop-to-fp">OOP to FP</a></li>

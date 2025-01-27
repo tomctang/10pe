@@ -30,7 +30,7 @@
   <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -389,7 +389,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
 <span class="n">var_list</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;panda&#39;</span><span class="p">,</span> <span class="s1">&#39;Panda&#39;</span><span class="p">,</span> <span class="s1">&#39;PANDA&#39;</span><span class="p">]</span>
 <span class="n">cute</span><span class="o">=</span><span class="mi">0</span>
 <span class="n">regal</span><span class="o">=</span><span class="mi">0</span>
@@ -571,7 +571,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
 <span class="n">happy</span><span class="o">=</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span><span class="o">*</span><span class="mi">5</span>
 <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">happy</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">2</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hello world&#39;</span><span class="p">)</span>
@@ -881,33 +881,33 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">a</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">a</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
 <span class="w">   </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">   x: int or float.</span>
 <span class="sd">   &#39;&#39;&#39;</span>
    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
 
-<span class="k">def</span> <span class="nf">b</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">b</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
 <span class="w">   </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">   x: int or float.</span>
 <span class="sd">   &#39;&#39;&#39;</span>
    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mf">1.0</span>
   
-<span class="k">def</span> <span class="nf">c</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
 <span class="w">   </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">   x: int or float. </span>
 <span class="sd">   y: int or float.</span>
 <span class="sd">   &#39;&#39;&#39;</span>
    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
 
-<span class="k">def</span> <span class="nf">d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
 <span class="w">   </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">   x: Can be of any type.</span>
 <span class="sd">   y: Can be of any type.</span>
 <span class="sd">   &#39;&#39;&#39;</span>
    <span class="k">return</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span>
 
-<span class="k">def</span> <span class="nf">e</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">e</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
 <span class="w">   </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">   x: Can be of any type.</span>
 <span class="sd">   y: Can be of any type.</span>
@@ -915,7 +915,7 @@ Iteration 4; count is: 1
 <span class="sd">   &#39;&#39;&#39;</span>
    <span class="k">return</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="n">y</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="n">z</span>
 
-<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
 <span class="w">   </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">   x: int or float.</span>
 <span class="sd">   y: int or float</span>
@@ -961,13 +961,13 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">a</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">a</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
      <span class="k">if</span> <span class="n">x</span><span class="p">:</span>
          <span class="k">return</span> <span class="n">y</span>
      <span class="k">else</span><span class="p">:</span>
          <span class="k">return</span> <span class="n">z</span>
 
-<span class="k">def</span> <span class="nf">b</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">b</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">a</span><span class="p">(</span><span class="n">q</span><span class="o">&gt;</span><span class="n">r</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">(</span><span class="mi">3</span><span class="o">&gt;</span><span class="mi">2</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
 </pre></div>
@@ -976,7 +976,7 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">fib</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="c1">#returns fibonacci of x</span>
     <span class="k">if</span> <span class="n">x</span><span class="o">==</span><span class="mi">0</span> <span class="ow">or</span> <span class="n">x</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
         <span class="k">return</span> <span class="mi">1</span>
@@ -1030,7 +1030,7 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fib3</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">fib3</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="c1">#returns fibonacci of x</span>
     <span class="k">if</span> <span class="n">x</span><span class="o">==</span><span class="mi">36</span><span class="p">:</span>
         <span class="k">return</span> <span class="mi">24157817</span>
@@ -1058,7 +1058,7 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gcdIter</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">gcdIter</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    a, b: positive integers</span>
 <span class="sd">    </span>
@@ -1086,7 +1086,7 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">isWordGuessed</span><span class="p">(</span><span class="n">secretWord</span><span class="p">,</span> <span class="n">lettersGuessed</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">isWordGuessed</span><span class="p">(</span><span class="n">secretWord</span><span class="p">,</span> <span class="n">lettersGuessed</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    secretWord: string, the word the user is guessing</span>
 <span class="sd">    lettersGuessed: list, what letters have been guessed so far</span>
@@ -1120,7 +1120,7 @@ Iteration 4; count is: 1
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alphabet</span> <span class="o">=</span> <span class="s1">&#39;abcdefghijklmnopqrstuvwxyz&#39;</span>
-<span class="k">def</span> <span class="nf">getAvailableLetters</span><span class="p">(</span><span class="n">lettersGuessed</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">getAvailableLetters</span><span class="p">(</span><span class="n">lettersGuessed</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    lettersGuessed: list, what letters have been guessed so far</span>
 <span class="sd">    returns: string, comprised of letters that represents what letters have not</span>
@@ -1269,10 +1269,10 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Square</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">Square</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">SquareHelper</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 
-<span class="k">def</span> <span class="nf">SquareHelper</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">SquareHelper</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">return</span> <span class="mi">0</span>
     <span class="k">return</span> <span class="n">SquareHelper</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">x</span>
@@ -1289,7 +1289,7 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="n">a</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">while</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
         <span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -1301,7 +1301,7 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">myLog</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">myLog</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="n">logarithm</span><span class="o">=</span><span class="mi">0</span>
     <span class="k">while</span> <span class="n">x</span><span class="o">&gt;=</span><span class="n">b</span><span class="p">:</span>
         <span class="n">logarithm</span><span class="o">+=</span><span class="mi">1</span>
@@ -1320,7 +1320,7 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">getSublists</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">getSublists</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">n</span><span class="o">==</span><span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">L</span>
     <span class="k">else</span><span class="p">:</span>
@@ -1341,7 +1341,7 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">unique_keys</span><span class="p">(</span><span class="n">aDict</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">unique_keys</span><span class="p">(</span><span class="n">aDict</span><span class="p">):</span>
     <span class="n">value_count</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="n">unique_keys_list</span> <span class="o">=</span> <span class="p">[]</span>
 
@@ -1359,8 +1359,8 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">general_poly</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">polynomial_function</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">general_poly</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">polynomial_function</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
         <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="n">k</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
         <span class="k">for</span> <span class="n">coefficient</span> <span class="ow">in</span> <span class="n">L</span><span class="p">:</span>
@@ -1412,7 +1412,7 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fancy_divide</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span><span class="n">index</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">fancy_divide</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span><span class="n">index</span><span class="p">):</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">denom</span> <span class="o">=</span> <span class="n">numbers</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)):</span>
@@ -1436,8 +1436,8 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
-<span class="kn">import</span> <span class="nn">string</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">string</span>
 
 <span class="n">VOWELS</span> <span class="o">=</span> <span class="s1">&#39;aeiou&#39;</span>
 <span class="n">CONSONANTS</span> <span class="o">=</span> <span class="s1">&#39;bcdfghjklmnpqrstvwxyz&#39;</span>
@@ -1453,7 +1453,7 @@ Iteration 4; count is: 1
 
 <span class="n">WORDLIST_FILENAME</span> <span class="o">=</span> <span class="s2">&quot;words.txt&quot;</span>
 
-<span class="k">def</span> <span class="nf">loadWords</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">loadWords</span><span class="p">():</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns a list of valid words. Words are strings of lowercase letters.</span>
 <span class="sd">    </span>
@@ -1470,7 +1470,7 @@ Iteration 4; count is: 1
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  &quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">wordList</span><span class="p">),</span> <span class="s2">&quot;words loaded.&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">wordList</span>
 
-<span class="k">def</span> <span class="nf">getFrequencyDict</span><span class="p">(</span><span class="n">sequence</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">getFrequencyDict</span><span class="p">(</span><span class="n">sequence</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns a dictionary where the keys are elements of the sequence</span>
 <span class="sd">    and the values are integer counts, for the number of times that</span>
@@ -1492,7 +1492,7 @@ Iteration 4; count is: 1
 <span class="c1">#</span>
 <span class="c1"># Problem #1: Scoring a word</span>
 <span class="c1">#</span>
-<span class="k">def</span> <span class="nf">getWordScore</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">getWordScore</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns the score for a word. Assumes the word is a valid word.</span>
 
@@ -1528,7 +1528,7 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">displayHand</span><span class="p">(</span><span class="n">hand</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">displayHand</span><span class="p">(</span><span class="n">hand</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Displays the letters currently in the hand.</span>
 
@@ -1560,8 +1560,8 @@ Iteration 4; count is: 1
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The 6.00 Word Game</span>
 
-<span class="kn">import</span> <span class="nn">random</span>
-<span class="kn">import</span> <span class="nn">string</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">string</span>
 
 <span class="n">VOWELS</span> <span class="o">=</span> <span class="s1">&#39;aeiou&#39;</span>
 <span class="n">CONSONANTS</span> <span class="o">=</span> <span class="s1">&#39;bcdfghjklmnpqrstvwxyz&#39;</span>
@@ -1577,7 +1577,7 @@ Iteration 4; count is: 1
 
 <span class="n">WORDLIST_FILENAME</span> <span class="o">=</span> <span class="s2">&quot;words.txt&quot;</span>
 
-<span class="k">def</span> <span class="nf">loadWords</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">loadWords</span><span class="p">():</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns a list of valid words. Words are strings of lowercase letters.</span>
 <span class="sd">    </span>
@@ -1594,7 +1594,7 @@ Iteration 4; count is: 1
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  &quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">wordList</span><span class="p">),</span> <span class="s2">&quot;words loaded.&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">wordList</span>
 
-<span class="k">def</span> <span class="nf">getFrequencyDict</span><span class="p">(</span><span class="n">sequence</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">getFrequencyDict</span><span class="p">(</span><span class="n">sequence</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns a dictionary where the keys are elements of the sequence</span>
 <span class="sd">    and the values are integer counts, for the number of times that</span>
@@ -1616,7 +1616,7 @@ Iteration 4; count is: 1
 <span class="c1">#</span>
 <span class="c1"># Problem #1: Scoring a word</span>
 <span class="c1">#</span>
-<span class="k">def</span> <span class="nf">getWordScore</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">getWordScore</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns the score for a word. Assumes the word is a valid word.</span>
 
@@ -1643,7 +1643,7 @@ Iteration 4; count is: 1
 <span class="c1">#</span>
 <span class="c1"># Problem #2: Make sure you understand how this function works and what it does!</span>
 <span class="c1">#</span>
-<span class="k">def</span> <span class="nf">displayHand</span><span class="p">(</span><span class="n">hand</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">displayHand</span><span class="p">(</span><span class="n">hand</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Displays the letters currently in the hand.</span>
 
@@ -1663,7 +1663,7 @@ Iteration 4; count is: 1
 <span class="c1">#</span>
 <span class="c1"># Problem #2: Make sure you understand how this function works and what it does!</span>
 <span class="c1">#</span>
-<span class="k">def</span> <span class="nf">dealHand</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">dealHand</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns a random hand containing n lowercase letters.</span>
 <span class="sd">    At least n/3 the letters in the hand should be VOWELS.</span>
@@ -1691,7 +1691,7 @@ Iteration 4; count is: 1
 <span class="c1">#</span>
 <span class="c1"># Problem #2: Update a hand by removing letters</span>
 <span class="c1">#</span>
-<span class="k">def</span> <span class="nf">updateHand</span><span class="p">(</span><span class="n">hand</span><span class="p">,</span> <span class="n">word</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">updateHand</span><span class="p">(</span><span class="n">hand</span><span class="p">,</span> <span class="n">word</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Assumes that &#39;hand&#39; has all the letters in word.</span>
 <span class="sd">    In other words, this assumes that however many times</span>
@@ -1720,7 +1720,7 @@ Iteration 4; count is: 1
 <span class="c1">#</span>
 <span class="c1"># Problem #3: Test word validity</span>
 <span class="c1">#</span>
-<span class="k">def</span> <span class="nf">isValidWord</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">hand</span><span class="p">,</span> <span class="n">wordList</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">isValidWord</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">hand</span><span class="p">,</span> <span class="n">wordList</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns True if word is in the wordList and is entirely</span>
 <span class="sd">    composed of letters in the hand. Otherwise, returns False.</span>
@@ -1742,7 +1742,7 @@ Iteration 4; count is: 1
 <span class="c1"># Problem #4: Playing a hand</span>
 <span class="c1">#   </span>
 
-<span class="k">def</span> <span class="nf">calculateHandlen</span><span class="p">(</span><span class="n">hand</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">calculateHandlen</span><span class="p">(</span><span class="n">hand</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; </span>
 <span class="sd">    Returns the length (number of letters) in the current hand.</span>
 <span class="sd">    </span>
@@ -1751,7 +1751,7 @@ Iteration 4; count is: 1
 <span class="sd">    &quot;&quot;&quot;</span>
 
 
-<span class="k">def</span> <span class="nf">playHand</span><span class="p">(</span><span class="n">hand</span><span class="p">,</span> <span class="n">wordList</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">playHand</span><span class="p">(</span><span class="n">hand</span><span class="p">,</span> <span class="n">wordList</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
     <span class="n">total_score</span> <span class="o">=</span> <span class="mi">0</span>
     
     <span class="k">while</span> <span class="n">calculateHandlen</span><span class="p">(</span><span class="n">hand</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
@@ -1795,10 +1795,10 @@ Iteration 4; count is: 1
 <h4><span class="section-number">9.1.3.1. </span>Classes and inheritance<a class="headerlink" href="#classes-and-inheritance" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Clock</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Clock</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">time</span> <span class="o">=</span> <span class="n">time</span>
-    <span class="k">def</span> <span class="nf">print_time</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">print_time</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">time</span> <span class="o">=</span> <span class="s1">&#39;6:30&#39;</span>
         <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">time</span><span class="p">)</span>
 
@@ -1810,10 +1810,10 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Clock</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Clock</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time</span><span class="p">):</span>
 	    <span class="bp">self</span><span class="o">.</span><span class="n">time</span> <span class="o">=</span> <span class="n">time</span>
-    <span class="k">def</span> <span class="nf">print_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">print_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time</span><span class="p">):</span>
 	    <span class="nb">print</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
 
 <span class="n">clock</span> <span class="o">=</span> <span class="n">Clock</span><span class="p">(</span><span class="s1">&#39;5:30&#39;</span><span class="p">)</span>
@@ -1824,22 +1824,22 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Weird</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Weird</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span> 
         <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
-    <span class="k">def</span> <span class="nf">getX</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getX</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">x</span> 
-    <span class="k">def</span> <span class="nf">getY</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getY</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">y</span>
 
-<span class="k">class</span> <span class="nc">Wild</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span> 
+<span class="k">class</span><span class="w"> </span><span class="nc">Wild</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span> 
         <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
-    <span class="k">def</span> <span class="nf">getX</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getX</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> 
-    <span class="k">def</span> <span class="nf">getY</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getY</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span>
     
 <span class="n">X</span> <span class="o">=</span> <span class="mi">7</span>
@@ -1937,33 +1937,33 @@ Iteration 4; count is: 1
 <h4><span class="section-number">9.1.3.2. </span>An extended example<a class="headerlink" href="#an-extended-example" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Spell</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">incantation</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Spell</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">incantation</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">incantation</span> <span class="o">=</span> <span class="n">incantation</span>
 
-    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">incantation</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">getDescription</span><span class="p">()</span>
               
-    <span class="k">def</span> <span class="nf">getDescription</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getDescription</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;No description&#39;</span>
     
-    <span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">incantation</span><span class="p">)</span>
 
 
-<span class="k">class</span> <span class="nc">Accio</span><span class="p">(</span><span class="n">Spell</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Accio</span><span class="p">(</span><span class="n">Spell</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">Spell</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;Accio&#39;</span><span class="p">,</span> <span class="s1">&#39;Summoning Charm&#39;</span><span class="p">)</span>
 
-<span class="k">class</span> <span class="nc">Confundo</span><span class="p">(</span><span class="n">Spell</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Confundo</span><span class="p">(</span><span class="n">Spell</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">Spell</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;Confundo&#39;</span><span class="p">,</span> <span class="s1">&#39;Confundus Charm&#39;</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">getDescription</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getDescription</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;Causes the victim to become confused and befuddled.&#39;</span>
 
-<span class="k">def</span> <span class="nf">studySpell</span><span class="p">(</span><span class="n">spell</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">studySpell</span><span class="p">(</span><span class="n">spell</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">spell</span><span class="p">)</span>
 
 <span class="n">spell</span> <span class="o">=</span> <span class="n">Accio</span><span class="p">()</span>
@@ -1976,41 +1976,41 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">A</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="k">def</span> <span class="nf">x</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">x</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A.x&quot;</span><span class="p">)</span>
-    <span class="k">def</span> <span class="nf">y</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">y</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A.y&quot;</span><span class="p">)</span>
-    <span class="k">def</span> <span class="nf">z</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">z</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A.z&quot;</span><span class="p">)</span>
 
-<span class="k">class</span> <span class="nc">B</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">B</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">A</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
-    <span class="k">def</span> <span class="nf">y</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">y</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;B.y&quot;</span><span class="p">)</span>
-    <span class="k">def</span> <span class="nf">z</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">z</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;B.z&quot;</span><span class="p">)</span>
 
-<span class="k">class</span> <span class="nc">C</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">C</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="mi">4</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">c</span> <span class="o">=</span> <span class="mi">5</span>
-    <span class="k">def</span> <span class="nf">y</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">y</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;C.y&quot;</span><span class="p">)</span>
-    <span class="k">def</span> <span class="nf">z</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">z</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;C.z&quot;</span><span class="p">)</span>
 
-<span class="k">class</span> <span class="nc">D</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">B</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">D</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">B</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">C</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="n">B</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">d</span> <span class="o">=</span> <span class="mi">6</span>
-    <span class="k">def</span> <span class="nf">z</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">z</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;D.z&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -2053,7 +2053,7 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">random</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 
 <span class="n">rav4_times</span><span class="o">=</span><span class="mi">0</span>
 <span class="n">corolla_times</span><span class="o">=</span><span class="mi">0</span>
@@ -2116,11 +2116,11 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generator1</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">generator1</span><span class="p">():</span>
     <span class="k">if</span> <span class="kc">True</span><span class="p">:</span>
         <span class="k">yield</span> <span class="mi">1</span> 
 
-<span class="k">def</span> <span class="nf">generator2</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">generator2</span><span class="p">():</span>
     <span class="k">if</span> <span class="kc">False</span><span class="p">:</span>   
         <span class="k">yield</span> <span class="mi">1</span>
 
@@ -2135,7 +2135,7 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">genPrimesFn</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">genPrimesFn</span><span class="p">():</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;Function to return 1000000 prime numbers&#39;&#39;&#39;</span>
     <span class="n">primes</span> <span class="o">=</span> <span class="p">[]</span>   <span class="c1"># primes generated so far</span>
     <span class="n">last</span> <span class="o">=</span> <span class="mi">1</span>      <span class="c1"># last number tried</span>
@@ -2148,7 +2148,7 @@ Iteration 4; count is: 1
             <span class="n">primes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">last</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">primes</span>
 
-<span class="k">def</span> <span class="nf">genPrimesFn</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">genPrimesFn</span><span class="p">():</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;Function to print every 10th prime </span>
 <span class="sd">    number, until you&#39;ve printed 20 of them.&#39;&#39;&#39;</span>
     <span class="n">primes</span> <span class="o">=</span> <span class="p">[]</span>   <span class="c1"># primes generated so far</span>
@@ -2172,7 +2172,7 @@ Iteration 4; count is: 1
 
 
 
-<span class="k">def</span> <span class="nf">genPrimesFn</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">genPrimesFn</span><span class="p">():</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;Function to keep printing the prime number until the user stops the program.</span>
 <span class="sd">    This way uses user input; you can also just run an infinite loop (while True)</span>
 <span class="sd">    that the user can quit out of by hitting control-c&#39;&#39;&#39;</span>
@@ -2197,7 +2197,7 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">string</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">string</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">ascii_lowercase</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">ascii_uppercase</span><span class="p">)</span>
 </pre></div>
@@ -2206,7 +2206,7 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">string</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">string</span>
 
 <span class="n">alphabet</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">ascii_lowercase</span>
 <span class="n">shift</span> <span class="o">=</span> <span class="mi">17</span>
@@ -2223,7 +2223,7 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">build_shift_dict</span><span class="p">(</span><span class="n">shift</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">build_shift_dict</span><span class="p">(</span><span class="n">shift</span><span class="p">):</span>
     <span class="n">shift_dict</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="n">alphabet</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">ascii_lowercase</span> <span class="o">+</span> <span class="n">string</span><span class="o">.</span><span class="n">ascii_uppercase</span>
     
@@ -2258,10 +2258,10 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">string</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">string</span>
 
 <span class="c1">### DO NOT MODIFY THIS FUNCTION ###</span>
-<span class="k">def</span> <span class="nf">load_words</span><span class="p">(</span><span class="n">file_name</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">load_words</span><span class="p">(</span><span class="n">file_name</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    file_name (string): the name of the file containing </span>
 <span class="sd">    the list of words to load    </span>
@@ -2283,7 +2283,7 @@ Iteration 4; count is: 1
     <span class="k">return</span> <span class="n">word_list</span>
 
 <span class="c1">### DO NOT MODIFY THIS FUNCTION ###</span>
-<span class="k">def</span> <span class="nf">is_word</span><span class="p">(</span><span class="n">word_list</span><span class="p">,</span> <span class="n">word</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">is_word</span><span class="p">(</span><span class="n">word_list</span><span class="p">,</span> <span class="n">word</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Determines if word is a valid word, ignoring</span>
 <span class="sd">    capitalization and punctuation</span>
@@ -2304,7 +2304,7 @@ Iteration 4; count is: 1
     <span class="k">return</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">word_list</span>
 
 <span class="c1">### DO NOT MODIFY THIS FUNCTION ###</span>
-<span class="k">def</span> <span class="nf">get_story_string</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_story_string</span><span class="p">():</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns: a joke in encrypted text.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -2315,9 +2315,9 @@ Iteration 4; count is: 1
 
 <span class="n">WORDLIST_FILENAME</span> <span class="o">=</span> <span class="s1">&#39;words.txt&#39;</span> 
 
-<span class="k">class</span> <span class="nc">Message</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Message</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="c1">### DO NOT MODIFY THIS METHOD ###</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Initializes a Message object</span>
 <span class="sd">                </span>
@@ -2331,7 +2331,7 @@ Iteration 4; count is: 1
         <span class="bp">self</span><span class="o">.</span><span class="n">valid_words</span> <span class="o">=</span> <span class="n">load_words</span><span class="p">(</span><span class="n">WORDLIST_FILENAME</span><span class="p">)</span>
 
     <span class="c1">### DO NOT MODIFY THIS METHOD ###</span>
-    <span class="k">def</span> <span class="nf">get_message_text</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_message_text</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Used to safely access self.message_text outside of the class</span>
 <span class="sd">        </span>
@@ -2340,7 +2340,7 @@ Iteration 4; count is: 1
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">message_text</span>
 
     <span class="c1">### DO NOT MODIFY THIS METHOD ###</span>
-    <span class="k">def</span> <span class="nf">get_valid_words</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_valid_words</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Used to safely access a copy of self.valid_words outside of the class</span>
 <span class="sd">        </span>
@@ -2348,7 +2348,7 @@ Iteration 4; count is: 1
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">valid_words</span><span class="p">[:]</span>
         
-    <span class="k">def</span> <span class="nf">build_shift_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">shift</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">build_shift_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">shift</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Creates a dictionary that can be used to apply a cipher to a letter.</span>
 <span class="sd">        The dictionary maps every uppercase and lowercase letter to a</span>
@@ -2377,7 +2377,7 @@ Iteration 4; count is: 1
             <span class="n">shift_dict</span><span class="p">[</span><span class="n">letter</span><span class="p">]</span> <span class="o">=</span> <span class="n">shifted_letter</span>
         <span class="k">return</span> <span class="n">shift_dict</span>
 
-    <span class="k">def</span> <span class="nf">apply_shift</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">shift</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">apply_shift</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">shift</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Applies the Caesar Cipher to self.message_text with the input shift.</span>
 <span class="sd">        Creates a new string that is self.message_text shifted down the</span>
@@ -2400,8 +2400,8 @@ Iteration 4; count is: 1
                 <span class="n">shifted_text</span> <span class="o">+=</span> <span class="n">char</span>
         <span class="k">return</span> <span class="n">shifted_text</span>
             
-<span class="k">class</span> <span class="nc">PlaintextMessage</span><span class="p">(</span><span class="n">Message</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">shift</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">PlaintextMessage</span><span class="p">(</span><span class="n">Message</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">shift</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Initializes a PlaintextMessage object        </span>
 <span class="sd">        </span>
@@ -2423,7 +2423,7 @@ Iteration 4; count is: 1
         <span class="bp">self</span><span class="o">.</span><span class="n">encrypting_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">build_shift_dict</span><span class="p">(</span><span class="n">shift</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">message_text_encrypted</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">apply_shift</span><span class="p">(</span><span class="n">shift</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">get_shift</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_shift</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Used to safely access self.shift outside of the class</span>
 <span class="sd">        </span>
@@ -2431,7 +2431,7 @@ Iteration 4; count is: 1
 <span class="sd">        &#39;&#39;&#39;</span>
         
 
-    <span class="k">def</span> <span class="nf">get_encrypting_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_encrypting_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Used to safely access a copy self.encrypting_dict outside of the class</span>
 <span class="sd">        </span>
@@ -2439,7 +2439,7 @@ Iteration 4; count is: 1
 <span class="sd">        &#39;&#39;&#39;</span>
             
 
-    <span class="k">def</span> <span class="nf">get_message_text_encrypted</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_message_text_encrypted</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Used to safely access self.message_text_encrypted outside of the class</span>
 <span class="sd">        </span>
@@ -2447,7 +2447,7 @@ Iteration 4; count is: 1
 <span class="sd">        &#39;&#39;&#39;</span>
         
 
-    <span class="k">def</span> <span class="nf">change_shift</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">shift</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">change_shift</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">shift</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Changes self.shift of the PlaintextMessage and updates other </span>
 <span class="sd">        attributes determined by shift (ie. self.encrypting_dict and </span>
@@ -2461,8 +2461,8 @@ Iteration 4; count is: 1
         <span class="bp">self</span><span class="o">.</span><span class="n">shift</span><span class="o">=</span><span class="n">shift</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">apply_shift</span><span class="p">(</span><span class="n">shift</span><span class="p">)</span>
 
-<span class="k">class</span> <span class="nc">CiphertextMessage</span><span class="p">(</span><span class="n">Message</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">CiphertextMessage</span><span class="p">(</span><span class="n">Message</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Initializes a CiphertextMessage object</span>
 <span class="sd">                </span>
@@ -2476,7 +2476,7 @@ Iteration 4; count is: 1
         <span class="bp">self</span><span class="o">.</span><span class="n">valid_words</span> <span class="o">=</span> <span class="n">load_words</span><span class="p">(</span><span class="s1">&#39;words.txt&#39;</span><span class="p">)</span>
         
 
-    <span class="k">def</span> <span class="nf">decrypt_message</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">decrypt_message</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Decrypt self.message_text by trying every possible shift value</span>
 <span class="sd">        and find the &quot;best&quot; one. We will define &quot;best&quot; as the shift that</span>
@@ -2532,33 +2532,33 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Animal</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Animal</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="o">=</span><span class="n">age</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="o">=</span><span class="kc">None</span>
-    <span class="k">def</span> <span class="nf">get_age</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_age</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span>
-    <span class="k">def</span> <span class="nf">get_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
-    <span class="k">def</span> <span class="nf">set_age</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">newage</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_age</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">newage</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="o">=</span><span class="n">newage</span>
-    <span class="k">def</span> <span class="nf">set_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">newname</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">newname</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="o">=</span><span class="n">newname</span>
-    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;animal:&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;:&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="p">)</span>
-<span class="k">class</span> <span class="nc">Rabbit</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Rabbit</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
     <span class="n">tag</span><span class="o">=</span><span class="mi">1</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">parent1</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">parent2</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">parent1</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">parent2</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="n">Animal</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">parent1</span><span class="o">=</span><span class="n">parent1</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">parent2</span><span class="o">=</span><span class="n">parent2</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">rid</span><span class="o">=</span><span class="n">Rabbit</span><span class="o">.</span><span class="n">tag</span>
         <span class="n">Rabbit</span><span class="o">.</span><span class="n">tag</span><span class="o">+=</span><span class="mi">1</span>
-    <span class="k">def</span> <span class="nf">get_rid</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_rid</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rid</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-    <span class="k">def</span> <span class="nf">get_parent1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_parent1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent1</span>
-    <span class="k">def</span> <span class="nf">get_parent2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_parent2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent2</span>
 </pre></div>
 </div>
@@ -2635,7 +2635,7 @@ Iteration 4; count is: 1
 <h4><span class="section-number">9.1.4.1. </span>Computational Complexity<a class="headerlink" href="#computational-complexity" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">search_for_elmt</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">e</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">search_for_elmt</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">e</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">L</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">i</span><span class="o">==</span><span class="n">e</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">True</span>
@@ -2654,7 +2654,7 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">lenRecur</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">lenRecur</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
    <span class="n">answer</span><span class="o">=</span><span class="mi">0</span>
    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
       <span class="k">if</span> <span class="n">s</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
@@ -2668,7 +2668,7 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fact_iter</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">fact_iter</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="c1"># assumes n an int&gt;=0</span>
     <span class="n">answer</span><span class="o">=</span><span class="mi">1</span>
     <span class="k">while</span> <span class="n">n</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">:</span>
@@ -2688,7 +2688,7 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">intToStr</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">intToStr</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
     <span class="n">digits</span><span class="o">=</span><span class="s1">&#39;0123456789&#39;</span>
     <span class="k">if</span> <span class="n">i</span> <span class="o">==</span><span class="mi">0</span><span class="p">:</span>
         <span class="k">return</span> <span class="s1">&#39;0&#39;</span>
@@ -2710,7 +2710,7 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">genSubsets</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">genSubsets</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
     <span class="n">res</span><span class="o">=</span><span class="p">[]</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
         <span class="k">return</span><span class="p">[[]]</span>
@@ -2734,7 +2734,7 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">h</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">h</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="n">answer</span><span class="o">=</span><span class="mi">0</span>
     <span class="n">s</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
@@ -2754,7 +2754,7 @@ Iteration 4; count is: 1
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">=</span><span class="mi">0</span>
-<span class="k">def</span> <span class="nf">modten</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">modten</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="o">&amp;</span><span class="mi">10</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">n</span><span class="o">%</span><span class="k">10</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">25</span><span class="p">):</span>
@@ -2769,7 +2769,7 @@ Iteration 4; count is: 1
 <h4><span class="section-number">9.1.4.2. </span>Searching and Sorting Algorithms<a class="headerlink" href="#searching-and-sorting-algorithms" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">foo</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
     <span class="n">val</span> <span class="o">=</span> <span class="n">L</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="k">while</span> <span class="p">(</span><span class="kc">True</span><span class="p">):</span>
         <span class="n">val</span> <span class="o">=</span> <span class="n">L</span><span class="p">[</span><span class="n">val</span><span class="p">]</span>
@@ -2796,7 +2796,7 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">random</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 <span class="n">score</span><span class="o">=</span><span class="mi">0</span>
 <span class="n">door_num</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
 <span class="n">brave</span><span class="o">=</span><span class="kc">True</span>
@@ -2816,7 +2816,7 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">e</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">search</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">e</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)):</span>
         <span class="k">if</span> <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">e</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">True</span>
@@ -2829,7 +2829,7 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">search1</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">e</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">search1</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">e</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">L</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">e</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">True</span>
@@ -2842,7 +2842,7 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">search2</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">e</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">search2</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">e</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">L</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">e</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">True</span>
@@ -2863,7 +2863,7 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">play_game</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">play_game</span><span class="p">():</span>
     <span class="n">score</span><span class="o">=</span><span class="mi">0</span>
     <span class="n">health</span><span class="o">=</span><span class="mi">100</span>
     <span class="n">shots</span><span class="o">=</span><span class="mi">20</span>
@@ -2895,7 +2895,7 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">random</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 <span class="n">play_game</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -2903,7 +2903,7 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">selSort</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">selSort</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
         <span class="n">minIndx</span> <span class="o">=</span> <span class="n">i</span>
         <span class="n">minVal</span> <span class="o">=</span> <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
@@ -2923,7 +2923,7 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">newSort</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">newSort</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
         <span class="n">j</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span>
         <span class="k">while</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
@@ -2938,7 +2938,7 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">newSort</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">newSort</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
         <span class="n">j</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span>
         <span class="k">while</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
@@ -2953,7 +2953,7 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">merge</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">merge</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">):</span>
     <span class="n">result</span><span class="o">=</span><span class="p">[]</span>
     <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
     <span class="k">while</span> <span class="n">i</span><span class="o">&lt;</span><span class="nb">len</span><span class="p">(</span><span class="n">left</span><span class="p">)</span> <span class="ow">and</span> <span class="n">j</span><span class="o">&lt;</span><span class="nb">len</span><span class="p">(</span><span class="n">right</span><span class="p">):</span>
@@ -2976,7 +2976,7 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">bubble_sort</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">bubble_sort</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
     <span class="n">swap</span> <span class="o">=</span> <span class="kc">True</span>
     <span class="k">while</span> <span class="n">swap</span><span class="p">:</span>
         <span class="n">swap</span> <span class="o">=</span> <span class="kc">False</span>
@@ -3001,8 +3001,8 @@ Iteration 4; count is: 1
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The 6.00 Word Game</span>
-<span class="kn">import</span> <span class="nn">random</span>
-<span class="kn">import</span> <span class="nn">string</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">string</span>
 
 <span class="n">VOWELS</span> <span class="o">=</span> <span class="s1">&#39;aeiou&#39;</span>
 <span class="n">CONSONANTS</span> <span class="o">=</span> <span class="s1">&#39;bcdfghjklmnpqrstvwxyz&#39;</span>
@@ -3017,7 +3017,7 @@ Iteration 4; count is: 1
 <span class="c1"># (you don&#39;t need to understand this helper code)</span>
 <span class="n">WORDLIST_FILENAME</span> <span class="o">=</span> <span class="s2">&quot;words.txt&quot;</span>
 
-<span class="k">def</span> <span class="nf">loadWords</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">loadWords</span><span class="p">():</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns a list of valid words. Words are strings of lowercase letters.</span>
 <span class="sd">    </span>
@@ -3034,7 +3034,7 @@ Iteration 4; count is: 1
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  &quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">wordList</span><span class="p">),</span> <span class="s2">&quot;words loaded.&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">wordList</span>
 
-<span class="k">def</span> <span class="nf">getFrequencyDict</span><span class="p">(</span><span class="n">sequence</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">getFrequencyDict</span><span class="p">(</span><span class="n">sequence</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns a dictionary where the keys are elements of the sequence</span>
 <span class="sd">    and the values are integer counts, for the number of times that</span>
@@ -3051,7 +3051,7 @@ Iteration 4; count is: 1
 <span class="c1"># (end of helper code)</span>
 <span class="c1"># -----------------------------------</span>
 <span class="c1">#</span>
-<span class="k">def</span> <span class="nf">getWordScore</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">getWordScore</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns the score for a word. Assumes the word is a valid word.</span>
 
@@ -3075,7 +3075,7 @@ Iteration 4; count is: 1
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span><span class="o">==</span><span class="n">n</span><span class="p">:</span>
         <span class="n">score</span><span class="o">+=</span><span class="mi">50</span>
     <span class="k">return</span> <span class="n">score</span>
-<span class="k">def</span> <span class="nf">updateHand</span><span class="p">(</span><span class="n">hand</span><span class="p">,</span> <span class="n">word</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">updateHand</span><span class="p">(</span><span class="n">hand</span><span class="p">,</span> <span class="n">word</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Assumes that &#39;hand&#39; has all the letters in word.</span>
 <span class="sd">    In other words, this assumes that however many times</span>
@@ -3099,7 +3099,7 @@ Iteration 4; count is: 1
     
     <span class="k">return</span> <span class="n">newHand</span>
 
-<span class="k">def</span> <span class="nf">displayHand</span><span class="p">(</span><span class="n">hand</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">displayHand</span><span class="p">(</span><span class="n">hand</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Displays the letters currently in the hand.</span>
 
@@ -3116,7 +3116,7 @@ Iteration 4; count is: 1
              <span class="nb">print</span><span class="p">(</span><span class="n">letter</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>       <span class="c1"># print all on the same line</span>
     <span class="nb">print</span><span class="p">()</span>
 
-<span class="k">def</span> <span class="nf">dealHand</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">dealHand</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns a random hand containing n lowercase letters.</span>
 <span class="sd">    At least n/3 the letters in the hand should be VOWELS.</span>
@@ -3135,8 +3135,8 @@ Iteration 4; count is: 1
         <span class="n">hand</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">hand</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
     <span class="k">return</span> <span class="n">hand</span>
 
-<span class="kn">import</span> <span class="nn">copy</span>
-<span class="k">def</span> <span class="nf">isValidWord</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">hand</span><span class="p">,</span> <span class="n">wordList</span><span class="p">):</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">copy</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">isValidWord</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">hand</span><span class="p">,</span> <span class="n">wordList</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns True if word is in the wordList and is entirely</span>
 <span class="sd">    composed of letters in the hand. Otherwise, returns False.</span>
@@ -3157,7 +3157,7 @@ Iteration 4; count is: 1
         <span class="n">hand_new</span><span class="p">[</span><span class="n">char</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">1</span>
     
     <span class="k">return</span> <span class="kc">True</span>
-<span class="k">def</span> <span class="nf">calculateHandlen</span><span class="p">(</span><span class="n">hand</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">calculateHandlen</span><span class="p">(</span><span class="n">hand</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; </span>
 <span class="sd">    Returns the length (number of letters) in the current hand.</span>
 <span class="sd">    </span>
@@ -3168,7 +3168,7 @@ Iteration 4; count is: 1
     <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">hand</span><span class="p">:</span>
         <span class="n">length</span> <span class="o">+=</span> <span class="n">hand</span><span class="p">[</span><span class="n">letter</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">length</span>
-<span class="k">def</span> <span class="nf">playHand</span><span class="p">(</span><span class="n">hand</span><span class="p">,</span> <span class="n">wordList</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">playHand</span><span class="p">(</span><span class="n">hand</span><span class="p">,</span> <span class="n">wordList</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
     <span class="n">total_score</span> <span class="o">=</span> <span class="mi">0</span>
     
     <span class="k">while</span> <span class="n">calculateHandlen</span><span class="p">(</span><span class="n">hand</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
@@ -3206,8 +3206,8 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="k">def</span> <span class="nf">pick_3</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">random</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">pick_3</span><span class="p">():</span>
     <span class="n">num</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
     <span class="n">win_num</span><span class="o">=</span><span class="p">[]</span>
     <span class="n">num1</span><span class="o">=</span><span class="n">num</span><span class="p">[:]</span>
@@ -3243,7 +3243,7 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">random</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 <span class="n">pick_3</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -3251,9 +3251,9 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">copy</span>
-<span class="kn">import</span> <span class="nn">random</span>
-<span class="k">def</span> <span class="nf">pick_2</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">copy</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">pick_2</span><span class="p">():</span>
     <span class="n">num</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
     <span class="n">num1</span><span class="o">=</span><span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
     <span class="n">winnings</span><span class="o">=</span><span class="mi">0</span>
@@ -3270,7 +3270,7 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">multlist</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">multlist</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    m is the multiplication factor</span>
 <span class="sd">    n is a list.</span>
@@ -3294,7 +3294,7 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">foo</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
         <span class="k">return</span> <span class="mi">1</span>
     <span class="k">return</span> <span class="n">foo</span><span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
@@ -3304,7 +3304,7 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">genPrimes</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">genPrimes</span><span class="p">():</span>
     <span class="c1"># Initialize to have 2</span>
     <span class="n">primes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">]</span>
     <span class="k">yield</span> <span class="mi">2</span>
@@ -3341,7 +3341,7 @@ Iteration 4; count is: 1
 <h3><span class="section-number">9.1.5. </span>Plotting<a class="headerlink" href="#plotting" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pylab</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="n">mySamples</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">myLinear</span> <span class="o">=</span> <span class="p">[]</span>
@@ -3417,7 +3417,7 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">retire</span><span class="p">(</span><span class="n">monthly</span><span class="p">,</span> <span class="n">rate</span><span class="p">,</span> <span class="n">terms</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">retire</span><span class="p">(</span><span class="n">monthly</span><span class="p">,</span> <span class="n">rate</span><span class="p">,</span> <span class="n">terms</span><span class="p">):</span>
     <span class="n">savings</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">base</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">mRate</span><span class="o">=</span><span class="n">rate</span><span class="o">/</span><span class="mi">12</span>
@@ -3454,7 +3454,7 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_triangular</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">is_triangular</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    k, a positive integer</span>
 <span class="sd">    returns True if k is triangular or False if not</span>
@@ -3485,7 +3485,7 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">longest_run</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">longest_run</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
     <span class="n">current_run</span><span class="o">=</span><span class="p">[]</span>
     <span class="n">long_run</span><span class="o">=</span><span class="p">[]</span>
     <span class="n">n</span><span class="o">=</span><span class="mi">0</span>
@@ -3539,7 +3539,7 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">e</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">search</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">e</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Assumes L is a list, the elements of which are in</span>
 <span class="sd">    ascending order.</span>
 <span class="sd">    Returns True if e is in L and False otherwise&quot;&quot;&quot;</span>
@@ -3555,8 +3555,8 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">g</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
         <span class="n">m</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
             <span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
@@ -3584,7 +3584,7 @@ Iteration 4; count is: 1
 <span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">search</span><span class="p">(</span><span class="n">L_s</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
 
 <span class="nn">Cell In[67], line 5,</span> in <span class="ni">search</span><span class="nt">(L, e)</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">e</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span><span class="w"> </span><span class="nf">search</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">e</span><span class="p">):</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Assumes L is a list, the elements of which are in</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span><span class="sd">     ascending order.</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span><span class="sd">     Returns True if e is in L and False otherwise&quot;&quot;&quot;</span>
@@ -3599,26 +3599,26 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Person</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>     
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>         
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Person</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>     
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>         
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>     
-    <span class="k">def</span> <span class="nf">say</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stuff</span><span class="p">):</span>         
+    <span class="k">def</span><span class="w"> </span><span class="nf">say</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stuff</span><span class="p">):</span>         
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s1">&#39; says: &#39;</span> <span class="o">+</span> <span class="n">stuff</span>     
-    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>         
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>         
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>  
 
-<span class="k">class</span> <span class="nc">Lecturer</span><span class="p">(</span><span class="n">Person</span><span class="p">):</span>     
-    <span class="k">def</span> <span class="nf">lecture</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stuff</span><span class="p">):</span>         
+<span class="k">class</span><span class="w"> </span><span class="nc">Lecturer</span><span class="p">(</span><span class="n">Person</span><span class="p">):</span>     
+    <span class="k">def</span><span class="w"> </span><span class="nf">lecture</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stuff</span><span class="p">):</span>         
         <span class="k">return</span> <span class="s1">&#39;I believe that &#39;</span> <span class="o">+</span> <span class="n">Person</span><span class="o">.</span><span class="n">say</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stuff</span><span class="p">)</span>  
 
-<span class="k">class</span> <span class="nc">Professor</span><span class="p">(</span><span class="n">Lecturer</span><span class="p">):</span> 
-    <span class="k">def</span> <span class="nf">say</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stuff</span><span class="p">):</span> 
+<span class="k">class</span><span class="w"> </span><span class="nc">Professor</span><span class="p">(</span><span class="n">Lecturer</span><span class="p">):</span> 
+    <span class="k">def</span><span class="w"> </span><span class="nf">say</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stuff</span><span class="p">):</span> 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s1">&#39; says: &#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">lecture</span><span class="p">(</span><span class="n">stuff</span><span class="p">)</span>
 
-<span class="k">class</span> <span class="nc">ArrogantProfessor</span><span class="p">(</span><span class="n">Professor</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">say</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stuff</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ArrogantProfessor</span><span class="p">(</span><span class="n">Professor</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">say</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stuff</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="o">+</span><span class="s1">&#39; says: It is obvious that &#39;</span><span class="o">+</span><span class="n">Person</span><span class="o">.</span><span class="n">say</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stuff</span><span class="p">)</span>
-    <span class="k">def</span> <span class="nf">lecture</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stuff</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">lecture</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stuff</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;It is obvious that &#39;</span><span class="o">+</span> <span class="n">Person</span><span class="o">.</span><span class="n">say</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stuff</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -3732,7 +3732,7 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">cipher</span><span class="p">(</span><span class="n">map_from</span><span class="p">,</span> <span class="n">map_to</span><span class="p">,</span> <span class="n">code</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">cipher</span><span class="p">(</span><span class="n">map_from</span><span class="p">,</span> <span class="n">map_to</span><span class="p">,</span> <span class="n">code</span><span class="p">):</span>
     <span class="n">key_code</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># Step 1: Create an empty dictionary for mapping</span>
     <span class="n">decoded</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>   <span class="c1"># Initialize an empty string for the decoded result</span>
 
@@ -3751,7 +3751,7 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">string</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">string</span>
 <span class="n">map_from</span><span class="o">=</span><span class="n">string</span><span class="o">.</span><span class="n">ascii_lowercase</span>
 <span class="n">map_to</span><span class="o">=</span><span class="n">string</span><span class="o">.</span><span class="n">ascii_uppercase</span>
 <span class="n">code</span><span class="o">=</span><span class="s1">&#39;pneumonoultramicroscopicsilicovolcanoconiosis&#39;</span>
@@ -3793,7 +3793,7 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
 <span class="n">m</span><span class="o">=</span><span class="p">[]</span>
 <span class="n">w</span><span class="o">=</span><span class="p">[]</span>
 <span class="n">isin</span><span class="o">=</span><span class="kc">False</span>
@@ -3840,7 +3840,7 @@ Iteration 4; count is: 1
 <span class="g g-Whitespace">     </span><span class="mi">10</span>         <span class="n">isin</span><span class="o">=</span><span class="kc">True</span>
 
 <span class="nn">File c:\ProgramData\anaconda3\lib\random.py:370,</span> in <span class="ni">Random.randint</span><span class="nt">(self, a, b)</span>
-<span class="g g-Whitespace">    </span><span class="mi">366</span> <span class="k">def</span> <span class="nf">randint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">366</span> <span class="k">def</span><span class="w"> </span><span class="nf">randint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
 <span class="g g-Whitespace">    </span><span class="mi">367</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Return random integer in range [a, b], including both end points.</span>
 <span class="g g-Whitespace">    </span><span class="mi">368</span><span class="sd">     &quot;&quot;&quot;</span>
 <span class="ne">--&gt; </span><span class="mi">370</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
@@ -3859,7 +3859,7 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">longest_run</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">longest_run</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
     <span class="n">longest_length</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="n">current_length</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="n">longest_sum</span> <span class="o">=</span> <span class="n">L</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -3902,7 +3902,7 @@ Iteration 4; count is: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">longest_run</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">longest_run</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
     <span class="n">longest_length</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="n">current_length</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="n">longest_sum</span> <span class="o">=</span> <span class="n">L</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>

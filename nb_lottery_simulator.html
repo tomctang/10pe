@@ -30,7 +30,7 @@
   <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -398,11 +398,11 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Import the Necessities</span>
-<span class="kn">from</span> <span class="nn">scipy.special</span> <span class="kn">import</span> <span class="n">factorial</span><span class="p">,</span> <span class="n">binom</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.special</span><span class="w"> </span><span class="kn">import</span> <span class="n">factorial</span><span class="p">,</span> <span class="n">binom</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 
-<span class="k">def</span> <span class="nf">binomial_coefficient</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">perm</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">binomial_coefficient</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">perm</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;Calculates the Binomial Coefficient (n choose k)</span>
 
 <span class="sd">    Keyword Arguments:</span>
@@ -448,7 +448,7 @@
 <p>This function gives us the ability to calcluate the range of odds of drawing X correct balls in a non-powerball or one-powerball style lottery. The function takes the n,k,and pmax parameters as inputs and 2 lists with the calculated odds of winning with the powerball or without the powerball. In a lottery without the powerball pool it returns an empty list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">powerball_odds</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">pmax</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">powerball_odds</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">pmax</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;Calcluates the range of odds of drawing X correct balls in a non-powerball or one-powerball style lottery.</span>
 <span class="sd">    </span>
 <span class="sd">    Keyword Arguments:</span>
@@ -632,13 +632,13 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importing modules</span>
-<span class="kn">import</span> <span class="nn">random</span>
-<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">rankdata</span>
-<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">ExcelWriter</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">rankdata</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">stats</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="kn">import</span> <span class="n">ExcelWriter</span>
 
 <span class="n">guessed_balls</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1">#guessed balls</span>
 <span class="n">lottery_balls</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1">#lottery balls</span>
@@ -735,7 +735,7 @@
 <h3><span class="section-number">13.4.1. </span>Prize Quantity Won &amp; Barplot 图调整log坐标<a class="headerlink" href="#prize-quantity-won-barplot-log" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sb</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sb</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;dark&quot;</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">font_scale</span><span class="o">=</span><span class="mf">1.2</span><span class="p">)</span> 
 <span class="n">fig_dims</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
@@ -790,7 +790,7 @@ total jackpot:                       1
 <h3><span class="section-number">13.4.2. </span>Prize Quantity Won &amp; Barplot linear坐标不调整<a class="headerlink" href="#prize-quantity-won-barplot-linear" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sb</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sb</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;dark&quot;</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">font_scale</span><span class="o">=</span><span class="mf">1.2</span><span class="p">)</span> 
 <span class="n">fig_dims</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
@@ -855,7 +855,7 @@ total jackpot:                       1
 <span class="n">one_white_mega_winnings</span> <span class="o">=</span> <span class="n">one_white_mega</span> <span class="o">*</span> <span class="mi">4</span>
 <span class="n">mega_winnings</span> <span class="o">=</span> <span class="n">mega</span> <span class="o">*</span> <span class="mi">2</span>
 
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sb</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sb</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;dark&quot;</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">font_scale</span><span class="o">=</span><span class="mf">1.2</span><span class="p">)</span> 
 <span class="n">fig_dims</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
@@ -1050,7 +1050,7 @@ total jackpot:                     $ 197,000,000
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Creating a Lottery Simulator, from https://gist.github.com/Oiselenjakhian/26a7336a19a7cd1136dea3eec4b67cc8</span>
-<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span> <span class="c1"># Import the randint function</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">random</span><span class="w"> </span><span class="kn">import</span> <span class="n">randint</span> <span class="c1"># Import the randint function</span>
 <span class="n">pickedNumbers</span> <span class="o">=</span> <span class="p">[]</span>         <span class="c1"># Initialize the empty list</span>
 
 <span class="k">while</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">pickedNumbers</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">6</span><span class="p">):</span> <span class="c1"># Generate numbers from 1 to 36 6 times</span>
@@ -1070,8 +1070,8 @@ total jackpot:                     $ 197,000,000
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
-<span class="kn">import</span> <span class="nn">json</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
 
 <span class="n">white_possibles</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">70</span><span class="p">))</span>
 <span class="n">red_possibles</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">27</span><span class="p">))</span>
@@ -1095,7 +1095,7 @@ total jackpot:                     $ 197,000,000
     <span class="s2">&quot;0&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
 <span class="p">}</span>
 
-<span class="k">def</span> <span class="nf">calc_win_amt</span><span class="p">(</span><span class="n">my_numbers</span><span class="p">,</span> <span class="n">winning_numbers</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">calc_win_amt</span><span class="p">(</span><span class="n">my_numbers</span><span class="p">,</span> <span class="n">winning_numbers</span><span class="p">):</span>
     <span class="n">win_amt</span> <span class="o">=</span> <span class="mi">0</span>
 
     <span class="n">white_matches</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">my_numbers</span><span class="p">[</span><span class="s2">&quot;whites&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span>
