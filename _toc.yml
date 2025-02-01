@@ -19,12 +19,13 @@ parts:
   - file: Alevel_math
   - file: Alevel_math_further
 
-- caption: MIT CS-Courses
+- caption: CS & Physics
   numbered: true
   chapters:
   - file: MIT_CS6001-Python
   - file: MIT_CS6002-thinking
-
+  - file: MCM
+  
 - caption: Notebook
   numbered: true
   chapters:
