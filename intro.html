@@ -180,16 +180,17 @@
 <li class="toctree-l1"><a class="reference internal" href="Alevel_math.html">7. A-level-math</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Alevel_math_further.html">8. A-level-further</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">MIT CS-Courses</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CS &amp; Physics</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="MIT_CS6001-Python.html">9. MIT_CS6001-Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="MIT_CS6002-thinking.html">10. MIT_CS6002-CS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MCM.html">11. Mathematical and Computational Methods</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Notebook</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="nb_Jonny_notebook.html">11. Combo notebook</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nb_Geo.html">12. Jonny Geo-Graph</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nb_lottery_simulator.html">13. Lottery Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nb_Jonny_notebook.html">12. Combo notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nb_Geo.html">13. Jonny Geo-Graph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nb_lottery_simulator.html">14. Lottery Math</a></li>
 </ul>
 
     </div>
@@ -350,10 +351,9 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software-and-files">Software and files</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ubuntu-sce-scientific-computing-environment">Ubuntu &amp; SCE(Scientific Computing Environment)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software-files">Software &amp; files</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#haskell">Haskell</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cas-sce-cientific-computing-environment">CAS &amp; SCE(cientific Computing Environment)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ubuntu-system">Ubuntu system</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more">More</a></li>
 </ul>
 </li>
@@ -403,8 +403,92 @@
 <div><p><strong>Others</strong></p>
 </div></blockquote>
 <p>Geography, Lottery math</p>
-<section id="software-and-files">
-<h2>Software and files<a class="headerlink" href="#software-and-files" title="Link to this heading">#</a></h2>
+<section id="ubuntu-sce-scientific-computing-environment">
+<h2>Ubuntu &amp; SCE(Scientific Computing Environment)<a class="headerlink" href="#ubuntu-sce-scientific-computing-environment" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>install chrome</p>
+<ul class="simple">
+<li><p>sudo apt-get install libxss1 libappindicator1 libindicator7</p></li>
+<li><p>wget <a class="reference external" href="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb">https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb</a></p></li>
+<li><p>sudo apt install ./google-chrome*.deb</p></li>
+</ul>
+</li>
+<li><p>git</p>
+<ul class="simple">
+<li><p>sudo apt install git</p></li>
+</ul>
+</li>
+<li><p>Install docker</p>
+<ul class="simple">
+<li><p>sudo apt  install curl</p></li>
+<li><p>curl -fsSL <a class="reference external" href="https://get.docker.com">https://get.docker.com</a> -o <a class="reference external" href="http://get-docker.sh">get-docker.sh</a></p></li>
+<li><p>sh <a class="reference external" href="http://get-docker.sh">get-docker.sh</a></p></li>
+<li><p><a class="reference external" href="http://dockerd-rootless-setuptool.sh">dockerd-rootless-setuptool.sh</a> install</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span> <span class="pre">;</span> <span class="pre">docker</span> <span class="pre">images</span> <span class="pre">;</span> </code></p></li>
+</ul>
+</li>
+<li><p>google drive - rclone</p>
+<ul class="simple">
+<li><p>sudo -v ; curl <a class="reference external" href="https://rclone.org/install.sh">https://rclone.org/install.sh</a> | sudo bash</p></li>
+<li><p>run “rclone config”, follow guide: <a class="reference external" href="https://rclone.org/drive/">https://rclone.org/drive/</a></p></li>
+<li><p>run “sudo nano /etc/fuse.conf” Uncomment this line: user_allow_other</p></li>
+<li><p>rclone mount gdrive: /home/tom/gdrive –allow-other –vfs-cache-mode full</p></li>
+<li><p>automatic boot: 2 issues - connection &amp; mount</p>
+<ul>
+<li><p>Test rclone connection: <code class="docutils literal notranslate"><span class="pre">rclone</span> <span class="pre">lsd</span> <span class="pre">remote:</span></code></p></li>
+<li><p>sudo nano /etc/systemd/system/rclone-gdrive.service # see T430’s file</p></li>
+<li><p>systemctl daemon-reload</p></li>
+<li><p>sudo systemctl enable rclone-gdrive.service</p></li>
+<li><p>sudo systemctl start rclone-gdrive.service</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>remove Ubuntu top bar, find Extension in Apps, search “hide top bar”</p>
+<ul class="simple">
+<li><p>sudo apt install gnome-shell-extension-manager</p></li>
+</ul>
+</li>
+<li><p>printer <a class="reference external" href="https://support.brother.com/g/b/downloadend.aspx?c=au&amp;amp;lang=en&amp;amp;prod=hll2350dw_us_eu_as&amp;amp;os=128&amp;amp;dlid=dlf103566_000&amp;amp;flang=4&amp;amp;type3=10283">brother driver</a></p></li>
+<li><p>My PC has two disks, I installed Ubuntu goes along original windows in the first disk (original sys). Now the second disk can’t seen as Ubuntu still hardly manage Microsoft Windows dynamic disk (LDM). Solutions:</p>
+<ul class="simple">
+<li><p>ldmtool to read data in Ubuntu, or wait Ubuntu updates in the future</p></li>
+<li><p>convert LDM to basic disk while lossing all data</p></li>
+</ul>
+</li>
+<li><p>Haskell <code class="docutils literal notranslate"><span class="pre">curl</span> <span class="pre">--proto</span> <span class="pre">'=https'</span> <span class="pre">--tlsv1.2</span> <span class="pre">-sSf</span> <span class="pre">https://get-ghcup.haskell.org</span> <span class="pre">|</span> <span class="pre">sh</span></code></p>
+<ul class="simple">
+<li><p>run <code class="docutils literal notranslate"><span class="pre">ghci</span></code> or <code class="docutils literal notranslate"><span class="pre">cabal</span> <span class="pre">init</span> <span class="pre">--interactive</span></code>(Haskell project)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:q</span></code> quit from ghci</p></li>
+</ul>
+</li>
+<li><p>Basic Ubuntu commands:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-a</span> <span class="pre">;</span>&#160; <span class="pre">env</span>&#160; <span class="pre">;</span>&#160; <span class="pre">pwd</span>&#160; <span class="pre">;</span> <span class="pre">rm</span> <span class="pre">;</span> <span class="pre">echo</span> <span class="pre">&gt;</span> <span class="pre">aa.hs</span> <span class="pre">(create</span> <span class="pre">file);</span> <span class="pre">nano</span> <span class="pre">aa.hs</span> <span class="pre">(edit</span> <span class="pre">file,</span> <span class="pre">Ctrl+X</span> <span class="pre">for</span> <span class="pre">quit)</span></code></p></li>
+<li><p>If we run above in GHCI, add <code class="docutils literal notranslate"><span class="pre">:!</span></code> ahead</p></li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<div><p>CAS &amp; SCE</p>
+</div></blockquote>
+<p>Ubuntu is the key in SCE. To build a SCE is the first step to learn programming, two ways:</p>
+<ol class="arabic simple">
+<li><p>Cloud Computing - <strong>Google Colab, Cocalc, <a class="reference external" href="https://mybinder.org/v2/gh/tomctang/10pe/HEAD">Binder</a></strong> - are good, but Colab and Binder require further installation (originally Python)</p></li>
+<li><p>Self-built - <strong>Docker</strong>’s images and containers (self-maintained not self-installation) are the best</p>
+<ul class="simple">
+<li><p>I already build SageMath and IHaskell using Docker, both running <code class="docutils literal notranslate"><span class="pre">ipynb</span></code></p></li>
+</ul>
+</li>
+</ol>
+<p>Science reproducibility - managing Environment and Container</p>
+<ol class="arabic simple">
+<li><p>Use one environment(or Container) per project! Creating environments to accommodate specific workflows/projects — and to do so early on</p></li>
+<li><p>Containers is better, which package tools with underlying operating system, are larger and more complicated than environments, but are more portable</p></li>
+</ol>
+</section>
+<section id="software-files">
+<h2>Software &amp; files<a class="headerlink" href="#software-files" title="Link to this heading">#</a></h2>
 <p>While a qualified coder mastering 6 programming languages (PL), how to choose PLs is really a hard decision.</p>
 <ol class="arabic simple">
 <li><p>We started this workbook using <strong>Python</strong> in VScode:</p>
@@ -456,6 +540,41 @@
 <section id="haskell">
 <h3>Haskell<a class="headerlink" href="#haskell" title="Link to this heading">#</a></h3>
 <blockquote>
+<div><p>IHaskell in Ubuntu</p>
+</div></blockquote>
+<ol class="arabic simple">
+<li><p>A. step-by-step to avoid skipping; B.if using IHaskell packages, the ipynb must locate in IHaskell folder</p>
+<ul class="simple">
+<li><p>sudo apt-get install -y python3-pip git libtinfo-dev libzmq3-dev libcairo2-dev libpango1.0-dev libmagic-dev libblas-dev liblapack-dev</p></li>
+<li><p>curl -sSL <a class="reference external" href="https://get.haskellstack.org/">https://get.haskellstack.org/</a> | sh  # install stack</p></li>
+<li><p>export PATH=”/usr/local/bin:$PATH”</p></li>
+<li><p>export PATH=”/home/tom/.local/bin:$PATH”</p></li>
+<li><p>git clone <a class="github reference external" href="https://github.com/gibiansky/IHaskell">gibiansky/IHaskell</a></p></li>
+<li><p>cd IHaskell</p></li>
+<li><p>pip3 install -r requirements.txt -break-system-packages  # install Python requirements</p></li>
+<li><p>stack install –fast  # install ihaskell</p></li>
+<li><p>ihaskell install –stack   # install the Jupyter kernelspec with ihaskell</p></li>
+<li><p>Restart PC and make sure Jupyter access fully</p>
+<ul>
+<li><p>jupyter notebook –generate-config</p></li>
+<li><p>nano ~/.jupyter/jupyter_notebook_config.py</p></li>
+<li><p>add into:</p></li>
+<li><p>c.NotebookApp.token = ‘’</p></li>
+<li><p>c.NotebookApp.password = ‘’</p></li>
+<li><p>c.NotebookApp.allow_origin = ‘*’</p></li>
+<li><p>c.NotebookApp.allow_root = True</p></li>
+</ul>
+</li>
+<li><p>make sure lts = 22.10 (consist to Github version)</p>
+<ul>
+<li><p>nano /home/tom/.stack/global-project/stack.yaml</p></li>
+</ul>
+</li>
+<li><p>In IHaskell folder, run <code class="docutils literal notranslate"><span class="pre">stack</span> <span class="pre">exec</span> <span class="pre">jupyter</span> <span class="pre">--</span> <span class="pre">notebook</span></code></p></li>
+</ul>
+</li>
+</ol>
+<blockquote>
 <div><p>IHaskell in docker:</p>
 </div></blockquote>
 <ol class="arabic simple">
@@ -490,54 +609,6 @@
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">ghci</span></code> is the interactive environment of the GHC compiler itself</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">stack</span> <span class="pre">ghci</span></code> is the interactive environment of the Stack build tool: 1) automatically handles dependency and installation (VS. GHC and Cabal), 2) config to install packages C:\Users\tangc\AppData\Roaming\stack\global-project\stack.yaml</p></li>
-</ul>
-</li>
-</ol>
-</section>
-<section id="cas-sce-cientific-computing-environment">
-<h3>CAS &amp; SCE(cientific Computing Environment)<a class="headerlink" href="#cas-sce-cientific-computing-environment" title="Link to this heading">#</a></h3>
-<p>Self-installing is impossible for advanced scientific computation. For personal study, building a Scientific Computing Environment is the first step to learning programming</p>
-<ol class="arabic simple">
-<li><p>Cloud Computing - <strong>Google Colab, Cocalc, <a class="reference external" href="https://mybinder.org/v2/gh/tomctang/10pe/HEAD">Binder</a></strong> - are good, but Colab and Binder require further installation (originally Python)</p></li>
-<li><p>Self-built - <strong>Docker</strong>’s images and containers (self-maintained not self-installation) are the best</p>
-<ul class="simple">
-<li><p>I already build SageMath and IHaskell using Docker, both are in <code class="docutils literal notranslate"><span class="pre">ipynb</span></code></p></li>
-</ul>
-</li>
-</ol>
-<p>Science reproducibility - managing Environment and Container</p>
-<ol class="arabic simple">
-<li><p>Use one environment(or Container) per project! Creating environments to accommodate specific workflows/projects — and to do so early on</p></li>
-<li><p>Containers is better, which package tools with underlying operating system, are larger and more complicated than environments, but are more portable</p></li>
-</ol>
-</section>
-<section id="ubuntu-system">
-<h3>Ubuntu system<a class="headerlink" href="#ubuntu-system" title="Link to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p>Install docker</p>
-<ul class="simple">
-<li><p>curl -fsSL <a class="reference external" href="https://get.docker.com">https://get.docker.com</a> -o <a class="reference external" href="http://get-docker.sh">get-docker.sh</a></p></li>
-<li><p>sh <a class="reference external" href="http://get-docker.sh">get-docker.sh</a></p></li>
-<li><p><a class="reference external" href="http://dockerd-rootless-setuptool.sh">dockerd-rootless-setuptool.sh</a> install</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span> <span class="pre">;</span> <span class="pre">docker</span> <span class="pre">images</span> <span class="pre">;</span> </code></p></li>
-</ul>
-</li>
-<li><p>My PC has two disks, I installed Ubuntu goes along original windows in the first disk (original sys). Now the second disk can’t seen as Ubuntu still hardly manage Microsoft Windows dynamic disk (LDM). Solutions:</p>
-<ul class="simple">
-<li><p>ldmtool to read data in Ubuntu, or wait Ubuntu updates in the future</p></li>
-<li><p>convert LDM to basic disk while lossing all data</p></li>
-</ul>
-</li>
-<li><p>Install Haskell <code class="docutils literal notranslate"><span class="pre">curl</span> <span class="pre">--proto</span> <span class="pre">'=https'</span> <span class="pre">--tlsv1.2</span> <span class="pre">-sSf</span> <span class="pre">https://get-ghcup.haskell.org</span> <span class="pre">|</span> <span class="pre">sh</span></code></p>
-<ul class="simple">
-<li><p>run <code class="docutils literal notranslate"><span class="pre">ghci</span></code> or <code class="docutils literal notranslate"><span class="pre">cabal</span> <span class="pre">init</span> <span class="pre">--interactive</span></code>(Haskell project)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">:q</span></code> quit from ghci</p></li>
-</ul>
-</li>
-<li><p>Basic Ubuntu commands:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-a</span> <span class="pre">;</span>&#160; <span class="pre">env</span>&#160; <span class="pre">;</span>&#160; <span class="pre">pwd</span>&#160; <span class="pre">;</span> <span class="pre">rm</span> <span class="pre">;</span> <span class="pre">echo</span> <span class="pre">&gt;</span> <span class="pre">aa.hs</span> <span class="pre">(create</span> <span class="pre">file);</span> <span class="pre">nano</span> <span class="pre">aa.hs</span> <span class="pre">(edit</span> <span class="pre">file,</span> <span class="pre">Ctrl+X</span> <span class="pre">for</span> <span class="pre">quit)</span></code></p></li>
-<li><p>If we run above in GHCI, add <code class="docutils literal notranslate"><span class="pre">:!</span></code> ahead</p></li>
 </ul>
 </li>
 </ol>
@@ -673,10 +744,9 @@
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software-and-files">Software and files</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ubuntu-sce-scientific-computing-environment">Ubuntu &amp; SCE(Scientific Computing Environment)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software-files">Software &amp; files</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#haskell">Haskell</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cas-sce-cientific-computing-environment">CAS &amp; SCE(cientific Computing Environment)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ubuntu-system">Ubuntu system</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more">More</a></li>
 </ul>
 </li>

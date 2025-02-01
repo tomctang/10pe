@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Mathematical and Computational Methods &#8212; Jonny Workbook</title>
+    <title>11. Mathematical and Computational Methods &#8212; Jonny Workbook</title>
   
   
   
@@ -66,6 +66,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'MCM';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="12. Combo notebook" href="nb_Jonny_notebook.html" />
+    <link rel="prev" title="10. MIT_CS6002-CS" href="MIT_CS6002-thinking.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -116,8 +118,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
@@ -179,16 +179,17 @@
 <li class="toctree-l1"><a class="reference internal" href="Alevel_math.html">7. A-level-math</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Alevel_math_further.html">8. A-level-further</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">MIT CS-Courses</span></p>
-<ul class="nav bd-sidenav">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CS &amp; Physics</span></p>
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="MIT_CS6001-Python.html">9. MIT_CS6001-Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="MIT_CS6002-thinking.html">10. MIT_CS6002-CS</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">11. Mathematical and Computational Methods</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Notebook</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="nb_Jonny_notebook.html">11. Combo notebook</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nb_Geo.html">12. Jonny Geo-Graph</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nb_lottery_simulator.html">13. Lottery Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nb_Jonny_notebook.html">12. Combo notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nb_Geo.html">13. Jonny Geo-Graph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nb_lottery_simulator.html">14. Lottery Math</a></li>
 </ul>
 
     </div>
@@ -349,7 +350,7 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculus-review">Calculus Review</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculus-review">11.1. Calculus Review</a></li>
 </ul>
             </nav>
         </div>
@@ -362,9 +363,9 @@
                 <article class="bd-article">
                   
   <section id="mathematical-and-computational-methods">
-<h1>Mathematical and Computational Methods<a class="headerlink" href="#mathematical-and-computational-methods" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">11. </span>Mathematical and Computational Methods<a class="headerlink" href="#mathematical-and-computational-methods" title="Link to this heading">#</a></h1>
 <section id="calculus-review">
-<h2>Calculus Review<a class="headerlink" href="#calculus-review" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.1. </span>Calculus Review<a class="headerlink" href="#calculus-review" title="Link to this heading">#</a></h2>
 <p>Ten Important Identities</p>
 <ol class="arabic simple">
 <li><p>The quadratic equation : <span class="math notranslate nohighlight">\(ax^2+bx+c\)</span> has 2 roots <span class="math notranslate nohighlight">\(r=\large\frac{-b\pm\sqrt{b^2-4ac}}{2a}\)</span></p></li>
@@ -372,12 +373,49 @@
 <li><p>Trigonometric Definitions : <span class="math notranslate nohighlight">\(\sec{\theta}=\frac{1}{\cos{\theta}}\quad\tan{\theta}=\frac{\sin{\theta}}{\cos{\theta}}\quad\csc{\theta}=\frac{1}{\sin{\theta}}\quad\cot{\theta}=\frac{\cos{\theta}}{\sin{\theta}}\)</span></p></li>
 <li><p>Double Angle Formulae : <span class="math notranslate nohighlight">\(\cos{2\theta}=\cos^2{\theta}-\sin^2{\theta}\quad\sin{2\theta}=2\sin{\theta} \cos{\theta}\)</span></p></li>
 <li><p>Factorization of the difference of squares : <span class="math notranslate nohighlight">\(x^2-a^2=(x+a)(x-a)\)</span></p></li>
-<li><p>Geometric Series : <span class="math notranslate nohighlight">\(\Sigma^{\infty}_{n=0}x^n=\frac{1}{1-x}\)</span> for <span class="math notranslate nohighlight">\(|x|&lt;1\)</span> and <span class="math notranslate nohighlight">\(\Sigma^{N}_{n=0}x^n= \frac{N!}{n!(N-n)!}x^{N-n}y^n\)</span> for all <span class="math notranslate nohighlight">\(x\)</span>.</p></li>
+<li><p>Geometric Series : <span class="math notranslate nohighlight">\(\large\sum^{\infty}_{n=0}x^n=\frac{1}{1-x}\)</span>(very useful) for <span class="math notranslate nohighlight">\(|x|&lt;1\)</span> and <span class="math notranslate nohighlight">\(\Sigma^{N}_{n=0}x^n= \frac{N!}{n!(N-n)!}x^{N-n}y^n\)</span> for all <span class="math notranslate nohighlight">\(x\)</span>.</p></li>
 <li><p>Binomial Theorem : <span class="math notranslate nohighlight">\((x+y)^N=\sum^{N}_{n=0}\begin{pmatrix}N\\n\end{pmatrix}x^{Nn}y^n=\Sigma^{N}_{n=0}\frac{N!}{n!(N-n)!}x^{N-n}y^n\)</span></p></li>
 <li><p>Power series for the exponential : <span class="math notranslate nohighlight">\(e^x=\Sigma^{\infty}_{n=0}\frac{1}{n!}x^n\)</span></p></li>
-<li><p>Relation for trig functions to exponentials : <span class="math notranslate nohighlight">\(\cos{\theta}=\frac{1}{2}(e^{i\theta}+e^{-i\theta})\)</span> and <span class="math notranslate nohighlight">\(\sin{\theta}=\frac{1}{2i}(e^{i\theta}-e^{-i\theta}\)</span>
-n1. Relation of hyp functions to exponentials : <span class="math notranslate nohighlight">\(\cosh{x}=\frac{1}{2}(e^x+e^{-x})\)</span> and <span class="math notranslate nohighlight">\(\sinh{x}=\frac{1}{2}(e^x-e^{-x})\)</span></p></li>
+<li><p>Relation for trig functions to exponentials : <span class="math notranslate nohighlight">\(\cos{\theta}=\frac{1}{2}(e^{i\theta}+e^{-i\theta})\)</span> and <span class="math notranslate nohighlight">\(\sin{\theta}=\frac{1}{2i}(e^{i\theta}-e^{-i\theta})\)</span></p></li>
+<li><p>Relation of hyp functions to exponentials : <span class="math notranslate nohighlight">\(\cosh{x}=\frac{1}{2}(e^x+e^{-x})\)</span> and <span class="math notranslate nohighlight">\(\sinh{x}=\frac{1}{2}(e^x-e^{-x})\)</span></p></li>
 </ol>
+<ul class="simple">
+<li><p>The difference between Taylor series and MacLaurin series is that taylor series can be expanded at any <span class="math notranslate nohighlight">\(x\)</span> and are more generalized but maclaurin series are always expanded at <span class="math notranslate nohighlight">\(x= 0\)</span></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v</span><span class="o">=</span><span class="mf">6.582</span>
+<span class="n">g</span><span class="o">=</span><span class="mf">9.81</span>
+<span class="n">theta</span><span class="o">=</span><span class="mi">23</span><span class="o">*</span><span class="n">pi</span><span class="o">/</span><span class="mi">180</span>
+<span class="n">vx</span><span class="o">=</span><span class="n">v</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+<span class="n">show</span><span class="p">(</span><span class="n">n</span><span class="p">(</span><span class="n">vx</span><span class="p">))</span>
+<span class="n">vy</span><span class="o">=</span><span class="n">v</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+<span class="n">show</span><span class="p">(</span><span class="n">n</span><span class="p">(</span><span class="n">vy</span><span class="p">))</span>
+<span class="n">t1</span><span class="o">=</span><span class="n">vy</span><span class="o">/</span><span class="n">g</span>
+<span class="n">show</span><span class="p">(</span><span class="n">n</span><span class="p">(</span><span class="n">t1</span><span class="p">))</span>
+<span class="n">s1</span><span class="o">=</span><span class="n">g</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">t1</span><span class="o">^</span><span class="mi">2</span>
+<span class="n">s2</span><span class="o">=</span><span class="n">s1</span><span class="o">+</span><span class="mf">1.5</span><span class="o">+</span><span class="mf">0.05</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+<span class="n">show</span><span class="p">(</span><span class="n">n</span><span class="p">(</span><span class="n">s2</span><span class="p">))</span>
+<span class="n">t2</span><span class="o">=</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">s2</span><span class="o">/</span><span class="n">g</span><span class="p">)</span>
+<span class="n">show</span><span class="p">(</span><span class="n">n</span><span class="p">(</span><span class="n">t2</span><span class="p">))</span>
+<span class="n">t</span><span class="o">=</span><span class="n">t1</span><span class="o">+</span><span class="n">t2</span>
+<span class="n">d</span><span class="o">=</span><span class="n">vx</span><span class="o">*</span><span class="n">t</span>
+<span class="n">show</span><span class="p">(</span><span class="n">n</span><span class="p">(</span><span class="n">d</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html>\(\displaystyle 6.05876294542396\)</html></div><div class="output text_html"><html>\(\displaystyle 2.57179228771640\)</html></div><div class="output text_html"><html>\(\displaystyle 0.262160273977207\)</html></div><div class="output text_html"><html>\(\displaystyle 1.85664744180456\)</html></div><div class="output text_html"><html>\(\displaystyle 0.615240924242947\)</html></div><div class="output text_html"><html>\(\displaystyle 5.31596586804685\)</html></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show</span><span class="p">(</span><span class="n">expand</span><span class="p">((</span><span class="mi">1</span><span class="o">+</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="o">-</span><span class="n">x</span><span class="o">^</span><span class="mi">4</span><span class="o">/</span><span class="mi">24</span><span class="o">+</span><span class="n">x</span><span class="o">^</span><span class="mi">6</span><span class="o">/</span><span class="mi">720</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="o">-</span><span class="n">x</span><span class="o">^</span><span class="mi">4</span><span class="o">/</span><span class="mi">24</span><span class="o">+</span><span class="n">x</span><span class="o">^</span><span class="mi">6</span><span class="o">/</span><span class="mi">720</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="o">-</span><span class="n">x</span><span class="o">^</span><span class="mi">4</span><span class="o">/</span><span class="mi">24</span><span class="o">+</span><span class="n">x</span><span class="o">^</span><span class="mi">6</span><span class="o">/</span><span class="mi">720</span><span class="p">)</span><span class="o">^</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">x</span><span class="o">^</span><span class="mi">3</span><span class="o">/</span><span class="mi">6</span><span class="o">+</span><span class="n">x</span><span class="o">^</span><span class="mi">5</span><span class="o">/</span><span class="mi">120</span><span class="o">-</span><span class="n">x</span><span class="o">^</span><span class="mi">7</span><span class="o">/</span><span class="mi">5040</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html>\(\displaystyle -\frac{1}{1881169920000} \, x^{25} + \frac{11}{156764160000} \, x^{23} - \frac{1}{223948800} \, x^{21} + \frac{17}{96768000} \, x^{19} - \frac{4061}{870912000} \, x^{17} + \frac{467}{5443200} \, x^{15} - \frac{983}{907200} \, x^{13} + \frac{1343}{151200} \, x^{11} - \frac{307}{7560} \, x^{9} + \frac{17}{315} \, x^{7} + \frac{2}{15} \, x^{5} + \frac{1}{3} \, x^{3} + x\)</html></div></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show</span><span class="p">(</span><span class="n">n</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">)))</span>
@@ -391,26 +429,6 @@ n1. Relation of hyp functions to exponentials : <span class="math notranslate no
 <div class="cell_output docutils container">
 <div class="output text_html"><html>\(\displaystyle 0.707106781186548\)</html></div><div class="output text_html"><html>\(\displaystyle 0.000000000000000\)</html></div><div class="output text_html"><html>\(\displaystyle 0.707106782936867\)</html></div><div class="output text_html"><html>\(\displaystyle 1.00000354258429\)</html></div></div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span><span class="o">=</span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;m&#39;</span><span class="p">)</span>
-<span class="n">f</span><span class="o">=</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">20</span><span class="o">*</span><span class="p">(</span><span class="mi">100</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">m</span><span class="p">))</span><span class="o">/</span><span class="mi">49</span><span class="p">)</span><span class="o">+</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2000</span><span class="o">/</span><span class="mi">49</span><span class="p">))</span><span class="o">*</span><span class="n">cot</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">35</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">55</span><span class="p">]:</span>
-    <span class="n">vy</span><span class="o">=</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">19.6</span><span class="o">*</span><span class="p">(</span><span class="mi">100</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">pi</span><span class="o">/</span><span class="mi">180</span><span class="p">)))</span>
-    <span class="n">show</span><span class="p">(</span><span class="n">n</span><span class="p">(</span> <span class="p">(</span> <span class="n">vy</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">pi</span><span class="o">/</span><span class="mi">180</span><span class="p">)</span><span class="o">+</span><span class="n">sqrt</span><span class="p">(</span> <span class="p">((</span><span class="n">vy</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">pi</span><span class="o">/</span><span class="mi">180</span><span class="p">))</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="mf">9.8</span><span class="o">*</span><span class="mi">2</span> <span class="p">)</span> <span class="p">))</span><span class="n">bb</span><span class="o">/</span><span class="mf">9.8</span><span class="o">*</span><span class="n">vy</span><span class="o">*</span><span class="n">cot</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">pi</span><span class="o">/</span><span class="mi">180</span><span class="p">)</span> <span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
-    <span class="n">show</span><span class="p">(</span><span class="n">n</span><span class="p">(</span> <span class="p">(</span> <span class="n">vy</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">pi</span><span class="o">/</span><span class="n">Integer</span><span class="p">(</span><span class="mi">180</span><span class="p">))</span><span class="o">+</span><span class="n">sqrt</span><span class="p">(</span> <span class="p">((</span><span class="n">vy</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">pi</span><span class="o">/</span><span class="n">Integer</span><span class="p">(</span><span class="mi">180</span><span class="p">)))</span><span class="o">**</span><span class="n">Integer</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">Integer</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">RealNumber</span><span class="p">(</span><span class="s1">&#39;9.8&#39;</span><span class="p">)</span><span class="o">*</span><span class="n">Integer</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span> <span class="p">))</span><span class="n">bb</span><span class="o">/</span><span class="n">RealNumber</span><span class="p">(</span><span class="s1">&#39;9.8&#39;</span><span class="p">)</span><span class="o">*</span><span class="n">vy</span><span class="o">*</span><span class="n">cot</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">pi</span><span class="o">/</span><span class="n">Integer</span><span class="p">(</span><span class="mi">180</span><span class="p">))</span> <span class="p">))</span>
-              <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax. Perhaps you forgot a comma?
-</pre></div>
-</div>
-</div>
-</div>
 <p>Correct solution:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -420,14 +438,21 @@ n1. Relation of hyp functions to exponentials : <span class="math notranslate no
 <span class="n">vy</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">vy</span><span class="p">]</span>
 <span class="n">ty</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">ty</span><span class="p">]</span>
 <span class="n">D</span><span class="o">=</span><span class="n">vy</span><span class="o">*</span><span class="p">(</span><span class="n">cos</span><span class="p">(</span><span class="mi">35</span><span class="o">*</span><span class="n">d</span><span class="p">)</span><span class="o">/</span><span class="n">sin</span><span class="p">(</span><span class="mi">35</span><span class="o">*</span><span class="n">d</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="n">ty</span><span class="o">+</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">200</span><span class="o">*</span><span class="n">ty</span><span class="o">/</span><span class="n">vy</span><span class="p">))</span>
-<span class="n">D</span><span class="o">.</span><span class="n">n</span><span class="p">()</span>
+<span class="n">show</span><span class="p">(</span><span class="n">D</span><span class="o">.</span><span class="n">n</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>566.339564823947
+<div class="output text_html"><html>\(\displaystyle 566.339564823947\)</html></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show</span><span class="p">(</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="n">pi</span><span class="p">,</span> <span class="n">pi</span><span class="p">),</span> <span class="n">figsize</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">ymin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span><span class="mi">7</span><span class="p">))</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/4f3905597c5b8c386e3c1bd9c94110e14a27e20722fc0c665ef9004fa0b214b1.png" src="_images/4f3905597c5b8c386e3c1bd9c94110e14a27e20722fc0c665ef9004fa0b214b1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -444,13 +469,13 @@ n1. Relation of hyp functions to exponentials : <span class="math notranslate no
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/e73b6d53191131f89b68b23ca535fa984509369b84796e6ee0de512bdc41e618.png" src="_images/e73b6d53191131f89b68b23ca535fa984509369b84796e6ee0de512bdc41e618.png" />
+<img alt="_images/583d5260d4df07740ab13baba114ea005363fdc84cb9a02837608a2927ec6dca.png" src="_images/583d5260d4df07740ab13baba114ea005363fdc84cb9a02837608a2927ec6dca.png" />
 <img alt="_images/68174366d0ffde8701d8844d847ff9244842835e9e766a0ec06231b590c92cfd.png" src="_images/68174366d0ffde8701d8844d847ff9244842835e9e766a0ec06231b590c92cfd.png" />
-<img alt="_images/c179b9c5a5530caa69e0aab19bb4c447e861e8e743c21f0e08191e2cdeea21b2.png" src="_images/c179b9c5a5530caa69e0aab19bb4c447e861e8e743c21f0e08191e2cdeea21b2.png" />
-<img alt="_images/001b7c75edcd5ac435e0013decbf32993a5284adb7d636ba0f2e3bff170a5cfa.png" src="_images/001b7c75edcd5ac435e0013decbf32993a5284adb7d636ba0f2e3bff170a5cfa.png" />
-<img alt="_images/efbda101ced6399134dfb066680b76d45dcdc47179d15d82c4778b8133dd202a.png" src="_images/efbda101ced6399134dfb066680b76d45dcdc47179d15d82c4778b8133dd202a.png" />
-<img alt="_images/c5cc4a341fe8fd848ef8a58969a799eac70a4dabb3a3055944bdd05684d1bba3.png" src="_images/c5cc4a341fe8fd848ef8a58969a799eac70a4dabb3a3055944bdd05684d1bba3.png" />
-<img alt="_images/50cccb26f54947c6a5a2ca365134a514f79aecda080e9cb963138187404b00fa.png" src="_images/50cccb26f54947c6a5a2ca365134a514f79aecda080e9cb963138187404b00fa.png" />
+<img alt="_images/ba2a4a686cc2603e2401a512ea61f0ab100257b16b5f7c42d7629c22d67e93ee.png" src="_images/ba2a4a686cc2603e2401a512ea61f0ab100257b16b5f7c42d7629c22d67e93ee.png" />
+<img alt="_images/4ce8e9aca2c4da86efab26c37eb6fa0d9dcd4aab2c758b0f6df35475d9cbe52d.png" src="_images/4ce8e9aca2c4da86efab26c37eb6fa0d9dcd4aab2c758b0f6df35475d9cbe52d.png" />
+<img alt="_images/22352134d33732d4a1a41feb2e4124b4abee4ab3b16e85e15f5535a8a98343f1.png" src="_images/22352134d33732d4a1a41feb2e4124b4abee4ab3b16e85e15f5535a8a98343f1.png" />
+<img alt="_images/094c03898f097723c705d31114d4f636c81e47bc305c1a822469cf666f9e2d0d.png" src="_images/094c03898f097723c705d31114d4f636c81e47bc305c1a822469cf666f9e2d0d.png" />
+<img alt="_images/e27d9bfa200df8ee9566167c3f9afa5bc6fedeb3da29f50a125ca068d05827cb.png" src="_images/e27d9bfa200df8ee9566167c3f9afa5bc6fedeb3da29f50a125ca068d05827cb.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -500,6 +525,24 @@ n1. Relation of hyp functions to exponentials : <span class="math notranslate no
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="MIT_CS6002-thinking.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">10. </span>MIT_CS6002-CS</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="nb_Jonny_notebook.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">12. </span>Combo notebook</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -517,7 +560,7 @@ n1. Relation of hyp functions to exponentials : <span class="math notranslate no
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculus-review">Calculus Review</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculus-review">11.1. Calculus Review</a></li>
 </ul>
   </nav></div>
 
