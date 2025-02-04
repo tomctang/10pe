@@ -456,12 +456,6 @@
 <li><p>convert LDM to basic disk while lossing all data</p></li>
 </ul>
 </li>
-<li><p>Haskell <code class="docutils literal notranslate"><span class="pre">curl</span> <span class="pre">--proto</span> <span class="pre">'=https'</span> <span class="pre">--tlsv1.2</span> <span class="pre">-sSf</span> <span class="pre">https://get-ghcup.haskell.org</span> <span class="pre">|</span> <span class="pre">sh</span></code></p>
-<ul class="simple">
-<li><p>run <code class="docutils literal notranslate"><span class="pre">ghci</span></code> or <code class="docutils literal notranslate"><span class="pre">cabal</span> <span class="pre">init</span> <span class="pre">--interactive</span></code>(Haskell project)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">:q</span></code> quit from ghci</p></li>
-</ul>
-</li>
 <li><p>Basic Ubuntu commands:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-a</span> <span class="pre">;</span>&#160; <span class="pre">env</span>&#160; <span class="pre">;</span>&#160; <span class="pre">pwd</span>&#160; <span class="pre">;</span> <span class="pre">rm</span> <span class="pre">;</span> <span class="pre">echo</span> <span class="pre">&gt;</span> <span class="pre">aa.hs</span> <span class="pre">(create</span> <span class="pre">file);</span> <span class="pre">nano</span> <span class="pre">aa.hs</span> <span class="pre">(edit</span> <span class="pre">file,</span> <span class="pre">Ctrl+X</span> <span class="pre">for</span> <span class="pre">quit)</span></code></p></li>
@@ -470,11 +464,11 @@
 </li>
 </ol>
 <blockquote>
-<div><p>CAS &amp; SCE</p>
+<div><p>CAS (computer algebra system) &amp; SCE</p>
 </div></blockquote>
 <p>Ubuntu is the key in SCE. To build a SCE is the first step to learn programming, two ways:</p>
 <ol class="arabic simple">
-<li><p>Cloud Computing - <strong>Google Colab, Cocalc, <a class="reference external" href="https://mybinder.org/v2/gh/tomctang/10pe/HEAD">Binder</a></strong> - are good, but Colab and Binder require further installation (originally Python)</p></li>
+<li><p>Cloud Computing - <strong>Google Colab, Cocalc(Rust, Julia, GNU Octave(vs.Matlab)), <a class="reference external" href="https://mybinder.org/v2/gh/tomctang/10pe/HEAD">Binder</a></strong> - are good, but Colab and Binder require further installation (originally Python)</p></li>
 <li><p>Self-built - <strong>Docker</strong>’s images and containers (self-maintained not self-installation) are the best</p>
 <ul class="simple">
 <li><p>I already build SageMath and IHaskell using Docker, both running <code class="docutils literal notranslate"><span class="pre">ipynb</span></code></p></li>
@@ -493,7 +487,7 @@
 <ol class="arabic simple">
 <li><p>We started this workbook using <strong>Python</strong> in VScode:</p>
 <ul class="simple">
-<li><p>Python: we began from Python, then we found SageMath - the second powerful <strong>CAS</strong> (computer algebra system).</p></li>
+<li><p>Python: we began from Python, then we found SageMath - the second powerful CAS.</p></li>
 <li><p>Jupyter notebooks (.ipynb): interactive computational notebooks that make it easy to prototype, create visualizations and interactive presentations</p>
 <ul>
 <li><p>writing natural language and math formulus: MarkDown and Latex</p></li>
@@ -524,21 +518,13 @@
 <li><p>Next, a PL with more FP? Ocaml? F#(Fsharp)? Scala? Haskell? Rust? Make a comparison:</p>
 <ul class="simple">
 <li><p>PL’s Coding-look in defining a Fibonacci; 2. Which FP is best for mathematics? Haskell is NO.1, but I really don’t like Haskell; 3. Math-related supports for these four languages; 4. Balance between FP and OOP; 5. Number of users in Project Euler for each PL; 6. libgen supports for each PL; 7. When the PL first appeared.</p></li>
-<li><p>Decision: <strong>Rust &amp; Haskell</strong> in the next year.</p>
-<ul>
-<li><p>Haskell in <code class="docutils literal notranslate"><span class="pre">ipynb</span></code> using <a class="reference internal" href="#"><span class="xref myst">Google Colab</span></a> and <a class="reference external" href="https://cocalc.com/software">Cocalc-Executables</a> - I spent one day to install Haskell locally and failed:(</p>
-<ul>
-<li><p>Google endorse <a class="reference external" href="https://code.world/">Codeworld - Educational Haskell programming platform</a> with <a class="reference external" href="https://github.com/google/codeworld/tree/master">Github Repository</a></p></li>
-</ul>
-</li>
-<li><p>Rust using <a class="reference external" href="https://cocalc.com/projects">CoCalc</a> <code class="docutils literal notranslate"><span class="pre">ipynb</span></code>. <strong>Julia</strong> or GNU <strong>Octave</strong>(Matlab alternative)??</p></li>
-</ul>
-</li>
+<li><p>Decision: <strong>Rust &amp; Haskell</strong>. Google endorse <a class="reference external" href="https://code.world/">Codeworld - Educational Haskell programming platform</a> with <a class="reference external" href="https://github.com/google/codeworld/tree/master">Github Repository</a></p></li>
 </ul>
 </li>
 </ol>
 <section id="haskell">
 <h3>Haskell<a class="headerlink" href="#haskell" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">cabal</span> <span class="pre">init</span> <span class="pre">--interactive</span></code>(Haskell project)</p>
 <blockquote>
 <div><p>IHaskell in Ubuntu</p>
 </div></blockquote>
