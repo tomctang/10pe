@@ -8,16 +8,18 @@ parts:
   chapters:
   - file: PE25
   - file: PE50
-  - file: PE75
-  - file: PE100
-  - file: PE300         
-  - file: PE_hidden_math
+  - file: PE75     
+  - file: PE0hidden_math
 
-- caption: A-level Math
+- caption: Mathematics & FP
   numbered: true
   chapters:
   - file: Alevel_math
   - file: Alevel_math_further
+  - file: 00intro_math
+  - file: 01number_algebra
+  - file: 02discrete_continuous
+  - file: 03real_world
 
 - caption: CS & Physics
   numbered: true
@@ -29,6 +31,8 @@ parts:
 - caption: Notebook
   numbered: true
   chapters:
+  - file: nb2024
+  - file: nb2022
   - file: nb_Jonny_notebook
   - file: nb_Geo
   - file: nb_lottery_simulator
