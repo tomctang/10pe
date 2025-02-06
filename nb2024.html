@@ -1,0 +1,1445 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>26. Notebook 2023-24 &#8212; Jonny Workbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=6403fb6a" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'nb2024';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="27. Notebook &lt;=2022" href="nb2022.html" />
+    <link rel="prev" title="25. Math Computational Methods" href="MCM.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Jonny Workbook</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Project Euler (PE)</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="PE25.html">1. PE Q1-25</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PE50.html">2. PE Q26-50</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PE75.html">3. PE Q51-</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PE0hidden_math.html">4. PE-Hidden-Math</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Mathematics &amp; FP</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Alevel_math.html">5. A-level-math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Alevel_math_further.html">6. A-level-further</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00intro_math.html">7. Math-Combo of Secondary &amp; Tertiary Education</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01number_algebra.html">8. Number Theory</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="02discrete_continuous.html">12. Combinatorics</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="03real_world.html">18. Coding Theory &amp; Information</a></li>
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CS &amp; Physics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="MIT_CS6001-Python.html">23. MIT_CS6001-Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MIT_CS6002-thinking.html">24. MIT_CS6002-CS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MCM.html">25. Math Computational Methods</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notebook</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">26. Notebook 2023-24</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nb2022.html">27. Notebook &lt;=2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nb_Jonny_notebook.html">28. Combo notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nb_Geo.html">29. Jonny Geo-Graph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nb_lottery_simulator.html">30. Lottery Math</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/tomctang/10pe" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/nb2024.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Notebook 2023-24</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wolfram-fp">26.1. Wolfram FP</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">26.2. 物理笔记</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#investigating-pi-and-e">26.2.1. Investigating Pi and e</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#he">26.3. HE</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ib">26.3.1. IB经济学</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interview-hrh">26.3.2. Interview: HRH</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">26.3.3. 數量的問題</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">26.3.4. 地區分配的問題</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-you-build-it-hospital-they-doctors-will-come-an-empirical-test-of-geographical-distribution-of-doctors">26.3.5. If you build it (hospital), they (doctors) will come：an empirical test of geographical distribution of doctors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#under-vs-post">26.3.6. 醫學教育的方式Under vs. Post</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vs">26.3.7. 專科教育 vs. 全科教育</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ev-job">26.3.8. EV job</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">26.4. 2023</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">26.5. 2023年</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="notebook-2023-24">
+<h1><span class="section-number">26. </span>Notebook 2023-24<a class="headerlink" href="#notebook-2023-24" title="Link to this heading">#</a></h1>
+<section id="wolfram-fp">
+<h2><span class="section-number">26.1. </span>Wolfram FP<a class="headerlink" href="#wolfram-fp" title="Link to this heading">#</a></h2>
+<p>from: <a class="reference external" href="https://www.youtube.com/watch?v=E6RAiKG3pKE&amp;amp;list=WL&amp;amp;index=6&amp;amp;t=301s">A Guide to Programming with Wolfram Language: Functional Programming</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-mathematica notranslate"><div class="highlight"><pre><span></span><span class="c">(*OOP*)</span>
+<span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">};</span>
+<span class="n">Do</span><span class="p">[</span>
+<span class="w">   </span><span class="n">data</span><span class="p">[[</span><span class="n">k</span><span class="p">]]</span><span class="o">=</span><span class="n">f</span><span class="p">[</span><span class="n">data</span><span class="p">[[</span><span class="n">k</span><span class="p">]]],</span><span class="w"> </span><span class="p">{</span><span class="n">k</span><span class="p">,</span><span class="n">Length</span><span class="p">[</span><span class="n">data</span><span class="p">]}</span>
+<span class="p">];</span>
+<span class="n">data</span>
+<span class="c">(*FP*)</span>
+<span class="n">Map</span><span class="p">[</span><span class="n">f</span><span class="p">,{</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">}]</span>
+<span class="n">f</span><span class="w"> </span><span class="o">/@</span><span class="w"> </span><span class="p">{</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-mathematica notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span><span class="p">[</span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="p">{{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">},{</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">},{</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">}}]</span><span class="w"> </span>
+<span class="n">Map</span><span class="p">[</span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="p">{{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">},{</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">},{</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">}},</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">}]</span><span class="w"> </span>
+<span class="n">Map</span><span class="p">[</span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="p">{{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">},{</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">},{</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">}},</span><span class="w"> </span><span class="p">{</span><span class="mi">2</span><span class="p">}]</span><span class="w"> </span><span class="c">(*{2} indicates level 2*)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-mathematica notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span><span class="p">[</span><span class="n">Reverse</span><span class="p">,</span><span class="w"> </span><span class="p">{{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">},{</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">},{</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">}}]</span><span class="w"> </span><span class="c">(*With-In*)</span>
+<span class="n">Map</span><span class="p">[</span><span class="n">Reverse</span><span class="p">,</span><span class="w"> </span><span class="p">{{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">},{</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">},{</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">}},</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">}]</span><span class="w"> </span>
+<span class="n">Reverse</span><span class="p">[{{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">},{</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">},{</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">}}]</span><span class="w"> </span><span class="c">(*Between*)</span>
+
+<span class="n">Map</span><span class="p">[</span><span class="n">Sort</span><span class="p">,</span><span class="w"> </span><span class="p">{{</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">},{</span><span class="n">a</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">b</span><span class="p">},{</span><span class="mi">7</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">}}]</span>
+<span class="n">Sort</span><span class="p">[{{</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">},{</span><span class="n">a</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">b</span><span class="p">},{</span><span class="mi">7</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">}}]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-mathematica notranslate"><div class="highlight"><pre><span></span><span class="n">Apply</span><span class="p">[</span><span class="n">g</span><span class="p">,</span><span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]]</span>
+<span class="n">g</span><span class="w"> </span><span class="o">@@</span><span class="w"> </span><span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">Apply</span><span class="p">[</span><span class="n">g</span><span class="p">,</span><span class="w"> </span><span class="p">{{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">},{</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">},{</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">}},</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">}]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-mathematica notranslate"><div class="highlight"><pre><span></span><span class="n">Apply</span><span class="p">[</span><span class="n">Rule</span><span class="p">,{</span><span class="n">x</span><span class="p">,</span><span class="mi">5</span><span class="p">}]</span><span class="w"> </span><span class="c">(*a -&gt; 1 is read as &quot;a maps to 1&quot;*)</span>
+<span class="n">Apply</span><span class="p">[</span><span class="n">Rule</span><span class="p">,</span><span class="w"> </span><span class="p">{{</span><span class="n">a</span><span class="p">,</span><span class="mi">1</span><span class="p">},{</span><span class="n">b</span><span class="p">,</span><span class="mi">2</span><span class="p">},{</span><span class="n">c</span><span class="p">,</span><span class="mi">3</span><span class="p">}},</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">}]</span><span class="w"> </span><span class="c">(*turn pairs into a list of rules*)</span>
+<span class="n">Rule</span><span class="w"> </span><span class="o">@@@</span><span class="w"> </span><span class="p">{{</span><span class="n">a</span><span class="p">,</span><span class="mi">1</span><span class="p">},{</span><span class="n">b</span><span class="p">,</span><span class="mi">2</span><span class="p">},{</span><span class="n">c</span><span class="p">,</span><span class="mi">3</span><span class="p">}}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-mathematica notranslate"><div class="highlight"><pre><span></span><span class="n">Nest</span><span class="p">[</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">NestList</span><span class="p">[</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">Nest</span><span class="p">[(</span><span class="mi">1</span><span class="o">+</span><span class="n">r</span><span class="p">)</span><span class="nv">#</span><span class="w"> </span><span class="o">&amp;</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">]</span>
+<span class="n">NestList</span><span class="p">[(</span><span class="mi">1</span><span class="o">+</span><span class="n">r</span><span class="p">)</span><span class="nv">#</span><span class="w"> </span><span class="o">&amp;</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">]</span>
+
+<span class="n">NestList</span><span class="p">[</span><span class="mf">1.1</span><span class="nv">#</span><span class="o">&amp;</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+													.grid-container {
+														display: inline-grid;
+														grid-template-columns: auto;
+													}
+												</style>
+
+												<div><div class="grid-container"><div class="grid-item"><img alt="Output" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGUAAAAVCAIAAADQPLdZAAAA0HpUWHRSYXcgcHJvZmlsZSB0eXBlIGV4aWYAAHjabU9BjsQgDLvzinlCEoIDz6EzjLQ/2OePKWi1rNZVY+PEaUnj++udHhOmkrxERQOE8ObNOkWVhcUq7a43UHZPTz/pbminVX4Fxvav0w8stvpnkdgSeX6BOvsO7EXZlq99na89b73Wc9ElByA/v/7v2XMYCjSc1U0i0KhroiShmJTAG0+Ag4qXiT/JAxGMIeZE7jM4YSPO6ZGQabzmFfJ8PfesfDo1GFVyZ8fvKnbtLjWv8wE16Vqo3N9AxgAAAAlwSFlzAAAOxAAADsQBlSsOGwAAADx0RVh0U29mdHdhcmUAQ3JlYXRlZCB3aXRoIHRoZSBXb2xmcmFtIExhbmd1YWdlIDogd3d3LndvbGZyYW0uY29tXKKmhQAAACF0RVh0Q3JlYXRpb24gVGltZQAyMDI0OjExOjI2IDEyOjA0OjAwcJIRlwAAAWZJREFUWIXtmEGSRDAUQH+65hhWvmOwFVdwBA7gDhwgtnYcIdYcgy43ySzUaDNaixhRqfJWJHmJ+pX/S0KEEHAjzePqDzCMO177uOO1j7/xchyH/NC2rfxEyuJBVzdiBqUUEcUKiLhUZMTzXGVrc861Ab/eAaAsy7UpKKVrXZ/F89xNoihS7n074JWPz+dTbYcqiwfdSzCy3sdxTAjJsmxqGWufjuiLWa7OWWbBskVS/Hd3zBQA6Pt+epZMKPnetwMeANB1nRCi73uYlRLO+WaslcWDLgAwxiilvu9XVZXnedM0kuJBvvQscwacc0JIGIZpmrquq2dRI+vXyFSthmHQtqjB8ULEKIqapsnzvKoqPYuamo9BECAiYwwA0jQNw9CyLA1ZaeT+chynruuiKMbXJEkQ0fM8DWep1/6ybVso3YUpi8pu13WbLSdh5P66ks8/bHPUzr1XuSedt4m476P3cOfjPr4BooxexCPTaXEAAAAASUVORK5CYII="></div><div class="grid-item"><img alt="Output" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAR4AAAAVCAIAAAAfGxb2AAAAznpUWHRSYXcgcHJvZmlsZSB0eXBlIGV4aWYAAHjabU/RjUMhDPtnihshCcGBcXgtlbpBxz9TOJ2oGkTsOE4Qabyej/Qzw1SSl6hogDC8ebNOUmXFQpX2zqsYm+mpJy3b0CmV/wbG1q9TDyy0+rFIbJE8XyDPvgf2omxL177qa/ut13ouuuQI/BH9XnsOQ4GGM7tJBBp5TaQEFJMSeOAG0Ki4m/iNOBDBMcR05D4HZ9iI0z0SMoX7/EKe13PPytPJwVEldnb8ncWu3SXnd34Bdq5a1CEw700AAAAJcEhZcwAADsQAAA7EAZUrDhsAAAA8dEVYdFNvZnR3YXJlAENyZWF0ZWQgd2l0aCB0aGUgV29sZnJhbSBMYW5ndWFnZSA6IHd3dy53b2xmcmFtLmNvbVyipoUAAAAhdEVYdENyZWF0aW9uIFRpbWUAMjAyNDoxMToyNiAxMjowNDowMHCSEZcAAAKhSURBVHic7Zu/cYMwFMYfuQziQ4wBjRtYAVduYQAqLwAD2K0rwwimhjGMz5soBRdCgEgY8ZAg+lWJzAff9+6E/h0GpRQ0Gs3cfMg2oNFsE921NBoUdNfSaFCQ07UsyzK+KctSigcuIiZXEZCNrPgbKF1Nt2s9n0/DMCzLwnuk53kAQL+xbbtzQVPct247TYVhkq1FSreW+CJaKaXjysMwHH4L0N8EQUCRAYA0TRkXuK47+eZz+RcxydaiplM/vohWYum48r63gVGL/x4QAPv+syBichUB2ciKv+rSmabZaeGvterxLkmSpqUeH5cshAoeUNl8QDzULR13XKtHQwCoqqr5mz04DkII6T998HEiHgRnRCImR2r/mtWMCYg9IVwgvohWYukmyEd1rbqdEJKmKQAURcF+DIOqqmDqXHyMh1kWGyImuVrGgoEbcJm1Fmp8Ea3E0k2Qf7bfE1mW7ff7/vsDAO73u2EYvu/Hcdzf81kGFTygsvmAeEgv3eFwSJIkiqKm5adrlWXp+35RFIPKZub6er0wHbJQwQMqmw+Ih/TS2bbtOA4ANL3ro/0bpfR2uw0qCSFBEBRFcblcsixbwKuaHlDZfEA8pJcuDENKaXvUGrX57nkeIeR8Ptu2Hcex7/udA7IFzs65HrgofsAvHpCN4vFFwC7dNPib75Zl5Xl+vV7rf6MoIoQ4jtN277ouAPw14okzxgMXbJMizBKQjcrxRVigdNP45F7xeDy4LcfjMc/z3W7HvZtpmvT9L8TGeOCCbVJEO0tANirHF9EuULppdEet/qHyGE6nE7QWcGqyCpN4/PP4EuhsxtcnA4QQ9i5+ezv/revH0BwgzqVSx+RkIVe1lvgi2uVLN0Zel7d/rmVQ/QG/RoOA/hRSo0HhC5fF/DPA5B1dAAAAAElFTkSuQmCC"></div><div class="grid-item"><img alt="Output" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAAVCAIAAABe5v4lAAAAz3pUWHRSYXcgcHJvZmlsZSB0eXBlIGV4aWYAAHjabU9BjgMhDLvzij4hCcGB5zAtlfYH+/yaAalitR6ROHaSgTR+f97pMWEqyUtUNEAIb96sk1RZWFml3fFG2RbrQ0+6He2UytfA2Pp16oGVrf5ZJLZInn8gz74H9qJsS9e+6mv3W6/1XHTJAXyv/m/tOQwFGs7oJhFo5DWRMqGYlMAbT4CNipeJP5kHIjiGmB25z8EJG3F2j4RM4TWfkOfx3LPy6+TgqDJ3On5HsWu75HzOBy0SWqJOemCVAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAPHRFWHRTb2Z0d2FyZQBDcmVhdGVkIHdpdGggdGhlIFdvbGZyYW0gTGFuZ3VhZ2UgOiB3d3cud29sZnJhbS5jb21coqaFAAAAIXRFWHRDcmVhdGlvbiBUaW1lADIwMjQ6MTE6MjYgMTI6MDQ6MDBwkhGXAAACE0lEQVRYheWXP9biIBDAh5zEF3IGC5+mSGE8gI1WtlxAL2ATL5DWKuQImjLyPIVQeg22GOXjS75EXFb3rfuryEBg/sAMEK01/E8Ef1uBV1GWJbkTRZGRf6zBAMAY01prrS+XixF+ssE/8skG53mOW7osyy+ptkAJ51y7wRg7nU5tOaX0qXl8SNO0f4CUEgCklPj5FWEhBKWUMbbf7138p5QCgPF4bAt3ux0hZLvdegbHndVq9S2ALcIwpJRer9fbt/EEYwwjBt/D3gVjzLgN4Zyjv3GS90RYPwoy59y2yGrdVXTRVUrZs8yfNZhSmmUZzok0HI29jb+yLDPjbTnYKmI7TVOT0LvgnPfY427ww4X0PSNQSo16DV9LKV3mQW5nuCiKNE3NqcjzvP/k1HU9HA6dD5ovlFJTS5MkOR6Pdm8YhphQXLgZXFVVkiTYRkv6M4FSKgzDp5T2YTqdmvZ6vdYe1+EAAIQQUsrNZoNVC7dQXdf+inYxm81wLVMqCSGvW84mAICiKMwJQbIs69/VnuE9HA7tM+wzoTsBAFRVZe8ZABiNRgAghOj6bTAY9PS+H/cABLifl8ulLcXrRFEUXb/N5/Pz+dwQKqVwc04mEwBYLBaNl8qLEELEcew62jGbt3GvBK/m4e3S5vcfD3Ec92fy96CUMvXFBaI9skUURVVVvbM+tSHkORO8DP4X+eT38I/8An4W1cL35CLrAAAAAElFTkSuQmCC"></div><div class="grid-item"><img alt="Output" src="data:image/png;base64,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"></div><div class="grid-item"><img alt="Output" src="data:image/png;base64,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"></div></div></div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-mathematica notranslate"><div class="highlight"><pre><span></span><span class="n">FixedPoint</span><span class="p">[(</span><span class="nv">#</span><span class="o">+</span><span class="mi">2</span><span class="o">/</span><span class="nv">#</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="w"> </span><span class="o">&amp;</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">]</span>
+<span class="n">FixedPointList</span><span class="p">[(</span><span class="nv">#</span><span class="o">+</span><span class="mi">2</span><span class="o">/</span><span class="nv">#</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="w"> </span><span class="o">&amp;</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">]</span>
+
+<span class="n">ListPlot</span><span class="p">[</span><span class="n">FixedPointList</span><span class="p">[(</span><span class="nv">#</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="o">/</span><span class="nv">#</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="w"> </span><span class="o">&amp;</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">],</span><span class="w"> </span>
+<span class="w">        </span><span class="n">PlotStyle</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span><span class="n">Blue</span><span class="p">,</span><span class="w"> </span><span class="n">PointSize</span><span class="p">[</span><span class="n">Medium</span><span class="p">]},</span><span class="w"> </span>
+<span class="w">        </span><span class="n">GridLines</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Automatic</span><span class="p">,</span><span class="w"> </span>
+<span class="w">        </span><span class="n">AxesLabel</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;Iteration&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Value&quot;</span><span class="p">},</span><span class="w"> </span>
+<span class="w">        </span><span class="n">PlotRange</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">All</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-mathematica notranslate"><div class="highlight"><pre><span></span><span class="n">Fold</span><span class="p">[</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">,{</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">}]</span>
+<span class="n">FoldList</span><span class="p">[</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">,{</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">}]</span>
+<span class="n">FoldList</span><span class="p">[</span><span class="n">Max</span><span class="p">,{</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">}]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-mathematica notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span><span class="p">[(</span><span class="nv">#</span><span class="o">+</span><span class="n">x</span><span class="p">)</span><span class="o">&amp;</span><span class="p">,{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">}]</span>
+<span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">}</span><span class="o">+</span><span class="n">x</span>
+<span class="n">Apply</span><span class="p">[</span><span class="n">Plus</span><span class="p">,{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">}]</span>
+<span class="n">Total</span><span class="p">[{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">}]</span>
+
+<span class="n">FoldList</span><span class="p">[</span><span class="n">Plus</span><span class="p">,{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">}]</span>
+<span class="n">Accumulate</span><span class="p">[{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">}]</span>
+<span class="n">Total</span><span class="p">[{{</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">},{</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">},{</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">}}]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-mathematica notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span><span class="p">[</span><span class="n">Select</span><span class="p">[</span><span class="nv">#</span><span class="p">,</span><span class="n">EvenQ</span><span class="p">]</span><span class="o">&amp;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="p">{{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">},{</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">},{</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">}}]</span>
+<span class="n">Map</span><span class="p">[</span><span class="n">Select</span><span class="p">[</span><span class="w">  </span><span class="n">EvenQ</span><span class="p">]</span><span class="w">  </span><span class="p">,</span><span class="w"> </span><span class="p">{{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">},{</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">},{</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">}}]</span>
+
+<span class="n">f</span><span class="p">[</span><span class="nv">p_</span><span class="p">]</span><span class="o">:=</span><span class="n">Select</span><span class="p">[</span><span class="n">p</span><span class="p">,</span><span class="n">EvenQ</span><span class="p">]</span>
+<span class="n">Map</span><span class="p">[</span><span class="n">f</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="p">{{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">},{</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">},{</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">}}]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-mathematica notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">If</span><span class="p">[</span><span class="nv">#</span><span class="o">==</span><span class="mi">0</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="nv">#</span><span class="w"> </span><span class="n">f</span><span class="p">[</span><span class="nv">#</span><span class="mi">-1</span><span class="p">]]</span><span class="w"> </span><span class="o">&amp;</span><span class="p">;</span><span class="w"> </span><span class="c">(* # 和 f不能粘连，因为中间空格表示乘号 *)</span>
+<span class="n">f</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="w"> </span><span class="c">(* 5!=120 *)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><pre style="&#102;&#111;&#110;&#116;&#45;&#102;&#97;&#109;&#105;&#108;&#121;&#58;&#32;&#34;&#67;&#111;&#117;&#114;&#105;&#101;&#114;&#32;&#78;&#101;&#119;&#34;&#44;&#67;&#111;&#117;&#114;&#105;&#101;&#114;&#44;&#109;&#111;&#110;&#111;&#115;&#112;&#97;&#99;&#101;&#59;">&#49;&#50;&#48;</pre></div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-mathematica notranslate"><div class="highlight"><pre><span></span><span class="n">Clear</span><span class="p">[</span><span class="n">f</span><span class="p">]</span>
+<span class="n">MapThread</span><span class="p">[</span><span class="n">f</span><span class="p">,{{</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">},{</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">}}]</span>
+<span class="n">BlockMap</span><span class="p">[</span><span class="n">f</span><span class="p">,{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">},</span><span class="w"> </span><span class="mi">3</span><span class="p">]</span>
+
+<span class="n">BlockMap</span><span class="p">[</span><span class="n">f</span><span class="p">,{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">},</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">ArrayFilter</span><span class="p">[</span><span class="n">f</span><span class="p">,{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">},</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">Padding</span><span class="o">-&gt;</span><span class="n">None</span><span class="p">]</span>
+<span class="n">ArrayFilter</span><span class="p">[</span><span class="n">Mean</span><span class="p">,{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">},</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">Padding</span><span class="o">-&gt;</span><span class="n">None</span><span class="p">]</span><span class="w"> </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+													.grid-container {
+														display: inline-grid;
+														grid-template-columns: auto;
+													}
+												</style>
+
+												<div><div class="grid-container"><div class="grid-item"><img alt="Output" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAAVCAIAAAD+VVSOAAAA0HpUWHRSYXcgcHJvZmlsZSB0eXBlIGV4aWYAAHjabU/ZbUQhEPunii1hDvBAObxdnpQOUv6aBSUiihFj4zmANL6/7vSYMJWUS1Q0QIjccrNOUWVhsUr7xA/uvHN6+knL9jut8pvA2P51+oHFVv8MElvC5w3Uvm+MPcht+drX+dr11ms9B11yAPLz9H/P2cNQoJEZs0kEGnVNlCQUkxK48QRYqHiZ5Cd5IIJtiFnhfTZO2IizeiQ4jdf8gs+dvbtydWqwVcmdmWAsLnbtrPj8zht77Frfo6LwLgAAAAlwSFlzAAAOxAAADsQBlSsOGwAAADx0RVh0U29mdHdhcmUAQ3JlYXRlZCB3aXRoIHRoZSBXb2xmcmFtIExhbmd1YWdlIDogd3d3LndvbGZyYW0uY29tXKKmhQAAACF0RVh0Q3JlYXRpb24gVGltZQAyMDI0OjExOjI2IDEyOjA3OjUwH1BKPAAAA8dJREFUaIHtmz1uszAYx5+86jE6VJhTVJChQ8wBOgSmTpFgrmDp2MUcoKydQo4QumJ16BkC6k3oYMUvxXw6JqERvwkFf/z/YPt5bNpFURQwM3ON/Lu0gJmZsZgH98zVMg/umatl2ODWdX1xhFI6kqaJMNQspfTvPparfLPVwZ3n+WKx0HVdLGpZFgAURwzDKN/lT2c8re2oFdBuVnl3Q5nNcjzPa5yQxW9c1y0aAIA4jpvuYoybbp2TFv2DaDdb1PlN0xQA0jRVIqAPFzR7ftrN1iqsWblr50fT71fJbPbPoWma+OM5NpSWZfF8LgxDiRZY6CnXZa1N88XwMOp5nlz1SloYhuE0zbIklsFyGwkWAsqS/s7lHSEk1hKLNUUujDGP1KcEbtd1ASDLMn7dVEyicU5Ps0VzWgLHEJ9lGXSF+1riOK48JYQQIUQseUGzXCc3GMexhFmxo1qnRZfZ2rvdg5vR+ap6pmUA0KS+E4wxQkh892WUpKF9xmXT4C7XwhjLZasIIW6ENctmdYULmq2IVAIhBCHUdFdicP9KS3a73cPDg2QIaKAcuU7cbu/3+yzLbNsmhIg7+olwe3vLrzVNOxwOEo1sNpsoitj1drt1Xbc2p7wgeZ5nWeY4jsIGgyD4+PiQq+44jpjx/h/clFLbtu/v7+UFCuR5XpnfJ7bGLr6/vxWImzCPj48AsNvtACCKoufn50srGp3VakUIkZ7DhmEEQVAZ3zfl20VReJ6ncFH8+voCAFXvhs0Tx3FM01wul+v1Wkmz45Hn+Wq1kqioaZrruu/v7wCAMZ7asg3H04nPz08lo8XzPF3Xfd8/pQVx6ex7FCgHi9FsiANAbVrSc4NsWRZC6O3tzTAMQoht20P31Gf+/BaGYZIklYndX4PjOEmS2Lb98vIi0fsZzBJCgiDgXVBKWagZKoNSGkXRfr9XrnDco0A+EJnJNE0xxpUy7JftdtvSjq7rSZKwlQwAfN9HCJmmOejl9enoFNgaZpomMxsEQVEUlUW3vwbDMBBCCCG5pXFsswDg+34cx9zv6+urGEv7yDBNE34fCModoYrcdBcBAABN0+QyZt/3y+FGnKBPT09Jktzd3bU0Im7LJDZqfTpiSJvtrNVfA2Oz2UjIGNSRtFkAWK/X7clhHxkn7sTaGHTg0oL0F1p22ipXV6RFv9qOpM/4empg557tZSZuVq2MU48CAWC5XDb94VQ7h8Nh6GEf++4IiuYu+y7IT9DG64gx1G9/DbzZlug0cbNqZbSYLXckslD4CGZmJsX8zwozV8sPqMnOBkyKaqgAAAAASUVORK5CYII="></div><div class="grid-item"><img alt="Output" src="data:image/png;base64,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"></div><div class="grid-item"><img alt="Output" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA20AAAAVCAIAAABaCZGsAAAA0HpUWHRSYXcgcHJvZmlsZSB0eXBlIGV4aWYAAHjabVDtbcUgEPvPFB3hPsAH45AXntQNOn5NoFKpapSzMedDJI2vz3f6mDCVlEtUNECI3HKzTlFlYbFKe+oD3OLbPfykZQnttMqvwNj+dfqBxVb/DBJbwucN1J53YA9yW772tb92v/Vaz0GXHMCP0P/32cNQoJFZs0kEGnVNlCQUkxJ44wWwUXGb5Bd5IIIxxOzwPoMTNuLsHglO455P8Pll765cnRqMKrnzJFiLi1379Pnj6RuAIVriXfr8WQAAAAlwSFlzAAAOxAAADsQBlSsOGwAAADx0RVh0U29mdHdhcmUAQ3JlYXRlZCB3aXRoIHRoZSBXb2xmcmFtIExhbmd1YWdlIDogd3d3LndvbGZyYW0uY29tXKKmhQAAACF0RVh0Q3JlYXRpb24gVGltZQAyMDI0OjExOjI2IDEyOjA3OjUwH1BKPAAAB5FJREFUeJztnb1u2zoUgOmL+xRFURSmnqKwM3So/Ai2J08BpLmIl4xeLGS2gUydag19gGjpYAkd+gyiEBR9D96BiK6qX4oUj6j0fEMAW9IR+YWm+SvPOOcEQRAEQRAEQXryz9gJQBAEQRAEQSYJtiMRBEEQBEEQFbAdiSAIgiAIgqjQrx3pOM7shSRJDKUJKYLORwG1w4PO4UHn8KDzUUDt5ii3I7Msm81mjuNUT12tVoQQ/sJisSgezf9JTXdqiSyuDcNQJQd/xs9RjlMsbbWp9X2/pSB2euhFu/PO2zU5B3PVl9VqNZvNfN8vvQ/pnOgV9SbnYK7kKSZJkGVZfrTdOYEt6jrVCzHvqi/CbW2cV1C9gLmSIQiCWYVSml+BcwGAq14US0IQBNWkTrd6gXSlHKd0SNN52+X8TzzP4w0QQi6XS9NR13WbDrVEPh6PImx78E4YY4SQOI7FS0oppVQ5Wo7ruk1x2vPborEXnVoUkgHvShJRDAghTfZgnHO9oi6TDABXMlBKj8dj+zlqn2sFTFQvAjBXMohPX2dKplu9cHBXfaGU1sactHNgV32vjeOYEFItFa+geskx7UqG4oWe51UbeFw7s7WX14xH1jZFdTqUTRHCMPz+/Tvn/O3bt5rB5/M5L3QyDocDY0x/7Hq32zHGavM+n881g3diwjkZw5Uk9/f3x+ORUtp0AoBzoq1d5nIAV0MxCeftEcBcyeD7vud5p9Op/bTpVi8DIumqF2EYMsa222310KSdA7vqJEmS4rWLxcJ13efn59Jpr6B6EQC46iQIAkrp3d2deCkKQ3WaV9N57eVj7rNZr9dPT08mIus3TIvAlPWxsMRVEASMsfwz8DeArgCwylWWZVEUff78eeyETABDrr58+eK6bnU2edJY6OrNmzeEkN+/f+fvpGn6/v37odJmGza4en5+Lk2su657vV4VktSX7nakmDIXvfnNZiOmz8VqA2v58eMHefn36LDZbMTMOzCQzm1wlWXZfr/P5x/HAky7Pa72+33TYhoYjDq3zdXPnz/F3zyOzpJNZQDKuZ2ukiSJouj+/l4zjgJGnVvoaj6fe5632WzEUj/HcUbpzsFU6fa4StO09I7pSQNBdzsyTVP+svwiX2FgaBxxEMSXh+u6yuM9+WrT4igxJGDOLXH18PDguu56vVa7fChMa7fNlchvvuplprcfQicNhpzb5urXr1+EkOv1KuIwxs7ns86aejVMl3NrXR0OB0rpKIORRp3b6ep0OsVxLHoUjuPwMX45D+ab1BJX2+2WMZZPZIdhGEWRcpJ68Uc7MgzDjx8/mriNuchVROdDp6zk9eDt7W3TBqXtdgv/BdALGecwrtpJkuR8Pst05qbuHNJVX0QZ+PbtW+l9+52TBu3wriTJF7GJcYjHx8fqOfZrl6zSAVxJIgaNDodD0wlTdw7pSgbf95fLJWOMcx5FUW13wn7npEs7mKtOFovF5XLJh12v12vtCJGm89rL/29HJkmy2Ww+fPigfIMmzEWuItYHiP6HPnd3d5TSr1+/Vg8tFov9fm/tZ0DGOZirdna7ned5Mp25V+BcAOBKjeribsudk2bt8K46effuXemdplVQlmvvW6UbdSWJGDRqGZyernN4V52EYXg+n+M4Fu0YzjmltDrbbrlzIlHUwVzJsF6v86mA0+mUpunNzU3pHE3ntZf/UzzMOVf4bpO5saHIJcTCAsbYsDtjaj+Tvu9zzi1Zv1+l0zmkqxayLBOzMPnKnvxltaBP3XkJo676Irq/1UrHcuekQfsorjoRe9qK49DVpfECy7XLF3UAVzKInSi3t7ct50zXObyrTsRUe3HZveM41dV7ljsnXUUd0lVfxDbwagNX03nt5bLP/dFHObL4GuicBFytVoyxvFGvHKeI7/uDrw5WSIYyTc7BXHXGEQ8hKpI/SWui2mXKuWlXCpmllA6+RHXEog7vSiaOeKLHbrcTL03MvNtQvRQx6ko+sw8PD4QQc+2VcasXYFcyocQAnghFXtpbnz596ry7PDYUdTBXfTMbBMFyuQTbujrmc3/yX1VZLpfkZTtVtRflui4hpL3vK9YoEEKWy2U+AlHdA98Zp/pDL4OvDpZJhlEgXY2eWUtSAuxKMlQxSZfLZfDl5/b891sYypVknKenp3y7lVgRNezMuw3OwVxJxhHtKqNP3hhdO6QrmVCLxSKO43xCQDyaftjHW47uHNJV32rq8fGRcw62dfVfyfNE/37Ye0vG3O12URS1TwKKwWf9OCayqZAMo4mBdCWf2Rz98XzNlIxV1Ad0JRnq1Rf1IqZdyWfW6MMubHAO5koyjkyNp4lkSoyWczBXlmgfvahDurKkSm+7cRHlH/Yx9wNHYk+x2rUm4gjas9NydNhkGPotr1fmfNiUWO582FCd2YEp6li9SB7F6kUZrF7gQ2H1AhyH6zlvOlqe1765uamdXO4kTdN8zq4Whcjid8GJdit7qDilaLWIyYXz+Ww6GYJ27eh88JQQi50bCtUEZFHH6kWA1cuwcUrRasHqxWioJrB6GTYO0XPefvlswEoHQRAEQRAE+XsYc58NgiAIgiAIMl3+AwCI7SsLLn6fAAAAAElFTkSuQmCC"></div><div class="grid-item"><img alt="Output" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA20AAAAVCAIAAABaCZGsAAAA0HpUWHRSYXcgcHJvZmlsZSB0eXBlIGV4aWYAAHjabVDtbcUgEPvPFB3hPsAH45AXntQNOn5NoFKpapSzMedDJI2vz3f6mDCVlEtUNECI3HKzTlFlYbFKe+oD3OLbPfykZQnttMqvwNj+dfqBxVb/DBJbwucN1J53YA9yW772tb92v/Vaz0GXHMCP0P/32cNQoJFZs0kEGnVNlCQUkxJ44wWwUXGb5Bd5IIIxxOzwPoMTNuLsHglO455P8Pll765cnRqMKrnzJFiLi1379Pnj6RuAIVriXfr8WQAAAAlwSFlzAAAOxAAADsQBlSsOGwAAADx0RVh0U29mdHdhcmUAQ3JlYXRlZCB3aXRoIHRoZSBXb2xmcmFtIExhbmd1YWdlIDogd3d3LndvbGZyYW0uY29tXKKmhQAAACF0RVh0Q3JlYXRpb24gVGltZQAyMDI0OjExOjI2IDEyOjA3OjUwH1BKPAAAB5FJREFUeJztnb1u2zoUgOmL+xRFURSmnqKwM3So/Ai2J08BpLmIl4xeLGS2gUydag19gGjpYAkd+gyiEBR9D96BiK6qX4oUj6j0fEMAW9IR+YWm+SvPOOcEQRAEQRAEQXryz9gJQBAEQRAEQSYJtiMRBEEQBEEQFbAdiSAIgiAIgqjQrx3pOM7shSRJDKUJKYLORwG1w4PO4UHn8KDzUUDt5ii3I7Msm81mjuNUT12tVoQQ/sJisSgezf9JTXdqiSyuDcNQJQd/xs9RjlMsbbWp9X2/pSB2euhFu/PO2zU5B3PVl9VqNZvNfN8vvQ/pnOgV9SbnYK7kKSZJkGVZfrTdOYEt6jrVCzHvqi/CbW2cV1C9gLmSIQiCWYVSml+BcwGAq14US0IQBNWkTrd6gXSlHKd0SNN52+X8TzzP4w0QQi6XS9NR13WbDrVEPh6PImx78E4YY4SQOI7FS0oppVQ5Wo7ruk1x2vPborEXnVoUkgHvShJRDAghTfZgnHO9oi6TDABXMlBKj8dj+zlqn2sFTFQvAjBXMohPX2dKplu9cHBXfaGU1sactHNgV32vjeOYEFItFa+geskx7UqG4oWe51UbeFw7s7WX14xH1jZFdTqUTRHCMPz+/Tvn/O3bt5rB5/M5L3QyDocDY0x/7Hq32zHGavM+n881g3diwjkZw5Uk9/f3x+ORUtp0AoBzoq1d5nIAV0MxCeftEcBcyeD7vud5p9Op/bTpVi8DIumqF2EYMsa222310KSdA7vqJEmS4rWLxcJ13efn59Jpr6B6EQC46iQIAkrp3d2deCkKQ3WaV9N57eVj7rNZr9dPT08mIus3TIvAlPWxsMRVEASMsfwz8DeArgCwylWWZVEUff78eeyETABDrr58+eK6bnU2edJY6OrNmzeEkN+/f+fvpGn6/v37odJmGza4en5+Lk2su657vV4VktSX7nakmDIXvfnNZiOmz8VqA2v58eMHefn36LDZbMTMOzCQzm1wlWXZfr/P5x/HAky7Pa72+33TYhoYjDq3zdXPnz/F3zyOzpJNZQDKuZ2ukiSJouj+/l4zjgJGnVvoaj6fe5632WzEUj/HcUbpzsFU6fa4StO09I7pSQNBdzsyTVP+svwiX2FgaBxxEMSXh+u6yuM9+WrT4igxJGDOLXH18PDguu56vVa7fChMa7fNlchvvuplprcfQicNhpzb5urXr1+EkOv1KuIwxs7ns86aejVMl3NrXR0OB0rpKIORRp3b6ep0OsVxLHoUjuPwMX45D+ab1BJX2+2WMZZPZIdhGEWRcpJ68Uc7MgzDjx8/mriNuchVROdDp6zk9eDt7W3TBqXtdgv/BdALGecwrtpJkuR8Pst05qbuHNJVX0QZ+PbtW+l9+52TBu3wriTJF7GJcYjHx8fqOfZrl6zSAVxJIgaNDodD0wlTdw7pSgbf95fLJWOMcx5FUW13wn7npEs7mKtOFovF5XLJh12v12vtCJGm89rL/29HJkmy2Ww+fPigfIMmzEWuItYHiP6HPnd3d5TSr1+/Vg8tFov9fm/tZ0DGOZirdna7ned5Mp25V+BcAOBKjeribsudk2bt8K46effuXemdplVQlmvvW6UbdSWJGDRqGZyernN4V52EYXg+n+M4Fu0YzjmltDrbbrlzIlHUwVzJsF6v86mA0+mUpunNzU3pHE3ntZf/UzzMOVf4bpO5saHIJcTCAsbYsDtjaj+Tvu9zzi1Zv1+l0zmkqxayLBOzMPnKnvxltaBP3XkJo676Irq/1UrHcuekQfsorjoRe9qK49DVpfECy7XLF3UAVzKInSi3t7ct50zXObyrTsRUe3HZveM41dV7ljsnXUUd0lVfxDbwagNX03nt5bLP/dFHObL4GuicBFytVoyxvFGvHKeI7/uDrw5WSIYyTc7BXHXGEQ8hKpI/SWui2mXKuWlXCpmllA6+RHXEog7vSiaOeKLHbrcTL03MvNtQvRQx6ko+sw8PD4QQc+2VcasXYFcyocQAnghFXtpbnz596ry7PDYUdTBXfTMbBMFyuQTbujrmc3/yX1VZLpfkZTtVtRflui4hpL3vK9YoEEKWy2U+AlHdA98Zp/pDL4OvDpZJhlEgXY2eWUtSAuxKMlQxSZfLZfDl5/b891sYypVknKenp3y7lVgRNezMuw3OwVxJxhHtKqNP3hhdO6QrmVCLxSKO43xCQDyaftjHW47uHNJV32rq8fGRcw62dfVfyfNE/37Ye0vG3O12URS1TwKKwWf9OCayqZAMo4mBdCWf2Rz98XzNlIxV1Ad0JRnq1Rf1IqZdyWfW6MMubHAO5koyjkyNp4lkSoyWczBXlmgfvahDurKkSm+7cRHlH/Yx9wNHYk+x2rUm4gjas9NydNhkGPotr1fmfNiUWO582FCd2YEp6li9SB7F6kUZrF7gQ2H1AhyH6zlvOlqe1765uamdXO4kTdN8zq4Whcjid8GJdit7qDilaLWIyYXz+Ww6GYJ27eh88JQQi50bCtUEZFHH6kWA1cuwcUrRasHqxWioJrB6GTYO0XPefvlswEoHQRAEQRAE+XsYc58NgiAIgiAIMl3+AwCI7SsLLn6fAAAAAElFTkSuQmCC"></div><div class="grid-item"><img alt="Output" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALEAAAAVCAIAAACGxphqAAAAz3pUWHRSYXcgcHJvZmlsZSB0eXBlIGV4aWYAAHjabU/rjYMhDPvPFDdCSIID4/C1VOoGHf9MQXeiqhGxcR5AGq/nI/1MaJbkJSoaIIQ3b9opqiwsztLe8Y1rM8+Hn3LZfqdV/hMY279OP7BY68cg0SVs3kBtvhv2INPl575ftOu113oOuuQA5O/pX89uoSjI4YyuEoFGXRMlCUWlBB64ASzMuKv4jTwQwTbErLA+Gyd0xFk9EozGfX7B5nbrlrk6NdiayZ2ZYCwmeu2s2PzOL3GZWth+dchOAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAPHRFWHRTb2Z0d2FyZQBDcmVhdGVkIHdpdGggdGhlIFdvbGZyYW0gTGFuZ3VhZ2UgOiB3d3cud29sZnJhbS5jb21coqaFAAAAIXRFWHRDcmVhdGlvbiBUaW1lADIwMjQ6MTE6MjYgMTI6MDc6NTAfUEo8AAACuUlEQVRoge2aMa7jIBCG8WpPEaWIjI9hpSXHSIvrKHewT5HOV4hr5xi2q9yDLUaL2MFgPPDeW0V83eOFPwP8M4yTFEoplskY/PrpADL/HdkTGUz2RAaTPZHBYE8sy1IURVVV9qCG/GZVVWkR9BZkLpdLURRN08SHBCzLQg6maZpIna7rCgvyXpmr67puNdrX64WnqX+RUqKReZ4ZY+M4wp+cc865ikYIEa/T9z2swg47EM5527aRYai/u0QOwwPnnCZrThzHkTG2ulIhBBrBnrBfgYBj0BYhAzrzPMeIwImSd02l84QQ4isMQd5tMIE50RWhPbi7nzgej3uneCjLkjy367p5nu/3e8J4aCzLMgzD7XZLrvx4PIQQdV3vnXg4HBhj7/dbj0zTdDqdgiYjj2zWibZtWXR+K6WYo5QFArW673sVUV1hrmc3AoFs1hcZS3SJ2Lm+Cyml3mRYputlaGSfJ+AkNn3jQZ9BZDMhpdRhxHjCRAhBszvkiY4Bdin+SopvucBV/iPb8ETf9/6VxCQTAvaRlgQogVJ5QlGrF6zFHJFSJjlOKIQ0oE6AxeHgVu0+jiNaMjP/5z8kSPH4W8MUjO+oY3RsaGUfbg1zBDrfmEgii4TdnHLOXdUCZcL2s6hWTGsIRe35oTKvElmuzR5lF3Y6mVcbOZKY5dhtn8tkxH4CLlpPCYEj2XURQGVLIrVaJwg6rns3RMrccVfFDQ/JtTnhOhADanECn0W3PaH7FBPkODCNv+qi/Ha9OEQKseqJQB0zJFeFCJSCl3lu7kAdz+dLBJ3NImrr/HbVYU1d12rrNxbX63UYBv/jb1mWmzqBUohpmsg6CUN6Pp9JdDY3PJWOk03XhOB5/P0pqQ8OKeHSVMjnmOfzedeXLvA9CgtLuO+R+uCQEi7NVEMUSdQzn0T+/UQG8weglZ5REuEQtgAAAABJRU5ErkJggg=="></div></div></div></div></div>
+</div>
+</section>
+<section id="id1">
+<h2><span class="section-number">26.2. </span>物理笔记<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[
+Q = a - bP
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(Q\)</span> is the quantity demanded, <span class="math notranslate nohighlight">\(P\)</span> is the price of the good or service, <span class="math notranslate nohighlight">\(a\)</span> is the intercept, and <span class="math notranslate nohighlight">\(b\)</span> is the slope of the demand curve.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-mathematica notranslate"><div class="highlight"><pre><span></span><span class="n">import</span><span class="w"> </span><span class="n">matplotlib</span><span class="err">.</span><span class="n">pyplot</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">plt</span>
+<span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">14</span><span class="w"> </span><span class="nv">#</span><span class="w"> </span><span class="n">intercept</span>
+<span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="nv">#</span><span class="w"> </span><span class="n">slope</span>
+<span class="n">prices</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">51</span><span class="p">)</span><span class="w"> </span><span class="nv">#</span><span class="w"> </span><span class="n">Define</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">range</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">prices</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">plot</span>
+
+<span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="nv">#</span><span class="w"> </span><span class="n">supply</span><span class="w"> </span><span class="n">intercept</span>
+<span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="nv">#</span><span class="w"> </span><span class="n">supply</span><span class="w"> </span><span class="n">slope</span>
+
+<span class="n">quantities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="n">a</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">b</span><span class="o">*</span><span class="n">price</span><span class="w"> </span><span class="n">for</span><span class="w"> </span><span class="n">price</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">prices</span><span class="p">]</span><span class="w"> </span><span class="nv">#</span><span class="w"> </span><span class="n">Calculate</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">corresponding</span><span class="w"> </span><span class="n">quantity</span><span class="w"> </span><span class="n">demanded</span><span class="w"> </span><span class="n">for</span><span class="w"> </span><span class="n">each</span><span class="w"> </span><span class="n">price</span>
+<span class="nv">quantities_supplied</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="n">c</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">d</span><span class="o">*</span><span class="n">price</span><span class="w"> </span><span class="n">for</span><span class="w"> </span><span class="n">price</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">prices</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="err">.</span><span class="n">plot</span><span class="p">(</span><span class="n">prices</span><span class="p">,</span><span class="w"> </span><span class="n">quantities</span><span class="p">)</span>
+<span class="n">plt</span><span class="err">.</span><span class="n">plot</span><span class="p">(</span><span class="n">prices</span><span class="p">,</span><span class="w"> </span><span class="nv">quantities_supplied</span><span class="p">,</span><span class="w"> </span><span class="n">label</span><span class="o">=</span><span class="err">&#39;</span><span class="n">Supply</span><span class="err">&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="err">.</span><span class="n">xlabel</span><span class="p">(</span><span class="err">&#39;</span><span class="n">Price</span><span class="err">&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="err">.</span><span class="n">ylabel</span><span class="p">(</span><span class="err">&#39;</span><span class="n">Quantity</span><span class="w"> </span><span class="n">Demanded</span><span class="err">&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="err">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>动量变化 △P=Ft</p>
+<p>动能变化 △E=Fx</p>
+<p>一个力存在一段时间，力乘以作用时间就产生一个冲量。这个冲量将改变它作用物体的<strong>动量</strong>（一个矢量）。而且，能改变动量的只有冲量。所以说，任何物体的动量都是某一个力，或者某几个力存在若干时间的结果。</p>
+<p>同理，物体受力在空间上这个力的方向上位移，力乘以位移就产生一个功，功改变这个物体的<strong>动能</strong>（一个标量）。</p>
+<p>一个矢量在另一个矢量上的累积，结果是两个矢量的点乘，所以力在空间上的累积就是力和位移的点乘，即F<em>S</em>cosθ （θ是两个矢量的夹角），结果是一个没有方向的标量，所以动能的变化也是一个没有方向的标量，只有增加或减小。力在时间上的累积，因为时间是标量，力是矢量，所以结果也是一个有方向的矢量，所以动量变化也是一个矢量。</p>
+<img src="https://raw.githubusercontent.com/tomctang/NB_img/main/momentum1.png" alt="Momentum-Comparison" width="500">
+<p>Q：光有没有动量？
+A：光没有质量，但是有动量</p>
+<p>分段线性回归–定义：　
+是用虚拟变量估计不同数量水平的解释变量对被解释变量的影响。在经济关系中，当解释变量X的值达到某一水平X′之前，与被解释变量之间存在某种线性关系；当解释变量X的值达到或者超过X′以后，与被解释变量的关系就会发生变化。此时，如果已知X的转折点X′，我们就可以用虚拟变量来估计每一段的斜率，也就是所谓的分段线性回归。</p>
+<p>分段回归链接：由非线性曲线回归引出来的→网络讲义；</p>
+<p>English wiki – segmented regression（简单而靠谱）；
+中文wiki （冗长复杂）—重点：在统计学中，分段回归分析(Piecewise regression analysis，PRA)，或简称分段回归(Piecewise regression)，在广义的回归分析(Regression analysis)中是一种方法或分析的策略。它试图在一个被分割的、可连续测量的随机样本空间里找到一个或多个随机的临界点(Critical point，Threshold)以便将整个随机样本空间分割为两个或多个子空间，并在此基础上为每个子空间拟合一个临界模型，从而以一组随机可变的回归模型来描述和预测整个随机空间上复杂的回归关系。
+不同的人在不同的时期和不同的领域使用了不同的术语来开发和表述他们各自的方法论，诸如，分割回归(segmented regression)、改变点回归(chang-point regression or changing-point regression)、漂移回归(shifting regression)、切变回归(switching regression)以及分段回归(piecewise regression)等。
+相应地，关于关键点或临界点的术语有分割点(segmenting point)、改变点(change-point, changing-point)、切点(cut-off pint)、节点(knot)、漂移点(shifting poing)、切变点(switching poing)、断点(breakpoing, breaking-point)、临界点(critical point or threshold)，等等。这里，分段回归(piecewise regression)和临界点(threshold)是最简单且含义上比较中性(这意味着在统计学中要对它们的性质作出概率推断)因而也是最好的一对术语，理应作为这个领域的正式术语。</p>
+<p>但是这段讨论比较吸引：（作者还在blog上有详细叙述）
+“分段线性回归” 请见古扎拉蒂，中文版（第三版）第514页例15.7，英文版第四版第319页例9.7：研究产出与总成本关系的。它想进行的检验就是：总成本的斜率是否在总产出达到5500个单位的时候发生改变。古扎拉蒂利用分段线性回归进行了检验，过程如下：
+Totalcost=-145.72+0.2791<em>output+0.0945</em>(output-5500)<em>dum
+Dum在output&gt;=5500时为1，否则为0。古扎拉蒂根据最后一项，即(output-5500)<em>dum不显著从而判定斜率没有发生显著变化。
+但是，我们知道对斜率在前后两个阶段是否发生变化的检验其实完全可以不用分段线性模型，只要引入一个虚拟变量就可以了。于是我做了如下回归：
+Totalcost=73.3429+0.1821</em>output+0.1082</em>output<em>dum
+在采用了Newey-West标准误后发现截距和两个变量全部是显著的，output</em>dum的t值为41.81。我认为可以由此得出结论两个阶段的斜率是显著不同的。当产量大于5500之后，其斜率变成了0.182052+0.108243=0.290295
+我觉得以上两个做法都有道理。古扎拉蒂虽然没有考虑自相关和异方差，但是即便考虑了之后结论也不会发生变化。
+原始数据如下：
+Table 9.6
+Hypothetical data on output and total cost
+Total cost ($) Output (units)
+256 1000
+414 2000
+634 3000
+778 4000
+1003 5000
+1839 6000
+2081 7000
+2423 8000
+2734 9000
+2914 10000</p>
+<p>我之前做的是(PDF)：Analysis of Interrupted Time Series with Segmented Regression</p>
+<hr class="docutils" />
+<p>Because the hospitals that cover more poor people and more minorities tend to cover more unhealthy people, they may spend more money as well. So it’s possible for them to get the worst of both worlds. Their quality looks worse and their costs look higher.
+From Health Affairs by Aaron Carroll:</p>
+<p>According to the American Psychiatric Association, until 1974 homosexuality was a mental illness. After gay activists protested against the APA convention in San Francisco, the APA removed homosexuality from the list of mental illnesses.  Philip Hickey of Behaviorism and Mental Health uses this example to claim that “There are no mental illnesses.”</p>
+<p>我越学习经济学 越发现社会的结构是有深刻人性和人的能力基础的：比如一精英和平民是因为能力在人群中的分布不一样，人天生就有智商、情商高低。二、经济里最重要的变量之一-利率，也是每个人对短期享受和长期外享受的博弈形成的，有人偏爱及时行乐，有人爱努力工作以后享受，所以形成了利率。所有这些都是根植于每个人的能力不一样，人性偏爱不一样而产生的。</p>
+<p>Economist上的一篇文章 Japan’s health-care system is the envy of the world. It is also in crisis。比如说日本心脏病发病率只有美国人的1/4，但一旦发病，死亡概率却比美国人们高一倍，还有日本是一个clinics-based的health care system，所以他们居然ER都不发达，得不到ER的人只好死在家里。同是东方兄弟国家，差别哪就那么大呢？谁叫另一个国家学苏联–干工业、开医院。</p>
+<p>ihea2011上的文章鱼龙混杂，有的质量很高，有的简直文法都不通。
+好的有我的偶像Meltzer去年那篇分工的，有UP的Guy D的公司边界的文章，还有些医院industry organization的理论和实证文章。有些文章数据离谱，有个调查某个区40岁以上农村心血管疾病患者居然有近9.8w人，我一查那个区还不到100w人口。</p>
+<p>“优质”的第一层经济学含义，是指“匀质”；第二层经济学含义，是指“性价比”越高越好。</p>
+<p>保护坏参与者会伤害所有参与者，而且帮不到任何人
+重要的經濟觀點，通常是正確但不明顯(universally true, but not obvious)
+当年有红色理想的时候，不择手段；现在没有理想了，唯利是图还是不择手段</p>
+<p>腐败是必然的，但市场失效却不一定
+– 全世界不管什么国家的政府，一定范围的腐败是必然的，但是，政权（政治）和钱的勾连是最无害的，资本家至少是讲道理的，政治和什么勾连才可怕呢？和宗教、意识形态、军队。
+货币能起作用那就还好，等货币都不起作用了，只靠权力、领导意志说话了才是悲哀
+学经济最重要的是看清事物背后的全部成本
+大规模保障房根本没有必要，其实只要用住房补贴发放就行–那样只要甄别一下穷人就行，保障房又要甄别穷人还要生产产品。</p>
+<p>A society that puts equality—in the sense of equality of outcome—ahead of freedom will end up with neither equality nor freedom.  The use of force to achieve equality will destroy freedom, and the force, introduced for good purposes, will end up in the hands of people who use it to promote their own interests.
+Milton and Rose Friedman
+in Free to Choose: A Personal Statement
+理解贝克尔和行为经济学的最大区别，最好的例子就是关于瘾的分析。这个瘾的行为到底是理性的还是有限理性的？对其看法不同直接决定了新古典和行为经济学的差别</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-mathematica notranslate"><div class="highlight"><pre><span></span><span class="nv">#</span><span class="w"> </span><span class="err">方法一:</span><span class="w"> </span><span class="n">Chrome</span><span class="err">装插件</span><span class="w"> </span><span class="n">Copy</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">Python</span><span class="w"> </span><span class="n">Requests</span><span class="err">，得到</span><span class="n">requests</span><span class="err">.</span><span class="n">get</span><span class="p">()</span><span class="err">里面的参数</span>
+<span class="n">import</span><span class="w"> </span><span class="n">requests</span>
+<span class="n">import</span><span class="w"> </span><span class="n">time</span>
+<span class="n">from</span><span class="w"> </span><span class="n">bs4</span><span class="w"> </span><span class="n">import</span><span class="w"> </span><span class="n">BeautifulSoup</span>
+
+<span class="nv">#</span><span class="w"> </span><span class="n">Function</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">scrape</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">location</span><span class="w"> </span><span class="n">table</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">HTML</span><span class="w"> </span><span class="n">source</span>
+<span class="n">def</span><span class="w"> </span><span class="nv">scrape_location_table</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="err">:</span>
+<span class="w">    </span><span class="nv">#</span><span class="w"> </span><span class="n">Fetch</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">HTML</span><span class="w"> </span><span class="n">source</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">webpage</span>
+<span class="w">    </span><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">requests</span><span class="err">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="w"> </span><span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">&quot;priority&quot;</span><span class="err">:</span><span class="w"> </span><span class="s">&quot;u=0, i&quot;</span><span class="p">},</span><span class="w"> </span><span class="n">cookies</span><span class="o">=</span><span class="p">{</span><span class="s">&quot;sort_type&quot;</span><span class="err">:</span><span class="w"> </span><span class="s">&quot;Solved&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;sort_method&quot;</span><span class="err">:</span><span class="w"> </span><span class="s">&quot;Descending&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                              </span><span class="s">&quot;PHPSESSID&quot;</span><span class="err">:</span><span class="w"> </span><span class="s">&quot;4898b078953893800d168f8cd32d0e9a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;keep_alive&quot;</span><span class="err">:</span><span class="w"> </span><span class="s">&quot;1714536093%232146078%23VxWsEunBaLWSPxNJIp4mpkMZ9QxSxz2g&quot;</span><span class="p">})</span>
+<span class="w">    </span><span class="n">time</span><span class="err">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">    </span><span class="n">if</span><span class="w"> </span><span class="n">response</span><span class="err">.</span><span class="nv">status_code</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">200</span><span class="err">:</span>
+<span class="w">        </span><span class="nv">html_content</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">response</span><span class="err">.</span><span class="n">text</span>
+<span class="w">        </span><span class="nv">#</span><span class="w"> </span><span class="n">Parse</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">HTML</span><span class="w"> </span><span class="n">content</span>
+<span class="w">        </span><span class="n">soup</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BeautifulSoup</span><span class="p">(</span><span class="nv">html_content</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;html.parser&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="nv">#</span><span class="w"> </span><span class="n">Find</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">location</span><span class="w"> </span><span class="n">table</span>
+<span class="w">        </span><span class="nv">location_table</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">soup</span><span class="err">.</span><span class="n">find</span><span class="p">(</span><span class="s">&quot;table&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;location_table&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="n">if</span><span class="w"> </span><span class="nv">location_table</span><span class="err">:</span>
+<span class="w">            </span><span class="nv">#</span><span class="w"> </span><span class="n">Print</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">table</span><span class="w"> </span><span class="n">content</span>
+<span class="w">            </span><span class="n">rows</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">location_table</span><span class="err">.</span><span class="nv">find_all</span><span class="p">(</span><span class="s">&quot;tr&quot;</span><span class="p">)</span>
+<span class="w">            </span><span class="n">for</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">rows</span><span class="err">:</span>
+<span class="w">                </span><span class="n">cells</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">row</span><span class="err">.</span><span class="nv">find_all</span><span class="p">([</span><span class="s">&quot;th&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;td&quot;</span><span class="p">])</span>
+<span class="w">                </span><span class="n">for</span><span class="w"> </span><span class="n">cell</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">cells</span><span class="err">:</span>
+<span class="w">                    </span><span class="n">print</span><span class="p">(</span><span class="n">cell</span><span class="err">.</span><span class="nv">get_text</span><span class="p">(</span><span class="n">strip</span><span class="o">=</span><span class="n">True</span><span class="p">),</span><span class="w"> </span><span class="n">end</span><span class="o">=</span><span class="s">&quot;, &quot;</span><span class="p">)</span>
+<span class="w">                </span><span class="n">print</span><span class="p">()</span><span class="w">  </span><span class="nv">#</span><span class="w"> </span><span class="n">Print</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">new</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="n">for</span><span class="w"> </span><span class="n">each</span><span class="w"> </span><span class="n">row</span>
+<span class="w">        </span><span class="n">else</span><span class="err">:</span>
+<span class="w">            </span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Location table not found in the HTML source.&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="n">else</span><span class="err">:</span>
+<span class="w">        </span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Failed to fetch webpage content.&quot;</span><span class="p">)</span>
+
+<span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;https://projecteuler.net/locations&quot;</span>
+<span class="nv">scrape_location_table</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-mathematica notranslate"><div class="highlight"><pre><span></span><span class="nv">#</span><span class="w"> </span><span class="err">方法二：存本地</span><span class="n">html</span><span class="err">文件，再提取</span><span class="n">table</span>
+<span class="n">import</span><span class="w"> </span><span class="n">webbrowser</span>
+<span class="n">import</span><span class="w"> </span><span class="n">pyautogui</span>
+<span class="n">import</span><span class="w"> </span><span class="n">time</span>
+<span class="n">from</span><span class="w"> </span><span class="n">bs4</span><span class="w"> </span><span class="n">import</span><span class="w"> </span><span class="n">BeautifulSoup</span>
+
+<span class="nv">#</span><span class="w"> </span><span class="n">Function</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">open</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">URL</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">default</span><span class="w"> </span><span class="n">browser</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">save</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">page</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">HTML</span><span class="w"> </span><span class="n">file</span>
+<span class="n">def</span><span class="w"> </span><span class="nv">open_and_save_html</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="w"> </span><span class="nv">html_file</span><span class="p">)</span><span class="err">:</span>
+<span class="w">    </span><span class="n">webbrowser</span><span class="err">.</span><span class="nv">open_new_tab</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="w">     </span><span class="nv">#</span><span class="w"> </span><span class="n">Open</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">URL</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">default</span><span class="w"> </span><span class="n">browser</span>
+<span class="w">    </span><span class="n">time</span><span class="err">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="w">  </span><span class="nv">#</span><span class="w"> </span><span class="n">Wait</span><span class="w"> </span><span class="n">for</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">page</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">load</span><span class="w"> </span><span class="p">(</span><span class="n">adjust</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">needed</span><span class="p">)</span>
+<span class="w">    </span><span class="n">pyautogui</span><span class="err">.</span><span class="n">hotkey</span><span class="p">(</span><span class="err">&#39;</span><span class="n">ctrl</span><span class="err">&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;</span><span class="n">s</span><span class="err">&#39;</span><span class="p">)</span><span class="w">      </span><span class="nv">#</span><span class="w"> </span><span class="n">Simulate</span><span class="w"> </span><span class="n">pressing</span><span class="w"> </span><span class="n">Ctrl</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">S</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">save</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">webpage</span>
+<span class="w">    </span><span class="n">time</span><span class="err">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w">  </span><span class="nv">#</span><span class="w"> </span><span class="n">Wait</span><span class="w"> </span><span class="n">for</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">Save</span><span class="w"> </span><span class="n">dialog</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">appear</span><span class="w"> </span><span class="p">(</span><span class="n">adjust</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">needed</span><span class="p">)</span>
+<span class="w">    </span><span class="n">pyautogui</span><span class="err">.</span><span class="n">typewrite</span><span class="p">(</span><span class="nv">html_file</span><span class="p">)</span><span class="w">     </span><span class="nv">#</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">press</span><span class="w"> </span><span class="n">Enter</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">save</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">webpage</span>
+<span class="w">    </span><span class="n">pyautogui</span><span class="err">.</span><span class="n">press</span><span class="p">(</span><span class="err">&#39;</span><span class="n">enter</span><span class="err">&#39;</span><span class="p">)</span>
+<span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Webpage saved successfully as&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">html_file</span><span class="p">)</span>
+<span class="nv">#</span><span class="w"> </span><span class="n">Function</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">scrape</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">locations</span><span class="w"> </span><span class="n">table</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">locally</span><span class="w"> </span><span class="n">saved</span><span class="w"> </span><span class="n">HTML</span><span class="w"> </span><span class="n">file</span>
+<span class="n">def</span><span class="w"> </span><span class="nv">scrape_locations_table</span><span class="p">(</span><span class="nv">html_file</span><span class="p">)</span><span class="err">:</span>
+<span class="w">    </span><span class="n">with</span><span class="w"> </span><span class="n">open</span><span class="p">(</span><span class="nv">html_file</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;r&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">encoding</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">file</span><span class="err">:</span><span class="w">     </span><span class="nv">#</span><span class="w"> </span><span class="n">Open</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">HTML</span><span class="w"> </span><span class="n">file</span>
+<span class="w">        </span><span class="nv">html_content</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">file</span><span class="err">.</span><span class="n">read</span><span class="p">()</span><span class="w">          </span><span class="nv">#</span><span class="w"> </span><span class="n">Read</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">contents</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">file</span>
+<span class="w">    </span><span class="n">soup</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BeautifulSoup</span><span class="p">(</span><span class="nv">html_content</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;html.parser&quot;</span><span class="p">)</span><span class="w">     </span><span class="nv">#</span><span class="w"> </span><span class="n">Parse</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">HTML</span><span class="w"> </span><span class="n">content</span>
+<span class="w">    </span><span class="n">table</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">soup</span><span class="err">.</span><span class="n">find</span><span class="p">(</span><span class="s">&quot;table&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;location_table&quot;</span><span class="p">)</span><span class="w">     </span><span class="nv">#</span><span class="w"> </span><span class="n">Find</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">table</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">ID</span><span class="w"> </span><span class="err">&#39;</span><span class="nv">location_table</span><span class="err">&#39;</span><span class="w"> </span><span class="n">which</span><span class="w"> </span><span class="n">contains</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">locations</span><span class="w"> </span><span class="n">data</span>
+<span class="w">    </span><span class="n">if</span><span class="w"> </span><span class="n">table</span><span class="err">:</span>
+<span class="w">        </span><span class="n">rows</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">table</span><span class="err">.</span><span class="nv">find_all</span><span class="p">(</span><span class="s">&quot;tr&quot;</span><span class="p">)</span><span class="w">         </span><span class="nv">#</span><span class="w"> </span><span class="n">Extract</span><span class="w"> </span><span class="n">table</span><span class="w"> </span><span class="n">data</span>
+<span class="w">        </span><span class="n">for</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">rows</span><span class="err">:</span><span class="w">          </span><span class="nv">#</span><span class="w"> </span><span class="n">Print</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">table</span><span class="w"> </span><span class="n">content</span>
+<span class="w">            </span><span class="n">cells</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">row</span><span class="err">.</span><span class="nv">find_all</span><span class="p">([</span><span class="s">&quot;th&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;td&quot;</span><span class="p">])</span>
+<span class="w">            </span><span class="n">for</span><span class="w"> </span><span class="n">cell</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">cells</span><span class="err">:</span>
+<span class="w">                </span><span class="n">print</span><span class="p">(</span><span class="n">cell</span><span class="err">.</span><span class="nv">get_text</span><span class="p">(</span><span class="n">strip</span><span class="o">=</span><span class="n">True</span><span class="p">),</span><span class="w"> </span><span class="n">end</span><span class="o">=</span><span class="s">&quot;, &quot;</span><span class="p">)</span>
+<span class="w">            </span><span class="n">print</span><span class="p">()</span><span class="w">  </span><span class="nv">#</span><span class="w"> </span><span class="n">Print</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">new</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="n">for</span><span class="w"> </span><span class="n">each</span><span class="w"> </span><span class="n">row</span>
+<span class="w">    </span><span class="n">else</span><span class="err">:</span>
+<span class="w">        </span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Locations table not found in the HTML file.&quot;</span><span class="p">)</span>
+
+<span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;https://projecteuler.net/locations&quot;</span>
+<span class="nv">html_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;111.html&quot;</span><span class="w">  </span><span class="nv">#</span><span class="w"> </span><span class="n">Path</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">locally</span><span class="w"> </span><span class="n">saved</span><span class="w"> </span><span class="n">HTML</span><span class="w"> </span><span class="n">file</span>
+<span class="nv">open_and_save_html</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="w"> </span><span class="nv">html_file</span><span class="p">)</span>
+<span class="n">time</span><span class="err">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="nv">scrape_locations_table</span><span class="p">(</span><span class="nv">html_file</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-mathematica notranslate"><div class="highlight"><pre><span></span><span class="nv">#</span><span class="w"> </span><span class="n">Utility</span><span class="w"> </span><span class="n">Max</span><span class="w"> </span><span class="n">Function</span>
+<span class="n">import</span><span class="w"> </span><span class="n">numpy</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">np</span>
+<span class="n">import</span><span class="w"> </span><span class="n">pandas</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">pd</span>
+<span class="n">import</span><span class="w"> </span><span class="n">matplotlib</span><span class="err">.</span><span class="n">pyplot</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">plt</span>
+
+<span class="nv">#</span><span class="w"> </span><span class="n">Create</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">bH</span><span class="w"> </span><span class="n">matrix</span>
+<span class="n">bH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np</span><span class="err">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">],</span>
+<span class="w">               </span><span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">],</span>
+<span class="w">               </span><span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">]])</span>
+
+<span class="nv">#</span><span class="w"> </span><span class="n">Calculate</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">determinant</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">bH</span>
+<span class="nv">det_bH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np</span><span class="err">.</span><span class="n">linalg</span><span class="err">.</span><span class="n">det</span><span class="p">(</span><span class="n">bH</span><span class="p">)</span>
+<span class="n">print</span><span class="p">(</span><span class="s">&quot;Determinant of bH:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">det_bH</span><span class="p">)</span>
+
+<span class="nv">#</span><span class="w"> </span><span class="n">Define</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">L</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">Y</span><span class="w"> </span><span class="n">arrays</span>
+<span class="n">L</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">50</span>
+<span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np</span><span class="err">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">26</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+<span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">L</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">x</span>
+<span class="n">Y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span>
+
+<span class="nv">#</span><span class="w"> </span><span class="n">Create</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">DataFrame</span><span class="w"> </span><span class="n">for</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">data</span>
+<span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pd</span><span class="err">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="err">&#39;</span><span class="n">x</span><span class="err">&#39;:</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;</span><span class="n">y</span><span class="err">&#39;:</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;</span><span class="n">Y</span><span class="err">&#39;:</span><span class="w"> </span><span class="n">Y</span><span class="p">})</span>
+
+<span class="nv">#</span><span class="w"> </span><span class="n">Create</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">plot</span>
+<span class="n">plt</span><span class="err">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="err">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="err">&#39;</span><span class="n">x</span><span class="err">&#39;</span><span class="p">],</span><span class="w"> </span><span class="n">data</span><span class="p">[</span><span class="err">&#39;</span><span class="n">y</span><span class="err">&#39;</span><span class="p">],</span><span class="w"> </span><span class="n">label</span><span class="o">=</span><span class="err">&#39;</span><span class="n">y</span><span class="err">&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="err">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="err">&#39;</span><span class="n">x</span><span class="err">&#39;</span><span class="p">],</span><span class="w"> </span><span class="n">data</span><span class="p">[</span><span class="err">&#39;</span><span class="n">Y</span><span class="err">&#39;</span><span class="p">],</span><span class="w"> </span><span class="n">label</span><span class="o">=</span><span class="err">&#39;</span><span class="n">Y</span><span class="err">&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="o">=</span><span class="err">&#39;</span><span class="n">blue</span><span class="err">&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="err">.</span><span class="n">scatter</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="o">=</span><span class="err">&#39;</span><span class="n">red</span><span class="err">&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+<span class="n">plt</span><span class="err">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="p">)</span>
+<span class="n">plt</span><span class="err">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="p">)</span>
+<span class="n">plt</span><span class="err">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="err">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">&quot;y&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="err">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="err">.</span><span class="n">grid</span><span class="p">(</span><span class="n">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="err">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-mathematica notranslate"><div class="highlight"><pre><span></span><span class="n">import</span><span class="w"> </span><span class="n">random</span><span class="w"> </span><span class="nv">#</span><span class="w"> </span><span class="err">一个坐标系内追逐游戏</span>
+
+<span class="nv">player_position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">]</span><span class="w">  </span><span class="nv">#</span><span class="w"> </span><span class="n">Initialize</span><span class="w"> </span><span class="n">player</span><span class="w"> </span><span class="n">position</span>
+<span class="n">while</span><span class="w"> </span><span class="n">True</span><span class="err">:</span><span class="w">   </span><span class="nv">#</span><span class="w"> </span><span class="n">Game</span><span class="w"> </span><span class="n">loop</span>
+<span class="w">    </span><span class="nv">target_position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="n">random</span><span class="err">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">-10</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">),</span><span class="w"> </span><span class="n">random</span><span class="err">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">-10</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">)]</span><span class="w">     </span><span class="nv">#</span><span class="w"> </span><span class="n">Generate</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">random</span><span class="w"> </span><span class="n">target</span><span class="w"> </span><span class="n">position</span>
+
+<span class="w">    </span><span class="n">distance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">abs</span><span class="p">(</span><span class="nv">player_position</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nv">target_position</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">abs</span><span class="p">(</span><span class="nv">player_position</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nv">target_position</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="w">  </span><span class="nv">#</span><span class="n">distance</span><span class="w"> </span><span class="n">between</span><span class="w"> </span><span class="n">player</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">target</span>
+
+<span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Move the player closer to the target.&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Player Position:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">player_position</span><span class="p">)</span><span class="w">       </span><span class="nv">#</span><span class="w"> </span><span class="n">Print</span><span class="w"> </span><span class="n">current</span><span class="w"> </span><span class="n">position</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">target</span><span class="w"> </span><span class="n">position</span>
+<span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Target Position:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">target_position</span><span class="p">)</span>
+<span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Distance to Target:&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">distance</span><span class="p">)</span>
+
+<span class="w">    </span><span class="n">command</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">input</span><span class="p">(</span><span class="s">&quot;Enter your command (up, down, left, right): &quot;</span><span class="p">)</span><span class="w">      </span><span class="nv">#</span><span class="w"> </span><span class="n">Prompt</span><span class="w"> </span><span class="n">for</span><span class="w"> </span><span class="n">player</span><span class="err">&#39;</span><span class="n">s</span><span class="w"> </span><span class="n">movement</span><span class="w"> </span><span class="n">command</span>
+
+<span class="w">    </span><span class="n">if</span><span class="w"> </span><span class="n">command</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;up&quot;</span><span class="err">:</span><span class="w">      </span><span class="nv">#</span><span class="w"> </span><span class="n">Update</span><span class="w"> </span><span class="n">player</span><span class="err">&#39;</span><span class="n">s</span><span class="w"> </span><span class="n">position</span><span class="w"> </span><span class="n">based</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">command</span>
+<span class="w">        </span><span class="nv">player_position</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="n">elif</span><span class="w"> </span><span class="n">command</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;down&quot;</span><span class="err">:</span>
+<span class="w">        </span><span class="nv">player_position</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="n">elif</span><span class="w"> </span><span class="n">command</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;left&quot;</span><span class="err">:</span>
+<span class="w">        </span><span class="nv">player_position</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="n">elif</span><span class="w"> </span><span class="n">command</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;right&quot;</span><span class="err">:</span>
+<span class="w">        </span><span class="nv">player_position</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="n">if</span><span class="w"> </span><span class="nv">player_position</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nv">target_position</span><span class="err">:</span><span class="w">       </span><span class="nv">#</span><span class="w"> </span><span class="n">Check</span><span class="w"> </span><span class="n">if</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">player</span><span class="w"> </span><span class="n">has</span><span class="w"> </span><span class="n">reached</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">target</span>
+<span class="w">        </span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Congratulations! You reached the target!&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="n">break</span>
+<span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="s">&quot;\n---\n&quot;</span><span class="p">)</span><span class="w">  </span><span class="nv">#</span><span class="w"> </span><span class="n">Add</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">separator</span><span class="w"> </span><span class="n">between</span><span class="w"> </span><span class="n">each</span><span class="w"> </span><span class="n">round</span>
+<span class="n">print</span><span class="p">(</span><span class="s">&quot;Game Over&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="investigating-pi-and-e">
+<h3><span class="section-number">26.2.1. </span>Investigating Pi and e<a class="headerlink" href="#investigating-pi-and-e" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-mathematica notranslate"><div class="highlight"><pre><span></span><span class="n">from</span><span class="w"> </span><span class="n">sympy</span><span class="w"> </span><span class="n">import</span><span class="w"> </span><span class="o">*</span>
+<span class="n">x</span><span class="o">=</span><span class="n">symbols</span><span class="p">(</span><span class="err">&#39;</span><span class="n">x</span><span class="err">&#39;</span><span class="p">)</span>
+<span class="n">print</span><span class="p">(</span><span class="n">limit</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="n">print</span><span class="p">(</span><span class="n">limit</span><span class="p">(</span><span class="n">pow</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="o">/</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">,</span><span class="n">oo</span><span class="p">))</span><span class="w"> </span><span class="nv">#</span><span class="w"> </span><span class="n">natural</span><span class="w"> </span><span class="n">constant</span><span class="w"> </span><span class="n">e</span>
+
+<span class="nv">#</span><span class="w"> </span><span class="n">job</span><span class="w"> </span><span class="mi">1</span><span class="err">:</span><span class="w"> </span><span class="n">estimate</span><span class="w"> </span><span class="n">pi</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">series</span>
+<span class="n">import</span><span class="w"> </span><span class="n">math</span>
+<span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w">  </span><span class="nv">#</span><span class="w"> </span><span class="n">Initialize</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="mi">0</span>
+<span class="n">for</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span><span class="err">:</span><span class="w">  </span><span class="nv">#</span><span class="w"> </span><span class="n">Iterate</span><span class="w"> </span><span class="n">over</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">terms</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">series</span>
+<span class="w">    </span><span class="n">term</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="o">*</span><span class="p">(</span><span class="mi">-1</span><span class="p">)</span><span class="o">**</span><span class="n">n</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w">     </span><span class="nv">#</span><span class="w"> </span><span class="n">Compute</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">nth</span><span class="w"> </span><span class="n">term</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">series</span>
+<span class="w">    </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">term</span><span class="w">                        </span><span class="nv">#</span><span class="w"> </span><span class="n">Add</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">term</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">sum</span>
+<span class="n">print</span><span class="p">(</span><span class="s">&quot;Pi Estimate:&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">sum</span><span class="p">)</span><span class="w">  </span><span class="nv">#</span><span class="w"> </span><span class="n">Multiply</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">get</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">estimate</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">pi</span>
+
+<span class="nv">#</span><span class="w"> </span><span class="n">job</span><span class="w"> </span><span class="mf">1.1</span><span class="err">:</span><span class="w"> </span><span class="n">estimate</span><span class="w"> </span><span class="n">pi</span><span class="w"> </span><span class="n">using</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">limit</span>
+<span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9</span><span class="w">   </span><span class="p">;</span><span class="w"> </span><span class="n">print</span><span class="p">(</span><span class="s">&quot;pi is&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="o">*</span><span class="n">math</span><span class="err">.</span><span class="n">sin</span><span class="p">(</span><span class="n">math</span><span class="err">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">180</span><span class="o">/</span><span class="n">n</span><span class="p">)))</span>
+<span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">99</span><span class="w">  </span><span class="p">;</span><span class="w"> </span><span class="n">print</span><span class="p">(</span><span class="s">&quot;pi is&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="o">*</span><span class="n">math</span><span class="err">.</span><span class="n">sin</span><span class="p">(</span><span class="n">math</span><span class="err">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">180</span><span class="o">/</span><span class="n">n</span><span class="p">)))</span>
+<span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">999999999</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">print</span><span class="p">(</span><span class="s">&quot;pi is&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="o">*</span><span class="n">math</span><span class="err">.</span><span class="n">sin</span><span class="p">(</span><span class="n">math</span><span class="err">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">180</span><span class="o">/</span><span class="n">n</span><span class="p">)))</span>
+
+<span class="nv">#</span><span class="w"> </span><span class="n">job</span><span class="w"> </span><span class="mi">2</span><span class="err">:</span><span class="w"> </span><span class="n">estimate</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">series</span>
+<span class="n">sum1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w">  </span><span class="nv">#</span><span class="w"> </span><span class="n">Initialize</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">factorial</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="mi">1</span>
+<span class="n">factorial</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="n">for</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">10000</span><span class="p">)</span><span class="err">:</span><span class="w">  </span><span class="nv">#</span><span class="w"> </span><span class="n">Iterate</span><span class="w"> </span><span class="n">over</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">terms</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">series</span>
+<span class="w">    </span><span class="n">factorial</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="n">n</span><span class="w">         </span><span class="nv">#</span><span class="w"> </span><span class="n">Compute</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">nth</span><span class="w"> </span><span class="n">term</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">series</span>
+<span class="w">    </span><span class="n">term</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">factorial</span>
+<span class="w">    </span><span class="n">sum1</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">term</span>
+<span class="n">print</span><span class="p">(</span><span class="s">&quot;e Estimate:&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">sum1</span><span class="p">)</span>
+
+<span class="nv">#</span><span class="w"> </span><span class="n">job</span><span class="w"> </span><span class="mf">2.1</span><span class="err">:</span><span class="w"> </span><span class="n">estimate</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">compound</span><span class="w"> </span><span class="n">form</span>
+<span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="w">   </span><span class="p">;</span><span class="w"> </span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Estimated value of e:&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1000</span><span class="w">  </span><span class="p">;</span><span class="w"> </span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Estimated value of e:&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100000000</span><span class="w">  </span><span class="p">;</span><span class="w"> </span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Estimated value of e:&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="he">
+<h2><span class="section-number">26.3. </span>HE<a class="headerlink" href="#he" title="Link to this heading">#</a></h2>
+<section id="ib">
+<h3><span class="section-number">26.3.1. </span>IB经济学<a class="headerlink" href="#ib" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>IB有SL与HL两条线，内容都包含四个模块（微观、宏观、国经、发展）。HL学生要额外学习计量经济学和福利经济学等</p></li>
+<li><p>IB经济学，我同时使用了Jason Welker 和 Ellie Tragakes的教科书。我觉得 Welker的书内容结构更清晰，更容易理解，图表更大，也更清楚。</p></li>
+<li><p>The main difference is that the HSC (Economics) is designed to meet the needs of all NSW students whereas the IB pushes students to prepare for university.</p></li>
+</ol>
+<p><a class="reference external" href="https://www.ibo.org/programmes/diploma-programme/curriculum/individuals-and-societies/economics/">IBDP 2022 version</a></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Introduction to economics
+├── What is economics?
+└── How do economists approach the world?
+Microeconomics
+├── Demand
+├── Supply
+├── Competitive market equilibrium
+├── Critique of the maximizing behaviour of consumers and producers
+├── Elasticity of demand
+├── Elasticity of supply
+├── Role of government in microeconomics
+├── Market failure—externalities and common pool or common access resources
+├── Market failure—public goods
+├── Market failure—asymmetric information
+├── Market failure—market power
+└── The market’s inability to achieve equity
+Macroeconomics
+├── Measuring economic activity and illustrating its variations
+├── Variations in economic activity—aggregate demand and aggregate supply
+├── Macroeconomic objectives
+├── Economics of inequality and poverty
+├── Demand management (demand-side policies)—monetary policy
+├── Demand management—fiscal policy
+└── Supply-side policies
+The global economy
+├── Benefits of international trade
+├── Types of trade protection
+├── Arguments for and against trade control/protection
+├── Economic integration
+├── Exchange rates
+├── Balance of payments
+├── Sustainable development
+├── Measuring development
+├── Barriers to economic growth and/or economic development
+└── Economic growth and/or economic development strategies
+</pre></div>
+</div>
+</section>
+<section id="interview-hrh">
+<h3><span class="section-number">26.3.2. </span>Interview: HRH<a class="headerlink" href="#interview-hrh" title="Link to this heading">#</a></h3>
+<p>WHO的提法是<a class="reference external" href="https://ahpsr.who.int/">health policy and systems research_HPSR</a>, 主要面对政策人员的框架；
+HSS是美国AMA的提法，主要面对医学生教育的知识框架，虽然两者覆盖内容基本一致；
+从学科设立和传播性看，我更倾向AMA的提法：HSS用词更简单，一般性更强，可覆盖内容更广。HSS是一种课程设置框架，直接面向教育，尤其是面向普通临床医学生的教育，比面向专业政策研究人员的学术框架（专业性太强）更通用。</p>
+<ul class="simple">
+<li><p>孟庆跃在2017年<a class="reference external" href="http://journal.healthpolicy.cn/html/20170701.htm">一篇文章提到Health systems science</a>，但是他没有展开讨论</p>
+<ul>
+<li><p>关于卫生体系研究是不是一个界限清晰的学科一直存有困惑。从其名称来看，就有多种形态，除了卫生体系研究(health systems research)外，还有卫生体系科学(health systems science)、卫生体系发展(health systems development)、卫生体系加强(health systems strengthening)等。从学科角度，当前对卫生体系研究已达成一些基本共识。一是卫生体系研究是一个学科领域(subject area)，而不是一个单一学科(discipline)。二是卫生体系研究强调的是系统思维，这是卫生体系研究的核心。</p></li>
+<li><p>1997年4月，由世界卫生组织等国际组织和部分学术机构共同推动，在瑞典斯德哥尔摩召开卫生政策与体系研究咨询会议，决定成立卫生政策与体系研究联盟(Alliance for Health Policy and Systems Research)，并在全球范围内推动卫生政策与体系研究的发展。2017年4月，由世界卫生组织和卫生政策与体系研究联盟组织的“卫生政策与体系研究20年回顾”会议在瑞典斯德哥尔摩举行。会议期间，首部《卫生政策与体系研究世界报告》(World Report on Health Policy and Systems Research)发布。</p></li>
+</ul>
+</li>
+</ul>
+<p>AI-ready health workforce</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://doi.org/10.1111/1744-7941.12325">Artificial intelligence in health-care: implications for the job design of healthcare professionals</a></p></li>
+<li><p><a class="reference external" href="https://www.wired.co.uk/article/artificial-intelligence-medicine-machine-vision">Doctors, Get Ready for Your AI Assistants</a></p></li>
+<li><p><a class="reference external" href="https://ts2.space/en/ai-in-medical-education-training-the-next-generation-of-ai-ready-doctors/">AI in Medical Education: Training the Next Generation of AI-Ready Doctors</a></p></li>
+<li><p><a class="reference external" href="https://www.forbes.com/sites/robertpearl/2023/10/04/the-ai-empowered-patient-is-coming-are-doctors-ready/?sh=2be5ca6d6d50">人工智能患者即将到来：医生准备好了吗？</a> 人工智能（AI）长期以来一直被誉为医学领域的新兴力量。自 2000 年代初以来，医疗保健领域技术变革的承诺在医院大厅和医疗会议上回响。但尽管经过 20 多年的炒作，人工智能对医疗实践和美国健康的影响仍然可以忽略不计（放射成像和预测分析等领域有一些例外）。因此，医生和医疗保健管理人员对 ChatGPT 等生成式人工智能工具所提供的好处持怀疑态度，这是可以理解的。</p></li>
+</ul>
+<p>Health Systems Science – A Primer for Radiologists</p>
+<ul class="simple">
+<li><p>Health systems science (HSS) is an educational framework to promote improved care through enhanced citizenship and the training of systems-fluent individuals trained in the science of health care delivery.</p></li>
+<li><p>The HSS framework organizes elements of system-based practice for radiology trainees, promoting practice-readiness for providing safe, timely, effective, efficient, equitable and patient-centered radiological care.</p></li>
+<li><p>radiology-specific curricular elements aligned with the HSS framework, and provide teaching resources both for classroom education and for resident self-study.</p></li>
+</ul>
+<p>HSS for pediatric</p>
+<ul class="simple">
+<li><p>HSS is the science of health care delivery, including how health professionals collaborate and how the health care system can improve patient care and health care delivery.</p></li>
+<li><p>A foundational understanding of the HSS framework can aid pediatric professionals to identify and close gaps btw health and health care</p>
+<ul>
+<li><p>through longitudinal care, with strategies including care coordination, advocacy, and incorporation of telehealth.</p></li>
+</ul>
+</li>
+<li><p>Pediatric professionals must have an understanding of pediatric-relevant health economics and health policy, as well as the structural and social determinants of health.</p></li>
+</ul>
+<p><a class="reference external" href="https://shop.elsevier.com/books/health-systems-science/skochelak/978-0-323-69462-9">Health Systems Science</a></p>
+<ul class="simple">
+<li><p>This increasingly important branch of health care explores how health care is delivered, how health care professionals work together to deliver that care, and how the health system can improve patient care and health care delivery. 这一日益重要的医疗保健分支探讨了医疗保健的提供方式、医疗保健专业人员如何共同提供医疗服务，以及医疗系统如何改善患者护理和医疗保健服务。</p></li>
+<li><p>Along with basic and clinical sciences, HSS is rapidly becoming a crucial ‘third pillar’ of medical science, with an emphasis on understanding the role of human factors, systems engineering, leadership, and patient improvement strategies that will help transform the future of health care and ensure greater patient safety. 与基础科学和临床科学一样，HSS正在迅速成为医学科学的重要“第三支柱”，重点是了解人为因素、系统工程、领导力和患者改善策略的作用，这将有助于改变人类的未来。医疗保健并确保更大的患者安全</p></li>
+</ul>
+<p><a class="reference external" href="https://doi.org/10.1080/0142159X.2021.1924366">Health systems science education: The new post-Flexner professionalism for the 21st century</a></p>
+<ul class="simple">
+<li><p>The foundations of medical education have drawn from the Flexner Report to prepare students for practice for over a century. These recommendations relied, however, upon a limited set of competencies and a relatively narrow view of the physician’s role. There have been increasing calls and recommendations to expand those competencies and the professional identity of the physician to better meet the current and future needs of patients, health systems, and society. 一个多世纪以来，医学教育的基础源自弗莱克斯纳报告，为学生的实践做好准备。然而，这些建议依赖于有限的能力和对医生角色的相对狭隘的看法。人们越来越多地呼吁和建议扩大医生的能力和专业身份，以更好地满足患者、卫生系统和社会当前和未来的需求。</p></li>
+<li><p>We propose a framework for the twenty-first century physician that includes an expectation of new competency in HSS, creating ‘system citizens’ who are effective stewards of the health care system. Experiential educational strategies, in addition to knowledge-centered learning, are critically important for students to develop their professional identity as system citizens working alongside interprofessional colleagues.</p></li>
+<li><p>Challenges to HSS adoption range from competing priorities for learners, to the need for faculty development, to the necessity for buy-in by medical schools and their associated health care systems. Ultimately, success will depend on our ability to articulate, encourage, support, and evaluate system citizenship and its impact on health care and health care systems.</p>
+<ul>
+<li><p>我们为二十一世纪的医生提出了一个框架，其中包括对卫生系统科学（HSS）新能力的期望，创造“系统公民”，他们是卫生保健系统的有效管理者。除了以知识为中心的学习之外，体验式教育策略对于学生发展其作为系统公民与跨专业同事一起工作的职业身份至关重要。采用 HSS 面临的挑战包括学习者优先考虑的竞争、教师发展的需要、医学院及其相关医疗保健系统支持的必要性。最终，成功将取决于我们阐明、鼓励、支持和评估系统公民身份及其对医疗保健和医疗保健系统的影响的能力。</p></li>
+</ul>
+</li>
+<li><p>AMA is promoting <a class="reference external" href="https://www.ama-assn.org/education/changemeded-initiative/teaching-health-systems-science">“Teaching health systems science”</a></p></li>
+<li><p>health systems science in medical education. Modern healthcare is inextricably linked with the complex systems that shape the delivery of care and public health policy. With research showcasing how health systems science has enhanced patient outcomes, streamlined workflows, and fortified healthcare resilience during times of crisis, the understanding of these systems is fundamental for aspiring healthcare professionals.</p></li>
+</ul>
+</section>
+<section id="id2">
+<h3><span class="section-number">26.3.3. </span>數量的問題<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>四個面向是幾個可以進行的研究議題，或許藉著比較Australia與Taiwan的醫學教育與醫師人力供給，可以得出一些有意義的論點。</p>
+<p>台灣透過醫學院招生的人數限制，控制醫師人數的增長。長期以來，招生總數限制在1300人。
+對這個現象，我的解釋是利益團體(interest group)理論。醫師透過限制加入醫師這一行的人數的增長，以保護自己的所得利益。經濟學文獻中，Friedman and Kuznets (1954)是最早指出，醫師執照制度的最大功用是限制加入，使醫師可以維持高所得。</p>
+<p>台灣沿襲日本殖民統治與日本醫學教育的傳統，能考上大學醫學系的學生，都是最頂尖的學生。醫學系的最低錄取分數長期以來皆是大學各類科系中最高的。所以讀醫科的人皆是台灣最聰明的頂尖學生。多年下來，醫師在台灣不只是所得高，也是政治影響力最大的一群專業人士。在政治界，醫師也佔有很高的比例。現在台灣的副總統與南北兩個大都市的市長皆是醫師出身。
+透過強有力的利益團體組織，台灣的醫師一直反對政府擴增醫學院的招生名額。他們反對的理由是這會降低品質(quality)，但背後沒說出的真正原因是維護自己的高所得利益，避免醫師人數供給增加對醫師所得帶來的負面影響。</p>
+<blockquote>
+<div><p>Chengxiang reply (醫學院招生的人數限制)</p>
+</div></blockquote>
+<p>I have been interested in an assumption, which I think few previous studies looked at:</p>
+<ol class="arabic simple">
+<li><p>Whether there is a stable (or consistent) proportion of “potentially appropriate” medical students for each age cohort, given high-level requirements for physicians in terms of both IQ and EQ?</p></li>
+<li><p>If so, can we estimate this number or scale?</p>
+<ul class="simple">
+<li><p>when I examined the impacts of COVID on the medical students supply, I found that the number of medical school applicants can be increasing because of socially fighting global pandemic. It implies</p></li>
+</ul>
+</li>
+<li><p>If so, how can we further estimate this number or range? by examining what factors? e.g. IQ?</p></li>
+<li><p>Given the fact that the physicians’ selection or supply is a life-long dynamic process, and the relative small proportion of medical students for each age cohort within a community (e.g. n=1300), can we recruit medical school applicants from any age cohort (e.g. year 18 - 40) that are policy implications?</p></li>
+<li><p>if we recruited more “inappropriate (heterogeneous preference and intelligence)” medical students, for example, in China, it will result in both mismatch of talents and adverse selection problems.</p></li>
+<li><p>if medical practitioners may also realise that they are inappropriate doctors at any age,</p>
+<ul class="simple">
+<li><p>we should carefully design input-pipelines with wide-range of ages, and multiple output-pipelines, which further advocate to the perspective of a market-oriented physician supply, in contrast to the government allocation approach of physicians</p></li>
+</ul>
+</li>
+<li><p>I was inspired by the issues studied by medical education researchers, for example, the selection of medical students. They invested lots of resources to find out a good match between students and physicians.</p>
+<ul class="simple">
+<li><p><font color='red'>你提到招收medical student是否match的問題，在國外用申請的方式或許decision makers可以有一些操作的空間。但在台灣指認大學入學考試的分數，似乎考慮的只有IQ，沒有辦法納入其他因素的考慮。而且名額已經被管制，也無法多收 。我不確定可以收集到台灣申請讀醫學院人數的資料，你提到的申請人數是中國的資料嗎？</font></p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="id3">
+<h3><span class="section-number">26.3.4. </span>地區分配的問題<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>當在討論醫師人數的問題時，多數人皆認為問題是出在分配，也就很多偏遠地區沒有足夠的醫師。這個問題是很多國家共同面對的，有很多解決的方法。台灣的解決方式是長期仰賴公費醫師的做法，也就是在高中畢業生選讀醫學系時，將招生名額分為「自費」與「公費」兩類。公費就是免學費同時支領生活津貼，自費就是要自己負擔學費。公費生畢業後要先到remote area服務六年或八年，自費生則沒有這項限制。這項政策多年實施下來，解決一部份偏遠地區的under supply問題，但公費生也多在服務期滿後就回到都市，偏遠地區醫師不足的問題永遠存在。</p>
+<p>我的觀點是政府一直控制醫學院招生的數量，所以醫師人數沒有多到可以從都市外溢到鄉村的機會，也就是都市的醫師還沒有多到把一些醫師逼到鄉村去的情形，因此無從驗證經濟學的location theory是否可以發揮作用。當然研究上可以驗證區域之間的醫師人力分配差異在長期是converge or diverge. 這個議題我跟秦雪征用中國的資料做過，發表在<a class="reference external" href="https://doi.org/10.1016/j.chieco.2014.09.010">2014的China Economic Review</a>。</p>
+<blockquote>
+<div><p>Chengxiang reply</p>
+</div></blockquote>
+<p>The system of Public-Funded Physicians in Taiwan, as an input-pipeline for physicians, is not only adopted by Taiwan, but also by many other countries. As far as I know, Thailand (at least since 50 years ago), China (since 20 years ago), and even Australia (Charles Sturt Uni) are implementing the same physicians’ training system for their rural and remote areas. In my view, it is a common way that governments attempt to fix the problem of market failure by using government subsidised education.</p>
+</section>
+<section id="if-you-build-it-hospital-they-doctors-will-come-an-empirical-test-of-geographical-distribution-of-doctors">
+<h3><span class="section-number">26.3.5. </span>If you build it (hospital), they (doctors) will come：an empirical test of geographical distribution of doctors<a class="headerlink" href="#if-you-build-it-hospital-they-doctors-will-come-an-empirical-test-of-geographical-distribution-of-doctors" title="Link to this heading">#</a></h3>
+<p>研究構想</p>
+<p>台灣的醫師有兩個執業的方式: (1) 受聘於醫院，領醫院的薪水，(2)自己開診所，自己當老闆。所以一般人看醫師有兩個選擇，一是到診所看醫師，另一個是到醫院。</p>
+<p>在這兩種執業方式中，自己開業的診所醫師佔比在台灣有逐漸下降的趨勢。我的解釋是醫學技術進步讓投資診所資本設備的資金(包括場地租金與設備成本)愈來愈高，個別醫師很難負擔得起。在這個趨勢下，醫院的地理分佈就會對醫師的地理分佈有顯著的影響。醫院蓋到哪裡，醫師就會跟到哪裡。所以若要解決醫師人力分配不均的方式，就要先解決醫院的地理分配不均。沒有醫院的偏遠地區就不大可能有醫師會去執業。</p>
+<p>這讓我想起多年前的一部電影(field of dream)中的一個對白：If you build it, they will come. 這是不是也意味著一個偏遠地區如果蓋好一家醫院，醫師就會來。也就是醫師的地理分佈的影響，基本上是受到醫院地理分佈的限制。醫師的主要就業場所是醫院，醫院蓋到哪裡，醫師就會到哪裡。所以驅動醫師地理分佈的力量，是醫院的設置地點：If you build it (hospital), they (doctors) will come.</p>
+<p>我想驗證這個理論，但想先和你討論計量上如何做？</p>
+<blockquote>
+<div><p>Chengxiang reply</p>
+</div></blockquote>
+<p>通過醫院來壟斷醫師，這點中國也是如此，而且更甚。</p>
+<ol class="arabic simple">
+<li><p>一個想法是用地區之間的病床數(number of hospital beds per 1000 population)差異來解釋地區之間的醫師人數(number of doctors per 1000population)差異。這樣對嗎？是不是會有時間落差(time lag)，例如用t-1期的hospital bed density 來解釋t期的physician density。若有lag response，要lag幾期？</p>
+<ul class="simple">
+<li><p>这个lag可能需要用数据来尝试</p></li>
+</ul>
+</li>
+<li><p>但是hospital bed density也是會有內生(endogenous)的問題，這個研究若要投稿在經濟期刊，一定要解決內生問題。How to proceed?</p>
+<ul class="simple">
+<li><p>我第一个想到的是instrumental variables，寻找一个工具变数</p></li>
+</ul>
+</li>
+<li><p>這個故事如果有賣點？從你的觀點看要如何做量化分析？</p>
+<ul class="simple">
+<li><p>我很喜欢这个idea，如果能找到一个好的工具变数，应该是一个好故事</p></li>
+</ul>
+</li>
+<li><p>我可以搜集的是台灣縣市別的panel data，包含30餘年20來個縣市資料，如資料compatible，或許可與澳洲一齊比較？</p>
+<ul class="simple">
+<li><p>可能用中国的数据对比更好，过去十年中国经历了极其迅速的城市化和新医院的兴建。</p></li>
+</ul>
+</li>
+</ol>
+<p>PS: 大綜合醫院是百年前的產物，有很多的弊端，已不適合今天的醫療技術。人類的康復技術在過去幾十年有了大幅提升，还有麻醉技術，這導致了發達國家高達80%的手術不需要住院。建設成本低，運營成本低的門診手術/Day Surgery 普及社區，可大大降低病人手術費用，救病人家庭于水火。
+這種不理會新技術，不理會新理念的發展還在繼續中，高建設成本，高運作成本的超大型綜合醫院，必然導致昂貴的手術費用和住院費用，這會讓成千上萬的中國病人傾家蕩產，這難道不讓人痛心？</p>
+<p>美英澳等國的Day Surgery 有的已可以停留48小時，已在向接納大型手術的方向發展，而由於Day Surgery 的普及與快速發展，美英澳等的平均住院天數已經從十年前的5天降至今天的4天。手術後當日回家已經佔有70% 以上的手術量，也許多少年後人類醫院的病房就可以取消了。正是因為住院時間很短，快速康復技術的應用英國才能有好的設施。但中國反其道而行之，以建大醫院為榮。這預示著什麼？預示著過去30年所建的昂貴病房大樓將成一堆廢混凝土。</p>
+<p><strong>Prof Hsieh</strong></p>
+<p><font color='red'>第二個問題是用中國的資料做醫院興建對醫師人力地理分佈的影響，你如有這方面的資料，當然可以嘗試。</p>
+<p>你提到國外醫院在downsize的趨勢，我完全同意。最近看OECD health statistics的數據，我有注意到很多國家每萬人口病床數近幾年都在下降，亞洲國家如日本與韓國則沒有這個趨勢，都還在增加。台灣與中國好像也是一樣，似乎我們依然相信病床數的增加more is better。
+這就牽涉到我們仍然在發展hospital-center health system，而不是patient-center health system。
+我在寫「誰在吃健保」這本書時，就有注意到台灣在1995年實施全民健保之後，醫院就愈蓋愈多，醫院產業一片欣欣向榮之勢。但醫師與護士似乎被剝削得更厲害。所以台灣的媒體才常有「血汗醫護」的說法。所以我在書上有提到說，如果支付制度不改，還是以論量計酬為主，那醫院就會愈開愈大，再多的健保經費就會全被醫院吃掉。
+所以，台灣現在還有很多大醫院正在興建中，跟你說的歐美趨勢正好相反。為什麼呢？或許可寫一篇英文的投書，投稿Lancet的讀者建議或觀點之類，為什麼東西方的醫院產業發展趨勢呈現相反的方向？</font></p>
+<p><strong>Chengxiang</strong></p>
+<p><font color='red'>如果东西方医院床位有如此差异，这非常有意思，感觉是一个医疗领域的东亚问题，让人想到布法罗那个枪击凶手的宣言一部分：“当我提到东亚人时，我指的是那些日本、韩国和中国东部的后裔。我认为东亚人是相当令人钦佩的。普通的东亚人往往比普通的白人在学术上表现得更好，这当然会导致更多的技术和高薪工作。这都是由于优越的传统价值观和遗传学。然而，他们并不属于白人文明的范畴。为了保护我们的文化和民族，我们必须在物理上进行分离。白人和东亚人将引领技术进步，我们将成为亲密的朋友，但绝不是恋人。我担心他们遇到的问题，例如人口减少的社会，不断上升的精神疾病病例，以及试图取代现实关系的虚拟关系。我希望在他们的社会崩溃并被其他种族取代之前，他们能解决这些问题。” – 看了真感慨，下图是教育成本差异比较</font></p>
+<p><img alt="" src="https://raw.githubusercontent.com/ctang83/NB_img/main/raising_child_cost_countries.jpg" />{width=50%}</p>
+</section>
+<section id="under-vs-post">
+<h3><span class="section-number">26.3.6. </span>醫學教育的方式Under vs. Post<a class="headerlink" href="#under-vs-post" title="Link to this heading">#</a></h3>
+<p>台灣的醫學系學生，是招收高中畢業生生進大學，要讀七年（含一年的實習）。後來有一些大學仿效美國的做法，招收大學畢業生來讀醫學系，要再讀四年。台灣把這個制度稱為學士後醫學系。最近這個問題又再浮現，是因為有三個大學最近拿到設立學士後醫學系的許可。可以預期的，未來台灣的醫師會有兩種：一個是高中畢業就進入醫學系，另一種則是大學畢業後才開始讀醫學系。這兩種教育管道的差異引發一個學術上值得研究的問題：不同的教育管道對quality and quantity的意涵是什麼？也就是就醫學教育的品質而言，哪一種管道比較好？就增加醫師人力的供給而言，哪一種管道比較快？</p>
+<p>我的了解是英國採取第一種制度，美國第二種制度。其他歐洲國家與澳大利亞又是如何，或許可藉此比較不同的醫學教育制度對醫師人力供給的影響。</p>
+<blockquote>
+<div><p>Chengxiang reply</p>
+</div></blockquote>
+<p>The medical education system in both Australia and Taiwan are experiencing an updating, in which more and more Bachelor degree medicine programs are abandoned while MD (Doctor of Medicine) Programs are increasing.</p>
+<ol class="arabic simple">
+<li><p>From undergraduate level education to postgraduate level education, implied</p>
+<ol class="arabic simple">
+<li><p>longer years (time cost) of training in tertiary schools, including both universities and medical schools</p></li>
+<li><p>higher financial costs following longer training period</p></li>
+<li><p>Graduate-entry med courses at public universities that offer the MBBS (or equivalent) don’t have full fees for domestics as they’re still classified as an undergraduate (bachelor-level) qualification. The “postgraduate” med courses (ie. the MD courses) can charge full fees for domestic places as they’re technically an extended masters level course. As can the private universities.</p></li>
+<li><p>They also offer an opportunity for those who have previously completed an undergrad course to do med in a shorter amount of time (ie. maybe someone did a commerce degree and subsequently decided that they wanted to do med - if one had the grades to get into graduate med, I would assume that the person would prefer to do a 4 year course as opposed to a 5/6 year undergrad).</p></li>
+</ol>
+</li>
+<li><p>So far, there are rare literature investigating reasons and influences regarding this change to medical education system and further physician supply</p></li>
+</ol>
+<p>Our questions are as below:</p>
+<ol class="arabic simple">
+<li><p>Whether there is a trade-off between costs and benefits</p>
+<ul class="simple">
+<li><p>benefits: higher quality of health care provision</p></li>
+</ul>
+</li>
+</ol>
+<p><strong>literature</strong></p>
+<p>Undergraduate and postgraduate medical education in Canada [&#64;GrayRuedy-6634]</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.cmaj.ca/content/158/8/1047.short">An overview of medical education</a> at both the undergraduate and postgraduate levels in Canadian faculties of medicine is provided. Particular attention is focused on changes that have occurred in the 1990s and their effect on medical students and on educational programs. Also considered are the effects of reductions in the number of entry-level positions for residency training and the changes in educational requirements for licensure on senior medical students.</p></li>
+</ul>
+</section>
+<section id="vs">
+<h3><span class="section-number">26.3.7. </span>專科教育 vs. 全科教育<a class="headerlink" href="#vs" title="Link to this heading">#</a></h3>
+<p>台灣的醫學教育與美國類似，比較強調專科醫師的訓練。台灣缺乏像英國GP的全科醫師訓練。台灣有一種名詞叫家醫科，但家醫科似乎也是眾多專科內的一科，與英國GP的概念似乎又是不同。或許我們可藉此機會探討一下培養全科與專科醫師對醫療體系的意涵。我知道全科醫師下，可以發展出patient-center health system, 而在專科醫師當道的台灣與美國，似乎只能發展出hospital-center health system。
+中國最近好像推出一個法案，要認真建立primary care system，要如何解決全科教育的問題，目前中國醫學教育培養出來的醫師是不是也類似台灣，大部分是專科醫師？澳大利亞的情形如何？</p>
+<blockquote>
+<div><p>Chengxiang reply</p>
+</div></blockquote>
+<p>台湾的家医科</p>
+</section>
+<section id="ev-job">
+<h3><span class="section-number">26.3.8. </span>EV job<a class="headerlink" href="#ev-job" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Seek 订阅了两个关键词</p></li>
+<li><p>我想做的是叫 Automotive Electrician (Auto electrician, 会有 Top 10 Best Auto Electricians), Automotive Electric Vehicle Technician, EV Technician</p></li>
+<li><p>学徒常叫 Apprentice Automotive Technician (1st Year)</p></li>
+<li><p>现在澳洲就Tesla和BYD两家电车最大，Tesla比较难进，eagers automotive代理BYD维修和学徒</p></li>
+</ul>
+<p>Course</p>
+<ul class="simple">
+<li><p>Certificate III in Automotive Electric Vehicle Technology (AUR32721)</p></li>
+<li><p>TAFE NSW 还没有这个课程，QLD是23年10月才有，离我最近的课程是堪培拉的CIT</p></li>
+</ul>
+<p>Funding</p>
+<ul class="simple">
+<li><p>符合“Australian Apprenticeships Priority List”, 可以从“Australian Apprentice Training Support Payment”拿到5k</p></li>
+<li><p>符合“Supporting New Clean Energy Apprenticeships”，可以从“New Energy Apprenticeships Program”拿到1w</p></li>
+</ul>
+</section>
+</section>
+<section id="id4">
+<h2><span class="section-number">26.4. </span>2023<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>数学竞赛</p>
+<ul class="simple">
+<li><p>AIMO (Australian Intermediate Mathematics Olympiad), Sep</p></li>
+<li><p>AMO, Feb, two-day contest comprising four questions each day, 200 students are invited, conducted under school supervision, to select students to attend the AMOC Selection School.</p></li>
+<li><p>AMOC (Committee) School of Excellence, Dec; and AMOC Senior Contest, August</p></li>
+</ul>
+</li>
+<li><p>If 准备明年<strong>AIMO</strong>: 10 questions, 8 requiring an integer answer, 2 requiring written solutions which may include proofs. Total 35 marks. Topics:</p>
+<ul class="simple">
+<li><p>Parallels, Similarity, Pythagoras’ theorem, Circles and tangents</p></li>
+<li><p>Diophantine equations, Counting techniques, Number bases, Congruences</p></li>
+<li><p>Expansion and factorisation, Inequalities, Sequences and series</p></li>
+<li><p>Methods of proof, and Probability</p></li>
+</ul>
+</li>
+<li><p>Resources:</p>
+<ul class="simple">
+<li><p>Udemy有两套Dr Sun的AIMO课程，对19-20真题有讲解视频，涉及知识点和上面对应，悉悉所有知识点都已学到过了</p></li>
+<li><p>99-22年真题</p></li>
+<li><p><a class="reference external" href="https://artofproblemsolving.com/wiki/index.php/Resources_for_mathematics_competitions#AMC_10.2F12_Preparation">美国的资源</a></p></li>
+<li><p><a class="reference external" href="https://www.amt.edu.au/aimo">AMT</a></p></li>
+</ul>
+</li>
+<li><p>10岁以前如何学习数学分析？**</p>
+<ul class="simple">
+<li><p>对于真正的分析(以及大多数高等数学课程)，讲座实际上只能帮助解释一些复杂的证明并强调证明示例中的关键公理、定理等。困难的部分是学习如何以直觉与严谨相结合的方式掌握和创建抽象定义之间的联系，需要大量解决问题并花费时间来真正反思材料。如果材料感觉很硬，可能不是因为你做错了什么。但是一个好的系列讲座可以通过更直观的表示和类比来帮助澄清一些复杂的语言。</p></li>
+<li><p>在真正学会用数学方法证明事物之前，一个人应该了解多少数学知识?老实说，不多。为了证明某件事，你几乎不需要大多数人在听到“数学”这个词时想到的任何东西(数字、几何、三角学、微积分等)。要以数学方式证明事物，唯一需要的是能够使用数学逻辑推理出事物的大脑。有些人天生就有能力做到这一点，无需任何培训，而另一些人则需要培训。</p></li>
+<li><p>这就是数学逻辑的实际应用，无需使用任何“无聊的数学”公式、数字、微积分、三角学等。以上是一个成熟的、完全可以接受的数学证明。这就是数学家实际上所做的!他们不会花时间积分复杂的积分或求解看起来丑陋的微分方程;他们花时间逻辑地解决问题。这就是数学的意义所在:逻辑思考、解决问题、玩游戏，以及为什么不享受乐趣!我说”应该是”而不是“是”，因为不幸的是，数学课程几乎没有(如果有的话)在数学的这一方面进行太多冒险，而是更愿意为学生提供现成的“食谱”，让他们盲目地遵循以便解决他们的问题。</p></li>
+<li><p>几乎每个人都说你需要微积分。我强烈不同意这一点。我认为微积分应该只教给那些只会做计算但永远看不到证明的学生。我认为在分析之前学习微积分甚至可能会适得其反。微积分本质上是一门食谱课程，这种态度是开始学习真正的数学的主要困难，接触它越少越好。</p></li>
+</ul>
+</li>
+<li><p>数学成熟度</p>
+<ul class="simple">
+<li><p>数学分析的唯一真正先决条件是“数学成熟度”。除此之外，我想你还需要高中代数的基本能力。但数学成熟度是一个非常神秘的概念，当你得到它时你没有意识到，并且你不知道(………或者至少，<em>我</em>不知道)如何将它传授给其他人。从第一手经验来看，当你试图学习一些你在数学上还不够成熟而无法学习的东西时，就会出现这样的情况。(就我而言，我尝试在学完微积分之后立即学习拓扑。也许可以做到，但我选择了一本糟糕的教科书来做到这一点)。</p></li>
+<li><p>你终于从商店/图书馆/任何地方拿到了那本书。你阅读了引言，阅读了定义 1.1，一切都很好。在定义 1.7 或引理 1.8 的某个地方，它变得有点奇怪。从某种意义上来说你还是理解的。这并不是说他们使用了您以前从未听说过的公式或事实。您阅读了一个证明(或一个有效的示例)，并且理解了每个单独的步骤，但您没有感知到它的任何“流程”。如果您正在阅读证明或示例，并且必须在句子中间翻页，那么您不知道证明是否会在该句子处结束，或者是否需要另外两个句子或两个段落。你只是随波逐流。这一切看起来都是那么随意，它似乎与您认为正在学习的主题完全无关。当你到达定理 1.10 时，你就会感觉到你正在推动符号。这不是数学，而是一种反常的填字游戏。</p></li>
+</ul>
+</li>
+<li><p>父母决定孩子的职业是“职权骚扰”</p>
+<ul class="simple">
+<li><p>父母只是个人生命中一个短暂的“职业”，父母只是文化意义上的叫法，法律上的名词可以叫“未成年人监护人”</p></li>
+<li><p>孩子的人生是别人的人生，父母可以“影响”，但是不能去“决定”</p></li>
+</ul>
+</li>
+<li><p>Minecraft和数学学习</p>
+<ul class="simple">
+<li><p>Minecraft如何与数学学习联系起来？这里面很有意思</p></li>
+<li><p>悉悉受同学的影响，非常喜欢上了Minecraft</p></li>
+<li><p>进一步还可以引入python，将Minecraft和Python联系起来，比如利用Python coding如何进入Minecraft的世界</p></li>
+</ul>
+</li>
+<li><p>超常儿童如何利用网课</p>
+<ul class="simple">
+<li><p>大学网课：一个偶然的机会，悉悉开始在Coursera平台上网课，结果他非常喜欢这种形式，5个月完成了4门大学课程，包括悉尼大学的微积分，新南威尔士大学的力学，斯坦福大学的数学思维，和约翰霍普金斯大学的Python应用微积分。</p></li>
+<li><p>比较一下Coursera和Udemy这两个网课平台：</p>
+<ul>
+<li><p>Coursera主要是组织各个大学里的系所和教授提供的课程，比较成建制（按大学那种要求，有课中课后习题和评分），有点像课程的京东、天猫</p></li>
+<li><p>Udemy主要是个人，如私教、家教，课程内容更多样化（比如一个数论number theory能给你整出好多种教法），关键词搜索更多样化（比如搜lottery都有不少课程），像个淘宝</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>看到妈妈的圈帮她转一个，这个unsw的物理课很推荐（我选的[呲牙]），力学是所有物理的基础，这个力学课为了普及只涉及以三角代数为基础的物理，而非基于微积分的力学，但是覆盖面就如题目一样非常宽泛，比我小时候上的物理课不知好到哪了</p>
+<ul class="simple">
+<li><p>微积分入门后，要纯数学入门和物理入门，这样才能上这边高中的4U数学，因此给他申请了斯坦福大学的数学思维课免学费（blabla写了几百字免学费理由，居然通过了）和UNSW的力学课，另外还找了些科普让我这个门外汉得窥一斑，比如从逻辑学 集合论 群论抽代 到数论 实分析拓扑复分析 线代</p></li>
+<li><p>在我们引(付)导(钱)下，悉悉完成了微积分入门和Python应用微积分两门课程，都取得了90分以上的成绩和coursera证书。我不禁感概，未来已来，大学已死，作为高等教育工作者，我最近在搜索有啥在线大学学位，这不就是给大学掘坟墓嘛</p></li>
+</ul>
+</li>
+<li><p>乐透和数学：因为悉悉痴迷于乐透lottery的随机数字，爸爸顺势和他用Python写了一个乐透模拟器，爸爸还在悉悉的指导下第一次买了OZ乐透</p>
+<ul class="simple">
+<li><p>数学软件网站 <a class="reference external" href="https://saliu.com/gambling-lottery-lotto/lottery-math.htm">https://saliu.com/gambling-lottery-lotto/lottery-math.htm</a></p></li>
+<li><p>Australian Powerball Simulation网站 <a class="reference external" href="https://medium.com/australian-powerball-simulation-app/australian-powerball-simulation-app-4378dcbc5a5c">https://medium.com/australian-powerball-simulation-app/australian-powerball-simulation-app-4378dcbc5a5c</a></p></li>
+<li><p>网站 <a class="reference external" href="https://graphics.latimes.com/powerball-simulator/">https://graphics.latimes.com/powerball-simulator/</a></p></li>
+</ul>
+</li>
+<li><p>新州的数学分为四条线，这是非常科学的。但是即使如此，其最难的线（3U4U）还是不足以准备超常儿童未来的数学之路。于是我开展了一个小研究，即如何学习10年级后数学，到转型“新手数学人（数学系大一大二）” how to build a pathway from post-Year 10 math to a freshman mathematician?</p>
+<ul class="simple">
+<li><p>我刚开始的时候是想“悉妈昨晚总结了近半年悉悉的数学进(困)展(境)和破局，由于澳洲高中（十一年级）数学最难级一半是微积分及以上，被我抱怨人的算力升级比机器难多了，我还请教了朋友微积分和数学分析，现在的问题是怎么让悉悉交叉介入微积分和数学分析，以便走得更远更深入”</p></li>
+<li><p>我们以为数学是关于计算，其实数学更主要的是关于证明proofs，仔细想一想，“计算”的过程就是“证明”的过程（计算其实是证明这个long long式子，等于那个结果啊），所以，计算就是“一种证明”。反过来再想，证明不也是一种计算（推导）嘛？</p></li>
+<li><p>11-12年级的3U4U数学几个缺点：1 缺乏统一性，章节特别多，对缺乏数学史的小孩特别痛苦，无法用一条线或逻辑串起章节 2 不强调运用“证明”方法，更看重计算，但证明才是更高级的数学语言 3 计算机和Python已如此强大，但教材却不够应用-如用Python做数学建模，尤其微分方程</p></li>
+</ul>
+</li>
+<li><p>社交：悉悉人生第一次在家庭以外建立了自己的朋友圈，3个男生组成的铁杆，我们觉得这对他来说是特别了不起的事情。</p></li>
+<li><p>如何管理游戏时间：这个年龄悉悉和周围的同学们一起疯狂的喜欢上了电子游戏，爸爸顺势送了一台Switch游戏机给他，鼓励他玩好游戏。因为中间发生了“偷玩事件”，我们给了他一次狠狠的教训，他也因此学会了爸妈坐他的“游戏副驾驶”。</p></li>
+<li><p>全家的邮轮时间：悉悉的地理技能树应该是被上帝狂点过的，半年时间里，我们全家坐了两次邮轮，一次去昆士兰，一次是两个太平洋岛国-法属新喀里多尼亚和瓦努阿图</p>
+<ul class="simple">
+<li><p>记录一下，昨天坐在高空海面吃早餐悉悉突然问我，为什么海面是平的，地球是圆的呢？我回答，好问题，你这个月不是刚学calculus了嘛，我问你一个问题，如果你有一米的直尺但是想测量地球周长怎么办？你是不是测一下走一米然后往前测了四万千米又回到了这里，你那个一米是直的就是把地球微分四万千分之一，你走了一圈测量回来了就是把直尺积分成了一个圆形。他一下秒懂连说这个故事太有趣了</p></li>
+</ul>
+</li>
+<li><p>手球运动</p></li>
+</ol>
+</section>
+<section id="id5">
+<h2><span class="section-number">26.5. </span>2023年<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>受《 吉米诺维奇数学分析习题集》的启发， 同时对于中学数学的应试教育的不认同</p>
+<ul class="simple">
+<li><p>高中整整三年的数学学习， 全奔着一张150分的试卷， 以分数论英雄， 如同奥运会上的竞技， 有过之无不及。 但是这三年中， 学生的数学素养究竟提高了多少，却难说得很。高考试题， 有一个特点， 就是它会故意避开有固定结论的东西，比如说， 它会故意避开圆锥曲线的切线方程， 会故意避开三面角的余弦定理， 会故意避开线性递推数列的通项， 而偏偏是这些内容， 是最能够提升学生的数学素养的， 也是最有学习价值的内容， 为什么高考要故意避开它们呢， 是因为高考要防止学校的课堂成为课外结论识记比赛，它的指挥棒效应太显著了，以至于你想在高考试卷中考察一个教材上的定理的证明都成为不可能的事情，所以高考试卷会特意避开这些有固定结论的内容，这样导致的结果就是高考试题不太容易引起学生的兴趣，进而对数学也没什么兴趣，这不能不说是一个遗憾。</p></li>
+</ul>
+</li>
+<li><p>library gensis “Mathematical Proofs” 有很多数理逻辑、证明、数论的好书</p></li>
+<li><p>Google “high school math support”</p>
+<ol class="arabic simple">
+<li><p>Google “Mathematics Enrichment Club”</p></li>
+<li><p>Google “sydney math enrichment”</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jamesruse-h.schools.nsw.gov.au/learning-at-our-school/mathematics.html">James Ruse Agricultural High School</a>The study of mathematics</p></li>
+<li><p>Mathematical Association of NSW 提供 <a class="reference external" href="https://www.mansw.nsw.edu.au/student-activities/competitions">Student Activities</a> 里4个方面支持, 尤其是student support和competition.</p></li>
+<li><p><a class="reference external" href="https://nmss.edu.au/about/">National Mathematics Summer school</a>澳洲国家数学暑假学校, 每年8月报名, 次年1月两周培训, 完成Year 11 Extension 1的学生报名</p></li>
+<li><p><a class="reference external" href="https://www.amt.edu.au/enrichment">AMC Maths Enrichment</a>报名参加, 我看了里面的stage excerpts, 悉悉水平在Dirichlet (years 6–7)和Gauss (years 8–9)</p></li>
+<li><p><a class="reference external" href="https://www.sydney.edu.au/science/industry-and-community/community-engagement/mega-maths-day.html">Mega Maths Day</a>悉尼大学2022年11月活动注册</p></li>
+<li><p><a class="reference external" href="https://www.sydney.edu.au/science/industry-and-community/community-engagement/meet-a-mathematician.html">Meet a Mathematician</a>悉尼大学1h meeting发邮件</p></li>
+<li><p><a class="reference external" href="https://www.unsw.edu.au/science/our-schools/maths/engage-with-us/high-school-students-and-teachers/unsw-mathematics-enrichment-club">UNSW Mathematics Enrichment Club</a>: students from years 8 to 12. The club runs as an extra-curricular event at several Sydney schools, but everyone can join in by working through the weekly problem sheets.</p></li>
+<li><p><a class="reference external" href="https://nrich.maths.org/7737">支持高成就和有兴趣的学生 5 至 18 岁</a>: 剑桥大学数学学院的支持资源</p></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>Google “youngest HSC student”</p>
+<ul class="simple">
+<li><p>2014, 11-year-old</p></li>
+</ul>
+</li>
+<li><p>Google “mathematical geography”</p>
+<ol class="arabic simple">
+<li><p>Google “geography numeracy worksheets”:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.census.gov/programs-surveys/sis/activities/geography.html">US Census统计局Geography Worksheets</a></p></li>
+<li><p><a class="reference external" href="https://www.geography.org.uk/Curriculum-planning/Numeracy-and-geography">英国地理协会 numeracy and geography</a></p></li>
+</ul>
+</li>
+<li><p>Google “Mathematics and Geography Travel”</p></li>
+</ol>
+</li>
+<li><p>google “sydney primary school gifted math extension”</p>
+<ol class="arabic simple">
+<li><p>GERRIC program at UNSW provides <a class="reference external" href="https://www.unsw.edu.au/arts-design-architecture/our-schools/education/professional-learning/gerric-gifted-education/resources">a list of resources</a></p></li>
+<li><p>GERRIC suggest <a class="reference external" href="https://www.unsw.edu.au/content/dam/images/photos/campus/kensington/2021-06-ada-documents/2021-06-gifted_and_talented_directory_2018.pdf">Gifted and talented services</a></p></li>
+<li><p>why some gifted programs prefer extension approach rather than acceleration approach (跳级)?</p>
+<ul class="simple">
+<li><p>Gifted programs are often just an extension of existing studies. We wanted to expand on what was already on offer and bring in students from different domains of learning: academic, creative and athletic so we can cater for the learning needs of all high-potential students.</p></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p><a class="reference external" href="https://onlinelibrary.wiley.com/doi/book/10.1002/9781118367377">The Wiley Handbook of Genius</a>：一本从多学科研究超常儿童的书籍，涵盖天才的起源、特征、职业和后果，重点关注认知科学、个体差异、寿命发展和社会背景；探索个人天才、创造者、领导者和表演者，</p>
+<ul class="simple">
+<li><p>第15节<a class="reference external" href="https://doi.org/10.1002/9781118367377.ch15">Child Prodigies and Adult Genius: A Weak Link</a>资优儿童具有三个非典型特征：他们早熟，他们的学习方式与典型儿童不同，以及他们学习的强烈动机（表现出对掌握的狂热）。高智商天赋有时是全局性的（语言和数学领域表现出相当的能力）但也往往非常不均衡。有艺术天赋的孩子往往被贴上天赋而非天才的标签，但无论是学业天赋还是艺术天赋，他们都表现出相同的三个特征。天赋的迹象很早就出现了，在生命的头两三年，而且迹象是特定领域的。尽管试图从后天的角度来解释天赋，但没有证据可以让我们排除先天成分。资优儿童的家庭有一系列特征（例如，以儿童为中心、提供丰富的环境、有很高的期望、授予独立性），但我们不能断定这些特征会导致资优发展。天赋越极端，孩子就越难找到像他/她自己的人，因此孩子就越有可能出现社交和情感困难。童年天赋与成年天才之间的联系是微弱的：虽然许多有天赋的孩子在各自领域变得出色，但大多数不具备成年天才的资格。讨论了造成这种情况的许多可能原因，包括成为天才儿童的技能涉及对领域的掌握，而成为天才的技能涉及领域的转变。</p></li>
+<li><p>第19节<a class="reference external" href="https://doi.org/10.1002/9781118367377.ch19">The Study of Mathematically Precocious Youth at Maturity: Insights into Elements of Genius</a>，The Study of Mathematically Precocious Youth (SMPY)队列研究：智力早熟可能出现的许多不同方式，教育干预是否有帮助，那些成为杰出人士/不杰出人士的个人特征。提出了一个人才发展模型（天才的逆向工程学），该模型组织了卓越成就的关键认知cognitive、情感affective和意向conative等决定因素。</p></li>
+</ul>
+</li>
+<li><p>Parametric Functions 参数函数</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://xaktly.com/ParametricEquations.html">Definition</a></p></li>
+<li><p>B站video<a class="reference external" href="https://www.bilibili.com/video/BV1BL4y1F7JQ/?share_source=copy_web&amp;amp;vd_source=e42e20ab1743b1f80efcaa18a191ac13">1分钟搞懂参数方程的原理</a></p></li>
+<li><p>Wiki: <a class="reference external" href="https://en.wikipedia.org/wiki/Parametric_equation">Parametric equation</a></p></li>
+<li><p><a class="reference external" href="https://www.khanacademy.org/math/multivariable-calculus/thinking-about-multivariable-function/ways-to-represent-multivariable-functions/a/parametric-functions">Parametric functions, one parameter</a> from Lesson - Visualizing multivariable functions, <Multivariable calculus> at Khan Math website</p></li>
+</ul>
+</li>
+<li><p>Consequences of the Factor Theorem</p>
+<ul class="simple">
+<li><p>Factor Theorem <a class="reference external" href="https://baike.baidu.com/item/%E5%9B%A0%E5%BC%8F%E5%AE%9A%E7%90%86/284832">因式定理 or 因式分解定理</a>, 因式定理是余式定理(Remainder Theorem)的推论，即余式为0时的特殊情况。余式定理, 也叫多项式余数定理, 由由多项式除法的定义导出</p></li>
+<li><p>（多项式）因式定理（Factor theorem）与 余式定理（Polynomial remainder theorem) 多项式长除法(Polynomial long division), <a class="reference external" href="https://blog.csdn.net/lanchunhui/article/details/77140600">三者关系举例</a></p></li>
+<li><p>Videos: <a class="reference external" href="https://www.youtube.com/watch?v=QXc3vGQG1nk">Factor Theorem Consequences 1</a>, <a class="reference external" href="https://www.youtube.com/watch?v=ILwIlwfIpZQ">Factor Theorem Consequences 2</a>, <a class="reference external" href="https://www.youtube.com/watch?v=pjIeXjm2Fdk">Factor Theorem Consequences 3</a></p></li>
+<li><p>B站video<a class="reference external" href="https://www.bilibili.com/video/BV1Ti4y1M7fJ/?spm_id_from=333.337.search-card.all.click&amp;amp;vd_source=4bb452a07b47a412d37d165e5ff0e9b3">因式分解高手篇：长除法、试根法、余数定理、因式定理</a></p></li>
+<li><p><a class="reference external" href="https://www.khanacademy.org/math/algebra2/x2ec2f6f830c9fb89:poly-div/x2ec2f6f830c9fb89:remainder-theorem/v/polynomial-remainder-theorem-to-test-factor">Khan Math</a></p></li>
+<li><p><a class="reference external" href="https://www.geogebra.org/m/xzuGMC8t#material/tmT7PzGu">A Geogebra game</a></p></li>
+</ul>
+</li>
+<li><p>sums and products zeros</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.cuemath.com/algebra/sum-and-product-of-zeros-in-quadratic-polynomial/">introduction</a></p></li>
+<li><p>Videos: <a class="reference external" href="https://www.youtube.com/watch?v=BF5VxWUg92o">Quadratic Function Using Sum and Product of Zeros</a></p></li>
+<li><p>Videos: <a class="reference external" href="https://www.youtube.com/shorts/_X_xXLRavEw">How to find a sum and product of zeros a quadratic equation</a></p></li>
+<li><p><a class="reference external" href="https://www.varsitytutors.com/precalculus-help/find-the-sum-and-product-of-the-zeros-of-a-polynomial">例题</a></p></li>
+</ul>
+</li>
+</ol>
+<p><strong>Seeking for help</strong></p>
+<ol class="arabic simple">
+<li><p>寻求帮助USyd: <a class="reference external" href="http://www.maths.usyd.edu.au/u/de/">David Easdown</a> <a class="reference external" href="mailto:de&#37;&#52;&#48;maths&#46;usyd&#46;edu&#46;au">de<span>&#64;</span>maths<span>&#46;</span>usyd<span>&#46;</span>edu<span>&#46;</span>au</a></p>
+<ul class="simple">
+<li><p>Jonny finished his Calculus on Coursera</p></li>
+<li><p>He has interests in the interface between secondary and tertiary education</p></li>
+<li><p>His course <a class="reference external" href="https://www.sydney.edu.au/units/MATH3066">MATH3066: Algebra and Logic</a> fit Jonny</p></li>
+</ul>
+</li>
+<li><p>寻求帮助邮件- 阐述Jonny’s case</p>
+<ol class="arabic simple">
+<li><p>给James Ruse</p>
+<ul class="simple">
+<li><p>Irene Chork, the relieving Head Teacher of Mathematics at James Ruse Agricultural High School. I just wanted to update you on organising some enrichment for your son in Mathematics. We have Maths Enrichment and Olympiad classes before/after school with smaller class sizes. They begin around mid to late Term 1 and Jonny might enjoy these problem-solving mathematical challenges.</p></li>
+<li><p>Reply: he is currently self-studying an online-course named “Introduction to Calculus” provided by The University of Sydney on the Coursera platform.</p></li>
+<li><p>Sarah Powell, contact EPS Principal for Jonny’s math learning support.</p></li>
+</ul>
+</li>
+<li><p>给<a class="reference internal" href="#hpge&#64;det.nsw.edu.au"><span class="xref myst">Department of Edu</span></a>，specific enquiries related to High Potential and Gifted Education</p></li>
+<li><p>给大学\数学系\GERRIC邮件</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#office.MathsStats&#64;unsw.edu.au"><span class="xref myst">UNSW</span></a> and <a class="reference internal" href="#j.du&#64;unsw.edu.au"><span class="xref myst">Talented Students Program, Professor Jie Du</span></a></p></li>
+<li><p><a class="reference internal" href="#maths.schooloffice&#64;sydney.edu.au"><span class="xref myst">USyd School Office</span></a> general enquiries; General academic advice enquiries regarding Mathematics should be directed to <a class="reference internal" href="#advisor_degree_math&#64;maths.usyd.edu.au"><span class="xref myst">Dr Alexander Fish</span></a></p></li>
+<li><p><a class="reference internal" href="#steve.lack&#64;mq.edu.au"><span class="xref myst">MQ, Associate Professor Steve Lack, Director of Education,</span></a></p></li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "wolframlanguage14"
+        },
+        kernelOptions: {
+            name: "wolframlanguage14",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'wolframlanguage14'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="MCM.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">25. </span>Math Computational Methods</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="nb2022.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">27. </span>Notebook &lt;=2022</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wolfram-fp">26.1. Wolfram FP</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">26.2. 物理笔记</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#investigating-pi-and-e">26.2.1. Investigating Pi and e</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#he">26.3. HE</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ib">26.3.1. IB经济学</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interview-hrh">26.3.2. Interview: HRH</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">26.3.3. 數量的問題</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">26.3.4. 地區分配的問題</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-you-build-it-hospital-they-doctors-will-come-an-empirical-test-of-geographical-distribution-of-doctors">26.3.5. If you build it (hospital), they (doctors) will come：an empirical test of geographical distribution of doctors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#under-vs-post">26.3.6. 醫學教育的方式Under vs. Post</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vs">26.3.7. 專科教育 vs. 全科教育</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ev-job">26.3.8. EV job</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">26.4. 2023</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">26.5. 2023年</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jonny, assisted by Tom
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

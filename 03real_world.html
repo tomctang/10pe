@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Introduction &#8212; Jonny Workbook</title>
+    <title>18. Coding Theory &amp; Information &#8212; Jonny Workbook</title>
   
   
   
@@ -61,9 +61,11 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'README';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '03real_world';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="23. MIT_CS6001-Python" href="MIT_CS6001-Python.html" />
+    <link rel="prev" title="12. Combinatorics" href="02discrete_continuous.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -114,8 +116,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
@@ -171,7 +171,7 @@
 <li class="toctree-l1"><a class="reference internal" href="PE0hidden_math.html">4. PE-Hidden-Math</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Mathematics &amp; FP</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Alevel_math.html">5. A-level-math</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Alevel_math_further.html">6. A-level-further</a></li>
 <li class="toctree-l1"><a class="reference internal" href="00intro_math.html">7. Math-Combo of Secondary &amp; Tertiary Education</a></li>
@@ -185,7 +185,7 @@
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="03real_world.html">18. Coding Theory &amp; Information</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">18. Coding Theory &amp; Information</a></li>
 
 
 
@@ -278,7 +278,7 @@
       
       
       
-      <li><a href="_sources/README.md" target="_blank"
+      <li><a href="_sources/03real_world.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -288,7 +288,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -354,7 +354,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Introduction</h1>
+    <h1>Coding Theory & Information</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -364,10 +364,13 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software-and-files">Software and files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oop-to-fp">OOP to FP</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#image-within-citations">Image &amp; Within-citations</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">18. Coding Theory &amp; Information</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-analysis">19. Data analysis</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#statistics-probability-theory">20. Statistics &amp; Probability Theory</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#game-theory-decision-operation">21. Game Theory &amp; Decision &amp; Operation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-theory">22. Quantum Theory</a></li>
 </ul>
+
             </nav>
         </div>
     </div>
@@ -378,89 +381,25 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="introduction">
-<h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h1>
-<p>Any questions, please send me Email: <a class="reference external" href="mailto:jonny&#46;tang745&#37;&#52;&#48;education&#46;nsw&#46;gov&#46;au">jonny<span>&#46;</span>tang745<span>&#64;</span>education<span>&#46;</span>nsw<span>&#46;</span>gov<span>&#46;</span>au</a></p>
-<blockquote>
-<div><p><strong>Project Euler (PE)</strong></p>
-</div></blockquote>
-<p>Jonny’s workbook of <a class="reference external" href="https://projecteuler.net/">Project Euler</a>. Jonny loves coding and number theory, especially the PE-style (VS. CS-style) when he was 10YO. Therefore, Tom assisted him with guidance and searching hidden info and knowledge.</p>
-<p>PE problems can be solved using multiple approaches and often involve a combination of techniques.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="coding-theory-information">
+<h1><span class="section-number">18. </span>Coding Theory &amp; Information<a class="headerlink" href="#coding-theory-information" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="data-analysis">
+<h1><span class="section-number">19. </span>Data analysis<a class="headerlink" href="#data-analysis" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="statistics-probability-theory">
+<h1><span class="section-number">20. </span>Statistics &amp; Probability Theory<a class="headerlink" href="#statistics-probability-theory" title="Link to this heading">#</a></h1>
 <ul class="simple">
-<li><p>Sometimes, I face math problems while coding is easy, e.g. 99-Largest Exponential</p></li>
-<li><p>Sometimes, I face computational (or programming) problems while math is easy, e.g. 187-Semiprimes (very time-consuming)</p></li>
-</ul>
-<p>So, I need two streams of knowledge to solve PE:</p>
-<ul class="simple">
-<li><p>Math: see <strong>PE-Hidden-Math</strong> where I present math by PE questions and math-topics</p></li>
-<li><p><a class="reference external" href="https://github.com/leduckhai/Awesome-Competitive-Programming?tab=readme-ov-file">CS or Programming</a></p></li>
-</ul>
-<blockquote>
-<div><p><strong>A-level Math</strong></p>
-</div></blockquote>
-<p>After Jonny already went through 4U math (HSC in NSW) once, Tom chose A-level math for Jonny’s review and progress, with a approach of computational coding for A-level math. In this workbook, Jonny worked on A-level and A-level further which are transitional-math between secondary and tertiary education.</p>
-<section id="software-and-files">
-<h2>Software and files<a class="headerlink" href="#software-and-files" title="Link to this heading">#</a></h2>
-<p>While a qualified coder mastering 6 programming languages (PL), how to choose PLs is really a hard decision.</p>
-<ul class="simple">
-<li><p>We started this workbook using <strong>Python</strong> in VScode:</p>
-<ul>
-<li><p>Python (.ipynb): we start from Python, then we found Python’s <strong>SageMath</strong> - the second powerful CAS (computer algebra system).</p></li>
-</ul>
-</li>
-<li><p>We then started <strong>Mathematica (Wolfram languages, MMA or Wolfram</strong> after):</p>
-<ul>
-<li><p>Mathematica (.nb): the best CAS. Shall we convert .nb -&gt; .ipynb ??</p></li>
-</ul>
-</li>
-<li><p>Next, a PL with more FP? Ocaml? F#? Scala? Haskell? Rust? Make a comparison:</p>
-<ul>
-<li><p>1. PL’s Coding-look in defining a Fibonacci; 2. Which FP is best for mathematics? Haskell is NO.1, but I really don’t like Haskell; 3. Math-related supports for these four languages; 4. Balance between FP and OOP; 5. Number of users in Project Euler for each PL; 6. libgen supports for each PL; 7. When the PL first appeared.</p></li>
-<li><p>Decision: <strong>Rust &amp; Haskell</strong> in the next year.</p>
-<ul>
-<li><p>I spent one day to install Haskell locally and failed:(</p></li>
-</ul>
-</li>
-<li><p>Google endorse <a class="reference external" href="https://code.world/">Codeworld - Educational Haskell programming platform</a> with <a class="reference external" href="https://github.com/google/codeworld/tree/master">Github Repository</a></p></li>
-</ul>
-</li>
+<li><p>Discrete approach to Statistics/Probability through combinatorics</p></li>
+<li><p>Continuous approach to Statistics/Probability through measure theory (e.g. modelling Stochastic Processes)正态分布，是一种模型，对binomial分布进行模拟</p></li>
 </ul>
 </section>
-<section id="oop-to-fp">
-<h2>OOP to FP<a class="headerlink" href="#oop-to-fp" title="Link to this heading">#</a></h2>
-<p>We started workbook using Python in OOP (Object-oriented Programming) way, then we move to FP (Functional Programming) way in both MMA and Python.</p>
-<p>Even though both Python and Wolfram are not pure FP, they do help us understand the FP way.</p>
-<p>FP</p>
-<ol class="arabic simple">
-<li><p><a class="reference external" href="https://old.reddit.com/r/functionalprogramming/wiki/books">FP books</a></p></li>
-<li><p><a class="reference external" href="https://adabeat.com/fp/ease-into-functional-programming/?_gl=1*1r4s1nz*_up*MQ..*_ga*NDgxNzc4NDQ0LjE3MzA4MTAwMTg.*_ga_6RQG15HSGT*MTczMDgxMDAxNy4xLjAuMTczMDgxMDAxNy4wLjAuMA..">Adabeat - Ease into</a></p></li>
-<li><p><a class="reference external" href="https://github.com/nayuki/Project-Euler-solutions">PE code in Java, Python, Mathematica, Haskell</a>: Nayuki use OOP in Python and FP in Haskell.</p></li>
-</ol>
-<p>Python FP</p>
-<ol class="arabic simple">
-<li><p><a class="reference external" href="https://expression.readthedocs.io/en/latest/intro.html">FP in Python</a>: a web-notebook for beginner.</p></li>
-<li><p><a class="reference external" href="https://doc.sagemath.org/html/en/thematic_tutorials/functional_programming.html#">SageMath - FP4Mathematicians</a></p></li>
-<li><p><a class="reference external" href="https://adabeat.com/fp/functional-programming-in-python/?_gl=1*qsc6fw*_up*MQ..*_ga*MjAzMjkwMTE5MC4xNzMwOTQxODgx*_ga_6RQG15HSGT*MTczMDk0MTg4MC4xLjAuMTczMDk0MTg4MC4wLjAuMA..">Adabeat - FP in Python</a></p></li>
-</ol>
-<p>Wolfram FP</p>
-<ol class="arabic simple">
-<li><p><a class="reference external" href="https://reference.wolfram.com/language/guide/FunctionalProgramming.html">FP in Wolfram</a>: official website.</p></li>
-</ol>
+<section class="tex2jax_ignore mathjax_ignore" id="game-theory-decision-operation">
+<h1><span class="section-number">21. </span>Game Theory &amp; Decision &amp; Operation<a class="headerlink" href="#game-theory-decision-operation" title="Link to this heading">#</a></h1>
 </section>
-<section id="image-within-citations">
-<h2>Image &amp; Within-citations<a class="headerlink" href="#image-within-citations" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><p>Image-Hosting</p>
-</div></blockquote>
-<p>All figures are synchronised in Tom’s GitHub folder <code class="docutils literal notranslate"><span class="pre">./NB_img/</span></code>. Using codes to insert pic:</p>
-<p><code class="docutils literal notranslate"><span class="pre">&lt;img</span> <span class="pre">src=&quot;https://raw.githubusercontent.com/tomctang/NB_img/main/3bias.png&quot;</span> <span class="pre">alt=&quot;Causality-confounder&quot;</span> <span class="pre">width=&quot;500&quot;&gt;</span></code></p>
-<p>Markdown image center:</p>
-<p><code class="docutils literal notranslate"><span class="pre">&lt;div</span> <span class="pre">align=center&gt;![Figure.</span> <span class="pre">Various</span> <span class="pre">treatments</span> <span class="pre">choice</span> <span class="pre">for</span> <span class="pre">OA](https://raw.githubusercontent.com/ctang83/NB_img/main/EPS_OAtreat.jpg){width=60%}</span></code></p>
-<blockquote>
-<div><p>Within-citations</p>
-</div></blockquote>
-<p>Add {#mathFP} after titles, then use <code class="docutils literal notranslate"><span class="pre">[anytext](#mathFP)</span></code> in citing</p>
-</section>
+<section class="tex2jax_ignore mathjax_ignore" id="quantum-theory">
+<h1><span class="section-number">22. </span>Quantum Theory<a class="headerlink" href="#quantum-theory" title="Link to this heading">#</a></h1>
+<p>This is cornerstone of modern physics, with deep roots in Linear Algebra, Functional Analysis, DE, Complex Analysis, Group Theory, Probability &amp; Statistics, Topology, Measure and Variational Calculus</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -493,6 +432,24 @@
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="02discrete_continuous.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">12. </span>Combinatorics</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="MIT_CS6001-Python.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">23. </span>MIT_CS6001-Python</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -510,10 +467,13 @@
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software-and-files">Software and files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oop-to-fp">OOP to FP</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#image-within-citations">Image &amp; Within-citations</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">18. Coding Theory &amp; Information</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-analysis">19. Data analysis</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#statistics-probability-theory">20. Statistics &amp; Probability Theory</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#game-theory-decision-operation">21. Game Theory &amp; Decision &amp; Operation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-theory">22. Quantum Theory</a></li>
 </ul>
+
   </nav></div>
 
 </div></div>
