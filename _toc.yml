@@ -9,7 +9,6 @@ parts:
   - file: PE25
   - file: PE50
   - file: PE75     
-  - file: PE0hidden_math
 
 - caption: Mathematics & FP
   numbered: true
@@ -20,6 +19,7 @@ parts:
   - file: 01number_algebra
   - file: 02discrete_continuous
   - file: 03real_world
+  - file: PE0hidden_math
 
 - caption: CS & Physics
   numbered: true
@@ -32,7 +32,6 @@ parts:
   numbered: true
   chapters:
   - file: nb2024
-  - file: nb2022
   - file: nb_Jonny_notebook
   - file: nb_Geo
   - file: nb_lottery_simulator
