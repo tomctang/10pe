@@ -19,7 +19,6 @@ parts:
   - file: 01number_algebra
   - file: 02discrete_continuous
   - file: 03real_world
-  - file: PE0hidden_math
 
 - caption: CS & Physics
   numbered: true
