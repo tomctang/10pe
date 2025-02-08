@@ -19,6 +19,7 @@ parts:
   - file: 01number_algebra
   - file: 02discrete_continuous
   - file: 03real_world
+  - file: 04thinking
 
 - caption: CS & Physics
   numbered: true
