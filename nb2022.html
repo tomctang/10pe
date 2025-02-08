@@ -177,19 +177,20 @@
 <li class="toctree-l1"><a class="reference internal" href="01number_algebra.html">7. Number &amp; Algebra</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02discrete_continuous.html">8. Discrete &amp; Continuous</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03real_world.html">9. Real World Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04thinking.html">10. Thinking Skill</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">CS &amp; Physics</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="MIT_CS6001-Python.html">10. MIT_CS6001-Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MIT_CS6002-thinking.html">11. MIT_CS6002-CS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MCM.html">12. Math Comput Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MIT_CS6001-Python.html">11. MIT_CS6001-Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MIT_CS6002-thinking.html">12. MIT_CS6002-CS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MCM.html">13. Math Comput Methods</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Notebook</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="nb2024.html">13. Notebook 2023-24</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nb_Jonny_notebook.html">14. Combo notebook</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nb_Geo.html">15. Jonny Geo-Graph</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nb_lottery_simulator.html">16. Lottery Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nb2024.html">14. Notebook 2023-24</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nb_Jonny_notebook.html">15. Combo notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nb_Geo.html">16. Jonny Geo-Graph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nb_lottery_simulator.html">17. Lottery Math</a></li>
 </ul>
 
     </div>
@@ -664,6 +665,56 @@
 </section>
 <section id="id2">
 <h2>2010-2012年<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>分段线性回归–定义：　
+是用虚拟变量估计不同数量水平的解释变量对被解释变量的影响。在经济关系中，当解释变量X的值达到某一水平X′之前，与被解释变量之间存在某种线性关系；当解释变量X的值达到或者超过X′以后，与被解释变量的关系就会发生变化。此时，如果已知X的转折点X′，我们就可以用虚拟变量来估计每一段的斜率，也就是所谓的分段线性回归。</p>
+<p>分段回归链接：由非线性曲线回归引出来的→网络讲义；</p>
+<p>English wiki – segmented regression（简单而靠谱）；
+中文wiki （冗长复杂）—重点：在统计学中，分段回归分析(Piecewise regression analysis，PRA)，或简称分段回归(Piecewise regression)，在广义的回归分析(Regression analysis)中是一种方法或分析的策略。它试图在一个被分割的、可连续测量的随机样本空间里找到一个或多个随机的临界点(Critical point，Threshold)以便将整个随机样本空间分割为两个或多个子空间，并在此基础上为每个子空间拟合一个临界模型，从而以一组随机可变的回归模型来描述和预测整个随机空间上复杂的回归关系。
+不同的人在不同的时期和不同的领域使用了不同的术语来开发和表述他们各自的方法论，诸如，分割回归(segmented regression)、改变点回归(chang-point regression or changing-point regression)、漂移回归(shifting regression)、切变回归(switching regression)以及分段回归(piecewise regression)等。
+相应地，关于关键点或临界点的术语有分割点(segmenting point)、改变点(change-point, changing-point)、切点(cut-off pint)、节点(knot)、漂移点(shifting poing)、切变点(switching poing)、断点(breakpoing, breaking-point)、临界点(critical point or threshold)，等等。这里，分段回归(piecewise regression)和临界点(threshold)是最简单且含义上比较中性(这意味着在统计学中要对它们的性质作出概率推断)因而也是最好的一对术语，理应作为这个领域的正式术语。</p>
+<p>但是这段讨论比较吸引：（作者还在blog上有详细叙述）
+“分段线性回归” 请见古扎拉蒂，中文版（第三版）第514页例15.7，英文版第四版第319页例9.7：研究产出与总成本关系的。它想进行的检验就是：总成本的斜率是否在总产出达到5500个单位的时候发生改变。古扎拉蒂利用分段线性回归进行了检验，过程如下：
+Totalcost=-145.72+0.2791<em>output+0.0945</em>(output-5500)<em>dum
+Dum在output&gt;=5500时为1，否则为0。古扎拉蒂根据最后一项，即(output-5500)<em>dum不显著从而判定斜率没有发生显著变化。
+但是，我们知道对斜率在前后两个阶段是否发生变化的检验其实完全可以不用分段线性模型，只要引入一个虚拟变量就可以了。于是我做了如下回归：
+Totalcost=73.3429+0.1821</em>output+0.1082</em>output<em>dum
+在采用了Newey-West标准误后发现截距和两个变量全部是显著的，output</em>dum的t值为41.81。我认为可以由此得出结论两个阶段的斜率是显著不同的。当产量大于5500之后，其斜率变成了0.182052+0.108243=0.290295
+我觉得以上两个做法都有道理。古扎拉蒂虽然没有考虑自相关和异方差，但是即便考虑了之后结论也不会发生变化。
+原始数据如下：
+Table 9.6
+Hypothetical data on output and total cost
+Total cost ($) Output (units)
+256 1000
+414 2000
+634 3000
+778 4000
+1003 5000
+1839 6000
+2081 7000
+2423 8000
+2734 9000
+2914 10000</p>
+<p>我之前做的是(PDF)：Analysis of Interrupted Time Series with Segmented Regression</p>
+<p>Because the hospitals that cover more poor people and more minorities tend to cover more unhealthy people, they may spend more money as well. So it’s possible for them to get the worst of both worlds. Their quality looks worse and their costs look higher.
+From Health Affairs by Aaron Carroll:</p>
+<p>According to the American Psychiatric Association, until 1974 homosexuality was a mental illness. After gay activists protested against the APA convention in San Francisco, the APA removed homosexuality from the list of mental illnesses.  Philip Hickey of Behaviorism and Mental Health uses this example to claim that “There are no mental illnesses.”</p>
+<p>我越学习经济学 越发现社会的结构是有深刻人性和人的能力基础的：比如一精英和平民是因为能力在人群中的分布不一样，人天生就有智商、情商高低。二、经济里最重要的变量之一-利率，也是每个人对短期享受和长期外享受的博弈形成的，有人偏爱及时行乐，有人爱努力工作以后享受，所以形成了利率。所有这些都是根植于每个人的能力不一样，人性偏爱不一样而产生的。</p>
+<p>Economist上的一篇文章 Japan’s health-care system is the envy of the world. It is also in crisis。比如说日本心脏病发病率只有美国人的1/4，但一旦发病，死亡概率却比美国人们高一倍，还有日本是一个clinics-based的health care system，所以他们居然ER都不发达，得不到ER的人只好死在家里。同是东方兄弟国家，差别哪就那么大呢？谁叫另一个国家学苏联–干工业、开医院。</p>
+<p>ihea2011上的文章鱼龙混杂，有的质量很高，有的简直文法都不通。
+好的有我的偶像Meltzer去年那篇分工的，有UP的Guy D的公司边界的文章，还有些医院industry organization的理论和实证文章。有些文章数据离谱，有个调查某个区40岁以上农村心血管疾病患者居然有近9.8w人，我一查那个区还不到100w人口。</p>
+<p>“优质”的第一层经济学含义，是指“匀质”；第二层经济学含义，是指“性价比”越高越好。</p>
+<p>保护坏参与者会伤害所有参与者，而且帮不到任何人
+重要的經濟觀點，通常是正確但不明顯(universally true, but not obvious)
+当年有红色理想的时候，不择手段；现在没有理想了，唯利是图还是不择手段</p>
+<p>腐败是必然的，但市场失效却不一定
+– 全世界不管什么国家的政府，一定范围的腐败是必然的，但是，政权（政治）和钱的勾连是最无害的，资本家至少是讲道理的，政治和什么勾连才可怕呢？和宗教、意识形态、军队。
+货币能起作用那就还好，等货币都不起作用了，只靠权力、领导意志说话了才是悲哀
+学经济最重要的是看清事物背后的全部成本
+大规模保障房根本没有必要，其实只要用住房补贴发放就行–那样只要甄别一下穷人就行，保障房又要甄别穷人还要生产产品。</p>
+<p>A society that puts equality—in the sense of equality of outcome—ahead of freedom will end up with neither equality nor freedom.  The use of force to achieve equality will destroy freedom, and the force, introduced for good purposes, will end up in the hands of people who use it to promote their own interests.
+Milton and Rose Friedman
+in Free to Choose: A Personal Statement
+理解贝克尔和行为经济学的最大区别，最好的例子就是关于瘾的分析。这个瘾的行为到底是理性的还是有限理性的？对其看法不同直接决定了新古典和行为经济学的差别</p>
 <p>关于申请2012年“国家优秀自费留学生奖学金”的通知   2012-08-09 我可以申
 Win episcope 等级评分也是定性资料！  误差条图error bar chart 84-91-205
 Approximately=a number of=some<br />
