@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>13. Math Comput Methods &#8212; Jonny Workbook</title>
+    <title>13. Math Computational Methods &#8212; Jonny Workbook</title>
   
   
   
@@ -185,7 +185,7 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="MIT_CS6001-Python.html">11. MIT_CS6001-Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="MIT_CS6002-thinking.html">12. MIT_CS6002-CS</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">13. Math Comput Methods</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">13. Math Computational Methods</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Notebook</span></p>
 <ul class="nav bd-sidenav">
@@ -343,7 +343,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Math Comput Methods</h1>
+    <h1>Math Computational Methods</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -365,8 +365,8 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="math-comput-methods">
-<h1><span class="section-number">13. </span>Math Comput Methods<a class="headerlink" href="#math-comput-methods" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="math-computational-methods">
+<h1><span class="section-number">13. </span>Math Computational Methods<a class="headerlink" href="#math-computational-methods" title="Link to this heading">#</a></h1>
 <p>Physics is math language in nature</p>
 <section id="calculus-review">
 <h2><span class="section-number">13.1. </span>Calculus Review<a class="headerlink" href="#calculus-review" title="Link to this heading">#</a></h2>
@@ -393,6 +393,8 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html>\(\displaystyle {\sum_{n=0}^{+\infty} x^{n}}\)</html></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -403,6 +405,8 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html>\(\displaystyle {\sum_{k=0}^{n} \binom{n}{k}} = 2^{n}\)</html></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -426,6 +430,7 @@
 </div>
 </div>
 </div>
+<img src="https://raw.githubusercontent.com/tomctang/NB_img/main/seriesgraph.png" alt="seriesgraph" width="550">
 <p>The difference between Taylor series and MacLaurin series:</p>
 <ul class="simple">
 <li><p>Taylor series can be expanded at any <span class="math notranslate nohighlight">\(x\)</span> and are more generalized</p></li>
@@ -448,8 +453,86 @@
 <li><p>The much less known inverse pythagoras theorem is <span class="math notranslate nohighlight">\(\large\frac{1}{a^2}+\frac{1}{b^2}=\frac{1}{h^2}\)</span>.</p></li>
 <li><p>The sum of the series <span class="math notranslate nohighlight">\(\sum_{j=1}^nj=\large\frac{n(n+1)}{2}\)</span></p></li>
 <li><p>The sum of the series <span class="math notranslate nohighlight">\(\sum_{j=1}^nj^2=\large\frac{n(n+1)(2n+1)}{6}\)</span></p></li>
+<li><p>From the sum of the 2 previous series <span class="math notranslate nohighlight">\(\sum_{j=1}^nj^3=\large\frac{n^2(n+1)^2}{4}\)</span></p></li>
 <li><p>All Pythagorean triplets can be found by using the formula <span class="math notranslate nohighlight">\(z\)</span> -&gt; <span class="math notranslate nohighlight">\(z^2\)</span> where <span class="math notranslate nohighlight">\(z\)</span> is a complex number. The method also requires multiplying by <span class="math notranslate nohighlight">\(\frac{1}{2}\)</span> or integers.</p></li>
 </ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show</span><span class="p">(</span><span class="n">plot</span><span class="p">(</span><span class="n">ln</span><span class="p">(</span><span class="n">e</span><span class="o">^</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">figsize</span><span class="o">=</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/3b6dd6c50f2fb16bd980c5b3b45d1f775b3d105aa109a43afb415ff2f79e2707.png" src="_images/3b6dd6c50f2fb16bd980c5b3b45d1f775b3d105aa109a43afb415ff2f79e2707.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;a,n,x&#39;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">=</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">^</span><span class="n">n</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">^</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="n">factorial</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">sum1</span><span class="o">=</span><span class="nb">sum</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">oo</span><span class="p">,</span><span class="n">hold</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">show</span><span class="p">(</span><span class="n">sum1</span><span class="o">==</span><span class="n">sum1</span><span class="o">.</span><span class="n">unhold</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html>\(\displaystyle {\sum_{n=0}^{+\infty} \frac{\left(-1\right)^{n} \left(a x\right)^{2 \, n + 1} x}{\left(2 \, n + 2\right)!}} = \frac{1}{2} \, a x^{2} \,_1F_2\left(\begin{matrix} 1 \\ 2,\frac{3}{2} \end{matrix} ; -\frac{1}{4} \, a^{2} x^{2} \right)\)</html></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="p">,</span><span class="n">a</span> <span class="o">=</span> <span class="n">var</span><span class="p">(</span><span class="s1">&#39;n,a&#39;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">=</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">^</span><span class="n">n</span><span class="o">*</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">^</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="n">factorial</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">sum1</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">oo</span><span class="p">,</span> <span class="n">hold</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># hold = before evaluating</span>
+<span class="n">show</span><span class="p">(</span><span class="n">sum1</span> <span class="o">==</span> <span class="n">sum1</span><span class="o">.</span><span class="n">unhold</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html>\(\displaystyle {\sum_{n=0}^{+\infty} \frac{\left(-1\right)^{n} \left(a x\right)^{2 \, n + 1}}{\left(2 \, n + 1\right)!}} = \sin\left(a x\right)\)</html></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">x</span> <span class="o">=</span> <span class="n">var</span><span class="p">(</span><span class="s1">&#39;a,n,x&#39;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">=</span><span class="p">((</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">^</span><span class="n">n</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">sum1</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">oo</span><span class="p">,</span><span class="n">hold</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">show</span><span class="p">(</span><span class="n">sum1</span> <span class="o">==</span> <span class="n">sum1</span><span class="o">.</span><span class="n">unhold</span><span class="p">())</span>
+<span class="c1"># Every point on the curve can expand to a Taylor series</span>
+<span class="n">show</span><span class="p">(</span><span class="n">plot</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">e</span><span class="o">^-</span><span class="n">x</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">figsize</span><span class="o">=</span><span class="mi">3</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html>\(\displaystyle {\sum_{n=0}^{+\infty} \frac{\left(-a\right)^{n} x^{n + 1}}{\left(n + 1\right)!}} = \frac{2 \, e^{\left(-\frac{1}{2} \, a x\right)} \sinh\left(\frac{1}{2} \, a x\right)}{a}\)</html></div><img alt="_images/3f76409bc3e8fd0dc2e38d2dbdcbd8b795c0e43d178c82b134b120eadaa526a4.png" src="_images/3f76409bc3e8fd0dc2e38d2dbdcbd8b795c0e43d178c82b134b120eadaa526a4.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span><span class="o">=</span><span class="mf">5.99580197536</span>
+<span class="n">x2</span><span class="o">=</span><span class="mf">6.05575999511</span>
+<span class="n">x3</span><span class="o">=</span><span class="mf">3.83164672531</span>
+<span class="n">x4</span><span class="o">=</span><span class="mf">3.86996319256</span>
+<span class="n">a</span><span class="o">=</span><span class="mf">6.02</span><span class="o">-</span><span class="n">x1</span>
+<span class="n">b</span><span class="o">=</span><span class="n">x2</span><span class="o">-</span><span class="n">x1</span>
+<span class="n">c</span><span class="o">=</span><span class="n">a</span><span class="o">/</span><span class="n">b</span>
+<span class="n">d</span><span class="o">=</span><span class="mi">180</span><span class="o">+</span><span class="n">c</span>
+<span class="n">f</span><span class="o">=</span><span class="n">d</span><span class="o">*</span><span class="mf">0.75</span>
+<span class="n">g</span><span class="o">=</span><span class="n">f</span><span class="o">-</span><span class="mi">135</span>
+<span class="n">h</span><span class="o">=</span><span class="n">x4</span><span class="o">-</span><span class="n">x3</span>
+<span class="n">j</span><span class="o">=</span><span class="n">x3</span><span class="o">+</span><span class="n">g</span><span class="o">*</span><span class="n">h</span>
+<span class="n">show</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">show</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="n">show</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="n">show</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="n">show</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="n">show</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<span class="n">show</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+<span class="n">show</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html>\(\displaystyle 0.0241980246399995\)</html></div><div class="output text_html"><html>\(\displaystyle 0.0599580197499998\)</html></div><div class="output text_html"><html>\(\displaystyle 0.403582785770699\)</html></div><div class="output text_html"><html>\(\displaystyle 180.403582785771\)</html></div><div class="output text_html"><html>\(\displaystyle 135.302687089328\)</html></div><div class="output text_html"><html>\(\displaystyle 0.302687089328032\)</html></div><div class="output text_html"><html>\(\displaystyle 0.0383164672500000\)</html></div><div class="output text_html"><html>\(\displaystyle 3.84324462525524\)</html></div></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sum_recp</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>

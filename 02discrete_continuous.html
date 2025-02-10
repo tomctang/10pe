@@ -185,7 +185,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="MIT_CS6001-Python.html">11. MIT_CS6001-Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="MIT_CS6002-thinking.html">12. MIT_CS6002-CS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MCM.html">13. Math Comput Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MCM.html">13. Math Computational Methods</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Notebook</span></p>
 <ul class="nav bd-sidenav">
@@ -353,28 +353,29 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#difference-generating-function">8.1. Difference &amp; Generating Function</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#difference-equation-recursion-recurrance">8.1.1. Difference equation &amp; Recursion/Recurrance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combinatorics">8.1. Combinatorics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enumeration-using-asymptotic">8.1.1. Enumeration using Asymptotic</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combinatorics">8.2. Combinatorics</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enumeration-using-asymptotic">8.2.1. Enumeration using Asymptotic</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#difference-recursion-generating-function">8.2. Difference(Recursion) &amp; Generating Function</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#difference-equation-recursion-recurrance">8.2.1. Difference equation &amp; Recursion/Recurrance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-function">8.2.2. Generating Function</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-network-algorithm">8.3. Graph &amp; Network &amp; Algorithm</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculus">8.4. Calculus</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculus-analysis">8.4. Calculus &amp; Analysis</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limits">8.4.1. limits</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integration">8.4.2. Integration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sequence">8.4.3. Sequence</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanics">8.4.4. Mechanics</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanics">8.5. Mechanics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differential-equations">8.6. Differential Equations</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-exponential">8.6.1. Complex exponential</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#elementary-functions-differential-equations">8.6.2. Elementary functions &amp; Differential Equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differential-equations">8.5. Differential Equations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-exponential">8.5.1. Complex exponential</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#elementary-functions-differential-equations">8.5.2. Elementary functions &amp; Differential Equations</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis">8.7. Analysis</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topology">8.8. Topology</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topology">8.6. Topology</a></li>
 </ul>
             </nav>
         </div>
@@ -388,76 +389,12 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="discrete-continuous">
 <h1><span class="section-number">8. </span>Discrete &amp; Continuous<a class="headerlink" href="#discrete-continuous" title="Link to this heading">#</a></h1>
-<ol class="arabic simple">
-<li><p>Combinatorics: Subsets, Permutations, Combination, Enumeration枚举(Counting &amp; Choosing) and Brute Force, Equivalence, discrete probability(Hash Functions), Inclusion-Exclusion and Random Mappings, Generating Functions and Asymptotic渐进 Enumeration(Recursive), Bivariate Generating Functions and Combinatorial Statistics, Orthogonal Arrays</p>
-<ul class="simple">
-<li><p>Discrete approach to Statistics/Probability through combinatorics</p></li>
-</ul>
-</li>
-<li><p>Graph &amp; Network Science &amp; Algorithm: Centrality, Network Models</p>
-<ul class="simple">
-<li><p>Graph is discrete-continuity</p></li>
-</ul>
-</li>
-<li><p>Calculus &amp; Mechanics</p></li>
-<li><p>Analysis: Functions, Limits, Infinity, Bounds, Continuity</p>
-<ul class="simple">
-<li><p>Continuous approach to Statistics/Probability through measure theory (e.g. modelling Stochastic Processes)</p></li>
-</ul>
-</li>
-<li><p>Differential Equations</p></li>
-<li><p>Topology (Graph, Set, Geometry, Analysis): Topology of ℝ, Spaces &amp; Homeomorphisms</p></li>
-</ol>
-<section id="difference-generating-function">
-<h2><span class="section-number">8.1. </span>Difference &amp; Generating Function<a class="headerlink" href="#difference-generating-function" title="Link to this heading">#</a></h2>
-<p>Generating Function is bridge between difference equations and differential equations</p>
-<section id="difference-equation-recursion-recurrance">
-<h3><span class="section-number">8.1.1. </span>Difference equation &amp; Recursion/Recurrance<a class="headerlink" href="#difference-equation-recursion-recurrance" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Recursion is a logic idea (non-computational)</p></li>
-<li><p>Recursion Schemes structurally implement the idea (computational), relying on higher-order functions (fold, unfold). Higher-order functions nested in DE, so RS can model numerical solutions, approximations, or symbolic computations</p></li>
-</ul>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Catamorphism</p></th>
-<th class="head"><p>fold, recursively reducing a data structure into a single value, like solving an integral or differential equation, where an initial state evolves iteratively</p></th>
-<th class="head"><p>e.g. Euler Method</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Anamorphism</p></td>
-<td><p>unfold, recursively builds a structure. generating sequences from DE</p></td>
-<td><p>e.g. creating Taylor series</p></td>
-</tr>
-<tr class="row-odd"><td><p>Hylomorphism</p></td>
-<td><p>fold+unfold, generates a structure and immediately reduces it</p></td>
-<td><p>E.g. Runge-Kutta Method</p></td>
-</tr>
-<tr class="row-even"><td><p>Paramorphism</p></td>
-<td><p>fold, extension of catamorphism, maintain both the current approximation result and all previous steps</p></td>
-<td><p>e.g. Euler Method</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>relationship between dynamic programming and recursion</p>
-<ul class="simple">
-<li><p>Imagine you’re climbing a mountain. Recursion is like taking a step, then another step, and another, until you reach the top. Dynamic programming is like remembering which steps you’ve already taken, so you don’t have to repeat them.</p></li>
-</ul>
-<blockquote>
-<div><p>DP (Dynamic Programming)</p>
-</div></blockquote>
-<p>tips using dynamic programming:</p>
-<ul class="simple">
-<li><p>Identify the overlapping subproblems: The first step is to identify smaller, overlapping subproblems.</p></li>
-<li><p>Define the recurrence relation: in subproblems, you need to define a recurrence relation that relates the solution to a larger problem to the solutions of smaller subproblems.</p></li>
-<li><p>Implement the dynamic programming solution: You can implement the dynamic programming solution using either top-down or bottom-up approaches.</p></li>
-<li><p>Optimize your solution: You can optimize your solution by using memoization or tabulation to avoid redundant calculations.</p></li>
-</ul>
-</section>
-</section>
 <section id="combinatorics">
-<h2><span class="section-number">8.2. </span>Combinatorics<a class="headerlink" href="#combinatorics" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.1. </span>Combinatorics<a class="headerlink" href="#combinatorics" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Subsets, Permutations, Combination, Enumeration枚举(Counting &amp; Choosing) and Brute Force, Equivalence, discrete probability(Hash Functions), Inclusion-Exclusion and Random Mappings,</p></li>
+<li><p>Generating Functions and Asymptotic渐进 Enumeration(Recursive), Bivariate Generating Functions and Combinatorial Statistics(Discrete approach to Statistics/Probability through combinatorics .VS. continuous - Measure theory), Orthogonal Arrays</p></li>
+</ol>
 <ol class="arabic simple">
 <li><p>Subsets of a Set</p>
 <ol class="arabic simple">
@@ -498,19 +435,70 @@
 <li><p>Binomial go to Fibonacci sequences</p></li>
 </ol>
 <img src="https://raw.githubusercontent.com/tomctang/NB_img/main/binomial_fibonacci.png" alt="Binomial_Fibonacci" width="500"><section id="enumeration-using-asymptotic">
-<h3><span class="section-number">8.2.1. </span>Enumeration using Asymptotic<a class="headerlink" href="#enumeration-using-asymptotic" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.1.1. </span>Enumeration using Asymptotic<a class="headerlink" href="#enumeration-using-asymptotic" title="Link to this heading">#</a></h3>
 <p>Asymptotic enumeration methods provide quantitative information about the growth rate of functions that count combinatorial objects.</p>
+</section>
+</section>
+<section id="difference-recursion-generating-function">
+<h2><span class="section-number">8.2. </span>Difference(Recursion) &amp; Generating Function<a class="headerlink" href="#difference-recursion-generating-function" title="Link to this heading">#</a></h2>
+<p>递归的几个直觉：1 老和尚故事 2 镜子互照 3 fibonnaci</p>
+<p>递归和微积分是什么关系？
+recursion is essentially just discrete DEs, you discretize DE in order to solve it numerically you will end up with a difference equations or Calculus of Finite difference - Wiki</p>
+<section id="difference-equation-recursion-recurrance">
+<h3><span class="section-number">8.2.1. </span>Difference equation &amp; Recursion/Recurrance<a class="headerlink" href="#difference-equation-recursion-recurrance" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Recursion is a logic idea (non-computational)</p></li>
+<li><p>Recursion Schemes structurally implement the idea (computational), relying on higher-order functions (fold, unfold). Higher-order functions nested in DE, so RS can model numerical solutions, approximations, or symbolic computations</p></li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Catamorphism</p></th>
+<th class="head"><p>fold, recursively reducing a data structure into a single value, like solving an integral or differential equation, where an initial state evolves iteratively</p></th>
+<th class="head"><p>e.g. Euler Method</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Anamorphism</p></td>
+<td><p>unfold, recursively builds a structure. generating sequences from DE</p></td>
+<td><p>e.g. creating Taylor series</p></td>
+</tr>
+<tr class="row-odd"><td><p>Hylomorphism</p></td>
+<td><p>fold+unfold, generates a structure and immediately reduces it</p></td>
+<td><p>E.g. Runge-Kutta Method</p></td>
+</tr>
+<tr class="row-even"><td><p>Paramorphism</p></td>
+<td><p>fold, extension of catamorphism, maintain both the current approximation result and all previous steps</p></td>
+<td><p>e.g. Euler Method</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>relationship between dynamic programming and recursion</p>
+<ul class="simple">
+<li><p>Imagine you’re climbing a mountain. Recursion is like taking a step, then another step, and another, until you reach the top. Dynamic programming is like remembering which steps you’ve already taken, so you don’t have to repeat them.</p></li>
+</ul>
+<blockquote>
+<div><p>DP (Dynamic Programming)</p>
+</div></blockquote>
+<p>动态规划的核心思想就是拆分子问题，记住过往，减少重复计算。如果一个问题，可以把所有可能的答案穷举出来，并且穷举出来后，发现存在重叠子问题，就可以考虑使用动态规划。e.g. 最长递增子序列、最小编辑距离、背包问题、凑零钱问题</p>
+<ul class="simple">
+<li><p>Identify the overlapping subproblems: The first step is to identify smaller, overlapping subproblems.</p></li>
+<li><p>Define the recurrence relation: in subproblems, you need to define a recurrence relation that relates the solution to a larger problem to the solutions of smaller subproblems.</p></li>
+<li><p>Implement the dynamic programming solution: You can implement the dynamic programming solution using either top-down or bottom-up approaches.</p></li>
+<li><p>Optimize your solution: You can optimize your solution by using memoization or tabulation to avoid redundant calculations.</p></li>
+</ul>
+</section>
+<section id="generating-function">
+<h3><span class="section-number">8.2.2. </span>Generating Function<a class="headerlink" href="#generating-function" title="Link to this heading">#</a></h3>
+<p>Generating Function is bridge between difference equations and differential equations</p>
 </section>
 </section>
 <section id="graph-network-algorithm">
 <h2><span class="section-number">8.3. </span>Graph &amp; Network &amp; Algorithm<a class="headerlink" href="#graph-network-algorithm" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p>Network science (complex network)</p></li>
+<li><p>Graph is discrete-continuity</p></li>
+<li><p>Network science (complex network). Python’s <a class="reference external" href="https://networkit.github.io/">NetworKit</a> for network analysis, such as degree sequences, clustering coefficients, centrality measures, and more.</p></li>
 </ol>
-<ul class="simple">
-<li><p><a class="reference external" href="https://networkit.github.io/">NetworKit</a> is a growing open-source toolkit for large-scale network analysis.
-This moduler includes standard measures of network analysis, such as degree sequences, clustering coefficients, centrality measures, and more.</p></li>
-</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-mathematica notranslate"><div class="highlight"><pre><span></span><span class="c">(* Mess Connex *)</span>
@@ -533,8 +521,9 @@ This moduler includes standard measures of network analysis, such as degree sequ
 </div>
 </div>
 </section>
-<section id="calculus">
-<h2><span class="section-number">8.4. </span>Calculus<a class="headerlink" href="#calculus" title="Link to this heading">#</a></h2>
+<section id="calculus-analysis">
+<h2><span class="section-number">8.4. </span>Calculus &amp; Analysis<a class="headerlink" href="#calculus-analysis" title="Link to this heading">#</a></h2>
+<p>Differential, Integral, Sequence &amp; Series, Functions, Limits, Infinity, Bounds, Continuity</p>
 <section id="limits">
 <h3><span class="section-number">8.4.1. </span>limits<a class="headerlink" href="#limits" title="Link to this heading">#</a></h3>
 <p>1D world has limit <span class="math notranslate nohighlight">\(e\)</span> <span class="math notranslate nohighlight">\(\pi\)</span>，2D world has limits <span class="math notranslate nohighlight">\(\pi\)</span> (area size), and 3D world has more limits</p>
@@ -590,9 +579,12 @@ This moduler includes standard measures of network analysis, such as degree sequ
 </div>
 </div>
 </section>
+<section id="sequence">
+<h3><span class="section-number">8.4.3. </span>Sequence<a class="headerlink" href="#sequence" title="Link to this heading">#</a></h3>
+<p>Most sequences are defined by recurrsion, except prime sequence</p>
 </section>
 <section id="mechanics">
-<h2><span class="section-number">8.5. </span>Mechanics<a class="headerlink" href="#mechanics" title="Link to this heading">#</a></h2>
+<h3><span class="section-number">8.4.4. </span>Mechanics<a class="headerlink" href="#mechanics" title="Link to this heading">#</a></h3>
 <p>动量变化 △P=Ft</p>
 <p>动能变化 △E=Fx</p>
 <p>一个力存在一段时间，力乘以作用时间就产生一个冲量。这个冲量将改变它作用物体的<strong>动量</strong>（一个矢量）。而且，能改变动量的只有冲量。所以说，任何物体的动量都是某一个力，或者某几个力存在若干时间的结果。</p>
@@ -602,16 +594,17 @@ This moduler includes standard measures of network analysis, such as degree sequ
 <p>Q：光有没有动量？
 A：光没有质量，但是有动量</p>
 </section>
+</section>
 <section id="differential-equations">
-<h2><span class="section-number">8.6. </span>Differential Equations<a class="headerlink" href="#differential-equations" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.5. </span>Differential Equations<a class="headerlink" href="#differential-equations" title="Link to this heading">#</a></h2>
 <p>Julia is the best DE software: <a class="reference external" href="https://www.stochasticlifestyle.com/wp-content/uploads/2019/11/de_solver_software_comparsion.pdf">Comparison Of Differential Equation Solver</a></p>
 <section id="complex-exponential">
-<h3><span class="section-number">8.6.1. </span>Complex exponential<a class="headerlink" href="#complex-exponential" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.5.1. </span>Complex exponential<a class="headerlink" href="#complex-exponential" title="Link to this heading">#</a></h3>
 <p>The exponential function is a basic building block for solutions of ODEs.
 Complex numbers expand the scope of the exponential function, and bring trigonometric functions under its sway.</p>
 </section>
 <section id="elementary-functions-differential-equations">
-<h3><span class="section-number">8.6.2. </span>Elementary functions &amp; Differential Equations<a class="headerlink" href="#elementary-functions-differential-equations" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.5.2. </span>Elementary functions &amp; Differential Equations<a class="headerlink" href="#elementary-functions-differential-equations" title="Link to this heading">#</a></h3>
 <p>Elementary functions are solutions to some simple Differential Equations. Given <span class="math notranslate nohighlight">\(f(x)=y\)</span>:</p>
 <p>Exponential function:  <span class="math notranslate nohighlight">\(\frac{d}{dx}f(x)=f(x) \quad\rightarrow\quad sol: f(x)=e^x\)</span></p>
 <p>Trigonometry function: <span class="math notranslate nohighlight">\(\frac{d^2}{dx^2}f(x)=-f(x) \quad\rightarrow\quad sol: f(x)=sin(x), cos(x)\)</span></p>
@@ -630,11 +623,9 @@ Complex numbers expand the scope of the exponential function, and bring trigonom
 </div>
 </section>
 </section>
-<section id="analysis">
-<h2><span class="section-number">8.7. </span>Analysis<a class="headerlink" href="#analysis" title="Link to this heading">#</a></h2>
-</section>
 <section id="topology">
-<h2><span class="section-number">8.8. </span>Topology<a class="headerlink" href="#topology" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.6. </span>Topology<a class="headerlink" href="#topology" title="Link to this heading">#</a></h2>
+<p>(Graph, Set, Geometry, Analysis): Topology of ℝ, Spaces &amp; Homeomorphisms</p>
 </section>
 </section>
 
@@ -703,28 +694,29 @@ Complex numbers expand the scope of the exponential function, and bring trigonom
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#difference-generating-function">8.1. Difference &amp; Generating Function</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#difference-equation-recursion-recurrance">8.1.1. Difference equation &amp; Recursion/Recurrance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combinatorics">8.1. Combinatorics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enumeration-using-asymptotic">8.1.1. Enumeration using Asymptotic</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combinatorics">8.2. Combinatorics</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enumeration-using-asymptotic">8.2.1. Enumeration using Asymptotic</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#difference-recursion-generating-function">8.2. Difference(Recursion) &amp; Generating Function</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#difference-equation-recursion-recurrance">8.2.1. Difference equation &amp; Recursion/Recurrance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-function">8.2.2. Generating Function</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-network-algorithm">8.3. Graph &amp; Network &amp; Algorithm</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculus">8.4. Calculus</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculus-analysis">8.4. Calculus &amp; Analysis</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limits">8.4.1. limits</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integration">8.4.2. Integration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sequence">8.4.3. Sequence</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanics">8.4.4. Mechanics</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanics">8.5. Mechanics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differential-equations">8.6. Differential Equations</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-exponential">8.6.1. Complex exponential</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#elementary-functions-differential-equations">8.6.2. Elementary functions &amp; Differential Equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differential-equations">8.5. Differential Equations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-exponential">8.5.1. Complex exponential</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#elementary-functions-differential-equations">8.5.2. Elementary functions &amp; Differential Equations</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis">8.7. Analysis</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topology">8.8. Topology</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topology">8.6. Topology</a></li>
 </ul>
   </nav></div>
 
