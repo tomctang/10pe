@@ -353,7 +353,17 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculus-review">13.1. Calculus Review</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculus-review">13.1. Calculus Review</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#week-4">13.1.1. Week 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#week-3">13.1.2. Week 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#week-2">13.1.3. Week 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#week-1">13.1.4. Week 1</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-calculus">13.2. Vector Calculus</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">13.2.1. Week 4</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -370,19 +380,6 @@
 <p>Physics is math language in nature</p>
 <section id="calculus-review">
 <h2><span class="section-number">13.1. </span>Calculus Review<a class="headerlink" href="#calculus-review" title="Link to this heading">#</a></h2>
-<p>Ten Important Identities</p>
-<ol class="arabic simple">
-<li><p>The quadratic equation : <span class="math notranslate nohighlight">\(ax^2+bx+c\)</span> has 2 roots <span class="math notranslate nohighlight">\(r=\large\frac{-b\pm\sqrt{b^2-4ac}}{2a}\)</span></p></li>
-<li><p>Fundamental trigonometric identity : <span class="math notranslate nohighlight">\(\cos^2{\theta}+\sin^2{\theta}=1\)</span></p></li>
-<li><p>Trigonometric Definitions : <span class="math notranslate nohighlight">\(\sec{\theta}=\frac{1}{\cos{\theta}}\quad\tan{\theta}=\frac{\sin{\theta}}{\cos{\theta}}\quad\csc{\theta}=\frac{1}{\sin{\theta}}\quad\cot{\theta}=\frac{\cos{\theta}}{\sin{\theta}}\)</span></p></li>
-<li><p>Double Angle Formulae : <span class="math notranslate nohighlight">\(\cos{2\theta}=\cos^2{\theta}-\sin^2{\theta}\quad\sin{2\theta}=2\sin{\theta} \cos{\theta}\)</span></p></li>
-<li><p>Factorization of the difference of squares : <span class="math notranslate nohighlight">\(x^2-a^2=(x+a)(x-a)\)</span></p></li>
-<li><p>Geometric Series : <span class="math notranslate nohighlight">\(\large\sum^{\infty}_{n=0}x^n=\frac{1}{1-x}\)</span>(very useful) for <span class="math notranslate nohighlight">\(|x|&lt;1\)</span> and <span class="math notranslate nohighlight">\(\Sigma^{N}_{n=0}x^n= \frac{N!}{n!(N-n)!}x^{N-n}y^n\)</span> for all <span class="math notranslate nohighlight">\(x\)</span>.</p></li>
-<li><p>Binomial Theorem : <span class="math notranslate nohighlight">\((x+y)^N=\sum^{N}_{n=0}\begin{pmatrix}N\\n\end{pmatrix}x^{Nn}y^n=\Sigma^{N}_{n=0}\frac{N!}{n!(N-n)!}x^{N-n}y^n\)</span></p></li>
-<li><p>Power series for the exponential : <span class="math notranslate nohighlight">\(e^x=\Sigma^{\infty}_{n=0}\frac{1}{n!}x^n\)</span></p></li>
-<li><p>Relation for trig functions to exponentials : <span class="math notranslate nohighlight">\(\cos{\theta}=\frac{1}{2}(e^{i\theta}+e^{-i\theta})\)</span> and <span class="math notranslate nohighlight">\(\sin{\theta}=\frac{1}{2i}(e^{i\theta}-e^{-i\theta})\)</span></p></li>
-<li><p>Relation of hyp functions to exponentials : <span class="math notranslate nohighlight">\(\cosh{x}=\frac{1}{2}(e^x+e^{-x})\)</span> and <span class="math notranslate nohighlight">\(\sinh{x}=\frac{1}{2}(e^x-e^{-x})\)</span></p></li>
-</ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 6 Geometric</span>
@@ -393,8 +390,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><html>\(\displaystyle {\sum_{n=0}^{+\infty} x^{n}}\)</html></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -419,6 +414,8 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html>\(\displaystyle {\sum_{n=0}^{+\infty} \frac{x^{n}}{n!}}\)</html></div><div class="output text_html"><html>\(\displaystyle e^{x}\)</html></div><div class="output text_html"><html>\(\displaystyle +\infty\)</html></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -429,41 +426,168 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html>\(\displaystyle \sqrt{{\sum_{n=1}^{+\infty} \frac{6}{n^{2}}}}\)</html></div><div class="output text_html"><html>\(\displaystyle 3.14159265358979\)</html></div></div>
 </div>
+<p><a class="reference external" href="https://www.tungsteno.io/post/exa-basel_problem_euler_sinus_product">Euler Solution to Basel Problem</a></p>
 <img src="https://raw.githubusercontent.com/tomctang/NB_img/main/seriesgraph.png" alt="seriesgraph" width="550">
-<p>The difference between Taylor series and MacLaurin series:</p>
+<img src="https://raw.githubusercontent.com/tomctang/NB_img/main/wks-of-fetal.png" alt="fetalwks" width="550"><p>The difference between Taylor series and MacLaurin series:</p>
 <ul class="simple">
 <li><p>Taylor series can be expanded at any <span class="math notranslate nohighlight">\(x\)</span> and are more generalized</p></li>
 <li><p>Maclaurin series are always expanded at <span class="math notranslate nohighlight">\(x= 0\)</span></p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show</span><span class="p">(</span><span class="n">taylor</span><span class="p">(</span><span class="n">e</span><span class="o">^</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
-
-<span class="nd">@interact</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">_</span><span class="p">(</span><span class="n">m</span><span class="o">=</span><span class="n">input_box</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Degree of Taylor polynomial&#39;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">20</span><span class="p">)):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Approximation =&quot;</span><span class="p">,</span><span class="n">N</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="n">n</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">m</span><span class="p">),</span><span class="n">digits</span><span class="o">=</span><span class="mi">30</span><span class="p">))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Actual value  =&quot;</span><span class="p">,</span><span class="n">N</span><span class="p">(</span><span class="n">e</span><span class="p">,</span><span class="n">digits</span><span class="o">=</span><span class="mi">30</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
+<p>Ten Important Identities</p>
+<ol class="arabic simple">
+<li><p>The quadratic equation : <span class="math notranslate nohighlight">\(ax^2+bx+c\)</span> has 2 roots <span class="math notranslate nohighlight">\(r=\large\frac{-b\pm\sqrt{b^2-4ac}}{2a}\)</span></p></li>
+<li><p>Fundamental trigonometric identity : <span class="math notranslate nohighlight">\(\cos^2{\theta}+\sin^2{\theta}=1\)</span></p></li>
+<li><p>Trigonometric Definitions : <span class="math notranslate nohighlight">\(\sec{\theta}=\frac{1}{\cos{\theta}}\quad\tan{\theta}=\frac{\sin{\theta}}{\cos{\theta}}\quad\csc{\theta}=\frac{1}{\sin{\theta}}\quad\cot{\theta}=\frac{\cos{\theta}}{\sin{\theta}}\)</span></p></li>
+<li><p>Double Angle Formulae : <span class="math notranslate nohighlight">\(\cos{2\theta}=\cos^2{\theta}-\sin^2{\theta}\quad\sin{2\theta}=2\sin{\theta} \cos{\theta}\)</span></p></li>
+<li><p>Factorization of the difference of squares : <span class="math notranslate nohighlight">\(x^2-a^2=(x+a)(x-a)\)</span></p></li>
+<li><p>Geometric Series : <span class="math notranslate nohighlight">\(\large\sum^{\infty}_{n=0}x^n=\frac{1}{1-x}\)</span>(very useful) for <span class="math notranslate nohighlight">\(|x|&lt;1\)</span> and <span class="math notranslate nohighlight">\(\Sigma^{N}_{n=0}x^n= \frac{N!}{n!(N-n)!}x^{N-n}y^n\)</span> for all <span class="math notranslate nohighlight">\(x\)</span>.</p></li>
+<li><p>Binomial Theorem : <span class="math notranslate nohighlight">\((x+y)^N=\sum^{N}_{n=0}\begin{pmatrix}N\\n\end{pmatrix}x^{Nn}y^n=\Sigma^{N}_{n=0}\frac{N!}{n!(N-n)!}x^{N-n}y^n\)</span></p></li>
+<li><p>Power series for the exponential : <span class="math notranslate nohighlight">\(e^x=\Sigma^{\infty}_{n=0}\frac{1}{n!}x^n\)</span></p></li>
+<li><p>Relation for trig functions to exponentials : <span class="math notranslate nohighlight">\(\cos{\theta}=\frac{1}{2}(e^{i\theta}+e^{-i\theta})\)</span> and <span class="math notranslate nohighlight">\(\sin{\theta}=\frac{1}{2i}(e^{i\theta}-e^{-i\theta})\)</span></p></li>
+<li><p>Relation of hyp functions to exponentials : <span class="math notranslate nohighlight">\(\cosh{x}=\frac{1}{2}(e^x+e^{-x})\)</span> and <span class="math notranslate nohighlight">\(\sinh{x}=\frac{1}{2}(e^x-e^{-x})\)</span></p></li>
+</ol>
+<p>Formulae</p>
+<ul class="simple">
+<li><p>T Formulae</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\large t=\tan{\frac{x}{2}}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\large\sin{x}=\frac{2t}{1+t^2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\large\cos{x}=\frac{1-t^2}{1+t^2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\large\tan{x}=\frac{2t}{1-t^2}\)</span></p></li>
+<li><p>$\large dx=\frac{2}{1+t^2}dt$</p></li>
+</ul>
+</li>
+</ul>
 <p>Video notes</p>
 <ul class="simple">
 <li><p>The much less known inverse pythagoras theorem is <span class="math notranslate nohighlight">\(\large\frac{1}{a^2}+\frac{1}{b^2}=\frac{1}{h^2}\)</span>.</p></li>
 <li><p>The sum of the series <span class="math notranslate nohighlight">\(\sum_{j=1}^nj=\large\frac{n(n+1)}{2}\)</span></p></li>
 <li><p>The sum of the series <span class="math notranslate nohighlight">\(\sum_{j=1}^nj^2=\large\frac{n(n+1)(2n+1)}{6}\)</span></p></li>
 <li><p>From the sum of the 2 previous series <span class="math notranslate nohighlight">\(\sum_{j=1}^nj^3=\large\frac{n^2(n+1)^2}{4}\)</span></p></li>
+<li><p>For trigonometric substitution, both <span class="math notranslate nohighlight">\(x=\sin{\theta}\)</span> and <span class="math notranslate nohighlight">\(x=\cos{\theta}\)</span> can be used but use second option.</p></li>
+<li><p>Gaussian Integral : <span class="math notranslate nohighlight">\(\large\int_{-\infty}^{\infty}dx\ e^{-x^2}=\sqrt{\pi}\)</span></p></li>
+<li><p>Frullani Integral(useful) : <span class="math notranslate nohighlight">\(\large\int_0^{\infty}\mathrm{d}x\frac{f(ax)-f(bx)}{x}=(f(0)-f(\infty))\ln{\frac{b}{a}}\)</span></p></li>
 <li><p>All Pythagorean triplets can be found by using the formula <span class="math notranslate nohighlight">\(z\)</span> -&gt; <span class="math notranslate nohighlight">\(z^2\)</span> where <span class="math notranslate nohighlight">\(z\)</span> is a complex number. The method also requires multiplying by <span class="math notranslate nohighlight">\(\frac{1}{2}\)</span> or integers.</p></li>
 </ul>
+<p>To find the area bounded by a parametric curve, go to <a class="reference internal" href="Alevel_math_further.html#module-5-further-applications-of-integration"><span class="std std-ref">A-level-further-Integration Applications</span></a></p>
+<ul class="simple">
+<li><p>Arc Length$<span class="math notranslate nohighlight">\(s=\int^{b}_{a}\sqrt{1+\begin{pmatrix}\large\frac{\mathrm{d}y}{\mathrm{d}x}\end{pmatrix}^2}\mathrm{d}x\)</span>$</p></li>
+<li><p>Arc Length (parametric curve$<span class="math notranslate nohighlight">\(s=\int^{t_2}_{t_1}\sqrt{\large\begin{pmatrix}\frac{\mathrm{d}x}{\mathrm{d}t}\end{pmatrix}^2+\begin{pmatrix}\frac{ \mathrm{d}y}{\mathrm{d}t}\end{pmatrix}^2}\mathrm{d}x\)</span>$</p></li>
+<li><p>Arc Length (polar curve) $<span class="math notranslate nohighlight">\(s=\int^{\theta_2}_{\theta_1}\sqrt{r^2+\large\begin{pmatrix}\frac{ \mathrm{d}r}{\mathrm{d}\theta}\end{pmatrix}^2 }\mathrm{d}\theta\)</span>$</p></li>
+<li><p>Surface area of revolution$<span class="math notranslate nohighlight">\(A=\int_0^adx\sqrt{1+(\frac{dy\ }{dx\ })^2}2\pi x\)</span>$</p></li>
+</ul>
+<ul class="simple">
+<li><p>Mass for sphere : <span class="math notranslate nohighlight">\(M=\int_0^Rdr r^2\rho_0\int_{-1}^1d\cos{\theta}\int_0^{2\pi}d\phi\)</span> where <span class="math notranslate nohighlight">\(\rho_0\)</span> is a constant in<span class="math notranslate nohighlight">\(\rho(r)\)</span></p></li>
+<li><p>Feynman Method : Insert a parameter (e.g. <span class="math notranslate nohighlight">\(\alpha\)</span>) and evaluate if at a constant (e.g. <span class="math notranslate nohighlight">\(\alpha=1\)</span>) then you have to add a <span class="math notranslate nohighlight">\(\large\frac{d^m}{d\alpha^m}\)</span> when you integrate the terms with <span class="math notranslate nohighlight">\(m\)</span>.</p></li>
+<li><p>Formula for the moment of inertia : $<span class="math notranslate nohighlight">\(I=\int d^3r\rho(\bf r)r^2_ \perp(\bf r)\)</span><span class="math notranslate nohighlight">\( where \)</span>\rho(\bf r)<span class="math notranslate nohighlight">\( the mass density at the position \)</span> \bf r<span class="math notranslate nohighlight">\( and \)</span>r_\perp(\bf r)<span class="math notranslate nohighlight">\( is the perependicular distance of the position vector at \)</span>\bf r$ to the rotation axis for the moment of inertia.</p></li>
+</ul>
+<section id="week-4">
+<h3><span class="section-number">13.1.1. </span>Week 4<a class="headerlink" href="#week-4" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sqrt</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span><span class="o">/</span><span class="mf">4.</span><span class="n">n</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.250000000000000*sqrt(pi)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span><span class="p">,</span><span class="n">R</span><span class="p">,</span><span class="n">M</span><span class="o">=</span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;r,R,M&#39;</span><span class="p">)</span>
+<span class="n">show</span><span class="p">(</span><span class="n">n</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span><span class="o">/</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">show</span><span class="p">(</span><span class="n">n</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="mi">3</span><span class="o">*</span><span class="mi">5</span><span class="o">*</span><span class="mi">7</span><span class="o">*</span><span class="mi">9</span><span class="o">*</span><span class="mi">11</span><span class="o">/</span><span class="mi">2</span><span class="o">^</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">show</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">M</span><span class="o">/</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="n">R</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">r</span><span class="o">^</span><span class="mi">3</span><span class="p">,</span> <span class="n">r</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">23</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">show</span><span class="p">(</span><span class="n">n</span><span class="p">(</span><span class="n">Integer</span><span class="p">(</span><span class="mi">1</span><span class="p">)))</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">r</span><span class="p">,</span><span class="n">R</span><span class="p">,</span><span class="n">M</span><span class="o">=</span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;r,R,M&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">show</span><span class="p">(</span><span class="n">n</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span><span class="o">/</span><span class="n">Integer</span><span class="p">(</span><span class="mi">4</span><span class="p">)))</span>
+
+<span class="nn">File ~/sage/local/var/lib/sage/venv-python3.12.5/lib/python3.12/site-packages/sage/symbolic/expression.pyx:6180,</span> in <span class="ni">sage.symbolic.expression.Expression.__call__ (build/cythonized/sage/symbolic/expression.cpp:78764)</span><span class="nt">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">6178</span>         <span class="n">z</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="n">x</span><span class="o">^</span><span class="n">y</span>
+<span class="g g-Whitespace">   </span><span class="mi">6179</span>     <span class="s2">&quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">6180</span><span class="s2">     return self._parent._call_element_(self, *args, **kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">6181</span><span class="s2"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">6182</span><span class="s2"> def variables(self):</span>
+
+<span class="nn">File ~/sage/local/var/lib/sage/venv-python3.12.5/lib/python3.12/site-packages/sage/symbolic/ring.pyx:1034,</span> in <span class="ni">sage.symbolic.ring.SymbolicRing._call_element_ (build/cythonized/sage/symbolic/ring.c:13639)</span><span class="nt">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1032</span><span class="s2">     d = args[0]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1033</span><span class="s2"> else:</span>
+<span class="ne">-&gt; </span><span class="mi">1034</span><span class="s2">     raise TypeError(&quot;Substitution using function-call syntax &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1035</span><span class="s2">                     &quot;and unnamed arguments has been removed. You &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1036</span><span class="s2">                     &quot;can use named arguments instead, like &quot;</span>
+
+<span class="ne">TypeError</span>: Substitution using function-call syntax and unnamed arguments has been removed. You can use named arguments instead, like EXPR(x=..., y=...)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="week-3">
+<h3><span class="section-number">13.1.2. </span>Week 3<a class="headerlink" href="#week-3" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">),</span> <span class="n">x</span><span class="p">))</span>
+<span class="n">show</span><span class="p">(</span><span class="n">n</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">show</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="n">sec</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">^</span><span class="mi">3</span><span class="p">,</span> <span class="n">x</span><span class="p">))</span>
+<span class="n">show</span><span class="p">(</span><span class="n">n</span><span class="p">((</span><span class="n">ln</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span><span class="o">-</span><span class="n">ln</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span><span class="o">+</span><span class="mi">4</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span><span class="o">/</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">show</span><span class="p">(</span><span class="n">n</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="mi">7</span><span class="p">))</span>
+<span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">=</span><span class="n">x</span><span class="o">*</span><span class="n">sinh</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="n">cosh</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">a</span><span class="o">=</span><span class="p">(</span><span class="n">e</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">show</span><span class="p">(</span><span class="n">n</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">-</span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">))))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show</span><span class="p">(</span><span class="n">n</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">cosh</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">cosh</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">))</span>
+<span class="n">show</span><span class="p">(</span><span class="n">n</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">)))</span><span class="o">^</span><span class="mi">2</span><span class="p">),</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">))</span>
+<span class="n">show</span><span class="p">(</span><span class="n">n</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">pi</span><span class="p">))</span>
+<span class="n">show</span><span class="p">(</span><span class="n">n</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">),</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show</span><span class="p">((</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">4</span><span class="o">-</span><span class="mi">16</span><span class="p">))</span><span class="o">.</span><span class="n">partial_fraction</span><span class="p">())</span>
+<span class="n">show</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="mi">4</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="mi">4</span><span class="p">),</span> <span class="n">x</span><span class="p">))</span>
+<span class="n">show</span><span class="p">(</span><span class="n">diff</span><span class="p">((</span><span class="mi">2</span><span class="o">*</span><span class="n">arctan</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">ln</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">ln</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">2</span><span class="p">))</span><span class="o">/</span><span class="mi">8</span><span class="p">,</span> <span class="n">x</span><span class="p">))</span>
+<span class="n">show</span><span class="p">(</span><span class="n">simplify</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">arcsin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="n">x</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">),</span> <span class="n">x</span><span class="p">)))</span>
+<span class="n">show</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="n">e</span><span class="o">^</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">))</span>
+<span class="n">show</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">ln</span><span class="p">(</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="n">x</span><span class="p">)),</span> <span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="week-2">
+<h3><span class="section-number">13.1.3. </span>Week 2<a class="headerlink" href="#week-2" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show</span><span class="p">(</span><span class="n">plot</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="n">pi</span><span class="p">,</span> <span class="n">pi</span><span class="p">),</span> <span class="n">figsize</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show</span><span class="p">(</span><span class="n">plot</span><span class="p">(</span><span class="n">ln</span><span class="p">(</span><span class="n">e</span><span class="o">^</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">figsize</span><span class="o">=</span><span class="mi">3</span><span class="p">))</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/3b6dd6c50f2fb16bd980c5b3b45d1f775b3d105aa109a43afb415ff2f79e2707.png" src="_images/3b6dd6c50f2fb16bd980c5b3b45d1f775b3d105aa109a43afb415ff2f79e2707.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -475,8 +599,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><html>\(\displaystyle {\sum_{n=0}^{+\infty} \frac{\left(-1\right)^{n} \left(a x\right)^{2 \, n + 1} x}{\left(2 \, n + 2\right)!}} = \frac{1}{2} \, a x^{2} \,_1F_2\left(\begin{matrix} 1 \\ 2,\frac{3}{2} \end{matrix} ; -\frac{1}{4} \, a^{2} x^{2} \right)\)</html></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -487,8 +609,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><html>\(\displaystyle {\sum_{n=0}^{+\infty} \frac{\left(-1\right)^{n} \left(a x\right)^{2 \, n + 1}}{\left(2 \, n + 1\right)!}} = \sin\left(a x\right)\)</html></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -500,9 +620,6 @@
 <span class="n">show</span><span class="p">(</span><span class="n">plot</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">e</span><span class="o">^-</span><span class="n">x</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">figsize</span><span class="o">=</span><span class="mi">3</span><span class="p">))</span> 
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><html>\(\displaystyle {\sum_{n=0}^{+\infty} \frac{\left(-a\right)^{n} x^{n + 1}}{\left(n + 1\right)!}} = \frac{2 \, e^{\left(-\frac{1}{2} \, a x\right)} \sinh\left(\frac{1}{2} \, a x\right)}{a}\)</html></div><img alt="_images/3f76409bc3e8fd0dc2e38d2dbdcbd8b795c0e43d178c82b134b120eadaa526a4.png" src="_images/3f76409bc3e8fd0dc2e38d2dbdcbd8b795c0e43d178c82b134b120eadaa526a4.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -530,8 +647,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><html>\(\displaystyle 0.0241980246399995\)</html></div><div class="output text_html"><html>\(\displaystyle 0.0599580197499998\)</html></div><div class="output text_html"><html>\(\displaystyle 0.403582785770699\)</html></div><div class="output text_html"><html>\(\displaystyle 180.403582785771\)</html></div><div class="output text_html"><html>\(\displaystyle 135.302687089328\)</html></div><div class="output text_html"><html>\(\displaystyle 0.302687089328032\)</html></div><div class="output text_html"><html>\(\displaystyle 0.0383164672500000\)</html></div><div class="output text_html"><html>\(\displaystyle 3.84324462525524\)</html></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -546,6 +661,9 @@
 </div>
 </div>
 </div>
+</section>
+<section id="week-1">
+<h3><span class="section-number">13.1.4. </span>Week 1<a class="headerlink" href="#week-1" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span><span class="o">=</span><span class="mf">9.81</span>
@@ -563,8 +681,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><html>\(\displaystyle 5.31626930304160\)</html></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -597,8 +713,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><html>\(\displaystyle 566.339564823947\)</html></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -633,6 +747,70 @@
 </div>
 </div>
 </div>
+</section>
+</section>
+<section id="vector-calculus">
+<h2><span class="section-number">13.2. </span>Vector Calculus<a class="headerlink" href="#vector-calculus" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="n">vector</span><span class="p">(</span><span class="n">RR</span><span class="p">,</span> <span class="p">[</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mf">4.6</span><span class="p">])</span>
+<span class="n">w</span> <span class="o">=</span> <span class="n">vector</span><span class="p">(</span><span class="n">RR</span><span class="p">,</span> <span class="p">[</span><span class="mf">1.7</span><span class="p">,</span><span class="o">-</span><span class="mf">2.3</span><span class="p">,</span><span class="mf">5.2</span><span class="p">])</span>
+<span class="n">show</span><span class="p">(</span><span class="n">v</span><span class="o">*</span><span class="n">w</span><span class="p">)</span>
+<span class="n">show</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">cross_product</span><span class="p">(</span><span class="n">w</span><span class="p">))</span>
+
+<span class="n">var</span><span class="p">(</span><span class="s1">&#39;t, x, y&#39;</span><span class="p">)</span>
+<span class="n">line</span>     <span class="o">=</span> <span class="n">parametric_plot3d</span><span class="p">([</span><span class="mi">2</span><span class="o">*</span><span class="n">t</span><span class="o">+</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">t</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="n">t</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">plane</span>    <span class="o">=</span> <span class="n">plot3d</span><span class="p">((</span><span class="mi">1</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="mi">12</span><span class="o">+</span><span class="n">x</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">y</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="o">-</span><span class="mi">13</span><span class="p">,</span><span class="o">-</span><span class="mi">7</span><span class="p">),</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">intersect</span><span class="o">=</span> <span class="n">point3d</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">line</span><span class="o">+</span><span class="n">plane</span><span class="o">+</span><span class="n">intersect</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
+<span class="n">r</span><span class="o">=</span><span class="n">vector</span><span class="p">((</span><span class="mi">2</span><span class="o">*</span><span class="n">t</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="n">t</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="n">t</span><span class="o">^</span><span class="mi">3</span><span class="p">))</span> <span class="c1"># displacement formula</span>
+<span class="n">show</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+<span class="n">show</span><span class="p">(</span><span class="n">r</span><span class="p">(</span><span class="n">t</span><span class="o">=</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">velocity</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> 
+<span class="n">show</span><span class="p">(</span><span class="n">velocity</span><span class="p">)</span>      <span class="c1"># this expression does not function as a function</span>
+<span class="n">show</span><span class="p">(</span><span class="n">velocity</span><span class="p">(</span><span class="n">t</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># so we substitute explicitly</span>
+<span class="n">T</span><span class="o">=</span><span class="n">velocity</span><span class="o">/</span><span class="n">velocity</span><span class="o">.</span><span class="n">norm</span><span class="p">()</span> <span class="c1"># calculate the unit vector</span>
+<span class="n">show</span><span class="p">(</span><span class="n">T</span><span class="p">(</span><span class="n">t</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">n</span><span class="p">())</span>
+<span class="n">arc_length</span> <span class="o">=</span> <span class="n">numerical_integral</span><span class="p">(</span><span class="n">velocity</span><span class="o">.</span><span class="n">norm</span><span class="p">(),</span> <span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">show</span><span class="p">(</span><span class="n">arc_length</span><span class="p">)</span>
+<span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="o">=</span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;x y z&#39;</span><span class="p">)</span>
+<span class="n">plot_vector_field3d</span><span class="p">((</span><span class="n">x</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">z</span><span class="p">),</span><span class="o">-</span><span class="n">y</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">z</span><span class="p">),</span><span class="n">sin</span><span class="p">(</span><span class="n">z</span><span class="p">)),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">pi</span><span class="p">),</span> <span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">pi</span><span class="p">),</span> <span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">pi</span><span class="p">),</span><span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="s1">&#39;green&#39;</span><span class="p">,</span><span class="s1">&#39;blue&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Video Notes</p>
+<ul class="simple">
+<li><p>Divergence(Div) : <span class="math notranslate nohighlight">\(\large\frac{dF_x}{dx}+\frac{dF_y}{dy}\)</span></p></li>
+<li><p>Curl : <span class="math notranslate nohighlight">\(\large\frac{dF_y}{dx}-\frac{dF_x}{dy}\)</span></p></li>
+</ul>
+<section id="id1">
+<h3><span class="section-number">13.2.1. </span>Week 4<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span><span class="o">=</span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="n">show</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="n">y</span><span class="o">^</span><span class="mi">2</span><span class="p">),</span> <span class="n">y</span><span class="p">))</span>
+<span class="n">show</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="n">y</span><span class="o">^</span><span class="mi">2</span><span class="p">),</span> <span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html>\(\displaystyle -\frac{x y}{{\left(x^{2} + y^{2}\right)}^{\frac{3}{2}}}\)</html></div><div class="output text_html"><html>\(\displaystyle -\frac{x y}{{\left(x^{2} + y^{2}\right)}^{\frac{3}{2}}}\)</html></div></div>
+</div>
+</section>
 </section>
 </section>
 
@@ -701,7 +879,17 @@
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculus-review">13.1. Calculus Review</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculus-review">13.1. Calculus Review</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#week-4">13.1.1. Week 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#week-3">13.1.2. Week 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#week-2">13.1.3. Week 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#week-1">13.1.4. Week 1</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-calculus">13.2. Vector Calculus</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">13.2.1. Week 4</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
