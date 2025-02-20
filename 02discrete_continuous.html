@@ -171,11 +171,11 @@
 <li class="toctree-l1"><a class="reference internal" href="PE50.html">2. PE Q26-50</a></li>
 <li class="toctree-l1"><a class="reference internal" href="PE75.html">3. PE Q51-</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Mathematics &amp; FP</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Mathematics &amp; FP &amp; Language</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Alevel_math.html">4. A-level-math</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Alevel_math_further.html">5. A-level-further</a></li>
-<li class="toctree-l1"><a class="reference internal" href="00intro_math.html">6. Math-FP Combo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00intro_math.html">6. Math-FP-Lang Combo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="01number_algebra.html">7. Number &amp; Algebra</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">8. Discrete &amp; Continuous</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03real_world.html">9. Real World Math</a></li>
@@ -357,8 +357,8 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enumeration-using-asymptotic">8.1.1. Enumeration using Asymptotic</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#difference-recursion-generating-function">8.2. Difference(Recursion) &amp; Generating Function</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#difference-equation-recursion-recurrance">8.2.1. Difference equation &amp; Recursion/Recurrance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursion-difference-equation-generating-function">8.2. Recursion, Difference Equation &amp; Generating Function</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#difference-equation-recursion-recurrence">8.2.1. Difference equation &amp; Recursion/Recurrence</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-function">8.2.2. Generating Function</a></li>
 </ul>
 </li>
@@ -439,53 +439,57 @@
 <p>Asymptotic enumeration methods provide quantitative information about the growth rate of functions that count combinatorial objects.</p>
 </section>
 </section>
-<section id="difference-recursion-generating-function">
-<h2><span class="section-number">8.2. </span>Difference(Recursion) &amp; Generating Function<a class="headerlink" href="#difference-recursion-generating-function" title="Link to this heading">#</a></h2>
-<p>递归的几个直觉：1 老和尚故事 2 镜子互照 3 fibonnaci</p>
-<p>递归和微积分是什么关系？
-recursion is essentially just discrete DEs, you discretize DE in order to solve it numerically you will end up with a difference equations or Calculus of Finite difference - Wiki</p>
-<section id="difference-equation-recursion-recurrance">
-<h3><span class="section-number">8.2.1. </span>Difference equation &amp; Recursion/Recurrance<a class="headerlink" href="#difference-equation-recursion-recurrance" title="Link to this heading">#</a></h3>
+<section id="recursion-difference-equation-generating-function">
+<h2><span class="section-number">8.2. </span>Recursion, Difference Equation &amp; Generating Function<a class="headerlink" href="#recursion-difference-equation-generating-function" title="Link to this heading">#</a></h2>
+<section id="difference-equation-recursion-recurrence">
+<h3><span class="section-number">8.2.1. </span>Difference equation &amp; Recursion/Recurrence<a class="headerlink" href="#difference-equation-recursion-recurrence" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Recursion is a logic idea (non-computational)</p></li>
+<li><p>Recursion is a logic idea (non-computational) - Intuition: 1 老和尚故事 2 镜子互照 3 fibonnaci</p></li>
 <li><p>Recursion Schemes structurally implement the idea (computational), relying on higher-order functions (fold, unfold). Higher-order functions nested in DE, so RS can model numerical solutions, approximations, or symbolic computations</p></li>
+</ul>
+<p>Recursion .VS. Calculus?</p>
+<ul class="simple">
+<li><p>Recursion is essentially just discrete DEs, you discretize DE in order to solve it numerically you will end up with a difference equations or Calculus of Finite difference - Wiki</p></li>
 </ul>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
-<tr class="row-odd"><th class="head"><p>Catamorphism</p></th>
-<th class="head"><p>fold, recursively reducing a data structure into a single value, like solving an integral or differential equation, where an initial state evolves iteratively</p></th>
-<th class="head"><p>e.g. Euler Method</p></th>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Anamorphism</p></td>
+<tr class="row-even"><td><p>Catamorphism</p></td>
+<td><p>fold, recursively reducing a data structure into a single value, like solving an integral or differential equation, where an initial state evolves iteratively</p></td>
+<td><p>e.g. Euler Method</p></td>
+</tr>
+<tr class="row-odd"><td><p>Anamorphism</p></td>
 <td><p>unfold, recursively builds a structure. generating sequences from DE</p></td>
 <td><p>e.g. creating Taylor series</p></td>
 </tr>
-<tr class="row-odd"><td><p>Hylomorphism</p></td>
+<tr class="row-even"><td><p>Hylomorphism</p></td>
 <td><p>fold+unfold, generates a structure and immediately reduces it</p></td>
 <td><p>E.g. Runge-Kutta Method</p></td>
 </tr>
-<tr class="row-even"><td><p>Paramorphism</p></td>
+<tr class="row-odd"><td><p>Paramorphism</p></td>
 <td><p>fold, extension of catamorphism, maintain both the current approximation result and all previous steps</p></td>
 <td><p>e.g. Euler Method</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>relationship between dynamic programming and recursion</p>
+<p>DP .VS. Recursion?</p>
 <ul class="simple">
 <li><p>Imagine you’re climbing a mountain. Recursion is like taking a step, then another step, and another, until you reach the top. Dynamic programming is like remembering which steps you’ve already taken, so you don’t have to repeat them.</p></li>
 </ul>
 <blockquote>
-<div><p>DP (Dynamic Programming)</p>
+<div><p>DP (Dynamic Programming), go to <a class="reference internal" href="PE50.html#pe-31"><span class="std std-ref">Project Euler Q31</span></a> e.g. 最长递增子序列、最小编辑距离、背包问题、凑零钱问题</p>
 </div></blockquote>
-<p>动态规划的核心思想就是拆分子问题，记住过往，减少重复计算。如果一个问题，可以把所有可能的答案穷举出来，并且穷举出来后，发现存在重叠子问题，就可以考虑使用动态规划。e.g. 最长递增子序列、最小编辑距离、背包问题、凑零钱问题</p>
 <ul class="simple">
-<li><p>Identify the overlapping subproblems: The first step is to identify smaller, overlapping subproblems.</p></li>
-<li><p>Define the recurrence relation: in subproblems, you need to define a recurrence relation that relates the solution to a larger problem to the solutions of smaller subproblems.</p></li>
-<li><p>Implement the dynamic programming solution: You can implement the dynamic programming solution using either top-down or bottom-up approaches.</p></li>
-<li><p>Optimize your solution: You can optimize your solution by using memoization or tabulation to avoid redundant calculations.</p></li>
+<li><p>Identify the overlapping subproblems: The first step is to identify smaller, overlapping subproblems by enumerate.</p></li>
+<li><p>Define the recurrence relation: in subproblems, define a recurrence relation that bridges the solution(to a larger problem) and solutions(of smaller subproblems).</p></li>
+<li><p>Implement DP solution: implement DP using either top-down or bottom-up approaches.</p></li>
+<li><p>Optimize solution: optimize solution by using memoization or tabulation to avoid redundant calculations.</p></li>
 </ul>
 </section>
 <section id="generating-function">
@@ -585,14 +589,16 @@ recursion is essentially just discrete DEs, you discretize DE in order to solve 
 </section>
 <section id="mechanics">
 <h3><span class="section-number">8.4.4. </span>Mechanics<a class="headerlink" href="#mechanics" title="Link to this heading">#</a></h3>
-<p>动量变化 △P=Ft</p>
-<p>动能变化 △E=Fx</p>
-<p>一个力存在一段时间，力乘以作用时间就产生一个冲量。这个冲量将改变它作用物体的<strong>动量</strong>（一个矢量）。而且，能改变动量的只有冲量。所以说，任何物体的动量都是某一个力，或者某几个力存在若干时间的结果。</p>
-<p>同理，物体受力在空间上这个力的方向上位移，力乘以位移就产生一个功，功改变这个物体的<strong>动能</strong>（一个标量）。</p>
-<p>一个矢量在另一个矢量上的累积，结果是两个矢量的点乘，所以力在空间上的累积就是力和位移的点乘，即F<em>S</em>cosθ （θ是两个矢量的夹角），结果是一个没有方向的标量，所以动能的变化也是一个没有方向的标量，只有增加或减小。力在时间上的累积，因为时间是标量，力是矢量，所以结果也是一个有方向的矢量，所以动量变化也是一个矢量。</p>
-<img src="https://raw.githubusercontent.com/tomctang/NB_img/main/momentum1.png" alt="Momentum-Comparison" width="500">
-<p>Q：光有没有动量？
-A：光没有质量，但是有动量</p>
+<ul class="simple">
+<li><p>Momentum Change: △P = F * t</p></li>
+<li><p>Kinetic Energy Change: △E = F * x</p></li>
+</ul>
+<p>a force acts over a period of time, the force multiplied by the duration produces an <strong>impulse</strong>. This impulse changes the <strong>momentum</strong> (a vector) of the object it acts upon. Moreover, the only thing that can change momentum is an impulse. Therefore, the momentum of any object is the result of one or more forces acting over a certain period of time.</p>
+<p>Similarly, when an object experiences a force and moves in the direction of that force, the force multiplied by the displacement produces <strong>work</strong>, which changes the object’s <strong>kinetic energy</strong> (a scalar).</p>
+<p>The accumulation of one vector along another results in the <strong>dot product</strong> of the two vectors. Therefore, the accumulation of force over space is the dot product of force and displacement, given by <strong>F * S * cosθ</strong> (θ is the angle between the two vectors). The result is a <strong>scalar</strong>, meaning kinetic energy change has no direction—only an increase or decrease.</p>
+<p>In contrast, the accumulation of force over time results in a <strong>vector</strong>, since time is a scalar and force is a <strong>vector</strong>. As a result, the change in momentum is also a vector, meaning it has both magnitude and direction.</p>
+<img src="https://raw.githubusercontent.com/tomctang/NB_img/main/momentum1.png" alt="Momentum-Comparison" width="700">
+<p>Q: light? A: light has no mass, but has momentum</p>
 </section>
 </section>
 <section id="differential-equations">
@@ -698,8 +704,8 @@ Complex numbers expand the scope of the exponential function, and bring trigonom
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enumeration-using-asymptotic">8.1.1. Enumeration using Asymptotic</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#difference-recursion-generating-function">8.2. Difference(Recursion) &amp; Generating Function</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#difference-equation-recursion-recurrance">8.2.1. Difference equation &amp; Recursion/Recurrance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursion-difference-equation-generating-function">8.2. Recursion, Difference Equation &amp; Generating Function</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#difference-equation-recursion-recurrence">8.2.1. Difference equation &amp; Recursion/Recurrence</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-function">8.2.2. Generating Function</a></li>
 </ul>
 </li>

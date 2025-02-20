@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>6. Math-FP Combo &#8212; Jonny Workbook</title>
+    <title>6. Math-FP-Lang Combo &#8212; Jonny Workbook</title>
   
   
   
@@ -171,11 +171,11 @@
 <li class="toctree-l1"><a class="reference internal" href="PE50.html">2. PE Q26-50</a></li>
 <li class="toctree-l1"><a class="reference internal" href="PE75.html">3. PE Q51-</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Mathematics &amp; FP</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Mathematics &amp; FP &amp; Language</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Alevel_math.html">4. A-level-math</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Alevel_math_further.html">5. A-level-further</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Math-FP Combo</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Math-FP-Lang Combo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="01number_algebra.html">7. Number &amp; Algebra</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02discrete_continuous.html">8. Discrete &amp; Continuous</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03real_world.html">9. Real World Math</a></li>
@@ -343,7 +343,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Math-FP Combo</h1>
+    <h1>Math-FP-Lang Combo</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -368,8 +368,8 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="math-fp-combo">
-<h1><span class="section-number">6. </span>Math-FP Combo<a class="headerlink" href="#math-fp-combo" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="math-fp-lang-combo">
+<h1><span class="section-number">6. </span>Math-FP-Lang Combo<a class="headerlink" href="#math-fp-lang-combo" title="Link to this heading">#</a></h1>
 <p>Objectives: To prepare secondary &amp; tertiary math for my kids</p>
 <p>Bad ideas:</p>
 <ul class="simple">
@@ -385,6 +385,42 @@
 <li><p>Combo of ‘conventional’ and computational math</p></li>
 <li><p>Combo of natural language, math language and coding language</p></li>
 </ul>
+<p>We will follow worldview as below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Draw Two-Worlds</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">networkx</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nx</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
+<span class="n">edges_left</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;Coding(n&gt;1)&quot;</span><span class="p">,</span> <span class="s2">&quot;Maths(n=1)&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;Maths(n=1)&quot;</span><span class="p">,</span> <span class="s2">&quot;Natural_Language(n&gt;1)&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;Natural_Language(n&gt;1)&quot;</span><span class="p">,</span> <span class="s2">&quot;Coding(n&gt;1)&quot;</span><span class="p">),</span>
+            <span class="p">(</span><span class="s2">&quot;Maths(n=1)&quot;</span><span class="p">,</span> <span class="s2">&quot;Coding(n&gt;1)&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;Natural_Language(n&gt;1)&quot;</span><span class="p">,</span><span class="s2">&quot;Maths(n=1)&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;Coding(n&gt;1)&quot;</span><span class="p">,</span> <span class="s2">&quot;Natural_Language(n&gt;1)&quot;</span><span class="p">)]</span>
+<span class="n">edges_right</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;Nature&quot;</span><span class="p">,</span><span class="s2">&quot;Human&quot;</span><span class="p">),(</span><span class="s2">&quot;Human&quot;</span><span class="p">,</span><span class="s2">&quot;Nature&quot;</span><span class="p">)]</span>
+<span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">edges_left</span><span class="p">)</span>
+<span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">edges_right</span><span class="p">)</span>
+
+<span class="c1"># Define node positions manually</span>
+<span class="n">pos</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Coding(n&gt;1)&quot;</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.6</span><span class="p">),</span> <span class="s2">&quot;Maths(n=1)&quot;</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.6</span><span class="p">),</span> <span class="s2">&quot;Natural_Language(n&gt;1)&quot;</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">),</span>
+        <span class="s2">&quot;Nature&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">),</span> <span class="s2">&quot;Human&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">),</span> <span class="p">}</span>
+<span class="n">pos</span><span class="p">[</span><span class="s2">&quot;Human Information World&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  
+<span class="n">pos</span><span class="p">[</span><span class="s2">&quot;Real World&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  
+
+<span class="c1"># Draw the graph</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">6000</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="s2">&quot;lightblue&quot;</span><span class="p">,</span> <span class="n">edge_color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">font_weight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Human Information World&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span> <span class="c1"># Add titles </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Real World&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># Draw a vertical line</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/37c1c1147aef69a94739a6dce6a60f7fca6900fff37e2c8a693e97fc7cb2a92e.png" src="_images/37c1c1147aef69a94739a6dce6a60f7fca6900fff37e2c8a693e97fc7cb2a92e.png" />
+</div>
+</div>
+<section id="mind-map-of-math">
+<h2><span class="section-number">6.1. </span>Mind Map of Math<a class="headerlink" href="#mind-map-of-math" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><p><a class="reference internal" href="01number_algebra.html"><span class="std std-doc">Numbers &amp; Algebra</span></a></p>
 </div></blockquote>
@@ -416,8 +452,6 @@
 <li><p>Game Theory &amp; Decision &amp; Operation</p></li>
 <li><p>Quantum Theory</p></li>
 </ol>
-<section id="mind-map-of-math">
-<h2><span class="section-number">6.1. </span>Mind Map of Math<a class="headerlink" href="#mind-map-of-math" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p><a class="reference external" href="https://docs.google.com/presentation/d/1QxIswHDNSRJiPW7qNTePWw1OhmEVs0VKtPt3meru0f4/edit?usp=sharing">Math_Map_Slides</a></p></li>
 <li><p>how to build a pathway from post-Year 10 math to a freshman mathematician? Y10以后，新州的数学分为四条线，这是非常科学的。但是即使如此，其最难的线（3U4U）还是不足以准备大学预备数学。从初等数学到高等级的数学思维(现代数学)切换有几点需要注意：</p>
