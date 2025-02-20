@@ -10,7 +10,7 @@ parts:
   - file: PE50
   - file: PE75     
 
-- caption: Mathematics & FP
+- caption: Mathematics & FP & Language
   numbered: true
   chapters:
   - file: Alevel_math
