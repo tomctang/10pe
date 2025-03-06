@@ -368,8 +368,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#number-theory">7.1. Number Theory</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#investigating-pi-and-e">7.1.1. Investigating Pi and e</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continued-fraction">7.1.2. Continued Fraction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continued-fraction">7.1.1. Continued Fraction</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algebra">7.2. Algebra</a><ul class="nav section-nav flex-column">
@@ -377,7 +376,10 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-algebra">7.3. Linear Algebra</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#abstract-algebra-group-ring-field">7.4. Abstract Algebra(Group, Ring, Field)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#abstract-algebra-group-ring-field">7.4. Abstract Algebra(Group, Ring, Field)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graphing-group-ring-field">7.4.1. Graphing Group/Ring/Field</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -391,73 +393,71 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="number-algebra">
 <h1><span class="section-number">7. </span>Number &amp; Algebra<a class="headerlink" href="#number-algebra" title="Link to this heading">#</a></h1>
+<p>Sage practice</p>
+<ul class="simple">
+<li><p>Ring: e.g. Integer ZZ</p></li>
+<li><p>Field: e.g. Rational QQ, Real RR, Complex CC</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fig-1: Group (visualize Cayley graph for C4 = {e, a, a^2, a^3}, where a^4 = e)</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">networkx</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nx</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-
-<span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>  <span class="c1"># Define </span>
-<span class="n">elements</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;e=a^4&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;a^2&quot;</span><span class="p">,</span> <span class="s2">&quot;a^3&quot;</span><span class="p">]</span>
-<span class="n">edges</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;e=a^4&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;a^2&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;a^2&quot;</span><span class="p">,</span> <span class="s2">&quot;a^3&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;a^3&quot;</span><span class="p">,</span> <span class="s2">&quot;e=a^4&quot;</span><span class="p">)]</span>
-<span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>
-<span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">circular_layout</span><span class="p">(</span><span class="n">G</span><span class="p">)</span> <span class="c1"># Position nodes in a circular layout</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="s2">&quot;lightblue&quot;</span><span class="p">,</span> <span class="n">edge_color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Cayley Graph of Cyclic Group C4&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-
-<span class="c1">####################</span>
-<span class="c1"># Fig-2: Ring Structure Z/4Z (visualize addition &amp; multiplication separately)</span>
-<span class="n">G_add</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
-<span class="n">elements</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;0&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">]</span>
-<span class="n">edges_add</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;0&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;3&quot;</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span><span class="p">)]</span>
-<span class="n">G_add</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">edges_add</span><span class="p">)</span>
-
-<span class="c1"># Draw addition graph</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G_add</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">circular_layout</span><span class="p">(</span><span class="n">G_add</span><span class="p">),</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="s2">&quot;lightgreen&quot;</span><span class="p">,</span> <span class="n">edge_color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Addition in ring Z/4Z&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-
-<span class="c1"># Define multiplication graph</span>
-<span class="n">G_mult</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
-<span class="n">edges_mult</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;3&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;0&quot;</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span><span class="p">)]</span>  <span class="c1"># 2*2=0, 3*3=1, etc.</span>
-<span class="n">G_mult</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">edges_mult</span><span class="p">)</span>
-
-<span class="c1"># Draw multiplication graph</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G_mult</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">circular_layout</span><span class="p">(</span><span class="n">G_mult</span><span class="p">),</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="s2">&quot;lightcoral&quot;</span><span class="p">,</span> <span class="n">edge_color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Multiplication in ring Z/4Z&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-
-<span class="c1">####################### Field: Z/5Z, fully connected multiplication graph</span>
-<span class="n">G_field</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
-<span class="n">elements</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;0&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">,</span> <span class="s2">&quot;4&quot;</span><span class="p">]</span>
-<span class="n">edges_field</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="s2">&quot;4&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;3&quot;</span><span class="p">,</span> <span class="s2">&quot;4&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;4&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">)]</span>  <span class="c1"># Multiplicative inverses</span>
-<span class="n">G_field</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">edges_field</span><span class="p">)</span>
-
-<span class="c1"># Draw the field structure</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G_field</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">circular_layout</span><span class="p">(</span><span class="n">G_field</span><span class="p">),</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="s2">&quot;gold&quot;</span><span class="p">,</span> <span class="n">edge_color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Multiplication in Field Z/5Z&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">show</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">));</span>
+<span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">;</span> <span class="n">show</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">));</span>
+<span class="n">d</span><span class="o">=</span><span class="n">CC</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">I</span><span class="p">);</span> <span class="n">show</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">d</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/c6c2264494857962efa5951a63faa1c4aa83e23e066a506f37f687a68da17e9a.png" src="_images/c6c2264494857962efa5951a63faa1c4aa83e23e066a506f37f687a68da17e9a.png" />
-<img alt="_images/bfbf207178b0bf654481664580ed6f116d4f156e7e1ea9c90eab039f50e1e611.png" src="_images/bfbf207178b0bf654481664580ed6f116d4f156e7e1ea9c90eab039f50e1e611.png" />
-<img alt="_images/c0568e6ed5bfafd6b08118d8ae53de477a7672e63aec7f68ed197af4f71af224.png" src="_images/c0568e6ed5bfafd6b08118d8ae53de477a7672e63aec7f68ed197af4f71af224.png" />
-<img alt="_images/5224af76279580ca2e5ef9e1d832340452d9ad4e5e467187b4f90e1634f6090d.png" src="_images/5224af76279580ca2e5ef9e1d832340452d9ad4e5e467187b4f90e1634f6090d.png" />
+<div class="output text_html"><html>\(\displaystyle \verb|&lt;class|\verb| |\verb|'sage.rings.integer.Integer'>|\)</html></div><div class="output text_html"><html>\(\displaystyle \verb|&lt;class|\verb| |\verb|'sage.rings.rational.Rational'>|\)</html></div><div class="output text_html"><html>\(\displaystyle \verb|&lt;class|\verb| |\verb|'sage.rings.complex_mpfr.ComplexNumber'>|\)</html></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># RSA &amp; Number Theory</span>
+<span class="n">p</span><span class="o">=</span><span class="mi">37</span><span class="p">;</span> <span class="n">q</span><span class="o">=</span><span class="mi">73</span><span class="p">;</span> <span class="n">c</span><span class="o">=</span><span class="mi">5</span><span class="p">;</span> <span class="n">n</span><span class="o">=</span><span class="n">p</span><span class="o">*</span><span class="n">q</span><span class="p">;</span> <span class="n">L</span><span class="o">=</span><span class="n">lcm</span><span class="p">(</span><span class="n">p</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">q</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span> <span class="n">d</span><span class="o">=</span><span class="n">inverse_mod</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="n">L</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;L: &#39;</span><span class="p">,</span> <span class="n">L</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;d: &#39;</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+<span class="n">x</span><span class="o">=</span><span class="mi">33</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Original message: &#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">x</span><span class="o">^</span><span class="n">c</span><span class="o">%</span><span class="k">n</span>; r
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Encrypted message: &#39;</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+<span class="n">dm</span><span class="o">=</span><span class="n">r</span><span class="o">^</span><span class="n">d</span><span class="o">%</span><span class="k">n</span>;
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Decrypted message: &#39;</span><span class="p">,</span> <span class="n">dm</span><span class="p">)</span>
+
+<span class="c1"># RSA on a string of characters</span>
+<span class="n">symbols</span><span class="o">=</span><span class="p">[</span><span class="nb">chr</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">),</span><span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;Z&#39;</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+<span class="n">symbols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">);</span> <span class="n">symbols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">);</span> <span class="n">symbols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;!&#39;</span><span class="p">);</span> <span class="n">symbols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">);</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">encrypt</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="n">ms</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="o">+</span><span class="n">symbols</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">))];</span>
+    <span class="n">es</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">^</span><span class="n">c</span><span class="o">%</span><span class="k">n</span>,ms)
+    <span class="k">return</span> <span class="n">es</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">decrypt</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">^</span><span class="n">d</span><span class="o">%</span><span class="k">n</span>, x)
+    <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">symbols</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">ds</span><span class="p">])</span>
+
+<span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;THE TIME HAS COME.&quot;</span>
+<span class="n">emessage</span> <span class="o">=</span> <span class="n">encrypt</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">emessage</span><span class="p">)</span>
+<span class="n">dmessage</span> <span class="o">=</span> <span class="n">decrypt</span><span class="p">(</span><span class="n">emessage</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dmessage</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>L:  72
+d:  29
+Original message:  33
+Encrypted message:  604
+Decrypted message:  33
+&lt;map object at 0x73b50694a380&gt;
+THE TIME HAS COME.
+</pre></div>
+</div>
 </div>
 </div>
 <section id="number-theory">
 <h2><span class="section-number">7.1. </span>Number Theory<a class="headerlink" href="#number-theory" title="Link to this heading">#</a></h2>
-<p>Sets &amp; Proofs, Venn Diagrams, Number Systems &amp; Calculation, Prime, Congruence, tests for primality, Fundamental Theorem of Arithmetic, Fermat’s little theorem, Gauss’ lemma, Euler’s theorem</p>
 <img src="https://raw.githubusercontent.com/tomctang/NB_img/main/numbersys.png" alt="数系统5层" width="350">
 <img src="https://raw.githubusercontent.com/tomctang/NB_img/main/自然数整数有理数实数复数.png" alt="自然数-整数-有理数-实数-复数" width="600">
+<p>Sets &amp; Proofs, Venn Diagrams, Number Systems &amp; Calculation, Prime, Congruence, tests for primality, Fundamental Theorem of Arithmetic, Fermat’s little theorem, Gauss’ lemma, Euler’s theorem</p>
 <p><a class="reference external" href="https://openstax.org/subjects/math">Pre-calculus by Openstax</a></p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Sets
 └── Basic Set Concepts, Subsets, Venn Diagrams, Set Operations with Two Sets and Three Sets 
@@ -486,11 +486,10 @@ Sequences, Probability and Counting Theory （前面就是组合论了）
 └── Counting Principles, Binomial Theorem, Probability
 </pre></div>
 </div>
-<section id="investigating-pi-and-e">
-<h3><span class="section-number">7.1.1. </span>Investigating Pi and e<a class="headerlink" href="#investigating-pi-and-e" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Investigating Pi and e</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 <span class="n">x</span><span class="o">=</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">limit</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">limit</span><span class="p">(</span><span class="nb">pow</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="o">/</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">,</span><span class="n">oo</span><span class="p">))</span> <span class="c1"># natural constant e</span>
@@ -525,9 +524,8 @@ Sequences, Probability and Counting Theory （前面就是组合论了）
 </div>
 </div>
 </div>
-</section>
 <section id="continued-fraction">
-<h3><span class="section-number">7.1.2. </span>Continued Fraction<a class="headerlink" href="#continued-fraction" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.1.1. </span>Continued Fraction<a class="headerlink" href="#continued-fraction" title="Link to this heading">#</a></h3>
 <p>Numerators and denominators <span class="math notranslate nohighlight">\({N_i}\)</span> and <span class="math notranslate nohighlight">\({D_i}\)</span> could be any sequences or functions</p>
 <div class="math notranslate nohighlight">
 \[D_0+\cfrac{N_1}{D_1+\cfrac{N_2}{{ D_k+\cfrac{N_k}{\ddots}}}} = D_0 + \mathop{K}\limits_{i=1}^{\infty} \frac{N_i}{D_i} \quad  e.g. \quad
@@ -622,8 +620,73 @@ Sequences, Probability and Counting Theory （前面就是组合论了）
 </section>
 <section id="abstract-algebra-group-ring-field">
 <h2><span class="section-number">7.4. </span>Abstract Algebra(Group, Ring, Field)<a class="headerlink" href="#abstract-algebra-group-ring-field" title="Link to this heading">#</a></h2>
+<section id="graphing-group-ring-field">
+<h3><span class="section-number">7.4.1. </span>Graphing Group/Ring/Field<a class="headerlink" href="#graphing-group-ring-field" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fig-1: Group (visualize Cayley graph for C4 = {e, a, a^2, a^3}, where a^4 = e)</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">networkx</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nx</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>  <span class="c1"># Define </span>
+<span class="n">elements</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;e=a^4&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;a^2&quot;</span><span class="p">,</span> <span class="s2">&quot;a^3&quot;</span><span class="p">]</span>
+<span class="n">edges</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;e=a^4&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;a^2&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;a^2&quot;</span><span class="p">,</span> <span class="s2">&quot;a^3&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;a^3&quot;</span><span class="p">,</span> <span class="s2">&quot;e=a^4&quot;</span><span class="p">)]</span>
+<span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>
+<span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">circular_layout</span><span class="p">(</span><span class="n">G</span><span class="p">)</span> <span class="c1"># Position nodes in a circular layout</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="s2">&quot;lightblue&quot;</span><span class="p">,</span> <span class="n">edge_color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Cayley Graph of Cyclic Group C4&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1">####################</span>
+<span class="c1"># Fig-2: Ring Structure Z/4Z (visualize addition &amp; multiplication separately)</span>
+<span class="n">G_add</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
+<span class="n">elements</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;0&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">]</span>
+<span class="n">edges_add</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;0&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;3&quot;</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span><span class="p">)]</span>
+<span class="n">G_add</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">edges_add</span><span class="p">)</span>
+
+<span class="c1"># Draw addition graph</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G_add</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">circular_layout</span><span class="p">(</span><span class="n">G_add</span><span class="p">),</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="s2">&quot;lightgreen&quot;</span><span class="p">,</span> <span class="n">edge_color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Addition in ring Z/4Z&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Define multiplication graph</span>
+<span class="n">G_mult</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
+<span class="n">edges_mult</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;3&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;0&quot;</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span><span class="p">)]</span>  <span class="c1"># 2*2=0, 3*3=1, etc.</span>
+<span class="n">G_mult</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">edges_mult</span><span class="p">)</span>
+
+<span class="c1"># Draw multiplication graph</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G_mult</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">circular_layout</span><span class="p">(</span><span class="n">G_mult</span><span class="p">),</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="s2">&quot;lightcoral&quot;</span><span class="p">,</span> <span class="n">edge_color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Multiplication in ring Z/4Z&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1">####################### Field: Z/5Z, fully connected multiplication graph</span>
+<span class="n">G_field</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
+<span class="n">elements</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;0&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">,</span> <span class="s2">&quot;4&quot;</span><span class="p">]</span>
+<span class="n">edges_field</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="s2">&quot;4&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;3&quot;</span><span class="p">,</span> <span class="s2">&quot;4&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;4&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">)]</span>  <span class="c1"># Multiplicative inverses</span>
+<span class="n">G_field</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">edges_field</span><span class="p">)</span>
+
+<span class="c1"># Draw the field structure</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G_field</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">circular_layout</span><span class="p">(</span><span class="n">G_field</span><span class="p">),</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="s2">&quot;gold&quot;</span><span class="p">,</span> <span class="n">edge_color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Multiplication in Field Z/5Z&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/c6c2264494857962efa5951a63faa1c4aa83e23e066a506f37f687a68da17e9a.png" src="_images/c6c2264494857962efa5951a63faa1c4aa83e23e066a506f37f687a68da17e9a.png" />
+<img alt="_images/bfbf207178b0bf654481664580ed6f116d4f156e7e1ea9c90eab039f50e1e611.png" src="_images/bfbf207178b0bf654481664580ed6f116d4f156e7e1ea9c90eab039f50e1e611.png" />
+<img alt="_images/c0568e6ed5bfafd6b08118d8ae53de477a7672e63aec7f68ed197af4f71af224.png" src="_images/c0568e6ed5bfafd6b08118d8ae53de477a7672e63aec7f68ed197af4f71af224.png" />
+<img alt="_images/5224af76279580ca2e5ef9e1d832340452d9ad4e5e467187b4f90e1634f6090d.png" src="_images/5224af76279580ca2e5ef9e1d832340452d9ad4e5e467187b4f90e1634f6090d.png" />
+</div>
+</div>
 <img src="https://raw.githubusercontent.com/tomctang/NB_img/main/abstract_algebra1.png" alt="abstract_algebra1" width="900">
 <img src="https://raw.githubusercontent.com/tomctang/NB_img/main/abstract_algebra2.png" alt="abstract_algebra2" width="500"></section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -635,16 +698,16 @@ Sequences, Probability and Counting Theory （前面就是组合论了）
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "sagemath"
         },
         kernelOptions: {
-            name: "python3",
+            name: "sagemath",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'sagemath'</script>
 
                 </article>
               
@@ -691,8 +754,7 @@ Sequences, Probability and Counting Theory （前面就是组合论了）
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#number-theory">7.1. Number Theory</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#investigating-pi-and-e">7.1.1. Investigating Pi and e</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continued-fraction">7.1.2. Continued Fraction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continued-fraction">7.1.1. Continued Fraction</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algebra">7.2. Algebra</a><ul class="nav section-nav flex-column">
@@ -700,7 +762,10 @@ Sequences, Probability and Counting Theory （前面就是组合论了）
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-algebra">7.3. Linear Algebra</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#abstract-algebra-group-ring-field">7.4. Abstract Algebra(Group, Ring, Field)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#abstract-algebra-group-ring-field">7.4. Abstract Algebra(Group, Ring, Field)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graphing-group-ring-field">7.4.1. Graphing Group/Ring/Field</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
