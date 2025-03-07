@@ -58,6 +58,8 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '04thinking';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -369,6 +371,20 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="thinking-skill">
 <h1><span class="section-number">10. </span>Thinking Skill<a class="headerlink" href="#thinking-skill" title="Link to this heading">#</a></h1>
+<p>Inline: <span class="math notranslate nohighlight">\(x^2\)</span>
+Display: $<span class="math notranslate nohighlight">\(\int_0^\infty e^{-x^2} dx\)</span>$</p>
+<p>(\displaystyle xxxx )</p>
+<p>(\displaystyle 4 , x^{3} + x^{2})</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">x</span><span class="o">+</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="n">x</span><span class="o">^</span><span class="mi">3</span><span class="o">+</span><span class="n">x</span><span class="o">^</span><span class="mi">4</span><span class="o">+</span><span class="n">x</span><span class="o">^</span><span class="mi">5</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="n">x</span><span class="o">^</span><span class="mi">3</span><span class="o">+</span><span class="n">x</span><span class="o">^</span><span class="mi">4</span><span class="o">+</span><span class="n">x</span><span class="o">^</span><span class="mi">5</span><span class="o">+</span><span class="n">x</span><span class="o">^</span><span class="mi">6</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="p">)</span>
+<span class="n">show</span><span class="p">(</span><span class="n">taylor</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html>\(\displaystyle 4 \, x^{3} + x^{2}\)</html></div></div>
+</div>
 <blockquote>
 <div><p>Framework</p>
 </div></blockquote>
@@ -443,7 +459,7 @@ document.write(`
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Logic</span> <span class="ow">and</span> <span class="n">Boolean</span> <span class="n">Algebra</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Logic</span> <span class="ow">and</span> <span class="n">Boolean</span> <span class="n">Algebra</span><span class="p">:</span>
 <span class="n">Truth</span> <span class="n">tables</span><span class="p">,</span> <span class="n">logical</span> <span class="n">operators</span><span class="p">,</span> <span class="n">implications</span><span class="p">,</span> <span class="ow">and</span> <span class="n">biconditionals</span><span class="o">.</span>
 <span class="n">Evaluating</span> <span class="n">conditional</span> <span class="n">reasoning</span> <span class="ow">and</span> <span class="n">verifying</span> <span class="n">statements</span><span class="o">.</span>
 
@@ -484,16 +500,16 @@ document.write(`
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "sagemath"
         },
         kernelOptions: {
-            name: "python3",
+            name: "sagemath",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'sagemath'</script>
 
                 </article>
               
