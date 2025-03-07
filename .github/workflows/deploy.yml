@@ -16,7 +16,8 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
-        python-version: '3.x'
+        python-version: '3.11'
+        cache: 'pip'
         
     - name: Install Jupyter Book
       run: |
@@ -24,7 +25,7 @@ jobs:
     
     - name: Build Jupyter Book
       run: |
-        jupyter-book build .
+        jupyter-book build . --all
     
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4
