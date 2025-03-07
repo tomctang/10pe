@@ -31,8 +31,8 @@ sphinx:
       - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
     mathjax3_config:
       tex:
-        inlineMath: [['$', '$'], ['\(\displaystyle', '\)']]
-        displayMath: [['$$', '$$'], ['\[', '\]']]
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
         processEscapes: true
       options:
         skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
