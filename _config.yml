@@ -22,20 +22,21 @@ sitemap:
   base_url: "https://tomctang.github.io/10pe/"
 
 # Enable MathJax for equations
-mathjax:
-  enable: true
+#mathjax:
+#  enable: true
 
 sphinx:
   config:
     html_js_files:
-      - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-    mathjax3_config:
-      tex:
-        inlineMath: [['$', '$'], ['\\(', '\\)']]
-        displayMath: [['$$', '$$'], ['\\[', '\\]']]
-        processEscapes: true
-      options:
-        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+    mathjax_config: |
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']],
+          processEscapes: true
+        }
+      });
 
 # Execution options
 execute:
