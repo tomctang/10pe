@@ -28,15 +28,14 @@ sitemap:
 sphinx:
   config:
     html_js_files:
-      - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML
-    mathjax_config: |
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']],
-          displayMath: [['$$', '$$'], ['\\[', '\\]']],
-          processEscapes: true
-        }
-      });
+      - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+    mathjax3_config:
+      tex:
+        inlineMath: [['$', '$'], ['\(', '\)']]
+        displayMath: [['$$', '$$'], ['\[', '\]']]
+        processEscapes: true
+      options:
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
 
 # Execution options
 execute:
