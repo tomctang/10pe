@@ -974,7 +974,12 @@ but what you get just depends on the value on boundary function of that region</
 <h3><span class="section-number">13.3.2. </span>Week 5<a class="headerlink" href="#week-5" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;y a n&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Math</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">show</span><span class="p">(</span><span class="n">expr</span><span class="p">):</span>
+    <span class="n">latex_str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;$</span><span class="si">{</span><span class="n">expr</span><span class="si">}</span><span class="s2">$&quot;</span>  <span class="c1"># Use inline $...$</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">Math</span><span class="p">(</span><span class="n">latex_str</span><span class="p">))</span>
+    
+<span class="n">var</span><span class="p">(</span><span class="s1">&#39;y a n&#39;</span><span class="p">)</span>
 <span class="n">f</span><span class="o">=</span><span class="n">a</span><span class="o">*</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">-</span><span class="n">y</span><span class="o">-</span><span class="n">a</span><span class="p">)</span>
 <span class="n">show</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">a</span><span class="p">),</span><span class="n">y</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">a</span><span class="p">))</span>
 <span class="n">show</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="n">y</span><span class="o">^</span><span class="mi">2</span><span class="p">),</span><span class="n">x</span><span class="p">))</span>
@@ -985,7 +990,17 @@ but what you get just depends on the value on boundary function of that region</
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><html>\(\displaystyle {\left({\left(e^{a} - 1\right)} e^{\left(-2 \, a\right)} - {\left(e^{a} - 1\right)} e^{\left(-3 \, a\right)}\right)} a\)</html></div><div class="output text_html"><html>\(\displaystyle \frac{2 \, x^{2} y}{{\left(x^{2} + y^{2}\right)}^{2}} - \frac{y}{x^{2} + y^{2}}\)</html></div><div class="output text_html"><html>\(\displaystyle -\frac{2 \, x^{2} y}{{\left(x^{2} + y^{2}\right)}^{2}}\)</html></div><div class="output text_html"><html>\(\displaystyle -\frac{3 \, x}{{\left(x^{2} + 1\right)}^{\frac{5}{2}}}\)</html></div><div class="output text_html"><html>\(\displaystyle -\frac{3}{2} \, a^{2} n + 3 \, a n y\)</html></div></div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle ((e^a - 1)*e^(-2*a) - (e^a - 1)*e^(-3*a))*a\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 2*x^2*y/(x^2 + y^2)^2 - y/(x^2 + y^2)\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle -2*x^2*y/(x^2 + y^2)^2\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle -3*x/(x^2 + 1)^(5/2)\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle -3/2*a^2*n + 3*a*n*y\]</div>
+</div>
 </div>
 </section>
 <section id="id2">
@@ -1002,7 +1017,15 @@ but what you get just depends on the value on boundary function of that region</
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><html>\(\displaystyle -\frac{x y}{{\left(x^{2} + y^{2}\right)}^{\frac{3}{2}}}\)</html></div><div class="output text_html"><html>\(\displaystyle -\frac{x y}{{\left(x^{2} + y^{2}\right)}^{\frac{3}{2}}}\)</html></div><div class="output text_html"><html>\(\displaystyle \frac{x^{2}}{{\left(x^{2} + y^{2}\right)}^{\frac{3}{2}}} - \frac{1}{\sqrt{x^{2} + y^{2}}}\)</html></div><div class="output text_html"><html>\(\displaystyle \frac{y^{2}}{{\left(x^{2} + y^{2}\right)}^{\frac{3}{2}}} - \frac{1}{\sqrt{x^{2} + y^{2}}}\)</html></div></div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle -x*y/(x^2 + y^2)^(3/2)\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle -x*y/(x^2 + y^2)^(3/2)\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle x^2/(x^2 + y^2)^(3/2) - 1/sqrt(x^2 + y^2)\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle y^2/(x^2 + y^2)^(3/2) - 1/sqrt(x^2 + y^2)\]</div>
+</div>
 </div>
 </section>
 </section>
