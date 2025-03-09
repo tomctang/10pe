@@ -36,6 +36,9 @@ sphinx:
         processEscapes: true
       options:
         skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    myst_enable_extensions:
+      - amsmath  # Enable AMS math features
+      - dollarmath
 
 # Execution options
 execute:
