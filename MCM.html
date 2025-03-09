@@ -562,7 +562,7 @@ document.write(`
 <h3><span class="section-number">13.1.3. </span>Week 4<a class="headerlink" href="#week-4" title="Link to this heading">#</a></h3>
 <p><span class="math notranslate nohighlight">\(I_{cylinder} = 2\pi \rho \int_0^h dz \int_ 0^R dr\, r^3 = \frac{1}{2}\rho \pi R^4h\)</span></p>
 <p>For center of mass, integrate over the density formula times the dimension(e.g. for x-coordinates, multiply by x). Center of mass can then be used for moment of inertia.</p>
-<p>n,r,R,M – those are commonly occupied by PC, so use full-word, like “Mass” <a class="reference external" href="http://et.al">et.al</a></p>
+<p>n,r,R,M – those are commonly occupied by PC, so use full-word, like “Mass” et.al</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 3D integral</span>
@@ -844,7 +844,7 @@ document.write(`
 <p>Vector field has two-forms of modelling (can use separately or combined):</p>
 <ol class="arabic simple">
 <li><p>connecting to a point - divergence (e.g. magnetic);</p></li>
-<li><p>arounding a point - curl (e.g. cyclone, solor, galaxy)</p></li>
+<li><p>arounding a point - curl (e.g. cyclone, solar, galaxy)</p></li>
 </ol>
 <img src="https://raw.githubusercontent.com/tomctang/NB_img/main/vectorfield.png" alt="vector_cal" width="800">
 <p>Math modelling of vector field:</p>
@@ -859,24 +859,28 @@ but what you get just depends on the value on boundary function of that region</
 <p>This is one of the most beautiful things in the universe.</p>
 <p>Video notes:</p>
 <ul class="simple">
-<li><p>Divergence(Div)</p>
+<li><p>Remember divergence and curl formula for cartesian coordinates by calculating dot or cross product.</p></li>
+<li><p>Divergence(Div) <span class="math notranslate nohighlight">\(\nabla\cdot\vec{F}\)</span></p>
 <ul>
 <li><p>Cartesian Coordinates : <span class="math notranslate nohighlight">\(\large\frac{dF_x}{dx}+\frac{dF_y}{dy}\)</span></p></li>
 <li><p>Cylindrical Coordinates : <span class="math notranslate nohighlight">\(\large\frac{1}{r}\frac{\partial}{\partial r}(rF_r)+\frac{1}{r}\frac{ \partial F_\theta}{\partial\theta}+\frac{\partial F_z}{\partial z}\)</span></p></li>
 </ul>
 </li>
-<li><p>Curl : <span class="math notranslate nohighlight">\(\large\frac{dF_y}{dx}-\frac{dF_x}{dy}\)</span></p></li>
+<li><p>Curl : <span class="math notranslate nohighlight">\(\nabla\times\vec{F}=\large\frac{dF_y}{dx}-\frac{dF_x}{dy}\)</span></p></li>
 <li><p>Spherical Coordinates : When integrating over the sphere, differentials are <span class="math notranslate nohighlight">\(d\cos{\theta}\text{ and }d\phi\)</span>. Limits of integration are <span class="math notranslate nohighlight">\(0\text{ and (usually)}2\pi\)</span> for <span class="math notranslate nohighlight">\(d\phi\)</span> and <span class="math notranslate nohighlight">\(d\cos{\theta}\)</span> depends on how much of the sphere is there(calcluate <span class="math notranslate nohighlight">\(\cos\)</span> of other angle).</p></li>
 <li><p><span class="math notranslate nohighlight">\(\int dxdy\sqrt{1+(\frac{\partial f}{\partial x})^2+(\frac{\partial f}{\partial})^2}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\hat{\bf e}\)</span> means it is a unit vector(vs. <span class="math notranslate nohighlight">\(\overrightarrow{\bf e}\)</span> for general vector).</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\bf e}\)</span> means it is a unit vector(vs. <span class="math notranslate nohighlight">\(\vec{\bf e}\)</span> for general vector).</p></li>
 <li><p>In spherical integration, replace <span class="math notranslate nohighlight">\(d\phi\)</span> with <span class="math notranslate nohighlight">\(d\cos{\theta}\)</span></p></li>
-<li><p>Divergence Theorem : <span class="math notranslate nohighlight">\(\int_SdS\overrightarrow{F}\cdot\hat{n}\)</span>=<span class="math notranslate nohighlight">\(\int_VdV\nabla\cdot\overrightarrow{F}\)</span></p>
+<li><p>Divergence Theorem : <span class="math notranslate nohighlight">\(\int_SdS\vec{F}\cdot\hat{n}\)</span>=<span class="math notranslate nohighlight">\(\int_VdV\nabla\cdot\vec{F}\)</span></p>
 <ul>
-<li><p>Calculating volumes with surfaces : <span class="math notranslate nohighlight">\(V=\frac{1}{3}\int_SdS\overrightarrow{F}\cdot\hat{n}\)</span></p></li>
+<li><p>Calculating volumes with surfaces : <span class="math notranslate nohighlight">\(V=\frac{1}{3}\int_SdS\vec{F}\cdot\hat{n}\)</span></p></li>
 </ul>
 </li>
-<li><p><span class="math notranslate nohighlight">\(\overrightarrow{r}\)</span> : position vector</p></li>
+<li><p><span class="math notranslate nohighlight">\(\vec{r}\)</span> : position vector</p></li>
 <li><p><span class="math notranslate nohighlight">\(\hat{n}\)</span> : unit normal vector</p></li>
+</ul>
+<ul class="simple">
+<li><p>Line integral : Related to arc length so formula is <span class="math notranslate nohighlight">\(I=\large\int_a^bds\vec{F}\cdot\hat{t}=\int_{x_a}^{x_b}dx\sqrt{1+(\frac{df}{dx})^2}\vec{F}(x)\cdot\hat{t}\)</span></p></li>
 </ul>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Generalized_Stokes_theorem">Generalized Stokes’ theorem or Fundamental Theorem of Multivariate Calculus</a></p>
 <ul class="simple">
@@ -970,16 +974,18 @@ but what you get just depends on the value on boundary function of that region</
 <h3><span class="section-number">13.3.2. </span>Week 5<a class="headerlink" href="#week-5" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;y a&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;y a n&#39;</span><span class="p">)</span>
 <span class="n">f</span><span class="o">=</span><span class="n">a</span><span class="o">*</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">-</span><span class="n">y</span><span class="o">-</span><span class="n">a</span><span class="p">)</span>
 <span class="n">show</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">a</span><span class="p">),</span><span class="n">y</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">a</span><span class="p">))</span>
 <span class="n">show</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="n">y</span><span class="o">^</span><span class="mi">2</span><span class="p">),</span><span class="n">x</span><span class="p">))</span>
 <span class="n">show</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="n">y</span><span class="o">^</span><span class="mi">2</span><span class="p">),</span><span class="n">y</span><span class="p">))</span>
+<span class="n">show</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">^</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span><span class="n">x</span><span class="p">))</span>
+<span class="n">show</span><span class="p">(</span><span class="n">expand</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="p">(</span><span class="n">a</span><span class="o">/</span><span class="mi">2</span><span class="p">)),</span><span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="o">-</span><span class="p">(</span><span class="n">a</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span><span class="n">n</span><span class="o">+</span><span class="p">(</span><span class="n">a</span><span class="o">/</span><span class="mi">2</span><span class="p">))))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><html>\(\displaystyle {\left({\left(e^{a} - 1\right)} e^{\left(-2 \, a\right)} - {\left(e^{a} - 1\right)} e^{\left(-3 \, a\right)}\right)} a\)</html></div><div class="output text_html"><html>\(\displaystyle \frac{2 \, x^{2} y}{{\left(x^{2} + y^{2}\right)}^{2}} - \frac{y}{x^{2} + y^{2}}\)</html></div><div class="output text_html"><html>\(\displaystyle -\frac{2 \, x^{2} y}{{\left(x^{2} + y^{2}\right)}^{2}}\)</html></div></div>
+<div class="output text_html"><html>\(\displaystyle {\left({\left(e^{a} - 1\right)} e^{\left(-2 \, a\right)} - {\left(e^{a} - 1\right)} e^{\left(-3 \, a\right)}\right)} a\)</html></div><div class="output text_html"><html>\(\displaystyle \frac{2 \, x^{2} y}{{\left(x^{2} + y^{2}\right)}^{2}} - \frac{y}{x^{2} + y^{2}}\)</html></div><div class="output text_html"><html>\(\displaystyle -\frac{2 \, x^{2} y}{{\left(x^{2} + y^{2}\right)}^{2}}\)</html></div><div class="output text_html"><html>\(\displaystyle -\frac{3 \, x}{{\left(x^{2} + 1\right)}^{\frac{5}{2}}}\)</html></div><div class="output text_html"><html>\(\displaystyle -\frac{3}{2} \, a^{2} n + 3 \, a n y\)</html></div></div>
 </div>
 </section>
 <section id="id2">
