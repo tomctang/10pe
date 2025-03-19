@@ -380,8 +380,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#midterm-1-3">13.2. Midterm 1-3</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-calculus">13.3. Vector Calculus</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">13.3.1. Review</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#week-5">13.3.2. Week 5</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">13.3.3. Week 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coding-review">13.3.2. Coding review</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#week-6">13.3.3. Week 6</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#week-5">13.3.4. Week 5</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">13.3.5. Week 4</a></li>
 </ul>
 </li>
 </ul>
@@ -398,6 +400,7 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="math-computational-methods">
 <h1><span class="section-number">13. </span>Math Computational Methods<a class="headerlink" href="#math-computational-methods" title="Link to this heading">#</a></h1>
 <p>Physics is naturally speaking math / Physics is math language in nature</p>
+<p>Power of output <img src="https://raw.githubusercontent.com/tomctang/NB_img/main/outputpower.png" alt="vector_cal" width="450"></p>
 <section id="calculus">
 <h2><span class="section-number">13.1. </span>Calculus<a class="headerlink" href="#calculus" title="Link to this heading">#</a></h2>
 <section id="review">
@@ -837,24 +840,41 @@ document.write(`
 <h2><span class="section-number">13.3. </span>Vector Calculus<a class="headerlink" href="#vector-calculus" title="Link to this heading">#</a></h2>
 <section id="id1">
 <h3><span class="section-number">13.3.1. </span>Review<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
-<img src="https://raw.githubusercontent.com/tomctang/NB_img/main/Maxwell_eq1.jpg" alt="vector_cal" width="450">
-<p>Maxwell eq:</p>
+<blockquote>
+<div><p>Maxwell eq:</p>
+</div></blockquote>
 <ol class="arabic simple">
 <li><p>Gauss’s law for <strong>static</strong> electric fields (<span class="math notranslate nohighlight">\(E\)</span>)</p></li>
 <li><p>Gauss’s law for <strong>static</strong> magnetic fields (<span class="math notranslate nohighlight">\(B\)</span>)</p></li>
 <li><p>Faraday’s law which says a <strong>changing magnetic field</strong> (over time) produces an electric field</p></li>
 <li><p>Ampere-Maxwell’s law says a <strong>changing electric field</strong> (over time) produces a magnetic field</p></li>
 </ol>
-<img src="https://raw.githubusercontent.com/tomctang/NB_img/main/Maxwell_eq2.png" alt="vector_cal" width="800"><img src="https://raw.githubusercontent.com/tomctang/NB_img/main/grad_div_curl.png" alt="vector_cal" width="550">
+<img src="https://raw.githubusercontent.com/tomctang/NB_img/main/Maxwell_eq1.jpg" alt="vector_cal" width="450">
+<img src="https://raw.githubusercontent.com/tomctang/NB_img/main/Maxwell_eq2.png" alt="vector_cal" width="800"><blockquote>
+<div><p>Field Theory</p>
+</div></blockquote>
+<p>Scalar field -&gt; Vector field -&gt; Tensor field</p>
+<ul class="simple">
+<li><p>a scalar field has 1 value at a given point of a mathematical space (e.g. Euclidean space or manifold),</p></li>
+<li><p>a vector field has 2 (direction and magnitude),</p></li>
+<li><p>a tensor field has 2+ (here represented by an ellipse at each point with semi-major axis length, semi-minor axis length, and direction)</p></li>
+</ul>
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/72/Tensor_field.png" alt="vector_cal" width="650">
+<img src="https://raw.githubusercontent.com/tomctang/NB_img/main/grad_div_curl.png" alt="vector_cal" width="450">
 <p>Vector field has two-forms of modelling (use separately or combined):</p>
 <ol class="arabic simple">
-<li><p>connecting to a point - divergence (e.g. magnetic);</p></li>
+<li><p>connecting to a point, converge or diverge - divergence (e.g. electric charge);</p>
+<ul class="simple">
+<li><p>physical meaning?</p></li>
+</ul>
+</li>
 <li><p>rotating a point - curl (e.g. cyclone, solar, galaxy)</p></li>
 </ol>
 <img src="https://raw.githubusercontent.com/tomctang/NB_img/main/vectorfield.png" alt="vector_cal" width="800">
-<p>Math modelling of vector field:</p>
+<p>Math modelling of vector field: Grad, Div, Curl</p>
 <img src="https://raw.githubusercontent.com/tomctang/NB_img/main/graddivcurl.png" alt="vector_cal" width="650">
 <img src="https://raw.githubusercontent.com/tomctang/NB_img/main/graddivcurl2.png" alt="vector_cal" width="650">
+<p>Comparison of single-var, multi-var, vector calculus</p>
 <img src="https://raw.githubusercontent.com/tomctang/NB_img/main/singlemultivector.png" alt="vector_cal" width="750">
 <p>The universe try to tell us that when you integrate the “derivative” of a function within a region</p>
 <blockquote>
@@ -862,10 +882,44 @@ document.write(`
 but what you get just depends on the value on boundary function of that region</p>
 </div></blockquote>
 <p>This is one of the most beautiful things in the universe.</p>
+<p>Video notes :</p>
+<ul class="simple">
+<li><p>Remember divergence and curl formula for cartesian coordinates by calculating dot or cross product.</p></li>
+<li><p>Divergence(Div) <span class="math notranslate nohighlight">\(\nabla\cdot\vec{F}\)</span></p>
+<ul>
+<li><p>Cartesian Coordinates : <span class="math notranslate nohighlight">\(\large\frac{dF_x}{dx}+\frac{dF_y}{dy}+\frac{dF_z}{dz}\)</span></p></li>
+<li><p>Cylindrical Coordinates : <span class="math notranslate nohighlight">\(\large\frac{1}{r}\frac{\partial}{\partial r}(rF_r)+\frac{1}{r}\frac{ \partial F_\theta}{\partial\theta}+\frac{\partial F_z}{\partial z}\)</span></p></li>
+<li><p>Spherical Coordinates : <span class="math notranslate nohighlight">\(\large\frac{1}{r^2}\frac{\partial}{\partial r}(r^2F_r)+\frac{1}{r \sin{\phi}}\frac{\partial}{\partial\phi}(\sin{\phi}F_\phi)+\frac{1}{r\sin{\phi}}\frac{\partial F_\theta}{\partial\theta}\)</span></p></li>
+</ul>
+</li>
+<li><p>Curl :</p>
+<ul>
+<li><p>Cartesian Coordinates : <span class="math notranslate nohighlight">\(\vec{\nabla} \times \vec{\bf F} = \hat{i}\left( \frac{\partial F_{z}}{\partial y} - \frac{\partial F_{y}}{\partial z} \right) + \hat{j}\left( \frac{\partial F_{x}}{\partial z} - \frac{\partial F_{z}}{\partial x} \right) + \hat{k}\left( \frac{\partial F_{y}}{\partial x} - \frac{\partial F_{x}}{\partial y} \right)\)</span></p></li>
+<li><p>Cylindrical Coordinates: <span class="math notranslate nohighlight">\(\nabla\times \vec{\bf F}=\left ( \frac{1}{r}\frac{\partial F_z}{\partial\theta}-\frac{\partial F_\theta}{\partial z}\right )\hat e_r+\left (\frac{\partial F_r}{\partial z}-\frac{\partial F_z}{\partial r}\right )\hat e_\theta+\left ( \frac{1}{r}\frac{\partial \left ( rF_\theta\right )}{\partial r}-\frac{1}{r}\frac{\partial F_r}{\partial \theta}\right )\hat e_z\)</span></p></li>
+<li><p>Spherical Coordinates : <span class="math notranslate nohighlight">\(\nabla\times \vec{\bf F}=\left ( \frac{1}{r\sin\theta}\frac{\partial}{\partial\theta}\left ( \sin\theta F_\phi\right )-\frac{1}{r\sin\theta}\frac{\partial F_\theta}{\partial\phi}\right )\hat e_r+\left ( \frac{1}{r\sin\theta}\frac{\partial F_r}{\partial \phi}-\frac{1}{r}\frac{\partial}{\partial r} (rF_\phi)\right )\hat e_\theta+\left ( \frac{1}{r}\frac{\partial}{\partial r}(rF_\theta)-\frac{1}{r}\frac{\partial F_r}{\partial\theta}\right )\hat e_\phi\)</span></p></li>
+</ul>
+</li>
+<li><p>Spherical Coordinates : When integrating over the sphere, differentials are <span class="math notranslate nohighlight">\(d\cos{\theta}\text{ and }d\phi\)</span>.</p>
+<ul>
+<li><p>Limits of integration are <span class="math notranslate nohighlight">\(0\)</span> and (usually) <span class="math notranslate nohighlight">\(2\pi\)</span> for <span class="math notranslate nohighlight">\(d\phi\)</span> and <span class="math notranslate nohighlight">\(d\cos{\theta}\)</span> to account for the <span class="math notranslate nohighlight">\(\sin{\theta}\)</span> in the <span class="math notranslate nohighlight">\(dS\text{ or }dV\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(d\theta\)</span> can also be used.</p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\int dxdy\sqrt{1+(\frac{\partial f}{\partial x})^2+(\frac{\partial f}{\partial})^2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\bf e}\)</span> means it is a unit vector (.VS. <span class="math notranslate nohighlight">\(\vec{\bf e}\)</span> for general vector).</p></li>
+<li><p>In spherical integration, replace <span class="math notranslate nohighlight">\(d\phi\)</span> with <span class="math notranslate nohighlight">\(d\cos{\theta}\)</span></p></li>
+<li><p>Divergence Theorem : <span class="math notranslate nohighlight">\(\int_SdS\vec{F}\cdot\hat{n}\)</span>=<span class="math notranslate nohighlight">\(\int_VdV\nabla\cdot\vec{F}\)</span></p>
+<ul>
+<li><p>Calculating volumes with surfaces : <span class="math notranslate nohighlight">\(V=\frac{1}{3}\int_SdS\vec{F}\cdot\hat{n}\)</span></p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\vec{r}\)</span> : position vector</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{n}\)</span> : unit normal vector</p></li>
+</ul>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Formula</p></th>
-<th class="head"><p>dimensional reduction</p></th>
+<th class="head"><p>Sol: dimensional reduction</p></th>
 </tr>
 </thead>
 <tbody>
@@ -884,34 +938,6 @@ but what you get just depends on the value on boundary function of that region</
 </tbody>
 </table>
 </div>
-<p>Video notes :</p>
-<ul class="simple">
-<li><p>Remember divergence and curl formula for cartesian coordinates by calculating dot or cross product.</p></li>
-<li><p>Divergence(Div) <span class="math notranslate nohighlight">\(\nabla\cdot\vec{F}\)</span></p>
-<ul>
-<li><p>Cartesian Coordinates : <span class="math notranslate nohighlight">\(\large\frac{dF_x}{dx}+\frac{dF_y}{dy}\)</span></p></li>
-<li><p>Cylindrical Coordinates : <span class="math notranslate nohighlight">\(\large\frac{1}{r}\frac{\partial}{\partial r}(rF_r)+\frac{1}{r}\frac{ \partial F_\theta}{\partial\theta}+\frac{\partial F_z}{\partial z}\)</span></p></li>
-<li><p>Spherical Coordinates : <span class="math notranslate nohighlight">\(\large\frac{1}{r^2}\frac{\partial}{\partial r}(r^2F_r)+\frac{1}{r \sin{\phi}}\frac{\partial}{\partial\phi}(\sin{\phi}F_\phi)+\frac{1}{r\sin{\phi}}\frac{\partial F_\theta}{\partial\theta}\)</span></p></li>
-</ul>
-</li>
-<li><p>Curl : <span class="math notranslate nohighlight">\(\nabla\times\vec{F}=\large\frac{dF_y}{dx}-\frac{dF_x}{dy}\)</span></p></li>
-<li><p>Spherical Coordinates : When integrating over the sphere, differentials are <span class="math notranslate nohighlight">\(d\cos{\theta}\text{ and }d\phi\)</span>.</p>
-<ul>
-<li><p>Limits of integration are <span class="math notranslate nohighlight">\(0\)</span> and (usually) <span class="math notranslate nohighlight">\(2\pi\)</span> for <span class="math notranslate nohighlight">\(d\phi\)</span> and <span class="math notranslate nohighlight">\(d\cos{\theta}\)</span> to account for the <span class="math notranslate nohighlight">\(\sin{\theta}\)</span> in the <span class="math notranslate nohighlight">\(dS\text{ or }dV\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(d\theta\)</span> can also be used.</p></li>
-</ul>
-</li>
-<li><p><span class="math notranslate nohighlight">\(\int dxdy\sqrt{1+(\frac{\partial f}{\partial x})^2+(\frac{\partial f}{\partial})^2}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\hat{\bf e}\)</span> means it is a unit vector (.VS. <span class="math notranslate nohighlight">\(\vec{\bf e}\)</span> for general vector).</p></li>
-<li><p>In spherical integration, replace <span class="math notranslate nohighlight">\(d\phi\)</span> with <span class="math notranslate nohighlight">\(d\cos{\theta}\)</span></p></li>
-<li><p>Divergence Theorem : <span class="math notranslate nohighlight">\(\int_SdS\vec{F}\cdot\hat{n}\)</span>=<span class="math notranslate nohighlight">\(\int_VdV\nabla\cdot\vec{F}\)</span></p>
-<ul>
-<li><p>Calculating volumes with surfaces : <span class="math notranslate nohighlight">\(V=\frac{1}{3}\int_SdS\vec{F}\cdot\hat{n}\)</span></p></li>
-</ul>
-</li>
-<li><p><span class="math notranslate nohighlight">\(\vec{r}\)</span> : position vector</p></li>
-<li><p><span class="math notranslate nohighlight">\(\hat{n}\)</span> : unit normal vector</p></li>
-</ul>
 <ul class="simple">
 <li><p>Line integral : Related to arc length so formula is <span class="math notranslate nohighlight">\(I=\large\int_a^bds\vec{F}\cdot\hat{t}=\int_{x_a}^{x_b}dx\sqrt{1+(\frac{df}{dx})^2}\vec{F}(x)\cdot\hat{t}\)</span></p>
 <ul>
@@ -921,13 +947,67 @@ but what you get just depends on the value on boundary function of that region</
 </ul>
 </li>
 <li><p>Stokes’ Theorem : <span class="math notranslate nohighlight">\(\oint_Sds\vec{F}\cdot\hat{t}=\int_SdS(\nabla\times\vec{F})\cdot\hat{n}\)</span> or that the line integral around the path and the surface integral over the area bounded by the path is related 1:1.</p></li>
+<li><p>Gradient(<span class="math notranslate nohighlight">\(\nabla f\)</span>):</p>
+<ul>
+<li><p>Cartesian Coordinates : <span class="math notranslate nohighlight">\(\nabla f=\frac{\partial f}{\partial x}\hat{i}+\frac{\partial f}{\partial y}\hat{j}+\frac{\partial f}{\partial z}\hat{k}\)</span></p></li>
+<li><p>Polar/Cylindrical Coordinates : <span class="math notranslate nohighlight">\(\nabla f=\frac{df}{dr}\hat{r}+\frac{1}{r}\frac{df}{d\theta}\hat{\theta}+\frac{df}{dz}\hat{z}\)</span></p></li>
+<li><p>Spherical Coordinates : <span class="math notranslate nohighlight">\(\nabla f=\frac{df}{dr}\hat{r}+\frac{1}{r}\frac{df}{d\theta}+\frac{1}{r\sin{\theta}}\frac{dF_\theta}{d\phi}\)</span></p></li>
+</ul>
+</li>
 </ul>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Generalized_Stokes_theorem">Generalized Stokes’ theorem or Fundamental Theorem of Multivariate Calculus</a></p>
 <ul class="simple">
 <li><p>In case you are curious, this deeper theorem captures all above theorems (and more) in one formula,</p></li>
 <li><p>by analysing differential forms on manifolds, which simplifies several theorems from vector calculus</p></li>
 </ul>
-<p>Sage examples:</p>
+</section>
+<section id="coding-review">
+<h3><span class="section-number">13.3.2. </span>Coding review<a class="headerlink" href="#coding-review" title="Link to this heading">#</a></h3>
+<p>SageManifolds solve differential geometry and tensor calculus of any dimension</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># vector field - div, curl</span>
+<span class="n">E</span><span class="o">.&lt;</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">EuclideanSpace</span><span class="p">()</span>  <span class="c1"># set up coordinates in ()</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">E</span><span class="o">.</span><span class="n">vector_field</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">-</span><span class="n">y</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;v&#39;</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">E</span><span class="o">.</span><span class="n">scalar_field</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="n">y</span><span class="o">^</span><span class="mi">2</span><span class="o">-</span><span class="n">z</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">)</span>
+<span class="n">show</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">display</span><span class="p">())</span> <span class="c1"># original func</span>
+<span class="n">show</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">display</span><span class="p">())</span>
+
+<span class="n">show</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">div</span><span class="p">()</span><span class="o">.</span><span class="n">display</span><span class="p">())</span>
+<span class="n">show</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">curl</span><span class="p">()</span><span class="o">.</span><span class="n">display</span><span class="p">())</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sage.manifolds.operators</span><span class="w"> </span><span class="kn">import</span> <span class="n">grad</span><span class="p">,</span> <span class="n">laplacian</span>
+<span class="n">show</span><span class="p">(</span><span class="n">grad</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">.</span><span class="n">display</span><span class="p">())</span> 
+<span class="n">show</span><span class="p">(</span><span class="n">laplacian</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">.</span><span class="n">display</span><span class="p">())</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># divergence algo (manually)</span>
+<span class="n">var</span><span class="p">(</span><span class="s1">&#39;x y z&#39;</span><span class="p">)</span> <span class="p">;</span> <span class="n">Fx</span><span class="o">=</span><span class="n">z</span><span class="o">^</span><span class="mi">2</span> <span class="p">;</span> <span class="n">Fy</span><span class="o">=</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span> <span class="p">;</span> <span class="n">Fz</span><span class="o">=-</span><span class="n">y</span><span class="o">^</span><span class="mi">2</span> 
+<span class="n">div</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">Fx</span><span class="p">,</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">diff</span><span class="p">(</span><span class="n">Fy</span><span class="p">,</span><span class="n">y</span><span class="p">)</span> <span class="o">+</span> <span class="n">diff</span><span class="p">(</span><span class="n">Fz</span><span class="p">,</span><span class="n">z</span><span class="p">)</span>  
+<span class="n">show</span><span class="p">(</span><span class="n">div</span><span class="p">)</span>
+
+<span class="c1"># curl Approach 1: self-made algorithm</span>
+<span class="n">curlx</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">Fz</span><span class="p">,</span><span class="n">y</span><span class="p">)</span> <span class="o">-</span> <span class="n">diff</span><span class="p">(</span><span class="n">Fy</span><span class="p">,</span><span class="n">z</span><span class="p">)</span>     
+<span class="n">curly</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">Fx</span><span class="p">,</span><span class="n">z</span><span class="p">)</span> <span class="o">-</span> <span class="n">diff</span><span class="p">(</span><span class="n">Fz</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="n">curlz</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">Fy</span><span class="p">,</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">diff</span><span class="p">(</span><span class="n">Fx</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">show</span><span class="p">(</span><span class="n">vector</span><span class="p">([</span><span class="n">curlx</span><span class="p">,</span> <span class="n">curly</span><span class="p">,</span> <span class="n">curlz</span><span class="p">]))</span>
+
+<span class="c1"># curl Approach 2: built-in function</span>
+<span class="n">E</span><span class="o">.&lt;</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">EuclideanSpace</span><span class="p">()</span>  
+<span class="n">v</span> <span class="o">=</span> <span class="n">E</span><span class="o">.</span><span class="n">vector_field</span><span class="p">(</span><span class="n">z</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="n">y</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;v&#39;</span><span class="p">)</span>
+<span class="n">show</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">curl</span><span class="p">()</span><span class="o">.</span><span class="n">display</span><span class="p">())</span>
+
+<span class="n">E</span> <span class="o">=</span> <span class="n">EuclideanSpace</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># btw: set up </span>
+<span class="n">show</span><span class="p">(</span><span class="n">E</span><span class="o">.</span><span class="n">cartesian_coordinates</span><span class="p">())</span>
+<span class="n">show</span><span class="p">(</span><span class="n">E</span><span class="o">.</span><span class="n">cylindrical_coordinates</span><span class="p">())</span>
+<span class="n">show</span><span class="p">(</span><span class="n">E</span><span class="o">.</span><span class="n">spherical_coordinates</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># From vector to calculus</span>
@@ -936,18 +1016,7 @@ but what you get just depends on the value on boundary function of that region</
 <span class="n">show</span><span class="p">(</span><span class="n">v</span><span class="o">*</span><span class="n">w</span><span class="p">)</span>
 <span class="n">show</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">cross_product</span><span class="p">(</span><span class="n">w</span><span class="p">))</span>
 
-<span class="n">var</span><span class="p">(</span><span class="s1">&#39;t, x, y&#39;</span><span class="p">)</span>
-<span class="n">line</span>     <span class="o">=</span> <span class="n">parametric_plot3d</span><span class="p">([</span><span class="mi">2</span><span class="o">*</span><span class="n">t</span><span class="o">+</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">t</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="n">t</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
-<span class="n">plane</span>    <span class="o">=</span> <span class="n">plot3d</span><span class="p">((</span><span class="mi">1</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="mi">12</span><span class="o">+</span><span class="n">x</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">y</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="o">-</span><span class="mi">13</span><span class="p">,</span><span class="o">-</span><span class="mi">7</span><span class="p">),</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-<span class="n">intersect</span><span class="o">=</span> <span class="n">point3d</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
-<span class="n">line</span><span class="o">+</span><span class="n">plane</span><span class="o">+</span><span class="n">intersect</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vector Calculus</span>
+<span class="c1"># Vector Calculus</span>
 <span class="n">var</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
 <span class="n">r</span><span class="o">=</span><span class="n">vector</span><span class="p">((</span><span class="mi">2</span><span class="o">*</span><span class="n">t</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="n">t</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="n">t</span><span class="o">^</span><span class="mi">3</span><span class="p">))</span> <span class="c1"># start from displacement formula</span>
 <span class="n">show</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
@@ -966,52 +1035,24 @@ but what you get just depends on the value on boundary function of that region</
 </div>
 </div>
 </div>
+</section>
+<section id="week-6">
+<h3><span class="section-number">13.3.3. </span>Week 6<a class="headerlink" href="#week-6" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Scalar field .VS. Vector field</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">networkx</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nx</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-
-<span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
-<span class="n">nodes</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># Add nodes</span>
-<span class="n">G</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span>
-<span class="c1"># Add edges (directed)</span>
-<span class="n">edges</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)]</span>
-<span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>
-
-<span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
-<span class="n">scalar_values</span> <span class="o">=</span> <span class="p">{</span><span class="n">node</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">}</span>
-<span class="n">vector_values</span> <span class="o">=</span> <span class="p">{</span><span class="n">edge</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">)</span> <span class="k">for</span> <span class="n">edge</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">}</span>
-<span class="n">node_colors</span> <span class="o">=</span> <span class="p">[</span><span class="n">scalar_values</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">]</span> <span class="c1"># Normalize scalar values for colormap</span>
-
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-<span class="c1"># --- Scalar Field Visualization ---</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Scalar Field on Nodes&quot;</span><span class="p">)</span>
-<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span>
-    <span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> 
-    <span class="n">node_color</span><span class="o">=</span><span class="n">node_colors</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">viridis</span><span class="p">,</span> <span class="n">edge_color</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
-<span class="c1"># --- Vector Field Visualization ---</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Vector Field on Edges&quot;</span><span class="p">)</span>
-<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span>
-    <span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> 
-    <span class="n">node_color</span><span class="o">=</span><span class="s2">&quot;lightblue&quot;</span><span class="p">,</span> <span class="n">edge_color</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">),</span> <span class="n">flow</span> <span class="ow">in</span> <span class="n">vector_values</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span> <span class="o">=</span> <span class="n">pos</span><span class="p">[</span><span class="n">u</span><span class="p">]</span>
-    <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span> <span class="o">=</span> <span class="n">pos</span><span class="p">[</span><span class="n">v</span><span class="p">]</span>
-    <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
-        <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">),</span>
-        <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s2">&quot;-&gt;&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="n">flow</span><span class="p">)</span>
-    <span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show</span><span class="p">(</span><span class="n">diff</span><span class="p">((</span><span class="n">ln</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="n">y</span><span class="o">^</span><span class="mi">2</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">y</span><span class="p">))</span>
+<span class="n">show</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">arctan</span><span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">))</span>
+<span class="n">show</span><span class="p">(</span><span class="n">n</span><span class="p">(</span><span class="n">arctan</span><span class="p">(</span><span class="mi">3</span><span class="o">+</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span><span class="o">*</span><span class="mi">180</span><span class="o">/</span><span class="n">pi</span><span class="p">))</span>
+<span class="n">show</span><span class="p">(</span><span class="n">n</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">13</span><span class="o">+</span><span class="mi">6</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="p">))))</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html>\(\displaystyle \frac{y}{x^{2} + y^{2}}\)</html></div><div class="output text_html"><html>\(\displaystyle -\frac{y}{x^{2} {\left(\frac{y^{2}}{x^{2}} + 1\right)}}\)</html></div><div class="output text_html"><html>\(\displaystyle 78.0675372919750\)</html></div><div class="output text_html"><html>\(\displaystyle 4.83655919486294\)</html></div></div>
 </div>
 </section>
 <section id="week-5">
-<h3><span class="section-number">13.3.2. </span>Week 5<a class="headerlink" href="#week-5" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">13.3.4. </span>Week 5<a class="headerlink" href="#week-5" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;y a n&#39;</span><span class="p">)</span>
@@ -1039,7 +1080,7 @@ but what you get just depends on the value on boundary function of that region</
 </div>
 </section>
 <section id="id2">
-<h3><span class="section-number">13.3.3. </span>Week 4<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">13.3.5. </span>Week 4<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
@@ -1142,8 +1183,10 @@ but what you get just depends on the value on boundary function of that region</
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#midterm-1-3">13.2. Midterm 1-3</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-calculus">13.3. Vector Calculus</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">13.3.1. Review</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#week-5">13.3.2. Week 5</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">13.3.3. Week 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coding-review">13.3.2. Coding review</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#week-6">13.3.3. Week 6</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#week-5">13.3.4. Week 5</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">13.3.5. Week 4</a></li>
 </ul>
 </li>
 </ul>

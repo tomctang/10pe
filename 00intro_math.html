@@ -385,39 +385,6 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="math-fp-lang-combo">
 <h1><span class="section-number">6. </span>Math-FP-Lang Combo<a class="headerlink" href="#math-fp-lang-combo" title="Link to this heading">#</a></h1>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;x y z&#39;</span><span class="p">)</span> <span class="p">;</span> <span class="n">Fx</span><span class="o">=</span><span class="n">z</span><span class="o">^</span><span class="mi">2</span> <span class="p">;</span> <span class="n">Fy</span><span class="o">=</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span> <span class="p">;</span> <span class="n">Fz</span><span class="o">=-</span><span class="n">y</span><span class="o">^</span><span class="mi">2</span> 
-
-<span class="n">div</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">Fx</span><span class="p">,</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">diff</span><span class="p">(</span><span class="n">Fy</span><span class="p">,</span><span class="n">y</span><span class="p">)</span> <span class="o">+</span> <span class="n">diff</span><span class="p">(</span><span class="n">Fz</span><span class="p">,</span><span class="n">z</span><span class="p">)</span>  <span class="c1"># div algo</span>
-<span class="n">show</span><span class="p">(</span><span class="n">div</span><span class="p">)</span>
-
-<span class="n">curlx</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">Fz</span><span class="p">,</span><span class="n">y</span><span class="p">)</span> <span class="o">-</span> <span class="n">diff</span><span class="p">(</span><span class="n">Fy</span><span class="p">,</span><span class="n">z</span><span class="p">)</span>     <span class="c1"># curl self-made algorithm</span>
-<span class="n">curly</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">Fx</span><span class="p">,</span><span class="n">z</span><span class="p">)</span> <span class="o">-</span> <span class="n">diff</span><span class="p">(</span><span class="n">Fz</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
-<span class="n">curlz</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">Fy</span><span class="p">,</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">diff</span><span class="p">(</span><span class="n">Fx</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-<span class="n">show</span><span class="p">(</span><span class="n">vector</span><span class="p">([</span><span class="n">curlx</span><span class="p">,</span> <span class="n">curly</span><span class="p">,</span> <span class="n">curlz</span><span class="p">]))</span>
-
-<span class="n">E</span><span class="o">.&lt;</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">EuclideanSpace</span><span class="p">()</span>   <span class="c1"># built-in function</span>
-<span class="n">v</span> <span class="o">=</span> <span class="n">E</span><span class="o">.</span><span class="n">vector_field</span><span class="p">(</span><span class="n">z</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="n">y</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;v&#39;</span><span class="p">)</span>
-<span class="n">show</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">curl</span><span class="p">()</span><span class="o">.</span><span class="n">display</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><html>\(\displaystyle 0\)</html></div><div class="output text_html"><html>\(\displaystyle \left(-2 \, y,\,2 \, z,\,2 \, x\right)\)</html></div><div class="output text_html"><html>\(\displaystyle \mathrm{curl}\left(v\right) = -2 \, y e_{ x } + 2 \, z e_{ y } + 2 \, x e_{ z }\)</html></div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E</span> <span class="o">=</span> <span class="n">EuclideanSpace</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">show</span><span class="p">(</span><span class="n">E</span><span class="o">.</span><span class="n">cartesian_coordinates</span><span class="p">())</span>
-<span class="n">show</span><span class="p">(</span><span class="n">E</span><span class="o">.</span><span class="n">cylindrical_coordinates</span><span class="p">())</span>
-<span class="n">show</span><span class="p">(</span><span class="n">E</span><span class="o">.</span><span class="n">spherical_coordinates</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><html>\(\displaystyle \left(\mathbb{E}^{3},(x, y, z)\right)\)</html></div><div class="output text_html"><html>\(\displaystyle \left(\mathbb{E}^{3},({\rho}, {\phi}, z)\right)\)</html></div><div class="output text_html"><html>\(\displaystyle \left(\mathbb{E}^{3},(r, {\theta}, {\phi})\right)\)</html></div></div>
-</div>
 <p>Objectives: To prepare secondary &amp; tertiary math for my kids</p>
 <p>Bad ideas:</p>
 <ul class="simple">
