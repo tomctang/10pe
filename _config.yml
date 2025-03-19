@@ -1,8 +1,6 @@
-# Project information
 title: "Jonny Workbook"
 author: "Jonny, assisted by Tom"
 # logo: logo.png  # Optional
-
 # Repository URL (for GitHub Pages)
 repository:
   url: "https://github.com/tomctang/10pe"
@@ -10,40 +8,11 @@ repository:
   branch: "gh-pages"  # Deployment branch for GitHub Pages
 
 # HTML and theme configuration
-#  favicon: "path/to/favicon.ico"  # Optional
 html:
   use_issues_button: false
   use_repository_button: true
   extra_css: ["_static/custom.css"]
-
-# Sitemap (optional)
-sitemap:
-  filename: "sitemap.xml"
-  base_url: "https://tomctang.github.io/10pe/"
-
-# Enable MathJax for equations
-#mathjax:
-#  enable: true
-
-sphinx:
-  config:
-    html_js_files:
-      - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-    mathjax3_config:
-      tex:
-#        inlineMath: [['$', '$'], ['\\(\displaystyle', '\\)']]
-        processEscapes: true
-      options:
-        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-    myst_enable_extensions:
-      - amsmath  # Enable AMS math features
-      - dollarmath
-      
-# Execution options
-execute:
-  execute_notebooks: "off"  # Change to "auto" to execute notebooks during the build
-
-
+#  favicon: "path/to/favicon.ico" 
 #html:
 #  theme:
 #    name: "sphinx_book_theme"
@@ -52,7 +21,31 @@ execute:
 #      body_max_width: "90%"  # Adjusts the width of the main content (default is "none")
 #      font_size: "16px"      # Base font size (can also be set in custom CSS)
 #      use_edit_page_button: true  # Adds "Edit this page" link
-
 #      logo_only: true
 #      search_bar_position: "navbar"
 #      extra_navbar: '<p>My Custom Footer</p>'
+
+# Sitemap (optional)
+sitemap:
+  filename: "sitemap.xml"
+  base_url: "https://tomctang.github.io/10pe/"
+# Execution options
+execute:
+  execute_notebooks: "off"  # Change to "auto" to execute notebooks during build
+# Enable MathJax for equations
+#mathjax:
+#  enable: true
+
+# sphinx:
+#   config:
+#     html_js_files:
+#       - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+#     mathjax3_config:
+#       tex:
+# #        inlineMath: [['$', '$'], ['\\(\displaystyle', '\\)']]
+#         processEscapes: true
+#       options:
+#         skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+#     myst_enable_extensions:
+#       - amsmath  # Enable AMS math features
+#       - dollarmath
