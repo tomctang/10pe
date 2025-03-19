@@ -35,7 +35,6 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=6403fb6a" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -963,7 +962,7 @@ but what you get just depends on the value on boundary function of that region</
 </section>
 <section id="coding-review">
 <h3><span class="section-number">13.3.2. </span>Coding review<a class="headerlink" href="#coding-review" title="Link to this heading">#</a></h3>
-<p>SageManifolds solve differential geometry and tensor calculus of any dimension</p>
+<p><a class="reference external" href="https://sagemanifolds.obspm.fr/documentation.html">SageManifolds</a> solve differential geometry and tensor calculus of any dimension</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># vector field - div, curl</span>
@@ -1083,8 +1082,7 @@ but what you get just depends on the value on boundary function of that region</
 <h3><span class="section-number">13.3.5. </span>Week 4<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
-<span class="n">y</span><span class="o">=</span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;x y&#39;</span><span class="p">)</span>
 <span class="n">show</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="n">y</span><span class="o">^</span><span class="mi">2</span><span class="p">),</span> <span class="n">y</span><span class="p">))</span>
 <span class="n">show</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="n">y</span><span class="o">^</span><span class="mi">2</span><span class="p">),</span> <span class="n">x</span><span class="p">))</span>
 <span class="n">show</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="n">y</span><span class="o">^</span><span class="mi">2</span><span class="p">),</span> <span class="n">x</span><span class="p">))</span>
