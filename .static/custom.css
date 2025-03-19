@@ -1,0 +1,18 @@
+div.body, body, .content {
+    line-height: 1.4; /* Adjust line spacing */
+    max-width: 1800px !important; /* Ensure the rule is applied */
+    width: 130% !important;        /* Force percentage width */
+    margin: 0 auto !important;    /* Center horizontally */
+}
+
+/* Left sidebar (Index)      
+    position: fixed;
+    height: 100%;    */
+div.sphinxsidebar {
+    float: left;
+    width: 180px;
+    margin-left: 1%;
+    font-size: 90%;
+    word-wrap: break-word;
+    overflow-wrap : break-word;
+}
