@@ -464,11 +464,58 @@ document.write(`
 <h3><span class="section-number">5.2.1. </span>Assessment 3 - Module 7 and 8<a class="headerlink" href="#assessment-3-module-7-and-8" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="n">vector</span><span class="p">([</span><span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
-<span class="n">b</span><span class="o">=</span><span class="n">vector</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
-<span class="n">show</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">cross_product</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Math</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">show1</span><span class="p">(</span><span class="n">expr</span><span class="p">):</span>
+    <span class="n">latex_str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;$</span><span class="si">{</span><span class="n">latex</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span><span class="si">}</span><span class="s2">$&quot;</span>  <span class="c1"># Explicitly wrap in $...$</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">Math</span><span class="p">(</span><span class="n">latex_str</span><span class="p">))</span>
+<span class="n">sage</span><span class="o">.</span><span class="n">repl</span><span class="o">.</span><span class="n">rich_output</span><span class="o">.</span><span class="n">pretty_print</span><span class="o">.</span><span class="n">show</span> <span class="o">=</span> <span class="n">show1</span> <span class="c1"># replaces show globally</span>
 </pre></div>
 </div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="n">vector</span><span class="p">([</span><span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
+<span class="n">b</span><span class="o">=</span><span class="n">vector</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="n">show1</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">cross_product</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \left(-35,\,10,\,35\right)\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># vector field - div, curl</span>
+<span class="n">E</span><span class="o">.&lt;</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">EuclideanSpace</span><span class="p">()</span>  <span class="c1"># set up coordinates in ()</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">E</span><span class="o">.</span><span class="n">vector_field</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">-</span><span class="n">y</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;v&#39;</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">E</span><span class="o">.</span><span class="n">scalar_field</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="n">y</span><span class="o">^</span><span class="mi">2</span><span class="o">-</span><span class="n">z</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">)</span>
+<span class="n">show1</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">display</span><span class="p">())</span> <span class="c1"># original func</span>
+<span class="n">show1</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">display</span><span class="p">())</span>
+
+<span class="n">show1</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">div</span><span class="p">()</span><span class="o">.</span><span class="n">display</span><span class="p">())</span>
+<span class="n">show1</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">curl</span><span class="p">()</span><span class="o">.</span><span class="n">display</span><span class="p">())</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sage.manifolds.operators</span><span class="w"> </span><span class="kn">import</span> <span class="n">grad</span><span class="p">,</span> <span class="n">laplacian</span>
+<span class="n">show1</span><span class="p">(</span><span class="n">grad</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">.</span><span class="n">display</span><span class="p">())</span> 
+<span class="n">show1</span><span class="p">(</span><span class="n">laplacian</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">.</span><span class="n">display</span><span class="p">())</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle v = \left( x^{2} - y^{2} \right) e_{ x } -2 \, x y e_{ y }\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{array}{llcl} s:&amp; \mathbb{E}^{3} &amp; \longrightarrow &amp; \mathbb{R} \\ &amp; \left(x, y, z\right) &amp; \longmapsto &amp; x^{2} + y^{2} - z^{2} \end{array}\end{split}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{array}{llcl} \mathrm{div}\left(v\right):&amp; \mathbb{E}^{3} &amp; \longrightarrow &amp; \mathbb{R} \\ &amp; \left(x, y, z\right) &amp; \longmapsto &amp; 0 \end{array}\end{split}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \mathrm{curl}\left(v\right) = 0\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \mathrm{grad}\left(s\right) = 2 \, x e_{ x } + 2 \, y e_{ y } -2 \, z e_{ z }\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{array}{llcl} \Delta\left(s\right):&amp; \mathbb{E}^{3} &amp; \longrightarrow &amp; \mathbb{R} \\ &amp; \left(x, y, z\right) &amp; \longmapsto &amp; 2 \end{array}\end{split}\]</div>
 </div>
 </div>
 <div class="cell docutils container">

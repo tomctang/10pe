@@ -393,6 +393,69 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="number-algebra">
 <h1><span class="section-number">7. </span>Number &amp; Algebra<a class="headerlink" href="#number-algebra" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Math</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">show1</span><span class="p">(</span><span class="n">expr</span><span class="p">):</span>
+    <span class="n">latex_str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;$</span><span class="si">{</span><span class="n">latex</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span><span class="si">}</span><span class="s2">$&quot;</span>  <span class="c1"># Explicitly wrap in $...$</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">Math</span><span class="p">(</span><span class="n">latex_str</span><span class="p">))</span>
+<span class="n">sage</span><span class="o">.</span><span class="n">repl</span><span class="o">.</span><span class="n">rich_output</span><span class="o">.</span><span class="n">pretty_print</span><span class="o">.</span><span class="n">show</span> <span class="o">=</span> <span class="n">show1</span> <span class="c1"># replaces show globally</span>
+
+<span class="n">var</span><span class="p">(</span><span class="s1">&#39;x y&#39;</span><span class="p">)</span>
+<span class="n">expr</span> <span class="o">=</span> <span class="n">x</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">^</span><span class="mi">2</span>
+<span class="n">show1</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span>  
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle x^{2} + y^{2}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">CustomLatexPrinter</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">expr</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;$</span><span class="si">{</span><span class="n">latex</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span><span class="si">}</span><span class="s2">$&quot;</span>  <span class="c1"># Ensure $...$</span>
+
+<span class="n">sage</span><span class="o">.</span><span class="n">misc</span><span class="o">.</span><span class="n">latex</span><span class="o">.</span><span class="n">latex</span> <span class="o">=</span> <span class="n">CustomLatexPrinter</span><span class="p">()</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">custom_show</span><span class="p">(</span><span class="n">expr</span><span class="p">):</span>
+    <span class="n">latex_str</span> <span class="o">=</span> <span class="n">sage</span><span class="o">.</span><span class="n">misc</span><span class="o">.</span><span class="n">latex</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span>  <span class="c1"># Use overridden latex</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">Math</span><span class="p">(</span><span class="n">latex_str</span><span class="p">))</span>
+
+<span class="n">sage</span><span class="o">.</span><span class="n">repl</span><span class="o">.</span><span class="n">rich_output</span><span class="o">.</span><span class="n">pretty_print</span><span class="o">.</span><span class="n">show</span> <span class="o">=</span> <span class="n">custom_show</span>
+
+<span class="c1"># Test</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">var</span><span class="p">(</span><span class="s1">&#39;x y&#39;</span><span class="p">)</span>
+<span class="n">show</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html>\(\displaystyle x^{$2$} + y^{$2$}\)</html></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;x y&#39;</span><span class="p">)</span>
+<span class="n">expr</span> <span class="o">=</span> <span class="n">x</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">^</span><span class="mi">2</span>
+<span class="n">show</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html>\(\displaystyle x^{2} + y^{2}\)</html></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;x y&#39;</span><span class="p">)</span>
+<span class="n">expr</span> <span class="o">=</span> <span class="n">x</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">^</span><span class="mi">2</span>
+<span class="n">show</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html>\(\displaystyle x^{$2$} + y^{$2$}\)</html></div></div>
+</div>
 <p>Sage practice</p>
 <ul class="simple">
 <li><p>Ring: e.g. Integer ZZ</p></li>
