@@ -401,6 +401,18 @@ document.write(`
 <h1><span class="section-number">13. </span>Math Computational Methods<a class="headerlink" href="#math-computational-methods" title="Link to this heading">#</a></h1>
 <p>Physics is naturally speaking math / Physics is math language in nature</p>
 <p>Power of output <img src="https://raw.githubusercontent.com/tomctang/NB_img/main/outputpower.png" alt="vector_cal" width="450"></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># new show</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Math</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">s</span><span class="p">(</span><span class="n">expr</span><span class="p">):</span>
+    <span class="n">latex_str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;$</span><span class="si">{</span><span class="n">latex</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span><span class="si">}</span><span class="s2">$&quot;</span>  <span class="c1"># Explicitly wrap in $...$</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">Math</span><span class="p">(</span><span class="n">latex_str</span><span class="p">))</span>
+<span class="n">sage</span><span class="o">.</span><span class="n">repl</span><span class="o">.</span><span class="n">rich_output</span><span class="o">.</span><span class="n">pretty_print</span><span class="o">.</span><span class="n">show</span> <span class="o">=</span> <span class="n">s</span> <span class="c1"># replaces show globally</span>
+</pre></div>
+</div>
+</div>
+</div>
 <section id="calculus">
 <h2><span class="section-number">13.1. </span>Calculus<a class="headerlink" href="#calculus" title="Link to this heading">#</a></h2>
 <section id="review">
