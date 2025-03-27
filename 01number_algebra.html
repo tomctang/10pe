@@ -368,7 +368,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#number-theory">7.1. Number Theory</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continued-fraction">7.1.1. Continued Fraction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continued-fraction-diophantine-approximation">7.1.1. Continued Fraction (Diophantine Approximation)</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algebra">7.2. Algebra</a><ul class="nav section-nav flex-column">
@@ -400,64 +400,6 @@ document.write(`
 <span class="k">def</span><span class="w"> </span><span class="nf">s</span><span class="p">(</span><span class="n">expr</span><span class="p">):</span>
     <span class="n">latex_str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;$</span><span class="si">{</span><span class="n">latex</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span><span class="si">}</span><span class="s2">$&quot;</span>  <span class="c1"># Explicitly wrap in $...$</span>
     <span class="n">display</span><span class="p">(</span><span class="n">Math</span><span class="p">(</span><span class="n">latex_str</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Sage practice</p>
-<ul class="simple">
-<li><p>Ring: e.g. Integer ZZ</p></li>
-<li><p>Field: e.g. Rational QQ, Real RR, Complex CC</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>       <span class="n">s</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">));</span>
-<span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">;</span>     <span class="n">s</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">));</span>
-<span class="n">d</span><span class="o">=</span><span class="n">CC</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">I</span><span class="p">);</span> <span class="n">s</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">d</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># RSA &amp; Number Theory</span>
-<span class="n">p</span><span class="o">=</span><span class="mi">37</span><span class="p">;</span> <span class="n">q</span><span class="o">=</span><span class="mi">73</span><span class="p">;</span> <span class="n">c</span><span class="o">=</span><span class="mi">5</span><span class="p">;</span> <span class="n">n</span><span class="o">=</span><span class="n">p</span><span class="o">*</span><span class="n">q</span><span class="p">;</span> <span class="n">L</span><span class="o">=</span><span class="n">lcm</span><span class="p">(</span><span class="n">p</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">q</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span> <span class="n">d</span><span class="o">=</span><span class="n">inverse_mod</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="n">L</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;L: &#39;</span><span class="p">,</span> <span class="n">L</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;d: &#39;</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
-<span class="n">x</span><span class="o">=</span><span class="mi">33</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Original message: &#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
-<span class="n">r</span> <span class="o">=</span> <span class="n">x</span><span class="o">^</span><span class="n">c</span><span class="o">%</span><span class="k">n</span>; r
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Encrypted message: &#39;</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
-<span class="n">dm</span><span class="o">=</span><span class="n">r</span><span class="o">^</span><span class="n">d</span><span class="o">%</span><span class="k">n</span>;
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Decrypted message: &#39;</span><span class="p">,</span> <span class="n">dm</span><span class="p">)</span>
-
-<span class="c1"># RSA on a string of characters</span>
-<span class="n">symbols</span><span class="o">=</span><span class="p">[</span><span class="nb">chr</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">),</span><span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;Z&#39;</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
-<span class="n">symbols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">);</span> <span class="n">symbols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">);</span> <span class="n">symbols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;!&#39;</span><span class="p">);</span> <span class="n">symbols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">);</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">encrypt</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
-    <span class="n">ms</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="o">+</span><span class="n">symbols</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">))];</span>
-    <span class="n">es</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">^</span><span class="n">c</span><span class="o">%</span><span class="k">n</span>,ms)
-    <span class="k">return</span> <span class="n">es</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">decrypt</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="n">ds</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">^</span><span class="n">d</span><span class="o">%</span><span class="k">n</span>, x)
-    <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">symbols</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">ds</span><span class="p">])</span>
-
-<span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;THE TIME HAS COME.&quot;</span>
-<span class="n">emessage</span> <span class="o">=</span> <span class="n">encrypt</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">emessage</span><span class="p">)</span>
-<span class="n">dmessage</span> <span class="o">=</span> <span class="n">decrypt</span><span class="p">(</span><span class="n">emessage</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">dmessage</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>L:  72
-d:  29
-Original message:  33
-Encrypted message:  604
-Decrypted message:  33
-&lt;map object at 0x73b50694a380&gt;
-THE TIME HAS COME.
 </pre></div>
 </div>
 </div>
@@ -533,8 +475,93 @@ Sequences, Probability and Counting Theory （前面就是组合论了）
 </div>
 </div>
 </div>
-<section id="continued-fraction">
-<h3><span class="section-number">7.1.1. </span>Continued Fraction<a class="headerlink" href="#continued-fraction" title="Link to this heading">#</a></h3>
+<p>Above is stupid Python, now let’s use Sage:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;x,n&#39;</span><span class="p">)</span>
+<span class="n">ff</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="mi">6</span><span class="o">/</span><span class="n">n</span><span class="o">^</span><span class="mi">2</span> <span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">oo</span><span class="p">,</span> <span class="n">hold</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>  <span class="c1"># converged limit of pi</span>
+<span class="n">s</span><span class="p">(</span><span class="n">ff</span> <span class="o">==</span> <span class="n">ff</span><span class="o">.</span><span class="n">unhold</span><span class="p">()</span><span class="o">.</span><span class="n">n</span><span class="p">())</span>  
+
+<span class="n">epow</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="n">n</span><span class="o">/</span><span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="n">n</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">oo</span><span class="p">,</span> <span class="n">hold</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># 8 Power Series of e</span>
+<span class="n">s</span><span class="p">(</span><span class="n">epow</span> <span class="o">==</span> <span class="n">epow</span><span class="o">.</span><span class="n">unhold</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \sqrt{{\sum_{n=1}^{+\infty} \frac{6}{n^{2}}}} = 3.14159265358979\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle {\sum_{n=0}^{+\infty} \frac{x^{n}}{n!}} = e^{x}\]</div>
+</div>
+</div>
+<p>Sage practice</p>
+<ul class="simple">
+<li><p>Ring: e.g. Integer ZZ</p></li>
+<li><p>Field: e.g. Rational QQ, Real RR, Complex CC</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>       <span class="n">s</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">));</span>
+<span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">;</span>     <span class="n">s</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">));</span>
+<span class="n">d</span><span class="o">=</span><span class="n">CC</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">I</span><span class="p">);</span> <span class="n">s</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">d</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \text{\texttt{&lt;class{ }'sage.rings.integer.Integer'&gt;}}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \text{\texttt{&lt;class{ }'sage.rings.rational.Rational'&gt;}}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \text{\texttt{&lt;class{ }'sage.rings.complex{\char`\_}mpfr.ComplexNumber'&gt;}}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># RSA &amp; Number Theory</span>
+<span class="n">p</span><span class="o">=</span><span class="mi">37</span><span class="p">;</span> <span class="n">q</span><span class="o">=</span><span class="mi">73</span><span class="p">;</span> <span class="n">c</span><span class="o">=</span><span class="mi">5</span><span class="p">;</span> <span class="n">n</span><span class="o">=</span><span class="n">p</span><span class="o">*</span><span class="n">q</span><span class="p">;</span> <span class="n">L</span><span class="o">=</span><span class="n">lcm</span><span class="p">(</span><span class="n">p</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">q</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span> <span class="n">d</span><span class="o">=</span><span class="n">inverse_mod</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="n">L</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;L: &#39;</span><span class="p">,</span> <span class="n">L</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;d: &#39;</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+<span class="n">x</span><span class="o">=</span><span class="mi">33</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Original message: &#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">x</span><span class="o">^</span><span class="n">c</span><span class="o">%</span><span class="k">n</span>; r
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Encrypted message: &#39;</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+<span class="n">dm</span><span class="o">=</span><span class="n">r</span><span class="o">^</span><span class="n">d</span><span class="o">%</span><span class="k">n</span>;
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Decrypted message: &#39;</span><span class="p">,</span> <span class="n">dm</span><span class="p">)</span>
+
+<span class="c1"># RSA on a string of characters</span>
+<span class="n">symbols</span><span class="o">=</span><span class="p">[</span><span class="nb">chr</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">),</span><span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;Z&#39;</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+<span class="n">symbols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">);</span> <span class="n">symbols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">);</span> <span class="n">symbols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;!&#39;</span><span class="p">);</span> <span class="n">symbols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">);</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">encrypt</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="n">ms</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="o">+</span><span class="n">symbols</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">))];</span>
+    <span class="n">es</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">^</span><span class="n">c</span><span class="o">%</span><span class="k">n</span>,ms)
+    <span class="k">return</span> <span class="n">es</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">decrypt</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">^</span><span class="n">d</span><span class="o">%</span><span class="k">n</span>, x)
+    <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">symbols</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">ds</span><span class="p">])</span>
+
+<span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;THE TIME HAS COME.&quot;</span>
+<span class="n">emessage</span> <span class="o">=</span> <span class="n">encrypt</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">emessage</span><span class="p">)</span>
+<span class="n">dmessage</span> <span class="o">=</span> <span class="n">decrypt</span><span class="p">(</span><span class="n">emessage</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dmessage</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>L:  72
+d:  29
+Original message:  33
+Encrypted message:  604
+Decrypted message:  33
+&lt;map object at 0x73b50694a380&gt;
+THE TIME HAS COME.
+</pre></div>
+</div>
+</div>
+</div>
+<section id="continued-fraction-diophantine-approximation">
+<h3><span class="section-number">7.1.1. </span>Continued Fraction (Diophantine Approximation)<a class="headerlink" href="#continued-fraction-diophantine-approximation" title="Link to this heading">#</a></h3>
 <p>Numerators and denominators <span class="math notranslate nohighlight">\({N_i}\)</span> and <span class="math notranslate nohighlight">\({D_i}\)</span> could be any sequences or functions</p>
 <div class="math notranslate nohighlight">
 \[D_0+\cfrac{N_1}{D_1+\cfrac{N_2}{{ D_k+\cfrac{N_k}{\ddots}}}} = D_0 + \mathop{K}\limits_{i=1}^{\infty} \frac{N_i}{D_i} \quad  e.g. \quad
@@ -762,7 +789,7 @@ Sequences, Probability and Counting Theory （前面就是组合论了）
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#number-theory">7.1. Number Theory</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continued-fraction">7.1.1. Continued Fraction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continued-fraction-diophantine-approximation">7.1.1. Continued Fraction (Diophantine Approximation)</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algebra">7.2. Algebra</a><ul class="nav section-nav flex-column">
