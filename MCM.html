@@ -1066,6 +1066,41 @@ document.write(`
 </section>
 <section id="coding-review">
 <h3><span class="section-number">13.3.2. </span>Coding review<a class="headerlink" href="#coding-review" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">=</span><span class="n">cos</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">r</span><span class="o">^</span><span class="mi">3</span><span class="o">/</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
+<span class="n">s</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="o">/</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle {\left(\frac{2 \, r^{3}}{x^{3}} + 1\right)} \cos\left(y\right)\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{{\left(\frac{r^{3}}{x^{2}} - x\right)} \sin\left(y\right)}{x}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;r E v&#39;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">=</span><span class="n">cos</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">E</span><span class="o">+</span><span class="p">(</span><span class="n">r</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">v</span><span class="o">-</span><span class="n">E</span><span class="o">*</span><span class="n">r</span><span class="p">))</span><span class="o">/</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
+<span class="n">s</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="o">/</span><span class="n">x</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">z</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">y</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle {\left(E + \frac{2 \, {\left(E r - v\right)} r^{2}}{x^{3}}\right)} \cos\left(y\right)\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle -\frac{{\left(E x - \frac{{\left(E r - v\right)} r^{2}}{x^{2}}\right)} \sin\left(y\right)}{x}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 0\]</div>
+</div>
+</div>
 <p><a class="reference external" href="https://sagemanifolds.obspm.fr/documentation.html">SageManifolds</a> solve differential geometry and tensor calculus of any dimension</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1903,6 +1938,66 @@ document.write(`
 </section>
 <section id="week-8">
 <h3><span class="section-number">13.4.2. </span>Week 8<a class="headerlink" href="#week-8" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">(</span><span class="n">diff</span><span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="n">u</span><span class="p">)</span><span class="o">*</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">))</span>
+<span class="n">assume</span><span class="p">(</span><span class="n">m</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="n">cos</span><span class="p">(</span><span class="n">m</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">x</span><span class="o">^</span><span class="mi">4</span><span class="p">),</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">oo</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{1}{4} \, \sqrt{2} {\left(\pi \cos\left(\frac{1}{2} \, \sqrt{2} m\right) + \pi \sin\left(\frac{1}{2} \, \sqrt{2} m\right)\right)} e^{\left(-\frac{1}{2} \, \sqrt{2} m\right)}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;u&#39;</span><span class="p">)</span>
+<span class="n">s</span><span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">u</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="n">u</span><span class="o">^</span><span class="mi">2</span><span class="o">/</span><span class="mi">24</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">u</span><span class="o">/</span><span class="mi">6</span><span class="o">+</span><span class="n">u</span><span class="o">^</span><span class="mi">2</span><span class="o">/</span><span class="mi">120</span><span class="p">))</span>
+<span class="n">s</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">tan</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">))</span>
+<span class="n">s</span><span class="p">(</span><span class="n">diff</span><span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="n">u</span><span class="p">)</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{5 \, {\left(u^{2} - 12 \, u + 24\right)}}{u^{2} - 20 \, u + 120}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \pi {\left(\tan\left(\pi x\right)^{2} + 1\right)}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \pi {\left(u - x\right)} \sin\left(\pi x\right) + \cos\left(\pi x\right)\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">cot</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">))</span>
+<span class="n">s</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">tan</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="p">)),</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">ymin</span><span class="o">=-</span><span class="mi">10</span><span class="p">,</span><span class="n">ymax</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle -\pi {\left(\cot\left(\pi x\right)^{2} + 1\right)}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 2 \, \pi \cos\left(\pi x\right) \sin\left(\pi x\right)\]</div>
+<img alt="_images/e055ffd18cbc61e03b31a7019646bdfb244a60ff2a8059b5be8b7df4637bc26c.png" src="_images/e055ffd18cbc61e03b31a7019646bdfb244a60ff2a8059b5be8b7df4637bc26c.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;c y z&#39;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">=</span><span class="n">x</span><span class="o">^</span><span class="n">y</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="n">diff</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="o">*</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">z</span><span class="p">),</span><span class="n">z</span><span class="p">)</span><span class="o">/</span><span class="n">sin</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle x^{2} x^{y - 2} {\left(y - 1\right)} y \cos\left(z\right) + 2 \, x x^{y - 1} y \cos\left(z\right) - 2 \, x^{y} \cos\left(z\right)\]</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">4</span><span class="p">),</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="n">oo</span><span class="p">,</span><span class="n">oo</span><span class="p">))</span>
