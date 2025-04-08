@@ -390,6 +390,11 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#week-8">13.4.2. Week 8</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-algebra">13.5. Linear Algebra</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">13.5.1. Review</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#week-9">13.5.2. Week 9</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -953,6 +958,18 @@ document.write(`
 </section>
 <section id="midterm-1-3">
 <h2><span class="section-number">13.2. </span>Midterm 1-3<a class="headerlink" href="#midterm-1-3" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;x y&#39;</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="n">y</span><span class="o">^</span><span class="mi">2</span><span class="p">),</span><span class="n">y</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle -\frac{2 \, y^{2}}{{\left(x^{2} + y^{2}\right)}^{2}} + \frac{1}{x^{2} + y^{2}}\]</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
@@ -1940,6 +1957,72 @@ document.write(`
 <h3><span class="section-number">13.4.2. </span>Week 8<a class="headerlink" href="#week-8" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">limit</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="n">cot</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="n">z</span><span class="p">)</span><span class="o">/</span><span class="n">z</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span><span class="n">z</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Infinity
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;a b&#39;</span><span class="p">)</span>
+<span class="n">assume</span><span class="p">(</span><span class="n">a</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">assume</span><span class="p">(</span><span class="n">b</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
+<span class="nb">bool</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="n">cos</span><span class="p">(</span><span class="n">b</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="n">a</span><span class="o">^</span><span class="mi">2</span><span class="p">),</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="n">oo</span><span class="p">,</span><span class="n">oo</span><span class="p">)</span><span class="o">==</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="p">))</span><span class="o">/</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;u b&#39;</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">diff</span><span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="n">u</span><span class="p">)</span><span class="o">*</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">b</span><span class="o">*</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle -i \, b {\left(u - x\right)} e^{\left(i \, b x\right)} + e^{\left(i \, b x\right)}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">bool</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">-</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)),</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">)</span><span class="o">==</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="n">assume</span><span class="p">(</span><span class="n">a</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">assume</span><span class="p">(</span><span class="n">a</span><span class="o">&lt;</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">integral</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">a</span><span class="o">^</span><span class="mi">2</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)),</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-2*pi/(a^2 - 1)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">(</span><span class="n">diff</span><span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="n">u</span><span class="p">)</span><span class="o">*</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">))</span>
 <span class="n">assume</span><span class="p">(</span><span class="n">m</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">s</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="n">cos</span><span class="p">(</span><span class="n">m</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">x</span><span class="o">^</span><span class="mi">4</span><span class="p">),</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">oo</span><span class="p">))</span>
@@ -2057,6 +2140,74 @@ True
 </div>
 </section>
 </section>
+<section id="linear-algebra">
+<h2><span class="section-number">13.5. </span>Linear Algebra<a class="headerlink" href="#linear-algebra" title="Link to this heading">#</a></h2>
+<section id="id4">
+<h3><span class="section-number">13.5.1. </span>Review<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>Notes</p>
+<ul class="simple">
+<li><p>Row Reduction : Method where make lower-left triangle of 0s using augmentation. Uses shown below.</p>
+<ul>
+<li><p>Linear Equations(Homogeneous : all RHS’s=0) : Solve for variables one by one.</p></li>
+<li><p>Determinant : Product of the lead diagonal as all other products will be 0.</p></li>
+<li><p>Inverse : Use augmentation to find inverse.</p></li>
+</ul>
+</li>
+<li><p>Inverse(<span class="math notranslate nohighlight">\(AA^{-1}=I\)</span>) : Use cofactors and adjoint(or row reduction) then divide by determinant(can also calculate using row reduction).</p></li>
+<li><p>Determinant : Measures the factor by which an area or volume is multiplied by. Calculate using formula or row reduction.</p></li>
+<li><p>Eigenvalues &amp; Eigenvectors…</p></li>
+</ul>
+<p>Lab Notes</p>
+<ul class="simple">
+<li><p>When in series(circuit), the current is always the same.</p></li>
+<li><p>Kirchhoff’s Laws(can be used to solve for current or voltage)</p>
+<ul>
+<li><p>Current Law : The current entering a node is the same as the current exiting the same node as electrons can be created out of nothing and can’t just disappear.</p></li>
+<li><p>Voltage Law : The voltage drop is 0 (one of the capacitors or resistors will probably be a voltage gain.)</p></li>
+</ul>
+</li>
+<li><p>Types of Circuits :</p>
+<ul>
+<li><p>Series</p></li>
+<li><p>Parallel</p></li>
+<li><p>RC(R:resistor, C:capacitor) : Circuit that comprises of only resistors and capacitors(and stuff connecting them). This has a constant current as it is only affected using arithmetic operations by the resistors and capacitors.</p></li>
+<li><p>RL/RLC(L:Inductor) : Circuit that also has an inductor which causes a non-constant current(<span class="math notranslate nohighlight">\(V_L=L\frac{dI}{dt}\)</span>).</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="week-9">
+<h3><span class="section-number">13.5.2. </span>Week 9<a class="headerlink" href="#week-9" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">=</span><span class="n">matrix</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">A</span><span class="o">.</span><span class="n">det</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">A</span><span class="o">=</span><span class="n">matrix</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="o">-</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">A</span><span class="o">.</span><span class="n">det</span><span class="p">()</span>
+<span class="n">expand</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">-</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">9</span><span class="o">-</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="p">(</span><span class="mi">9</span><span class="o">-</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mi">15</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">-</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="mi">15</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-3*x^4 + 15*x^2 - 12
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -2144,6 +2295,11 @@ True
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-analysis">13.4. Complex Analysis</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">13.4.1. Coding review</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#week-8">13.4.2. Week 8</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-algebra">13.5. Linear Algebra</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">13.5.1. Review</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#week-9">13.5.2. Week 9</a></li>
 </ul>
 </li>
 </ul>
