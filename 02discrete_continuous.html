@@ -464,7 +464,7 @@ document.write(`
 </ul>
 <p>Recursion .VS. Calculus?</p>
 <ul class="simple">
-<li><p>Recursion is essentially just discrete DEs, you discretize DE in order to solve it numerically you will end up with a difference equations or Calculus of Finite difference - Wiki</p></li>
+<li><p>Recursion is essentially just discrete DEs, you discretize DE in order to solve it numerically you will end up with a difference equations or Calculus of Finite Difference - Wiki</p></li>
 </ul>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -493,12 +493,20 @@ document.write(`
 </tbody>
 </table>
 </div>
-<p>DP .VS. Recursion?</p>
+<p>DP (Dynamic Programming) .VS. Recursion ? Imagine climbing a mountain:</p>
 <ul class="simple">
-<li><p>Imagine you’re climbing a mountain. Recursion is like taking a step, then another step, and another, until you reach the top. Dynamic programming is like remembering which steps you’ve already taken, so you don’t have to repeat them.</p></li>
+<li><p><strong>Recursion</strong> (essentially difference equation) is like taking a step, then another step, and another, until you reach the top.</p></li>
+<li><p><strong>DP</strong> is like remembering (memoization or dynamic tabulation) which steps you’ve already taken, so you don’t have to repeat them.</p></li>
 </ul>
+<p>DP .VS. Math?</p>
+<ul class="simple">
+<li><p>In the context of dynamic programming, the Bellman equation (or a difference equation) captures the problem structure in a mathematical form.</p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Bellman_equation">Bellman equation</a> is the recursion that defines how to calculate the optimal value at a particular stage based on the optimal values of the preceding stages.</p></li>
+</ul>
+<img src="https://raw.githubusercontent.com/tomctang/NB_img/main/bellmanequation1.png" alt="Bellmanequation" width="700">
+<img src="https://raw.githubusercontent.com/tomctang/NB_img/main/bellmanequation2.png" alt="Bellmanequation" width="500">
 <blockquote>
-<div><p>DP (Dynamic Programming), go to <a class="reference internal" href="PE50.html#pe-31"><span class="std std-ref">Project Euler Q31</span></a> e.g. 最长递增子序列、最小编辑距离、背包问题、凑零钱问题</p>
+<div><p>DP, go to <a class="reference internal" href="PE50.html#pe-31"><span class="std std-ref">Project Euler Q31</span></a> e.g. 最长递增子序列、最小编辑距离、背包问题、凑零钱问题</p>
 </div></blockquote>
 <ul class="simple">
 <li><p>Identify the overlapping subproblems: The first step is to identify smaller, overlapping subproblems by enumerate.</p></li>

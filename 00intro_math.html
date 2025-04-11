@@ -384,6 +384,48 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="math-fp-lang-combo">
 <h1><span class="section-number">6. </span>Math-FP-Lang Combo<a class="headerlink" href="#math-fp-lang-combo" title="Link to this heading">#</a></h1>
+<p>In ZFC, these transitions are mathematically sound. Tools like epsilon-delta proofs, measure theory, and functional analysis ensure rigor across these shifts.</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\sum\)</span> discrete to continuous <span class="math notranslate nohighlight">\(\int\)</span>: discrete can approximate the continuous (e.g., difference equations to differential equations)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Delta x\)</span> finite to infinite <span class="math notranslate nohighlight">\(d x\)</span>: finite extends to the infinite via limits</p></li>
+<li><p>series to formulus: series often condense into formulas where convergent with closed-form formulas</p></li>
+</ul>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Zermelo%E2%80%93Fraenkel_set_theory">ZFC</a> is the most common math framework:</p>
+<ul class="simple">
+<li><p>Zermelo–Fraenkel set theory and the axiom of Choice</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Discrete to Continuous: Sum vs. Integral</span>
+<span class="n">var</span><span class="p">(</span><span class="s1">&#39;x , n&#39;</span><span class="p">)</span>
+<span class="n">discrete_sum</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">n</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>  <span class="c1"># Finite, discrete</span>
+<span class="n">continuous_integral</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">infinity</span><span class="p">)</span>  <span class="c1"># Infinite, continuous</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Discrete sum (n=1 to 10):&quot;</span><span class="p">,</span> <span class="n">discrete_sum</span><span class="o">.</span><span class="n">n</span><span class="p">())</span>  <span class="c1"># Approx 1.549</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Continuous integral:&quot;</span><span class="p">,</span> <span class="n">continuous_integral</span><span class="p">)</span>   <span class="c1"># pi^2/6 ≈ 1.645</span>
+
+<span class="c1"># Finite to Infinite: Partial series vs. full series</span>
+<span class="n">finite_series</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">n</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>  <span class="c1"># Finite</span>
+<span class="n">infinite_series</span> <span class="o">=</span> <span class="n">zeta</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># Infinite sum = pi^2/6</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Finite series:&quot;</span><span class="p">,</span> <span class="n">finite_series</span><span class="o">.</span><span class="n">n</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Infinite series:&quot;</span><span class="p">,</span> <span class="n">infinite_series</span><span class="o">.</span><span class="n">n</span><span class="p">())</span>
+
+<span class="c1"># Series to Formula: Taylor series for e^x</span>
+<span class="n">series_exp</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>  <span class="c1"># Series</span>
+<span class="n">formula_exp</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>              <span class="c1"># Formula</span>
+<span class="n">show</span><span class="p">(</span><span class="s2">&quot;Series:&quot;</span><span class="p">,</span> <span class="n">series_exp</span><span class="p">)</span>
+<span class="n">show</span><span class="p">(</span><span class="s2">&quot;Formula:&quot;</span><span class="p">,</span> <span class="n">formula_exp</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Discrete sum (n=1 to 10): 1.54976773116654
+Continuous integral: 1
+Finite series: 1.54976773116654
+Infinite series: 1.64493406684823
+</pre></div>
+</div>
+<div class="output text_html"><html>\(\displaystyle \verb|Series:| 1 + 1 x + \frac{1}{2} x^{2} + \frac{1}{6} x^{3} + \frac{1}{24} x^{4} + \mathcal{O}\left(x^{5}\right)\)</html></div><div class="output text_html"><html>\(\displaystyle \verb|Formula:| e^{x}\)</html></div></div>
+</div>
 <p>Objectives: To prepare secondary &amp; tertiary math for my kids</p>
 <p>Bad ideas:</p>
 <ul class="simple">
