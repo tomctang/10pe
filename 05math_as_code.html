@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>math-as-code &#8212; Jonny Workbook</title>
+    <title>11. Math as code &#8212; Jonny Workbook</title>
   
   
   
@@ -60,9 +60,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '111';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '05math_as_code';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="12. MIT_CS6001-Python" href="MIT_CS6001-Python.html" />
+    <link rel="prev" title="10. Thinking Skill" href="04thinking.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -125,8 +127,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -183,7 +183,7 @@
 <li class="toctree-l1"><a class="reference internal" href="PE75.html">3. PE Q51-</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Mathematics &amp; FP &amp; Language</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Alevel_math.html">4. A-level-math</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Alevel_math_further.html">5. A-level-further</a></li>
 <li class="toctree-l1"><a class="reference internal" href="00intro_math.html">6. Math-FP-Lang Combo</a></li>
@@ -191,19 +191,20 @@
 <li class="toctree-l1"><a class="reference internal" href="02discrete_continuous.html">8. Discrete &amp; Continuous</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03real_world.html">9. Real World Math</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04thinking.html">10. Thinking Skill</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">11. Math as code</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">CS &amp; Physics</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="MIT_CS6001-Python.html">11. MIT_CS6001-Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MIT_CS6002-thinking.html">12. MIT_CS6002-CS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MCM.html">13. Math Computational Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MIT_CS6001-Python.html">12. MIT_CS6001-Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MIT_CS6002-thinking.html">13. MIT_CS6002-CS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MCM.html">14. Math Computational Methods</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Notebook</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="nb2024.html">14. Notebook 2023-24</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nb_Jonny_notebook.html">15. Combo notebook</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nb_Geo.html">16. Jonny Geo-Graph</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nb_lottery_simulator.html">17. Lottery Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nb2024.html">15. Notebook 2023-24</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nb_Jonny_notebook.html">16. Combo notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nb_Geo.html">17. Jonny Geo-Graph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nb_lottery_simulator.html">18. Lottery Math</a></li>
 </ul>
 
     </div>
@@ -273,7 +274,7 @@
       
       
       
-      <li><a href="_sources/111.ipynb" target="_blank"
+      <li><a href="_sources/05math_as_code.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -357,7 +358,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>math-as-code</h1>
+    <h1>Math as code</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -367,80 +368,78 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-name-conventions">variable name conventions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equals-symbols">equals symbols</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#square-root-and-complex-numbers">square root and complex numbers</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dot-cross">dot &amp; cross</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scalar-multiplication">scalar multiplication</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-multiplication">vector multiplication</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dot-product">dot product</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-product">cross product</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-name-conventions">11.1. variable name conventions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equals-symbols">11.2. equals symbols</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#square-root-and-complex-numbers">11.3. square root and complex numbers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dot-cross">11.4. dot &amp; cross</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scalar-multiplication">11.4.1. scalar multiplication</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-multiplication">11.4.2. vector multiplication</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dot-product">11.4.3. dot product</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-product">11.4.4. cross product</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sigma">sigma</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#capital-pi">capital Pi</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pipes">pipes</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-value">absolute value</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#euclidean-norm">Euclidean norm</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#determinant">determinant</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sigma">11.5. sigma</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#capital-pi">11.6. capital Pi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pipes">11.7. pipes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-value">11.7.1. absolute value</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#euclidean-norm">11.7.2. Euclidean norm</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#determinant">11.7.3. determinant</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hat">hat</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#element">element</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-number-sets">common number sets</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#real-numbers"><code class="docutils literal notranslate"><span class="pre">ℝ</span></code> real numbers</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rational-numbers"><code class="docutils literal notranslate"><span class="pre">ℚ</span></code> rational numbers</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integers"><code class="docutils literal notranslate"><span class="pre">ℤ</span></code> integers</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#natural-numbers"><code class="docutils literal notranslate"><span class="pre">ℕ</span></code> natural numbers</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-numbers"><code class="docutils literal notranslate"><span class="pre">ℂ</span></code> complex numbers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hat">11.8. hat</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#element">11.9. element</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-number-sets">11.10. common number sets</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#real-numbers">11.10.1. <code class="docutils literal notranslate"><span class="pre">ℝ</span></code> real numbers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rational-numbers">11.10.2. <code class="docutils literal notranslate"><span class="pre">ℚ</span></code> rational numbers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integers">11.10.3. <code class="docutils literal notranslate"><span class="pre">ℤ</span></code> integers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#natural-numbers">11.10.4. <code class="docutils literal notranslate"><span class="pre">ℕ</span></code> natural numbers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-numbers">11.10.5. <code class="docutils literal notranslate"><span class="pre">ℂ</span></code> complex numbers</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-builder-notation">Set builder notation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">functions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionaries-are-functions">dictionaries are functions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#piecewise-function">piecewise function</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-functions">common functions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#function-notation">function notation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-builder-notation">11.11. Set builder notation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">11.12. functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionaries-are-functions">11.12.1. dictionaries are functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#piecewise-function">11.12.2. piecewise function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-functions">11.12.3. common functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#function-notation">11.12.4. function notation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prime">prime</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#floor-ceiling">floor &amp; ceiling</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arrows">arrows</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#material-implication">material implication</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inequality">inequality</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conjunction-disjunction">conjunction &amp; disjunction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prime">11.13. prime</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#floor-ceiling">11.14. floor &amp; ceiling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arrows">11.15. arrows</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#material-implication">11.15.1. material implication</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inequality">11.15.2. inequality</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conjunction-disjunction">11.15.3. conjunction &amp; disjunction</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logical-negation">logical negation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intervals">intervals</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combinatorics">Combinatorics</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#general">General</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#catalan-numbers">Catalan Numbers</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#narayana-numbers">Narayana numbers</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#stirling-numbers-of-the-first-kind">Stirling numbers of the first kind</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#stirling-numbers-of-the-second-kind">Stirling numbers of the second kind</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bell-number">Bell number</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logical-negation">11.16. logical negation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intervals">11.17. intervals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combinatorics">11.18. Combinatorics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general">11.18.1. General</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#catalan-numbers">11.18.2. Catalan Numbers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#narayana-numbers">11.18.3. Narayana numbers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stirling-numbers-of-the-first-kind">11.18.4. Stirling numbers of the first kind</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stirling-numbers-of-the-second-kind">11.18.5. Stirling numbers of the second kind</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bell-number">11.18.6. Bell number</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-math">Discrete Math</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">General</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fibonacci-number">Fibonacci Number</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pythagorean-triples">Pythagorean Triples</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sum-of-squares-function">Sum of Squares Function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-math">11.19. Discrete Math</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">11.19.1. General</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fibonacci-number">11.19.2. Fibonacci Number</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pythagorean-triples">11.19.3. Pythagorean Triples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sum-of-squares-function">11.19.4. Sum of Squares Function</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#number-theory">Number Theory</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">General</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#divisor-function">Divisor Function</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#eulers-totient-function">Euler’s Totient function</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mobius-function-and-inversion">Mobius Function and Inversion</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#gcd-and-lcm">GCD and LCM</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#legendre-symbol">Legendre Symbol</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#number-theory">11.20. Number Theory</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">11.20.1. General</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#divisor-function">11.20.2. Divisor Function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eulers-totient-function">11.20.3. Euler’s Totient function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mobius-function-and-inversion">11.20.4. Mobius Function and Inversion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gcd-and-lcm">11.20.5. GCD and LCM</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#legendre-symbol">11.20.6. Legendre Symbol</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#miscellaneous">Miscellaneous</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#miscellaneous">11.21. Miscellaneous</a></li>
 </ul>
             </nav>
         </div>
@@ -453,7 +452,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="math-as-code">
-<h1>math-as-code<a class="headerlink" href="#math-as-code" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">11. </span>Math as code<a class="headerlink" href="#math-as-code" title="Link to this heading">#</a></h1>
 <ul class="simple">
 <li><p><a class="reference internal" href="#variable-name-conventions"><span class="xref myst">variable name conventions</span></a></p></li>
 <li><p><a class="reference internal" href="#equals-symbols"><span class="xref myst">equals <code class="docutils literal notranslate"><span class="pre">=</span></code> <code class="docutils literal notranslate"><span class="pre">≈</span></code> <code class="docutils literal notranslate"><span class="pre">≠</span></code> <code class="docutils literal notranslate"><span class="pre">:=</span></code></span></a></p></li>
@@ -498,7 +497,7 @@ document.write(`
 <li><p><a class="reference internal" href="#intervals"><span class="xref myst">intervals</span></a></p></li>
 </ul>
 <section id="variable-name-conventions">
-<h2>variable name conventions<a class="headerlink" href="#variable-name-conventions" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.1. </span>variable name conventions<a class="headerlink" href="#variable-name-conventions" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><em>s</em> - italic lowercase letters for scalars (e.g. a number)</p></li>
 <li><p><strong>x</strong> - bold lowercase letters for vectors (e.g. a 2D point)</p></li>
@@ -507,7 +506,7 @@ document.write(`
 </ul>
 </section>
 <section id="equals-symbols">
-<h2>equals symbols<a class="headerlink" href="#equals-symbols" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.2. </span>equals symbols<a class="headerlink" href="#equals-symbols" title="Link to this heading">#</a></h2>
 <p>There are a number of symbols resembling the equals sign <code class="docutils literal notranslate"><span class="pre">=</span></code>. Here are a few common examples:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">=</span></code> is for equality (values are the same)</p></li>
@@ -572,7 +571,7 @@ document.write(`
 </div>
 </section>
 <section id="square-root-and-complex-numbers">
-<h2>square root and complex numbers<a class="headerlink" href="#square-root-and-complex-numbers" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.3. </span>square root and complex numbers<a class="headerlink" href="#square-root-and-complex-numbers" title="Link to this heading">#</a></h2>
 <p>A square root operation is of the form:</p>
 <p><img alt="squareroot" src="http://latex.codecogs.com/svg.latex?%5Cleft%28%5Csqrt%7Bx%7D%5Cright%29%5E2%20%3D%20x" /></p>
 <!-- \left(\sqrt{x}\right)^2 = x -->
@@ -632,11 +631,11 @@ to and from complex.</p>
 <p><a class="reference external" href="https://docs.scipy.org/doc/numpy/user/basics.types.html">Read on about numpy’s complex numbers</a></p>
 </section>
 <section id="dot-cross">
-<h2>dot &amp; cross<a class="headerlink" href="#dot-cross" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.4. </span>dot &amp; cross<a class="headerlink" href="#dot-cross" title="Link to this heading">#</a></h2>
 <p>The dot <code class="docutils literal notranslate"><span class="pre">·</span></code> and cross <code class="docutils literal notranslate"><span class="pre">×</span></code> symbols have different uses depending on context.</p>
 <p>They might seem obvious, but it’s important to understand the subtle differences before we continue into other sections.</p>
 <section id="scalar-multiplication">
-<h3>scalar multiplication<a class="headerlink" href="#scalar-multiplication" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">11.4.1. </span>scalar multiplication<a class="headerlink" href="#scalar-multiplication" title="Link to this heading">#</a></h3>
 <p>Both symbols can represent simple multiplication of scalars. The following are equivalent:</p>
 <p><img alt="dotcross1" src="http://latex.codecogs.com/svg.latex?5%20%5Ccdot%204%20%3D%205%20%5Ctimes%204" /></p>
 <!-- 5 \cdot 4 = 5 \times 4 -->
@@ -653,7 +652,7 @@ to and from complex.</p>
 </div>
 </section>
 <section id="vector-multiplication">
-<h3>vector multiplication<a class="headerlink" href="#vector-multiplication" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">11.4.2. </span>vector multiplication<a class="headerlink" href="#vector-multiplication" title="Link to this heading">#</a></h3>
 <p>To denote multiplication of one vector with a scalar, or element-wise multiplication of a vector with another vector, we typically do not use the dot <code class="docutils literal notranslate"><span class="pre">·</span></code> or cross <code class="docutils literal notranslate"><span class="pre">×</span></code> symbols. These have different meanings in linear algebra, discussed shortly.</p>
 <p>Let’s take our earlier example but apply it to vectors. For element-wise vector multiplication, you might see an open dot <code class="docutils literal notranslate"><span class="pre">∘</span></code> to represent the <a class="reference external" href="https://en.wikipedia.org/wiki/Hadamard_product_%28matrices%29">Hadamard product</a>.<sup>[2]</sup></p>
 <p><img alt="dotcross3" src="http://latex.codecogs.com/svg.latex?3%5Cmathbf%7Bk%7D%5Ccirc%5Cmathbf%7Bj%7D" /></p>
@@ -687,7 +686,7 @@ to and from complex.</p>
 </div>
 </section>
 <section id="dot-product">
-<h3>dot product<a class="headerlink" href="#dot-product" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">11.4.3. </span>dot product<a class="headerlink" href="#dot-product" title="Link to this heading">#</a></h3>
 <p>The dot symbol <code class="docutils literal notranslate"><span class="pre">·</span></code> can be used to denote the <a class="reference external" href="https://en.wikipedia.org/wiki/Dot_product"><em>dot product</em></a> of two vectors. Sometimes this is called the <em>scalar product</em> since it evaluates to a scalar.</p>
 <p><img alt="dotcross4" src="http://latex.codecogs.com/svg.latex?%5Cmathbf%7Bk%7D%5Ccdot%20%5Cmathbf%7Bj%7D" /></p>
 <!-- \mathbf{k}\cdot \mathbf{j} -->
@@ -706,7 +705,7 @@ to and from complex.</p>
 </div>
 </section>
 <section id="cross-product">
-<h3>cross product<a class="headerlink" href="#cross-product" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">11.4.4. </span>cross product<a class="headerlink" href="#cross-product" title="Link to this heading">#</a></h3>
 <p>The cross symbol <code class="docutils literal notranslate"><span class="pre">×</span></code> can be used to denote the <a class="reference external" href="https://en.wikipedia.org/wiki/Cross_product"><em>cross product</em></a> of two vectors.</p>
 <p><img alt="dotcross5" src="http://latex.codecogs.com/svg.latex?%5Cmathbf%7Bk%7D%5Ctimes%20%5Cmathbf%7Bj%7D" /></p>
 <!-- \mathbf{k}\times \mathbf{j} -->
@@ -733,7 +732,7 @@ Numpy.</p>
 </section>
 </section>
 <section id="sigma">
-<h2>sigma<a class="headerlink" href="#sigma" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.5. </span>sigma<a class="headerlink" href="#sigma" title="Link to this heading">#</a></h2>
 <p>The big Greek <code class="docutils literal notranslate"><span class="pre">Σ</span></code> (Sigma) is for <a class="reference external" href="https://en.wikipedia.org/wiki/Summation">Summation</a>. In other words: summing up some numbers.</p>
 <p><img alt="sigma" src="http://latex.codecogs.com/svg.latex?%5Csum_%7Bi%3D1%7D%5E%7B100%7Di" /></p>
 <!-- \sum_{i=1}^{100}i -->
@@ -781,7 +780,7 @@ dealing with finite sums, the order does not matter.</p>
 </div>
 </section>
 <section id="capital-pi">
-<h2>capital Pi<a class="headerlink" href="#capital-pi" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.6. </span>capital Pi<a class="headerlink" href="#capital-pi" title="Link to this heading">#</a></h2>
 <p>The capital Pi or “Big Pi” is very similar to <a class="reference internal" href="#sigma"><span class="xref myst">Sigma</span></a>, except we are using multiplication to find the product of a sequence of values.</p>
 <p>Take the following:</p>
 <p><img alt="capitalPi" src="http://latex.codecogs.com/svg.latex?%5Cprod_%7Bi%3D1%7D%5E%7B6%7Di" /></p>
@@ -820,13 +819,13 @@ the box)</p>
 ordinary lists as you please.</p>
 </section>
 <section id="pipes">
-<h2>pipes<a class="headerlink" href="#pipes" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.7. </span>pipes<a class="headerlink" href="#pipes" title="Link to this heading">#</a></h2>
 <p>Pipe symbols, known as <em>bars</em>, can mean different things depending on the
 context. Below are three common uses: <a class="reference internal" href="#absolute-value"><span class="xref myst">absolute value</span></a>,
 <a class="reference internal" href="#euclidean-norm"><span class="xref myst">Euclidean norm</span></a>, and <a class="reference internal" href="#determinant"><span class="xref myst">determinant</span></a>.</p>
 <p>These three features all describe the <em>length</em> of an object.</p>
 <section id="absolute-value">
-<h3>absolute value<a class="headerlink" href="#absolute-value" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">11.7.1. </span>absolute value<a class="headerlink" href="#absolute-value" title="Link to this heading">#</a></h3>
 <p><img alt="pipes1" src="http://latex.codecogs.com/svg.latex?%5Cleft%20%7C%20x%20%5Cright%20%7C" /></p>
 <!-- \left | x \right | -->
 <p>For a number <em>x</em>, <code class="docutils literal notranslate"><span class="pre">|x|</span></code> means the absolute value of <em>x</em>. In code:</p>
@@ -837,7 +836,7 @@ context. Below are three common uses: <a class="reference internal" href="#absol
 </div>
 </section>
 <section id="euclidean-norm">
-<h3>Euclidean norm<a class="headerlink" href="#euclidean-norm" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">11.7.2. </span>Euclidean norm<a class="headerlink" href="#euclidean-norm" title="Link to this heading">#</a></h3>
 <p><img alt="pipes4" src="http://latex.codecogs.com/svg.latex?%5Cleft%20%5C%7C%20%5Cmathbf%7Bv%7D%20%5Cright%20%5C%7C" /></p>
 <!-- \left \| \mathbf{v} \right \| -->
 <p>For a vector <strong>v</strong>, <code class="docutils literal notranslate"><span class="pre">‖v‖</span></code> is the <a class="reference external" href="https://en.wikipedia.org/wiki/Norm_%28mathematics%29#Euclidean_norm">Euclidean norm</a> of <strong>v</strong>. It is also referred to as the “magnitude” or “length” of a vector.</p>
@@ -872,11 +871,9 @@ reader.</p>
 </ul>
 </section>
 <section id="determinant">
-<h3>determinant<a class="headerlink" href="#determinant" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">11.7.3. </span>determinant<a class="headerlink" href="#determinant" title="Link to this heading">#</a></h3>
 <p><img alt="pipes3" src="http://latex.codecogs.com/svg.latex?%5Cleft%20%7C%5Cmathbf%7BA%7D%20%5Cright%20%7C" /></p>
-<!-- \left |\mathbf{A}  \right | -->
-<p>For a matrix <strong>A</strong>, <code class="docutils literal notranslate"><span class="pre">|A|</span></code> means the
-<a class="reference external" href="https://en.wikipedia.org/wiki/Determinant">determinant</a> of matrix <strong>A</strong>.</p>
+<!-- \left |\mathbf{A}  \right | -->  [determinant](https://en.wikipedia.org/wiki/Determinant) of matrix **A**.
 <p>Here is an example computing the determinant of a 2x2 identity matrix</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ident_2</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> 
            <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
@@ -902,7 +899,7 @@ squished-stretched-rotated</strong>.</p>
 </section>
 </section>
 <section id="hat">
-<h2>hat<a class="headerlink" href="#hat" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.8. </span>hat<a class="headerlink" href="#hat" title="Link to this heading">#</a></h2>
 <p>In geometry, the “hat” symbol above a character is used to represent a <a class="reference external" href="https://en.wikipedia.org/wiki/Unit_vector">unit vector</a>. For example, here is the unit vector of <strong>a</strong>:</p>
 <p><img alt="hat" src="http://latex.codecogs.com/svg.latex?%5Chat%7B%5Cmathbf%7Ba%7D%7D" /></p>
 <!-- \hat{\mathbf{a}} -->
@@ -947,7 +944,7 @@ But it’s actually <strong>faster</strong> on large input, because arrays.</p>
 <p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.linalg.html"><em>Read</em> the Numpy docs. <em>BE</em> the Numpy docs</a></p>
 </section>
 <section id="element">
-<h2>element<a class="headerlink" href="#element" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.9. </span>element<a class="headerlink" href="#element" title="Link to this heading">#</a></h2>
 <p>In set theory, the “element of” symbol <code class="docutils literal notranslate"><span class="pre">∈</span></code> and <code class="docutils literal notranslate"><span class="pre">∋</span></code> can be used to describe whether something is an element of a <em>set</em>. For example:</p>
 <p><img alt="element1" src="http://latex.codecogs.com/svg.latex?A%3D%5Cleft%20%5C%7B3%2C9%2C14%7D%7B%20%5Cright%20%5C%7D%2C%203%20%5Cin%20A" /></p>
 <!-- A=\left \{3,9,14}{  \right \}, 3 \in A -->
@@ -977,14 +974,14 @@ repeats.</p>
 <p>Which you know is represented by the convenient <code class="docutils literal notranslate"><span class="pre">not</span></code> keyword in python.</p>
 </section>
 <section id="common-number-sets">
-<h2>common number sets<a class="headerlink" href="#common-number-sets" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.10. </span>common number sets<a class="headerlink" href="#common-number-sets" title="Link to this heading">#</a></h2>
 <p>You may see some some large <a class="reference external" href="https://en.wikipedia.org/wiki/Blackboard_bold">Blackboard</a> letters among equations. Often, these are used to describe sets.</p>
 <p>For example, we might describe <em>k</em> to be an <a class="reference internal" href="#element"><span class="xref myst">element of</span></a> the set <code class="docutils literal notranslate"><span class="pre">ℝ</span></code>.</p>
 <p><img alt="real" src="http://latex.codecogs.com/svg.latex?k%20%5Cin%20%5Cmathbb%7BR%7D" /></p>
 <!-- k \in \mathbb{R} -->
 <p>Listed below are a few common sets and their symbols.</p>
 <section id="real-numbers">
-<h3><code class="docutils literal notranslate"><span class="pre">ℝ</span></code> real numbers<a class="headerlink" href="#real-numbers" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">11.10.1. </span><code class="docutils literal notranslate"><span class="pre">ℝ</span></code> real numbers<a class="headerlink" href="#real-numbers" title="Link to this heading">#</a></h3>
 <p>The large <code class="docutils literal notranslate"><span class="pre">ℝ</span></code> describes the set of <em>real numbers</em>. These include integers, as well as rational and irrational numbers.</p>
 <p>Computers approximate <code class="docutils literal notranslate"><span class="pre">ℝ</span></code> with <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p>
 <p>You can use <code class="docutils literal notranslate"><span class="pre">isinstance</span></code> to check “<em>k</em> ∈ ℝ”, where float and <code class="docutils literal notranslate"><span class="pre">ℝ</span></code> aren’t <em>really</em>
@@ -998,7 +995,7 @@ with the <code class="docutils literal notranslate"><span class="pre">assert</sp
 <p><a class="reference external" href="https://youtu.be/zguLmgYWhM0">Excellent resource on floats in python</a></p>
 </section>
 <section id="rational-numbers">
-<h3><code class="docutils literal notranslate"><span class="pre">ℚ</span></code> rational numbers<a class="headerlink" href="#rational-numbers" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">11.10.2. </span><code class="docutils literal notranslate"><span class="pre">ℚ</span></code> rational numbers<a class="headerlink" href="#rational-numbers" title="Link to this heading">#</a></h3>
 <p>Rational numbers are real numbers that can be expressed as a fraction, or
 <em>ratio</em>. Rational numbers cannot have zero as a denominator.</p>
 <p>Imagine taking <code class="docutils literal notranslate"><span class="pre">ℝ</span></code> and removing radicals (like <code class="docutils literal notranslate"><span class="pre">np.sqrt</span></code>) and logarithms (in a
@@ -1017,20 +1014,17 @@ equality <code class="docutils literal notranslate"><span class="pre">==</span><
 <a class="reference external" href="https://docs.python.org/3.7/library/fractions.html"><code class="docutils literal notranslate"><span class="pre">fractions</span></code> standard module</a></p>
 </section>
 <section id="integers">
-<h3><code class="docutils literal notranslate"><span class="pre">ℤ</span></code> integers<a class="headerlink" href="#integers" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">11.10.3. </span><code class="docutils literal notranslate"><span class="pre">ℤ</span></code> integers<a class="headerlink" href="#integers" title="Link to this heading">#</a></h3>
 <p>An integer is a whole number. Just imagine starting from zero and one and
 building out an inventory with addition and subtraction.</p>
 <p>An integer has no division, no decimals.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="mi">8</span><span class="o">/</span><span class="mi">7</span><span class="p">,</span> <span class="nb">int</span><span class="p">),</span> <span class="s2">&quot;GO DIRECTLY TO JAIL&quot;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="mi">8</span><span class="o">/</span><span class="mi">7</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
 <section id="natural-numbers">
-<h3><code class="docutils literal notranslate"><span class="pre">ℕ</span></code> natural numbers<a class="headerlink" href="#natural-numbers" title="Link to this heading">#</a></h3>
-<p>A natural number, a non-negative integer.</p>
-<p>This is actually the only set invented by the <a class="reference external" href="https://www.brainyquote.com/quotes/leopold_kronecker_338745">flying spaghetti monster</a>: as for the
-others, humans have themselves to blame.</p>
-<p>Depending on the context and field of study, the set may or may not <strong>start with zero</strong>.</p>
+<h3><span class="section-number">11.10.4. </span><code class="docutils literal notranslate"><span class="pre">ℕ</span></code> natural numbers<a class="headerlink" href="#natural-numbers" title="Link to this heading">#</a></h3>
+<p>A natural number, a non-negative integer. Depending on the context and field of study, the set may or may not <strong>start with zero</strong>.</p>
 <p>…ok but, between you and me, <strong>they 200% start with zero</strong>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">ℕ</span></code> also happens to be the first <strong>inductive construction</strong> in the <a class="reference external" href="https://en.wikipedia.org/wiki/Semantics_(computer_science)">study of
 datatypes</a>, consisting of a single axiom (“Zero is a <code class="docutils literal notranslate"><span class="pre">ℕ</span></code>”) and a single
@@ -1040,7 +1034,7 @@ from <code class="docutils literal notranslate"><span class="pre">non-negative</
 combines <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&gt;=</span> <span class="pre">0</span></code> judgments with <code class="docutils literal notranslate"><span class="pre">isinstance(x,</span> <span class="pre">int)</span></code>.</p>
 </section>
 <section id="complex-numbers">
-<h3><code class="docutils literal notranslate"><span class="pre">ℂ</span></code> complex numbers<a class="headerlink" href="#complex-numbers" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">11.10.5. </span><code class="docutils literal notranslate"><span class="pre">ℂ</span></code> complex numbers<a class="headerlink" href="#complex-numbers" title="Link to this heading">#</a></h3>
 <p>As we saw earlier, the complex numbers are a particular wrapper around tuples of
 reals.</p>
 <p>A complex number is a combination of a real and imaginary number, viewed as a co-ordinate in the 2D plane. For more info, see <a class="reference external" href="http://betterexplained.com/articles/a-visual-intuitive-guide-to-imaginary-numbers/">A Visual, Intuitive Guide to Imaginary Numbers</a>.</p>
@@ -1048,7 +1042,7 @@ reals.</p>
 </section>
 </section>
 <section id="set-builder-notation">
-<h2>Set builder notation<a class="headerlink" href="#set-builder-notation" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.11. </span>Set builder notation<a class="headerlink" href="#set-builder-notation" title="Link to this heading">#</a></h2>
 <p>Pythoners have a name for <em>set builder notation</em>; and the name is comprehension</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">}</span></code>: delimiter around iterable (curlybois for <code class="docutils literal notranslate"><span class="pre">dict</span></code> or <code class="docutils literal notranslate"><span class="pre">set</span></code>, <code class="docutils literal notranslate"><span class="pre">[</span></code> for list)</p></li>
@@ -1074,8 +1068,7 @@ and <code class="docutils literal notranslate"><span class="pre">np.linspace</sp
 </div>
 </section>
 <section id="functions">
-<h2>functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h2>
-<p><a class="reference external" href="https://en.wikipedia.org/wiki/Function_%28mathematics%29">Functions</a> are fundamental features of mathematics, and the concept is fairly easy to translate into code.</p>
+<h2><span class="section-number">11.12. </span>functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h2>
 <p>A <strong>function</strong> transforms an input into an output value. For example, the following is a function:</p>
 <p><img alt="function1" src="http://latex.codecogs.com/svg.latex?x%5E%7B2%7D" /></p>
 <!-- x^{2} -->
@@ -1108,7 +1101,7 @@ the python keyword</p>
 <p><img alt="function4" src="http://latex.codecogs.com/svg.latex?f%28x%2Cy%29%20%3D%20%5Csqrt%7Bx%5E2%20+%20y%5E2%7D" /></p>
 <!-- f(x,y) = \sqrt{x^2 + y^2} -->
 <section id="dictionaries-are-functions">
-<h3>dictionaries are functions<a class="headerlink" href="#dictionaries-are-functions" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">11.12.1. </span>dictionaries are functions<a class="headerlink" href="#dictionaries-are-functions" title="Link to this heading">#</a></h3>
 <p>Sometimes mathematicians, like software developers, need to specify <em>maps</em> by
 <em>enumerating each input-output pair</em>* when there is no expression that computes
 output from input.</p>
@@ -1124,7 +1117,7 @@ these, we can <a class="reference external" href="https://en.wikipedia.org/wiki/
 into different kinds, important in compression and security engineering.</p>
 </section>
 <section id="piecewise-function">
-<h3>piecewise function<a class="headerlink" href="#piecewise-function" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">11.12.2. </span>piecewise function<a class="headerlink" href="#piecewise-function" title="Link to this heading">#</a></h3>
 <p>Some functions will use different relationships depending on the input value, <em>x</em>.</p>
 <p>The following function <em>ƒ</em> chooses between two “sub functions” depending on the input value.</p>
 <p><img alt="piecewise1" src="http://latex.codecogs.com/svg.latex?f%28x%29%3D%20%5Cbegin%7Bcases%7D%20%5Cfrac%7Bx%5E2-x%7D%7Bx%7D%2C%26%20%5Ctext%7Bif%20%7D%20x%5Cgeq%201%5C%5C%200%2C%20%26%20%5Ctext%7Botherwise%7D%20%5Cend%7Bcases%7D" /></p>
@@ -1145,7 +1138,7 @@ into different kinds, important in compression and security engineering.</p>
 </div>
 </section>
 <section id="common-functions">
-<h3>common functions<a class="headerlink" href="#common-functions" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">11.12.3. </span>common functions<a class="headerlink" href="#common-functions" title="Link to this heading">#</a></h3>
 <p>There are some function names that are ubiquitous in mathematics. For a programmer, these might be analogous to functions “built-in” to the language (like <code class="docutils literal notranslate"><span class="pre">parseInt</span></code> in JavaScript).</p>
 <p>One such example is the <em>sgn</em> function. This is the <em>signum</em> or <em>sign</em> function. Let’s use <a class="reference internal" href="#piecewise-function"><span class="xref myst">piecewise function</span></a> notation to describe it:</p>
 <p><img alt="sgn" src="http://latex.codecogs.com/svg.latex?sgn%28x%29%20%3A%3D%20%5Cbegin%7Bcases%7D%20-1%26%20%5Ctext%7Bif%20%7D%20x%20%3C%200%5C%5C%200%2C%20%26%20%5Ctext%7Bif%20%7D%20%7Bx%20%3D%200%7D%5C%5C%201%2C%20%26%20%5Ctext%7Bif%20%7D%20x%20%3E%200%5C%5C%20%5Cend%7Bcases%7D" /></p>
@@ -1169,7 +1162,7 @@ into different kinds, important in compression and security engineering.</p>
 <p>Other examples of such functions: <em>sin</em>, <em>cos</em>, <em>tan</em>.</p>
 </section>
 <section id="function-notation">
-<h3>function notation<a class="headerlink" href="#function-notation" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">11.12.4. </span>function notation<a class="headerlink" href="#function-notation" title="Link to this heading">#</a></h3>
 <p>In some literature, functions may be defined with more explicit notation. For example, let’s go back to the <code class="docutils literal notranslate"><span class="pre">square</span></code> function we mentioned earlier:</p>
 <p><img alt="function2" src="http://latex.codecogs.com/svg.latex?f%5Cleft%20%28x%20%5Cright%20%29%20%3D%20x%5E%7B2%7D" /></p>
 <!-- f\left (x  \right ) = x^{2} -->
@@ -1222,7 +1215,7 @@ together but <code class="docutils literal notranslate"><span class="pre">1</spa
 </section>
 </section>
 <section id="prime">
-<h2>prime<a class="headerlink" href="#prime" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.13. </span>prime<a class="headerlink" href="#prime" title="Link to this heading">#</a></h2>
 <p>The prime symbol (<code class="docutils literal notranslate"><span class="pre">′</span></code>) is often used in variable names to describe things which are similar, without giving it a different name altogether. It can describe the “next value” after some transformation.</p>
 <p>For example, if we take a 2D point <em>(x, y)</em> and rotate it, you might name the result <em>(x′, y′)</em>. Or, the <em>transpose</em> of matrix <strong>M</strong> might be named <strong>M′</strong>.</p>
 <p>In code, we typically just assign the variable a more descriptive name, like <code class="docutils literal notranslate"><span class="pre">transformedPosition</span></code>.</p>
@@ -1243,7 +1236,7 @@ together but <code class="docutils literal notranslate"><span class="pre">1</spa
 <p>Multiple prime symbols can be used to describe the second derivative <em>ƒ′′</em> and third derivative <em>ƒ′′′</em>. After this, authors typically express higher orders with roman numerals <em>ƒ</em><sup>IV</sup> or superscript numbers <em>ƒ</em><sup>(n)</sup>.</p>
 </section>
 <section id="floor-ceiling">
-<h2>floor &amp; ceiling<a class="headerlink" href="#floor-ceiling" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.14. </span>floor &amp; ceiling<a class="headerlink" href="#floor-ceiling" title="Link to this heading">#</a></h2>
 <p>The special brackets <code class="docutils literal notranslate"><span class="pre">⌊x⌋</span></code> and <code class="docutils literal notranslate"><span class="pre">⌈x⌉</span></code> represent the <em>floor</em> and <em>ceil</em> functions, respectively.</p>
 <p><img alt="floor" src="http://latex.codecogs.com/svg.latex?floor%28x%29%20%3D%20%5Clfloor%20x%20%5Crfloor" /></p>
 <!-- floor(x) =  \lfloor x \rfloor -->
@@ -1266,10 +1259,10 @@ rather than the int <code class="docutils literal notranslate"><span class="pre"
 <p>Python automatically gives you a keyword <code class="docutils literal notranslate"><span class="pre">round</span></code> to call on a number.</p>
 </section>
 <section id="arrows">
-<h2>arrows<a class="headerlink" href="#arrows" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.15. </span>arrows<a class="headerlink" href="#arrows" title="Link to this heading">#</a></h2>
 <p>Arrows are often used in <a class="reference internal" href="#function-notation"><span class="xref myst">function notation</span></a>. Here are a few other areas you might see them.</p>
 <section id="material-implication">
-<h3>material implication<a class="headerlink" href="#material-implication" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">11.15.1. </span>material implication<a class="headerlink" href="#material-implication" title="Link to this heading">#</a></h3>
 <p>Arrows like <code class="docutils literal notranslate"><span class="pre">⇒</span></code> and <code class="docutils literal notranslate"><span class="pre">→</span></code> are sometimes used in logic for <em>material implication.</em> That is, if A is true, then B is also true.</p>
 <p><img alt="material1" src="http://latex.codecogs.com/svg.latex?A%20%5CRightarrow%20B" /></p>
 <!-- A \Rightarrow B -->
@@ -1285,7 +1278,7 @@ rather than the int <code class="docutils literal notranslate"><span class="pre"
 <!-- A \Leftrightarrow B -->
 </section>
 <section id="inequality">
-<h3>inequality<a class="headerlink" href="#inequality" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">11.15.2. </span>inequality<a class="headerlink" href="#inequality" title="Link to this heading">#</a></h3>
 <p>In math, the <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> <code class="docutils literal notranslate"><span class="pre">≤</span></code> and <code class="docutils literal notranslate"><span class="pre">≥</span></code> are typically used in the same way we use them in code: <em>less than</em>, <em>greater than</em>, <em>less than or equal to</em> and <em>greater than or equal to</em>, respectively.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="mi">50</span> <span class="o">&gt;</span> <span class="mi">2</span>
 <span class="k">assert</span> <span class="mi">2</span> <span class="o">&lt;</span> <span class="mi">10</span>
@@ -1306,7 +1299,7 @@ word, the polynomial <em>beats</em> the logarithm.”</p>
 <!-- k \gg j -->
 </section>
 <section id="conjunction-disjunction">
-<h3>conjunction &amp; disjunction<a class="headerlink" href="#conjunction-disjunction" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">11.15.3. </span>conjunction &amp; disjunction<a class="headerlink" href="#conjunction-disjunction" title="Link to this heading">#</a></h3>
 <p>Another use of arrows in logic is conjunction <code class="docutils literal notranslate"><span class="pre">∧</span></code> and disjunction <code class="docutils literal notranslate"><span class="pre">∨</span></code>. They are analogous to a programmer’s <code class="docutils literal notranslate"><span class="pre">AND</span></code> and <code class="docutils literal notranslate"><span class="pre">OR</span></code> operators, respectively.</p>
 <p>The following shows conjunction <code class="docutils literal notranslate"><span class="pre">∧</span></code>, the logical <code class="docutils literal notranslate"><span class="pre">AND</span></code>.</p>
 <p><img alt="and" src="http://latex.codecogs.com/svg.latex?k%20%3E%202%20%5Cland%20k%20%3C%204%20%5CLeftrightarrow%20k%20%3D%203" /></p>
@@ -1327,7 +1320,7 @@ you one bool for two bools.</p>
 </section>
 </section>
 <section id="logical-negation">
-<h2>logical negation<a class="headerlink" href="#logical-negation" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.16. </span>logical negation<a class="headerlink" href="#logical-negation" title="Link to this heading">#</a></h2>
 <p>Occasionally, the <code class="docutils literal notranslate"><span class="pre">¬</span></code>, <code class="docutils literal notranslate"><span class="pre">~</span></code> and <code class="docutils literal notranslate"><span class="pre">!</span></code> symbols are used to represent logical <code class="docutils literal notranslate"><span class="pre">NOT</span></code>. For example, <em>¬A</em> is only true if A is false.</p>
 <p>Here is a simple example using the <em>not</em> symbol:</p>
 <p><img alt="negation" src="http://latex.codecogs.com/svg.latex?x%20%5Cneq%20y%20%5CLeftrightarrow%20%5Clnot%28x%20%3D%20y%29" /></p>
@@ -1339,7 +1332,7 @@ you one bool for two bools.</p>
 <p><em>Note:</em> The tilde <code class="docutils literal notranslate"><span class="pre">~</span></code> has many different meanings depending on context. For example, <em>row equivalence</em> (matrix theory) or <em>same order of magnitude</em> (discussed in <a class="reference internal" href="#equality"><span class="xref myst">equality</span></a>).</p>
 </section>
 <section id="intervals">
-<h2>intervals<a class="headerlink" href="#intervals" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.17. </span>intervals<a class="headerlink" href="#intervals" title="Link to this heading">#</a></h2>
 <p>Sometimes a function deals with real numbers restricted to some range of values, such a constraint can be represented using an <em>interval</em></p>
 <p>For example we can represent the numbers between zero and one including/not including zero and/or one as:</p>
 <ul class="simple">
@@ -1411,10 +1404,11 @@ in generators like <code class="docutils literal notranslate"><span class="pre">
 </pre></div>
 </div>
 <p><a class="reference external" href="https://blog.shahjalalshohag.com/equation-list/">https://blog.shahjalalshohag.com/equation-list/</a></p>
+</section>
 <section id="combinatorics">
-<h3>Combinatorics<a class="headerlink" href="#combinatorics" title="Link to this heading">#</a></h3>
+<h2><span class="section-number">11.18. </span>Combinatorics<a class="headerlink" href="#combinatorics" title="Link to this heading">#</a></h2>
 <section id="general">
-<h4>General<a class="headerlink" href="#general" title="Link to this heading">#</a></h4>
+<h3><span class="section-number">11.18.1. </span>General<a class="headerlink" href="#general" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(\displaystyle \displaystyle \sum \limits_{0\leq k \leq n} {n-k \choose k} = Fib_{n+1}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\displaystyle \displaystyle {n \choose k}={n \choose n-k}\)</span></p></li>
@@ -1437,11 +1431,11 @@ in generators like <code class="docutils literal notranslate"><span class="pre">
 <li><p><span class="math notranslate nohighlight">\(\displaystyle \sum \limits_{i=0}^n{2n \choose i}=2^{2n-1}+\frac{1}{2}{2n \choose n}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\displaystyle \sum \limits_{i=1}^n{n \choose i}{n-1 \choose i-1}={2n-1 \choose n-1}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\displaystyle \sum \limits_{i=0}^n{2n \choose i}^2=\frac{1}{2} \left( {4n \choose 2n}+{2n \choose n}^2 \right)\)</span></p></li>
-<li><p><strong>Highest Power of <span class="math notranslate nohighlight">\(\displaystyle 2\)</span> that divides <span class="math notranslate nohighlight">\(^{2n}C_n\)</span>:</strong> Let <span class="math notranslate nohighlight">\(\displaystyle x\)</span> be the number of <span class="math notranslate nohighlight">\(\displaystyle 1\)</span>s in the binary representation. Then the number of odd terms will be <span class="math notranslate nohighlight">\(\displaystyle 2^x\)</span>. Let it form a sequence. The <span class="math notranslate nohighlight">\(n\)</span>-th value in the sequence (starting from <span class="math notranslate nohighlight">\(n\)</span> = 0) gives the highest power of <span class="math notranslate nohighlight">\(\displaystyle 2\)</span> that divides <span class="math notranslate nohighlight">\(^{2n}C_n\)</span>.</p></li>
+<li><p><strong>Highest Power of <span class="math notranslate nohighlight">\(\displaystyle 2\)</span> that divides <span class="math notranslate nohighlight">\(^{2n}C_n\)</span>:</strong> Let <span class="math notranslate nohighlight">\(\displaystyle x\)</span> be the number of <span class="math notranslate nohighlight">\(1s\)</span> in the binary representation. Then the number of odd terms will be <span class="math notranslate nohighlight">\(\displaystyle 2^x\)</span>. Let it form a sequence. The <span class="math notranslate nohighlight">\(n\)</span>-th value in the sequence (starting from <span class="math notranslate nohighlight">\(n\)</span> = 0) gives the highest power of <span class="math notranslate nohighlight">\(\displaystyle 2\)</span> that divides <span class="math notranslate nohighlight">\(^{2n}C_n\)</span>.</p></li>
 <li><p><strong>Pascal Triangle</strong></p>
 <ol class="arabic simple">
-<li><p>In a row <span class="math notranslate nohighlight">\(\displaystyle p\)</span> where <span class="math notranslate nohighlight">\(\displaystyle p\)</span> is a prime number, all the terms in that row except the <span class="math notranslate nohighlight">\(\displaystyle 1\)</span>s are multiples of <span class="math notranslate nohighlight">\(\displaystyle p\)</span>.</p></li>
-<li><p>Parity: To count odd terms in row <span class="math notranslate nohighlight">\(n\)</span>, convert <span class="math notranslate nohighlight">\(n\)</span> to binary. Let <span class="math notranslate nohighlight">\(\displaystyle x\)</span> be the number of <span class="math notranslate nohighlight">\(\displaystyle 1\)</span>s in the binary representation. Then the number of odd terms will be <span class="math notranslate nohighlight">\(\displaystyle 2^x\)</span>.</p></li>
+<li><p>In a row <span class="math notranslate nohighlight">\(\displaystyle p\)</span> where <span class="math notranslate nohighlight">\(\displaystyle p\)</span> is a prime number, all the terms in that row except the <span class="math notranslate nohighlight">\(1s\)</span> are multiples of <span class="math notranslate nohighlight">\(\displaystyle p\)</span>.</p></li>
+<li><p>Parity: To count odd terms in row <span class="math notranslate nohighlight">\(n\)</span>, convert <span class="math notranslate nohighlight">\(n\)</span> to binary. Let <span class="math notranslate nohighlight">\(\displaystyle x\)</span> be the number of <span class="math notranslate nohighlight">\(1s\)</span> in the binary representation. Then the number of odd terms will be <span class="math notranslate nohighlight">\(\displaystyle 2^x\)</span>.</p></li>
 <li><p>Every entry in row <span class="math notranslate nohighlight">\(\displaystyle 2^n-1, n\geq 0,\)</span> is odd.</p></li>
 </ol>
 </li>
@@ -1450,42 +1444,42 @@ in generators like <code class="docutils literal notranslate"><span class="pre">
 <li><p>Number of different binary sequences of length <span class="math notranslate nohighlight">\(n\)</span> such that no two <span class="math notranslate nohighlight">\(0\)</span>’s are adjacent=<span class="math notranslate nohighlight">\(\displaystyle Fib_{n+1}\)</span></p></li>
 <li><p><strong>Combination with repetition:</strong> Let’s say we choose <span class="math notranslate nohighlight">\(\displaystyle \displaystyle k\)</span> elements from an <span class="math notranslate nohighlight">\(n\)</span>-element set, the order doesn’t matter and each element can be chosen more than once. In that case, the number of different combinations is: <span class="math notranslate nohighlight">\(\displaystyle \displaystyle {n+k-1 \choose k}\)</span></p></li>
 <li><p>Number of ways to divide <span class="math notranslate nohighlight">\(n\)</span> persons in <span class="math notranslate nohighlight">\(\displaystyle \frac{n}{k}\)</span> equal groups i.e. each having size <span class="math notranslate nohighlight">\(\displaystyle \displaystyle k\)</span> is
-[\displaystyle \frac{n!}{k!^{\frac{n}{k}} \left( \frac{n}{k} \right) !}= \prod \limits_{n \geq k}^{n-=k}{n-1 \choose k-1}]</p></li>
+$<span class="math notranslate nohighlight">\(\displaystyle \frac{n!}{k!^{\frac{n}{k}} \left( \frac{n}{k} \right) !}= \prod \limits_{n \geq k}^{n-=k}{n-1 \choose k-1}\)</span>$</p></li>
 <li><p>The number non-negative solution of the equation: <span class="math notranslate nohighlight">\(\displaystyle x_1+x_2+x_3+…+x_k=n \text{ is}{n+k-1 \choose n}\)</span></p></li>
 <li><p>Number of ways to choose <span class="math notranslate nohighlight">\(n\)</span> ids from <span class="math notranslate nohighlight">\(\displaystyle 1\)</span> to b such that every id has distance at least k <span class="math notranslate nohighlight">\(\displaystyle \displaystyle =\left( \frac{b-(n-1)(k-1)}{n} \right)\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\displaystyle \displaystyle \sum \limits_{i=1,3,5,\dots}^{i\leq n} \binom{n}{i} a^{n-i}b^i = \frac{1}{2} ((a+b)^n-(a-b)^n)\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\displaystyle \displaystyle \sum \limits_{i=0}^{n} \dfrac{\binom{k}{i}}{\binom{n}{i}} = \dfrac{\binom{n+1}{n-k+1}}{\binom{n}{k}}\)</span></p></li>
 <li><p><strong>Derangement:</strong> a permutation of the elements of a set, such that no element appears in its original position. Let <span class="math notranslate nohighlight">\(d(n)\)</span> be the number of derangements of the identity permutation fo size <span class="math notranslate nohighlight">\(n\)</span>.
-[d(n)=(n-1) \cdot (d(n-1)+d(n-2)) , \text{where};d(0)=1,d(1)=0]</p></li>
+$<span class="math notranslate nohighlight">\(d(n)=(n-1) \cdot (d(n-1)+d(n-2)) \, \text{where}\;d(0)=1,d(1)=0\)</span>$</p></li>
 <li><p><strong>Involutions:</strong> permutations such that <span class="math notranslate nohighlight">\(\displaystyle p^2 =\)</span> identity permutation. <span class="math notranslate nohighlight">\(\displaystyle a_0 = a_1 = 1\)</span> and <span class="math notranslate nohighlight">\(\displaystyle a_n=a_{n-1} + (n-1)a_{n-2}\)</span> for <span class="math notranslate nohighlight">\(n&gt;1\)</span>.</p></li>
 <li><p>Let <span class="math notranslate nohighlight">\(T(n,k)\)</span> be the number of permutations of size <span class="math notranslate nohighlight">\(n\)</span> for which all cycles have length <span class="math notranslate nohighlight">\(\displaystyle \leq k\)</span>.
-[T(n, k)=
+$<span class="math notranslate nohighlight">\(T(n, k)=     
 \begin{cases}
-n! &amp; ; n \le k\
-n \cdot T(n-1, k) - F(n-1, k) \cdot T(n-k-1, k) &amp; ;n &gt; k \
-\end{cases}]
-Here <span class="math notranslate nohighlight">\(\displaystyle F(n, k) = n \cdot (n - 1) \cdot … \cdot (n - k + 1)\)</span></p></li>
+  n! &amp; ; n \le k \\
+  n \cdot T(n-1, k) - F(n-1, k) \cdot T(n-k-1, k) &amp; ; n &gt; k \\
+\end{cases} \)</span><span class="math notranslate nohighlight">\(
+Here \)</span>\displaystyle F(n, k) = n \cdot (n - 1) \cdot … \cdot (n - k + 1)$</p></li>
 <li><p><strong>Lucas Theorem</strong></p>
 <ol class="arabic simple">
 <li><p>If <span class="math notranslate nohighlight">\(\displaystyle p\)</span> is prime, then <span class="math notranslate nohighlight">\(\displaystyle \left(\frac{p^{a}}{k}\right) \equiv 0 (\mod\; p)\)</span></p></li>
 <li><p>For non-negative integers <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(n\)</span> and a prime <span class="math notranslate nohighlight">\(\displaystyle p\)</span>, the following congruence relation holds:
-(\displaystyle \left(\frac{m}{n}\right) \equiv \prod_{i=0}^{k} \left(\frac{m_{i}}{n_{i}}\right) (mod; p),)
+$<span class="math notranslate nohighlight">\(\displaystyle \left(\frac{m}{n}\right) \equiv \prod_{i=0}^{k} \left(\frac{m_{i}}{n_{i}}\right) (mod\; p),\)</span><span class="math notranslate nohighlight">\(
 where,
-<span class="math notranslate nohighlight">\(m=m_{k} p^{k} +m_{k-1} p^{k-1}+…+m_{1} p+m_{0}\)</span>,
+\)</span>m=m_{k} p^{k} +m_{k-1} p^{k-1}+…+m_{1} p+m_{0}<span class="math notranslate nohighlight">\(,
 and
-<span class="math notranslate nohighlight">\(n=n_{k}p^{k}+n_{k-1}p^{k-1}+…+n_{1}p+n_{0}\)</span>
-are the base <span class="math notranslate nohighlight">\(\displaystyle p\)</span> expansions of <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(n\)</span> respectively. This uses the convention that <span class="math notranslate nohighlight">\(\displaystyle \left(\frac{m}{n}\right)=0\)</span>,when <span class="math notranslate nohighlight">\(m&lt;n\)</span>.</p></li>
+\)</span>n=n_{k}p^{k}+n_{k-1}p^{k-1}+…+n_{1}p+n_{0}<span class="math notranslate nohighlight">\(
+are the base \)</span>\displaystyle p<span class="math notranslate nohighlight">\( expansions of \)</span>m<span class="math notranslate nohighlight">\( and \)</span>n<span class="math notranslate nohighlight">\( respectively. This uses the convention that \)</span>\displaystyle \left(\frac{m}{n}\right)=0<span class="math notranslate nohighlight">\(,when \)</span>m&lt;n$.</p></li>
 </ol>
 </li>
-<li><p><span class="math notranslate nohighlight">\(\displaystyle \sum_{i=0}^{n}  {n \choose i } \cdot i^{k}\)</span>
-= <span class="math notranslate nohighlight">\(\displaystyle \sum_{i=0}^{n}  {n \choose i } \cdot \sum_{j=0}^{k}{ \left\{ \begin{matrix} k\cr j \end{matrix} \right\} \cdot i^{\underline{j}}}\)</span>
-= <span class="math notranslate nohighlight">\(\displaystyle \sum_{i=0}^{n} {n \choose i } \cdot \sum_{j=0}^{k} \left\{ \begin{matrix} k\cr j \end{matrix} \right\} \cdot  j! {n \choose i }\)</span>
-= <span class="math notranslate nohighlight">\(\displaystyle \sum_{i=0}^{n} \frac{n!}{(n-i)!} \cdot \sum_{j=0}^{k} \left\{ \begin{matrix}k\cr j \end{matrix} \right\} \cdot \frac{1}{(i-j)!}\)</span>
-= <span class="math notranslate nohighlight">\(\displaystyle \sum_{i=0}^{n} \sum_{j=0}^{k} \frac{n!}{(n-i)!} \cdot  \left\{\begin{matrix} k\cr j \end{matrix} \right\} \cdot \frac{1}{(i-j)!}\)</span>
-= n!<span class="math notranslate nohighlight">\(\displaystyle \sum_{i=0}^{n} \sum_{j=0}^{k} \left\{ \begin{matrix} k\cr j \end{matrix} \right\} \cdot \frac{1}{(n-i)!} \cdot \frac{1}{(i-j)!}\)</span>
-= n!<span class="math notranslate nohighlight">\(\displaystyle \sum_{i=0}^{n} \sum_{j=0}^{k} \left\{ \begin{matrix} k\cr j \end{matrix} \right\} \cdot { n-j \choose n-i} \cdot \frac{1}{(n-j)!}\)</span>
-= n!<span class="math notranslate nohighlight">\(\displaystyle \sum_{j=0}^{k} \left\{ \begin{matrix} k\cr j \end{matrix} \right\} \cdot \frac{1}{(n-j)!} \sum_{i=0}^{n} \cdot { n-j \choose n-i}\)</span>
-= <span class="math notranslate nohighlight">\(\displaystyle \sum_{j=0}^{k} \left\{\begin{matrix} k\cr j \end{matrix} \right\} \cdot n^{\underline{j}} \cdot 2^{n-j}\)</span>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \sum_{i=0}^{n}  {n \choose i } \cdot i^{k}\)</span> <br />
+= <span class="math notranslate nohighlight">\(\displaystyle \sum_{i=0}^{n}  {n \choose i } \cdot \sum_{j=0}^{k}{ \left\{ \begin{matrix} k\cr j \end{matrix} \right\} \cdot i^{\underline{j}}}\)</span> <br />
+= <span class="math notranslate nohighlight">\(\displaystyle \sum_{i=0}^{n} {n \choose i } \cdot \sum_{j=0}^{k} \left\{ \begin{matrix} k\cr j \end{matrix} \right\} \cdot  j! {n \choose i }\)</span> <br />
+= <span class="math notranslate nohighlight">\(\displaystyle \sum_{i=0}^{n} \frac{n!}{(n-i)!} \cdot \sum_{j=0}^{k} \left\{ \begin{matrix}k\cr j \end{matrix} \right\} \cdot \frac{1}{(i-j)!}\)</span> <br />
+= <span class="math notranslate nohighlight">\(\displaystyle \sum_{i=0}^{n} \sum_{j=0}^{k} \frac{n!}{(n-i)!} \cdot  \left\{\begin{matrix} k\cr j \end{matrix} \right\} \cdot \frac{1}{(i-j)!}\)</span> <br />
+= n!<span class="math notranslate nohighlight">\(\displaystyle \sum_{i=0}^{n} \sum_{j=0}^{k} \left\{ \begin{matrix} k\cr j \end{matrix} \right\} \cdot \frac{1}{(n-i)!} \cdot \frac{1}{(i-j)!}\)</span> <br />
+= n!<span class="math notranslate nohighlight">\(\displaystyle \sum_{i=0}^{n} \sum_{j=0}^{k} \left\{ \begin{matrix} k\cr j \end{matrix} \right\} \cdot { n-j \choose n-i} \cdot \frac{1}{(n-j)!}\)</span> <br />
+= n!<span class="math notranslate nohighlight">\(\displaystyle \sum_{j=0}^{k} \left\{ \begin{matrix} k\cr j \end{matrix} \right\} \cdot \frac{1}{(n-j)!} \sum_{i=0}^{n} \cdot { n-j \choose n-i}\)</span> <br />
+= <span class="math notranslate nohighlight">\(\displaystyle \sum_{j=0}^{k} \left\{\begin{matrix} k\cr j \end{matrix} \right\} \cdot n^{\underline{j}} \cdot 2^{n-j}\)</span> <br />
 Here <span class="math notranslate nohighlight">\(n^{\underline{j}}=P(n,j)=\dfrac{n!}{(n-j)!}\)</span> and <span class="math notranslate nohighlight">\(\displaystyle \left\{ \begin{matrix} k\cr j \end{matrix} \right\}\)</span> is stirling number of the second kind.
 So, instead of <span class="math notranslate nohighlight">\(O(n)\)</span>, now you can calculate the original equation in <span class="math notranslate nohighlight">\(O(k^2)\)</span> or even in <span class="math notranslate nohighlight">\(O(k \log^2 n)\)</span> using NTT.</p></li>
 <li><p><span class="math notranslate nohighlight">\(\displaystyle \displaystyle \sum \limits_{i=0}^{n-1} {i \choose j} x^i = x^j(1-x)^{-j-1}\left( 1- x^n \sum \limits_{i=0}^j {n \choose i} x^{j-i} (1-x)^i \right)\)</span></p></li>
@@ -1493,15 +1487,15 @@ So, instead of <span class="math notranslate nohighlight">\(O(n)\)</span>, now y
 <span class="math notranslate nohighlight">\(\displaystyle x_{0} + x_{1}, x_{1} + x_{2}, x_{2}+x_{3}, … x_{n}\)</span>
 …
 If we continuously do this <span class="math notranslate nohighlight">\(n\)</span> times then the polynomial of the first column of the <span class="math notranslate nohighlight">\(n\)</span>-th row will be
-[\displaystyle p(n)=\sum_{k=0}^{n}{n \choose k} \cdot x(k)]</p></li>
+<span class="math notranslate nohighlight">\(\displaystyle p(n)=\sum_{k=0}^{n}{n \choose k} \cdot x(k)\)</span></p></li>
 <li><p>If <span class="math notranslate nohighlight">\(\displaystyle P(n)=\sum_{k=0}^{n}{n \choose k} \cdot Q(k)\)</span>, then,
-[Q(n)=\sum_{k=0}^{n}(-1)^{n-k}{n \choose k} \cdot P(k)]</p></li>
+<span class="math notranslate nohighlight">\(Q(n)=\sum_{k=0}^{n}(-1)^{n-k}{n \choose k} \cdot P(k)\)</span></p></li>
 <li><p>If <span class="math notranslate nohighlight">\(\displaystyle P(n)=\sum_{k=0}^{n}(-1)^{k}{n \choose k} \cdot Q(k)\)</span> , then,
-[Q(n)=\sum_{k=0}^{n}(-1)^{k}{n \choose k} \cdot P(k)]</p></li>
+<span class="math notranslate nohighlight">\(Q(n)=\sum_{k=0}^{n}(-1)^{k}{n \choose k} \cdot P(k)\)</span></p></li>
 </ol>
 </section>
 <section id="catalan-numbers">
-<h4>Catalan Numbers<a class="headerlink" href="#catalan-numbers" title="Link to this heading">#</a></h4>
+<h3><span class="section-number">11.18.2. </span>Catalan Numbers<a class="headerlink" href="#catalan-numbers" title="Link to this heading">#</a></h3>
 <ol class="arabic simple" start="42">
 <li><p><span class="math notranslate nohighlight">\(\displaystyle C_n=\frac{1}{n+1}{2n \choose n}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\displaystyle C_0=1,C_1=1\text{ and }C_n=\sum \limits_{k=0}^{n-1}C_k C_{n-1-k}\)</span></p></li>
@@ -1513,42 +1507,42 @@ If we continuously do this <span class="math notranslate nohighlight">\(n\)</spa
 <li><p>The number of rooted full binary trees with <span class="math notranslate nohighlight">\(n\)</span>+<span class="math notranslate nohighlight">\(\displaystyle 1\)</span> leaves (vertices are not numbered). A rooted binary tree is full if every vertex has either two children or no children.</p></li>
 <li><p>Number of permutations of <span class="math notranslate nohighlight">\(\displaystyle {1, …, n}\)</span> that avoid the pattern <span class="math notranslate nohighlight">\(\displaystyle 123\)</span> (or any of the other patterns of length <span class="math notranslate nohighlight">\(3\)</span>); that is, the number of permutations with no three-term increasing sub-sequence. For <span class="math notranslate nohighlight">\(n = 3\)</span>, these permutations are <span class="math notranslate nohighlight">\(\displaystyle 132,\ 213,\ 231,\ 312\)</span> and <span class="math notranslate nohighlight">\(321.\)</span> For <span class="math notranslate nohighlight">\(n = 4\)</span>, they are <span class="math notranslate nohighlight">\(\displaystyle 1432,\ 2143,\ 2413,\ 2431,\ 3142,\ 3214,\ 3241,\ 3412,\ 3421,\ 4132,\ 4213,\ 4231,\ 4312\)</span> and <span class="math notranslate nohighlight">\(4321.\)</span></p></li>
 <li><p><strong>Balanced Parentheses count with prefix:</strong> The count of balanced parentheses sequences consisting of <span class="math notranslate nohighlight">\(n+k\)</span> pairs of parentheses where the first <span class="math notranslate nohighlight">\(\displaystyle \displaystyle k\)</span> symbols are open brackets. Let the number be <span class="math notranslate nohighlight">\(\displaystyle C_n^{(k)}\)</span>, then
-[\displaystyle \displaystyle C_n^{(k)} = \frac{k+1}{n+k+1} \binom{2n+k}{n}]</p></li>
+$<span class="math notranslate nohighlight">\(\displaystyle \displaystyle C_n^{(k)} = \frac{k+1}{n+k+1} \binom{2n+k}{n}\)</span>$</p></li>
 </ol>
 </section>
 <section id="narayana-numbers">
-<h4>Narayana numbers<a class="headerlink" href="#narayana-numbers" title="Link to this heading">#</a></h4>
+<h3><span class="section-number">11.18.3. </span>Narayana numbers<a class="headerlink" href="#narayana-numbers" title="Link to this heading">#</a></h3>
 <ol class="arabic simple" start="52">
 <li><p><span class="math notranslate nohighlight">\(N(n,k)=\frac{1}{n}\left(\frac{n}{k}\right)\left(\frac{n}{k-1}\right)\)</span></p></li>
 <li><p>The number of expressions containing <span class="math notranslate nohighlight">\(n\)</span> pairs of parentheses, which are correctly matched and which contain <span class="math notranslate nohighlight">\(\displaystyle \displaystyle k\)</span> distinct nestings. For instance, <span class="math notranslate nohighlight">\(N(4, 2) = 6\)</span> as with four pairs of parentheses six sequences can be created which each contain two times the sub-pattern ‘()’.</p></li>
 </ol>
 </section>
 <section id="stirling-numbers-of-the-first-kind">
-<h4>Stirling numbers of the first kind<a class="headerlink" href="#stirling-numbers-of-the-first-kind" title="Link to this heading">#</a></h4>
+<h3><span class="section-number">11.18.4. </span>Stirling numbers of the first kind<a class="headerlink" href="#stirling-numbers-of-the-first-kind" title="Link to this heading">#</a></h3>
 <ol class="arabic simple" start="54">
 <li><p>The Stirling numbers of the first kind count permutations according to their number of cycles (counting fixed points as cycles of length one).</p></li>
 <li><p><span class="math notranslate nohighlight">\(S(n,k)\)</span> counts the number of permutations of <span class="math notranslate nohighlight">\(n\)</span> elements with <span class="math notranslate nohighlight">\(\displaystyle \displaystyle k\)</span> disjoint cycles.</p></li>
-<li><p><span class="math notranslate nohighlight">\(S(n,k)=(n-1) \cdot S(n-1,k)+S(n-1,k-1),\)</span> (where,; S(0,0)=1,S(n,0)=S(0,n)=0)</p></li>
+<li><p><span class="math notranslate nohighlight">\(S(n,k)=(n-1) \cdot S(n-1,k)+S(n-1,k-1),\)</span> where <span class="math notranslate nohighlight">\(S(0,0)=1,S(n,0)=S(0,n)=0\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\displaystyle \displaystyle\sum_{k=0}^{n}S(n,k) = n!\)</span></p></li>
 <li><p>The unsigned Stirling numbers may also be defined algebraically, as the coefficient of the rising factorial:
-[\displaystyle x^{\bar{n}} = x(x+1)…(x+n-1) = \sum_{k=0}^{n}{ S(n, k) x^k}]</p></li>
+$<span class="math notranslate nohighlight">\(\displaystyle x^{\bar{n}} = x(x+1)...(x+n-1) = \sum_{k=0}^{n}{ S(n, k) x^k}\)</span>$</p></li>
 <li><p>Lets <span class="math notranslate nohighlight">\([n, k]\)</span> be the stirling number of the first kind, then
-[\displaystyle \bigl[!\begin{smallmatrix} n \ n\ -\ k \end{smallmatrix}!\bigr] = \sum_{0 \leq i_1 &lt; i_2 &lt; i_k &lt; n}{i_1i_2….i_k.}]</p></li>
+$<span class="math notranslate nohighlight">\(\displaystyle \bigl[\!\begin{smallmatrix} n \\ n\ -\ k \end{smallmatrix}\!\bigr] = \sum_{0 \leq i_1 &lt; i_2 &lt; i_k &lt; n}{i_1i_2....i_k.}\)</span>$</p></li>
 </ol>
 </section>
 <section id="stirling-numbers-of-the-second-kind">
-<h4>Stirling numbers of the second kind<a class="headerlink" href="#stirling-numbers-of-the-second-kind" title="Link to this heading">#</a></h4>
+<h3><span class="section-number">11.18.5. </span>Stirling numbers of the second kind<a class="headerlink" href="#stirling-numbers-of-the-second-kind" title="Link to this heading">#</a></h3>
 <ol class="arabic simple" start="60">
 <li><p>Stirling number of the second kind is the number of ways to partition a set of n objects into k non-empty subsets.</p></li>
 <li><p><span class="math notranslate nohighlight">\(S(n,k)=k \cdot S(n-1,k)+S(n-1,k-1)\)</span>, (where ; S(0,0)=1,S(n,0)=S(0,n)=0)</p></li>
 <li><p><span class="math notranslate nohighlight">\(S(n,2)=2^{n-1}-1\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(S(n,k) \cdot k!\)</span> = number of ways to color <span class="math notranslate nohighlight">\(n\)</span> nodes using colors from <span class="math notranslate nohighlight">\(\displaystyle 1\)</span> to <span class="math notranslate nohighlight">\(\displaystyle \displaystyle k\)</span> such that each color is used at least once.</p></li>
-<li><p>An <span class="math notranslate nohighlight">\(r\)</span>-associated Stirling number of the second kind is the number of ways to partition a set of <span class="math notranslate nohighlight">\(n\)</span> objects into <span class="math notranslate nohighlight">\(\displaystyle \displaystyle k\)</span> subsets, with each subset containing at least <span class="math notranslate nohighlight">\(r\)</span> elements. It is denoted by <span class="math notranslate nohighlight">\(S_r( n , k )\)</span> and obeys the recurrence relation. <span class="math notranslate nohighlight">\(\displaystyle \displaystyle S_r(n+1,k) = k S_r(n,k) + \binom{n}{r-1} S_r(n-r+1,k-1)\)</span></p></li>
-<li><p>Denote the n objects to partition by the integers <span class="math notranslate nohighlight">\(\displaystyle 1, 2, …., n\)</span>. Define the reduced Stirling numbers of the second kind, denoted <span class="math notranslate nohighlight">\(S^d(n, k)\)</span>, to be the number of ways to partition the integers <span class="math notranslate nohighlight">\(\displaystyle 1, 2, …., n\)</span> into k nonempty subsets such that all elements in each subset have pairwise distance at least d. That is, for any integers i and j in a given subset, it is required that <span class="math notranslate nohighlight">\(|i - j| \geq d\)</span>. It has been shown that these numbers satisfy, (S^d(n, k) = S(n - d + 1, k - d + 1), n \geq k \geq d)</p></li>
+<li><p>An <span class="math notranslate nohighlight">\(r\)</span>-associated Stirling number of the second kind is the number of ways to partition a set of <span class="math notranslate nohighlight">\(n\)</span> objects into <span class="math notranslate nohighlight">\(\displaystyle \displaystyle k\)</span> subsets, with each subset containing at least <span class="math notranslate nohighlight">\(r\)</span> elements. It is denoted by <span class="math notranslate nohighlight">\(S_r( n , k )\)</span> and obeys the recurrence relation. $<span class="math notranslate nohighlight">\(\displaystyle \displaystyle S_r(n+1,k) = k S_r(n,k) + \binom{n}{r-1} S_r(n-r+1,k-1)\)</span>$</p></li>
+<li><p>Denote the n objects to partition by the integers <span class="math notranslate nohighlight">\(\displaystyle 1, 2, …., n\)</span>. Define the reduced Stirling numbers of the second kind, denoted <span class="math notranslate nohighlight">\(S^d(n, k)\)</span>, to be the number of ways to partition the integers <span class="math notranslate nohighlight">\(\displaystyle 1, 2, …., n\)</span> into k nonempty subsets such that all elements in each subset have pairwise distance at least d. That is, for any integers i and j in a given subset, it is required that <span class="math notranslate nohighlight">\(|i - j| \geq d\)</span>. It has been shown that these numbers satisfy, $<span class="math notranslate nohighlight">\(S^d(n, k) = S(n - d + 1, k - d + 1), n \geq k \geq d\)</span>$</p></li>
 </ol>
 </section>
 <section id="bell-number">
-<h4>Bell number<a class="headerlink" href="#bell-number" title="Link to this heading">#</a></h4>
+<h3><span class="section-number">11.18.6. </span>Bell number<a class="headerlink" href="#bell-number" title="Link to this heading">#</a></h3>
 <ol class="arabic simple" start="66">
 <li><p>Counts the number of partitions of a set.</p></li>
 <li><p><span class="math notranslate nohighlight">\(B_{n+1}=\displaystyle\sum_{k=0}^{n}\left(\frac{n}{k}\right) \cdot B_{k}\)</span></p></li>
@@ -1557,9 +1551,9 @@ If we continuously do this <span class="math notranslate nohighlight">\(n\)</spa
 </section>
 </section>
 <section id="discrete-math">
-<h3>Discrete Math<a class="headerlink" href="#discrete-math" title="Link to this heading">#</a></h3>
+<h2><span class="section-number">11.19. </span>Discrete Math<a class="headerlink" href="#discrete-math" title="Link to this heading">#</a></h2>
 <section id="id1">
-<h4>General<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<h3><span class="section-number">11.19.1. </span>General<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <ol class="arabic simple" start="69">
 <li><p><span class="math notranslate nohighlight">\(\displaystyle ab \mod\ ac=a(b \mod\ c)\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\displaystyle \sum_{i = 0}^n{i\cdot i!=(n + 1)! - 1}\)</span>.</p></li>
@@ -1571,42 +1565,42 @@ If we continuously do this <span class="math notranslate nohighlight">\(n\)</spa
 <li><p><span class="math notranslate nohighlight">\(\displaystyle a \cdot b \geq c \rightarrow a \geq  \left \lfloor \dfrac{c}{b} \right \rfloor\)</span> is correct</p></li>
 <li><p><span class="math notranslate nohighlight">\(\displaystyle a \cdot b &gt; c \rightarrow a &gt;  \left \lfloor \dfrac{c}{b} \right \rfloor\)</span> is correct</p></li>
 <li><p>For positive integer <span class="math notranslate nohighlight">\(n\)</span>, and arbitrary real numbers <span class="math notranslate nohighlight">\(m,x\)</span>,
-<span class="math notranslate nohighlight">\(\displaystyle \left \lfloor \dfrac{\left \lfloor x/m \right \rfloor}{n} \right \rfloor = \left \lfloor \dfrac{x}{mn} \right \rfloor\)</span>
-<span class="math notranslate nohighlight">\(\displaystyle \left \lceil \dfrac{\left \lceil x/m \right \rceil}{n} \right \rceil = \left \lceil \dfrac{x}{mn} \right \rceil\)</span></p></li>
+$<span class="math notranslate nohighlight">\(\displaystyle \left \lfloor \dfrac{\left \lfloor x/m \right \rfloor}{n} \right \rfloor = \left \lfloor \dfrac{x}{mn} \right \rfloor\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(\displaystyle \left \lceil \dfrac{\left \lceil x/m \right \rceil}{n} \right \rceil = \left \lceil \dfrac{x}{mn} \right \rceil\)</span>$</p></li>
 <li><p>Lagrange’s identity:
-[\displaystyle \displaystyle {\displaystyle {\begin{aligned}\left(\sum \limits_{k=1}^{n}a_{k}^{2}\right)\left(\sum \limits_{k=1}^{n}b_{k}^{2}\right)-\left(\sum\limits_{k=1}^{n}a_{k}b_{k}\right)^{2}&amp;=\sum \limits_{i=1}^{n-1}\sum \limits_{j=i+1}^{n}\left(a_{i}b_{j}-a_{j}b_{i}\right)^{2}\&amp;={\frac {1}{2}}\sum \limits_{i=1}^{n}\sum \limits_{j=1,j\neq i}^{n}(a_{i}b_{j}-a_{j}b_{i})^{2}\end{aligned}}}]</p></li>
+$<span class="math notranslate nohighlight">\(\displaystyle \displaystyle {\displaystyle {\begin{aligned}\left(\sum \limits_{k=1}^{n}a_{k}^{2}\right)\left(\sum \limits_{k=1}^{n}b_{k}^{2}\right)-\left(\sum\limits_{k=1}^{n}a_{k}b_{k}\right)^{2}&amp;=\sum \limits_{i=1}^{n-1}\sum \limits_{j=i+1}^{n}\left(a_{i}b_{j}-a_{j}b_{i}\right)^{2}\\&amp;={\frac {1}{2}}\sum \limits_{i=1}^{n}\sum \limits_{j=1,j\neq i}^{n}(a_{i}b_{j}-a_{j}b_{i})^{2}\end{aligned}}}\)</span>$</p></li>
 <li><p><span class="math notranslate nohighlight">\(\displaystyle \sum_{i = 1}^n{ia^i} = \frac{a(n a^{n + 1} - (n + 1) a^n + 1)}{(a - 1)^2}\)</span></p></li>
 <li><p><strong>Vieta’s formulas:</strong>
 Any general polynomial of degree <span class="math notranslate nohighlight">\(n\)</span>
-[\displaystyle p(x) = a_nx^n + a_{n - 1}x^{n - 1} + … + a_1x + a_0]
-(with the coefficients being real or complex numbers and <span class="math notranslate nohighlight">\(\displaystyle a_n \neq 0\)</span>) is known by the fundamental theorem of algebra to have <span class="math notranslate nohighlight">\(n\)</span> (not necessarily distinct) complex roots <span class="math notranslate nohighlight">\(r_1, r_2,…, r_n\)</span>.
-[\begin{cases}
-\text{<span class="math notranslate nohighlight">\(r_1 + r_2 + ... + r_{n - 1} + r_n = - \frac{a_{n - 1}}{a_n}\)</span>}
-\
-\text{<span class="math notranslate nohighlight">\(\displaystyle (r_1r_2 + r_1r_3 + ... + r_1r_n) + (r_2r_3 + r_2r_4 + ... + r_2r_n) + ... + r_{n - 1}r_n = \frac{a_{n - 2}}{a_n}\)</span>}
-\vdots\
-\text{<span class="math notranslate nohighlight">\(r_1r_2...r_n = (-1)^n\frac{a_0}{a_n}.\)</span>}
-\end{cases}]
+$<span class="math notranslate nohighlight">\(\displaystyle p(x) = a_nx^n + a_{n - 1}x^{n - 1} + ... + a_1x + a_0\)</span><span class="math notranslate nohighlight">\(
+(with the coefficients being real or complex numbers and \)</span>\displaystyle a_n \neq 0<span class="math notranslate nohighlight">\() is known by the fundamental theorem of algebra to have \)</span>n<span class="math notranslate nohighlight">\( (not necessarily distinct) complex roots \)</span>r_1, r_2,…, r_n<span class="math notranslate nohighlight">\(.
+\)</span><span class="math notranslate nohighlight">\(\begin{cases}
+\text{\)</span>r_1 + r_2 + … + r_{n - 1} + r_n = - \frac{a_{n - 1}}{a_n}<span class="math notranslate nohighlight">\(}
+\\
+\text{\)</span>\displaystyle (r_1r_2 + r_1r_3 + … + r_1r_n) + (r_2r_3 + r_2r_4 + … + r_2r_n) + … + r_{n - 1}r_n = \frac{a_{n - 2}}{a_n}<span class="math notranslate nohighlight">\(}
+\\\vdots\\
+\text{\)</span>r_1r_2…r_n = (-1)^n\frac{a_0}{a_n}.<span class="math notranslate nohighlight">\(}
+\end{cases}\)</span><span class="math notranslate nohighlight">\(
 Vieta’s formulas can equivalently be written as
-[\displaystyle \sum_{1 \leq i_1 &lt; i_2 &lt; …&lt;i_k \leq n} \Bigg(\prod_{j = 1}^k{r_{i_j}}\Bigg) = (-1)^k\frac{a_{n - k}}{a_n},]</p></li>
+\)</span><span class="math notranslate nohighlight">\(\displaystyle \sum_{1 \leq i_1 &lt; i_2 &lt; ...&lt;i_k \leq n} \Bigg(\prod_{j = 1}^k{r_{i_j}}\Bigg) = (-1)^k\frac{a_{n - k}}{a_n} \)</span>$</p></li>
 <li><p>We are given n numbers <span class="math notranslate nohighlight">\(\displaystyle a_1,a_2,…,a_n\)</span> and our task is to find a value <span class="math notranslate nohighlight">\(\displaystyle x\)</span> that minimizes the sum,
-[|a_1 - x| + |a_2 - x| + … + |a_n - x|]
-optimal <span class="math notranslate nohighlight">\(\displaystyle x=\)</span> median of the array.
-if <span class="math notranslate nohighlight">\(n\)</span> is even <span class="math notranslate nohighlight">\(\displaystyle x =\)</span> <span class="math notranslate nohighlight">\([\)</span>left median,right median<span class="math notranslate nohighlight">\(]\)</span> i.e. every number in this range will work.
+$<span class="math notranslate nohighlight">\(|a_1 - x| + |a_2 - x| + ... + |a_n - x|\)</span><span class="math notranslate nohighlight">\(
+optimal \)</span>\displaystyle x=<span class="math notranslate nohighlight">\( median of the array.
+if \)</span>n<span class="math notranslate nohighlight">\( is even \)</span>x =<span class="math notranslate nohighlight">\( [left median,right median] i.e. every number in this range will work.
 For minimizing
-[\displaystyle (a_1 - x)^2 + (a_2 - x)^2 + … + (a_n - x)^2]
-optimal <span class="math notranslate nohighlight">\(\displaystyle x = \dfrac{(a_1 + a_2 + … + a_n)}{ n}\)</span></p></li>
+\)</span><span class="math notranslate nohighlight">\(\displaystyle (a_1 - x)^2 + (a_2 - x)^2 + ... + (a_n - x)^2\)</span><span class="math notranslate nohighlight">\(
+optimal \)</span>\displaystyle x = \dfrac{(a_1 + a_2 + … + a_n)}{ n}$</p></li>
 <li><p>Given an array a of n non-negative integers. The task is to find the sum of the product of elements of all the possible subsets. It is equal to the product of <span class="math notranslate nohighlight">\(\displaystyle (a_i + 1)\)</span> for all <span class="math notranslate nohighlight">\(\displaystyle a_i\)</span></p></li>
 <li><p><strong>Pentagonal number theorem:</strong> In mathematics, the pentagonal number theorem states that
-[\displaystyle \prod_{n = 1}^{\infty}\left ( 1 - x^n \right ) = \prod_{k = -\infty}^{\infty} \left ( -1 \right )^kx^{\frac{k(3k - 1)}{2}} = 1 + \prod_{k = 1}^{\infty}\left (-1\right )^k\left ( x^{\frac{k(3k + 1)}{2}} + x^{\frac{k(3k - 1)}{2}}\right ).]
+$<span class="math notranslate nohighlight">\(\displaystyle \prod_{n = 1}^{\infty}\left ( 1 - x^n \right ) = \prod_{k = -\infty}^{\infty} \left ( -1 \right )^kx^{\frac{k(3k - 1)}{2}} = 1 + \prod_{k = 1}^{\infty}\left (-1\right )^k\left ( x^{\frac{k(3k + 1)}{2}} + x^{\frac{k(3k - 1)}{2}}\right ).\)</span><span class="math notranslate nohighlight">\(
 In other words,
-[\displaystyle (1 - x)(1 - x ^ 2)(1 - x^3)\cdots =1 - x - x^2 + x^5 + x^7 - x^{12} - x^{15} + x^{22} + x^{26} - \cdots.]
-The exponents <span class="math notranslate nohighlight">\(\displaystyle 1, 2, 5, 7, 12,\cdots\)</span> on the right hand side are given by the formula <span class="math notranslate nohighlight">\(g_k = \frac{k(3k - 1)}{2}\)</span> for <span class="math notranslate nohighlight">\(\displaystyle \displaystyle k = 1, -1, 2, -2, 3, \cdots\)</span> and are called (generalized) pentagonal numbers.
-It is useful to find the <a class="reference external" href="https://en.wikipedia.org/wiki/Partition_(number_theory)">partition number</a> in <span class="math notranslate nohighlight">\(O(n \sqrt{n})\)</span></p></li>
+\)</span><span class="math notranslate nohighlight">\(\displaystyle (1 - x)(1 - x ^ 2)(1 - x^3)\cdots =1 - x - x^2 + x^5 + x^7 - x^{12} - x^{15} + x^{22} + x^{26} - \cdots.\)</span><span class="math notranslate nohighlight">\(
+The exponents \)</span>\displaystyle 1, 2, 5, 7, 12,\cdots<span class="math notranslate nohighlight">\( on the right hand side are given by the formula \)</span>g_k = \frac{k(3k - 1)}{2}<span class="math notranslate nohighlight">\( for \)</span>\displaystyle \displaystyle k = 1, -1, 2, -2, 3, \cdots<span class="math notranslate nohighlight">\( and are called (generalized) pentagonal numbers.
+It is useful to find the [partition number](https://en.wikipedia.org/wiki/Partition_(number_theory)) in \)</span>O(n \sqrt{n})$</p></li>
 </ol>
 </section>
 <section id="fibonacci-number">
-<h4>Fibonacci Number<a class="headerlink" href="#fibonacci-number" title="Link to this heading">#</a></h4>
+<h3><span class="section-number">11.19.2. </span>Fibonacci Number<a class="headerlink" href="#fibonacci-number" title="Link to this heading">#</a></h3>
 <ol class="arabic simple" start="85">
 <li><p><span class="math notranslate nohighlight">\(\displaystyle F_0=0, F_1=1\)</span> and <span class="math notranslate nohighlight">\(\displaystyle F_n=F_{n-1}+F_{n-2}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\displaystyle F_n=\sum\limits_{k=0}^{\lfloor\frac{n-1}{2}\rfloor}\binom{n-k-1}{k}\)</span></p></li>
@@ -1627,31 +1621,37 @@ It is useful to find the <a class="reference external" href="https://en.wikipedi
 </ol>
 </section>
 <section id="pythagorean-triples">
-<h4>Pythagorean Triples<a class="headerlink" href="#pythagorean-triples" title="Link to this heading">#</a></h4>
+<h3><span class="section-number">11.19.3. </span>Pythagorean Triples<a class="headerlink" href="#pythagorean-triples" title="Link to this heading">#</a></h3>
 <ol class="arabic simple" start="99">
 <li><p>A Pythagorean triple consists of three positive integers <span class="math notranslate nohighlight">\(\displaystyle a, b,\)</span> and <span class="math notranslate nohighlight">\(\displaystyle C\)</span>, such that <span class="math notranslate nohighlight">\(\displaystyle a^{2}+b^{2}=c^{2}\)</span>. Such a triple is commonly written <span class="math notranslate nohighlight">\(\displaystyle (a, b, c)\)</span></p></li>
-<li><p>Euclid’s formula is a fundamental formula for generating Pythagorean triples given an arbitrary pair of integers m and n with <span class="math notranslate nohighlight">\(m &gt;n &gt;0\)</span>. The formula states that the integers
-[\displaystyle a = m^{2}-n^{2}, b = 2mn,  c = m^{2}+n^{2}]
-form a Pythagorean triple. The triple generated by Euclid’s formula is primitive if and only if m and n are coprime and not both odd. When both m and n are odd, then a, b, and c will be even, and the triple will not be primitive; however, dividing a, b, and c by 2 will yield a primitive triple when m and n are coprime and both odd.</p></li>
+<li><p>Euclid’s formula is a fundamental formula for generating Pythagorean triples given an arbitrary pair of integers <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(n\)</span> with <span class="math notranslate nohighlight">\(m &gt; n &gt; 0\)</span>. The formula states that the integers
+$<span class="math notranslate nohighlight">\( a = m^{2}-n^{2}, \quad b = 2mn, \quad c = m^{2}+n^{2}\)</span><span class="math notranslate nohighlight">\(
+form a Pythagorean triple. The triple generated by Euclid’s formula is primitive if and only if \)</span>m<span class="math notranslate nohighlight">\( and \)</span>n<span class="math notranslate nohighlight">\( are coprime and not both odd. When both \)</span>m<span class="math notranslate nohighlight">\( and \)</span>n<span class="math notranslate nohighlight">\( are odd, then \)</span>a<span class="math notranslate nohighlight">\(, \)</span>b<span class="math notranslate nohighlight">\(, and \)</span>c<span class="math notranslate nohighlight">\( will be even, and the triple will not be primitive; however, dividing \)</span>a<span class="math notranslate nohighlight">\(, \)</span>b<span class="math notranslate nohighlight">\(, and \)</span>c<span class="math notranslate nohighlight">\( by 2 will yield a primitive triple when \)</span>m<span class="math notranslate nohighlight">\( and \)</span>n$ are coprime and both odd.</p></li>
 <li><p>The following will generate all Pythagorean triples uniquely:
-[\displaystyle a = k\cdot \left( m^{2}-n^{2}\right), b = k\cdot\left(2mn\right),  c = k\cdot \left(m^{2}+n^{2}\right)]
-where m, n, and k are positive integers with <span class="math notranslate nohighlight">\(m &gt; n\)</span>, and with m and n coprime and not both odd.</p></li>
+$<span class="math notranslate nohighlight">\(\displaystyle a = k\cdot \left( m^{2}-n^{2}\right), b = k\cdot\left(2mn\right),  c = k\cdot \left(m^{2}+n^{2}\right)\)</span><span class="math notranslate nohighlight">\(
+where m, n, and k are positive integers with \)</span>m &gt; n$, and with m and n coprime and not both odd.</p></li>
 <li><p><strong>Theorem:</strong> The number of Pythagorean triples {a,b,n} with <span class="math notranslate nohighlight">\(max{a,b,n} = n\)</span> is given by
-[\displaystyle \dfrac{1}{2}\left( \displaystyle\prod _{ p^{\alpha} || n}\left( 2\alpha +1\right) -1\right)]
-where the product is over all prime divisors p of the form <span class="math notranslate nohighlight">\(4k+1\)</span>.
-The notation <span class="math notranslate nohighlight">\(\displaystyle p^{\alpha} || n\)</span> stands for the highest exponent <span class="math notranslate nohighlight">\(\displaystyle \alpha\)</span> for which <span class="math notranslate nohighlight">\(\displaystyle p^{\alpha}\)</span> divides <span class="math notranslate nohighlight">\(n\)</span>
-<strong>Example:</strong> For <span class="math notranslate nohighlight">\(n = 2\cdot3^{2}\cdot5^{3}\cdot7^{4}\cdot11^{5}\cdot13^{6},\)</span> the number of Pythagorean triples with hypotenuse n is <span class="math notranslate nohighlight">\(\displaystyle \dfrac{1}{2}\left( 7.13-1\right) =45\)</span>.
-To obtain a formula for the number of Pythagorean triples with hypotenuse less than a specific positive integer N, we may add the numbers corresponding to each <span class="math notranslate nohighlight">\(n &lt; N\)</span> given by the Theorem. There is no simple way to compute this as a function of N.</p></li>
+$<span class="math notranslate nohighlight">\(\displaystyle \dfrac{1}{2}\left( \displaystyle\prod _{ p^{\alpha} || n}\left(2\alpha +1\right) -1\right)\)</span><span class="math notranslate nohighlight">\(
+where the product is over all prime divisors p of the form \)</span>4k+1<span class="math notranslate nohighlight">\(.
+The notation \)</span>\displaystyle p^{\alpha} || n<span class="math notranslate nohighlight">\( stands for the highest exponent \)</span>\displaystyle \alpha<span class="math notranslate nohighlight">\( for which \)</span>\displaystyle p^{\alpha}<span class="math notranslate nohighlight">\( divides \)</span>n$</p></li>
 </ol>
+<p><strong>Example:</strong> For <span class="math notranslate nohighlight">\(n = 2\cdot3^{2}\cdot5^{3}\cdot7^{4}\cdot11^{5}\cdot13^{6},\)</span> the number of Pythagorean triples with hypotenuse n is <span class="math notranslate nohighlight">\(\displaystyle \dfrac{1}{2}\left( 7.13-1\right) =45\)</span>.</p>
+<ul class="simple">
+<li><p>To obtain a formula for the number of Pythagorean triples with hypotenuse less than a specific positive integer N, we may add the numbers corresponding to each <span class="math notranslate nohighlight">\(n &lt; N\)</span> given by the Theorem. There is no simple way to compute this as a function of N.</p></li>
+</ul>
 </section>
 <section id="sum-of-squares-function">
-<h4>Sum of Squares Function<a class="headerlink" href="#sum-of-squares-function" title="Link to this heading">#</a></h4>
+<h3><span class="section-number">11.19.4. </span>Sum of Squares Function<a class="headerlink" href="#sum-of-squares-function" title="Link to this heading">#</a></h3>
 <ol class="arabic simple" start="103">
 <li><p>The function is defined as
 <span class="math notranslate nohighlight">\(r_{k}\left(n\right) = \left|{\left(a_{1},a_{2},…,a_{k} \right) \in \mathbf{Z^{k}} : n=a_{1}^{2}+a_{2}^{2}+…+a_{k}^{2}}\right|\)</span></p></li>
 <li><p>The number of ways to write a natural number as sum of two squares is given by <span class="math notranslate nohighlight">\(r_2(n)\)</span>. It is given explicitly by
-<span class="math notranslate nohighlight">\(r_{2}\left(n\right) = 4\left(d_{1}\left(n\right) - d_{3}\left(n\right)\right)\)</span> where d1(n) is the number of divisors of n which are congruent with 1 modulo 4 and d3(n) is the number of divisors of n which are congruent with 3 modulo 4.
-The prime factorization <span class="math notranslate nohighlight">\(n = 2^{g}p_{1}^{f_{1}}p_{2}^{f_{2}}. . .q_{1}^{h_{1}}q_{2}^{h_{2}}. . . ,\)</span> where <span class="math notranslate nohighlight">\(\displaystyle p_{i}\)</span> are the prime factors of the form <span class="math notranslate nohighlight">\(\displaystyle p_{i} \equiv 1\)</span> (mod 4), and <span class="math notranslate nohighlight">\(q_{i}\)</span> are the prime factors of the form <span class="math notranslate nohighlight">\(q_{i} \equiv 3\)</span> (mod 4) gives another formula <span class="math notranslate nohighlight">\(r_{2}\left(n\right) = 4\left(f_{1}+1\right)\left(f_{2}+1\right)…,\)</span> if all exponents <span class="math notranslate nohighlight">\(h_{1}\)</span>,<span class="math notranslate nohighlight">\(h_{2}\)</span>,… are even. If one or more <span class="math notranslate nohighlight">\(h_{i}\)</span> are odd, then <span class="math notranslate nohighlight">\(r_{2}\left(n\right) = 0.\)</span></p></li>
+<span class="math notranslate nohighlight">\(r_{2}\left(n\right) = 4\left(d_{1}\left(n\right) - d_{3}\left(n\right)\right)\)</span> where d1(n) is the number of divisors of n which are congruent with 1 modulo 4 and d3(n) is the number of divisors of n which are congruent with 3 modulo 4.</p></li>
+</ol>
+<ul class="simple">
+<li><p>The prime factorization <span class="math notranslate nohighlight">\(n = 2^{g}p_{1}^{f_{1}}p_{2}^{f_{2}}. . .q_{1}^{h_{1}}q_{2}^{h_{2}}. . . ,\)</span> where <span class="math notranslate nohighlight">\(\displaystyle p_{i}\)</span> are the prime factors of the form <span class="math notranslate nohighlight">\(\displaystyle p_{i} \equiv 1\)</span> (mod 4), and <span class="math notranslate nohighlight">\(q_{i}\)</span> are the prime factors of the form <span class="math notranslate nohighlight">\(q_{i} \equiv 3\)</span> (mod 4) gives another formula <span class="math notranslate nohighlight">\(r_{2}\left(n\right) = 4\left(f_{1}+1\right)\left(f_{2}+1\right)…,\)</span> if all exponents <span class="math notranslate nohighlight">\(h_{1}\)</span>,<span class="math notranslate nohighlight">\(h_{2}\)</span>,… are even. If one or more <span class="math notranslate nohighlight">\(h_{i}\)</span> are odd, then <span class="math notranslate nohighlight">\(r_{2}\left(n\right) = 0.\)</span></p></li>
+</ul>
+<ol class="arabic simple" start="105">
 <li><p>The number of ways to represent n as the sum of four squares is eight times the sum of all its divisors which are not divisible by 4, i.e.
 <span class="math notranslate nohighlight">\(r_{4}\left( n \right) = 8 \displaystyle\sum _{d| n;4 \nmid d}d\)</span>
 <span class="math notranslate nohighlight">\(r{8}\left(n\right) = 16 \displaystyle\sum {d|n} \left(-1\right)^{n+d}d^{3}\)</span></p></li>
@@ -1659,9 +1659,9 @@ The prime factorization <span class="math notranslate nohighlight">\(n = 2^{g}p_
 </section>
 </section>
 <section id="number-theory">
-<h3>Number Theory<a class="headerlink" href="#number-theory" title="Link to this heading">#</a></h3>
+<h2><span class="section-number">11.20. </span>Number Theory<a class="headerlink" href="#number-theory" title="Link to this heading">#</a></h2>
 <section id="id2">
-<h4>General<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<h3><span class="section-number">11.20.1. </span>General<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <ol class="arabic simple" start="106">
 <li><p>for <span class="math notranslate nohighlight">\(i &gt; j\)</span>, <span class="math notranslate nohighlight">\(\displaystyle \gcd(i, j)\)</span> <span class="math notranslate nohighlight">\( = \)</span> <span class="math notranslate nohighlight">\(\displaystyle \gcd(i -j, j)\)</span> <span class="math notranslate nohighlight">\(\displaystyle \leq (i -j)\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\displaystyle \sum_{x = 1}^n \left[ d | x^k \right] = \left \lfloor\dfrac{n}{\prod_{i = 0}{p_i^{\left \lceil \dfrac{e_i}{k}\right \rceil}}}\right \rfloor\)</span>,
@@ -1670,56 +1670,62 @@ where <span class="math notranslate nohighlight">\(d = \prod_{i = 0}{p_i^{e_i}}\
 <li><p><span class="math notranslate nohighlight">\(\displaystyle (n-1)! \mod  n = n -1\)</span> if n is prime, 2 if <span class="math notranslate nohighlight">\(n = 4\)</span>, <span class="math notranslate nohighlight">\(0\)</span> otherwise.</p></li>
 <li><p>A number has odd number of divisors if it is perfect square</p></li>
 <li><p>The sum of all divisors of a natural number n is odd if and only if <span class="math notranslate nohighlight">\(n=2^r\cdot k^2\)</span> where <span class="math notranslate nohighlight">\(r\)</span> is non-negative and <span class="math notranslate nohighlight">\(\displaystyle \displaystyle k\)</span> is positive integer.</p></li>
-<li><p>Let <span class="math notranslate nohighlight">\(\displaystyle a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> be coprime positive integers, and find integers <span class="math notranslate nohighlight">\(\displaystyle a{\prime}\)</span> and <span class="math notranslate nohighlight">\(b{\prime}\)</span> such that <span class="math notranslate nohighlight">\(\displaystyle aa{\prime} \equiv 1 \mod b\)</span> and <span class="math notranslate nohighlight">\(bb{\prime} \equiv 1 \mod a\)</span>. Then the number of representations of a positive integers (n) as a non negative linear combination of <span class="math notranslate nohighlight">\(\displaystyle a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> is
-[\displaystyle \frac{n}{ab}-\Big{\frac{b{\prime} n}{a}\Big}-\Big{\frac{a{\prime} n}{b}\Big} + 1]
+<li><p>Let <span class="math notranslate nohighlight">\(\displaystyle a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> be coprime positive integers, and find integers <span class="math notranslate nohighlight">\(\displaystyle a{\prime}\)</span> and <span class="math notranslate nohighlight">\(b{\prime}\)</span> such that <span class="math notranslate nohighlight">\(\displaystyle aa{\prime} \equiv 1 \mod b\)</span> and <span class="math notranslate nohighlight">\(bb{\prime} \equiv 1 \mod a\)</span>. Then the number of representations of a positive integers (n) as a non negative linear combination of <span class="math notranslate nohighlight">\(\displaystyle a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> is <br />
+<span class="math notranslate nohighlight">\(\displaystyle \frac{n}{ab}-\Big\{\frac{b{\prime} n}{a}\Big\}-\Big\{\frac{a{\prime} n}{b}\Big\} + 1\)</span> <br />
 Here, <span class="math notranslate nohighlight">\(\displaystyle {x}\)</span> denotes the fractional part of <span class="math notranslate nohighlight">\(\displaystyle x\)</span>.</p></li>
-<li><p>(\displaystyle \displaystyle \sum \limits_{i=1}^{a}\sum \limits_{j=1}^{b}\sum \limits_{k=1}^{c} d(i \cdot j \cdot k) = \sum \limits_{\gcd (i,j)=\gcd (j,k) = \gcd (k,i) =1} \left \lfloor \dfrac{a}{i}\right \rfloor \left \lfloor \dfrac{b}{j}\right \rfloor \left \lfloor \dfrac{c}{k} \right \rfloor) Here, <span class="math notranslate nohighlight">\(d(x) =\)</span> number of divisors of <span class="math notranslate nohighlight">\(\displaystyle x\)</span>.</p></li>
-<li><p><strong>Gauss’s generalization of Wilson’s theorem:</strong>,
-Gauss proved that,
-[\displaystyle \displaystyle \prod \limits_{k=1 \atop \gcd(k,m)=1}^{m}!!k\ \equiv {\begin{cases}-1{\pmod {m}}&amp;{\text{if }}m=4,;p^{\alpha },;2p^{\alpha }\;;,1{\pmod {m}}&amp;{\text{otherwise}}\end{cases}}]
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \displaystyle \sum \limits_{i=1}^{a}\sum \limits_{j=1}^{b}\sum \limits_{k=1}^{c} d(i \cdot j \cdot k) = \sum \limits_{\gcd (i,j)=\gcd (j,k) = \gcd (k,i) =1} \left \lfloor \dfrac{a}{i}\right \rfloor \left \lfloor \dfrac{b}{j}\right \rfloor \left \lfloor \dfrac{c}{k} \right \rfloor\)</span><br />
+Here, <span class="math notranslate nohighlight">\(d(x) =\)</span> number of divisors of <span class="math notranslate nohighlight">\(\displaystyle x\)</span>.</p></li>
+<li><p><strong>Gauss’s generalization of Wilson’s theorem:</strong>
+Gauss proved that,<br />
+<span class="math notranslate nohighlight">\(\displaystyle \displaystyle \prod \limits_{k=1 \atop \gcd(k,m)=1}^{m}\!\!k\ \equiv {\begin{cases}-1{\pmod {m}}&amp;{\text{if }}m=4,\;p^{\alpha },\;2p^{\alpha }\\\;\;\,1{\pmod {m}}&amp;{\text{otherwise}}\end{cases}}\)</span> <br />
 where <span class="math notranslate nohighlight">\(\displaystyle p\)</span> represents an odd prime and <span class="math notranslate nohighlight">\(\displaystyle \alpha\)</span> a positive integer. The values of <span class="math notranslate nohighlight">\(m\)</span> for which the product is <span class="math notranslate nohighlight">\(-1\)</span> are precisely the ones where there is a primitive root modulo <span class="math notranslate nohighlight">\(m\)</span>.</p></li>
 </ol>
 </section>
 <section id="divisor-function">
-<h4>Divisor Function<a class="headerlink" href="#divisor-function" title="Link to this heading">#</a></h4>
+<h3><span class="section-number">11.20.2. </span>Divisor Function<a class="headerlink" href="#divisor-function" title="Link to this heading">#</a></h3>
 <ol class="arabic simple" start="115">
 <li><p><span class="math notranslate nohighlight">\(\displaystyle \sigma_x(n)=\sum\limits_{d\vert n}^{}d^x\)</span></p></li>
 <li><p>It is multiplicative i.e if <span class="math notranslate nohighlight">\(\displaystyle \gcd(a, b)=1\to \sigma_x(ab)=\sigma_x(a)\sigma_x(b)\)</span>.</p></li>
-<li><p>[\displaystyle \sigma_x(n)=\prod\limits_{i=1}^{\tau}\frac{p_i^{(a_i+1)x}-1}{p_i^x-1}]</p></li>
-<li><p><strong>Divisor Summatory Function</strong>
-1.  Let <span class="math notranslate nohighlight">\(\displaystyle \sigma_0(k)\)</span> be the number of divisors of <span class="math notranslate nohighlight">\(\displaystyle \displaystyle k\)</span>.
-2.  <span class="math notranslate nohighlight">\(D(x)=\sum\limits_{n\leq{x}}{\sigma_0(n)}\)</span>
-3.  <span class="math notranslate nohighlight">\(D(x)=\sum\limits_{k=1}^{x}\lfloor\frac{x}{k}\rfloor=2\sum\limits_{k=1}^{u}\lfloor\frac{x}{k}\rfloor-u^2\)</span>, where <span class="math notranslate nohighlight">\(u=\sqrt{x}\)</span>
-4.  <span class="math notranslate nohighlight">\(D(n)=\)</span>Number of increasing arithmetic progressions where <span class="math notranslate nohighlight">\(n+1\)</span> is the second or later term. (i.e. The last term, starting term can be any positive integer <span class="math notranslate nohighlight">\(\displaystyle \le n\)</span>. For example, <span class="math notranslate nohighlight">\(D(3)=5\)</span> and there are 5 such arithmetic progressions: <span class="math notranslate nohighlight">\(\displaystyle (1, 2, 3, 4); (2, 3, 4); (1, 4); (2, 4); (3, 4).\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \sigma_x(n)=\prod\limits_{i=1}^{\tau}\frac{p_i^{(a_i+1)x}-1}{p_i^x-1}\)</span></p></li>
+<li><p><strong>Divisor Summatory Function</strong> <br />
+- Let <span class="math notranslate nohighlight">\(\displaystyle \sigma_0(k)\)</span> be the number of divisors of <span class="math notranslate nohighlight">\(\displaystyle \displaystyle k\)</span>.<br />
+- <span class="math notranslate nohighlight">\(D(x)=\sum\limits_{n\leq{x}}{\sigma_0(n)}\)</span> <br />
+- <span class="math notranslate nohighlight">\(D(x)=\sum\limits_{k=1}^{x}\lfloor\frac{x}{k}\rfloor=2\sum\limits_{k=1}^{u}\lfloor\frac{x}{k}\rfloor-u^2\)</span>, where <span class="math notranslate nohighlight">\(u=\sqrt{x}\)</span> <br />
+- <span class="math notranslate nohighlight">\(D(n)=\)</span> Number of increasing arithmetic progressions where <span class="math notranslate nohighlight">\(n+1\)</span> is the second or later term. (i.e. The last term, starting term can be any positive integer <span class="math notranslate nohighlight">\(\displaystyle \le n\)</span>. For example, <span class="math notranslate nohighlight">\(D(3)=5\)</span> and there are 5 such arithmetic progressions:  <span class="math notranslate nohighlight">\(\displaystyle (1, 2, 3, 4); (2, 3, 4); (1, 4); (2, 4); (3, 4).\)</span></p></li>
 <li><p>Let <span class="math notranslate nohighlight">\(\displaystyle \sigma_1(k)\)</span> be the sum of divisors of k. Then, <span class="math notranslate nohighlight">\(\displaystyle \sum\limits_{k=1}^{n}\sigma_1(k)=\sum\limits_{k=1}^{n}{k \left\lfloor \frac{n}{k} \right\rfloor}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\displaystyle \prod\limits_{d\vert n}^{}d={n^{\frac{\sigma_0}{2}}}\)</span> if <span class="math notranslate nohighlight">\(n\)</span> is not a perfect square, and <span class="math notranslate nohighlight">\(=\sqrt{n} \cdot n^{\frac{\sigma_0-1}{2}}\)</span> if <span class="math notranslate nohighlight">\(n \)</span> is a perfect square.</p></li>
 </ol>
 </section>
 <section id="eulers-totient-function">
-<h4>Euler’s Totient function<a class="headerlink" href="#eulers-totient-function" title="Link to this heading">#</a></h4>
+<h3><span class="section-number">11.20.3. </span>Euler’s Totient function<a class="headerlink" href="#eulers-totient-function" title="Link to this heading">#</a></h3>
 <ol class="arabic simple" start="121">
 <li><p>The function is multiplicative.
 This means that if <span class="math notranslate nohighlight">\(\displaystyle \gcd(m, n) = 1\)</span>, <span class="math notranslate nohighlight">\(\displaystyle \phi(m \cdot n) = \phi(m) \cdot \phi(n)\)</span>.</p></li>
 <li><p><span class="math notranslate nohighlight">\(\displaystyle \phi(n) = n\prod_{p |n}(1 - \frac{1}{p} )\)</span></p></li>
-<li><p>If p is prime and (k \geq 1), then, <span class="math notranslate nohighlight">\(\displaystyle \phi(p^k) = p^{k - 1}(p - 1) = p^k(1 - \frac{1}{p})\)</span></p></li>
+<li><p>If p is prime and (<span class="math notranslate nohighlight">\(k \geq 1\)</span>), then,
+<span class="math notranslate nohighlight">\(\displaystyle \phi(p^k) = p^{k - 1}(p - 1) = p^k(1 - \frac{1}{p})\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(J_k(n)\)</span>, the Jordan totient function, is the number of <span class="math notranslate nohighlight">\(\displaystyle \displaystyle k\)</span>-tuples of positive integers all less than or equal to n that form a coprime <span class="math notranslate nohighlight">\(\displaystyle (k + 1)\)</span>-tuple together with <span class="math notranslate nohighlight">\(n\)</span>. It is a generalization of Euler’s totient, <span class="math notranslate nohighlight">\(\displaystyle \phi(n) = J_1(n)\)</span>.
-(J_k(n) = n^k\prod_{p |n}(1 - \frac{1}{p^k}))</p></li>
+and <span class="math notranslate nohighlight">\(J_k(n) = n^k\prod_{p |n}(1 - \frac{1}{p^k})\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\displaystyle \sum_{d|n}J_k(d) = n^k\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\displaystyle \sum_{d|n}\phi(d) = n\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\displaystyle \phi(n) = \sum_{d|n}\mu(d)\cdot\frac{n}{d} = n\sum_{d|n}\frac{\mu(d)}{d}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\displaystyle \phi(n) = \sum_{d|n}d\cdot\mu(\frac{n}{d})\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\displaystyle \displaystyle {a}\vert{b} \to \varphi(a)\vert{\varphi(b)}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(n\vert{\varphi(a^n - 1)}\)</span> for <span class="math notranslate nohighlight">\(\displaystyle a, n &gt; 1\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\displaystyle \varphi(mn)=\varphi(m)\varphi(n)\cdot\frac{d}{\varphi(d)}\)</span> where <span class="math notranslate nohighlight">\(d=gcd(m, n)\)</span>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \varphi(mn)=\varphi(m)\varphi(n)\cdot\frac{d}{\varphi(d)}\)</span> where <span class="math notranslate nohighlight">\(d=gcd(m, n)\)</span>.
 Note the special cases
-[\varphi(2m)=
+<span class="math notranslate nohighlight">\(\varphi(2m)=
 \begin{cases}
-2\varphi(m) &amp; ; if , m  , is , even\
-\varphi(m) &amp; ; if , m , is , odd\
-\end{cases}]
-[\displaystyle \varphi(n^m)=n^{m-1}\varphi(n)]</p></li>
-<li><p><span class="math notranslate nohighlight">\(\displaystyle \varphi(lcm(m, n)) \cdot \varphi(gcd(m, n))=\varphi(m) \cdot \varphi(n)\)</span>
-Compare this to the formula <span class="math notranslate nohighlight">\(lcm(m, n)\cdot gcd(m,n)=m\cdot n\)</span></p></li>
+2\varphi(m) &amp; ; if \, m \ even\\
+\varphi(m) &amp; ; if \, m \ odd\\
+\end{cases}\)</span></p></li>
+</ol>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \varphi(n^m)=n^{m-1}\varphi(n)\)</span></p></li>
+</ul>
+<ol class="arabic simple" start="132">
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \varphi(lcm(m, n)) \cdot \varphi(gcd(m, n))=\varphi(m) \cdot \varphi(n)\)</span> <br />
+.VS. <span class="math notranslate nohighlight">\(lcm(m, n)\cdot gcd(m,n)=m\cdot n\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\displaystyle \varphi(n)\)</span> is even for <span class="math notranslate nohighlight">\(n\geq3\)</span>. Moreover, if if <span class="math notranslate nohighlight">\(n\)</span> has <span class="math notranslate nohighlight">\(r\)</span> distinct odd prime factors, <span class="math notranslate nohighlight">\(\displaystyle 2^r \vert \varphi(n)\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\displaystyle \sum\limits_{d\vert{n}}^{} \frac{\mu^2(d)}{\varphi(d)}=\frac{n}{\varphi(n)}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\displaystyle \sum\limits_{1\leq k \leq n, \gcd(k, n)=1}k=\frac{1}{2}n\varphi(n)\)</span> for <span class="math notranslate nohighlight">\(n &gt; 1\)</span></p></li>
@@ -1727,28 +1733,28 @@ Compare this to the formula <span class="math notranslate nohighlight">\(lcm(m, 
 <li><p><span class="math notranslate nohighlight">\(\displaystyle \phi(m) \geq \log_2{m}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\displaystyle \phi(\phi(m))\leq\frac{m}{2}\)</span></p></li>
 <li><p>When <span class="math notranslate nohighlight">\(\displaystyle x \geq \log_2m\)</span>, then
-[n^x\mod m=n^{\phi(m) + x\mod \phi(m)}\mod m]</p></li>
+<span class="math notranslate nohighlight">\(n^x\mod m=n^{\phi(m) + x\mod \phi(m)}\mod m\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\displaystyle \sum\limits_{1\leq k\leq n, \gcd(k, n)=1}\gcd(k-1, n)=\varphi(n)d(n)\)</span> where <span class="math notranslate nohighlight">\(d(n)\)</span> is number of divisors. Same equation for <span class="math notranslate nohighlight">\(\displaystyle \gcd(a \cdot k-1, n)\)</span> where <span class="math notranslate nohighlight">\(\displaystyle a\)</span> and <span class="math notranslate nohighlight">\(n\)</span> are coprime.</p></li>
 <li><p>For every <span class="math notranslate nohighlight">\(n\)</span> there is at least one other integer <span class="math notranslate nohighlight">\(m\ne n\)</span> such that <span class="math notranslate nohighlight">\(\displaystyle \varphi(m)=\varphi(n).\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\displaystyle \sum\limits_{i=1}^{n} {\varphi(i) \cdot \lfloor\frac{n}{i}\rfloor=\frac{n*(n+1)}{2}}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\displaystyle \sum\limits_{i=1, i \% 2 \ne 0 }^{n} \varphi(i) \cdot \lfloor\frac{n}{i}\rfloor=\sum\limits_{k\geq 1}[\frac{n}{2^k}]^2\)</span>. Note that <span class="math notranslate nohighlight">\([\, ]\)</span> is used here to denote round operator not floor or ceil</p></li>
-<li><p>[\displaystyle \sum\limits_{i=1}^{n}\sum\limits_{j=1}^{n}ij[\gcd(i, j)=1]=\sum\limits_{i=1}^{n}\varphi(i)i^2]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \sum\limits_{i=1}^{n}\sum\limits_{j=1}^{n}ij[\gcd(i, j)=1]=\sum\limits_{i=1}^{n}\varphi(i)i^2\)</span></p></li>
 <li><p>Average of coprimes of <span class="math notranslate nohighlight">\(n\)</span> which are less than <span class="math notranslate nohighlight">\(n\)</span> is <span class="math notranslate nohighlight">\(\displaystyle \dfrac{n}{2}\)</span>.</p></li>
 </ol>
 </section>
 <section id="mobius-function-and-inversion">
-<h4>Mobius Function and Inversion<a class="headerlink" href="#mobius-function-and-inversion" title="Link to this heading">#</a></h4>
+<h3><span class="section-number">11.20.4. </span>Mobius Function and Inversion<a class="headerlink" href="#mobius-function-and-inversion" title="Link to this heading">#</a></h3>
 <ol class="arabic simple" start="146">
-<li><p>For any positive integer <span class="math notranslate nohighlight">\(n\)</span>, define <span class="math notranslate nohighlight">\(\displaystyle \mu(n)\)</span> as the sum of the primitive <span class="math notranslate nohighlight">\(n^{th}\)</span> roots of unity. It has values in <span class="math notranslate nohighlight">\(\displaystyle {-1, 0, 1}\)</span> depending on the factorization of <span class="math notranslate nohighlight">\(n\)</span> into prime factors:
-1.  <span class="math notranslate nohighlight">\(\displaystyle \mu(n)=1\)</span> if <span class="math notranslate nohighlight">\(n\)</span> is a square-free positive integer with an even number of prime factors.
-2.  <span class="math notranslate nohighlight">\(\displaystyle \mu(n)=-1\)</span> if <span class="math notranslate nohighlight">\(n\)</span> is a square-free positive integer with an odd number of prime factors.
-3.  <span class="math notranslate nohighlight">\(\displaystyle \mu(n)=0\)</span> if <span class="math notranslate nohighlight">\(n\)</span> has a squared prime factor.</p></li>
+<li><p>For any positive integer <span class="math notranslate nohighlight">\(n\)</span>, define <span class="math notranslate nohighlight">\(\displaystyle \mu(n)\)</span> as the sum of the primitive <span class="math notranslate nohighlight">\(n^{th}\)</span> roots of unity. It has values in <span class="math notranslate nohighlight">\(\displaystyle {-1, 0, 1}\)</span> depending on the factorization of <span class="math notranslate nohighlight">\(n\)</span> into prime factors:<br />
+- <span class="math notranslate nohighlight">\(\displaystyle \mu(n)=1\)</span> if <span class="math notranslate nohighlight">\(n\)</span> is a square-free positive integer with an even number of prime factors.<br />
+- <span class="math notranslate nohighlight">\(\displaystyle \mu(n)=-1\)</span> if <span class="math notranslate nohighlight">\(n\)</span> is a square-free positive integer with an odd number of prime factors.<br />
+- <span class="math notranslate nohighlight">\(\displaystyle \mu(n)=0\)</span> if <span class="math notranslate nohighlight">\(n\)</span> has a squared prime factor.</p></li>
 <li><p>It is a multiplicative function.</p></li>
-<li><p>[\sum_{d|n}\mu(d) =
+<li><p><span class="math notranslate nohighlight">\(\sum_{d|n}\mu(d) =
 \begin{cases}
-1 &amp; ; n=1\
+1 &amp; ; n=1\\
 0 &amp; ; n &gt; 0
-\end{cases}]</p></li>
+\end{cases}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\displaystyle \displaystyle \sum\limits_{n=1}^N {\mu}^2(n) = \displaystyle \sum\limits_{n=1}^{\sqrt{N}} \mu(k) \cdot \left \lfloor \dfrac{N}{k^2} \right\rfloor\)</span> This is also the number of square-free numbers <span class="math notranslate nohighlight">\(\displaystyle \le n\)</span></p></li>
 <li><p><strong>Mobius inversion theorem:</strong> The classic version states that if g and f are arithmetic functions satisfying <span class="math notranslate nohighlight">\(g(n) = \displaystyle \sum_{d|n}f(d) \)</span> for every integer <span class="math notranslate nohighlight">\(n \ge 1\)</span> then <span class="math notranslate nohighlight">\(g(n) = \displaystyle \sum_{d|n}\mu(d)g\left(\frac{n}{d}\right)\)</span> for every integer <span class="math notranslate nohighlight">\(n \ge 1\)</span></p></li>
 <li><p>If <span class="math notranslate nohighlight">\(\displaystyle F(n) = \displaystyle \prod_{d|n} f(d)\)</span>, then <span class="math notranslate nohighlight">\(\displaystyle F(n) = \displaystyle \prod_{d|n} F\left(\frac{n}{d}\right)^{\mu(d)}\)</span></p></li>
@@ -1757,7 +1763,7 @@ Compare this to the formula <span class="math notranslate nohighlight">\(lcm(m, 
 </ol>
 </section>
 <section id="gcd-and-lcm">
-<h4>GCD and LCM<a class="headerlink" href="#gcd-and-lcm" title="Link to this heading">#</a></h4>
+<h3><span class="section-number">11.20.5. </span>GCD and LCM<a class="headerlink" href="#gcd-and-lcm" title="Link to this heading">#</a></h3>
 <ol class="arabic simple" start="154">
 <li><p><span class="math notranslate nohighlight">\(\displaystyle \gcd(a, 0) = a\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\displaystyle \gcd(a, b) = \gcd(b, a \mod b)\)</span></p></li>
@@ -1786,26 +1792,26 @@ then SUM = <span class="math notranslate nohighlight">\(\displaystyle \dfrac{n}{
 </ol>
 </section>
 <section id="legendre-symbol">
-<h4>Legendre Symbol<a class="headerlink" href="#legendre-symbol" title="Link to this heading">#</a></h4>
+<h3><span class="section-number">11.20.6. </span>Legendre Symbol<a class="headerlink" href="#legendre-symbol" title="Link to this heading">#</a></h3>
 <ol class="arabic simple" start="177">
 <li><p>Let <span class="math notranslate nohighlight">\(\displaystyle p\)</span> be an odd prime number. An integer <span class="math notranslate nohighlight">\(\displaystyle a\)</span> is a quadratic residue modulo <span class="math notranslate nohighlight">\(\displaystyle p\)</span> if it is congruent to a perfect square modulo <span class="math notranslate nohighlight">\(\displaystyle p\)</span> and is a quadratic nonresidue modulo <span class="math notranslate nohighlight">\(\displaystyle p\)</span> otherwise. The Legendre symbol is a function of <span class="math notranslate nohighlight">\(\displaystyle a\)</span> and <span class="math notranslate nohighlight">\(\displaystyle p\)</span> defined as
-[\displaystyle \displaystyle \left( \frac{a}{p} \right)=
+<span class="math notranslate nohighlight">\(\displaystyle \displaystyle \left( \frac{a}{p} \right)=
 {\begin{cases}
-,1&amp;{\text{if }}a\ {\text{is a quadatric residue modulo }}p\ {\text{and }}\ a\ \not\equiv\ 0 {\pmod{p}},\;;,-1&amp;{\text{if }}a\ {\text{is a non-quadaratic residue modulo }}p,\;;,0&amp;{\text{if }}a \equiv\ 0 {\pmod{p}}
-\end{cases}}]</p></li>
+\,1&amp;{\text{if }}a\ {\text{is a quadatric residue modulo }}p\ {\text{and }}\ a\ \not\equiv\ 0 {\pmod{p}},\\\;\;\,-1&amp;{\text{if }}a\ {\text{is a non-quadaratic residue modulo }}p,\\\;\;\,0&amp;{\text{if }}a \equiv\ 0 {\pmod{p}}
+\end{cases}}\)</span></p></li>
 <li><p>Legenres’s original definition was by means of explicit formula
 <span class="math notranslate nohighlight">\(\displaystyle \left(\frac{a}{p}\right)\equiv a^{\frac{p-1}{2}} \pmod{p} \ and \ \left(\frac{a}{p}\right)\in{-1,0,1}.\)</span></p></li>
 <li><p>The Legendre symbol is periodic in its first (or top) argument: if\ <span class="math notranslate nohighlight">\(\displaystyle a \equiv b \pmod{p}\)</span>, then
 <span class="math notranslate nohighlight">\(\displaystyle \displaystyle \left(\frac{a}{p}\right)=\left(\frac{b}{p}\right).\)</span></p></li>
 <li><p>The Legendre symbol is a completely multiplicative function of its top argument:
 <span class="math notranslate nohighlight">\(\displaystyle \displaystyle \left(\frac{ab}{p} \right) = \left(\frac{a}{p} \right) \left(\frac{b}{p} \right)\)</span></p></li>
-<li><p>The Fibonacci numbers <span class="math notranslate nohighlight">\(\displaystyle 1,1,2,3,5,8,13,21,34,55,…\)</span> are defined by the recurrence <span class="math notranslate nohighlight">\(\displaystyle F_1 = F_2 = 1,F_{n+1} = F_n + F_{n-1}.\)</span> If <span class="math notranslate nohighlight">\(\displaystyle p\)</span> is a prime number then
-<span class="math notranslate nohighlight">\(\displaystyle \displaystyle F_{p-\left(\frac{p}{5}\right)} \equiv 0 {\pmod{p}}, \;\;F_p \equiv \left(\frac{p}{5}\right) {\pmod{p}}.\)</span>
-For example,
-<span class="math notranslate nohighlight">\(\displaystyle \displaystyle\left(\frac{2}{5}\right)=-1,\;\;\;F_3=2,\;\;\;F_2=1,\)</span>
-<span class="math notranslate nohighlight">\(\displaystyle \displaystyle\left(\frac{3}{5}\right)=-1,\;\;\; F_4=3,\;\;\;F_3=2,\)</span>
-<span class="math notranslate nohighlight">\(\displaystyle \displaystyle\left(\frac{5}{5}\right)=\;\;\;0,\;\;\; F_5=5,\)</span>
-<span class="math notranslate nohighlight">\(\displaystyle \displaystyle\left(\frac{7}{5}\right)=-1,\;\; F_8=21,\;\;F_7=13,\)</span>
+<li><p>The Fibonacci numbers <span class="math notranslate nohighlight">\(\displaystyle 1,1,2,3,5,8,13,21,34,55,…\)</span> are defined by the recurrence <span class="math notranslate nohighlight">\(\displaystyle F_1 = F_2 = 1,F_{n+1} = F_n + F_{n-1}.\)</span> If <span class="math notranslate nohighlight">\(p\)</span> is a prime number then <br />
+<span class="math notranslate nohighlight">\(\displaystyle F_{p-\left(\frac{p}{5}\right)} \equiv 0 {\pmod{p}}, \;\;F_p \equiv \left(\frac{p}{5}\right) {\pmod{p}}.\)</span> <br />
+For example, <br />
+<span class="math notranslate nohighlight">\(\displaystyle \displaystyle\left(\frac{2}{5}\right)=-1,\;\;\;F_3=2,\;\;\;F_2=1,\)</span> <br />
+<span class="math notranslate nohighlight">\(\displaystyle \displaystyle\left(\frac{3}{5}\right)=-1,\;\;\; F_4=3,\;\;\;F_3=2,\)</span> <br />
+<span class="math notranslate nohighlight">\(\displaystyle \displaystyle\left(\frac{5}{5}\right)=\;\;\;0,\;\;\; F_5=5,\)</span> <br />
+<span class="math notranslate nohighlight">\(\displaystyle \displaystyle\left(\frac{7}{5}\right)=-1,\;\; F_8=21,\;\;F_7=13,\)</span> <br />
 <span class="math notranslate nohighlight">\(\displaystyle \displaystyle\left(\frac{11}{5}\right)=\;\;1,\;\; F_{10}=55,\;\;F_{11}=89,\)</span></p></li>
 <li><p>Continuing from previous point, <span class="math notranslate nohighlight">\(\displaystyle \displaystyle \left(\frac{p}{5}\right)={\text{infinite concatenation of the sequence}}\left(1,-1,-1,1,0\right) {\text{from }}p \geq 1\)</span>.</p></li>
 <li><p>If <span class="math notranslate nohighlight">\(n\)</span> = <span class="math notranslate nohighlight">\(\displaystyle \displaystyle k^2\)</span> is perfect square then <span class="math notranslate nohighlight">\(\displaystyle \left(\frac{n}{p}\right)=1\)</span> for every odd prime except <span class="math notranslate nohighlight">\(\displaystyle \left(\frac{n}{k}\right)=0\)</span> if k is an odd prime.</p></li>
@@ -1813,21 +1819,21 @@ For example,
 </section>
 </section>
 <section id="miscellaneous">
-<h3>Miscellaneous<a class="headerlink" href="#miscellaneous" title="Link to this heading">#</a></h3>
+<h2><span class="section-number">11.21. </span>Miscellaneous<a class="headerlink" href="#miscellaneous" title="Link to this heading">#</a></h2>
 <ol class="arabic simple" start="184">
-<li><p><span class="math notranslate nohighlight">\(\displaystyle \displaystyle a+b = a \oplus b +2(a &amp; b)\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(\displaystyle \displaystyle a + b = a \mid b + a &amp; b\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\displaystyle \displaystyle a \oplus b = a\mid b - a &amp; b\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\displaystyle \displaystyle k_{th}\)</span> bit is set in <span class="math notranslate nohighlight">\(\displaystyle x\)</span> iff <span class="math notranslate nohighlight">\(\displaystyle x \mod 2^{k - 1}\geq 2^k\)</span>. It comes handy when you need to look at the bits of the numbers which are pair sums or subset sums etc.</p></li>
-<li><p><span class="math notranslate nohighlight">\(\displaystyle \displaystyle k_{th}\)</span> bit is set in <span class="math notranslate nohighlight">\(\displaystyle x\)</span> iff <span class="math notranslate nohighlight">\(\displaystyle x \mod 2^{k - 1} - x \mod 2^k \neq\ 0\)</span> (<span class="math notranslate nohighlight">\( = 2^k\)</span> to be exact). It comes handy when you need to look at the bits of the numbers which are pair sums or subset sums etc.</p></li>
-<li><p><span class="math notranslate nohighlight">\(n \mod 2^i = n &amp; (2^i - 1)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\( \displaystyle a+b = a \oplus b +2(a \&amp; b)\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\( \displaystyle a + b = a \mid b + a \&amp; b\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\( \displaystyle a \oplus b = a\mid b - a \&amp; b\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\( \displaystyle k_{th}\)</span> bit is set in <span class="math notranslate nohighlight">\(\displaystyle x\)</span> iff <span class="math notranslate nohighlight">\(\displaystyle x \mod 2^{k - 1}\geq 2^k\)</span>. It comes handy when you need to look at the bits of the numbers which are pair sums or subset sums etc.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \displaystyle k_{th}\)</span> bit is set in <span class="math notranslate nohighlight">\(\displaystyle x\)</span> iff <br />
+<span class="math notranslate nohighlight">\(\displaystyle x \mod 2^{k - 1} - x \mod 2^k \neq\ 0\)</span> (<span class="math notranslate nohighlight">\( = 2^k\)</span> to be exact). It comes handy when you need to look at the bits of the numbers which are pair sums or subset sums etc.</p></li>
+<li><p><span class="math notranslate nohighlight">\(n \mod 2^i = n \&amp; (2^i - 1)\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\displaystyle 1\oplus 2 \oplus 3 \oplus \cdots \oplus (4k - 1) = 0\)</span> for any <span class="math notranslate nohighlight">\(\displaystyle \displaystyle k \ge 0\)</span></p></li>
-<li><p><strong>Erdos Gallai Theorem:</strong> The degree sequence of an undirected graph is the non-increasing sequence of its vertex degrees
-A sequence of non-negative integers <span class="math notranslate nohighlight">\(d_1 \geq d_2 \geq \cdots \geq d_n\)</span> can be represented as the degree sequence of finite simple graph on <span class="math notranslate nohighlight">\(n\)</span> vertices if and only if <span class="math notranslate nohighlight">\(d_1 + d_2 + \cdots + d_n\)</span> is even and
-[\displaystyle \sum_{i = 1}^k {d_i \leq k(k - 1)} + \sum_{i = k + 1}^n \min(d_i, k)]
+<li><p><strong>Erdos Gallai Theorem:</strong> The degree sequence of an undirected graph is the non-increasing sequence of its vertex degrees <br />
+A sequence of non-negative integers <span class="math notranslate nohighlight">\(d_1 \geq d_2 \geq \cdots \geq d_n\)</span> can be represented as the degree sequence of finite simple graph on <span class="math notranslate nohighlight">\(n\)</span> vertices if and only if <span class="math notranslate nohighlight">\(d_1 + d_2 + \cdots + d_n\)</span> is even and <br />
+<span class="math notranslate nohighlight">\(\displaystyle \sum_{i = 1}^k {d_i \leq k(k - 1)} + \sum_{i = k + 1}^n \min(d_i, k)\)</span> <br />
 holds for every <span class="math notranslate nohighlight">\(\displaystyle \displaystyle k\)</span> in <span class="math notranslate nohighlight">\(\displaystyle 1 \leq k \leq n\)</span>.</p></li>
 </ol>
-</section>
 </section>
 </section>
 
@@ -1861,6 +1867,24 @@ holds for every <span class="math notranslate nohighlight">\(\displaystyle \disp
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="04thinking.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">10. </span>Thinking Skill</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="MIT_CS6001-Python.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">12. </span>MIT_CS6001-Python</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -1877,80 +1901,78 @@ holds for every <span class="math notranslate nohighlight">\(\displaystyle \disp
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-name-conventions">variable name conventions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equals-symbols">equals symbols</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#square-root-and-complex-numbers">square root and complex numbers</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dot-cross">dot &amp; cross</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scalar-multiplication">scalar multiplication</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-multiplication">vector multiplication</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dot-product">dot product</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-product">cross product</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-name-conventions">11.1. variable name conventions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equals-symbols">11.2. equals symbols</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#square-root-and-complex-numbers">11.3. square root and complex numbers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dot-cross">11.4. dot &amp; cross</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scalar-multiplication">11.4.1. scalar multiplication</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-multiplication">11.4.2. vector multiplication</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dot-product">11.4.3. dot product</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-product">11.4.4. cross product</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sigma">sigma</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#capital-pi">capital Pi</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pipes">pipes</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-value">absolute value</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#euclidean-norm">Euclidean norm</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#determinant">determinant</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sigma">11.5. sigma</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#capital-pi">11.6. capital Pi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pipes">11.7. pipes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-value">11.7.1. absolute value</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#euclidean-norm">11.7.2. Euclidean norm</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#determinant">11.7.3. determinant</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hat">hat</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#element">element</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-number-sets">common number sets</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#real-numbers"><code class="docutils literal notranslate"><span class="pre">ℝ</span></code> real numbers</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rational-numbers"><code class="docutils literal notranslate"><span class="pre">ℚ</span></code> rational numbers</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integers"><code class="docutils literal notranslate"><span class="pre">ℤ</span></code> integers</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#natural-numbers"><code class="docutils literal notranslate"><span class="pre">ℕ</span></code> natural numbers</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-numbers"><code class="docutils literal notranslate"><span class="pre">ℂ</span></code> complex numbers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hat">11.8. hat</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#element">11.9. element</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-number-sets">11.10. common number sets</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#real-numbers">11.10.1. <code class="docutils literal notranslate"><span class="pre">ℝ</span></code> real numbers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rational-numbers">11.10.2. <code class="docutils literal notranslate"><span class="pre">ℚ</span></code> rational numbers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integers">11.10.3. <code class="docutils literal notranslate"><span class="pre">ℤ</span></code> integers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#natural-numbers">11.10.4. <code class="docutils literal notranslate"><span class="pre">ℕ</span></code> natural numbers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-numbers">11.10.5. <code class="docutils literal notranslate"><span class="pre">ℂ</span></code> complex numbers</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-builder-notation">Set builder notation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">functions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionaries-are-functions">dictionaries are functions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#piecewise-function">piecewise function</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-functions">common functions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#function-notation">function notation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-builder-notation">11.11. Set builder notation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">11.12. functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionaries-are-functions">11.12.1. dictionaries are functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#piecewise-function">11.12.2. piecewise function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-functions">11.12.3. common functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#function-notation">11.12.4. function notation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prime">prime</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#floor-ceiling">floor &amp; ceiling</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arrows">arrows</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#material-implication">material implication</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inequality">inequality</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conjunction-disjunction">conjunction &amp; disjunction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prime">11.13. prime</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#floor-ceiling">11.14. floor &amp; ceiling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arrows">11.15. arrows</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#material-implication">11.15.1. material implication</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inequality">11.15.2. inequality</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conjunction-disjunction">11.15.3. conjunction &amp; disjunction</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logical-negation">logical negation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intervals">intervals</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combinatorics">Combinatorics</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#general">General</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#catalan-numbers">Catalan Numbers</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#narayana-numbers">Narayana numbers</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#stirling-numbers-of-the-first-kind">Stirling numbers of the first kind</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#stirling-numbers-of-the-second-kind">Stirling numbers of the second kind</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bell-number">Bell number</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logical-negation">11.16. logical negation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intervals">11.17. intervals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combinatorics">11.18. Combinatorics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general">11.18.1. General</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#catalan-numbers">11.18.2. Catalan Numbers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#narayana-numbers">11.18.3. Narayana numbers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stirling-numbers-of-the-first-kind">11.18.4. Stirling numbers of the first kind</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stirling-numbers-of-the-second-kind">11.18.5. Stirling numbers of the second kind</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bell-number">11.18.6. Bell number</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-math">Discrete Math</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">General</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fibonacci-number">Fibonacci Number</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pythagorean-triples">Pythagorean Triples</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sum-of-squares-function">Sum of Squares Function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-math">11.19. Discrete Math</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">11.19.1. General</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fibonacci-number">11.19.2. Fibonacci Number</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pythagorean-triples">11.19.3. Pythagorean Triples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sum-of-squares-function">11.19.4. Sum of Squares Function</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#number-theory">Number Theory</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">General</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#divisor-function">Divisor Function</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#eulers-totient-function">Euler’s Totient function</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mobius-function-and-inversion">Mobius Function and Inversion</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#gcd-and-lcm">GCD and LCM</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#legendre-symbol">Legendre Symbol</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#number-theory">11.20. Number Theory</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">11.20.1. General</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#divisor-function">11.20.2. Divisor Function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eulers-totient-function">11.20.3. Euler’s Totient function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mobius-function-and-inversion">11.20.4. Mobius Function and Inversion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gcd-and-lcm">11.20.5. GCD and LCM</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#legendre-symbol">11.20.6. Legendre Symbol</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#miscellaneous">Miscellaneous</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#miscellaneous">11.21. Miscellaneous</a></li>
 </ul>
   </nav></div>
 

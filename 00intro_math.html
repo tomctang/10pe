@@ -191,19 +191,20 @@
 <li class="toctree-l1"><a class="reference internal" href="02discrete_continuous.html">8. Discrete &amp; Continuous</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03real_world.html">9. Real World Math</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04thinking.html">10. Thinking Skill</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05math_as_code.html">11. Math as code</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">CS &amp; Physics</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="MIT_CS6001-Python.html">11. MIT_CS6001-Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MIT_CS6002-thinking.html">12. MIT_CS6002-CS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MCM.html">13. Math Computational Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MIT_CS6001-Python.html">12. MIT_CS6001-Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MIT_CS6002-thinking.html">13. MIT_CS6002-CS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MCM.html">14. Math Computational Methods</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Notebook</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="nb2024.html">14. Notebook 2023-24</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nb_Jonny_notebook.html">15. Combo notebook</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nb_Geo.html">16. Jonny Geo-Graph</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nb_lottery_simulator.html">17. Lottery Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nb2024.html">15. Notebook 2023-24</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nb_Jonny_notebook.html">16. Combo notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nb_Geo.html">17. Jonny Geo-Graph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nb_lottery_simulator.html">18. Lottery Math</a></li>
 </ul>
 
     </div>
@@ -367,10 +368,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mind-map-of-math">6.1. Mind Map of Math</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#online-courses">6.2. Online courses</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">6.3. 名词解释</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-hidden-math">6.4. PE-Hidden-Math</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#math-foundation-zfc">6.1. Math Foundation - ZFC</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mind-map-of-math">6.2. Mind Map of Math</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#online-courses">6.3. Online courses</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">6.4. 名词解释</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-hidden-math">6.5. PE-Hidden-Math</a></li>
 </ul>
             </nav>
         </div>
@@ -384,48 +386,6 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="math-fp-lang-combo">
 <h1><span class="section-number">6. </span>Math-FP-Lang Combo<a class="headerlink" href="#math-fp-lang-combo" title="Link to this heading">#</a></h1>
-<p>In ZFC, these transitions are mathematically sound. Tools like epsilon-delta proofs, measure theory, and functional analysis ensure rigor across these shifts.</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\sum\)</span> discrete to continuous <span class="math notranslate nohighlight">\(\int\)</span>: discrete can approximate the continuous (e.g., difference equations to differential equations)</p></li>
-<li><p><span class="math notranslate nohighlight">\(\Delta x\)</span> finite to infinite <span class="math notranslate nohighlight">\(d x\)</span>: finite extends to the infinite via limits</p></li>
-<li><p>series to formulus: series often condense into formulas where convergent with closed-form formulas</p></li>
-</ul>
-<p><a class="reference external" href="https://en.wikipedia.org/wiki/Zermelo%E2%80%93Fraenkel_set_theory">ZFC</a> is the most common math framework:</p>
-<ul class="simple">
-<li><p>Zermelo–Fraenkel set theory and the axiom of Choice</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Discrete to Continuous: Sum vs. Integral</span>
-<span class="n">var</span><span class="p">(</span><span class="s1">&#39;x , n&#39;</span><span class="p">)</span>
-<span class="n">discrete_sum</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">n</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>  <span class="c1"># Finite, discrete</span>
-<span class="n">continuous_integral</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">infinity</span><span class="p">)</span>  <span class="c1"># Infinite, continuous</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Discrete sum (n=1 to 10):&quot;</span><span class="p">,</span> <span class="n">discrete_sum</span><span class="o">.</span><span class="n">n</span><span class="p">())</span>  <span class="c1"># Approx 1.549</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Continuous integral:&quot;</span><span class="p">,</span> <span class="n">continuous_integral</span><span class="p">)</span>   <span class="c1"># pi^2/6 ≈ 1.645</span>
-
-<span class="c1"># Finite to Infinite: Partial series vs. full series</span>
-<span class="n">finite_series</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">n</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>  <span class="c1"># Finite</span>
-<span class="n">infinite_series</span> <span class="o">=</span> <span class="n">zeta</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># Infinite sum = pi^2/6</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Finite series:&quot;</span><span class="p">,</span> <span class="n">finite_series</span><span class="o">.</span><span class="n">n</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Infinite series:&quot;</span><span class="p">,</span> <span class="n">infinite_series</span><span class="o">.</span><span class="n">n</span><span class="p">())</span>
-
-<span class="c1"># Series to Formula: Taylor series for e^x</span>
-<span class="n">series_exp</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>  <span class="c1"># Series</span>
-<span class="n">formula_exp</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>              <span class="c1"># Formula</span>
-<span class="n">show</span><span class="p">(</span><span class="s2">&quot;Series:&quot;</span><span class="p">,</span> <span class="n">series_exp</span><span class="p">)</span>
-<span class="n">show</span><span class="p">(</span><span class="s2">&quot;Formula:&quot;</span><span class="p">,</span> <span class="n">formula_exp</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Discrete sum (n=1 to 10): 1.54976773116654
-Continuous integral: 1
-Finite series: 1.54976773116654
-Infinite series: 1.64493406684823
-</pre></div>
-</div>
-<div class="output text_html"><html>\(\displaystyle \verb|Series:| 1 + 1 x + \frac{1}{2} x^{2} + \frac{1}{6} x^{3} + \frac{1}{24} x^{4} + \mathcal{O}\left(x^{5}\right)\)</html></div><div class="output text_html"><html>\(\displaystyle \verb|Formula:| e^{x}\)</html></div></div>
-</div>
 <p>Objectives: To prepare secondary &amp; tertiary math for my kids</p>
 <p>Bad ideas:</p>
 <ul class="simple">
@@ -474,8 +434,60 @@ Infinite series: 1.64493406684823
 <img alt="_images/4aa88c187f93d286795963b7977c69c8a917bbb92af05297e418bf80435e51bb.png" src="_images/4aa88c187f93d286795963b7977c69c8a917bbb92af05297e418bf80435e51bb.png" />
 </div>
 </div>
+<section id="math-foundation-zfc">
+<h2><span class="section-number">6.1. </span>Math Foundation - ZFC<a class="headerlink" href="#math-foundation-zfc" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Zermelo%E2%80%93Fraenkel_set_theory">ZFC (see wiki)</a> is the most common math framework, what all we have learned so far are from ZFC:</p>
+<ul class="simple">
+<li><p>Zermelo–Fraenkel set theory and the axiom of Choice</p></li>
+</ul>
+<p>In ZFC, three transitions are mathematically sound:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\sum\)</span> discrete -&gt; continuous <span class="math notranslate nohighlight">\(\int\)</span>: discrete can approximate the continuous (e.g., difference equations to differential equations)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Delta x\)</span> finite -&gt; infinite <span class="math notranslate nohighlight">\(d x\)</span>: finite extends to the infinite via limits</p></li>
+<li><p>series -&gt; formulus: series often condense into formulas where convergent with closed-form formulas</p></li>
+</ul>
+<p>Tools like epsilon-delta proofs, measure theory, and functional analysis ensure rigor across these shifts.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Discrete to Continuous: Sum vs. Integral</span>
+<span class="n">var</span><span class="p">(</span><span class="s1">&#39;x , n&#39;</span><span class="p">)</span>
+<span class="n">discrete_sum</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">n</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>                    <span class="c1"># Finite, discrete</span>
+<span class="n">continuous_integral</span> <span class="o">=</span> <span class="n">integral</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">infinity</span><span class="p">)</span>  <span class="c1"># Infinite, continuous</span>
+<span class="n">s</span><span class="p">(</span><span class="s2">&quot;Discrete sum (n=1-10):&quot;</span><span class="p">,</span> <span class="n">discrete_sum</span><span class="o">.</span><span class="n">n</span><span class="p">())</span>      <span class="c1"># Approx 1.549</span>
+<span class="n">s</span><span class="p">(</span><span class="s2">&quot;Continuous integral:&quot;</span><span class="p">,</span> <span class="n">continuous_integral</span><span class="p">)</span>     <span class="c1"># 1</span>
+
+<span class="c1"># Finite to Infinite: Partial series vs. full series</span>
+<span class="n">finite_series</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">n</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>  <span class="c1"># Finite</span>
+<span class="n">infinite_series</span> <span class="o">=</span> <span class="n">zeta</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>             <span class="c1"># Infinite sum = pi^2/6</span>
+<span class="n">s</span><span class="p">(</span><span class="s2">&quot;Finite series:&quot;</span><span class="p">,</span> <span class="n">finite_series</span><span class="o">.</span><span class="n">n</span><span class="p">())</span>
+<span class="n">s</span><span class="p">(</span><span class="s2">&quot;Infinite series:&quot;</span><span class="p">,</span> <span class="n">infinite_series</span><span class="o">.</span><span class="n">n</span><span class="p">())</span>
+
+<span class="c1"># Series to Formula: Taylor series for e^x</span>
+<span class="n">series_exp</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>  <span class="c1"># Series</span>
+<span class="n">formula_exp</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>              <span class="c1"># Formula</span>
+<span class="n">s</span><span class="p">(</span><span class="s2">&quot;Series:&quot;</span><span class="p">,</span> <span class="n">series_exp</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="s2">&quot;Formula:&quot;</span><span class="p">,</span> <span class="n">formula_exp</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \text{\texttt{Discrete{ }sum{ }(n=1{-}10):}} \quad 1.54976773116654 \quad \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \text{\texttt{Continuous{ }integral:}} \quad 1 \quad \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \text{\texttt{Finite{ }series:}} \quad 1.54976773116654 \quad \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \text{\texttt{Infinite{ }series:}} \quad 1.64493406684823 \quad \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \text{\texttt{Series:}} \quad 1 + 1 x + \frac{1}{2} x^{2} + \frac{1}{6} x^{3} + \frac{1}{24} x^{4} + \mathcal{O}\left(x^{5}\right) \quad \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \text{\texttt{Formula:}} \quad e^{x} \quad \]</div>
+</div>
+</div>
+</section>
 <section id="mind-map-of-math">
-<h2><span class="section-number">6.1. </span>Mind Map of Math<a class="headerlink" href="#mind-map-of-math" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.2. </span>Mind Map of Math<a class="headerlink" href="#mind-map-of-math" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><p><a class="reference internal" href="01number_algebra.html"><span class="std std-doc">Numbers &amp; Algebra</span></a></p>
 </div></blockquote>
@@ -542,7 +554,7 @@ Infinite series: 1.64493406684823
 </ol>
 </section>
 <section id="online-courses">
-<h2><span class="section-number">6.2. </span>Online courses<a class="headerlink" href="#online-courses" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.3. </span>Online courses<a class="headerlink" href="#online-courses" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Coursera平台JHU副教授<a class="reference external" href="https://www.coursera.org/instructor/josephcutrone">Joseph Cutrone</a>的课程应用性强, level适合悉悉</p>
 <ul class="simple">
@@ -642,7 +654,7 @@ Poisson’s theorem</p></li>
 </ol>
 </section>
 <section id="id1">
-<h2><span class="section-number">6.3. </span>名词解释<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.4. </span>名词解释<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>离散数学 VS. 连续数学（微积分和分析）</p>
 <ul class="simple">
@@ -716,7 +728,7 @@ Poisson’s theorem</p></li>
 </ol>
 <img src="https://raw.githubusercontent.com/tomctang/NB_img/main/mapmath.jpg" alt="Map of Math" width="1200"> </section>
 <section id="pe-hidden-math">
-<h2><span class="section-number">6.4. </span>PE-Hidden-Math<a class="headerlink" href="#pe-hidden-math" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.5. </span>PE-Hidden-Math<a class="headerlink" href="#pe-hidden-math" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><p><strong>Question ordering</strong></p>
 </div></blockquote>
@@ -864,10 +876,11 @@ Poisson’s theorem</p></li>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mind-map-of-math">6.1. Mind Map of Math</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#online-courses">6.2. Online courses</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">6.3. 名词解释</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-hidden-math">6.4. PE-Hidden-Math</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#math-foundation-zfc">6.1. Math Foundation - ZFC</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mind-map-of-math">6.2. Mind Map of Math</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#online-courses">6.3. Online courses</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">6.4. 名词解释</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-hidden-math">6.5. PE-Hidden-Math</a></li>
 </ul>
   </nav></div>
 
