@@ -20,6 +20,7 @@ parts:
   - file: 02discrete_continuous
   - file: 03real_world
   - file: 04thinking
+  - file: 05math_as_code
 
 - caption: CS & Physics
   numbered: true
