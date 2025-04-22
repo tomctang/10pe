@@ -393,7 +393,9 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-algebra">14.5. Linear Algebra</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">14.5.1. Review</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#week-9">14.5.2. Week 9</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-set-11">14.5.2. Problem Set 11</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#week-10">14.5.3. Week 10</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#week-9">14.5.4. Week 9</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differential-equations">14.6. Differential Equations</a><ul class="nav section-nav flex-column">
@@ -419,9 +421,11 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># new show</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Math</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">s</span><span class="p">(</span><span class="n">expr</span><span class="p">):</span>
-    <span class="n">latex_str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;$</span><span class="si">{</span><span class="n">latex</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span><span class="si">}</span><span class="s2">$&quot;</span>  <span class="c1"># Explicitly wrap in $...$</span>
-    <span class="n">display</span><span class="p">(</span><span class="n">Math</span><span class="p">(</span><span class="n">latex_str</span><span class="p">))</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">s</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="n">latex_output</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
+        <span class="n">latex_output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">latex</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span><span class="si">}</span><span class="s2"> </span><span class="se">\\</span><span class="s2">qquad   &quot;</span>  <span class="c1"># Add spacing btw expressions</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">Math</span><span class="p">(</span><span class="n">latex_output</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -1054,25 +1058,36 @@ document.write(`
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Formula</p></th>
-<th class="head"><p>Sol: dimensional reduction</p></th>
+<th class="head"><p>Solution</p></th>
+<th class="head"><p>dimensional reduction</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Newton-Leibniz formula</p></td>
 <td><p>1D -&gt; dot</p></td>
+<td><p><span class="math notranslate nohighlight">\(\int_a^b f(x)dx=F(b)-F(a)   \)</span></p></td>
 </tr>
 <tr class="row-odd"><td><p>Green theorem</p></td>
 <td><p>2D -&gt; 1D</p></td>
+<td><p><span class="math notranslate nohighlight">\(\iint_D (-\frac{\partial P}{\partial y} + \frac{\partial Q}{\partial x})dxdy = \oint_{\partial D} Pdx + Q dy\)</span></p></td>
 </tr>
-<tr class="row-even"><td><p>Gauss’law (Gauss’ flux theorem)</p></td>
+<tr class="row-even"><td><p>Gauss (Gauss’ flux theorem)</p></td>
 <td><p>3D -&gt; 2D</p></td>
+<td><p><span class="math notranslate nohighlight">\(\iiint_D (\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z})dxdydz = \oint_{\partial D} Pdydz + Q dzdx + R dxdy\)</span></p></td>
 </tr>
 <tr class="row-odd"><td><p>Divergence theorem</p></td>
 <td><p>nD -&gt; 3D</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Generalized Stokes formula</p></td>
+<td><p>manifolds</p></td>
+<td><p><span class="math notranslate nohighlight">\(\int_M d\omega = \int_{\partial M} \omega  \)</span></p></td>
 </tr>
 </tbody>
 </table>
 </div>
+<img src="https://raw.githubusercontent.com/tomctang/NB_img/main/stokes.png" alt="generalstokes.png" width="580">
+<img src="https://raw.githubusercontent.com/tomctang/NB_img/main/divergence.png" alt="generalstokes.png" width="580">
 <p>Notes</p>
 <p>Div &amp; Curl omitted</p>
 <ul class="simple">
@@ -2174,7 +2189,31 @@ True
 </li>
 <li><p>Inverse(<span class="math notranslate nohighlight">\(AA^{-1}=I\)</span>) : Use cofactors and adjoint(or row reduction) then divide by determinant(can also calculate using row reduction).</p></li>
 <li><p>Determinant : Measures the factor by which an area or volume is multiplied by. Calculate using formula or row reduction.</p></li>
-<li><p>Eigenvalues &amp; Eigenvectors…</p></li>
+<li><p>Gram-Schmidt Orthogonalization :</p>
+<ul>
+<li><p>Formula:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\large\hat{e_1}=\frac{v_1}{\sqrt{v_1\cdot v_1}}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\large\hat{e_2}=\frac{v_2-(v_2\cdot\hat{e_1})\hat{e_1}}{|\vec{e_2}|}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\large\hat{e_3}=\frac{v_3-(v_3\cdot\hat{e_1})\hat{e_1}-(v_3\cdot\hat{e_2})\hat{e_2}}{|\vec{e_3}|}\)</span></p></li>
+<li><p>For orthogonalization, determine coefficients by using the fact that <span class="math notranslate nohighlight">\((e_i\cdot e_j)=0\)</span> where <span class="math notranslate nohighlight">\(\cdot\)</span> can mean dot product of <span class="math notranslate nohighlight">\((f\cdot g)=\int_0^1dxf(x)g(x)\)</span></p></li>
+</ul>
+</li>
+<li><p>Applications : Includes linear algebra, numerical analysis, quantum mechanics, machine learning etc.</p></li>
+</ul>
+</li>
+<li><p>Eigenvalues &amp; Eigenvectors</p>
+<ul>
+<li><p>Use determinant formula : Determinant of matrix minus <span class="math notranslate nohighlight">\(\lambda I=0\)</span></p></li>
+<li><p>Quick Method :</p>
+<ol class="arabic simple">
+<li><p>The mean of the eigenvalues is the mean of the numbers on the lead diagonal.</p></li>
+<li><p>The determinant of the matrix is the product of the eigenvalues.</p></li>
+<li><p><span class="math notranslate nohighlight">\(d^2=m^2-p\)</span> Eigenvalues <span class="math notranslate nohighlight">\(= m\pm d\)</span></p></li>
+</ol>
+</li>
+</ul>
+</li>
 </ul>
  <img src="https://raw.githubusercontent.com/tomctang/NB_img/main/eigen_val_vec.jpeg" alt="eigen" width="650">
 <p>Lab Notes</p>
@@ -2191,14 +2230,178 @@ True
 <li><p>Series</p></li>
 <li><p>Parallel</p></li>
 <li><p>RC(R:resistor, C:capacitor) : Circuit that comprises of only resistors and capacitors(and stuff connecting them). This has a constant current as it is only affected using arithmetic operations by the resistors and capacitors.</p></li>
-<li><p>RL/RLC(L:Inductor) : Circuit that also has an inductor which causes a non-constant current(<span class="math notranslate nohighlight">\(V_L=L\frac{dI}{dt}\)</span>).</p></li>
+<li><p>RL/RLC(L:Inductor) : Circuit that also has an inductor which causes a non-constant current(<span class="math notranslate nohighlight">\(V_L=L\frac{dI}{dt}\)</span>).</p>
+<ul>
+<li><p>RLC circuits can make microwaves oscillating at its resonant frequency. Then using formulae you can get the right wavelength using the formula to make microwaves.</p></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 <p><strong>diff btw C and L??</strong></p>
 </section>
+<section id="problem-set-11">
+<h3><span class="section-number">14.5.2. </span>Problem Set 11<a class="headerlink" href="#problem-set-11" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">=</span><span class="n">matrix</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,[</span><span class="mi">19</span><span class="o">/</span><span class="mi">8</span><span class="o">-</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">8</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">13</span><span class="o">/</span><span class="mi">4</span><span class="o">-</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">8</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">19</span><span class="o">/</span><span class="mi">8</span><span class="o">-</span><span class="n">x</span><span class="p">])</span>
+<span class="n">s</span><span class="p">(</span><span class="n">expand</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">det</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle -x^{3} + 8 \, x^{2} - \frac{305}{16} \, x + \frac{425}{32} \qquad   \]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;a b d&#39;</span><span class="p">)</span>
+<span class="n">A</span><span class="o">=</span><span class="n">matrix</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,[</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">d</span><span class="p">])</span>
+<span class="n">m</span><span class="o">=</span><span class="n">A</span><span class="o">.</span><span class="n">trace</span><span class="p">()</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">p</span><span class="o">=</span><span class="n">A</span><span class="o">.</span><span class="n">det</span><span class="p">()</span>
+<span class="n">l</span><span class="o">=</span><span class="n">m</span><span class="o">-</span><span class="n">sqrt</span><span class="p">(</span><span class="n">m</span><span class="o">^</span><span class="mi">2</span><span class="o">-</span><span class="n">p</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">l</span><span class="p">,</span><span class="n">d</span><span class="o">-</span><span class="n">l</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{1}{2} \, a - \frac{1}{2} \, d + \frac{1}{2} \, \sqrt{{\left(a + d\right)}^{2} + 4 \, b^{2} - 4 \, a d} \qquad   -\frac{1}{2} \, a + \frac{1}{2} \, d + \frac{1}{2} \, \sqrt{{\left(a + d\right)}^{2} + 4 \, b^{2} - 4 \, a d} \qquad   \]</div>
+</div>
+</div>
+</section>
+<section id="week-10">
+<h3><span class="section-number">14.5.3. </span>Week 10<a class="headerlink" href="#week-10" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;k l m1 m2 w&#39;</span><span class="p">)</span>
+<span class="n">A</span><span class="o">=</span><span class="n">matrix</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,[</span><span class="n">w</span><span class="o">^</span><span class="mi">2</span><span class="o">-</span><span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="n">l</span><span class="p">)</span><span class="o">/</span><span class="n">m1</span><span class="p">,</span><span class="n">l</span><span class="o">/</span><span class="n">m1</span><span class="p">,</span><span class="n">l</span><span class="o">/</span><span class="n">m2</span><span class="p">,</span><span class="n">w</span><span class="o">^</span><span class="mi">2</span><span class="o">-</span><span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="n">l</span><span class="p">)</span><span class="o">/</span><span class="n">m2</span><span class="p">])</span>
+<span class="n">s</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">eigenvalues</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \left[\frac{2 \, m_{1} m_{2} w^{2} - {\left(k + l\right)} m_{1} - {\left(k + l\right)} m_{2} - \sqrt{{\left(k^{2} + 2 \, k l + l^{2}\right)} m_{1}^{2} - 2 \, {\left(k^{2} + 2 \, k l - l^{2}\right)} m_{1} m_{2} + {\left(k^{2} + 2 \, k l + l^{2}\right)} m_{2}^{2}}}{2 \, m_{1} m_{2}}, \frac{2 \, m_{1} m_{2} w^{2} - {\left(k + l\right)} m_{1} - {\left(k + l\right)} m_{2} + \sqrt{{\left(k^{2} + 2 \, k l + l^{2}\right)} m_{1}^{2} - 2 \, {\left(k^{2} + 2 \, k l - l^{2}\right)} m_{1} m_{2} + {\left(k^{2} + 2 \, k l + l^{2}\right)} m_{2}^{2}}}{2 \, m_{1} m_{2}}\right] \quad \]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;a b c&#39;</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">expand</span><span class="p">((</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="n">c</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">)))</span>
+<span class="n">s</span><span class="p">(</span><span class="n">integral</span><span class="p">((</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="n">c</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">s</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="n">b</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="n">c</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">s</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="n">b</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="n">c</span><span class="p">),</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">s</span><span class="p">(</span><span class="n">integral</span><span class="p">((</span><span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="n">c</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 2 \, c x^{3} + 2 \, b x^{2} - c x^{2} + 2 \, a x - b x - a\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle a^{2} + a b + \frac{1}{3} \, b^{2} + \frac{1}{6} \, {\left(4 \, a + 3 \, b\right)} c + \frac{1}{5} \, c^{2}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{2}{3} \, a + 2 \, c\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{2}{3} \, b\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{2}{5} \, a^{2} + \frac{4}{3} \, a c + 2 \, c^{2}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">=</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span>
+        <span class="p">,[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span>
+        <span class="p">,[</span><span class="o">-</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">s</span><span class="p">(</span><span class="n">expand</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">det</span><span class="p">()))</span>
+<span class="n">s</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">eigenvectors_right</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle -9\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \left[\left(-\frac{1}{2} \, \sqrt{13} + \frac{1}{2}, \left[\left(1,\,-\frac{1}{2} \, \sqrt{13} + \frac{1}{2},\,\sqrt{2}\right)\right], 1\right), \left(\frac{1}{2} \, \sqrt{13} + \frac{1}{2}, \left[\left(1,\,\frac{1}{2} \, \sqrt{13} + \frac{1}{2},\,\sqrt{2}\right)\right], 1\right), \left(3, \left[\left(1,\,0,\,-\frac{1}{2} \, \sqrt{2}\right)\right], 1\right)\right]\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">M</span><span class="o">=</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">7</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">8</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">5</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">]]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]:</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]:</span>
+        <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">-=</span><span class="n">M</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">M</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]:</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]:</span>
+        <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">-=</span><span class="n">M</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">M</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]:</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]:</span>
+        <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">-=</span><span class="n">M</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="o">/</span><span class="n">M</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">M</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">4</span><span class="p">]</span><span class="o">-=</span><span class="n">M</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">4</span><span class="p">]</span><span class="o">*</span><span class="n">M</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span><span class="o">/</span><span class="n">M</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">M</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">s</span><span class="p">(</span><span class="n">matrix</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="n">M</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left(\begin{array}{rrrrr}
+1 &amp; 0 &amp; 0 &amp; 6 &amp; 2 \\
+0 &amp; 5 &amp; 3 &amp; -39 &amp; -9 \\
+0 &amp; 0 &amp; \frac{17}{5} &amp; -\frac{36}{5} &amp; -\frac{1}{5} \\
+0 &amp; 0 &amp; 0 &amp; -48 &amp; -14 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; \frac{611}{408}
+\end{array}\right)\end{split}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">(</span><span class="n">factor</span><span class="p">(</span><span class="mi">10062</span><span class="p">))</span>
+<span class="n">s</span><span class="p">(</span><span class="n">factor</span><span class="p">(</span><span class="mi">75335</span><span class="p">))</span>
+<span class="n">s</span><span class="p">(</span><span class="n">factor</span><span class="p">(</span><span class="mi">31434</span><span class="p">))</span>
+<span class="n">s</span><span class="p">(</span><span class="n">factor</span><span class="p">(</span><span class="mi">80002</span><span class="p">))</span>
+<span class="n">s</span><span class="p">(</span><span class="n">factor</span><span class="p">(</span><span class="mi">58357</span><span class="p">))</span>
+<span class="n">s</span><span class="p">(</span><span class="n">factor</span><span class="p">(</span><span class="mi">408</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 2 \cdot 3^{2} \cdot 13 \cdot 43\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 5 \cdot 13 \cdot 19 \cdot 61\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 2 \cdot 3 \cdot 13^{2} \cdot 31\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 2 \cdot 13 \cdot 17 \cdot 181\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 13 \cdot 67^{2}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 2^{3} \cdot 3 \cdot 17\]</div>
+</div>
+</div>
+</section>
 <section id="week-9">
-<h3><span class="section-number">14.5.2. </span>Week 9<a class="headerlink" href="#week-9" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">14.5.4. </span>Week 9<a class="headerlink" href="#week-9" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
+<span class="n">assume</span><span class="p">(</span><span class="n">t</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
+<span class="nb">bool</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">t</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="n">i</span><span class="p">),</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="n">oo</span><span class="p">,</span><span class="n">oo</span><span class="p">)</span><span class="o">==</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">i</span><span class="o">*</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="n">i</span><span class="o">*</span><span class="n">t</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">=</span><span class="n">matrix</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">])</span>
@@ -2350,7 +2553,9 @@ True
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-algebra">14.5. Linear Algebra</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">14.5.1. Review</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#week-9">14.5.2. Week 9</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-set-11">14.5.2. Problem Set 11</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#week-10">14.5.3. Week 10</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#week-9">14.5.4. Week 9</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differential-equations">14.6. Differential Equations</a><ul class="nav section-nav flex-column">
