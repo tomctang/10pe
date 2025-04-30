@@ -400,6 +400,7 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differential-equations">14.6. Differential Equations</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">14.6.1. Review</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#week-11">14.6.2. Week 11</a></li>
 </ul>
 </li>
 </ul>
@@ -2244,14 +2245,77 @@ True
 <h3><span class="section-number">14.5.2. </span>Problem Set 11<a class="headerlink" href="#problem-set-11" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">=</span><span class="n">matrix</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,[</span><span class="mi">19</span><span class="o">/</span><span class="mi">8</span><span class="o">-</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">8</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">13</span><span class="o">/</span><span class="mi">4</span><span class="o">-</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">8</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">19</span><span class="o">/</span><span class="mi">8</span><span class="o">-</span><span class="n">x</span><span class="p">])</span>
-<span class="n">s</span><span class="p">(</span><span class="n">expand</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">det</span><span class="p">()))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="mi">20</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">4</span><span class="o">-</span><span class="mi">85</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">3</span><span class="o">-</span><span class="mi">8037</span><span class="o">/</span><span class="mi">16</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="mi">5231</span><span class="o">/</span><span class="mi">16</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">33789</span><span class="o">/</span><span class="mi">128</span>
+<span class="n">f</span><span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-58727/256
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define the polynomials</span>
+<span class="n">R</span><span class="o">.&lt;</span><span class="n">x</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">QQ</span><span class="p">[]</span> <span class="c1"># Polynomial ring for rational field</span>
+<span class="n">f</span> <span class="o">=</span> <span class="mi">20</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">4</span><span class="o">-</span><span class="mi">85</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">3</span><span class="o">-</span><span class="mi">8037</span><span class="o">/</span><span class="mi">16</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="mi">5231</span><span class="o">/</span><span class="mi">16</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">33789</span><span class="o">/</span><span class="mi">128</span>
+<span class="n">g</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">5</span>
+
+<span class="c1"># Perform long division using quo_rem()</span>
+<span class="n">q</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">quo_rem</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>  <span class="c1"># q is the quotient, r is the remainder</span>
+
+<span class="c1"># Print the results</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Quotient: </span><span class="si">{</span><span class="n">q</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Remainder: </span><span class="si">{</span><span class="n">r</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Quotient: 10*x^3 - 35/2*x^2 - 9437/32*x - 36723/64
+Remainder: -333441/128
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="mi">8</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">4</span><span class="o">-</span><span class="mi">90</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">3</span><span class="o">-</span><span class="mi">5089</span><span class="o">/</span><span class="mi">16</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="mi">61009</span><span class="o">/</span><span class="mi">128</span>
+<span class="n">b</span><span class="o">=</span><span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">3</span><span class="o">+</span><span class="mi">71</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">-</span><span class="mi">104</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">3211</span><span class="o">/</span><span class="mi">32</span>
+<span class="n">c</span><span class="o">=</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">-</span><span class="mi">13</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">185</span><span class="o">/</span><span class="mi">16</span>
+<span class="n">s</span><span class="p">(</span><span class="n">expand</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span><span class="o">+</span><span class="n">c</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_latex math notranslate nohighlight">
-\[\displaystyle -x^{3} + 8 \, x^{2} - \frac{305}{16} \, x + \frac{425}{32} \qquad   \]</div>
+\[\displaystyle 20 \, x^{4} - 85 \, x^{3} - \frac{8037}{16} \, x^{2} + \frac{5231}{16} \, x + \frac{33789}{128} \qquad   \]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="n">y</span><span class="o">*</span><span class="p">(</span><span class="mi">13</span><span class="o">/</span><span class="mi">4</span><span class="o">-</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="mi">8</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">y</span><span class="o">-</span><span class="mi">45</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="o">+</span><span class="mi">247</span><span class="o">/</span><span class="mi">4</span><span class="o">*</span><span class="n">y</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">20</span><span class="o">-</span><span class="mi">8</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
+<span class="n">b</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">y</span><span class="o">-</span><span class="mi">45</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="o">+</span><span class="mi">247</span><span class="o">/</span><span class="mi">4</span><span class="o">*</span><span class="n">y</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">20</span><span class="o">-</span><span class="mi">8</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">expand</span><span class="p">(</span><span class="n">a</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="n">y</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="n">b</span><span class="o">^</span><span class="mi">2</span><span class="p">))</span> <span class="c1"># x=lambda</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{4 \, x^{4} y^{2}}{4 \, x^{2} - 20 \, x + 25} + x^{2} y^{2} - \frac{90 \, x^{3} y^{2}}{4 \, x^{2} - 20 \, x + 25} - \frac{4 \, x^{3} y^{2}}{2 \, x - 5} + \frac{4 \, x^{4} y^{2}}{{\left(2 \, x - 5\right)}^{2}} - \frac{13}{2} \, x y^{2} + \frac{4001 \, x^{2} y^{2}}{16 \, {\left(4 \, x^{2} - 20 \, x + 25\right)}} + \frac{71 \, x^{2} y^{2}}{2 \, {\left(2 \, x - 5\right)}} - \frac{11115 \, x y^{2}}{16 \, {\left(4 \, x^{2} - 20 \, x + 25\right)}} - \frac{104 \, x y^{2}}{2 \, x - 5} + \frac{2025 \, x^{2} y^{2}}{16 \, {\left(2 \, x - 5\right)}^{2}} + \frac{185}{16} \, y^{2} + \frac{61009 \, y^{2}}{256 \, {\left(4 \, x^{2} - 20 \, x + 25\right)}} + \frac{3211 \, y^{2}}{32 \, {\left(2 \, x - 5\right)}} + \frac{61009 \, y^{2}}{256 \, {\left(2 \, x - 5\right)}^{2}} \qquad   \]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;x y z&#39;</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">expand</span><span class="p">((</span><span class="mi">19</span><span class="o">-</span><span class="mi">8</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">y</span><span class="o">*</span><span class="p">(</span><span class="mi">13</span><span class="o">/</span><span class="mi">4</span><span class="o">-</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="n">z</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 8 \, x^{2} y - 45 \, x y + 8 \, x z + \frac{247}{4} \, y - 19 \, z \qquad   \]</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -2438,6 +2502,7 @@ True
 <h3><span class="section-number">14.6.1. </span>Review<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <p>Notes:</p>
 <ul class="simple">
+<li><p>For a first-order DE, <span class="math notranslate nohighlight">\(\frac{dy(t)}{dt}+q(t)y(t)=r(t)\text{ has a solution }y(t)=y(t_0)e^{-\int_{t_0}^t q(t')dt'}+e^{-\int_{t_0}^t q(t''')dt'''}\int_{t_0}^t dt'\,r(t') e^{\int_{t_0}^{t'}dt'' q(t'')}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(y(t)\)</span> Function Prototype, <span class="math notranslate nohighlight">\(t\)</span> Dependent Variable</p></li>
 <li><p><span class="math notranslate nohighlight">\(y\)</span> Function Name = Independent Variable</p></li>
 </ul>
@@ -2460,6 +2525,36 @@ True
 <img src="https://raw.githubusercontent.com/tomctang/NB_img/main/de10.png" alt="de8.png" width="450">
 <p>e.g.</p>
 <img src="https://raw.githubusercontent.com/tomctang/NB_img/main/de11.png" alt="de8.png" width="500">
+</section>
+<section id="week-11">
+<h3><span class="section-number">14.6.2. </span>Week 11<a class="headerlink" href="#week-11" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;t a&#39;</span><span class="p">)</span>
+<span class="n">assume</span><span class="p">(</span><span class="n">t</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">assume</span><span class="p">(</span><span class="n">a</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">t</span><span class="p">))</span>
+<span class="n">s</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="n">tan</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">a</span><span class="p">))</span>
+<span class="n">s</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">a</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{1}{2} i \, {\rm Ei}\left(i\right) - \frac{1}{2} i \, {\rm Ei}\left(-i\right) - \frac{1}{2} i \, {\rm Ei}\left(i \, t\right) + \frac{1}{2} i \, {\rm Ei}\left(-i \, t\right) \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle -\log\left({\left| \cos\left(a\right) \right|}\right) \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle -\frac{1}{6} \, a \cos\left(3 \, a\right) - \frac{1}{2} \, a \cos\left(a\right) + \frac{1}{18} \, \sin\left(3 \, a\right) + \frac{1}{2} \, \sin\left(a\right) \qquad   \]</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Failed</span> <span class="n">to</span> <span class="n">restart</span> <span class="n">the</span> <span class="n">Kernel</span><span class="o">.</span> 
+
+<span class="n">request</span> <span class="n">to</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">127.0.0.1</span><span class="p">:</span><span class="mi">8888</span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">kernels</span><span class="o">/</span><span class="mi">345</span><span class="n">f76ac</span><span class="o">-</span><span class="mf">941e-4</span><span class="n">e9e</span><span class="o">-</span><span class="mi">9</span><span class="n">c75</span><span class="o">-</span><span class="mi">2</span><span class="n">ec6ea3d1e53</span><span class="o">/</span><span class="n">restart</span><span class="err">?</span><span class="mi">1745479528192</span> <span class="n">failed</span><span class="p">,</span> <span class="n">reason</span><span class="p">:</span> <span class="n">connect</span> <span class="n">ECONNREFUSED</span> <span class="mf">127.0.0.1</span><span class="p">:</span><span class="mf">8888.</span> 
+
+<span class="n">View</span> <span class="n">Jupyter</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;command:jupyter.viewOutput&#39;</span><span class="o">&gt;</span><span class="n">log</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="k">for</span> <span class="n">further</span> <span class="n">details</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 </section>
@@ -2560,6 +2655,7 @@ True
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differential-equations">14.6. Differential Equations</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">14.6.1. Review</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#week-11">14.6.2. Week 11</a></li>
 </ul>
 </li>
 </ul>
