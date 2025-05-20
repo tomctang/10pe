@@ -815,14 +815,63 @@ document.write(`
 <h2><span class="section-number">14.2. </span>Midterm 1-3<a class="headerlink" href="#midterm-1-3" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="o">=</span><span class="n">integral</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">4</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">g</span><span class="o">=</span><span class="n">integral</span><span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">h</span><span class="o">=</span><span class="n">integral</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">),</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">n</span><span class="p">(</span><span class="n">h</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="n">f</span><span class="o">*</span><span class="n">g</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">(</span><span class="n">desolve</span><span class="p">((</span><span class="mi">6</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">y</span><span class="o">+</span><span class="mi">4</span><span class="o">*</span><span class="n">y</span><span class="o">^</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="n">diff</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">3</span><span class="o">+</span><span class="mi">6</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="o">^</span><span class="mi">2</span><span class="o">==</span><span class="mi">0</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">show_method</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;t x&#39;</span><span class="p">)</span>
+<span class="n">assume</span><span class="p">(</span><span class="n">t</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">3</span><span class="p">),</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">t</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span><span class="o">=</span><span class="n">function</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">desolve</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">y</span><span class="o">==</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">show_method</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">=</span><span class="n">matrix</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+<span class="n">B</span><span class="o">=</span><span class="n">matrix</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,[</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">14</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="o">-</span><span class="mi">8</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">24</span><span class="p">,</span><span class="mi">16</span><span class="p">])</span><span class="o">/</span><span class="mi">8</span>
+<span class="n">s</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">inverse</span><span class="p">()</span><span class="o">==</span><span class="n">B</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">=</span><span class="n">vector</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">B</span><span class="o">=</span><span class="n">vector</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">C</span><span class="o">=</span><span class="n">vector</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">cross_product</span><span class="p">(</span><span class="n">B</span><span class="p">)</span><span class="o">==</span><span class="n">C</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;t z&#39;</span><span class="p">)</span>
 <span class="n">s</span><span class="p">(</span><span class="n">diff</span><span class="p">((</span><span class="n">z</span><span class="o">-</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">t</span><span class="o">*</span><span class="n">z</span><span class="p">),</span><span class="n">z</span><span class="p">))</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle -i \, t {\left(x - z\right)} e^{\left(i \, t z\right)} + e^{\left(i \, t z\right)} \qquad   \]</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -831,10 +880,6 @@ document.write(`
 <span class="n">s</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="n">y</span><span class="o">^</span><span class="mi">2</span><span class="p">),</span><span class="n">y</span><span class="p">))</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle -\frac{2 \, y^{2}}{{\left(x^{2} + y^{2}\right)}^{2}} + \frac{1}{x^{2} + y^{2}} \qquad   \]</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -845,13 +890,6 @@ document.write(`
 <span class="n">plot</span><span class="p">((</span><span class="n">x</span><span class="o">^</span><span class="mi">5</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">ln</span><span class="p">(</span><span class="n">x</span><span class="p">),(</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">figsize</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle 3^{x} \log\left(3\right) \qquad   \]</div>
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle 1.07061470371541 \qquad   \]</div>
-<img alt="_images/d4aa77223a2ddc79dd4bf66cf5483806a8dcee0afc97707976a4fa07b0b973a0.png" src="_images/d4aa77223a2ddc79dd4bf66cf5483806a8dcee0afc97707976a4fa07b0b973a0.png" />
 </div>
 </div>
 </section>
@@ -1342,6 +1380,7 @@ document.write(`
 </li>
 </ul>
 <p><strong>diff btw C and L??</strong></p>
+ <img src="https://raw.githubusercontent.com/tomctang/NB_img/main/RLC.jpg" alt="eigen" width="800">
 </section>
 <section id="problem-set-11">
 <h3><span class="section-number">14.5.2. </span>Problem Set 11<a class="headerlink" href="#problem-set-11" title="Link to this heading">#</a></h3>
@@ -1554,13 +1593,155 @@ document.write(`
 <li><p>Logistic differential equations</p></li>
 <li><p>Systmes of linear differential equations</p></li>
 </ul>
+<p>Types of PDE</p>
+<img src="https://raw.githubusercontent.com/tomctang/NB_img/main/pde2.png" alt="Map of Math" width="700"> 
+<img src="https://raw.githubusercontent.com/tomctang/NB_img/main/pde1.png" alt="Map of Math" width="550"> 
+<p>Wu–Yang dictionary links concepts in particle physics (specifically gauge theory) and mathematics (differential geometry and fiber bundle theory)</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Particle Physics Term</p></th>
+<th class="head"><p>Mathematical Term</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Gauge Field</p></td>
+<td><p>Connection on a Fiber Bundle</p></td>
+<td><p>The gauge field, which describes interactions in gauge theories (e.g., electromagnetic or Yang-Mills fields), corresponds to a connection on a principal fiber bundle, defining how fields transform across space-time.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Gauge Potential (e.g., <span class="math notranslate nohighlight">\(A_\mu\)</span>​)</p></td>
+<td><p>Connection Form</p></td>
+<td><p>The gauge potential, a vector potential like the electromagnetic potential, is mathematically represented as a connection form, a differential form that encodes the connection on the bundle.</p></td>
+</tr>
+<tr class="row-even"><td><p>Field Strength (e.g., <span class="math notranslate nohighlight">\(F_{\mu\nu}\)</span>​)</p></td>
+<td><p>Curvature of the Connection</p></td>
+<td><p>The field strength tensor, which quantifies the strength of the gauge field (e.g., electromagnetic field tensor), corresponds to the curvature of the connection, a 2-form derived from the connection form.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Gauge Transformation</p></td>
+<td><p>Change of Local Trivialization (or Section)</p></td>
+<td><p>A gauge transformation, which adjusts the gauge potential to describe the same physical situation, is equivalent to changing the local trivialization or section of the fiber bundle, altering the coordinate system without changing the bundle’s structure.</p></td>
+</tr>
+<tr class="row-even"><td><p>Source (e.g., Electric Current)</p></td>
+<td><p>(No Direct Equivalent)</p></td>
+<td><p>In the original Wu-Yang dictionary, sources like electric currents were included but lacked a direct mathematical analogue, indicating a gap in the correspondence at the time. This later inspired mathematical developments, such as Donaldson theory.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Phase Factor (Nonintegrable)</p></td>
+<td><p>Holonomy</p></td>
+<td><p>The nonintegrable phase factor, as seen in phenomena like the Aharonov-Bohm effect, corresponds to holonomy, which describes the geometric phase acquired by a vector transported around a closed loop on the bundle.</p></td>
+</tr>
+<tr class="row-even"><td><p>Magnetic Monopole</p></td>
+<td><p>Nontrivial Fiber Bundle</p></td>
+<td><p>The magnetic monopole, such as the Wu-Yang monopole, is described by a nontrivial fiber bundle, where the bundle’s topology (e.g., Hopf fibration) prevents a global gauge choice, explaining quantization conditions.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
 <section id="week-12">
 <h3><span class="section-number">14.6.2. </span>Week 12<a class="headerlink" href="#week-12" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">function</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># Define y as a symbolic function of x</span>
-<span class="n">desolve</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="p">)</span><span class="o">==</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">show_method</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span><span class="o">=</span><span class="n">function</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">desolve</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">diff</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">x</span><span class="o">*</span><span class="n">diff</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="n">y</span><span class="o">==</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">ics</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mf">0.5</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">bool</span><span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="o">==-</span><span class="p">(</span><span class="n">k</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="o">-</span><span class="n">k</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">k</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dx_dt</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">k</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span>
+<span class="n">x</span><span class="o">=</span><span class="n">integral</span><span class="p">(</span><span class="n">dx_dt</span><span class="p">,</span><span class="n">t</span><span class="p">)</span> <span class="p">;</span> <span class="n">s</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{1}{2} \, k^{2} {\left(2 \, t - \sin\left(2 \, t\right)\right)} \qquad   \]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;k t y&#39;</span><span class="p">)</span>
+<span class="n">dy_dx</span><span class="o">=</span><span class="n">sqrt</span><span class="p">((</span><span class="n">k</span><span class="o">^</span><span class="mi">2</span><span class="o">-</span><span class="n">y</span><span class="p">)</span><span class="o">/</span><span class="n">y</span><span class="p">)</span>
+<span class="n">y</span><span class="o">=</span><span class="n">k</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span>
+<span class="n">dy_dt</span><span class="o">=</span><span class="n">diff</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">t</span><span class="p">)</span>
+<span class="n">dx_dt</span><span class="o">=</span><span class="n">dy_dt</span><span class="o">/</span><span class="n">dy_dx</span>
+<span class="n">s</span><span class="p">(</span><span class="n">dx_dt</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">dy_dx</span><span class="p">)</span>
+<span class="n">x</span><span class="o">=</span><span class="n">integral</span><span class="p">(</span><span class="n">dx_dt</span><span class="p">,</span><span class="n">t</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">dy_dt</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">dy_dx</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{2 \, k^{2} \cos\left(t\right) \sin\left(t\right)}{\sqrt{\frac{k^{2} - y}{y}}} \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \sqrt{\frac{k^{2} - y}{y}} \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle -\frac{k^{2} \cos\left(t\right)^{2}}{\sqrt{\frac{k^{2} - y}{y}}} \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 2 \, k^{2} \cos\left(t\right) \sin\left(t\right) \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \sqrt{\frac{k^{2} - y}{y}} \qquad   \]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="n">e</span><span class="o">^-</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">-</span><span class="mi">3</span><span class="p">),</span><span class="n">x</span><span class="p">)</span><span class="o">==</span><span class="n">e</span><span class="o">^-</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">2</span><span class="p">)))</span>
+<span class="n">s</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="n">integral</span><span class="p">((</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="n">e</span><span class="o">^-</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">)</span><span class="o">==</span><span class="n">e</span><span class="o">^-</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="mi">3</span><span class="o">-</span><span class="mi">11</span><span class="o">/</span><span class="mi">9</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">bool</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">((</span><span class="n">t</span><span class="o">/</span><span class="n">t_0</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="n">w_0</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">t_0</span><span class="o">^</span><span class="mi">4</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">t</span><span class="o">^</span><span class="mi">5</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="n">t_0</span><span class="o">^</span><span class="mi">5</span><span class="p">)))</span><span class="o">==</span><span class="n">t_0</span><span class="o">^</span><span class="mi">2</span><span class="o">/</span><span class="n">t</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">w_0</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">t_0</span><span class="o">^</span><span class="mi">5</span><span class="o">-</span><span class="n">t</span><span class="o">^</span><span class="mi">5</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">t</span><span class="o">^</span><span class="mi">5</span><span class="o">*</span><span class="n">t_0</span><span class="p">))</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span><span class="o">=</span><span class="n">function</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">desolve</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">y</span><span class="o">==</span><span class="n">e</span><span class="o">^-</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">show_method</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;t_0 t&#39;</span><span class="p">)</span>
+<span class="n">assume</span><span class="p">(</span><span class="n">t_0</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">assume</span><span class="p">(</span><span class="n">t</span><span class="o">&gt;</span><span class="n">t_0</span><span class="p">)</span>
+<span class="n">y</span><span class="o">=</span><span class="n">function</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">desolve</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">diff</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="o">-</span><span class="n">y</span><span class="o">^</span><span class="mi">3</span><span class="o">==</span><span class="mi">0</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">show_method</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+<span class="n">s</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">integral</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">t_0</span><span class="p">,</span><span class="n">t</span><span class="p">))</span>
+<span class="n">s</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">/</span><span class="n">x</span><span class="o">^</span><span class="mi">6</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">t_0</span><span class="p">,</span><span class="n">t</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;a b w_0&#39;</span><span class="p">)</span>
+<span class="n">y</span><span class="o">=</span><span class="n">function</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+<span class="c1"># a=ε &amp; b=σ</span>
+<span class="n">assume</span><span class="p">(</span><span class="n">a</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">assume</span><span class="p">(</span><span class="n">b</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">t_0</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
+<span class="n">s</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">t_0</span><span class="p">),</span><span class="n">x</span><span class="p">,</span><span class="n">t_0</span><span class="p">,</span><span class="n">t</span><span class="p">))</span>
+<span class="n">s</span><span class="p">(</span><span class="n">desolve</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="p">)</span><span class="o">==</span><span class="n">a</span><span class="o">*</span><span class="n">y</span><span class="o">-</span><span class="n">b</span><span class="o">*</span><span class="n">y</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">ivar</span><span class="o">=</span><span class="n">x</span><span class="p">,</span><span class="n">show_method</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+<span class="n">s</span><span class="p">(</span><span class="n">e</span><span class="o">^-</span><span class="n">integral</span><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">t_0</span><span class="p">,</span><span class="n">t</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">w_0</span><span class="o">+</span><span class="n">integral</span><span class="p">(</span><span class="n">e</span><span class="o">^-</span><span class="n">integral</span><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">t_0</span><span class="p">,</span><span class="n">x</span><span class="p">)</span><span class="o">*-</span><span class="mi">1</span><span class="o">*-</span><span class="n">b</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">t_0</span><span class="p">,</span><span class="n">t</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
@@ -1587,10 +1768,6 @@ document.write(`
 <span class="n">s</span><span class="p">(</span><span class="n">n</span><span class="p">(</span><span class="n">y</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)))</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle 0.925888965385744 \qquad   \]</div>
 </div>
 </div>
 <div class="cell docutils container">
