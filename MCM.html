@@ -398,7 +398,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#week-9">14.5.4. Week 9</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differential-equations">14.6. Differential Equations</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differential-equations-fourier-analysis">14.6. Differential Equations &amp; Fourier Analysis</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">14.6.1. Review</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#week-13">14.6.2. Week 13</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#week-12">14.6.3. Week 12</a></li>
@@ -1551,8 +1551,8 @@ document.write(`
 </div>
 </section>
 </section>
-<section id="differential-equations">
-<h2><span class="section-number">14.6. </span>Differential Equations<a class="headerlink" href="#differential-equations" title="Link to this heading">#</a></h2>
+<section id="differential-equations-fourier-analysis">
+<h2><span class="section-number">14.6. </span>Differential Equations &amp; Fourier Analysis<a class="headerlink" href="#differential-equations-fourier-analysis" title="Link to this heading">#</a></h2>
 <section id="id5">
 <h3><span class="section-number">14.6.1. </span>Review<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <p>Notes:</p>
@@ -1648,6 +1648,161 @@ Five Easy Pieces(Non-linear ODE)</p></li>
 </table>
 </div>
 <img src="https://raw.githubusercontent.com/tomctang/NB_img/main/planes.png" alt="Map of Math" width="650"> 
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Aspect</p></th>
+<th class="head"><p>Classical Mechanics</p></th>
+<th class="head"><p>Quantum Mechanics</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Definition</p></td>
+<td><p>Describes the motion of macroscopic objects using Newton’s laws and deterministic principles.</p></td>
+<td><p>Governs the behavior of particles at atomic and subatomic scales using probabilistic principles.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Scale</p></td>
+<td><p>Macroscopic (e.g., planets, cars, projectiles).</p></td>
+<td><p>Microscopic (e.g., atoms, electrons, photons).</p></td>
+</tr>
+<tr class="row-even"><td><p>Nature of Motion</p></td>
+<td><p>Deterministic: Future states can be precisely predicted given initial conditions.</p></td>
+<td><p>Probabilistic: Outcomes are described by probabilities (wave functions).</p></td>
+</tr>
+<tr class="row-odd"><td><p>Key Principles</p></td>
+<td><p>- Newton’s Laws of Motion<br>- Conservation of energy, momentum<br>- Continuous motion</p></td>
+<td><p>- Wave-particle duality<br>- Uncertainty principle<br>- Superposition<br>- Quantization</p></td>
+</tr>
+<tr class="row-even"><td><p>Position and Momentum</p></td>
+<td><p>Can be measured simultaneously with arbitrary precision.</p></td>
+<td><p>Subject to Heisenberg’s Uncertainty Principle (cannot measure both precisely at once).</p></td>
+</tr>
+<tr class="row-odd"><td><p>Energy</p></td>
+<td><p>Continuous energy levels.</p></td>
+<td><p>Quantized energy levels (discrete values).</p></td>
+</tr>
+<tr class="row-even"><td><p>Wave-Particle Duality</p></td>
+<td><p>Objects are either particles or waves, not both.</p></td>
+<td><p>Particles exhibit both wave-like and particle-like properties (e.g., electrons, light).</p></td>
+</tr>
+<tr class="row-odd"><td><p>Mathematical Framework</p></td>
+<td><p>Uses differential equations (e.g., F = ma).</p></td>
+<td><p>Uses wave functions, Schrödinger equation, and matrix mechanics.</p></td>
+</tr>
+<tr class="row-even"><td><p>Measurement</p></td>
+<td><p>Measurement does not affect the system’s state.</p></td>
+<td><p>Measurement collapses the wave function, altering the system’s state.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Superposition</p></td>
+<td><p>Not applicable; objects exist in one definite state.</p></td>
+<td><p>Particles exist in multiple states simultaneously until measured.</p></td>
+</tr>
+<tr class="row-even"><td><p>Entanglement</p></td>
+<td><p>Not applicable.</p></td>
+<td><p>Quantum systems can be entangled, sharing special correlations regardless of distance.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Examples of Phenomena</p></td>
+<td><p>- Planetary orbits<br>- Pendulum motion<br>- Projectile motion</p></td>
+<td><p>- Electron orbitals in atoms<br>- Quantum tunneling<br>- Superconductivity</p></td>
+</tr>
+<tr class="row-even"><td><p>Key Figures</p></td>
+<td><p>Isaac Newton, Lagrange, Hamilton</p></td>
+<td><p>Max Planck, Werner Heisenberg, Erwin Schrödinger, Niels Bohr</p></td>
+</tr>
+<tr class="row-odd"><td><p>Applications</p></td>
+<td><p>Engineering, astronomy, mechanics of everyday objects.</p></td>
+<td><p>Quantum computing, semiconductors, lasers, MRI, atomic clocks.</p></td>
+</tr>
+<tr class="row-even"><td><p>Limitations</p></td>
+<td><p>Fails at very small scales or high speeds (near the speed of light).</p></td>
+<td><p>Complex calculations; less intuitive for macroscopic systems.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Five quantum behaviours:</p>
+<ol class="arabic simple">
+<li><p>Wave-particle duality: Tiny particles look like they are behaving like waves or particles, depending on how you observe them.</p></li>
+<li><p>Superposition: In the quantum world, particles can exist in multiple states at once.</p></li>
+<li><p>The Heisenberg uncertainty principle: Nature imposes a fundamental limit on how precisely you can measure something. (You can’t measure certain pairs of properties at the same time with unlimited precision.)</p></li>
+<li><p>Entanglement: Two things can be so interconnected that they influence each other, regardless of distance apart.</p></li>
+<li><p>Spin: Spin is a fundamental characteristic of elementary particles. Like mass or charge, spin determines a particle’s behavior and interaction with other particles.</p></li>
+</ol>
+<p>Further comparison btw Classical and Quantum in terms of Math</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Aspect</strong></p></th>
+<th class="head"><p><strong>Classical Mechanics</strong></p></th>
+<th class="head"><p><strong>Quantum Mechanics</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Core Mathematical Framework</strong></p></td>
+<td><p>Newtonian mechanics, Lagrangian, or Hamiltonian formulations with differential equations.</p></td>
+<td><p>Wave functions, operators, and matrix mechanics, governed by the Schrödinger equation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Key Equations</strong></p></td>
+<td><p>- Newton’s Second Law: <span class="math notranslate nohighlight">\( F = ma \)</span> <br> - Lagrangian: <span class="math notranslate nohighlight">\( L = T - V \)</span> <br> - Hamiltonian: <span class="math notranslate nohighlight">\( H = T + V \)</span> <br> - Equations of motion (e.g., <span class="math notranslate nohighlight">\( \ddot{x} = -\frac{k}{m}x \)</span> for harmonic oscillator)</p></td>
+<td><p>- Time-dependent Schrödinger Equation: <span class="math notranslate nohighlight">\( i\hbar \frac{\partial \psi}{\partial t} = \hat{H}\psi \)</span> <br> - Time-independent: <span class="math notranslate nohighlight">\( \hat{H}\psi = E\psi \)</span> <br> - Heisenberg equation: <span class="math notranslate nohighlight">\( \frac{d\hat{A}}{dt} = \frac{i}{\hbar}[\hat{H}, \hat{A}] + \frac{\partial \hat{A}}{\partial t} \)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Variables</strong></p></td>
+<td><p>Position (<span class="math notranslate nohighlight">\( x \)</span>), velocity (<span class="math notranslate nohighlight">\( v \)</span>), acceleration (<span class="math notranslate nohighlight">\( a \)</span>), momentum (<span class="math notranslate nohighlight">\( p = mv \)</span>).</p></td>
+<td><p>Wave function (<span class="math notranslate nohighlight">\( \psi \)</span>), probability density (<span class="math notranslate nohighlight">\(\mid \psi \mid^2\)</span>).</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Nature of Variables</strong></p></td>
+<td><p>Continuous and deterministic.</p></td>
+<td><p>Probabilistic; wave function describes probability amplitudes.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Mathematical Tools</strong></p></td>
+<td><p>- Ordinary differential equations (ODEs) <br> - Calculus of variations <br> - Phase space trajectories</p></td>
+<td><p>- Partial differential equations (PDEs) <br> - Linear algebra (matrices, eigenvectors) <br> - Hilbert space</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>State Representation</strong></p></td>
+<td><p>Precise coordinates in phase space (position and momentum).</p></td>
+<td><p>Wave function <span class="math notranslate nohighlight">\( \psi(x,t) \)</span> in a complex Hilbert space.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Time Evolution</strong></p></td>
+<td><p>Deterministic via Newton’s laws or Hamilton’s equations.</p></td>
+<td><p>Probabilistic via the Schrödinger equation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Operators</strong></p></td>
+<td><p>Not used; variables are directly measurable.</p></td>
+<td><p>Observables are Hermitian operators (e.g., position <span class="math notranslate nohighlight">\( \hat{x} \)</span>, momentum <span class="math notranslate nohighlight">\( \hat{p} \)</span>).</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Commutation Relations</strong></p></td>
+<td><p>Variables commute (e.g., <span class="math notranslate nohighlight">\( xp = px \)</span>).</p></td>
+<td><p>Non-commutative operators, e.g., <span class="math notranslate nohighlight">\( [\hat{x}, \hat{p}] = i\hbar \)</span>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Energy Representation</strong></p></td>
+<td><p>Energy as a scalar: <span class="math notranslate nohighlight">\( E = T + V \)</span>.</p></td>
+<td><p>Energy via Hamiltonian operator: <span class="math notranslate nohighlight">\( \hat{H}\psi = E\psi \)</span>.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Probability</strong></p></td>
+<td><p>Not probabilistic; motion is fully predictable.</p></td>
+<td><p>Probabilistic; probability density given by <span class="math notranslate nohighlight">\( \mid \psi \mid^2 \)</span>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Quantization</strong></p></td>
+<td><p>Continuous variables (energy, position, etc.).</p></td>
+<td><p>Quantized observables (e.g., discrete energy levels).</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Boundary Conditions</strong></p></td>
+<td><p>Define specific solutions to differential equations.</p></td>
+<td><p>Constrain wave function (e.g., normalization, continuity).</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Examples of Calculations</strong></p></td>
+<td><p>- Projectile trajectory: <span class="math notranslate nohighlight">\( x(t) = x_0 + v_0 t + \frac{1}{2} a t^2 \)</span> <br> - Harmonic oscillator: <span class="math notranslate nohighlight">\( \omega = \sqrt{k/m} \)</span></p></td>
+<td><p>- Hydrogen atom energy levels: <span class="math notranslate nohighlight">\( E_n = -\frac{13.6}{n^2} \)</span> eV <br> - Quantum tunneling probabilities</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Coordinate System</strong></p></td>
+<td><p>Cartesian or generalized coordinates in configuration space.</p></td>
+<td><p>Abstract Hilbert space or position/momentum representations.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Complex Numbers</strong></p></td>
+<td><p>Rarely used; real-valued quantities dominate.</p></td>
+<td><p>Essential; wave functions are complex-valued.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
 <section id="week-13">
 <h3><span class="section-number">14.6.2. </span>Week 13<a class="headerlink" href="#week-13" title="Link to this heading">#</a></h3>
@@ -2167,7 +2322,7 @@ Five Easy Pieces(Non-linear ODE)</p></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#week-9">14.5.4. Week 9</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differential-equations">14.6. Differential Equations</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differential-equations-fourier-analysis">14.6. Differential Equations &amp; Fourier Analysis</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">14.6.1. Review</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#week-13">14.6.2. Week 13</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#week-12">14.6.3. Week 12</a></li>
