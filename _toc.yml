@@ -24,13 +24,13 @@ parts:
 - caption: CS & Physics
   numbered: true
   chapters:
-  - file: MIT_CS6001-Python
-  - file: MIT_CS6002-thinking
-  - file: MCM
+  - file: Course_MIT6001Python
+  - file: Course_MIT6002thinking
+  - file: Course_MCM
   
 - caption: Notebook
   numbered: true
   chapters:
-  - file: nb_Jonny_notebook
+  - file: nb_past_courses
   - file: nb_Geo
   - file: nb_lottery_simulator
