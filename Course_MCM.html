@@ -516,6 +516,38 @@ document.write(`
 <li><p>Frullani Integral(useful) : <span class="math notranslate nohighlight">\(\large\int_0^{\infty}\mathrm{d}x\frac{f(ax)-f(bx)}{x}=(f(0)-f(\infty))\ln{\frac{b}{a}}\)</span></p></li>
 <li><p>All Pythagorean triplets can be found by using the formula <span class="math notranslate nohighlight">\(z\)</span> -&gt; <span class="math notranslate nohighlight">\(z^2\)</span> where <span class="math notranslate nohighlight">\(z\)</span> is a complex number. The method also requires multiplying by <span class="math notranslate nohighlight">\(\frac{1}{2}\)</span> or integers.</p></li>
 </ul>
+<p>Trigonometric Substitutions</p>
+<ul>
+<li><ol class="arabic simple">
+<li><p>For integrals containing a term <span class="math notranslate nohighlight">\(ax+b\)</span>, use <span class="math notranslate nohighlight">\(u=ax+b\)</span></p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="2">
+<li><p>For integrals containing a term <span class="math notranslate nohighlight">\(\sqrt{a^2-x^2}\)</span>, use <span class="math notranslate nohighlight">\(x=a\sin{\theta}\text{ or }x=a\cos{\theta}\)</span></p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="3">
+<li><p>For integrals containing a term <span class="math notranslate nohighlight">\(\sqrt{a^2+x^2}\)</span>, use <span class="math notranslate nohighlight">\(x=a\sinh{u}\text{ or }x=a\tan{\theta}\)</span></p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="4">
+<li><p>For integrals containing a term <span class="math notranslate nohighlight">\(\sqrt{x^2-a^2}\)</span>, use <span class="math notranslate nohighlight">\(x=a\cosh{u}\)</span></p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="5">
+<li><p>For integrals <span class="math notranslate nohighlight">\(\int\frac{1}{a+b\cos{\theta}}\)</span> or <span class="math notranslate nohighlight">\(\int\frac{1}{a+b\sin{\theta}}\)</span>, use t-formula</p></li>
+</ol>
+<ul class="simple">
+<li><p>Substitution : <span class="math notranslate nohighlight">\(t=\tan{\frac{\theta}{2}}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\sin{\theta}=\frac{2t}{1+t^2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\cos{\theta}=\frac{1-t^2}{1+t^2}\)</span></p></li>
+</ul>
+</li>
+<li><ol class="arabic simple" start="6">
+<li><p>For integrals <span class="math notranslate nohighlight">\(\large\int\frac{1}{(px+q)\sqrt{ax^2+bx+c}}\)</span>, use <span class="math notranslate nohighlight">\(\frac{1}{u}=px+q\)</span></p></li>
+</ol>
+</li>
+</ul>
 <p>To find the area bounded by a parametric curve, go to <a class="reference internal" href="Alevel_math_further.html#module-5-further-applications-of-integration"><span class="std std-ref">A-level-further-Module-5</span></a></p>
 <ul>
 <li><p>Mass for sphere :</p>
@@ -2302,6 +2334,14 @@ Five Easy Pieces(Non-linear ODE)</p></li>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle -\left(\frac{2}{13} i - \frac{3}{13}\right) \, e^{\left(i \, t\right)} \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \left(\frac{3}{13} i + \frac{2}{13}\right) \, e^{\left(i \, t\right)} \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle e^{\left(i \, t\right)} \qquad   \]</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2309,6 +2349,25 @@ Five Easy Pieces(Non-linear ODE)</p></li>
 <span class="n">var</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
 <span class="n">y</span><span class="o">=</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
 <span class="nb">bool</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">diff</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="n">diff</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">y</span><span class="o">==</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">t</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Q7</span>
+<span class="n">var</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
+<span class="nb">bool</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">i</span><span class="o">/</span><span class="mi">13</span><span class="o">+</span><span class="mi">2</span><span class="o">/</span><span class="mi">13</span><span class="p">)</span><span class="o">==</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -2321,6 +2380,10 @@ Five Easy Pieces(Non-linear ODE)</p></li>
 <span class="n">s</span><span class="p">(</span><span class="n">desolve</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">diff</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="n">diff</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">y</span><span class="o">==</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">t</span><span class="p">),</span><span class="n">y</span><span class="p">,</span><span class="n">show_method</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \left[{\left(K_{2} \cos\left(\frac{1}{8} \, \sqrt{23} t\right) + K_{1} \sin\left(\frac{1}{8} \, \sqrt{23} t\right)\right)} e^{\left(-\frac{3}{8} \, t\right)} - \left(\frac{3}{13} i + \frac{2}{13}\right) \, e^{\left(i \, t\right)}, \text{\texttt{variationofparameters}}\right] \qquad   \]</div>
 </div>
 </div>
 <div class="cell docutils container">
