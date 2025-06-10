@@ -483,7 +483,7 @@ document.write(`
 </section>
 <section id="module-1-ode-applications">
 <h3><span class="section-number">5.2.2. </span>Module 1 - ODE Applications<a class="headerlink" href="#module-1-ode-applications" title="Link to this heading">#</a></h3>
-<p>Notes</p>
+<p>‘Notes</p>
 <ul class="simple">
 <li><p>Hooke’s Law : When the extensions is <span class="math notranslate nohighlight">\(x\)</span>, the natural length of the spring is <span class="math notranslate nohighlight">\(l\)</span> and the tension is <span class="math notranslate nohighlight">\(T\)</span>, <span class="math notranslate nohighlight">\(x \propto Tl\)</span> which can also be written as <span class="math notranslate nohighlight">\(T=\frac{\lambda x}{l}\)</span> where <span class="math notranslate nohighlight">\(\lambda\)</span> is the spring constant. (<span class="math notranslate nohighlight">\(F=kx\)</span>)</p></li>
 <li><p>Properties of SHM(Simple Harmonic Motion)</p>
@@ -498,9 +498,25 @@ document.write(`
 <li><p>For pendulums, the 2nd order non-linear ODE as there is a <span class="math notranslate nohighlight">\(\sin{\theta}\)</span>.</p>
 <ul>
 <li><p>Because of this, it is only SHM for small <span class="math notranslate nohighlight">\(\theta\)</span> as when it is like that, <span class="math notranslate nohighlight">\(\sin{\theta}\approx\theta\)</span>. After solving it, the general solution is <span class="math notranslate nohighlight">\(\theta=A\cos{\omega t}+B\sin{\omega t}\)</span> where <span class="math notranslate nohighlight">\(\omega=\sqrt{\frac{g}{l}}\)</span></p></li>
+<li><p>For angular amplitude, convert from degrees into radians by multiplying by <span class="math notranslate nohighlight">\(\frac{\pi}{180}\)</span>.</p></li>
+<li><p>For approximate period, <span class="math notranslate nohighlight">\(k=\frac{2\pi}{\omega}\)</span>.</p></li>
+<li><p>The max angular speed is <span class="math notranslate nohighlight">\(a\omega\)</span> in radians per second.</p></li>
 </ul>
 </li>
 </ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;A B&#39;</span><span class="p">)</span>
+<span class="n">x</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">=</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="n">B</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">t</span><span class="p">))</span>
+<span class="n">s</span><span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="n">t</span><span class="p">),</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="n">t</span><span class="p">),</span><span class="n">t</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle {\left(A \cos\left(2 \, t\right) + B \sin\left(2 \, t\right)\right)} e^{\left(-t\right)} \qquad   -{\left(A \cos\left(2 \, t\right) + B \sin\left(2 \, t\right)\right)} e^{\left(-t\right)} + 2 \, {\left(B \cos\left(2 \, t\right) - A \sin\left(2 \, t\right)\right)} e^{\left(-t\right)} \qquad   \]</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">=</span><span class="mf">0.5</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">160</span><span class="p">)</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
