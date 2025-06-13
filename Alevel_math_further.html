@@ -419,7 +419,9 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="a-level-further">
 <h1><span class="section-number">5. </span>A-level-further<a class="headerlink" href="#a-level-further" title="Link to this heading">#</a></h1>
 <ol class="arabic simple">
-<li><p>Notes go downwards in cells and cells go upwards in sections. 2) Cells with formulas are at top of each section. 3) Used Languages : MMA, Sage, Python(for number calculations)</p></li>
+<li><p>Notes go downwards in cells; cells go upwards in sections.</p></li>
+<li><p>Cells with formulas are at top of each section.</p></li>
+<li><p>Used Languages : MMA, Sage, Python(for number calculations)</p></li>
 </ol>
 <section id="test-coding">
 <h2><span class="section-number">5.1. </span>test coding<a class="headerlink" href="#test-coding" title="Link to this heading">#</a></h2>
@@ -483,7 +485,7 @@ document.write(`
 </section>
 <section id="module-1-ode-applications">
 <h3><span class="section-number">5.2.2. </span>Module 1 - ODE Applications<a class="headerlink" href="#module-1-ode-applications" title="Link to this heading">#</a></h3>
-<p>‘Notes</p>
+<p>Notes</p>
 <ul class="simple">
 <li><p>Hooke’s Law : When the extensions is <span class="math notranslate nohighlight">\(x\)</span>, the natural length of the spring is <span class="math notranslate nohighlight">\(l\)</span> and the tension is <span class="math notranslate nohighlight">\(T\)</span>, <span class="math notranslate nohighlight">\(x \propto Tl\)</span> which can also be written as <span class="math notranslate nohighlight">\(T=\frac{\lambda x}{l}\)</span> where <span class="math notranslate nohighlight">\(\lambda\)</span> is the spring constant. (<span class="math notranslate nohighlight">\(F=kx\)</span>)</p></li>
 <li><p>Properties of SHM(Simple Harmonic Motion)</p>
@@ -506,8 +508,118 @@ document.write(`
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="o">-</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">t</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">-</span><span class="n">cos</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">t</span><span class="p">))</span><span class="o">/</span><span class="mi">12</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/646f349e71e48136d91f710624b9849c212abca2db55193353cb10e0f3456da2.png" src="_images/646f349e71e48136d91f710624b9849c212abca2db55193353cb10e0f3456da2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;A B&#39;</span><span class="p">)</span>
-<span class="n">x</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">=</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="n">B</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">t</span><span class="p">))</span>
+<span class="n">y</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">=</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="n">B</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">t</span><span class="p">))</span><span class="o">+</span><span class="n">sin</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">/</span><span class="mi">4</span><span class="o">-</span><span class="mi">5</span><span class="o">/</span><span class="mi">4</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+<span class="n">v</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">=</span><span class="n">diff</span><span class="p">(</span><span class="n">y</span><span class="p">(</span><span class="n">t</span><span class="p">),</span><span class="n">t</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">y</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="n">v</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle A - \frac{5}{4} \qquad   -2 \, A + 5 \, B + \frac{5}{4} \qquad   \]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;a b&#39;</span><span class="p">)</span>
+<span class="n">y</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">=</span><span class="n">a</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="n">b</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+<span class="n">v</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">=</span><span class="n">diff</span><span class="p">(</span><span class="n">y</span><span class="p">(</span><span class="n">t</span><span class="p">),</span><span class="n">t</span><span class="p">)</span>
+<span class="n">a</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">=</span><span class="n">diff</span><span class="p">(</span><span class="n">v</span><span class="p">(</span><span class="n">t</span><span class="p">),</span><span class="n">t</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">a</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="mi">4</span><span class="o">*</span><span class="n">v</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="mi">29</span><span class="o">*</span><span class="n">y</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 20 \, a \cos\left(5 \, t\right) + 4 \, b \cos\left(5 \, t\right) + 4 \, a \sin\left(5 \, t\right) - 20 \, b \sin\left(5 \, t\right) \qquad   \]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;A B&#39;</span><span class="p">)</span>
+<span class="n">w</span><span class="o">=</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">x</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">=</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">w</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="n">B</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">w</span><span class="o">*</span><span class="n">t</span><span class="p">))</span>
+<span class="n">v</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">=</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="n">t</span><span class="p">),</span><span class="n">t</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="n">v</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle A \qquad   \frac{1}{2} \, \sqrt{7} B - \frac{1}{2} \, A \qquad   \]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;A B&#39;</span><span class="p">)</span>
+<span class="n">x</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">=</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="n">B</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="n">v</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">=</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="n">v</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle A \qquad   -2 \, A + B \qquad   \]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;A B&#39;</span><span class="p">)</span>
+<span class="n">w</span><span class="o">=</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">171</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">x</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">=</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*-</span><span class="mi">10</span><span class="o">/</span><span class="n">w</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">w</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+<span class="n">v</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">=</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">n</span><span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="mi">2</span><span class="p">)),</span><span class="n">n</span><span class="p">(</span><span class="n">v</span><span class="p">(</span><span class="mi">2</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle -0.0371945416154040 \qquad   -0.378642782574795 \qquad   \]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;A B&#39;</span><span class="p">)</span>
+<span class="n">x</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">=</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="n">B</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">t</span><span class="p">))</span>
+<span class="n">s</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle t \ {\mapsto}\ -\frac{1}{2} \, {\left(A \cos\left(5 \, t\right) + B \sin\left(5 \, t\right)\right)} e^{\left(-\frac{1}{2} \, t\right)} + 5 \, {\left(B \cos\left(5 \, t\right) - A \sin\left(5 \, t\right)\right)} e^{\left(-\frac{1}{2} \, t\right)} \qquad   \]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;A B&#39;</span><span class="p">)</span>
+<span class="n">x</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">=</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">B</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">s</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle t \ {\mapsto}\ -2 \, {\left(A \cos\left(\frac{1}{2} \, t\right) + B \sin\left(\frac{1}{2} \, t\right)\right)} e^{\left(-2 \, t\right)} + \frac{1}{2} \, {\left(B \cos\left(\frac{1}{2} \, t\right) - A \sin\left(\frac{1}{2} \, t\right)\right)} e^{\left(-2 \, t\right)} \qquad   \]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;A B&#39;</span><span class="p">)</span>
+<span class="n">x</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">=</span><span class="n">e</span><span class="o">^-</span><span class="n">t</span><span class="o">*</span><span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="n">B</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">t</span><span class="p">))</span>
 <span class="n">s</span><span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="n">t</span><span class="p">),</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="n">t</span><span class="p">),</span><span class="n">t</span><span class="p">))</span>
 </pre></div>
 </div>
