@@ -475,12 +475,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle 0.2927 \qquad   \]</div>
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle 0.5714 \qquad   \]</div>
-</div>
 </div>
 </section>
 <section id="module-1-ode-applications">
@@ -508,13 +502,38 @@ document.write(`
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="o">-</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">t</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">-</span><span class="n">cos</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">t</span><span class="p">))</span><span class="o">/</span><span class="mi">12</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;A B&#39;</span><span class="p">)</span>
+<span class="n">x</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">=</span><span class="n">e</span><span class="o">^</span><span class="n">t</span><span class="o">*</span><span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="n">B</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">t</span><span class="p">))</span><span class="o">+</span><span class="mi">4</span><span class="o">/</span><span class="mi">5</span>
+<span class="n">y</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">=</span><span class="n">e</span><span class="o">^</span><span class="n">t</span><span class="o">*</span><span class="p">(</span><span class="n">B</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">-</span><span class="n">A</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">t</span><span class="p">))</span><span class="o">+</span><span class="mi">1</span><span class="o">/</span><span class="mi">10</span>
+<span class="n">s</span><span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="n">y</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/646f349e71e48136d91f710624b9849c212abca2db55193353cb10e0f3456da2.png" src="_images/646f349e71e48136d91f710624b9849c212abca2db55193353cb10e0f3456da2.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle A + \frac{4}{5} \qquad   B + \frac{1}{10} \qquad   \]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;A B&#39;</span><span class="p">)</span>
+<span class="n">x</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">=</span><span class="n">e</span><span class="o">^</span><span class="n">t</span><span class="o">*</span><span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">t</span><span class="o">+</span><span class="n">B</span><span class="p">)</span>
+<span class="n">y</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">=</span><span class="n">e</span><span class="o">^</span><span class="n">t</span><span class="o">*</span><span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">t</span><span class="o">+</span><span class="n">B</span><span class="o">-</span><span class="n">A</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="n">y</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle B \qquad   -A + B \qquad   \]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="o">-</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">t</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">-</span><span class="n">cos</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">t</span><span class="p">))</span><span class="o">/</span><span class="mi">12</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -525,10 +544,6 @@ document.write(`
 <span class="n">s</span><span class="p">(</span><span class="n">y</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="n">v</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle A - \frac{5}{4} \qquad   -2 \, A + 5 \, B + \frac{5}{4} \qquad   \]</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -541,10 +556,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle 20 \, a \cos\left(5 \, t\right) + 4 \, b \cos\left(5 \, t\right) + 4 \, a \sin\left(5 \, t\right) - 20 \, b \sin\left(5 \, t\right) \qquad   \]</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -556,10 +567,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle A \qquad   \frac{1}{2} \, \sqrt{7} B - \frac{1}{2} \, A \qquad   \]</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -569,10 +576,6 @@ document.write(`
 <span class="n">s</span><span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="n">v</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle A \qquad   -2 \, A + B \qquad   \]</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -585,10 +588,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle -0.0371945416154040 \qquad   -0.378642782574795 \qquad   \]</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -597,10 +596,6 @@ document.write(`
 <span class="n">s</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">))</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle t \ {\mapsto}\ -\frac{1}{2} \, {\left(A \cos\left(5 \, t\right) + B \sin\left(5 \, t\right)\right)} e^{\left(-\frac{1}{2} \, t\right)} + 5 \, {\left(B \cos\left(5 \, t\right) - A \sin\left(5 \, t\right)\right)} e^{\left(-\frac{1}{2} \, t\right)} \qquad   \]</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -611,10 +606,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle t \ {\mapsto}\ -2 \, {\left(A \cos\left(\frac{1}{2} \, t\right) + B \sin\left(\frac{1}{2} \, t\right)\right)} e^{\left(-2 \, t\right)} + \frac{1}{2} \, {\left(B \cos\left(\frac{1}{2} \, t\right) - A \sin\left(\frac{1}{2} \, t\right)\right)} e^{\left(-2 \, t\right)} \qquad   \]</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -624,10 +615,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle {\left(A \cos\left(2 \, t\right) + B \sin\left(2 \, t\right)\right)} e^{\left(-t\right)} \qquad   -{\left(A \cos\left(2 \, t\right) + B \sin\left(2 \, t\right)\right)} e^{\left(-t\right)} + 2 \, {\left(B \cos\left(2 \, t\right) - A \sin\left(2 \, t\right)\right)} e^{\left(-t\right)} \qquad   \]</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -636,22 +623,12 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle -0.4999 \qquad   0.4577 \qquad   \]</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span><span class="o">=</span><span class="mi">49</span><span class="o">/</span><span class="mi">5</span>
 <span class="n">x</span><span class="o">=</span><span class="mf">0.6</span><span class="o">*</span><span class="n">g</span><span class="o">/</span><span class="mi">20</span><span class="p">;</span><span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">16</span><span class="p">))</span>
 <span class="n">x</span><span class="o">=</span><span class="n">g</span><span class="o">/</span><span class="mi">160</span><span class="p">;</span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.2940
-49/800
 </pre></div>
 </div>
 </div>
@@ -1221,23 +1198,6 @@ $<span class="math notranslate nohighlight">\(2\dfrac{\mathrm{d}^2y}{\mathrm{d}x
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle -2 \, \cos\left(x\right) + 2 \qquad   \]</div>
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle 2 \, \sin\left(x\right) \qquad   \]</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.28318530717959
-</pre></div>
-</div>
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle 6.766 \qquad   \]</div>
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle 4.000 \qquad   \]</div>
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle 15.32 \qquad   \]</div>
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle 0.561780937429039 \qquad   \]</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1248,19 +1208,6 @@ $<span class="math notranslate nohighlight">\(2\dfrac{\mathrm{d}^2y}{\mathrm{d}x
 <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">integral</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)),</span><span class="n">x</span><span class="p">,</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">pi</span><span class="p">),</span><span class="mi">16</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">(</span><span class="mi">8</span><span class="o">*</span><span class="n">integral</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">),</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="mi">16</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="n">sech</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="mi">16</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle \sec\left(x\right) \tan\left(x\right) \qquad   \]</div>
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle \log\left(\sec\left(x\right) + \tan\left(x\right)\right) \qquad   \]</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5493
-3.526
-5.657
-23.66
-0.8658
 </pre></div>
 </div>
 </div>
@@ -1276,18 +1223,6 @@ $<span class="math notranslate nohighlight">\(2\dfrac{\mathrm{d}^2y}{\mathrm{d}x
 <span class="n">s</span><span class="p">(</span><span class="n">expand</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">ln</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">sec</span><span class="p">(</span><span class="n">x</span><span class="p">))),</span><span class="n">x</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="p">))</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12.407407
-12.407407
-6.8224793
-3.4641016
-16.536292
-3/2
-</pre></div>
-</div>
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle \frac{\sec\left(x\right)^{2} \tan\left(x\right)^{2}}{4 \, {\left| \sec\left(x\right) \right|}^{4} \cos\left(\overline{x}\right)^{2}} + \frac{\sec\left(x\right)^{2} \tan\left(x\right) \tan\left(\overline{x}\right)}{2 \, {\left| \sec\left(x\right) \right|}^{4} \cos\left(\overline{x}\right)^{2}} + \frac{\sec\left(x\right)^{2} \tan\left(\overline{x}\right)^{2}}{4 \, {\left| \sec\left(x\right) \right|}^{4} \cos\left(\overline{x}\right)^{2}} \qquad   \]</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -1318,10 +1253,6 @@ $<span class="math notranslate nohighlight">\(2\dfrac{\mathrm{d}^2y}{\mathrm{d}x
 <span class="n">s</span><span class="p">(</span><span class="n">n</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">9</span><span class="o">*</span><span class="n">pi</span><span class="p">)</span><span class="o">-</span><span class="n">f</span><span class="p">(</span><span class="mi">33</span><span class="o">*</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span><span class="o">-</span><span class="n">f</span><span class="p">(</span><span class="mi">7</span><span class="o">*</span><span class="n">pi</span><span class="p">)</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="mi">25</span><span class="o">*</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span><span class="o">-</span><span class="n">f</span><span class="p">(</span><span class="mi">11</span><span class="o">*</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">f</span><span class="p">(</span><span class="mi">17</span><span class="o">*</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="mi">7</span><span class="o">*</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">f</span><span class="p">(</span><span class="mi">11</span><span class="o">*</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span><span class="o">-</span><span class="n">f</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span><span class="o">-</span><span class="n">f</span><span class="p">(</span><span class="mi">0</span><span class="p">)))</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle 682.380323503161 \qquad   \]</div>
 </div>
 </div>
 <div class="cell docutils container">
