@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Quantum Mechanics &#8212; Jonny Workbook</title>
+    <title>14. Quantum Mechanics &#8212; Jonny Workbook</title>
   
   
   
@@ -58,9 +58,13 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Course_MCM_QM';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="15. Past courses" href="nb_past_courses.html" />
+    <link rel="prev" title="13. Math Computational Methods" href="Course_MCM.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -123,8 +127,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -180,7 +182,7 @@
 <li class="toctree-l1"><a class="reference internal" href="PE50.html">2. PE Q26-50</a></li>
 <li class="toctree-l1"><a class="reference internal" href="PE75.html">3. PE Q51-</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Mathematics &amp; FP &amp; Language</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Mathe &amp; FP/Language</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Alevel_math.html">4. A-level-math</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Alevel_math_further.html">5. A-level-further</a></li>
@@ -191,16 +193,17 @@
 <li class="toctree-l1"><a class="reference internal" href="05math_as_code.html">10. Math as code</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">CS &amp; Physics</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Course_MIT6001Python.html">11. MIT_CS6001-Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Course_MIT6002thinking.html">12. MIT_CS6002-CS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Course_MCM.html">13. Math Computational Methods</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">14. Quantum Mechanics</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Notebook</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="nb_past_courses.html">14. Past courses</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nb_Geo.html">15. Geography and Maps</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nb_lottery_simulator.html">16. Lottery Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nb_past_courses.html">15. Past courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nb_Geo.html">16. Geography and Maps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nb_lottery_simulator.html">17. Lottery Math</a></li>
 </ul>
 
     </div>
@@ -364,7 +367,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qm-for-everyone">QM for Everyone</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qm-for-everyone">14.1. QM for Everyone</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intro-quantum-probability">14.1.1. Intro &amp; Quantum Probability</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -377,15 +383,119 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="quantum-mechanics">
-<h1>Quantum Mechanics<a class="headerlink" href="#quantum-mechanics" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">14. </span>Quantum Mechanics<a class="headerlink" href="#quantum-mechanics" title="Link to this heading">#</a></h1>
 <p><a class="reference external" href="https://www.edx.org/learn/quantum-physics-mechanics/georgetown-university-quantum-mechanics-for-everyone">QM for Everyone</a> is the experimental foundation.</p>
 <p>In QM, use <a class="reference external" href="https://docs.sympy.org/latest/modules/physics/quantum/index.html"><strong>SymPy’s quantum module</strong></a>: operators, commutators, wavefunctions, quantum states (eg, harmonic oscillator, spin systems). And <a class="reference external" href="https://www.wolfram.com/quantum-computation-framework/"><strong>Wolfram Quantum Framework</strong></a></p>
 <section id="qm-for-everyone">
-<h2>QM for Everyone<a class="headerlink" href="#qm-for-everyone" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">14.1. </span>QM for Everyone<a class="headerlink" href="#qm-for-everyone" title="Link to this heading">#</a></h2>
+<section id="intro-quantum-probability">
+<h3><span class="section-number">14.1.1. </span>Intro &amp; Quantum Probability<a class="headerlink" href="#intro-quantum-probability" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Fermions : Metals conduct electricity do so because there is a “sea of electrons”. This is created from the Pauli exclusion principle, since electrons are fermions, and fermions stay apart, so they stay apart.</p></li>
 <li><p>Alpha Particles : Created by radioactive elements. Since it is slow and heavy, it has low penetration power but can damage biological tissue. Smoke detectors use heavy elements to detect smoke as when there is smoke the current flow between the 2 metal plates that are held at different voltages the current is changed.</p></li>
+<li><p>Precession : A rotation that occurs when there is a magnet and a magnetic field.</p>
+<ul>
+<li><p>Even when there is precession, the projection remains constant as it rotates perpendicular to the axis of increasing field.</p></li>
 </ul>
+</li>
+<li><p>Stern-Gerlach Experiment : Atoms are injected through a region of space where because of a magnetic field, there will be precession. 2 magnets will deflect the atom until it hits the screen where there is a detector.</p>
+<ul>
+<li><p>In the quantum world, since everything is random, the atoms’ chance of exiting a specific exit for positive and negative can be calculated using a formula.</p></li>
+</ul>
+</li>
+<li><p>Birthday Problem : The problem asks you that how many people must be in a large room for the chance of at least 2 people having the same birthday to be a specific number.</p>
+<ul>
+<li><p>There are many variants.</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Birthday Problem</span>
+<span class="n">result</span><span class="o">=</span><span class="kc">False</span>
+<span class="n">count</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100000</span><span class="p">):</span>
+    <span class="n">result_in</span><span class="o">=</span><span class="kc">False</span>
+    <span class="n">people</span><span class="o">=</span><span class="mi">23</span>
+    <span class="n">birthdays</span><span class="o">=</span><span class="p">[</span><span class="mi">13</span><span class="p">,</span><span class="mi">101</span><span class="p">,</span><span class="mi">155</span><span class="p">,</span><span class="mi">165</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">people</span><span class="o">-</span><span class="mi">4</span><span class="p">):</span>
+        <span class="n">birthdays</span><span class="o">.</span><span class="n">append</span> <span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">365</span><span class="p">))</span>
+    <span class="n">birthdays</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">366</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">birthdays</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">2</span><span class="p">:</span>
+            <span class="n">result</span><span class="o">=</span><span class="kc">True</span>
+            <span class="n">result_in</span><span class="o">=</span><span class="kc">True</span>
+    <span class="k">if</span> <span class="n">result_in</span><span class="o">==</span><span class="kc">True</span><span class="p">:</span>
+        <span class="n">count</span><span class="o">+=</span><span class="mi">1</span>
+<span class="n">count</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1215
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Penney&#39;s Game</span>
+<span class="n">me_win</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">comp_win</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">me_coins</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">comp_coins</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100000</span><span class="p">):</span>
+    <span class="n">coins</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">coins_req</span><span class="o">=</span><span class="p">[</span><span class="n">coins</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">],</span><span class="n">coins</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span><span class="n">coins</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+    <span class="k">while</span> <span class="n">coins_req</span><span class="o">!=</span><span class="n">me_coins</span> <span class="ow">and</span> <span class="n">coins_req</span><span class="o">!=</span><span class="n">comp_coins</span><span class="p">:</span>
+        <span class="n">coins</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+        <span class="n">coins_req</span><span class="o">=</span><span class="p">[</span><span class="n">coins</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">],</span><span class="n">coins</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span><span class="n">coins</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+    <span class="k">if</span> <span class="n">me_coins</span><span class="o">==</span><span class="n">coins_req</span><span class="p">:</span>
+        <span class="n">me_win</span><span class="o">+=</span><span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">comp_win</span><span class="o">+=</span><span class="mi">1</span>
+<span class="n">s</span><span class="p">(</span><span class="n">me_win</span><span class="p">,</span><span class="n">comp_win</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 50182 \qquad   49818 \qquad   \]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">(</span><span class="mi">11</span><span class="o">/</span><span class="mi">12</span><span class="o">*</span><span class="mi">10</span><span class="o">/</span><span class="mi">12</span><span class="o">*</span><span class="mi">9</span><span class="o">/</span><span class="mi">12</span><span class="o">*</span><span class="mi">8</span><span class="o">/</span><span class="mi">12</span><span class="o">*</span><span class="mi">7</span><span class="o">/</span><span class="mi">12</span><span class="p">,</span><span class="mi">1728</span><span class="o">-</span><span class="mi">385</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="p">,(</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">),</span> <span class="n">figsize</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{385}{1728} \qquad   1343 \qquad   \]</div>
+<img alt="_images/765c030591a8061f9cc9d86d7f23df6cfb0686421931ac3163ad317feabd557d.png" src="_images/765c030591a8061f9cc9d86d7f23df6cfb0686421931ac3163ad317feabd557d.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">n</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">m</span><span class="o">=</span><span class="mi">364</span>
+<span class="k">while</span> <span class="n">x</span><span class="o">&gt;</span><span class="mf">0.5</span><span class="p">:</span>
+    <span class="n">x</span><span class="o">*=</span><span class="n">m</span>
+    <span class="n">m</span><span class="o">-=</span><span class="mi">1</span>
+    <span class="n">x</span><span class="o">/=</span><span class="mi">365</span>
+    <span class="n">n</span><span class="o">+=</span><span class="mi">1</span>
+<span class="n">s</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 22 \qquad   \]</div>
+</div>
+</div>
+</section>
 </section>
 </section>
 
@@ -398,16 +508,16 @@ document.write(`
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "wolframlanguage14.2"
+            mode: "sagemath"
         },
         kernelOptions: {
-            name: "wolframlanguage14.2",
+            name: "sagemath",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'wolframlanguage14.2'</script>
+    <script>kernelName = 'sagemath'</script>
 
                 </article>
               
@@ -419,6 +529,24 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="Course_MCM.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">13. </span>Math Computational Methods</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="nb_past_courses.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">15. </span>Past courses</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -435,7 +563,10 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qm-for-everyone">QM for Everyone</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qm-for-everyone">14.1. QM for Everyone</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intro-quantum-probability">14.1.1. Intro &amp; Quantum Probability</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
