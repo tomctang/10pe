@@ -10,7 +10,7 @@ parts:
   - file: PE50
   - file: PE75     
 
-- caption: Mathematics & FP & Language
+- caption: Mathe & FP/Language
   numbered: true
   chapters:
   - file: Alevel_math
@@ -27,6 +27,7 @@ parts:
   - file: Course_MIT6001Python
   - file: Course_MIT6002thinking
   - file: Course_MCM
+  - file: Course_MCM_QM
   
 - caption: Notebook
   numbered: true
