@@ -369,8 +369,10 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-coding">5.1. test coding</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-y13-2">5.2. ★Further Y13-2</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#module-2-momentum-and-impulse">5.2.1. Module 2 - Momentum and Impulse</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#module-1-ode-applications">5.2.2. Module 1 - ODE Applications</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assessment-1">5.2.1. Assessment 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#module-3-work-energy-power">5.2.2. Module 3 - Work, Energy &amp; Power</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#module-2-momentum-impulse">5.2.3. Module 2 - Momentum &amp; Impulse</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#module-1-ode-applications">5.2.4. Module 1 - ODE Applications</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-y13-1">5.3. ★Further Y13-1</a><ul class="nav section-nav flex-column">
@@ -467,8 +469,58 @@ document.write(`
 </section>
 <section id="further-y13-2">
 <h2><span class="section-number">5.2. </span>★Further Y13-2<a class="headerlink" href="#further-y13-2" title="Link to this heading">#</a></h2>
-<section id="module-2-momentum-and-impulse">
-<h3><span class="section-number">5.2.1. </span>Module 2 - Momentum and Impulse<a class="headerlink" href="#module-2-momentum-and-impulse" title="Link to this heading">#</a></h3>
+<section id="assessment-1">
+<h3><span class="section-number">5.2.1. </span>Assessment 1<a class="headerlink" href="#assessment-1" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">=</span><span class="mf">2.5</span><span class="o">*</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+<span class="n">v</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">=</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="n">t</span><span class="p">),</span><span class="n">t</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">n</span><span class="p">(</span><span class="n">v</span><span class="p">(</span><span class="mi">2</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle -0.854295151029126 \qquad   \]</div>
+</div>
+</div>
+</section>
+<section id="module-3-work-energy-power">
+<h3><span class="section-number">5.2.2. </span>Module 3 - Work, Energy &amp; Power<a class="headerlink" href="#module-3-work-energy-power" title="Link to this heading">#</a></h3>
+<p>Notes</p>
+<ul class="simple">
+<li><p>Energy : There are 2 common types in physics - kinetic energy and potential energy.</p>
+<ul>
+<li><p>Kinetic Energy : Energy stored in the object as motion. Formula : <span class="math notranslate nohighlight">\(KE=\frac{1}{2}mv^2\)</span></p></li>
+<li><p>Potential Energy : Energy stored in the object. Formula : <span class="math notranslate nohighlight">\(PE=mgh\)</span></p>
+<ul>
+<li><p>Elastic Potential Energy : <span class="math notranslate nohighlight">\(PE=\frac{x^2\lambda}{2l}\)</span></p></li>
+</ul>
+</li>
+<li><p>Frictional Energy Lost : This is used in some problems where friction is not neglected. Formula : <span class="math notranslate nohighlight">\(E=F_fs\)</span></p></li>
+</ul>
+</li>
+<li><p>Work : Work is the force times the displacement (<span class="math notranslate nohighlight">\(Fs\)</span>).</p></li>
+<li><p>Power : Power is the rate of change of work.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span><span class="o">=</span><span class="mf">9.8</span>
+<span class="n">PE</span><span class="o">=</span><span class="mi">5</span><span class="o">*</span><span class="n">g</span><span class="o">*</span><span class="mi">4</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">36</span><span class="o">*</span><span class="n">pi</span><span class="p">);</span><span class="n">n</span><span class="p">(</span><span class="n">PE</span><span class="p">)</span>
+<span class="n">FE</span><span class="o">=</span><span class="mi">5</span><span class="o">*</span><span class="n">g</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">36</span><span class="o">*</span><span class="n">pi</span><span class="p">)</span><span class="o">*</span><span class="mf">0.6</span><span class="o">*</span><span class="mi">4</span><span class="p">;</span><span class="n">n</span><span class="p">(</span><span class="n">FE</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>106.581795755510
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="module-2-momentum-impulse">
+<h3><span class="section-number">5.2.3. </span>Module 2 - Momentum &amp; Impulse<a class="headerlink" href="#module-2-momentum-impulse" title="Link to this heading">#</a></h3>
+<p>Notes</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">(</span><span class="n">n</span><span class="p">(</span><span class="mf">2.4</span><span class="o">/</span><span class="mf">8.2</span><span class="p">,</span><span class="mi">16</span><span class="p">))</span>
@@ -479,7 +531,7 @@ document.write(`
 </div>
 </section>
 <section id="module-1-ode-applications">
-<h3><span class="section-number">5.2.2. </span>Module 1 - ODE Applications<a class="headerlink" href="#module-1-ode-applications" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">5.2.4. </span>Module 1 - ODE Applications<a class="headerlink" href="#module-1-ode-applications" title="Link to this heading">#</a></h3>
 <p>Notes</p>
 <ul class="simple">
 <li><p>Hooke’s Law : When the extensions is <span class="math notranslate nohighlight">\(x\)</span>, the natural length of the spring is <span class="math notranslate nohighlight">\(l\)</span> and the tension is <span class="math notranslate nohighlight">\(T\)</span>, <span class="math notranslate nohighlight">\(x \propto Tl\)</span> which can also be written as <span class="math notranslate nohighlight">\(T=\frac{\lambda x}{l}\)</span> where <span class="math notranslate nohighlight">\(\lambda\)</span> is the spring constant. (<span class="math notranslate nohighlight">\(F=kx\)</span>)</p></li>
@@ -2978,8 +3030,10 @@ So,
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-coding">5.1. test coding</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-y13-2">5.2. ★Further Y13-2</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#module-2-momentum-and-impulse">5.2.1. Module 2 - Momentum and Impulse</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#module-1-ode-applications">5.2.2. Module 1 - ODE Applications</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assessment-1">5.2.1. Assessment 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#module-3-work-energy-power">5.2.2. Module 3 - Work, Energy &amp; Power</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#module-2-momentum-impulse">5.2.3. Module 2 - Momentum &amp; Impulse</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#module-1-ode-applications">5.2.4. Module 1 - ODE Applications</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-y13-1">5.3. ★Further Y13-1</a><ul class="nav section-nav flex-column">
