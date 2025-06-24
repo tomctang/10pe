@@ -432,7 +432,7 @@ z_5
 </div>
 <p>(a) Solve the optimization problem for which we formulated the QUBO and try to find the best solution just by looking at the graph.</p>
 <p>The best solution has 5 edges belonging to the cut. There are different possibilities which lead to this result.</p>
-<p><img alt="One possible solution" src="../_images/max-cut_1_solution_res.png" /></p>
+<p><img alt="One possible solution" src="quantum-notebooks/figures/max-cut_1_solution_res.png" /></p>
 <p>Let’s calculate the objective function with <span class="math notranslate nohighlight">\(z_1 = z_4 = z_5 = 0\)</span> and <span class="math notranslate nohighlight">\(z_2 = z_3 = 1\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -492,7 +492,7 @@ z_5
 </div>
 <p>The result shows that vertex 2 and 3 belong to one and the other vertices to the other set. It is the same result we already found. Note that there are other results which also have 5 edges in the cut.</p>
 <p>(d) Formulate a QUBO for below graph and find the best solution.</p>
-<p><img alt="One possible solution" src="../_images/max-cut_2_res.png" /></p>
+<p><img alt="One possible solution" src="quantum-notebooks/figures/max-cut_2_res.png" /></p>
 <p>The QUBO can be formulated in the same way like for the previous graph. We add <span class="math notranslate nohighlight">\(z_i+z_j-2z_iz_j\)</span> for every edge to calculate if it is in the cut or not. I calculate this term from an adjacency matrix in Python. This is not required in the exercise, you can also do the QUBO formulation with pen and paper. An adjacency matrix represents a graph. The matrix simply has a 1 in row <span class="math notranslate nohighlight">\(i\)</span> and column <span class="math notranslate nohighlight">\(j\)</span>, if vertices <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span> are connected. For an undirected graph the adjacency matrix is symmetric, therefore we can ignore the lower triangle. Example for above graph:</p>
 <p>\begin{pmatrix}
 1&amp; 1&amp; 1&amp; 0&amp; 0&amp; 0&amp; 0&amp; 0\
@@ -567,7 +567,7 @@ z_5
 </div>
 </div>
 <p>The best solution has 7 edges in the cut and looks like shown below.</p>
-<p><img alt="One possible solution" src="../_images/max-cut_2_solution_res.png" /></p>
+<p><img alt="One possible solution" src="quantum-notebooks/figures/max-cut_2_solution_res.png" /></p>
 <p>(e) Write a function to create QUBOs for the Max Cut problem for graphs with n vertices and random connections.</p>
 <p>For this exercise we can reuse our adjacency2qubo function. We simply create a random adjacency matrix and convert it to the QUBO. We could also create the QUBO directly, but we can use the adjacency matrix also to visualize the matrix.</p>
 <div class="cell docutils container">
@@ -744,7 +744,7 @@ n = 24, T =  86.14681
 </div>
 </div>
 <p>The constraint is not violated. The solution looks like this:</p>
-<p><img alt="One possible solution" src="../_images/max_cut_1_constraint_solution_res.png" /></p>
+<p><img alt="One possible solution" src="quantum-notebooks/figures/max_cut_1_constraint_solution_res.png" /></p>
 <p>Consider the graph of Exercise 1 (d) with the additional constraints <span class="math notranslate nohighlight">\(z_1=z_2\)</span>, <span class="math notranslate nohighlight">\(z_7=z_8\)</span>, <span class="math notranslate nohighlight">\(z_1 \neq z_7\)</span>. Formulate the QUBO and solve the optimization problem.</p>
 <p>For <span class="math notranslate nohighlight">\(z_i \neq z_j\)</span>, we can use the penalty term <span class="math notranslate nohighlight">\(\lambda(-2z_iz_j + z_i + z_j - 1)\)</span>. For <span class="math notranslate nohighlight">\(z_i = z_j\)</span> this term becomes <span class="math notranslate nohighlight">\(-1\)</span> and <span class="math notranslate nohighlight">\(0\)</span> otherwise. The updated QUBO is:</p>
 <div class="cell docutils container">
@@ -802,7 +802,7 @@ n = 24, T =  86.14681
 </div>
 </div>
 <p>We find the following result:</p>
-<p><img alt="One possible solution" src="../_images/max_cut_2_constraint_solution_res.png" /></p>
+<p><img alt="One possible solution" src="quantum-notebooks/figures/max_cut_2_constraint_solution_res.png" /></p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="exercise-3">
 <h1>Exercise 3<a class="headerlink" href="#exercise-3" title="Link to this heading">#</a></h1>

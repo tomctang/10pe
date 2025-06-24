@@ -369,13 +369,10 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ubuntu-sce-scientific-computing-environment">Ubuntu &amp; SCE (Scientific Computing Environment)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software-files">Software &amp; files</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#math-packages">Math packages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oop-to-fp">OOP to FP</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#haskell">Haskell</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more">More</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oop-to-fp">OOP to FP</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#image-cross-citations">Image &amp; Cross-citations</a></li>
 </ul>
             </nav>
@@ -434,14 +431,25 @@ document.write(`
 </ul>
 <section id="ubuntu-sce-scientific-computing-environment">
 <h2>Ubuntu &amp; SCE (Scientific Computing Environment)<a class="headerlink" href="#ubuntu-sce-scientific-computing-environment" title="Link to this heading">#</a></h2>
+<p>Ubuntu is the key in SCE. To build a SCE is the first step to learn programming, two ways:</p>
 <ol class="arabic simple">
-<li><p>install Mathematica</p>
+<li><p>Cloud Computing - <strong>Google Colab, Cocalc(Rust, Julia, GNU Octave(vs.Matlab)), <a class="reference external" href="https://mybinder.org/v2/gh/tomctang/10pe/HEAD">Binder</a></strong> - are good, but Colab and Binder require further installation (originally Python)</p></li>
+<li><p>Self-built - <strong>Docker</strong>’s images and containers (self-maintained not self-installation) are the best</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/CraverBoyyy/CosCOM-Mathematica-Installation?tab=readme-ov-file">Process Github</a></p></li>
-<li><p><a class="reference external" href="https://wu-yijun.github.io/Mathematica-Keygen-Mechanism/">Key</a></p></li>
+<li><p>I already build SageMath and IHaskell using Docker, both running <code class="docutils literal notranslate"><span class="pre">ipynb</span></code></p></li>
 </ul>
 </li>
-<li><p>install chrome</p>
+<li><p>Key to Science - reproducibility, so we need a managing Environment and Container</p>
+<ol class="arabic simple">
+<li><p>Use one environment(or Container) per project! Creating environments to accommodate specific workflows/projects — and to do so early on</p></li>
+<li><p>Containers is better, which package tools with underlying operating system, are larger and more complicated than environments, but are more portable</p></li>
+</ol>
+</li>
+</ol>
+<p>Steps:</p>
+<ol class="arabic simple">
+<li><p>install Ubuntu</p></li>
+<li><p>install Chrome</p>
 <ul class="simple">
 <li><p>sudo apt-get install libxss1 libappindicator1 libindicator7</p></li>
 <li><p>wget <a class="reference external" href="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb">https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb</a></p></li>
@@ -450,7 +458,12 @@ document.write(`
 </li>
 <li><p>git:<code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">git</span></code></p>
 <ul class="simple">
-<li><p><strong>for github conflicted problem</strong></p>
+<li><p>download github project</p>
+<ul>
+<li><p>git clone weblink</p></li>
+</ul>
+</li>
+<li><p>for github conflicted problem</p>
 <ul>
 <li><p>git stash</p></li>
 <li><p>git pull –rebase</p></li>
@@ -459,7 +472,7 @@ document.write(`
 </li>
 </ul>
 </li>
-<li><p>Install docker</p>
+<li><p>Install Docker</p>
 <ul class="simple">
 <li><p>sudo apt  install curl</p></li>
 <li><p>curl -fsSL <a class="reference external" href="https://get.docker.com">https://get.docker.com</a> -o <a class="reference external" href="http://get-docker.sh">get-docker.sh</a></p></li>
@@ -468,7 +481,7 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span> <span class="pre">;</span> <span class="pre">docker</span> <span class="pre">images</span> <span class="pre">;</span> </code></p></li>
 </ul>
 </li>
-<li><p>google drive - rclone</p>
+<li><p><del>Google Drive - rclone</del>, now Dropbox</p>
 <ul class="simple">
 <li><p>sudo -v ; curl <a class="reference external" href="https://rclone.org/install.sh">https://rclone.org/install.sh</a> | sudo bash</p></li>
 <li><p>run “rclone config”, follow guide: <a class="reference external" href="https://rclone.org/drive/">https://rclone.org/drive/</a></p></li>
@@ -485,12 +498,12 @@ document.write(`
 </li>
 </ul>
 </li>
-<li><p><a class="reference external" href="https://gitlab.winehq.org/wine/wine/-/wikis/Debian-Ubuntu">WineHQ for Foxit PDF</a></p></li>
 <li><p>uni-direction synchronize two folders <code class="docutils literal notranslate"><span class="pre">rsync</span> <span class="pre">-avu</span> <span class="pre">--delete</span> <span class="pre">source_folder/</span> <span class="pre">destination_folder/</span></code></p>
 <ul class="simple">
 <li><p>for many PDFs in folder</p></li>
 </ul>
 </li>
+<li><p><a class="reference external" href="https://gitlab.winehq.org/wine/wine/-/wikis/Debian-Ubuntu">WineHQ for Foxit PDF</a></p></li>
 <li><p>My PC has two disks, I installed Ubuntu goes along original windows in the first disk (original sys). Now the second disk can’t seen as Ubuntu still hardly manage Microsoft Windows dynamic disk (LDM). Solutions:</p>
 <ul class="simple">
 <li><p>ldmtool to read data in Ubuntu, or wait Ubuntu updates in the future</p></li>
@@ -507,48 +520,81 @@ document.write(`
 </ul>
 </li>
 </ol>
-<p>Ubuntu is the key in SCE. To build a SCE is the first step to learn programming, two ways:</p>
-<ol class="arabic simple">
-<li><p>Cloud Computing - <strong>Google Colab, Cocalc(Rust, Julia, GNU Octave(vs.Matlab)), <a class="reference external" href="https://mybinder.org/v2/gh/tomctang/10pe/HEAD">Binder</a></strong> - are good, but Colab and Binder require further installation (originally Python)</p></li>
-<li><p>Self-built - <strong>Docker</strong>’s images and containers (self-maintained not self-installation) are the best</p>
-<ul class="simple">
-<li><p>I already build SageMath and IHaskell using Docker, both running <code class="docutils literal notranslate"><span class="pre">ipynb</span></code></p></li>
-</ul>
-</li>
-</ol>
-<p>Science reproducibility - managing Environment and Container</p>
-<ol class="arabic simple">
-<li><p>Use one environment(or Container) per project! Creating environments to accommodate specific workflows/projects — and to do so early on</p></li>
-<li><p>Containers is better, which package tools with underlying operating system, are larger and more complicated than environments, but are more portable</p></li>
-</ol>
-</section>
-<section id="software-files">
-<h2>Software &amp; files<a class="headerlink" href="#software-files" title="Link to this heading">#</a></h2>
+<p>More</p>
+<blockquote>
+<div><p><strong>PL</strong></p>
+</div></blockquote>
 <p>While a qualified coder mastering 6 programming languages (PL), how to choose PLs is really a hard decision.</p>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p>We started this workbook using <strong>Python</strong> in VScode:</p>
 <ul class="simple">
-<li><p>Python: we began from Python, then we found SageMath - the second powerful CAS (computer algebra system).</p></li>
-<li><p>Jupyter notebooks (.ipynb): interactive computational notebooks that make it easy to prototype, create visualizations and interactive presentations</p>
-<ul>
-<li><p>writing natural language and math formulus: MarkDown and Latex</p></li>
+<li><p>Python: we began from Python, then we moved to Math Tools, like MMA and SageMath(the second best CAS - computer algebra system).</p></li>
+<li><p><a class="reference external" href="https://diagrams.mingrammer.com/">diagrams</a>: Coding diagrams</p></li>
+<li><p><a class="reference external" href="https://www.manim.community/">manim</a>: Math Animation</p></li>
+<li><p><a class="reference external" href="https://github.com/connorferster/handcalcs">handcalcs</a>: render calculation as if it were written with a pencil: write the symbolic formula, then numeric substitutions, and then show result automatically</p></li>
 </ul>
 </li>
-</ul>
-</li>
-<li><p>We then started <strong>Mathematica (Wolfram languages, MMA or Wolfram</strong> after):</p>
+<li><p>Next, a PL with more FP? Ocaml? F#(Fsharp)? Scala? Haskell? Rust? Make a comparison:</p>
+<ol class="arabic simple">
+<li><p>PL’s Coding-look in defining a Fibonacci;</p></li>
+<li><p>Which FP is best for mathematics? Haskell is NO.1, but I really don’t like Haskell;</p></li>
+<li><p>Math-related supports for these four languages;</p></li>
+<li><p>Balance between FP and OOP;</p></li>
+<li><p>Number of users in Project Euler for each PL;</p></li>
+<li><p>libgen supports for each PL;</p></li>
+<li><p>When the PL first appeared.</p></li>
+</ol>
 <ul class="simple">
-<li><p>We are running Wolfram in <code class="docutils literal notranslate"><span class="pre">ipynb</span></code>-file using VScode</p></li>
-<li><p>Mathematica (.nb): the best CAS. Shall we convert .nb -&gt; .ipynb ??</p></li>
+<li><p>Decision: <strong>Rust &amp; Haskell</strong>.</p>
+<ul>
+<li><p>Google endorse <a class="reference external" href="https://code.world/">Codeworld - Educational Haskell programming platform</a> with <a class="reference external" href="https://github.com/google/codeworld/tree/master">Github Repository</a></p></li>
 </ul>
 </li>
-<li><p>SageMath isn’t a <code class="docutils literal notranslate"><span class="pre">pip</span></code>-installable package, instead it’s large and requires C/Fortran/Python… lots of pre-installed environments</p>
+</ul>
+</li>
+</ol>
+<blockquote>
+<div><p><strong>Math Tools</strong></p>
+</div></blockquote>
+<ol class="arabic simple">
+<li><p>Three large-scale mathematical software packages</p>
+<ol class="arabic simple">
+<li><p>Numerical computing systems: floating point, accurate estimation, numerical analysis. Matlab, Octave</p></li>
+<li><p>CAS(Computer algebra system): exact computation, view <span class="math notranslate nohighlight">\(\pi\)</span> as a symbol instead of a decimal number, symbolic computation/computer algebra/computational algebra</p></li>
+<li><p>Statistical packages: SAS, R</p></li>
+</ol>
+</li>
+<li><p>Mathematics and Self-Study Roadmaps</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=OmJ-4B-mS-Y">The Map of Mathematics</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=byNaO_zn2fI">How to self study pure math - a step-by-step guide</a></p></li>
+</ul>
+</li>
+<li><p>Instead of Python, then we started <strong>Mathematica (Wolfram languages, MMA or Wolfram</strong> after):</p>
+<ul class="simple">
+<li><p>We are running Wolfram in ipynb-file using VScode</p></li>
+<li><p>Mathematica (.nb): the best CAS. Shall we convert .nb -&gt; .ipynb ??</p></li>
+<li><p>installing</p>
+<ul>
+<li><p><a class="reference external" href="https://github.com/CraverBoyyy/CosCOM-Mathematica-Installation?tab=readme-ov-file">Process Github</a></p></li>
+<li><p><a class="reference external" href="https://wu-yijun.github.io/Mathematica-Keygen-Mechanism/">Key</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>SageMath isn’t a pip-installable package, instead it’s large and requires C/Fortran/Python… lots of pre-installed environments</p>
 <ul class="simple">
 <li><p>SageMath is the best open-source CAS</p></li>
 <li><p><a class="reference external" href="https://cocalc.com/projects">CoCalc (.ipynb)</a> online platform includes all open-source computing environments, so surprising!!</p></li>
 <li><p><a class="reference external" href="https://stackoverflow.com/questions/49685498/how-do-you-import-sagemath-in-google-colaboratory/77440661">Google Colab</a> can also install SageMath, but <a class="reference external" href="https://github.com/demining/Install-SageMath-in-Google-Colab">with problems</a></p></li>
-<li><p>Finally, we use <strong>Docker + SageMath + JupyterLab</strong> to work with symbolic mathematics programmatically</p></li>
-<li><p>For SageMath resources:</p>
+<li><p>or <strong>Docker + SageMath + JupyterLab</strong> to work with symbolic mathematics programmatically</p></li>
+<li><p>Sage installed by miniconda is the best option</p>
+<ul>
+<li><p>we can use self-built functions every time starting Sage, like s()</p></li>
+<li><p>go to folder <code class="docutils literal notranslate"><span class="pre">/home/tom/.sage</span></code>, open file <code class="docutils literal notranslate"><span class="pre">init.sage</span></code></p></li>
+</ul>
+</li>
+<li><p>Resources:</p>
 <ul>
 <li><p><a class="reference external" href="https://wiki.sagemath.org/interact">Sage Interactions</a></p></li>
 <li><p><a class="reference external" href="https://doc.sagemath.org/">All SageMath tutorials</a></p></li>
@@ -556,18 +602,29 @@ document.write(`
 </li>
 </ul>
 </li>
-<li><p>Sage installed by miniconda is the best option</p>
+<li><p>Julia is the best for DE, and is also <a class="reference external" href="https://github.com/jkrumbiegel/Chain.jl">more FP than python - reason 1</a>, <a class="reference external" href="https://github.com/thautwarm/MLStyle.jl">reason 2</a></p></li>
+</ol>
+<blockquote>
+<div><p><strong>Organization &amp; Management</strong></p>
+</div></blockquote>
+<ol class="arabic simple">
+<li><p>Website Management</p>
 <ul class="simple">
-<li><p>self-built function every time starting Sage: go to folder <code class="docutils literal notranslate"><span class="pre">/home/tom/.sage</span></code>, open file <code class="docutils literal notranslate"><span class="pre">init.sage</span></code></p></li>
+<li><p>Git and GitHub</p></li>
 </ul>
 </li>
-<li><p>Next, a PL with more FP? Ocaml? F#(Fsharp)? Scala? Haskell? Rust? Make a comparison:</p>
+<li><p>Project Management</p>
 <ul class="simple">
-<li><p>PL’s Coding-look in defining a Fibonacci; 2. Which FP is best for mathematics? Haskell is NO.1, but I really don’t like Haskell; 3. Math-related supports for these four languages; 4. Balance between FP and OOP; 5. Number of users in Project Euler for each PL; 6. libgen supports for each PL; 7. When the PL first appeared.</p></li>
-<li><p>Decision: <strong>Rust &amp; Haskell</strong>. Google endorse <a class="reference external" href="https://code.world/">Codeworld - Educational Haskell programming platform</a> with <a class="reference external" href="https://github.com/google/codeworld/tree/master">Github Repository</a></p></li>
+<li><p>Visual Studio Code</p></li>
+<li><p>Jupyter notebooks (.ipynb): interactive computational notebooks, easy to prototype, create visualizations, interactive presentations</p></li>
+<li><p>MarkDown and Latex: writing natural language and math formulus</p></li>
 </ul>
 </li>
-<li><p>Julia is the best for DE, and is also <a class="reference external" href="https://github.com/jkrumbiegel/Chain.jl">more FP than python 1</a>, <a class="reference external" href="https://github.com/thautwarm/MLStyle.jl">and 2</a></p></li>
+<li><p>Citations and Bibliographies</p>
+<ul class="simple">
+<li><p>Zotero: a free, easy-to-use tool to help you collect, organize, cite, and share research. I use Zotero to generate .bib files</p></li>
+</ul>
+</li>
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -581,15 +638,31 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output text_html"><div><img alt="Output" src="data:image/png;base64,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"></div></div></div>
 </div>
-<section id="math-packages">
-<h3>Math packages<a class="headerlink" href="#math-packages" title="Link to this heading">#</a></h3>
-<p>Three large-scale mathematical software packages:</p>
-<ol class="arabic simple">
-<li><p>Numerical computing systems: floating point, accurate estimation, numerical analysis. Matlab, Octave</p></li>
-<li><p>Computer algebra system: exact computation, view <span class="math notranslate nohighlight">\(\pi\)</span> as a symbol instead of a decimal number, symbolic computation/computer algebra/computational algebra</p></li>
-<li><p>Statistical packages: SAS, R</p></li>
-</ol>
 </section>
+<section id="oop-to-fp">
+<h2>OOP to FP<a class="headerlink" href="#oop-to-fp" title="Link to this heading">#</a></h2>
+<p>We started workbook using Python in OOP (Object-oriented Programming) way, then we move to FP (Functional Programming) way in both MMA and Python.</p>
+<p>Even though both Python and Wolfram are not pure FP, they do help us understand the FP way.</p>
+<ul class="simple">
+<li><p>From my view, OOP coding is more natural language, FP is more math lanuage.</p></li>
+</ul>
+<p>FP</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://old.reddit.com/r/functionalprogramming/wiki/books">FP books</a></p></li>
+<li><p><a class="reference external" href="https://adabeat.com/fp/ease-into-functional-programming/?_gl=1*1r4s1nz*_up*MQ..*_ga*NDgxNzc4NDQ0LjE3MzA4MTAwMTg.*_ga_6RQG15HSGT*MTczMDgxMDAxNy4xLjAuMTczMDgxMDAxNy4wLjAuMA..">Adabeat - Ease into</a></p></li>
+<li><p><a class="reference external" href="https://github.com/nayuki/Project-Euler-solutions">PE solutions in Java, Python, Mathematica, Haskell</a>: Nayuki use OOP in Python and FP in Haskell.</p></li>
+</ol>
+<p>FP - languages</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://expression.readthedocs.io/en/latest/intro.html">FP in Python</a>: a web-notebook for beginner.</p></li>
+<li><p><a class="reference external" href="https://doc.sagemath.org/html/en/thematic_tutorials/functional_programming.html#">SageMath - FP4Mathematicians</a></p></li>
+<li><p><a class="reference external" href="https://reference.wolfram.com/language/guide/FunctionalProgramming.html">FP in Wolfram</a>: official website.</p></li>
+</ol>
+<p>Why no Matlab? To model and simulate dynamic systems</p>
+<ul class="simple">
+<li><p>Simulink(Matlab) uses a signal flow-based or causal approach,</p></li>
+<li><p>while Modelica uses an equation-based or acausal approach. – still OOP vs. FP</p></li>
+</ul>
 <section id="haskell">
 <h3>Haskell<a class="headerlink" href="#haskell" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">cabal</span> <span class="pre">init</span> <span class="pre">--interactive</span></code>(Haskell project)</p>
@@ -671,64 +744,6 @@ document.write(`
 </li>
 </ol>
 </section>
-<section id="more">
-<h3>More<a class="headerlink" href="#more" title="Link to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p>Mathematics and Self-Study Roadmaps</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://www.youtube.com/watch?v=OmJ-4B-mS-Y">The Map of Mathematics</a></p></li>
-<li><p><a class="reference external" href="https://www.youtube.com/watch?v=byNaO_zn2fI">How to self study pure math - a step-by-step guide</a></p></li>
-</ul>
-</li>
-<li><p>Python packages</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://diagrams.mingrammer.com/">diagrams</a>: Coding diagrams</p></li>
-<li><p><a class="reference external" href="https://www.manim.community/">manim</a>: Math Animation</p></li>
-<li><p><a class="reference external" href="https://github.com/connorferster/handcalcs">handcalcs</a>: render calculation as if it were written with a pencil: write the symbolic formula, then numeric substitutions, and then show result automatically</p></li>
-</ul>
-</li>
-<li><p>Website Management</p>
-<ul class="simple">
-<li><p>Git and GitHub</p></li>
-</ul>
-</li>
-<li><p>Project Management</p>
-<ul class="simple">
-<li><p>Visual Studio Code</p></li>
-</ul>
-</li>
-<li><p>Citations and Bibliographies</p>
-<ul class="simple">
-<li><p>Zotero: a free, easy-to-use tool to help you collect, organize, cite, and share research. I use Zotero to generate .bib files</p></li>
-</ul>
-</li>
-</ol>
-</section>
-</section>
-<section id="oop-to-fp">
-<h2>OOP to FP<a class="headerlink" href="#oop-to-fp" title="Link to this heading">#</a></h2>
-<p>We started workbook using Python in OOP (Object-oriented Programming) way, then we move to FP (Functional Programming) way in both MMA and Python.</p>
-<p>Even though both Python and Wolfram are not pure FP, they do help us understand the FP way.</p>
-<ul class="simple">
-<li><p>From my view, OOP coding is more natural language, FP is more math lanuage.</p></li>
-</ul>
-<p>FP</p>
-<ol class="arabic simple">
-<li><p><a class="reference external" href="https://old.reddit.com/r/functionalprogramming/wiki/books">FP books</a></p></li>
-<li><p><a class="reference external" href="https://adabeat.com/fp/ease-into-functional-programming/?_gl=1*1r4s1nz*_up*MQ..*_ga*NDgxNzc4NDQ0LjE3MzA4MTAwMTg.*_ga_6RQG15HSGT*MTczMDgxMDAxNy4xLjAuMTczMDgxMDAxNy4wLjAuMA..">Adabeat - Ease into</a></p></li>
-<li><p><a class="reference external" href="https://github.com/nayuki/Project-Euler-solutions">PE solutions in Java, Python, Mathematica, Haskell</a>: Nayuki use OOP in Python and FP in Haskell.</p></li>
-</ol>
-<p>FP - languages</p>
-<ol class="arabic simple">
-<li><p><a class="reference external" href="https://expression.readthedocs.io/en/latest/intro.html">FP in Python</a>: a web-notebook for beginner.</p></li>
-<li><p><a class="reference external" href="https://doc.sagemath.org/html/en/thematic_tutorials/functional_programming.html#">SageMath - FP4Mathematicians</a></p></li>
-<li><p><a class="reference external" href="https://reference.wolfram.com/language/guide/FunctionalProgramming.html">FP in Wolfram</a>: official website.</p></li>
-</ol>
-<p>Why no Matlab? To model and simulate dynamic systems</p>
-<ul class="simple">
-<li><p>Simulink(Matlab) uses a signal flow-based or causal approach,</p></li>
-<li><p>while Modelica uses an equation-based or acausal approach. – still OOP vs. FP</p></li>
-</ul>
 </section>
 <section id="image-cross-citations">
 <h2>Image &amp; Cross-citations<a class="headerlink" href="#image-cross-citations" title="Link to this heading">#</a></h2>
@@ -811,13 +826,10 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ubuntu-sce-scientific-computing-environment">Ubuntu &amp; SCE (Scientific Computing Environment)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software-files">Software &amp; files</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#math-packages">Math packages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oop-to-fp">OOP to FP</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#haskell">Haskell</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more">More</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oop-to-fp">OOP to FP</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#image-cross-citations">Image &amp; Cross-citations</a></li>
 </ul>
   </nav></div>
