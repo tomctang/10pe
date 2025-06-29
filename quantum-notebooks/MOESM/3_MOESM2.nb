@@ -1,0 +1,273 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.4' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     10730,        265]
+NotebookOptionsPosition[      9002,        234]
+NotebookOutlinePosition[      9355,        250]
+CellTagsIndexPosition[      9312,        247]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "This Mathematica code is part of the lecture script ",
+ StyleBox["Introduction to Computational Quantum Mechanics",
+  FontSlant->"Italic"],
+ " by Roman Schmied. It is licensed under a ",
+ ButtonBox["Creative Commons Attribution-ShareAlike 4.0 International License",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://creativecommons.org/licenses/by-sa/4.0/"], None},
+  ButtonNote->"http://creativecommons.org/licenses/by-sa/4.0/"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.669434091682116*^9, 3.669434147842166*^9}, {
+  3.669435842013185*^9, 3.669435866952169*^9}, {3.669435915352921*^9, 
+  3.669435921977655*^9}},ExpressionUUID->"73bcc2c6-71f3-45e5-a73d-\
+7c9df2185656"],
+
+Cell[BoxData[
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1: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
+yoV9Oe0/TXxfaElz99px38MJ1qr/AASW71I=
+    "], {{0, 31}, {88, 0}}, {0, 255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  DefaultBaseStyle->"ImageGraphics",
+  ImageSize->Automatic,
+  ImageSizeRaw->{88, 31},
+  PlotRange->{{0, 88}, {0, 31}}]], "Text",
+ CellChangeTimes->{
+  3.669607172458665*^9},ExpressionUUID->"77f9260b-cfad-4671-b996-\
+bee76d3cfcd0"],
+
+Cell[TextData[{
+ "You can download the associated lecture script at ",
+ ButtonBox["http://arxiv.org/abs/1403.7050",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://arxiv.org/abs/1403.7050"], None},
+  ButtonNote->"http://arxiv.org/abs/1403.7050"]
+}], "Text",
+ CellChangeTimes->{{3.669434151914299*^9, 3.669434159778274*^9}, {
+  3.669435746836981*^9, 3.669435760656741*^9}, {3.669435890511055*^9, 
+  3.6694358923333282`*^9}, {3.682249450075809*^9, 
+  3.68224945053531*^9}},ExpressionUUID->"6e7d19d8-47fd-4c93-a391-\
+7f7120904f74"],
+
+Cell[CellGroupData[{
+
+Cell["spin-1/2 electron in a dc magnetic field", "Title",
+ CellChangeTimes->{{3.6693532025871153`*^9, 3.669353210966104*^9}, {
+  3.751372069666782*^9, 
+  3.751372069919594*^9}},ExpressionUUID->"968a6926-cece-4e93-973b-\
+96c475b46f95"],
+
+Cell["Pauli operators:", "Text",
+ CellChangeTimes->{{3.669353237564386*^9, 
+  3.6693532395552273`*^9}},ExpressionUUID->"93a92aa3-672c-4f2c-8224-\
+6be9f05d585a"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"Sx", ",", "Sy", ",", "Sz"}], "}"}], "=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"1", "/", "2"}], ")"}], "*", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"PauliMatrix", "[", "i", "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"i", ",", "1", ",", "3"}], "}"}]}], "]"}]}]}], ";"}]], "Input",\
+
+ CellChangeTimes->{{3.669353233939754*^9, 3.669353244224078*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"a7fa6d4c-6e5e-49d1-9836-3768108e3f26"],
+
+Cell["units:", "Text",
+ CellChangeTimes->{{3.735217614519298*^9, 
+  3.7352176152302017`*^9}},ExpressionUUID->"05258356-3a82-403f-914e-\
+388d9601aebf"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"MagneticFieldUnit", "=", 
+   RowBox[{"Quantity", "[", "\"\<Gausses\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"EnergyUnit", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Quantity", "[", "\"\<PlanckConstant\>\"", "]"}], "*", 
+     RowBox[{"Quantity", "[", "\"\<MHz\>\"", "]"}]}], "//", "UnitConvert"}]}],
+   ";"}]}], "Input",
+ CellChangeTimes->{{3.735217618281052*^9, 3.735217673291671*^9}, {
+  3.735217726005389*^9, 3.735217746373423*^9}, {3.7352178025306*^9, 
+  3.735217828217588*^9}, {3.7352179824359703`*^9, 3.7352179902617598`*^9}, {
+  3.735218084079013*^9, 3.73521809112678*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"0a3fd0e7-a138-4de2-8737-e189211774f0"],
+
+Cell[TextData[{
+ "express the Bohr magneton in these units: ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["\[Mu]", "B"], "/", "h"}], "\[TildeTilde]", 
+    RowBox[{"1.4", 
+     RowBox[{"MHz", "/", "G"}]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "0c7a8822-91b0-4e29-93c7-0f6877040062"]
+}], "Text",
+ CellChangeTimes->{{3.735217855669817*^9, 3.735217861992902*^9}, {
+  3.735218096854287*^9, 3.735218126076017*^9}, {3.735218200624551*^9, 
+  3.73521824094945*^9}},ExpressionUUID->"0ae305fb-88ad-4792-812f-\
+9886e0fa86e8"],
+
+Cell[BoxData[
+ RowBox[{"\[Mu]B", "=", 
+  RowBox[{
+   FractionBox[
+    RowBox[{"Quantity", "[", "\"\<BohrMagneton\>\"", "]"}], 
+    RowBox[{"EnergyUnit", "/", "MagneticFieldUnit"}]], "//", 
+   "UnitConvert"}]}]], "Input",
+ CellChangeTimes->{{3.735217756010104*^9, 3.735217780642652*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"9f354312-8b1c-4480-b397-48a72868f365"],
+
+Cell[TextData[{
+ "electron ",
+ Cell[BoxData[
+  FormBox["g", TraditionalForm]],ExpressionUUID->
+  "ba631a35-449d-45e9-9e49-a04bb33efc5e"],
+ " factor:"
+}], "Text",
+ CellChangeTimes->{{3.669353258360076*^9, 
+  3.669353263100425*^9}},ExpressionUUID->"9c6c002d-2557-4dd5-89f5-\
+48d4ae2bd938"],
+
+Cell[BoxData[
+ RowBox[{"ge", "=", 
+  RowBox[{"UnitConvert", "[", "\"\<ElectronGFactor\>\"", "]"}]}]], "Input",
+ CellChangeTimes->{{3.66935325624008*^9, 3.669353257101657*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"2ca273ed-695c-4c2a-8991-9a3442cd2680"],
+
+Cell["Hamiltonian:", "Text",
+ CellChangeTimes->{{3.6693534131956463`*^9, 
+  3.669353415658321*^9}},ExpressionUUID->"7b9decda-0492-45ed-87e7-\
+dec006554b27"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"H", "[", 
+   RowBox[{"Bx_", ",", "By_", ",", "Bz_"}], "]"}], "=", 
+  RowBox[{
+   RowBox[{"-", "\[Mu]B"}], "*", "ge", "*", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"Sx", "*", "Bx"}], "+", 
+     RowBox[{"Sy", "*", "By"}], "+", 
+     RowBox[{"Sz", "*", "Bz"}]}], ")"}]}]}]], "Input",
+ CellChangeTimes->{{3.735217936410531*^9, 3.73521794265079*^9}, {
+  3.735218020952073*^9, 3.735218042231328*^9}},
+ CellLabel->"In[6]:=",ExpressionUUID->"c580373d-b49e-46c9-8aa8-e80e5e775524"],
+
+Cell["eigenvalues and non-normalized eigenvectors:", "Text",
+ CellChangeTimes->{{3.669353453447*^9, 3.6693534585305443`*^9}, {
+  3.735218258647975*^9, 
+  3.735218266066924*^9}},ExpressionUUID->"f8d7c0ef-363c-4fb4-ad21-\
+a04a4b7e93d2"],
+
+Cell[BoxData[
+ RowBox[{"Eigensystem", "[", 
+  RowBox[{"H", "[", 
+   RowBox[{"Bx", ",", "By", ",", "Bz"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.669353450242969*^9, 3.669353450244113*^9}},
+ CellLabel->"In[7]:=",ExpressionUUID->"88efc9bb-afa1-43f1-a8b1-1b0f3d94b02e"]
+}, Open  ]]
+},
+WindowSize->{1280, 778},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
+2018)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 695, 15, 58, "Text",ExpressionUUID->"73bcc2c6-71f3-45e5-a73d-7c9df2185656"],
+Cell[1256, 37, 2693, 50, 46, "Text",ExpressionUUID->"77f9260b-cfad-4671-b996-bee76d3cfcd0"],
+Cell[3952, 89, 538, 12, 35, "Text",ExpressionUUID->"6e7d19d8-47fd-4c93-a391-7f7120904f74"],
+Cell[CellGroupData[{
+Cell[4515, 105, 234, 4, 98, "Title",ExpressionUUID->"968a6926-cece-4e93-973b-96c475b46f95"],
+Cell[4752, 111, 160, 3, 35, "Text",ExpressionUUID->"93a92aa3-672c-4f2c-8224-6be9f05d585a"],
+Cell[4915, 116, 517, 15, 30, "Input",ExpressionUUID->"a7fa6d4c-6e5e-49d1-9836-3768108e3f26"],
+Cell[5435, 133, 150, 3, 35, "Text",ExpressionUUID->"05258356-3a82-403f-914e-388d9601aebf"],
+Cell[5588, 138, 723, 16, 52, "Input",ExpressionUUID->"0a3fd0e7-a138-4de2-8737-e189211774f0"],
+Cell[6314, 156, 574, 15, 35, "Text",ExpressionUUID->"0ae305fb-88ad-4792-812f-9886e0fa86e8"],
+Cell[6891, 173, 364, 8, 51, "Input",ExpressionUUID->"9f354312-8b1c-4480-b397-48a72868f365"],
+Cell[7258, 183, 287, 9, 35, "Text",ExpressionUUID->"9c6c002d-2557-4dd5-89f5-48d4ae2bd938"],
+Cell[7548, 194, 253, 4, 30, "Input",ExpressionUUID->"2ca273ed-695c-4c2a-8991-9a3442cd2680"],
+Cell[7804, 200, 156, 3, 35, "Text",ExpressionUUID->"7b9decda-0492-45ed-87e7-dec006554b27"],
+Cell[7963, 205, 510, 13, 30, "Input",ExpressionUUID->"c580373d-b49e-46c9-8aa8-e80e5e775524"],
+Cell[8476, 220, 234, 4, 35, "Text",ExpressionUUID->"f8d7c0ef-363c-4fb4-ad21-a04a4b7e93d2"],
+Cell[8713, 226, 273, 5, 30, "Input",ExpressionUUID->"88efc9bb-afa1-43f1-a8b1-1b0f3d94b02e"]
+}, Open  ]]
+}
+]
+*)
+
