@@ -1,0 +1,1054 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Lecture 7 - Symbolic quantum mechanics using SymPsi - Semiclassical equations of motion &#8212; Jonny Workbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=8dedbda2" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'quantum-notebooks/0sympsi_QM_ipynb/lecture-sympsi-semiclassical-eqm';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Jonny Workbook</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Project Euler (PE)</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../PE25.html">1. PE Q1-25</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../PE50.html">2. PE Q26-50</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../PE75.html">3. PE Q51-</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Mathe &amp; FP/Language</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Alevel_math.html">4. A-level-math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Alevel_math_further.html">5. A-level-further</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../00intro_math.html">6. Math-FP-Lang Combo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../01number_algebra.html">7. Number &amp; Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../02discrete_continuous.html">8. Discrete &amp; Continuous</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../03real_world.html">9. Real World Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../05math_as_code.html">10. Math as code</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CS &amp; Physics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Course_MIT6001Python.html">11. MIT_CS6001-Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Course_MIT6002thinking.html">12. MIT_CS6002-CS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Course_MCM.html">13. Math Computational Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Course_MCM_QM.html">14. Quantum Mechanics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notebook</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../nb_past_courses.html">15. Past courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../nb_Geo.html">16. Geography and Maps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../nb_lottery_simulator.html">17. Lottery Math</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/tomctang/10pe" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/quantum-notebooks/0sympsi_QM_ipynb/lecture-sympsi-semiclassical-eqm.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lecture 7 - Symbolic quantum mechanics using SymPsi - Semiclassical equations of motion</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-modules">Setup modules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#semiclassical-equations-of-motion">Semiclassical equations of motion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#driven-harmonic-oscillator">Driven harmonic oscillator</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#system-of-semiclassical-equations">System of semiclassical equations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#steadystate">Steadystate</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solve-in-the-odes">Solve in the ODEs</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#driven-dissipative-two-level-system">Driven dissipative two-level system</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Steadystate</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#versions">Versions</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lecture-7-symbolic-quantum-mechanics-using-sympsi-semiclassical-equations-of-motion">
+<h1>Lecture 7 - Symbolic quantum mechanics using SymPsi - Semiclassical equations of motion<a class="headerlink" href="#lecture-7-symbolic-quantum-mechanics-using-sympsi-semiclassical-equations-of-motion" title="Link to this heading">#</a></h1>
+<style>
+p {
+    font-family: "Liberation Serif", serif;
+    font-size: 12pt;
+}
+</style><p>Author: J. R. Johansson (<a class="reference external" href="mailto:robert&#37;&#52;&#48;riken&#46;jp">robert<span>&#64;</span>riken<span>&#46;</span>jp</a>), <a class="reference external" href="http://jrjohansson.github.io">http://jrjohansson.github.io</a>, and Eunjong Kim.</p>
+<p>Status: Preliminary (work in progress)</p>
+<p>This notebook is part of a series of IPython notebooks on symbolic quantum mechanics computations using
+<a class="reference external" href="http://sympy.org">SymPy</a> and <a class="reference external" href="http://www.github.com/jrjohansson/sympsi">SymPsi</a>. SymPsi is an experimental fork and extension of the <a class="reference external" href="http://docs.sympy.org/dev/modules/physics/quantum/"><code class="docutils literal notranslate"><span class="pre">sympy.physics.quantum</span></code></a> module in SymPy. The latest version of this notebook is available at <a class="github reference external" href="http://github.com/jrjohansson/sympy-quantum-notebooks">jrjohansson/sympy-quantum-notebooks</a>, and the other notebooks in this lecture series are also indexed at <a class="reference external" href="http://jrjohansson.github.com">http://jrjohansson.github.io</a>.</p>
+<p>Requirements: A recent version of SymPy and the latest development version of SymPsi is required to execute this notebook. Instructions for how to install SymPsi is available <a class="reference external" href="http://www.github.com/jrjohansson/sympsi">here</a>.</p>
+<p>Disclaimer: The SymPsi module is still under active development and may change in behavior without notice, and the intention is to move some of its features to <a class="reference external" href="http://docs.sympy.org/dev/modules/physics/quantum/"><code class="docutils literal notranslate"><span class="pre">sympy.physics.quantum</span></code></a> when they matured and have been tested. However, these notebooks will be kept up-to-date the latest versions of SymPy and SymPsi.</p>
+<section id="setup-modules">
+<h2>Setup modules<a class="headerlink" href="#setup-modules" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>%matplotlib inline
+import matplotlib.pyplot as plt
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>import numpy as np
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>from sympy import *
+init_printing()
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>from sympsi import *
+from sympsi.boson import *
+from sympsi.pauli import *
+from sympsi.operatorordering import *
+from sympsi.expectation import *
+from sympsi.operator import OperatorFunction
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="semiclassical-equations-of-motion">
+<h2>Semiclassical equations of motion<a class="headerlink" href="#semiclassical-equations-of-motion" title="Link to this heading">#</a></h2>
+<p>The dynamics of an open quantum system with a given Hamiltonian, <span class="math notranslate nohighlight">\(H\)</span>, and some interaction with an environment that acts on the system through the sytem operator <span class="math notranslate nohighlight">\(a\)</span>, and with rate <span class="math notranslate nohighlight">\(\kappa\)</span>, can often be described with a Lindblad master equation for the dynamics of the system density matrix <span class="math notranslate nohighlight">\(\rho\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d}{dt}\rho = -i[H, \rho] + \kappa \mathcal{D}[a]\rho,
+\]</div>
+<p>where the Lindblad superoperator <span class="math notranslate nohighlight">\(\mathcal{D}\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{D}[a]\rho = a \rho a^\dagger -\frac{1}{2}\rho a^\dagger a - \frac{1}{2}a^\dagger a \rho.
+\]</div>
+<p>One common approach to solve for the dynamics of this system is to represent the system operators and the density operator as matrices, possibly in a truncated state space, and solve the matrix-valued ODE problem numerically.</p>
+<p>Another approach is to use the adjoint master equation for the system operators <span class="math notranslate nohighlight">\(X\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d}{dt} X =  i [H, X] + \kappa \mathcal{D}[a^\dagger]X
+\]</div>
+<p>and then solve for dynamics of the expectation values of the relevant system operators. The advantage of this method is that the ODEs are no longer matrix-valued, unlike the ODE for the density matrix. However, from the density matrix we can calculate any same-time expectation values, but with explicit ODEs for expectation values we need to select in advance which operator’s expectation values we want to generate equations for.</p>
+<p>We can easily generate an equation for the expectation value of a specific operator by multiplying the master equation for <span class="math notranslate nohighlight">\(\rho\)</span> from the left with an operator <span class="math notranslate nohighlight">\(X\)</span>, and then take the trace over the entire equation. Doing this we obtain:</p>
+<div class="math notranslate nohighlight">
+\[
+X\frac{d}{dt}\rho = -iX[H, \rho] + \kappa X\mathcal{D}[a]\rho
+\]</div>
+<p>and taking the trace:</p>
+<div class="math notranslate nohighlight">
+\[
+{\rm Tr}\left(X\frac{d}{dt}\rho\right) = -i{\rm Tr}\left(X[H, \rho]\right) + \kappa {\rm Tr}\left(X\mathcal{D}[a]\rho\right)
+\]</div>
+<p>using the cyclic permutation properties of traces:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d}{dt}{\rm Tr}\left(X\rho\right) = -i{\rm Tr}\left([X, H]\rho\right) + \kappa {\rm Tr}\left((\mathcal{D}[a]X) \rho\right)
+\]</div>
+<p>we end up with an equation for the expectation value of the operator <span class="math notranslate nohighlight">\(X\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d}{dt}\langle X\rangle 
+= 
+i\langle [H, X] \rangle + \kappa \langle \mathcal{D}[a]X \rangle
+\]</div>
+<p>Note that this is a C-number equation, and therefore not as complicated to solve as the master equation for the density matrix. However, the problem with this C-number equation is that the expressions <span class="math notranslate nohighlight">\([H, X]\)</span>
+and <span class="math notranslate nohighlight">\(\mathcal{D}[a]X\)</span> in general will introduce dependencies on other system operators, so we obtain a system of coupled C-number equations. If this system of equations closes when a finite number of operators are included, then we can use this method to solve the dynamics of these expectation values exactly. If the system of equations do not close, which is often the case for coupled systems, then we can still use this method if we introduce some rule for truncating high-order operator expectation values (for example, by discarding high-order terms or by factoring them in expectation values of lower order). However, in this case the results are no longer exact, and is called a semi-classical equation of motion.</p>
+<p>With SymPsi we can automatically generate semiclassical equations of motion for operators in a system described by a given Hamiltonian and a set of collapse operators that describe its coupling to an environment.</p>
+</section>
+<section id="driven-harmonic-oscillator">
+<h2>Driven harmonic oscillator<a class="headerlink" href="#driven-harmonic-oscillator" title="Link to this heading">#</a></h2>
+<p>Consider a driven harmonic oscillator, which interaction with an bath at some temperature that corresponds to <span class="math notranslate nohighlight">\(N_{\rm th}\)</span> average photons. We begin by setting up symbolic variables for the problem parameters and the system operators in SymPsi:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>w, t, Nth, Ad, kappa = symbols(r&quot;\omega, t, n_{th}, A_d, kappa&quot;, positive=True)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>a = BosonOp(&quot;a&quot;)
+rho = Operator(r&quot;\rho&quot;)
+rho_t = OperatorFunction(rho, t)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>H = w * Dagger(a) * a + Ad * (a + Dagger(a))
+
+Eq(Symbol(&quot;H&quot;), H)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/15d219163edf34da365443370dd99e2fe2950ec86895c00efbfb730c3f072dc3.png" src="../../_images/15d219163edf34da365443370dd99e2fe2950ec86895c00efbfb730c3f072dc3.png" />
+</div>
+</div>
+<p>The master equation for this system can be generated using the <code class="docutils literal notranslate"><span class="pre">master_equation</span></code> function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>c_ops = [sqrt(kappa * (Nth + 1)) * a, sqrt(kappa * Nth) * Dagger(a)]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>me = master_equation(rho_t, t, H, c_ops)
+
+me
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/b35c10ff1dfeff37aaea286663c4501c1871f02b5a43819b358dc6c8257a98d3.png" src="../../_images/b35c10ff1dfeff37aaea286663c4501c1871f02b5a43819b358dc6c8257a98d3.png" />
+</div>
+</div>
+<p>Equation for the system operators can be generated using the function <code class="docutils literal notranslate"><span class="pre">operator_master_equation</span></code>, and for the specific case of the cavity operator <span class="math notranslate nohighlight">\(a\)</span> we obtain:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># first setup time-dependent operators
+a_t = OperatorFunction(a, t)
+a_to_a_t = {a: a_t, Dagger(a): Dagger(a_t)}
+H_t = H.subs(a_to_a_t)
+c_ops_t = [c.subs(a_to_a_t) for c in c_ops]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># operator master equation for a
+ome_a = operator_master_equation(a_t, t, H_t, c_ops_t)
+
+Eq(ome_a.lhs, normal_ordered_form(ome_a.rhs.doit().expand()))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/d48042d40fbc3d0c2008cd2cbb4fad0045fc007231e519c29f1b7840d466e565.png" src="../../_images/d48042d40fbc3d0c2008cd2cbb4fad0045fc007231e519c29f1b7840d466e565.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># operator master equation for n = Dagger(a) * a
+ome_n = operator_master_equation(Dagger(a_t) * a_t, t, H_t, c_ops_t)
+
+Eq(ome_n.lhs, normal_ordered_form(ome_n.rhs.doit().expand()))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/6683c44b48b759ab805ccbc58bd2f276a639e3b1076b8f7862bf724c55ab5c1f.png" src="../../_images/6683c44b48b759ab805ccbc58bd2f276a639e3b1076b8f7862bf724c55ab5c1f.png" />
+</div>
+</div>
+<p>From these operator equations we see that the equation for <span class="math notranslate nohighlight">\(a\)</span> depends only on the operator <span class="math notranslate nohighlight">\(a\)</span>, while the equation for <span class="math notranslate nohighlight">\(n\)</span> depends on <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(a^\dagger\)</span>. So to solve the latter equation we therefore also have to generate an equation for <span class="math notranslate nohighlight">\(a^\dagger\)</span>.</p>
+<section id="system-of-semiclassical-equations">
+<h3>System of semiclassical equations<a class="headerlink" href="#system-of-semiclassical-equations" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ops, op_eqm, sc_eqm, sc_ode, ofm, oim = semi_classical_eqm(H, c_ops)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>html_table([[Eq(Expectation(key), ofm[key]), sc_ode[key]] for key in operator_sort_by_order(sc_ode)])
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<tr><td>$\left\langle {{a}^\dagger} \right\rangle = \operatorname{A_{0}}{\left (t \right )}$</td><td>$\frac{d}{d t} \operatorname{A_{0}}{\left (t \right )} = i A_{d} + i \omega \operatorname{A_{0}}{\left (t \right )} - \frac{\kappa}{2} \operatorname{A_{0}}{\left (t \right )}$</td></tr><tr><td>$\left\langle {a} \right\rangle = \operatorname{A_{1}}{\left (t \right )}$</td><td>$\frac{d}{d t} \operatorname{A_{1}}{\left (t \right )} = - i A_{d} - i \omega \operatorname{A_{1}}{\left (t \right )} - \frac{\kappa}{2} \operatorname{A_{1}}{\left (t \right )}$</td></tr><tr><td>$\left\langle {{a}^\dagger} {a} \right\rangle = \operatorname{A_{2}}{\left (t \right )}$</td><td>$\frac{d}{d t} \operatorname{A_{2}}{\left (t \right )} = - i A_{d} \operatorname{A_{0}}{\left (t \right )} + i A_{d} \operatorname{A_{1}}{\left (t \right )} + \kappa n_{{th}} - \kappa \operatorname{A_{2}}{\left (t \right )}$</td></tr>
+</table></div></div>
+</div>
+<p>Since this is a system of linear ODEs, we can write it on matrix form:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>A_eq, A, M, b = semi_classical_eqm_matrix_form(sc_ode, t, ofm)
+
+A_eq
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/ad0b454f3b39531b05825a59e19d874964ea21db913ea7c7a31e4cb4c5324539.png" src="../../_images/ad0b454f3b39531b05825a59e19d874964ea21db913ea7c7a31e4cb4c5324539.png" />
+</div>
+</div>
+</section>
+<section id="steadystate">
+<h3>Steadystate<a class="headerlink" href="#steadystate" title="Link to this heading">#</a></h3>
+<p>We can solve for the steadystate by setting the left-hand-side of the ODE to zero, and solve the linear system of equations:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>A_sol = M.LUsolve(-b)
+</pre></div>
+</div>
+</div>
+</div>
+<p>The solution for the three system operators are:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>A_sol[ops.index(Dagger(a)*a)]
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/3fdf59ba4cd894c8eaba56692acce2d50f6adee989aaaf060f19a867b8d79671.png" src="../../_images/3fdf59ba4cd894c8eaba56692acce2d50f6adee989aaaf060f19a867b8d79671.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>A_sol[ops.index(a)]
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/1c36532f120633296f55a12c2953c8a10b346067da8d9cadcdc5e174d7f8fcaf.png" src="../../_images/1c36532f120633296f55a12c2953c8a10b346067da8d9cadcdc5e174d7f8fcaf.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>A_sol[ops.index(Dagger(a))]
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/8155968ce06f68ead37f4263ef52e0d5993839743f96affcaef773b125164eed.png" src="../../_images/8155968ce06f68ead37f4263ef52e0d5993839743f96affcaef773b125164eed.png" />
+</div>
+</div>
+<p>We can also solve for the steadystate directly from the ODE by settings its right-hand-side to zero, and using the SymPy <code class="docutils literal notranslate"><span class="pre">solve</span></code> function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>solve([eq.rhs for eq in sc_ode.values()], list(ofm.values()))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/d4e1c5fbb4446426411b77a8e1866c1b47bcfcdd0e66cb5645cd069f4c9897d3.png" src="../../_images/d4e1c5fbb4446426411b77a8e1866c1b47bcfcdd0e66cb5645cd069f4c9897d3.png" />
+</div>
+</div>
+</section>
+<section id="solve-in-the-odes">
+<h3>Solve in the ODEs<a class="headerlink" href="#solve-in-the-odes" title="Link to this heading">#</a></h3>
+<p>For systems with a small number of dependent operators we can solve the resulting system of ODEs directly:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sols = dsolve(list(sc_ode.values())); sols
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/b836684d8d43175332cbb036bf1600dd2683b78601470e7de93ca014104b2cc6.png" src="../../_images/b836684d8d43175332cbb036bf1600dd2683b78601470e7de93ca014104b2cc6.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># hack
+tt = [s for s in sols[0].rhs.free_symbols if s.name == &#39;t&#39;][0]
+</pre></div>
+</div>
+</div>
+</div>
+<p>We also need o specify the initial conditions: Here the initial conditions are <span class="math notranslate nohighlight">\(\langle a(0) \rangle = \langle a^\dagger(0) \rangle = 2\)</span> and <span class="math notranslate nohighlight">\(\langle a^\dagger(0)a(0) \rangle = 4\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ics = {ofm[Dagger(a)].subs(tt, 0): 2, 
+       ofm[a].subs(tt, 0): 2,
+       ofm[Dagger(a)*a].subs(tt, 0): 4}; ics
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/3a4346b8feb36a90982ef08f9a4c2f4a5b1e024dd37973bd2618e63a77055a07.png" src="../../_images/3a4346b8feb36a90982ef08f9a4c2f4a5b1e024dd37973bd2618e63a77055a07.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>constants = set(sum([[s for s in sol.free_symbols if (str(s)[0] == &#39;C&#39;)] for sol in sols], [])); constants
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/a5e6797a9479902953597bb36ef47c1bd3ffa44cb40faa83df0909effd569566.png" src="../../_images/a5e6797a9479902953597bb36ef47c1bd3ffa44cb40faa83df0909effd569566.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>C_sols = solve([sol.subs(tt, 0).subs(ics) for sol in sols], constants); C_sols
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/93d7fa63226b263755a83fd44ac0ef95c3958e2ff30270a2df20a3a4f3123c44.png" src="../../_images/93d7fa63226b263755a83fd44ac0ef95c3958e2ff30270a2df20a3a4f3123c44.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sols_with_ics = [sol.subs(C_sols) for sol in sols]; sols_with_ics
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/69221a011647ea2e40ea75020785ffb59152a19b3de4760cd45a0985aad73090.png" src="../../_images/69221a011647ea2e40ea75020785ffb59152a19b3de4760cd45a0985aad73090.png" />
+</div>
+</div>
+<p>Now let’s insert numerical values for the system parameters so we can plot the solution:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>values = {w: 1.0, Ad: 0.0, kappa: 0.1, Nth: 0.0}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sols_funcs = [sol.rhs.subs(values) for sol in sols_with_ics]; sols_funcs
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/f887f26027aa5344c53e16ea8e30b536ff7d3748dea067ed28bf192d1e2ae5c4.png" src="../../_images/f887f26027aa5344c53e16ea8e30b536ff7d3748dea067ed28bf192d1e2ae5c4.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>times = np.linspace(0, 50, 500)
+
+y_funcs = [lambdify([tt], sol_func, &#39;numpy&#39;) for sol_func in sols_funcs]
+
+fig, axes = plt.subplots(len(y_funcs), 1, figsize=(12, 6))
+
+for n, y_func in enumerate(y_funcs):
+    axes[n].plot(times, np.real(y_func(times)), &#39;r&#39;)
+    
+axes[2].set_ylim(0, 5);
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/2060ae5d4f4d9e15070cf86282aeb1c6fd4a35ec74a26a56e20e8056fcf2edb6.png" src="../../_images/2060ae5d4f4d9e15070cf86282aeb1c6fd4a35ec74a26a56e20e8056fcf2edb6.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="driven-dissipative-two-level-system">
+<h2>Driven dissipative two-level system<a class="headerlink" href="#driven-dissipative-two-level-system" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sx, sy, sz, sm, sp = SigmaX(), SigmaY(), SigmaZ(), SigmaMinus(), SigmaPlus()
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Omega, gamma_0, N, t = symbols(&quot;\Omega, \gamma_0, N, t&quot;, positive=True)
+
+values = {Omega: 1.0, gamma_0: 0.5, N: 1.75}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>H = -Omega/2 * sx
+H
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/160fae5de42399112b95b87cccc562a1703a740ff84d13994ee02433e6112563.png" src="../../_images/160fae5de42399112b95b87cccc562a1703a740ff84d13994ee02433e6112563.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>c_ops = [sqrt(gamma_0 * (N + 1)) * pauli_represent_x_y(sm), 
+         sqrt(gamma_0 * N) * pauli_represent_x_y(sp)]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ops, op_eqm, sc_eqm, sc_ode, ofm, oim = semi_classical_eqm(H, c_ops)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>html_table([[Eq(Expectation(key), ofm[key]), sc_ode[key]] for key in operator_sort_by_order(sc_ode)])
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<tr><td>$\left\langle {\sigma_x} \right\rangle = \operatorname{A_{0}}{\left (t \right )}$</td><td>$\frac{d}{d t} \operatorname{A_{0}}{\left (t \right )} = - N \gamma_{0} \operatorname{A_{0}}{\left (t \right )} - \frac{\gamma_{0}}{2} \operatorname{A_{0}}{\left (t \right )}$</td></tr><tr><td>$\left\langle {\sigma_y} \right\rangle = \operatorname{A_{1}}{\left (t \right )}$</td><td>$\frac{d}{d t} \operatorname{A_{1}}{\left (t \right )} = - N \gamma_{0} \operatorname{A_{1}}{\left (t \right )} + \Omega \operatorname{A_{2}}{\left (t \right )} - \frac{\gamma_{0}}{2} \operatorname{A_{1}}{\left (t \right )}$</td></tr><tr><td>$\left\langle {\sigma_z} \right\rangle = \operatorname{A_{2}}{\left (t \right )}$</td><td>$\frac{d}{d t} \operatorname{A_{2}}{\left (t \right )} = - 2 N \gamma_{0} \operatorname{A_{2}}{\left (t \right )} - \Omega \operatorname{A_{1}}{\left (t \right )} - \gamma_{0} \operatorname{A_{2}}{\left (t \right )} - \gamma_{0}$</td></tr>
+</table></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>A_eq, A, M, b = semi_classical_eqm_matrix_form(sc_ode, t, ofm)
+
+A_eq
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/ca313b83f47b97a05b654734242b67591b21bfd650b8f66a9f297d5193763a5b.png" src="../../_images/ca313b83f47b97a05b654734242b67591b21bfd650b8f66a9f297d5193763a5b.png" />
+</div>
+</div>
+<section id="id1">
+<h3>Steadystate<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>A_sol = M.LUsolve(-b)
+</pre></div>
+</div>
+</div>
+</div>
+<p>The steadystate expectation value of <span class="math notranslate nohighlight">\(\sigma_x\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>A_sol[ops.index(sx)]
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/d4b163f55696d0600c2a00e91c91f5ed4ebd765fbdd795dc83d92982b6b28d92.png" src="../../_images/d4b163f55696d0600c2a00e91c91f5ed4ebd765fbdd795dc83d92982b6b28d92.png" />
+</div>
+</div>
+<p>The steadystate expectation value of <span class="math notranslate nohighlight">\(\sigma_y\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>A_sol[ops.index(sy)]
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/37905382a925b0d7629b8340d7f250ca4709451636de8731a039194df721ea2f.png" src="../../_images/37905382a925b0d7629b8340d7f250ca4709451636de8731a039194df721ea2f.png" />
+</div>
+</div>
+<p>The steadystate expectation value of <span class="math notranslate nohighlight">\(\sigma_z\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>A_sol[ops.index(sz)]
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/f478ee587d2eddcd844ea0aee56dcaec230684657dce7c6cc4520977aa24d228.png" src="../../_images/f478ee587d2eddcd844ea0aee56dcaec230684657dce7c6cc4520977aa24d228.png" />
+</div>
+</div>
+<p>Steadystate of <span class="math notranslate nohighlight">\(\sigma_+\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pauli_represent_x_y(sp).subs({sx: A_sol[ops.index(sx)], sy: A_sol[ops.index(sy)]})
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/cc4717d952f8e90b18d19b80004e509e0474b712417b497339085c486525b861.png" src="../../_images/cc4717d952f8e90b18d19b80004e509e0474b712417b497339085c486525b861.png" />
+</div>
+</div>
+<p>Steadystate of <span class="math notranslate nohighlight">\(\sigma_-\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pauli_represent_x_y(sm).subs({sx: A_sol[ops.index(sx)], sy: A_sol[ops.index(sy)]})
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/c16fc4a0d0fb0527d1c68cb445a8a5321a826e24359e94cc76b2279ca2d6619b.png" src="../../_images/c16fc4a0d0fb0527d1c68cb445a8a5321a826e24359e94cc76b2279ca2d6619b.png" />
+</div>
+</div>
+<p>Alternatively we can also use the SymPy <code class="docutils literal notranslate"><span class="pre">solve</span></code> function to find the steadystate solutions:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>solve([eq.rhs for eq in sc_ode.values()], list(ofm.values()))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/74ae600e64633d356bad43d17bf6d72b9a1b2424d1b7641ef45f19e4be62ab0b.png" src="../../_images/74ae600e64633d356bad43d17bf6d72b9a1b2424d1b7641ef45f19e4be62ab0b.png" />
+</div>
+</div>
+<p>At zero temperature:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>solve([eq.subs(N, 0).rhs for eq in sc_ode.values()], list(ofm.values()))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/9c3aabc73e84ab00753c3f02a2ff298732069f178b3760ec42b8ba29f32cc683.png" src="../../_images/9c3aabc73e84ab00753c3f02a2ff298732069f178b3760ec42b8ba29f32cc683.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="versions">
+<h2>Versions<a class="headerlink" href="#versions" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>%reload_ext version_information
+
+%version_information sympy, sympsi
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table><tr><th>Software</th><th>Version</th></tr><tr><td>Python</td><td>3.4.1 (default, Sep 20 2014, 19:44:17) [GCC 4.2.1 Compatible Apple LLVM 5.1 (clang-503.0.40)]</td></tr><tr><td>IPython</td><td>2.3.0</td></tr><tr><td>OS</td><td>Darwin 13.4.0 x86_64 i386 64bit</td></tr><tr><td>sympy</td><td>0.7.5-git</td></tr><tr><td>sympsi</td><td>0.1.0.dev-0c6e514</td></tr><tr><td colspan='2'>Sun Oct 12 21:42:08 2014 JST</td></tr></table></div></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./quantum-notebooks/0sympsi_QM_ipynb"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-modules">Setup modules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#semiclassical-equations-of-motion">Semiclassical equations of motion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#driven-harmonic-oscillator">Driven harmonic oscillator</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#system-of-semiclassical-equations">System of semiclassical equations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#steadystate">Steadystate</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solve-in-the-odes">Solve in the ODEs</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#driven-dissipative-two-level-system">Driven dissipative two-level system</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Steadystate</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#versions">Versions</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jonny, assisted by Tom
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1712 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Examples of using BosonOperator and FermionOperator &#8212; Jonny Workbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=8dedbda2" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'quantum-notebooks/0sympsi_QM_ipynb/sympy-quantum-boson-fermion';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Jonny Workbook</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Project Euler (PE)</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../PE25.html">1. PE Q1-25</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../PE50.html">2. PE Q26-50</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../PE75.html">3. PE Q51-</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Mathe &amp; FP/Language</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Alevel_math.html">4. A-level-math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Alevel_math_further.html">5. A-level-further</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../00intro_math.html">6. Math-FP-Lang Combo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../01number_algebra.html">7. Number &amp; Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../02discrete_continuous.html">8. Discrete &amp; Continuous</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../03real_world.html">9. Real World Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../05math_as_code.html">10. Math as code</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CS &amp; Physics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Course_MIT6001Python.html">11. MIT_CS6001-Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Course_MIT6002thinking.html">12. MIT_CS6002-CS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Course_MCM.html">13. Math Computational Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Course_MCM_QM.html">14. Quantum Mechanics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notebook</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../nb_past_courses.html">15. Past courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../nb_Geo.html">16. Geography and Maps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../nb_lottery_simulator.html">17. Lottery Math</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/tomctang/10pe" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/quantum-notebooks/0sympsi_QM_ipynb/sympy-quantum-boson-fermion.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Examples of using BosonOperator and FermionOperator</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docstrings">Docstrings</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-boson-operators">Test Boson operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-fermion-operators">Test Fermion operators</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commutators-between-fermions-and-bosons">Commutators between fermions and bosons</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simplifying-operator-expressions">Simplifying operator expressions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-operator-ordering-of-bosons">Test operator ordering of bosons</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#normal-ordering">Normal ordering</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-operator-ordering-of-fermions">Test operator ordering of fermions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Normal ordering</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#states">States</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boson-fock-states">Boson Fock states</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coherent-states">Coherent states</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fermion-fock-states">Fermion Fock states</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensorproduct-spaces">TensorProduct spaces</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#versions">Versions</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="examples-of-using-bosonoperator-and-fermionoperator">
+<h1>Examples of using BosonOperator and FermionOperator<a class="headerlink" href="#examples-of-using-bosonoperator-and-fermionoperator" title="Link to this heading">#</a></h1>
+<p>J. R. Johansson, <a class="reference external" href="http://jrjohansson.github.com">http://jrjohansson.github.com</a>, <a class="reference external" href="mailto:robert&#37;&#52;&#48;riken&#46;jp">robert<span>&#64;</span>riken<span>&#46;</span>jp</a></p>
+<p>Note: This notebook requires and experimental branch of sympy available at: <a class="github reference external" href="https://github.com/jrjohansson/sympy">jrjohansson/sympy</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>from sympy import *
+init_printing()
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>from sympy.physics.quantum import *
+from sympy.physics.quantum.boson import *
+from sympy.physics.quantum.fermion import *
+from sympy.physics.quantum.operatorordering import *
+</pre></div>
+</div>
+</div>
+</div>
+<section id="docstrings">
+<h2>Docstrings<a class="headerlink" href="#docstrings" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>#help(BosonOp)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>#help(FermionOp)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>help(normal_order)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on function normal_order in module sympy.physics.quantum.operatorordering:
+
+normal_order(expr, recursive_limit=10, _recursive_depth=0)
+    Normal order an expression with bosonic or fermionic operators. Note
+    that this normal order is not equivalent to the original expression, but
+    the creation and annihilation operators in each term in expr is reordered
+    so that the expression becomes normal ordered.
+    
+    Parameters
+    ==========
+    
+    expr : expression
+        The expression to normal order.
+    
+    recursive_limit : int (default 10)
+        The number of allowed recursive applications of the function.
+    
+    Examples
+    ========
+    
+    &gt;&gt;&gt; from sympy.physics.quantum import Dagger
+    &gt;&gt;&gt; from sympy.physics.quantum.boson import BosonOp
+    &gt;&gt;&gt; from sympy.physics.quantum.operatorordering import normal_order
+    &gt;&gt;&gt; a = BosonOp(&quot;a&quot;)
+    &gt;&gt;&gt; normal_order(a * Dagger(a))
+    Dagger(a)*a
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>help(normal_ordered_form)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on function normal_ordered_form in module sympy.physics.quantum.operatorordering:
+
+normal_ordered_form(expr, independent=False, recursive_limit=10, _recursive_depth=0)
+    Write an expression with bosonic or fermionic operators on normal
+    ordered form, where each term is normally ordered. Note that this
+    normal ordered form is equivalent to the original expression.
+    
+    Parameters
+    ==========
+    
+    expr : expression
+        The expression write on normal ordered form.
+    
+    recursive_limit : int (default 10)
+        The number of allowed recursive applications of the function.
+    
+    Examples
+    ========
+    
+    &gt;&gt;&gt; from sympy.physics.quantum import Dagger
+    &gt;&gt;&gt; from sympy.physics.quantum.boson import BosonOp
+    &gt;&gt;&gt; from sympy.physics.quantum.operatorordering import normal_ordered_form
+    &gt;&gt;&gt; a = BosonOp(&quot;a&quot;)
+    &gt;&gt;&gt; normal_ordered_form(a * Dagger(a))
+    1 + Dagger(a)*a
+</pre></div>
+</div>
+</div>
+</div>
+<section id="test-boson-operators">
+<h3>Test Boson operators<a class="headerlink" href="#test-boson-operators" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>a = BosonOp(&#39;a&#39;)
+b = BosonOp(&#39;b&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>a.is_annihilation, Dagger(a).is_annihilation
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(True, False)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Commutator(a, Dagger(a)).doit()
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/2523b22b0e38de34b610b49de26d54b4c5c52b74acb372e3a254a383f2344ac7.png" src="../../_images/2523b22b0e38de34b610b49de26d54b4c5c52b74acb372e3a254a383f2344ac7.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Commutator(Dagger(a), a).doit()
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/f13aed64c217e12d07ff8c0684abaec9c3a79e80d6f69659e9e6bc3d9df9aec0.png" src="../../_images/f13aed64c217e12d07ff8c0684abaec9c3a79e80d6f69659e9e6bc3d9df9aec0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Commutator(a, a).doit()
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/d4b163f55696d0600c2a00e91c91f5ed4ebd765fbdd795dc83d92982b6b28d92.png" src="../../_images/d4b163f55696d0600c2a00e91c91f5ed4ebd765fbdd795dc83d92982b6b28d92.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Commutator(Dagger(a), Dagger(a)).doit()
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/d4b163f55696d0600c2a00e91c91f5ed4ebd765fbdd795dc83d92982b6b28d92.png" src="../../_images/d4b163f55696d0600c2a00e91c91f5ed4ebd765fbdd795dc83d92982b6b28d92.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Dagger(Dagger(Dagger(a)))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/3733cfed9c34f428e6cf6f0590d11fe3689ead2a2c0d78cb6a6dd06ed17b0505.png" src="../../_images/3733cfed9c34f428e6cf6f0590d11fe3689ead2a2c0d78cb6a6dd06ed17b0505.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Commutator(a, Dagger(Dagger(a))) #.doit()
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/d4b163f55696d0600c2a00e91c91f5ed4ebd765fbdd795dc83d92982b6b28d92.png" src="../../_images/d4b163f55696d0600c2a00e91c91f5ed4ebd765fbdd795dc83d92982b6b28d92.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Commutator(a, b).doit()
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/6b57ae608d84e9ccc5c119e9218b83a6171373f6e47f6d058af35101aee40533.png" src="../../_images/6b57ae608d84e9ccc5c119e9218b83a6171373f6e47f6d058af35101aee40533.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Commutator(a, b).doit(independent=True)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/d4b163f55696d0600c2a00e91c91f5ed4ebd765fbdd795dc83d92982b6b28d92.png" src="../../_images/d4b163f55696d0600c2a00e91c91f5ed4ebd765fbdd795dc83d92982b6b28d92.png" />
+</div>
+</div>
+</section>
+<section id="test-fermion-operators">
+<h3>Test Fermion operators<a class="headerlink" href="#test-fermion-operators" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>c = FermionOp(&#39;c&#39;)
+d = FermionOp(&#39;d&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Commutator(c,Dagger(c))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/6a0256cceff9b1ca89f7171660be9c55f06119f1dbca75819f292a1a72695d01.png" src="../../_images/6a0256cceff9b1ca89f7171660be9c55f06119f1dbca75819f292a1a72695d01.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>AntiCommutator(c,Dagger(c))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/047e4fd4ad02e8eb9a931e470952b53b64fe4a7a4f142c3a07a6dce33b719a3e.png" src="../../_images/047e4fd4ad02e8eb9a931e470952b53b64fe4a7a4f142c3a07a6dce33b719a3e.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>AntiCommutator(c, Dagger(c)).doit()
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/2523b22b0e38de34b610b49de26d54b4c5c52b74acb372e3a254a383f2344ac7.png" src="../../_images/2523b22b0e38de34b610b49de26d54b4c5c52b74acb372e3a254a383f2344ac7.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>AntiCommutator(Dagger(c), c).doit()
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/2523b22b0e38de34b610b49de26d54b4c5c52b74acb372e3a254a383f2344ac7.png" src="../../_images/2523b22b0e38de34b610b49de26d54b4c5c52b74acb372e3a254a383f2344ac7.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>AntiCommutator(c,d).doit()
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/b786c07feba59950ed6de8261465b72a3e75958784eea9042dd29fa54d0d20e1.png" src="../../_images/b786c07feba59950ed6de8261465b72a3e75958784eea9042dd29fa54d0d20e1.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="commutators-between-fermions-and-bosons">
+<h2>Commutators between fermions and bosons<a class="headerlink" href="#commutators-between-fermions-and-bosons" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Commutator(a, c).doit()
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/d4b163f55696d0600c2a00e91c91f5ed4ebd765fbdd795dc83d92982b6b28d92.png" src="../../_images/d4b163f55696d0600c2a00e91c91f5ed4ebd765fbdd795dc83d92982b6b28d92.png" />
+</div>
+</div>
+</section>
+<section id="simplifying-operator-expressions">
+<h2>Simplifying operator expressions<a class="headerlink" href="#simplifying-operator-expressions" title="Link to this heading">#</a></h2>
+<section id="test-operator-ordering-of-bosons">
+<h3>Test operator ordering of bosons<a class="headerlink" href="#test-operator-ordering-of-bosons" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>normal_ordered_form(Dagger(a) * a)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/7196631e82693c1b25a6f2c4e6e361db2651066eb9f3af1c9dc3fa173fcd0c60.png" src="../../_images/7196631e82693c1b25a6f2c4e6e361db2651066eb9f3af1c9dc3fa173fcd0c60.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>normal_ordered_form(a * Dagger(a))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/eba22e96c3e2cc142ae8b93ca02a571e6eef9828c006df70fbf1f1f077840b6e.png" src="../../_images/eba22e96c3e2cc142ae8b93ca02a571e6eef9828c006df70fbf1f1f077840b6e.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>normal_ordered_form(a * Dagger(a) * a)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/21fa8ca590d17aecb18062a5747bc539d8095bcec52d7dccdef2102c8214904b.png" src="../../_images/21fa8ca590d17aecb18062a5747bc539d8095bcec52d7dccdef2102c8214904b.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>normal_ordered_form(a * a * Dagger(a))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/59e7964560f55f1685b90d9cd96848200419347b8689adffe87cf8f42b987f63.png" src="../../_images/59e7964560f55f1685b90d9cd96848200419347b8689adffe87cf8f42b987f63.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>normal_ordered_form(a * a * a * Dagger(a))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/3677eed961dd33695a02707bb7d7bffaf58a5c518bf154c1da3d887cfa622220.png" src="../../_images/3677eed961dd33695a02707bb7d7bffaf58a5c518bf154c1da3d887cfa622220.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>normal_ordered_form(a * Dagger(a) * a * Dagger(a))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/7e597525e3efd1497c7af98a5def8ce66b40c4beb7f7bc2c015621405587e76c.png" src="../../_images/7e597525e3efd1497c7af98a5def8ce66b40c4beb7f7bc2c015621405587e76c.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>normal_ordered_form(a * Dagger(a) * Dagger(a) * Dagger(a))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/f5fc82bad381e4d466e524c930dd8bfe66266403ffb5f697c7d531d10470a81f.png" src="../../_images/f5fc82bad381e4d466e524c930dd8bfe66266403ffb5f697c7d531d10470a81f.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>normal_ordered_form(a * Dagger(b))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/a324b90923bf16254b4f11a375914c1363d88bf26f7ac23ce97f9600b1ab2b21.png" src="../../_images/a324b90923bf16254b4f11a375914c1363d88bf26f7ac23ce97f9600b1ab2b21.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>normal_ordered_form(a * Dagger(b)).doit()
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/ac757ee65ff0293e59a9420b7a72c91f99b80faa4de7c67a91975ea23115f54c.png" src="../../_images/ac757ee65ff0293e59a9420b7a72c91f99b80faa4de7c67a91975ea23115f54c.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>normal_ordered_form(a * Dagger(b), independent=True)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/fa345e2869318092410c121d25b28bff6a812af83a8305fa49bdf8aa2de0d253.png" src="../../_images/fa345e2869318092410c121d25b28bff6a812af83a8305fa49bdf8aa2de0d253.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>normal_ordered_form(a * Dagger(b) * Dagger(a))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/5497685f668b290932599e0625c4424b26795ed24b350f7899b71161e3d7c23f.png" src="../../_images/5497685f668b290932599e0625c4424b26795ed24b350f7899b71161e3d7c23f.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>normal_ordered_form(a * Dagger(b) * Dagger(a), independent=True)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/10eec638b58710fc426dca67e5ef0bfadf429563ab2e993f14642ce1cfe29c31.png" src="../../_images/10eec638b58710fc426dca67e5ef0bfadf429563ab2e993f14642ce1cfe29c31.png" />
+</div>
+</div>
+<section id="normal-ordering">
+<h4>Normal ordering<a class="headerlink" href="#normal-ordering" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>normal_order(Dagger(a) * a)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/7196631e82693c1b25a6f2c4e6e361db2651066eb9f3af1c9dc3fa173fcd0c60.png" src="../../_images/7196631e82693c1b25a6f2c4e6e361db2651066eb9f3af1c9dc3fa173fcd0c60.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>normal_order(a * Dagger(a))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/7196631e82693c1b25a6f2c4e6e361db2651066eb9f3af1c9dc3fa173fcd0c60.png" src="../../_images/7196631e82693c1b25a6f2c4e6e361db2651066eb9f3af1c9dc3fa173fcd0c60.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>normal_order(a * a * a * Dagger(a))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/c855da635c0a8f8ea6f8b3688c6401d6dccc356f43e373bd4a4a377a8f8245d9.png" src="../../_images/c855da635c0a8f8ea6f8b3688c6401d6dccc356f43e373bd4a4a377a8f8245d9.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>normal_order(a * Dagger(a) * a * Dagger(a) * a)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/b32a67f6e9fe99826eb61bb7e74de5e5cdc24daed907306b8a250226af6c8a3f.png" src="../../_images/b32a67f6e9fe99826eb61bb7e74de5e5cdc24daed907306b8a250226af6c8a3f.png" />
+</div>
+</div>
+<p>Wick’s contraction:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>a * Dagger(a) - normal_order(a * Dagger(a))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/e0b785d1630b28a99a705e55b22b5485f90b863626f1a2ab05f70ce80bf8e8d0.png" src="../../_images/e0b785d1630b28a99a705e55b22b5485f90b863626f1a2ab05f70ce80bf8e8d0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>normal_ordered_form(a * Dagger(a) - normal_order(a * Dagger(a)))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/2523b22b0e38de34b610b49de26d54b4c5c52b74acb372e3a254a383f2344ac7.png" src="../../_images/2523b22b0e38de34b610b49de26d54b4c5c52b74acb372e3a254a383f2344ac7.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="test-operator-ordering-of-fermions">
+<h3>Test operator ordering of fermions<a class="headerlink" href="#test-operator-ordering-of-fermions" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>normal_ordered_form(Dagger(c) * c)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/8c2b4ab58e8f864708ded6b6fb331286b41abafc80477d02a0f0ac76ec2d8386.png" src="../../_images/8c2b4ab58e8f864708ded6b6fb331286b41abafc80477d02a0f0ac76ec2d8386.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>normal_ordered_form(c * Dagger(c))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/a5fac7f73a05bb2f7decd49fb27f599c70c5dfb24ea365a3180ebfb9c177ba19.png" src="../../_images/a5fac7f73a05bb2f7decd49fb27f599c70c5dfb24ea365a3180ebfb9c177ba19.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>normal_ordered_form(c * c * Dagger(c))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/4a0dfb72b6ed6cd6fdff75c42ad21d4b96cc5203169e252e0095b0b445c67d2f.png" src="../../_images/4a0dfb72b6ed6cd6fdff75c42ad21d4b96cc5203169e252e0095b0b445c67d2f.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>normal_ordered_form(c * c * c * Dagger(c))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/f62a5485bfc520ab375e69159f12416156664940af566c0e08eaf03cfad319d0.png" src="../../_images/f62a5485bfc520ab375e69159f12416156664940af566c0e08eaf03cfad319d0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>normal_ordered_form(c * Dagger(c) * c * Dagger(c))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/a47eecc46211be6030cc5c9aca209a62853fbba7cae4064144ce6f263237ce2d.png" src="../../_images/a47eecc46211be6030cc5c9aca209a62853fbba7cae4064144ce6f263237ce2d.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>normal_ordered_form(c * Dagger(d))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/0b87df0582588ad6262a280e229beac350a65025f71fb0d8a57a3f945252eb0e.png" src="../../_images/0b87df0582588ad6262a280e229beac350a65025f71fb0d8a57a3f945252eb0e.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>normal_ordered_form(c * Dagger(d), independent=True)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/525aaa245898aba504277e87185701ee17fe7312f7b94e2885c0c7cdd2d1e2c1.png" src="../../_images/525aaa245898aba504277e87185701ee17fe7312f7b94e2885c0c7cdd2d1e2c1.png" />
+</div>
+</div>
+<section id="id1">
+<h4>Normal ordering<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>normal_order(Dagger(c) * c)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/8c2b4ab58e8f864708ded6b6fb331286b41abafc80477d02a0f0ac76ec2d8386.png" src="../../_images/8c2b4ab58e8f864708ded6b6fb331286b41abafc80477d02a0f0ac76ec2d8386.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>normal_order(c * Dagger(c))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/6514cd67839a7604ebf5235b283978d34bffdfee8af28b43cf6afa808f895ff8.png" src="../../_images/6514cd67839a7604ebf5235b283978d34bffdfee8af28b43cf6afa808f895ff8.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>normal_order(c * Dagger(c) * c * Dagger(c) * c)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/b3b5035e52c2129ebb2eb37c2bea301d39d93b7b71003d2a24b91001fcebf3df.png" src="../../_images/b3b5035e52c2129ebb2eb37c2bea301d39d93b7b71003d2a24b91001fcebf3df.png" />
+</div>
+</div>
+<p>Wick’s contraction</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>c * Dagger(c) - normal_order(c * Dagger(c))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/d1288833dbdda7487ddde8c16e71636f25d7a36fc77d3bc234630b16c77a4d6f.png" src="../../_images/d1288833dbdda7487ddde8c16e71636f25d7a36fc77d3bc234630b16c77a4d6f.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>normal_ordered_form(c * Dagger(c) - normal_order(c * Dagger(c)))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/2523b22b0e38de34b610b49de26d54b4c5c52b74acb372e3a254a383f2344ac7.png" src="../../_images/2523b22b0e38de34b610b49de26d54b4c5c52b74acb372e3a254a383f2344ac7.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="states">
+<h2>States<a class="headerlink" href="#states" title="Link to this heading">#</a></h2>
+<section id="boson-fock-states">
+<h3>Boson Fock states<a class="headerlink" href="#boson-fock-states" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ket = BosonFockKet(2)
+
+ket
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/1eb87f55c756f71cc7e109daaac338d84ade8c1df284ca327f44a9ed9ae6e6a5.png" src="../../_images/1eb87f55c756f71cc7e109daaac338d84ade8c1df284ca327f44a9ed9ae6e6a5.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>bra = BosonFockBra(2)
+
+bra
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/60c5e7028e4bc1d6dec31e3fb041ea4e6ca3a6b99ef24f4b61c02b90151a5dc2.png" src="../../_images/60c5e7028e4bc1d6dec31e3fb041ea4e6ca3a6b99ef24f4b61c02b90151a5dc2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>type(bra), type(ket)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(sympy.physics.quantum.boson.BosonFockBra,
+ sympy.physics.quantum.boson.BosonFockKet)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>a * ket, qapply(a * ket)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/ebd4bcb44fb0f50bf357544d9e7a17c1183f4ec06bc06204a1b1b3480f8c82bc.png" src="../../_images/ebd4bcb44fb0f50bf357544d9e7a17c1183f4ec06bc06204a1b1b3480f8c82bc.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>bra * a, qapply(bra * a, dagger=True)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/41c14fddff4e43448e4cd6ce5471762d207f845e637e7e5f2b76f1792cffb9a1.png" src="../../_images/41c14fddff4e43448e4cd6ce5471762d207f845e637e7e5f2b76f1792cffb9a1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>qapply(Dagger(ket) * ket)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/f3fd7a27e76c71151e02d16a48db335f3f686f90ced2dcc4530274b54b3a119a.png" src="../../_images/f3fd7a27e76c71151e02d16a48db335f3f686f90ced2dcc4530274b54b3a119a.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(Dagger(ket) * ket).doit()
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/2523b22b0e38de34b610b49de26d54b4c5c52b74acb372e3a254a383f2344ac7.png" src="../../_images/2523b22b0e38de34b610b49de26d54b4c5c52b74acb372e3a254a383f2344ac7.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(bra * Dagger(bra)).doit()
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/2523b22b0e38de34b610b49de26d54b4c5c52b74acb372e3a254a383f2344ac7.png" src="../../_images/2523b22b0e38de34b610b49de26d54b4c5c52b74acb372e3a254a383f2344ac7.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Dagger(ket) * Dagger(a) * ket, qapply(Dagger(ket) * Dagger(a) * ket).doit()
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/2bb22e8ba18ea56e5d3e2460a1debb2dd1c79487b93e0af49421f6d922c9ea65.png" src="../../_images/2bb22e8ba18ea56e5d3e2460a1debb2dd1c79487b93e0af49421f6d922c9ea65.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(bra * Dagger(a) * Dagger(a) * a * a * ket).doit()
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/e0cb8fbac08a05aaeef01b63ef7d8bebbb9f3f5eb847b4d937782f12991db435.png" src="../../_images/e0cb8fbac08a05aaeef01b63ef7d8bebbb9f3f5eb847b4d937782f12991db435.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>qapply(Dagger(ket) * Dagger(a) * a * ket).doit()
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/9c9b93a5f37ad0fdd6c843aa152f357af20b97a137436fe565276fe19759c986.png" src="../../_images/9c9b93a5f37ad0fdd6c843aa152f357af20b97a137436fe565276fe19759c986.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>qapply(bra * Dagger(a) * a * Dagger(bra)).doit()
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/9c9b93a5f37ad0fdd6c843aa152f357af20b97a137436fe565276fe19759c986.png" src="../../_images/9c9b93a5f37ad0fdd6c843aa152f357af20b97a137436fe565276fe19759c986.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ket = BosonFockKet(4)
+bra = BosonFockBra(2)
+
+bra * a * a * ket, qapply(bra * a * a * ket).doit()
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/9ebb5828c8bd42e3c7e16e62143546554d12faad8f231cba81c4b021050dea61.png" src="../../_images/9ebb5828c8bd42e3c7e16e62143546554d12faad8f231cba81c4b021050dea61.png" />
+</div>
+</div>
+</section>
+<section id="coherent-states">
+<h3>Coherent states<a class="headerlink" href="#coherent-states" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>alpha, beta = symbols(&quot;alpha, beta&quot;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ket = BosonCoherentKet(alpha)
+
+ket
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/fe9983f611a566029b434433ec2fd8307a051eb79769e66d344e823e6c7fba5e.png" src="../../_images/fe9983f611a566029b434433ec2fd8307a051eb79769e66d344e823e6c7fba5e.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>bra = BosonCoherentBra(beta)
+
+bra
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/191ecc2f101a884914362a13f367bdbcb11f18e3a262fff037328a631b351111.png" src="../../_images/191ecc2f101a884914362a13f367bdbcb11f18e3a262fff037328a631b351111.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>bra * ket
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/b6e90d23bcd0578c19323447948b2b40efb4d238aa6141cf77d5c0a444817be7.png" src="../../_images/b6e90d23bcd0578c19323447948b2b40efb4d238aa6141cf77d5c0a444817be7.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(bra * ket).doit()
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/4eb07c93db763102debf7e299ef89bcdb012f40fff5f5a49f2ca0ff158faff22.png" src="../../_images/4eb07c93db763102debf7e299ef89bcdb012f40fff5f5a49f2ca0ff158faff22.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>qapply((bra * qapply(a * ket))).doit()
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/c401b396ee17fe69df8f70f86a395c4a4c7bfd373292f5da5537f86c51f35928.png" src="../../_images/c401b396ee17fe69df8f70f86a395c4a4c7bfd373292f5da5537f86c51f35928.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>qapply(Dagger(ket) * Dagger(a) * a * ket, dagger=True)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/b2705a988ec7d4c3a1831a5167b929a7f69b69cdf989aa8323b946a74e054bc5.png" src="../../_images/b2705a988ec7d4c3a1831a5167b929a7f69b69cdf989aa8323b946a74e054bc5.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>normal_ordered_form(a * Dagger(a))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/eba22e96c3e2cc142ae8b93ca02a571e6eef9828c006df70fbf1f1f077840b6e.png" src="../../_images/eba22e96c3e2cc142ae8b93ca02a571e6eef9828c006df70fbf1f1f077840b6e.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>qapply(bra * a * Dagger(a) * ket, dagger=True)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/ced16a5305e391cb908ca33222a3c226ffcf009e51162fb1517635d71557a826.png" src="../../_images/ced16a5305e391cb908ca33222a3c226ffcf009e51162fb1517635d71557a826.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>qapply(bra * normal_ordered_form(a * Dagger(a)) * ket, dagger=True)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/cb7da2d38c246bac40b25e881a3c2c1ba047d70fbb329ad78260bcf89dbce002.png" src="../../_images/cb7da2d38c246bac40b25e881a3c2c1ba047d70fbb329ad78260bcf89dbce002.png" />
+</div>
+</div>
+</section>
+<section id="fermion-fock-states">
+<h3>Fermion Fock states<a class="headerlink" href="#fermion-fock-states" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ket = FermionFockKet(1)
+
+ket
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/58e642476d2de93525e57fb1c4be15bc82d4d87ae92065278812cddc1fa80226.png" src="../../_images/58e642476d2de93525e57fb1c4be15bc82d4d87ae92065278812cddc1fa80226.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>bra = FermionFockBra(0)
+
+bra
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/3efce6174c0b1e5f72a1a6a35ec3bbbc8e6a04a79f0a55df704ae4d0272894dd.png" src="../../_images/3efce6174c0b1e5f72a1a6a35ec3bbbc8e6a04a79f0a55df704ae4d0272894dd.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(bra * ket).doit()
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/d4b163f55696d0600c2a00e91c91f5ed4ebd765fbdd795dc83d92982b6b28d92.png" src="../../_images/d4b163f55696d0600c2a00e91c91f5ed4ebd765fbdd795dc83d92982b6b28d92.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>c * ket
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/0e690107fd14a2d89ccf577ac8c5b81fdc9c2d7844885dd28eda60bfcf3a8418.png" src="../../_images/0e690107fd14a2d89ccf577ac8c5b81fdc9c2d7844885dd28eda60bfcf3a8418.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>qapply(c * ket)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/35e954fef757e2e3118e40c61f421fb02e2016565fcc056d9249c715f7e13075.png" src="../../_images/35e954fef757e2e3118e40c61f421fb02e2016565fcc056d9249c715f7e13075.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>qapply(c * c * ket)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/d4b163f55696d0600c2a00e91c91f5ed4ebd765fbdd795dc83d92982b6b28d92.png" src="../../_images/d4b163f55696d0600c2a00e91c91f5ed4ebd765fbdd795dc83d92982b6b28d92.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>qapply(Dagger(c) * ket)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/d4b163f55696d0600c2a00e91c91f5ed4ebd765fbdd795dc83d92982b6b28d92.png" src="../../_images/d4b163f55696d0600c2a00e91c91f5ed4ebd765fbdd795dc83d92982b6b28d92.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>qapply(Dagger(c) * c * ket)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/58e642476d2de93525e57fb1c4be15bc82d4d87ae92065278812cddc1fa80226.png" src="../../_images/58e642476d2de93525e57fb1c4be15bc82d4d87ae92065278812cddc1fa80226.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Dagger(c) * c
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/8c2b4ab58e8f864708ded6b6fb331286b41abafc80477d02a0f0ac76ec2d8386.png" src="../../_images/8c2b4ab58e8f864708ded6b6fb331286b41abafc80477d02a0f0ac76ec2d8386.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>qapply(Dagger(ket) * Dagger(c) * c * ket).doit()
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/2523b22b0e38de34b610b49de26d54b4c5c52b74acb372e3a254a383f2344ac7.png" src="../../_images/2523b22b0e38de34b610b49de26d54b4c5c52b74acb372e3a254a383f2344ac7.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>qapply(bra * Dagger(c) * c * Dagger(bra)).doit()
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/d4b163f55696d0600c2a00e91c91f5ed4ebd765fbdd795dc83d92982b6b28d92.png" src="../../_images/d4b163f55696d0600c2a00e91c91f5ed4ebd765fbdd795dc83d92982b6b28d92.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="tensorproduct-spaces">
+<h2>TensorProduct spaces<a class="headerlink" href="#tensorproduct-spaces" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>I2 = TensorProduct(IdentityOperator(), IdentityOperator())
+
+I2
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/0d0666f1a97bc1443e673f6b715a01d189a58fafd34c7f4fbccce7a47c386bc5.png" src="../../_images/0d0666f1a97bc1443e673f6b715a01d189a58fafd34c7f4fbccce7a47c386bc5.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>psi = TensorProduct(BosonFockKet(1),BosonFockKet(2))
+
+psi
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/b575de36e19570f0f963c5fbafad30cadbd107b7bad5fea160593358f20e3574.png" src="../../_images/b575de36e19570f0f963c5fbafad30cadbd107b7bad5fea160593358f20e3574.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>I2 * psi
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/a489931638fb4ee409a79e28becc3d5168b49eac3dd971acfd308da27d32342d.png" src="../../_images/a489931638fb4ee409a79e28becc3d5168b49eac3dd971acfd308da27d32342d.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>qapply(I2 * psi)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/b575de36e19570f0f963c5fbafad30cadbd107b7bad5fea160593358f20e3574.png" src="../../_images/b575de36e19570f0f963c5fbafad30cadbd107b7bad5fea160593358f20e3574.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>a1 = TensorProduct(BosonOp(&quot;a&quot;), IdentityOperator())
+a2 = TensorProduct(IdentityOperator(), BosonOp(&quot;a&quot;))
+
+a1, a2
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/731f100d63fae724fc6f67f3c64821bc0452f0492605f12fcd6c081f0a840b48.png" src="../../_images/731f100d63fae724fc6f67f3c64821bc0452f0492605f12fcd6c081f0a840b48.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>a1 * psi
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/e8070877cbb51eecacad929d43cceffca62b1069309ec502f2b19df5ef038e2f.png" src="../../_images/e8070877cbb51eecacad929d43cceffca62b1069309ec502f2b19df5ef038e2f.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>psi1 = qapply(a1 * psi)
+
+psi1
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/f35b7e32438ef963cfc227e28f8810e2d13a0561def9f202c909a0a02b5c90ee.png" src="../../_images/f35b7e32438ef963cfc227e28f8810e2d13a0561def9f202c909a0a02b5c90ee.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>psi2 = qapply(a2 * psi)
+
+psi2
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/5ec258383fdb0171505274bb8fe7e5bc0e76817c48443870bba3434d70098fe2.png" src="../../_images/5ec258383fdb0171505274bb8fe7e5bc0e76817c48443870bba3434d70098fe2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>qapply(Dagger(psi1) * psi2).doit()
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/d4b163f55696d0600c2a00e91c91f5ed4ebd765fbdd795dc83d92982b6b28d92.png" src="../../_images/d4b163f55696d0600c2a00e91c91f5ed4ebd765fbdd795dc83d92982b6b28d92.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>qapply(Dagger(psi2) * psi2).doit()
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/8d65412be4541ed424722b15bfd18d260aa2f99db0a4de33d4cf35dd54fc8e99.png" src="../../_images/8d65412be4541ed424722b15bfd18d260aa2f99db0a4de33d4cf35dd54fc8e99.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>e = TensorProduct(IdentityOperator(), BosonFockKet(1))
+
+e
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/da112e87ca8cd4ec9206a971cc7577b5479cd1238195978b2c84bde9c7d5c4b0.png" src="../../_images/da112e87ca8cd4ec9206a971cc7577b5479cd1238195978b2c84bde9c7d5c4b0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>qapply(Dagger(psi2) * e).doit()
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/081a39c7dc8c8691155e61de4f3fee370dcd9b92f35ab3664555a8576279811a.png" src="../../_images/081a39c7dc8c8691155e61de4f3fee370dcd9b92f35ab3664555a8576279811a.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>qapply(qapply(Dagger(psi2) * e) * TensorProduct(BosonFockKet(1), IdentityOperator())).doit()
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/0296765edc6fbea3f3a1af640f1abe498eca92da12a938e8856c9dcbd03c921c.png" src="../../_images/0296765edc6fbea3f3a1af640f1abe498eca92da12a938e8856c9dcbd03c921c.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>bra = TensorProduct(BosonFockBra(1),BosonFockBra(2))
+ket = TensorProduct(BosonFockKet(1),BosonFockKet(2))
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>qapply(bra * ket).doit()
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/51b06bf72035c1f372effddaa002af6ead499c6e776541dcbfdb9b51309fdc9f.png" src="../../_images/51b06bf72035c1f372effddaa002af6ead499c6e776541dcbfdb9b51309fdc9f.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>e = qapply(qapply(TensorProduct(IdentityOperator(), BosonCoherentBra(2)) * 
+       TensorProduct(a, normal_ordered_form(Dagger(b)*b*Dagger(b)*b)) * 
+       TensorProduct(IdentityOperator(), BosonCoherentKet(2))))
+
+e
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/c40c0ec3c10f3e4fa4fed4042557d183e2e32a4e44e819f3f19f9385c5beca93.png" src="../../_images/c40c0ec3c10f3e4fa4fed4042557d183e2e32a4e44e819f3f19f9385c5beca93.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ket = TensorProduct(IdentityOperator(), BosonFockKet(2))
+bra = Dagger(ket)
+
+qapply(qapply(bra * TensorProduct(a, normal_ordered_form(Dagger(b)*b*Dagger(b)*b)) * ket)).doit()
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/78a816be7fc8c3500b79c6c878c464322dae67df710921f2bbcf71ae5a741f2c.png" src="../../_images/78a816be7fc8c3500b79c6c878c464322dae67df710921f2bbcf71ae5a741f2c.png" />
+</div>
+</div>
+</section>
+<section id="versions">
+<h2>Versions<a class="headerlink" href="#versions" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>#%install_ext http://raw.github.com/jrjohansson/version_information/master/version_information.py
+%reload_ext version_information
+
+%version_information sympy
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table><tr><th>Software</th><th>Version</th></tr><tr><td>Python</td><td>3.4.1 (default, May 21 2014, 01:39:38) [GCC 4.2.1 Compatible Apple LLVM 5.1 (clang-503.0.40)]</td></tr><tr><td>IPython</td><td>2.1.0</td></tr><tr><td>OS</td><td>posix [darwin]</td></tr><tr><td>sympy</td><td>0.7.4.1-git</td></tr><tr><td colspan='2'>Thu Jun 05 15:32:12 2014 JST</td></tr></table></div></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./quantum-notebooks/0sympsi_QM_ipynb"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docstrings">Docstrings</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-boson-operators">Test Boson operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-fermion-operators">Test Fermion operators</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commutators-between-fermions-and-bosons">Commutators between fermions and bosons</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simplifying-operator-expressions">Simplifying operator expressions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-operator-ordering-of-bosons">Test operator ordering of bosons</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#normal-ordering">Normal ordering</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-operator-ordering-of-fermions">Test operator ordering of fermions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Normal ordering</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#states">States</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boson-fock-states">Boson Fock states</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coherent-states">Coherent states</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fermion-fock-states">Fermion Fock states</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensorproduct-spaces">TensorProduct spaces</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#versions">Versions</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jonny, assisted by Tom
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
