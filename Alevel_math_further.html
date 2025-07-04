@@ -369,10 +369,12 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-coding">5.1. test coding</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-y13-2">5.2. ★Further Y13-2</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assessment-1">5.2.1. Assessment 1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#module-3-work-energy-power">5.2.2. Module 3 - Work, Energy &amp; Power</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#module-2-momentum-impulse">5.2.3. Module 2 - Momentum &amp; Impulse</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#module-1-ode-applications">5.2.4. Module 1 - ODE Applications</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#module-6-the-distribution-of-the-sample-mean-and-the-central-limit-theorem">5.2.1. Module 6 - The Distribution of the Sample Mean and the Central Limit Theorem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#module-5-expectation-variance-poisson-distribution">5.2.2. Module 5 - Expectation &amp; Variance &amp; Poisson Distribution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assessment-1">5.2.3. Assessment 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#module-3-work-energy-power">5.2.4. Module 3 - Work, Energy &amp; Power</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#module-2-momentum-impulse">5.2.5. Module 2 - Momentum &amp; Impulse</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#module-1-ode-applications">5.2.6. Module 1 - ODE Applications</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-y13-1">5.3. ★Further Y13-1</a><ul class="nav section-nav flex-column">
@@ -469,8 +471,68 @@ document.write(`
 </section>
 <section id="further-y13-2">
 <h2><span class="section-number">5.2. </span>★Further Y13-2<a class="headerlink" href="#further-y13-2" title="Link to this heading">#</a></h2>
+<section id="module-6-the-distribution-of-the-sample-mean-and-the-central-limit-theorem">
+<h3><span class="section-number">5.2.1. </span>Module 6 - The Distribution of the Sample Mean and the Central Limit Theorem<a class="headerlink" href="#module-6-the-distribution-of-the-sample-mean-and-the-central-limit-theorem" title="Link to this heading">#</a></h3>
+<p>Notes</p>
+<ul class="simple">
+<li><p>Standard Error : This tells you how accurate a sample(size <span class="math notranslate nohighlight">\(n\)</span>) is when taken out of a population.</p></li>
+</ul>
+</section>
+<section id="module-5-expectation-variance-poisson-distribution">
+<h3><span class="section-number">5.2.2. </span>Module 5 - Expectation &amp; Variance &amp; Poisson Distribution<a class="headerlink" href="#module-5-expectation-variance-poisson-distribution" title="Link to this heading">#</a></h3>
+<p>Notes</p>
+<ul class="simple">
+<li><p>Poisson Distribution : It is used commonly for discrete variables. The formula was derived from the binomial distribution by using large numbers to evaluate a limit. Formula : <span class="math notranslate nohighlight">\(P(X=r)=e^{-\lambda}\frac{\lambda^r}{r!}\)</span></p>
+<ul>
+<li><p>VS. Normal Distribution : This distribution is commonly used for continuous variables. Using the PDF(Probability Density Function) of the normal distribution, you can also calculate the CDF(Cumulative Distribution Function). : <span class="math notranslate nohighlight">\(f(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}(\frac{x-\mu}{\sigma})^2}\)</span></p></li>
+</ul>
+</li>
+<li><p>Expectation <span class="math notranslate nohighlight">\(E(X)\)</span> : This is the mean of a random variable. It can be used to calculate the variance.</p></li>
+<li><p>Variance <span class="math notranslate nohighlight">\(Var(X)\)</span> : This tells you how spread out a set of numbers is. Formula : <span class="math notranslate nohighlight">\(Var(X)=E(X^2)-E(X)^2\)</span></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span><span class="p">[</span><span class="n">CDF</span><span class="p">[</span><span class="n">PoissonDistribution</span><span class="p">[</span><span class="mi">8</span><span class="p">]][</span><span class="mi">4</span><span class="p">]]</span>
+<span class="n">N</span><span class="p">[</span><span class="mi">1</span><span class="o">-</span><span class="n">CDF</span><span class="p">[</span><span class="n">PoissonDistribution</span><span class="p">[</span><span class="mi">8</span><span class="p">]][</span><span class="mi">13</span><span class="p">]]</span>
+<span class="n">N</span><span class="p">[</span><span class="n">CDF</span><span class="p">[</span><span class="n">PoissonDistribution</span><span class="p">[</span><span class="mi">130</span><span class="p">]][</span><span class="mi">100</span><span class="p">]]</span>
+<span class="n">N</span><span class="p">[</span><span class="n">CDF</span><span class="p">[</span><span class="n">PoissonDistribution</span><span class="p">[</span><span class="mf">7.2</span><span class="p">]][</span><span class="mi">2</span><span class="p">]]</span>
+<span class="n">N</span><span class="p">[</span><span class="mi">1</span><span class="o">-</span><span class="n">CDF</span><span class="p">[</span><span class="n">PoissonDistribution</span><span class="p">[</span><span class="mi">12</span><span class="p">]][</span><span class="mi">18</span><span class="p">]]</span>
+<span class="n">N</span><span class="p">[</span><span class="mi">1</span><span class="o">-</span><span class="n">CDF</span><span class="p">[</span><span class="n">PoissonDistribution</span><span class="p">[</span><span class="mi">1000</span><span class="o">/</span><span class="mi">365</span><span class="p">]][</span><span class="mi">3</span><span class="p">]]</span>
+<span class="n">N</span><span class="p">[</span><span class="mi">1</span><span class="o">-</span><span class="n">CDF</span><span class="p">[</span><span class="n">PoissonDistribution</span><span class="p">[</span><span class="mi">20</span><span class="p">]][</span><span class="mi">29</span><span class="p">]]</span>
+<span class="n">N</span><span class="p">[</span><span class="mi">1</span><span class="o">-</span><span class="n">CDF</span><span class="p">[</span><span class="n">PoissonDistribution</span><span class="p">[</span><span class="mi">3</span><span class="p">]][</span><span class="mi">4</span><span class="p">]]</span>
+<span class="n">N</span><span class="p">[</span><span class="mi">1</span><span class="o">-</span><span class="n">CDF</span><span class="p">[</span><span class="n">PoissonDistribution</span><span class="p">[</span><span class="mi">12</span><span class="p">]][</span><span class="mi">19</span><span class="p">]]</span>
+<span class="n">N</span><span class="p">[</span><span class="mi">1</span><span class="o">-</span><span class="n">CDF</span><span class="p">[</span><span class="n">PoissonDistribution</span><span class="p">[</span><span class="mf">12.5</span><span class="p">]][</span><span class="mi">5</span><span class="p">]]</span>
+<span class="n">N</span><span class="p">[</span><span class="n">CDF</span><span class="p">[</span><span class="n">PoissonDistribution</span><span class="p">[</span><span class="mi">1</span><span class="p">]][</span><span class="mi">1</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="n">PDF</span><span class="p">[</span><span class="n">PoissonDistribution</span><span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">]];</span>
+<span class="n">b</span><span class="o">=</span><span class="n">PDF</span><span class="p">[</span><span class="n">PoissonDistribution</span><span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">]];</span>
+<span class="n">N</span><span class="p">[</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="n">b</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">+</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">a</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span><span class="p">[</span><span class="n">CDF</span><span class="p">[</span><span class="n">PoissonDistribution</span><span class="p">[</span><span class="mi">100</span><span class="p">]][</span><span class="mi">120</span><span class="p">]]</span>
+<span class="n">DiscretePlot</span><span class="p">[</span><span class="n">CDF</span><span class="p">[</span><span class="n">PoissonDistribution</span><span class="p">[</span><span class="mi">100</span><span class="p">],</span><span class="n">k</span><span class="p">],{</span><span class="n">k</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">200</span><span class="p">}]</span>
+<span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="o">-</span><span class="n">PDF</span><span class="p">[</span><span class="n">PoissonDistribution</span><span class="p">[</span><span class="mi">2</span><span class="p">]][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">N</span><span class="p">[</span><span class="n">x</span><span class="o">^</span><span class="mi">4</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="p">)</span><span class="o">^</span><span class="mi">6</span><span class="o">*</span><span class="mi">10</span><span class="o">!</span>/6!/4!<span class="o">]</span>
+<span class="n">x</span><span class="o">=</span><span class="n">CDF</span><span class="p">[</span><span class="n">PoissonDistribution</span><span class="p">[</span><span class="mf">1.44</span><span class="p">]][</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">N</span><span class="p">[</span><span class="n">CDF</span><span class="p">[</span><span class="n">BinomialDistribution</span><span class="p">[</span><span class="mi">200</span><span class="p">,</span><span class="mf">0.17625</span><span class="p">]][</span><span class="mi">50</span><span class="p">]]</span>
+<span class="n">DiscretePlot</span><span class="p">[</span><span class="n">PDF</span><span class="p">[</span><span class="n">PoissonDistribution</span><span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">],</span><span class="n">k</span><span class="p">],{</span><span class="n">k</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">}]</span>
+<span class="n">DiscretePlot</span><span class="p">[</span><span class="n">PDF</span><span class="p">[</span><span class="n">PoissonDistribution</span><span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">],</span><span class="n">k</span><span class="p">],{</span><span class="n">k</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">}]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="assessment-1">
-<h3><span class="section-number">5.2.1. </span>Assessment 1<a class="headerlink" href="#assessment-1" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">5.2.3. </span>Assessment 1<a class="headerlink" href="#assessment-1" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">=</span><span class="mf">2.5</span><span class="o">*</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
@@ -479,14 +541,10 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle -0.854295151029126 \qquad   \]</div>
-</div>
 </div>
 </section>
 <section id="module-3-work-energy-power">
-<h3><span class="section-number">5.2.2. </span>Module 3 - Work, Energy &amp; Power<a class="headerlink" href="#module-3-work-energy-power" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">5.2.4. </span>Module 3 - Work, Energy &amp; Power<a class="headerlink" href="#module-3-work-energy-power" title="Link to this heading">#</a></h3>
 <p>Notes</p>
 <ul class="simple">
 <li><p>Energy : There are 2 common types in physics - kinetic energy and potential energy.</p>
@@ -494,7 +552,7 @@ document.write(`
 <li><p>Kinetic Energy : Energy stored in the object as motion. Formula : <span class="math notranslate nohighlight">\(KE=\frac{1}{2}mv^2\)</span></p></li>
 <li><p>Potential Energy : Energy stored in the object. Formula : <span class="math notranslate nohighlight">\(PE=mgh\)</span></p>
 <ul>
-<li><p>Elastic Potential Energy : <span class="math notranslate nohighlight">\(PE=\frac{x^2\lambda}{2l}\)</span></p></li>
+<li><p>Elastic Potential Energy : <span class="math notranslate nohighlight">\(PE=\frac{1}{2}\frac{\lambda}{l}x^2\)</span></p></li>
 </ul>
 </li>
 <li><p>Frictional Energy Lost : This is used in some problems where friction is not neglected. Formula : <span class="math notranslate nohighlight">\(E=F_fs\)</span></p></li>
@@ -511,15 +569,10 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>106.581795755510
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="module-2-momentum-impulse">
-<h3><span class="section-number">5.2.3. </span>Module 2 - Momentum &amp; Impulse<a class="headerlink" href="#module-2-momentum-impulse" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">5.2.5. </span>Module 2 - Momentum &amp; Impulse<a class="headerlink" href="#module-2-momentum-impulse" title="Link to this heading">#</a></h3>
 <p>Notes</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -531,7 +584,7 @@ document.write(`
 </div>
 </section>
 <section id="module-1-ode-applications">
-<h3><span class="section-number">5.2.4. </span>Module 1 - ODE Applications<a class="headerlink" href="#module-1-ode-applications" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">5.2.6. </span>Module 1 - ODE Applications<a class="headerlink" href="#module-1-ode-applications" title="Link to this heading">#</a></h3>
 <p>Notes</p>
 <ul class="simple">
 <li><p>Hooke’s Law : When the extensions is <span class="math notranslate nohighlight">\(x\)</span>, the natural length of the spring is <span class="math notranslate nohighlight">\(l\)</span> and the tension is <span class="math notranslate nohighlight">\(T\)</span>, <span class="math notranslate nohighlight">\(x \propto Tl\)</span> which can also be written as <span class="math notranslate nohighlight">\(T=\frac{\lambda x}{l}\)</span> where <span class="math notranslate nohighlight">\(\lambda\)</span> is the spring constant. (<span class="math notranslate nohighlight">\(F=kx\)</span>)</p></li>
@@ -562,10 +615,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle A + \frac{4}{5} \qquad   B + \frac{1}{10} \qquad   \]</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -575,10 +624,6 @@ document.write(`
 <span class="n">s</span><span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="n">y</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle B \qquad   -A + B \qquad   \]</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -3030,10 +3075,12 @@ So,
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-coding">5.1. test coding</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-y13-2">5.2. ★Further Y13-2</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assessment-1">5.2.1. Assessment 1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#module-3-work-energy-power">5.2.2. Module 3 - Work, Energy &amp; Power</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#module-2-momentum-impulse">5.2.3. Module 2 - Momentum &amp; Impulse</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#module-1-ode-applications">5.2.4. Module 1 - ODE Applications</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#module-6-the-distribution-of-the-sample-mean-and-the-central-limit-theorem">5.2.1. Module 6 - The Distribution of the Sample Mean and the Central Limit Theorem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#module-5-expectation-variance-poisson-distribution">5.2.2. Module 5 - Expectation &amp; Variance &amp; Poisson Distribution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assessment-1">5.2.3. Assessment 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#module-3-work-energy-power">5.2.4. Module 3 - Work, Energy &amp; Power</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#module-2-momentum-impulse">5.2.5. Module 2 - Momentum &amp; Impulse</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#module-1-ode-applications">5.2.6. Module 1 - ODE Applications</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-y13-1">5.3. ★Further Y13-1</a><ul class="nav section-nav flex-column">

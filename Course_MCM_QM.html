@@ -58,8 +58,6 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Course_MCM_QM';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -369,8 +367,9 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips">14.1. tips</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qm-for-everyone">14.2. QM for Everyone</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-quantum-mechanics-with-spins">14.2.1. Advanced Quantum Mechanics with Spins</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intro-quantum-probability">14.2.2. Intro &amp; Quantum Probability</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-quantum-mechanics-of-light">14.2.1. The Quantum Mechanics of Light</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-quantum-mechanics-with-spins">14.2.2. Advanced Quantum Mechanics with Spins</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intro-quantum-probability">14.2.3. Intro &amp; Quantum Probability</a></li>
 </ul>
 </li>
 </ul>
@@ -439,8 +438,78 @@ document.write(`
 </section>
 <section id="qm-for-everyone">
 <h2><span class="section-number">14.2. </span>QM for Everyone<a class="headerlink" href="#qm-for-everyone" title="Link to this heading">#</a></h2>
+<section id="the-quantum-mechanics-of-light">
+<h3><span class="section-number">14.2.1. </span>The Quantum Mechanics of Light<a class="headerlink" href="#the-quantum-mechanics-of-light" title="Link to this heading">#</a></h3>
+<p>Notes</p>
+<ul class="simple">
+<li><p>Light is made of particles.</p>
+<ul>
+<li><p>This has a long history.</p></li>
+<li><p>This can be proved using an experiment as when you shoot photons randomly through a single then you will get an pattern with a denser patch where the slit is. If instead it was a wave then it would be uniformly distributed.</p></li>
+</ul>
+</li>
+<li><p>Quantum Mechanics Process</p>
+<ol class="arabic simple">
+<li><p>Identify all events.</p></li>
+<li><p>Find all alternative events that can occur.</p></li>
+<li><p>Use quantum rules to find the amplitude arrow.</p>
+<ul>
+<li><p>Arrows rotate at a given speed(see below) based on the colour of the photon(1 revolution for every wavelength travelled).</p></li>
+</ul>
+</li>
+<li><p>Add all the arrows together to construct the final arrow.</p></li>
+<li><p>Square the length of the final arrow to calculate the probability for that event to occur.</p></li>
+<li><p>Add all the probabilities to calculate the total probability.</p></li>
+</ol>
+</li>
+<li><p>Calculation for Amplitude Arrows</p>
+<ul>
+<li><p>Use a clock that spins starting at 12 o’clock.</p></li>
+<li><p>Spinning rate through air</p>
+<ul>
+<li><p>Red Light : 36000 revolutions per inch(this one is mainly used in experiments)</p></li>
+<li><p>Green Light : 54000 revolutions per inch</p></li>
+<li><p>Blue Light : 72000 revolutions per inch</p></li>
+</ul>
+</li>
+<li><p>Reflection</p>
+<ul>
+<li><p>Reflection in air on glass : Multiply length by 0.2 and add 0.5 revolutions(6 hours) to the clock.</p></li>
+<li><p>Reflection in glass on glass : Just multiply length by 0.2</p></li>
+</ul>
+</li>
+<li><p>Transmission</p>
+<ul>
+<li><p>Transmission from air to glass : Multiply length by 0.98</p></li>
+<li><p>Transmission from glass to air : Multiply length by 0.98</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Info on Experiments</p>
+<ul>
+<li><p>1-3 : These are experiments where the photons only interact with air and glass.</p></li>
+<li><p>4-? : These experiments mostly have slits that photons have to get through in order to get detected.</p></li>
+</ul>
+</li>
+<li><p>Source-Detector Experiments of Light</p>
+<ol class="arabic simple">
+<li><p>There is only one event so this is boring. Source -&gt; Detector The length is just 1 meaning the final probability is 1.
+<img src="https://raw.githubusercontent.com/tomctang/NB_img/main/experiment1.png" alt="exp.1" width="200"></p></li>
+<li><p>The two alternative events are to reflect of the top of the glass or the bottom of the glass. Calculating gives a probability of 3%.
+<img src="https://raw.githubusercontent.com/tomctang/NB_img/main/experiment2.png" alt="exp.2" width="200"></p></li>
+<li><p>There is only one event which is where the photon gets transmitted. Using quantum rules gives a probability of 96%.
+<img src="https://raw.githubusercontent.com/tomctang/NB_img/main/experiment3.png" alt="exp.3" width="150"></p>
+<ul>
+<li><p>Even if you change the thickness of the glass, the probability is the same because all of them include one event where there is a transmission.</p></li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</section>
 <section id="advanced-quantum-mechanics-with-spins">
-<h3><span class="section-number">14.2.1. </span>Advanced Quantum Mechanics with Spins<a class="headerlink" href="#advanced-quantum-mechanics-with-spins" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">14.2.2. </span>Advanced Quantum Mechanics with Spins<a class="headerlink" href="#advanced-quantum-mechanics-with-spins" title="Link to this heading">#</a></h3>
 <p>Notes</p>
 <ul class="simple">
 <li><p>Two-Slit Experiment with Stern-Gerlach Analyzer Loop : There are two results using classical and quantum probability. The quantum probability result is correct where since the path taken is indeterminate(you can also say it takes both paths), the atom’s state does not change.</p>
@@ -448,13 +517,17 @@ document.write(`
 <li><p>Detector Variant : If a detector is put in the analyzer loop, the atom’s x state becomes known meaning it no longer has a state in the z direction.</p></li>
 </ul>
 </li>
+<li><p>Einstein-Podolsky-Rosen(EPR) Experiment : This is an experiment where there is a source which fires two atoms with opposite projections in a specific axis and is measured by two analyzers. One analyzer is slightly closer than the other so that we will know the state of the atom that hasn’t entered the analyzer yet because we have measured the other atom’s state. But say the analyzers are very far away. Then wouldn’t the information have been transfered faster than light?</p>
+<ul>
+<li><p>The hidden variables theory that Einstein made was disproved by Bell’s theorems.</p></li>
 </ul>
-<img src="https://raw.githubusercontent.com/tomctang/NB_img/main/111111111.png" alt="seriesgraph" width="550">
-</section>
+</li>
+</ul>
+<img src="https://raw.githubusercontent.com/tomctang/NB_img/main/sge.png" alt="seriesgraph" width="500"></section>
 <section id="intro-quantum-probability">
-<h3><span class="section-number">14.2.2. </span>Intro &amp; Quantum Probability<a class="headerlink" href="#intro-quantum-probability" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">14.2.3. </span>Intro &amp; Quantum Probability<a class="headerlink" href="#intro-quantum-probability" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Fermions : Metals conduct electricity do so because there is a “sea of electrons”. This is created from the Pauli exclusion principle, since electrons are fermions, and fermions stay apart, so they stay apart.</p></li>
+<li><p>Fermions : Metals conduct electricity do so because there is a “sea of electrons”. This is created from the Pauli exclusion principle, since electrons are fermions, and fermions stay apart, they stay apart.</p></li>
 <li><p>Alpha Particles : Created by radioactive elements. Since it is slow and heavy, it has low penetration power but can damage biological tissue. Smoke detectors use heavy elements to detect smoke as when there is smoke the current flow between the 2 metal plates that are held at different voltages the current is changed.</p></li>
 <li><p>Magnetic Fields : These are vector fields that are created by magnets.</p>
 <ul>
@@ -476,12 +549,27 @@ document.write(`
 </li>
 <li><p>Stern-Gerlach Experiment : Atoms are injected through a region of space where because of a magnetic field, there will be precession. 2 magnets will deflect the atom until it hits the screen where there is a detector.</p>
 <ul>
+<li><p>This experiment has many variants.</p></li>
 <li><p>In the quantum world, since everything is random, the atoms’ chance of exiting a specific exit for positive and negative can be calculated using a formula.</p></li>
+<li><p>Each Stern-Gerlach analyzer measures the atom’s projection on a specific axis. If the atom has no projection on that axis then it chooses a random path to take.</p></li>
 </ul>
 </li>
 <li><p>Birthday Problem : The problem asks you that how many people must be in a large room for the chance of at least 2 people having the same birthday to be a specific number.</p>
 <ul>
 <li><p>There are many variants.</p></li>
+</ul>
+</li>
+<li><p>Penney’s Game : This is an unfair coin game that seems fair at first. If you pick the sequence of coins first then the other person can always pick a sequence to have a greater chance of winning(unlike the same game but with sequences of 2 coins).</p>
+<ul>
+<li><p>Rules</p>
+<ol class="arabic simple">
+<li><p>Each player picks a sequence of 3 coins.</p></li>
+<li><p>Flip a coin, then put it at one end of the coins.</p></li>
+<li><p>Continue until the 3 coins in the middle matches a player’s sequence.</p></li>
+<li><p>If the 3 coins in the middle matches your sequence, you win this round.</p></li>
+<li><p>Continue for as many rounds as needed.</p></li>
+</ol>
+</li>
 </ul>
 </li>
 </ul>
@@ -507,11 +595,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1181
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -534,10 +617,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle 50142 \qquad   49858 \qquad   \]</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -546,11 +625,6 @@ document.write(`
 <span class="n">plot</span><span class="p">(</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="p">,(</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">),</span> <span class="n">figsize</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle \frac{385}{1728} \qquad   1343 \qquad   \]</div>
-<img alt="_images/765c030591a8061f9cc9d86d7f23df6cfb0686421931ac3163ad317feabd557d.png" src="_images/765c030591a8061f9cc9d86d7f23df6cfb0686421931ac3163ad317feabd557d.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -566,10 +640,6 @@ document.write(`
 <span class="n">s</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle 22 \qquad   \]</div>
 </div>
 </div>
 </section>
@@ -642,8 +712,9 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips">14.1. tips</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qm-for-everyone">14.2. QM for Everyone</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-quantum-mechanics-with-spins">14.2.1. Advanced Quantum Mechanics with Spins</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intro-quantum-probability">14.2.2. Intro &amp; Quantum Probability</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-quantum-mechanics-of-light">14.2.1. The Quantum Mechanics of Light</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-quantum-mechanics-with-spins">14.2.2. Advanced Quantum Mechanics with Spins</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intro-quantum-probability">14.2.3. Intro &amp; Quantum Probability</a></li>
 </ul>
 </li>
 </ul>
