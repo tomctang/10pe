@@ -3,13 +3,6 @@ format: jb-book  # For Jupyter Book; adjust if using another generator
 # below are the contents structure
 root: intro  # intro.ipynb, defines the root page ( Indentation not tabs)
 parts:
-- caption: Project Euler (PE)
-  numbered: true
-  chapters:
-  - file: PE25
-  - file: PE50
-  - file: PE75     
-
 - caption: Mathe & FP/Language
   numbered: true
   chapters:
@@ -26,6 +19,9 @@ parts:
   chapters:
   - file: Course_MIT6001Python
   - file: Course_MIT6002thinking
+  - file: PE25
+  - file: PE50
+  - file: PE75  
   - file: Course_MCM
   - file: Course_MCM_QM
   
