@@ -1,0 +1,746 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1. Normalizing Particle in a Box &#8212; Jonny Workbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=8dedbda2" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '17MCM_QM_ipynb/0sympsi_QM_ipynb/PySy_Module_2_PIB';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Jonny Workbook</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Mathe &amp; FP/Language</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Alevel_math.html">1. A-level-math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Alevel_math_further.html">2. A-level-further</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../00intro_math.html">3. Math-FP-Lang Combo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../01number_algebra.html">4. Number &amp; Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../02discrete_continuous.html">5. Discrete &amp; Continuous</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../03real_world.html">6. Real World Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../05math_as_code.html">7. Math as code</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CS &amp; Physics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Course_MIT6001Python.html">8. MIT_CS6001-Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Course_MIT6002thinking.html">9. MIT_CS6002-CS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../PE25.html">10. Project Euler Q1-25</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../PE50.html">11. PE Q26-50</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../PE75.html">12. PE Q51-</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Course_MCM.html">13. Math Computational Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Course_MCM_QM.html">14. Quantum Mechanics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notebook</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../nb_past_courses.html">15. Past courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../nb_Geo.html">16. Geography and Maps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../nb_lottery_simulator.html">17. Lottery Math</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/tomctang/10pe" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/17MCM_QM_ipynb/0sympsi_QM_ipynb/PySy_Module_2_PIB.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>1. Normalizing Particle in a Box</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">1. Normalizing Particle in a Box</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#expectation-value-of-the-position-operator-for-particle-in-a-box">2. Expectation Value of the Position Operator for Particle in a Box</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#expectation-value-of-the-kinetic-energy-operator-for-particle-in-a-box">Expectation Value of the Kinetic Energy Operator for Particle in a Box</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#graphing-the-wavefunction-of-particle-in-a-box">Graphing the WaveFunction of Particle in a Box</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#normalzing-2-dimensional-particle-in-a-box">Normalzing 2-Dimensional Particle in a Box</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#graphing-the-wavefunction-of-2-d-particle-in-a-box">Graphing the WaveFunction of 2-D Particle in a Box</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#answers">Answers</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;../src&#39;</span><span class="p">)</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">pysycomp</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="normalizing-particle-in-a-box">
+<h1>1. Normalizing Particle in a Box<a class="headerlink" href="#normalizing-particle-in-a-box" title="Link to this heading">#</a></h1>
+<p>This can be done in one line, using the <code class="docutils literal notranslate"><span class="pre">PIB()</span></code> function, and the <code class="docutils literal notranslate"><span class="pre">normalization_constant()</span></code> function</p>
+<ol class="arabic simple">
+<li><p>Try running just the <code class="docutils literal notranslate"><span class="pre">PIB()</span></code> function with variables <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">L</span></code>, and <code class="docutils literal notranslate"><span class="pre">n</span></code>.</p></li>
+</ol>
+<ol class="arabic simple" start="2">
+<li><p>Now, try normalizing using the <code class="docutils literal notranslate"><span class="pre">normalization_constant()</span></code> function with the same parameters, from <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">L</span></code>.</p></li>
+</ol>
+<p>Please note the normalization constant provides the <em>constant</em> and not the normalized wave function. To get the normalized wave function, multiply the normalization constant with the original wave function.</p>
+<ol class="arabic simple" start="3">
+<li><p>What is the normalized wave function?</p></li>
+</ol>
+<p>The normalized Particle in a Box, although we were able to compute it, is given by the function <code class="docutils literal notranslate"><span class="pre">PIB_normalize()</span></code> with the same parameters as the <code class="docutils literal notranslate"><span class="pre">PIB()</span></code> function. You can check your answers to number 3 by using the below function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">PIB_normalized</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/03657b532ad286a46aabb6bc4fc276b7a3b42293c6071757aa0b742e8f0929b2.png" src="../../_images/03657b532ad286a46aabb6bc4fc276b7a3b42293c6071757aa0b742e8f0929b2.png" />
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="expectation-value-of-the-position-operator-for-particle-in-a-box">
+<h1>2. Expectation Value of the Position Operator for Particle in a Box<a class="headerlink" href="#expectation-value-of-the-position-operator-for-particle-in-a-box" title="Link to this heading">#</a></h1>
+<p>We can also do a simple positional expectation value using the normalized Particle in a Box.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">expectation_value()</span></code> function calculates the expectation value for an operator of interest. In this example we are using the “x”, or positional, operator.</p>
+<ol class="arabic simple" start="4">
+<li><p>Find the position (<code class="docutils literal notranslate"><span class="pre">x</span></code>) expectation value of a one dimensional particle in a box from <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">L</span></code>.</p></li>
+</ol>
+<p>The expectation value is the average value of an operator for a given WaveFunction between certain bounds. This quantity, L/2, for the positional operator, indicates the most likely location to find the particle in a 1-dimensional box at L/2, which is the center of the box.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="expectation-value-of-the-kinetic-energy-operator-for-particle-in-a-box">
+<h1>Expectation Value of the Kinetic Energy Operator for Particle in a Box<a class="headerlink" href="#expectation-value-of-the-kinetic-energy-operator-for-particle-in-a-box" title="Link to this heading">#</a></h1>
+<p>Now, we can calculate the kinetic energy expectation value for a one-dimensional particle in a box.</p>
+<ol class="arabic simple" start="5">
+<li><p>Find the kinetic energy (<code class="docutils literal notranslate"><span class="pre">kinetic_energy()</span></code>) expectation value for a one-dimensional particle in a box from <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">L</span></code>.</p></li>
+</ol>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="graphing-the-wavefunction-of-particle-in-a-box">
+<h1>Graphing the WaveFunction of Particle in a Box<a class="headerlink" href="#graphing-the-wavefunction-of-particle-in-a-box" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)):</span>
+    <span class="n">y</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">eval</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">PIB_normalized</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">))))</span>
+    
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Length of Box&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Length of Box&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/cc071b5e062dbea5fef087f03fb88e51ffb086040f391c702991a06581b2bcd3.png" src="../../_images/cc071b5e062dbea5fef087f03fb88e51ffb086040f391c702991a06581b2bcd3.png" />
+</div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Plot the wave function for n = 2 for a one-dimensional particle in a box.</p></li>
+</ol>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="normalzing-2-dimensional-particle-in-a-box">
+<h1>Normalzing 2-Dimensional Particle in a Box<a class="headerlink" href="#normalzing-2-dimensional-particle-in-a-box" title="Link to this heading">#</a></h1>
+<p>Let’s look at a particle in a square box with length <code class="docutils literal notranslate"><span class="pre">L</span></code>. We can use the pre-defined <code class="docutils literal notranslate"><span class="pre">PIB_2D()</span></code> function to calculate this, along with the <code class="docutils literal notranslate"><span class="pre">normalization_constant()</span></code> function used with the one-dimensional box.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">L_x</span><span class="p">,</span> <span class="n">L_y</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;x, y, L_x, L_y&quot;</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="n">normalization_constant</span><span class="p">(</span><span class="n">PIB_2D</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{cases} \frac{2}{\sqrt{L^{2}}} &amp; \text{for}\: L &gt; -\infty \wedge L &lt; \infty \wedge L \neq 0 \\\tilde{\infty} &amp; \text{otherwise} \end{cases}\end{split}\]</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="graphing-the-wavefunction-of-2-d-particle-in-a-box">
+<h1>Graphing the WaveFunction of 2-D Particle in a Box<a class="headerlink" href="#graphing-the-wavefunction-of-2-d-particle-in-a-box" title="Link to this heading">#</a></h1>
+<p>To plot in 3D, the pysycomp function <code class="docutils literal notranslate"><span class="pre">plot_function()</span></code> is used.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">n_x</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">n_y</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;x, y&quot;</span><span class="p">)</span>
+
+<span class="n">plot_function</span><span class="p">(</span><span class="n">PIB_2D_normalized</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">n_x</span><span class="p">,</span> <span class="n">n_y</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/725d73683e3f5718537db3e88371969ef283326deb7dadc19d8b96e563b3f570.png" src="../../_images/725d73683e3f5718537db3e88371969ef283326deb7dadc19d8b96e563b3f570.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7f8c412712a0&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="7">
+<li><p>Plot the three-dimensional wave function for n = 2</p></li>
+</ol>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="answers">
+<h1>Answers<a class="headerlink" href="#answers" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">L</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;x, y, L&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple">
+<li></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">PIB</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/bd2c4cd27a6acbf5195f48e40542b410779e56c9f5141ca9b943c481d9960e1a.png" src="../../_images/bd2c4cd27a6acbf5195f48e40542b410779e56c9f5141ca9b943c481d9960e1a.png" />
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">normalization_constant</span><span class="p">(</span><span class="n">PIB</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{cases} \frac{\sqrt{2}}{\sqrt{L}} &amp; \text{for}\: \left(L &gt; -\infty \vee L &gt; 0\right) \wedge \left(L &gt; -\infty \vee L &lt; \infty\right) \wedge \left(L &gt; 0 \vee L &lt; 0\right) \wedge \left(L &lt; 0 \vee L &lt; \infty\right) \\\tilde{\infty} &amp; \text{otherwise} \end{cases}\end{split}\]</div>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="n">L</span><span class="p">))</span><span class="o">*</span><span class="n">PIB</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/0d7d92c483507dba0e078add229ff626701f5f408078f49387eb8f5b379957ca.png" src="../../_images/0d7d92c483507dba0e078add229ff626701f5f408078f49387eb8f5b379957ca.png" />
+</div>
+</div>
+<ol class="arabic simple" start="4">
+<li></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expectation_value</span><span class="p">(</span><span class="n">PIB_normalized</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span> <span class="n">x</span><span class="p">,</span> <span class="n">PIB_normalized</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/1778bf3977ee6026682eb2269dad58980f09def6aa5679884d9dbf6f8a74e676.png" src="../../_images/1778bf3977ee6026682eb2269dad58980f09def6aa5679884d9dbf6f8a74e676.png" />
+</div>
+</div>
+<ol class="arabic simple" start="5">
+<li></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expectation_value</span><span class="p">(</span><span class="n">PIB_normalized</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span> <span class="n">kinetic_energy</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">PIB_normalized</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{cases} \frac{\pi^{2} \hbar^{2}}{2 L^{2} m} &amp; \text{for}\: L &gt; -\infty \wedge L &lt; \infty \wedge L \neq 0 \\0 &amp; \text{otherwise} \end{cases}\end{split}\]</div>
+</div>
+</div>
+<ol class="arabic simple" start="6">
+<li></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)):</span>
+    <span class="n">test</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">eval</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">PIB_normalized</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">))))</span>
+    
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">test</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Length of Box&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Length of Box&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/e1f2ca5c7151bebd806c32fb6eb2e7b136dae18e9558dca684923a4d9f2fc3cc.png" src="../../_images/e1f2ca5c7151bebd806c32fb6eb2e7b136dae18e9558dca684923a4d9f2fc3cc.png" />
+</div>
+</div>
+<ol class="arabic simple" start="7">
+<li></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;x, y&quot;</span><span class="p">)</span>
+
+<span class="n">plot_function</span><span class="p">(</span><span class="n">PIB_2D_normalized</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/b334cc5893c87d67d8af8bb9859509c2f0fc8b19f22d4579ff48feb6b1d7a223.png" src="../../_images/b334cc5893c87d67d8af8bb9859509c2f0fc8b19f22d4579ff48feb6b1d7a223.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7f8c40c670d0&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./17MCM_QM_ipynb/0sympsi_QM_ipynb"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">1. Normalizing Particle in a Box</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#expectation-value-of-the-position-operator-for-particle-in-a-box">2. Expectation Value of the Position Operator for Particle in a Box</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#expectation-value-of-the-kinetic-energy-operator-for-particle-in-a-box">Expectation Value of the Kinetic Energy Operator for Particle in a Box</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#graphing-the-wavefunction-of-particle-in-a-box">Graphing the WaveFunction of Particle in a Box</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#normalzing-2-dimensional-particle-in-a-box">Normalzing 2-Dimensional Particle in a Box</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#graphing-the-wavefunction-of-2-d-particle-in-a-box">Graphing the WaveFunction of 2-D Particle in a Box</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#answers">Answers</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jonny, assisted by Tom
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

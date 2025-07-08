@@ -1,0 +1,1110 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Test sympy.physics.quantum.pauli &#8212; Jonny Workbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=8dedbda2" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '17MCM_QM_ipynb/0sympsi_QM_ipynb/sympy-quantum-pauli';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Jonny Workbook</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Mathe &amp; FP/Language</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Alevel_math.html">1. A-level-math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Alevel_math_further.html">2. A-level-further</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../00intro_math.html">3. Math-FP-Lang Combo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../01number_algebra.html">4. Number &amp; Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../02discrete_continuous.html">5. Discrete &amp; Continuous</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../03real_world.html">6. Real World Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../05math_as_code.html">7. Math as code</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CS &amp; Physics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Course_MIT6001Python.html">8. MIT_CS6001-Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Course_MIT6002thinking.html">9. MIT_CS6002-CS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../PE25.html">10. Project Euler Q1-25</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../PE50.html">11. PE Q26-50</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../PE75.html">12. PE Q51-</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Course_MCM.html">13. Math Computational Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Course_MCM_QM.html">14. Quantum Mechanics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notebook</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../nb_past_courses.html">15. Past courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../nb_Geo.html">16. Geography and Maps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../nb_lottery_simulator.html">17. Lottery Math</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/tomctang/10pe" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/17MCM_QM_ipynb/0sympsi_QM_ipynb/sympy-quantum-pauli.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Test sympy.physics.quantum.pauli</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Test sympy.physics.quantum.pauli</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#html-table">HTML table</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-representations">Matrix representations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commutators">Commutators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anticommutators">Anticommutators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adjoint">Adjoint</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#operator-products">Operator products</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powers">Powers</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#states">States</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#applications">Applications</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bakercampbellhausdorff-formula">Baker–Campbell–Hausdorff formula</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-e-i-theta-2-sigma-y-sigma-xe-i-theta-2-sigma-y-cos-theta-sigma-x-sin-theta-sigma-z">Test: <span class="math notranslate nohighlight">\(e^{i\theta/2 \sigma_y}\sigma_xe^{-i\theta/2 \sigma_y} = \cos(\theta)\sigma_x + \sin(\theta)\sigma_z\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-e-i-theta-2-sigma-y-sigma-ze-i-theta-2-sigma-y-cos-theta-sigma-z-sin-theta-sigma-x">Test: <span class="math notranslate nohighlight">\(e^{i\theta/2 \sigma_y}\sigma_ze^{-i\theta/2 \sigma_y} = \cos(\theta)\sigma_z - \sin(\theta)\sigma_x\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculate-e-i-theta-2-sigma-y-sigma-e-i-theta-2-sigma-y">Calculate <span class="math notranslate nohighlight">\(e^{i\theta/2 \sigma_y}\sigma_-e^{-i\theta/2 \sigma_y}\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Calculate <span class="math notranslate nohighlight">\(e^{i\theta/2 \sigma_y}\sigma_+e^{-i\theta/2 \sigma_y}\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#versions">Versions</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="test-sympy-physics-quantum-pauli">
+<h1>Test sympy.physics.quantum.pauli<a class="headerlink" href="#test-sympy-physics-quantum-pauli" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>from sympy import *
+init_printing()
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>from sympy.physics.quantum import *
+from sympy.physics.quantum.spin import *
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>from sympy.physics.quantum.pauli import *
+from sympy.physics.quantum.boson import *
+from sympy.physics.quantum.density import *
+from sympy.physics.quantum.operatorordering import *
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>s_ops = sx, sy, sz, sp, sm = SigmaX(), SigmaY(), SigmaZ(), SigmaPlus(), SigmaMinus()
+
+#s_ops = sx, sy, sz, sp, sm = Jx, Jy, Jz, Jplus, Jminus  # does not work well, many expressions unevaluated
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sx1, sy1, sz1 = SigmaX(1), SigmaY(1), SigmaZ(1)
+sx2, sy2, sz2 = SigmaX(2), SigmaY(2), SigmaZ(2)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>qsimplify_pauli(sx * sy)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/28a9e0da56aef53c749010366c8e346d0e409fe6cb394ab061bc8bc2dcbc528f.png" src="../../_images/28a9e0da56aef53c749010366c8e346d0e409fe6cb394ab061bc8bc2dcbc528f.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>qsimplify_pauli(sx1 * sy1 * sx2 * sy2)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/c733116a4109a97c8fcdde88ead21424b82a640edcc19d3e5d20c89deb6da84c.png" src="../../_images/c733116a4109a97c8fcdde88ead21424b82a640edcc19d3e5d20c89deb6da84c.png" />
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="html-table">
+<h1>HTML table<a class="headerlink" href="#html-table" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>from IPython.display import HTML
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>def print_table(data):
+    t_table = &quot;&lt;table&gt;\n%s\n&lt;/table&gt;&quot;
+    t_row = &quot;&lt;tr&gt;%s&lt;/tr&gt;&quot;
+    t_col = &quot;&lt;td&gt;%s&lt;/td&gt;&quot;
+    table_code = t_table % &quot;&quot;.join([t_row % &quot;&quot;.join([t_col % (&quot;$%s$&quot; % latex(col))
+                                                     for col in row])
+                                    for row in data])
+    return HTML(table_code)
+</pre></div>
+</div>
+</div>
+</div>
+<section id="matrix-representations">
+<h2>Matrix representations<a class="headerlink" href="#matrix-representations" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>data = [s_ops, [represent(s) for s in s_ops]]
+
+print_table(data)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<tr><td>${\sigma_x}$</td><td>${\sigma_y}$</td><td>${\sigma_z}$</td><td>${\sigma_+}$</td><td>${\sigma_-}$</td></tr><tr><td>$\left[\begin{matrix}0 & 1\\1 & 0\end{matrix}\right]$</td><td>$\left[\begin{matrix}0 & - i\\i & 0\end{matrix}\right]$</td><td>$\left[\begin{matrix}1 & 0\\0 & -1\end{matrix}\right]$</td><td>$\left[\begin{matrix}0 & 1\\0 & 0\end{matrix}\right]$</td><td>$\left[\begin{matrix}0 & 0\\1 & 0\end{matrix}\right]$</td></tr>
+</table></div></div>
+</div>
+</section>
+<section id="commutators">
+<h2>Commutators<a class="headerlink" href="#commutators" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>data = [[r&quot;{\rm Expression}&quot;, r&quot;{\rm Evaluated\;value}&quot;, r&quot;{\rm Numerical\;test}&quot;]] + \
+       [[Commutator(s1, s2),
+         Commutator(s1, s2).doit(),
+         represent(Commutator(s1, s2)) == represent(Commutator(s1, s2).doit())]
+        for s1 in s_ops for s2 in s_ops if s1 != s2]
+
+print_table(data)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<tr><td>${\rm Expression}$</td><td>${\rm Evaluated\;value}$</td><td>${\rm Numerical\;test}$</td></tr><tr><td>$\left[{\sigma_x},{\sigma_y}\right]$</td><td>$2 i {\sigma_z}$</td><td>$\mathrm{True}$</td></tr><tr><td>$\left[{\sigma_x},{\sigma_z}\right]$</td><td>$- 2 i {\sigma_y}$</td><td>$\mathrm{True}$</td></tr><tr><td>$- \left[{\sigma_+},{\sigma_x}\right]$</td><td>$- {\sigma_z}$</td><td>$\mathrm{True}$</td></tr><tr><td>$- \left[{\sigma_-},{\sigma_x}\right]$</td><td>${\sigma_z}$</td><td>$\mathrm{True}$</td></tr><tr><td>$- \left[{\sigma_x},{\sigma_y}\right]$</td><td>$- 2 i {\sigma_z}$</td><td>$\mathrm{True}$</td></tr><tr><td>$\left[{\sigma_y},{\sigma_z}\right]$</td><td>$2 i {\sigma_x}$</td><td>$\mathrm{True}$</td></tr><tr><td>$- \left[{\sigma_+},{\sigma_y}\right]$</td><td>$- i {\sigma_z}$</td><td>$\mathrm{True}$</td></tr><tr><td>$- \left[{\sigma_-},{\sigma_y}\right]$</td><td>$- i {\sigma_z}$</td><td>$\mathrm{True}$</td></tr><tr><td>$- \left[{\sigma_x},{\sigma_z}\right]$</td><td>$2 i {\sigma_y}$</td><td>$\mathrm{True}$</td></tr><tr><td>$- \left[{\sigma_y},{\sigma_z}\right]$</td><td>$- 2 i {\sigma_x}$</td><td>$\mathrm{True}$</td></tr><tr><td>$- \left[{\sigma_+},{\sigma_z}\right]$</td><td>$2 {\sigma_+}$</td><td>$\mathrm{True}$</td></tr><tr><td>$- \left[{\sigma_-},{\sigma_z}\right]$</td><td>$- 2 {\sigma_-}$</td><td>$\mathrm{True}$</td></tr><tr><td>$\left[{\sigma_+},{\sigma_x}\right]$</td><td>${\sigma_z}$</td><td>$\mathrm{True}$</td></tr><tr><td>$\left[{\sigma_+},{\sigma_y}\right]$</td><td>$i {\sigma_z}$</td><td>$\mathrm{True}$</td></tr><tr><td>$\left[{\sigma_+},{\sigma_z}\right]$</td><td>$- 2 {\sigma_+}$</td><td>$\mathrm{True}$</td></tr><tr><td>$- \left[{\sigma_-},{\sigma_+}\right]$</td><td>${\sigma_z}$</td><td>$\mathrm{True}$</td></tr><tr><td>$\left[{\sigma_-},{\sigma_x}\right]$</td><td>$- {\sigma_z}$</td><td>$\mathrm{True}$</td></tr><tr><td>$\left[{\sigma_-},{\sigma_y}\right]$</td><td>$i {\sigma_z}$</td><td>$\mathrm{True}$</td></tr><tr><td>$\left[{\sigma_-},{\sigma_z}\right]$</td><td>$2 {\sigma_-}$</td><td>$\mathrm{True}$</td></tr><tr><td>$\left[{\sigma_-},{\sigma_+}\right]$</td><td>$- {\sigma_z}$</td><td>$\mathrm{True}$</td></tr>
+</table></div></div>
+</div>
+</section>
+<section id="anticommutators">
+<h2>Anticommutators<a class="headerlink" href="#anticommutators" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>def elim_zero_matrix(e):
+    return 0 if e == Matrix([[0, 0], [0, 0]]) else e
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>I_op = IdentityOperator(2)
+
+data = [[r&quot;{\rm Expression}&quot;, r&quot;{\rm Evaluated\;value}&quot;, r&quot;{\rm Numerical\;test}&quot;]] + \
+       [[AntiCommutator(s1, s2),
+         AntiCommutator(s1, s2).doit(),
+         elim_zero_matrix(represent(AntiCommutator(s1, s2))) == represent(I_op * AntiCommutator(s1, s2).doit())]
+        for s1 in s_ops for s2 in s_ops if s1 != s2]
+
+print_table(data)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<tr><td>${\rm Expression}$</td><td>${\rm Evaluated\;value}$</td><td>${\rm Numerical\;test}$</td></tr><tr><td>$\left\{{\sigma_x},{\sigma_y}\right\}$</td><td>$0$</td><td>$\mathrm{True}$</td></tr><tr><td>$\left\{{\sigma_x},{\sigma_z}\right\}$</td><td>$0$</td><td>$\mathrm{True}$</td></tr><tr><td>$\left\{{\sigma_+},{\sigma_x}\right\}$</td><td>$1$</td><td>$\mathrm{True}$</td></tr><tr><td>$\left\{{\sigma_-},{\sigma_x}\right\}$</td><td>$1$</td><td>$\mathrm{True}$</td></tr><tr><td>$\left\{{\sigma_x},{\sigma_y}\right\}$</td><td>$0$</td><td>$\mathrm{True}$</td></tr><tr><td>$\left\{{\sigma_y},{\sigma_z}\right\}$</td><td>$0$</td><td>$\mathrm{True}$</td></tr><tr><td>$\left\{{\sigma_+},{\sigma_y}\right\}$</td><td>$i$</td><td>$\mathrm{True}$</td></tr><tr><td>$\left\{{\sigma_-},{\sigma_y}\right\}$</td><td>$- i$</td><td>$\mathrm{True}$</td></tr><tr><td>$\left\{{\sigma_x},{\sigma_z}\right\}$</td><td>$0$</td><td>$\mathrm{True}$</td></tr><tr><td>$\left\{{\sigma_y},{\sigma_z}\right\}$</td><td>$0$</td><td>$\mathrm{True}$</td></tr><tr><td>$\left\{{\sigma_+},{\sigma_z}\right\}$</td><td>$0$</td><td>$\mathrm{True}$</td></tr><tr><td>$\left\{{\sigma_-},{\sigma_z}\right\}$</td><td>$0$</td><td>$\mathrm{True}$</td></tr><tr><td>$\left\{{\sigma_+},{\sigma_x}\right\}$</td><td>$1$</td><td>$\mathrm{True}$</td></tr><tr><td>$\left\{{\sigma_+},{\sigma_y}\right\}$</td><td>$i$</td><td>$\mathrm{True}$</td></tr><tr><td>$\left\{{\sigma_+},{\sigma_z}\right\}$</td><td>$0$</td><td>$\mathrm{True}$</td></tr><tr><td>$\left\{{\sigma_-},{\sigma_+}\right\}$</td><td>$1$</td><td>$\mathrm{True}$</td></tr><tr><td>$\left\{{\sigma_-},{\sigma_x}\right\}$</td><td>$1$</td><td>$\mathrm{True}$</td></tr><tr><td>$\left\{{\sigma_-},{\sigma_y}\right\}$</td><td>$- i$</td><td>$\mathrm{True}$</td></tr><tr><td>$\left\{{\sigma_-},{\sigma_z}\right\}$</td><td>$0$</td><td>$\mathrm{True}$</td></tr><tr><td>$\left\{{\sigma_-},{\sigma_+}\right\}$</td><td>$1$</td><td>$\mathrm{True}$</td></tr>
+</table></div></div>
+</div>
+</section>
+<section id="adjoint">
+<h2>Adjoint<a class="headerlink" href="#adjoint" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Dagger(sx), Dagger(sy), Dagger(sz)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/f491eac1954f0731acb8b5de55b75f80a9ba24a4dcb8af06392fc2791d145ca6.png" src="../../_images/f491eac1954f0731acb8b5de55b75f80a9ba24a4dcb8af06392fc2791d145ca6.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Dagger(sm), Dagger(sp)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/63775503f29a11c44ee6316722742a7d93b4091f21112da7e0a8843c6ec7a22d.png" src="../../_images/63775503f29a11c44ee6316722742a7d93b4091f21112da7e0a8843c6ec7a22d.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sm, sp
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/18dc3e71b704f3e506b35df91cfd9e97e752a0160703a51d3d20ae390bd38b9c.png" src="../../_images/18dc3e71b704f3e506b35df91cfd9e97e752a0160703a51d3d20ae390bd38b9c.png" />
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="operator-products">
+<h1>Operator products<a class="headerlink" href="#operator-products" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>s = [sx, sy, sz, sm, sp]
+
+data = [[s2] + [(qsimplify_pauli(s1 * s2), represent((qsimplify_pauli(s1 * s2) * I_op).expand()) == represent(s1) * represent(s2))
+         for s1 in s] for s2 in s]
+
+print_table(data)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<tr><td>${\sigma_x}$</td><td>$\begin{pmatrix}1, & \mathrm{True}\end{pmatrix}$</td><td>$\begin{pmatrix}- i {\sigma_z}, & \mathrm{True}\end{pmatrix}$</td><td>$\begin{pmatrix}i {\sigma_y}, & \mathrm{True}\end{pmatrix}$</td><td>$\begin{pmatrix}\frac{1}{2} \left(1 - {\sigma_z}\right), & \mathrm{True}\end{pmatrix}$</td><td>$\begin{pmatrix}\frac{1}{2} \left(1 + {\sigma_z}\right), & \mathrm{True}\end{pmatrix}$</td></tr><tr><td>${\sigma_y}$</td><td>$\begin{pmatrix}i {\sigma_z}, & \mathrm{True}\end{pmatrix}$</td><td>$\begin{pmatrix}1, & \mathrm{True}\end{pmatrix}$</td><td>$\begin{pmatrix}- i {\sigma_x}, & \mathrm{True}\end{pmatrix}$</td><td>$\begin{pmatrix}- \frac{i}{2} \left(1 - {\sigma_z}\right), & \mathrm{True}\end{pmatrix}$</td><td>$\begin{pmatrix}\frac{i}{2} \left(1 + {\sigma_z}\right), & \mathrm{True}\end{pmatrix}$</td></tr><tr><td>${\sigma_z}$</td><td>$\begin{pmatrix}- i {\sigma_y}, & \mathrm{True}\end{pmatrix}$</td><td>$\begin{pmatrix}i {\sigma_x}, & \mathrm{True}\end{pmatrix}$</td><td>$\begin{pmatrix}1, & \mathrm{True}\end{pmatrix}$</td><td>$\begin{pmatrix}{\sigma_-}, & \mathrm{True}\end{pmatrix}$</td><td>$\begin{pmatrix}- {\sigma_+}, & \mathrm{True}\end{pmatrix}$</td></tr><tr><td>${\sigma_-}$</td><td>$\begin{pmatrix}\frac{1}{2} + \frac{{\sigma_z}}{2}, & \mathrm{True}\end{pmatrix}$</td><td>$\begin{pmatrix}- \frac{i}{2} \left(1 + {\sigma_z}\right), & \mathrm{True}\end{pmatrix}$</td><td>$\begin{pmatrix}- {\sigma_-}, & \mathrm{True}\end{pmatrix}$</td><td>$\begin{pmatrix}0, & \mathrm{False}\end{pmatrix}$</td><td>$\begin{pmatrix}\frac{1}{2} \left(1 + {\sigma_z}\right), & \mathrm{True}\end{pmatrix}$</td></tr><tr><td>${\sigma_+}$</td><td>$\begin{pmatrix}\frac{1}{2} - \frac{{\sigma_z}}{2}, & \mathrm{True}\end{pmatrix}$</td><td>$\begin{pmatrix}\frac{i}{2} \left(1 - {\sigma_z}\right), & \mathrm{True}\end{pmatrix}$</td><td>$\begin{pmatrix}{\sigma_+}, & \mathrm{True}\end{pmatrix}$</td><td>$\begin{pmatrix}\frac{1}{2} - \frac{{\sigma_z}}{2}, & \mathrm{True}\end{pmatrix}$</td><td>$\begin{pmatrix}0, & \mathrm{False}\end{pmatrix}$</td></tr>
+</table></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>represent(sm) * represent(sm)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/464bbe35ef9a7059d56dd1396877d1e39562858b68dd2e07facaf54b339d415f.png" src="../../_images/464bbe35ef9a7059d56dd1396877d1e39562858b68dd2e07facaf54b339d415f.png" />
+</div>
+</div>
+<section id="powers">
+<h2>Powers<a class="headerlink" href="#powers" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[sx ** n for n in range(10)]
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/a0a2ea97beb04859c81bfd2f71e83c9b04227bae7ea336e7f45e2bf61eb83fd9.png" src="../../_images/a0a2ea97beb04859c81bfd2f71e83c9b04227bae7ea336e7f45e2bf61eb83fd9.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[sy ** n for n in range(10)]
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/bc8ec9eccafe994f1dc0669ef6bf70a91c7705a3e821588fa377f93141f508e9.png" src="../../_images/bc8ec9eccafe994f1dc0669ef6bf70a91c7705a3e821588fa377f93141f508e9.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[sz ** n for n in range(10)]
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/52fa4d3ad6b2af7bd13388ee690b2dfa0cfcc739b742e06a4791121da27e0e36.png" src="../../_images/52fa4d3ad6b2af7bd13388ee690b2dfa0cfcc739b742e06a4791121da27e0e36.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[sm ** n for n in range(10)]
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/6a9d91f6cf945c434ef0db1d2f08b4a41ee711111cc355efd476ffb5374159b8.png" src="../../_images/6a9d91f6cf945c434ef0db1d2f08b4a41ee711111cc355efd476ffb5374159b8.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[sp ** n for n in range(10)]
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/c46b4292c542b9615e38cf45b12ec615981576f620c57d389f1eb16d5bf0b6e1.png" src="../../_images/c46b4292c542b9615e38cf45b12ec615981576f620c57d389f1eb16d5bf0b6e1.png" />
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="states">
+<h1>States<a class="headerlink" href="#states" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>up = SigmaZKet(0)
+down = SigmaZKet(1)
+
+ket = (up + down)/sqrt(2)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ket, qapply(sx * ket), qapply(sy * ket), qapply(sz * ket)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/60fb43c57fb9186d78fc77666e4f8822aa7842179fb4d63f41c02e4b41355365.png" src="../../_images/60fb43c57fb9186d78fc77666e4f8822aa7842179fb4d63f41c02e4b41355365.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ket, qapply(sm * ket), qapply(sp * ket)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/43ffafefaea468fe4f13851e0c9903d3f572c79e15c5c4c63d295094415154b7.png" src="../../_images/43ffafefaea468fe4f13851e0c9903d3f572c79e15c5c4c63d295094415154b7.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>represent(qapply(sx * ket)) == represent(sx) * represent(ket)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>represent(qapply(sy * ket)) == represent(sy) * represent(ket)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>represent(qapply(sz * ket)) == represent(sz) * represent(ket)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>represent(qapply(sm * ket)) == represent(sm) * represent(ket)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>represent(qapply(sp * ket)) == represent(sp) * represent(ket)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="applications">
+<h1>Applications<a class="headerlink" href="#applications" title="Link to this heading">#</a></h1>
+<section id="bakercampbellhausdorff-formula">
+<h2>Baker–Campbell–Hausdorff formula<a class="headerlink" href="#bakercampbellhausdorff-formula" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>from sympy_quantum_extra import *
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-41-b89e5cd86f97&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span><span class="w"> </span><span class="nn">sympy_quantum_extra</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<span class="nn">/Users/rob/Dropbox/projects/sympy-quantum-notebooks/sympy_quantum_extra.py</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="kn">from</span><span class="w"> </span><span class="nn">sympy.physics.quantum.fermion</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="kn">from</span><span class="w"> </span><span class="nn">sympy.physics.quantum.operatorordering</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="ne">---&gt; </span><span class="mi">10</span> <span class="kn">from</span><span class="w"> </span><span class="nn">sympy.physics.quantum.expectation</span><span class="w"> </span><span class="kn">import</span> <span class="n">Expectation</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> 
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="kn">from</span><span class="w"> </span><span class="nn">sympy.physics.quantum.pauli</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span><span class="n">SigmaX</span><span class="p">,</span> <span class="n">SigmaY</span><span class="p">,</span> <span class="n">SigmaZ</span><span class="p">,</span> <span class="n">SigmaMinus</span><span class="p">,</span>
+
+<span class="ne">ImportError</span>: No module named &#39;sympy.physics.quantum.expectation&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>rc = recursive_commutator(sy, sz, 5).doit().expand()
+
+rc
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-42-3ba084e7083e&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">rc</span> <span class="o">=</span> <span class="n">recursive_commutator</span><span class="p">(</span><span class="n">sy</span><span class="p">,</span> <span class="n">sz</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">doit</span><span class="p">()</span><span class="o">.</span><span class="n">expand</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">rc</span>
+
+<span class="ne">NameError</span>: name &#39;recursive_commutator&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>A, B = Operator(&quot;A&quot;), Operator(&quot;B&quot;)
+
+Commutator(A, B).doit().doit()
+# Add.doit() - &gt; Mul.doit() -&gt; ...
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/8ab028b11cd6aff10803a5754c01b986c3615a44d121b9df65bf6a29bb941357.png" src="../../_images/8ab028b11cd6aff10803a5754c01b986c3615a44d121b9df65bf6a29bb941357.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Commutator(sx, sy).doit()
+# sx * sy - sy * sx
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/5becd4334c3fda5a1a2ee8935d0bf09387a52fba609bf9ac09983ac109eec91c.png" src="../../_images/5becd4334c3fda5a1a2ee8935d0bf09387a52fba609bf9ac09983ac109eec91c.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>A = Matrix([[1, 2], [3, 4]])
+B = Matrix([[1, 2], [3, 4]])
+A * B, MatMul(A, B)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/9a93f1eab002189ba8153752ce576b23736d8a0e492955d40037826f0672cb93.png" src="../../_images/9a93f1eab002189ba8153752ce576b23736d8a0e492955d40037826f0672cb93.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1 * 3
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/eb7898b926b346a4c24df00dc25c15e686b6621a23e41565b3829d55d7d971c4.png" src="../../_images/eb7898b926b346a4c24df00dc25c15e686b6621a23e41565b3829d55d7d971c4.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>IdentityOperator(2).is_commutative
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>qsimplify(qsimplify(rc))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/d91a58717b450bcd38d1a9e5630fce41ce9fe661f73feca6cba4664ab435df37.png" src="../../_images/d91a58717b450bcd38d1a9e5630fce41ce9fe661f73feca6cba4664ab435df37.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>represent(sx * sx)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/2523b22b0e38de34b610b49de26d54b4c5c52b74acb372e3a254a383f2344ac7.png" src="../../_images/2523b22b0e38de34b610b49de26d54b4c5c52b74acb372e3a254a383f2344ac7.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>represent(sx) ** 2 == Integer(1) * represent(IdentityOperator(2))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="test-e-i-theta-2-sigma-y-sigma-xe-i-theta-2-sigma-y-cos-theta-sigma-x-sin-theta-sigma-z">
+<h2>Test: <span class="math notranslate nohighlight">\(e^{i\theta/2 \sigma_y}\sigma_xe^{-i\theta/2 \sigma_y} = \cos(\theta)\sigma_x + \sin(\theta)\sigma_z\)</span><a class="headerlink" href="#test-e-i-theta-2-sigma-y-sigma-xe-i-theta-2-sigma-y-cos-theta-sigma-x-sin-theta-sigma-z" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>theta = symbols(&quot;theta&quot;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>U = exp((I * theta / 2)* sy)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>unitary_transformation(U, sx)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/5d3007896e89fa9bb1d4ca56741176676b7c33f5c9fc30c9f27dc7fa647c3703.png" src="../../_images/5d3007896e89fa9bb1d4ca56741176676b7c33f5c9fc30c9f27dc7fa647c3703.png" />
+</div>
+</div>
+</section>
+<section id="test-e-i-theta-2-sigma-y-sigma-ze-i-theta-2-sigma-y-cos-theta-sigma-z-sin-theta-sigma-x">
+<h2>Test: <span class="math notranslate nohighlight">\(e^{i\theta/2 \sigma_y}\sigma_ze^{-i\theta/2 \sigma_y} = \cos(\theta)\sigma_z - \sin(\theta)\sigma_x\)</span><a class="headerlink" href="#test-e-i-theta-2-sigma-y-sigma-ze-i-theta-2-sigma-y-cos-theta-sigma-z-sin-theta-sigma-x" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>unitary_transformation(U, sz)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/66f4b2ce856878ace9135c8495ee69e9e0bc0ea7ef5f840d70d6575876826f3b.png" src="../../_images/66f4b2ce856878ace9135c8495ee69e9e0bc0ea7ef5f840d70d6575876826f3b.png" />
+</div>
+</div>
+</section>
+<section id="calculate-e-i-theta-2-sigma-y-sigma-e-i-theta-2-sigma-y">
+<h2>Calculate <span class="math notranslate nohighlight">\(e^{i\theta/2 \sigma_y}\sigma_-e^{-i\theta/2 \sigma_y}\)</span><a class="headerlink" href="#calculate-e-i-theta-2-sigma-y-sigma-e-i-theta-2-sigma-y" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>unitary_transformation(U, sm)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/039aed11b34c672c4eeece2d4a4c36ff7c242e1c90f910667391bc63c13a721d.png" src="../../_images/039aed11b34c672c4eeece2d4a4c36ff7c242e1c90f910667391bc63c13a721d.png" />
+</div>
+</div>
+</section>
+<section id="id1">
+<h2>Calculate <span class="math notranslate nohighlight">\(e^{i\theta/2 \sigma_y}\sigma_+e^{-i\theta/2 \sigma_y}\)</span><a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>unitary_transformation(U, sp)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/44879af55716abacd7098558235261e3e0469f50378c5755a357fc4df442c8c5.png" src="../../_images/44879af55716abacd7098558235261e3e0469f50378c5755a357fc4df442c8c5.png" />
+</div>
+</div>
+</section>
+<section id="versions">
+<h2>Versions<a class="headerlink" href="#versions" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>%reload_ext version_information
+
+%version_information sympy
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table><tr><th>Software</th><th>Version</th></tr><tr><td>Python</td><td>3.4.1 (default, Sep 20 2014, 19:44:17) [GCC 4.2.1 Compatible Apple LLVM 5.1 (clang-503.0.40)]</td></tr><tr><td>IPython</td><td>2.3.0</td></tr><tr><td>OS</td><td>Darwin 13.4.0 x86_64 i386 64bit</td></tr><tr><td>sympy</td><td>0.7.5-git</td></tr><tr><td colspan='2'>Thu Oct 09 13:14:39 2014 JST</td></tr></table></div></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./17MCM_QM_ipynb/0sympsi_QM_ipynb"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Test sympy.physics.quantum.pauli</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#html-table">HTML table</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-representations">Matrix representations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commutators">Commutators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anticommutators">Anticommutators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adjoint">Adjoint</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#operator-products">Operator products</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powers">Powers</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#states">States</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#applications">Applications</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bakercampbellhausdorff-formula">Baker–Campbell–Hausdorff formula</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-e-i-theta-2-sigma-y-sigma-xe-i-theta-2-sigma-y-cos-theta-sigma-x-sin-theta-sigma-z">Test: <span class="math notranslate nohighlight">\(e^{i\theta/2 \sigma_y}\sigma_xe^{-i\theta/2 \sigma_y} = \cos(\theta)\sigma_x + \sin(\theta)\sigma_z\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-e-i-theta-2-sigma-y-sigma-ze-i-theta-2-sigma-y-cos-theta-sigma-z-sin-theta-sigma-x">Test: <span class="math notranslate nohighlight">\(e^{i\theta/2 \sigma_y}\sigma_ze^{-i\theta/2 \sigma_y} = \cos(\theta)\sigma_z - \sin(\theta)\sigma_x\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculate-e-i-theta-2-sigma-y-sigma-e-i-theta-2-sigma-y">Calculate <span class="math notranslate nohighlight">\(e^{i\theta/2 \sigma_y}\sigma_-e^{-i\theta/2 \sigma_y}\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Calculate <span class="math notranslate nohighlight">\(e^{i\theta/2 \sigma_y}\sigma_+e^{-i\theta/2 \sigma_y}\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#versions">Versions</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jonny, assisted by Tom
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

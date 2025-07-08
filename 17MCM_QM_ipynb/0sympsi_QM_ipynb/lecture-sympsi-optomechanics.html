@@ -1,0 +1,937 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Lecture 5 - Symbolic quantum mechanics using SymPsi - Optomechanics &#8212; Jonny Workbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=8dedbda2" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '17MCM_QM_ipynb/0sympsi_QM_ipynb/lecture-sympsi-optomechanics';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Jonny Workbook</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Mathe &amp; FP/Language</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Alevel_math.html">1. A-level-math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Alevel_math_further.html">2. A-level-further</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../00intro_math.html">3. Math-FP-Lang Combo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../01number_algebra.html">4. Number &amp; Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../02discrete_continuous.html">5. Discrete &amp; Continuous</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../03real_world.html">6. Real World Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../05math_as_code.html">7. Math as code</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CS &amp; Physics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Course_MIT6001Python.html">8. MIT_CS6001-Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Course_MIT6002thinking.html">9. MIT_CS6002-CS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../PE25.html">10. Project Euler Q1-25</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../PE50.html">11. PE Q26-50</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../PE75.html">12. PE Q51-</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Course_MCM.html">13. Math Computational Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Course_MCM_QM.html">14. Quantum Mechanics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notebook</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../nb_past_courses.html">15. Past courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../nb_Geo.html">16. Geography and Maps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../nb_lottery_simulator.html">17. Lottery Math</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/tomctang/10pe" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/17MCM_QM_ipynb/0sympsi_QM_ipynb/lecture-sympsi-optomechanics.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lecture 5 - Symbolic quantum mechanics using SymPsi - Optomechanics</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-modules">Setup modules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optomechanical-system">Optomechanical system</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linearized-interaction">Linearized interaction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#red-sideband">Red sideband</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#blue-sideband">Blue sideband</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nonlinear-regime-effective-kerr-nonlinearity">Nonlinear regime: effective Kerr nonlinearity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#versions">Versions</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lecture-5-symbolic-quantum-mechanics-using-sympsi-optomechanics">
+<h1>Lecture 5 - Symbolic quantum mechanics using SymPsi - Optomechanics<a class="headerlink" href="#lecture-5-symbolic-quantum-mechanics-using-sympsi-optomechanics" title="Link to this heading">#</a></h1>
+<style>
+p {
+    font-family: "Liberation Serif", serif;
+    font-size: 12pt;
+}
+</style><p>Author: J. R. Johansson (<a class="reference external" href="mailto:robert&#37;&#52;&#48;riken&#46;jp">robert<span>&#64;</span>riken<span>&#46;</span>jp</a>), <a class="reference external" href="http://jrjohansson.github.io">http://jrjohansson.github.io</a>.</p>
+<p>Status: Preliminary (work in progress)</p>
+<p>This notebook is part of a series of IPython notebooks on symbolic quantum mechanics computations using
+<a class="reference external" href="http://sympy.org">SymPy</a> and <a class="reference external" href="http://www.github.com/jrjohansson/sympsi">SymPsi</a>. SymPsi is an experimental fork and extension of the <a class="reference external" href="http://docs.sympy.org/dev/modules/physics/quantum/"><code class="docutils literal notranslate"><span class="pre">sympy.physics.quantum</span></code></a> module in SymPy. The latest version of this notebook is available at <a class="github reference external" href="http://github.com/jrjohansson/sympy-quantum-notebooks">jrjohansson/sympy-quantum-notebooks</a>, and the other notebooks in this lecture series are also indexed at <a class="reference external" href="http://jrjohansson.github.com">http://jrjohansson.github.io</a>.</p>
+<p>Requirements: A recent version of SymPy and the latest development version of SymPsi is required to execute this notebook. Instructions for how to install SymPsi is available <a class="reference external" href="http://www.github.com/jrjohansson/sympsi">here</a>.</p>
+<p>Disclaimer: The SymPsi module is still under active development and may change in behavior without notice, and the intention is to move some of its features to <a class="reference external" href="http://docs.sympy.org/dev/modules/physics/quantum/"><code class="docutils literal notranslate"><span class="pre">sympy.physics.quantum</span></code></a> when they matured and have been tested. However, these notebooks will be kept up-to-date the latest versions of SymPy and SymPsi.</p>
+<section id="setup-modules">
+<h2>Setup modules<a class="headerlink" href="#setup-modules" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>from sympy import *
+init_printing()
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>from sympsi import *
+from sympsi.boson import *
+from sympsi.operatorordering import *
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="optomechanical-system">
+<h2>Optomechanical system<a class="headerlink" href="#optomechanical-system" title="Link to this heading">#</a></h2>
+<p>Consider the standard Hamiltonian for an optomechanical system, including a classical driving signal on the optical mode:</p>
+<div class="math notranslate nohighlight">
+\[
+H = \hbar\omega_a a^\dagger a + \hbar \omega_b b^\dagger b - \hbar g a^\dagger a (b + b^\dagger) + (A e^{-i\omega_d t} + A^* e^{i\omega_d t})(a + a^\dagger)
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>omega_a, omega_b, g, A, Delta, t = symbols(&quot;omega_a, omega_b, g, A, Delta, t&quot;, positive=True)
+Hsym, omega_d = symbols(&quot;H, omega_d&quot;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>a, b = BosonOp(&quot;a&quot;), BosonOp(&quot;b&quot;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>H0 = omega_a * Dagger(a) * a + omega_b * Dagger(b) * b - g * Dagger(a) * a * (b + Dagger(b))
+
+Hdrive = (A * exp(-I * omega_d * t) + conjugate(A) * exp(I * omega_d * t)) * (a + Dagger(a))
+
+H = H0 + Hdrive
+
+Eq(Hsym, H)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/45ca07904578267c74b9bb283d2c4e495270f5790350a845818172a240aeb3db.png" src="../../_images/45ca07904578267c74b9bb283d2c4e495270f5790350a845818172a240aeb3db.png" />
+</div>
+</div>
+<section id="linearized-interaction">
+<h3>Linearized interaction<a class="headerlink" href="#linearized-interaction" title="Link to this heading">#</a></h3>
+<p>First we apply the unitary transformation <span class="math notranslate nohighlight">\(U = e^{i \omega_d a^\dagger a t}\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>U = exp(I * Dagger(a) * a * omega_d * t)
+
+U
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/cf137fb2aa744a22ae8ef8bb40ae60e53a2dd7d985130b45d3e8bea5d34ac274.png" src="../../_images/cf137fb2aa744a22ae8ef8bb40ae60e53a2dd7d985130b45d3e8bea5d34ac274.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>H1 = hamiltonian_transformation(U, H, independent=True)
+
+H1
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/f7752c065ed557375a917babf3dfb660fe3ccd2f0925897c06b648c29d7e32e6.png" src="../../_images/f7752c065ed557375a917babf3dfb660fe3ccd2f0925897c06b648c29d7e32e6.png" />
+</div>
+</div>
+<p>We can now perform a rotating-wave approximation (RWA) by eliminating all terms that rotate with frequencies <span class="math notranslate nohighlight">\(2\omega_d\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>H2 = drop_terms_containing(H1.expand(), [exp(-2*I*omega_d*t), exp(2*I*omega_d*t)])
+
+Eq(Symbol(&quot;H_{rwa}&quot;), H2)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/05f813c4f524c8dc9888c67dcc6216625c7145e69679ef65cf61baa259e44080.png" src="../../_images/05f813c4f524c8dc9888c67dcc6216625c7145e69679ef65cf61baa259e44080.png" />
+</div>
+</div>
+<p>Introduce the detuning <span class="math notranslate nohighlight">\(\Delta = \omega_a - \omega_d\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>H3 = H2.subs(omega_a, Delta + omega_d).expand()
+
+H3
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/4e97e191738773ea1a5e82fe59cc3defaff9c5664adda3a6b18a0a3544a03d4d.png" src="../../_images/4e97e191738773ea1a5e82fe59cc3defaff9c5664adda3a6b18a0a3544a03d4d.png" />
+</div>
+</div>
+<p>To eliminate the coherent part of the state of the cavity mode we apply the unitary displacement operator <span class="math notranslate nohighlight">\(U = e^{\alpha a^\dagger - \alpha^*a}\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>alpha = symbols(&quot;alpha&quot;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>UH = Dagger(a) * alpha - conjugate(alpha) * a
+U = exp(UH)
+
+U
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/8d92644b4a97c88571ceb481258fc03dec6922b7001326b07f83bafaebf6ab29.png" src="../../_images/8d92644b4a97c88571ceb481258fc03dec6922b7001326b07f83bafaebf6ab29.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>H4 = hamiltonian_transformation(U, H3, independent=True)
+
+H4
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/5fbda16480d9325c3c09f824421335f2746e1697e50a4c65e9cf80883a08794b.png" src="../../_images/5fbda16480d9325c3c09f824421335f2746e1697e50a4c65e9cf80883a08794b.png" />
+</div>
+</div>
+<p>Now want to cancel out the drivng terms so we set <span class="math notranslate nohighlight">\(A - \Delta \alpha = 0\)</span>, i.e. <span class="math notranslate nohighlight">\(\alpha = A/\Delta\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>H5 = H4.expand().subs({A: alpha * Delta, conjugate(alpha): alpha}) 
+
+H5 = collect(H5, [g * Dagger(a) * a, - alpha * g])
+
+H5
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/ee8ef682391a229e275b50481b63e97376b5d8eb84e4678333475a6bb32616f5.png" src="../../_images/ee8ef682391a229e275b50481b63e97376b5d8eb84e4678333475a6bb32616f5.png" />
+</div>
+</div>
+<p>Drop C-numbers from the Hamiltonian:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>H6 = drop_c_number_terms(H5)
+
+H6
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/90277028b24d14875ae5faec57cf328606affba1eee4977f33d107df870cee13.png" src="../../_images/90277028b24d14875ae5faec57cf328606affba1eee4977f33d107df870cee13.png" />
+</div>
+</div>
+<p>Now, if driving strength is large, so that <span class="math notranslate nohighlight">\(\alpha \gg 1\)</span>, we can drop the nonlinear interaction term, and we have an linear effective coupling:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>H7 = H6.subs(g * Dagger(a) * a, 0)
+
+e = (a + Dagger(a)) * (b + Dagger(b))
+H7 = H7.subs(e.expand(), e)
+
+Eq(Hsym, H7)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/e5187e4ee6cf487f9ff2d4679a4165ce58811314a00b4ed8aa308e15f21bb859.png" src="../../_images/e5187e4ee6cf487f9ff2d4679a4165ce58811314a00b4ed8aa308e15f21bb859.png" />
+</div>
+</div>
+<p>This linearlized optomechanical Hamiltonian has at least two interesting regimes:</p>
+</section>
+<section id="red-sideband">
+<h3>Red sideband<a class="headerlink" href="#red-sideband" title="Link to this heading">#</a></h3>
+<p>The red sideband regime occurs when the detuning is <span class="math notranslate nohighlight">\(\Delta = \omega_b\)</span>. In this case, if we move to a frame rotating with the driving field, we obtain:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>H1 = H7
+H1
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/bbcc1962aeef612da0d2291ec9875658994966c292a16bd348139ff728de52f3.png" src="../../_images/bbcc1962aeef612da0d2291ec9875658994966c292a16bd348139ff728de52f3.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>U = exp(I * Dagger(a) * a * Delta * t)
+U
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/03df41ec8f0991fba2a15fd2c7b4d1ac7de6fb373c1bbd08db664528fd7d12ce.png" src="../../_images/03df41ec8f0991fba2a15fd2c7b4d1ac7de6fb373c1bbd08db664528fd7d12ce.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>H2 = hamiltonian_transformation(U, H1, independent=True)
+H2
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/b914e7a9010e0a1e6763d2a1859288f4c5454ba2290948d303f8775f66cf07d5.png" src="../../_images/b914e7a9010e0a1e6763d2a1859288f4c5454ba2290948d303f8775f66cf07d5.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>U = exp(I * Dagger(b) * b * omega_b * t)
+U
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/19012981e07c55de74d098e981f47481c742e05ff08a24ee6b4b408992181d3a.png" src="../../_images/19012981e07c55de74d098e981f47481c742e05ff08a24ee6b4b408992181d3a.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>H3 = hamiltonian_transformation(U, H2, independent=True)
+H3
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/f0f4400f6f0804f7b98aa765b29ea19a9f108a297cad2493f1706d7b3cc0d008.png" src="../../_images/f0f4400f6f0804f7b98aa765b29ea19a9f108a297cad2493f1706d7b3cc0d008.png" />
+</div>
+</div>
+<p>If we substitute <span class="math notranslate nohighlight">\(\Delta = \omega_b\)</span> we get:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>H4 = H3.expand().subs(Delta, omega_b)
+H4
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/54f3b3c2adb79771dc8f3a794e0af1a347e070f01bfc549c47261d0d02b6979a.png" src="../../_images/54f3b3c2adb79771dc8f3a794e0af1a347e070f01bfc549c47261d0d02b6979a.png" />
+</div>
+</div>
+<p>Now we can do a rotating-wave approximation and get rid of terms rotating at angular frequencies <span class="math notranslate nohighlight">\(2\omega_b\)</span>, and then transform back to the original frame:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>H5 = drop_terms_containing(H4, [exp(+2 * I * omega_b * t), exp(-2 * I * omega_b * t)])
+H5
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/fcef8e43d403731a70e66989d005c1a58ba9698b1531a5b76f0b57e0926dec10.png" src="../../_images/fcef8e43d403731a70e66989d005c1a58ba9698b1531a5b76f0b57e0926dec10.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>U = exp(-I * Dagger(a) * a * omega_b * t)  # Delta = omega_b
+H6 = hamiltonian_transformation(U, H5, independent=True)
+U = exp(-I * Dagger(b) * b * omega_b * t)
+H7 = hamiltonian_transformation(U, H6, independent=True)
+H7 = collect(H7, [alpha**2, g])
+H7
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/0a03ef4f5b2fcffbc08277faa7bfca77b10fe72d47210ba7f5082de5920b95fb.png" src="../../_images/0a03ef4f5b2fcffbc08277faa7bfca77b10fe72d47210ba7f5082de5920b95fb.png" />
+</div>
+</div>
+<p>Now the interaction term is <span class="math notranslate nohighlight">\(a^\dagger b + ab^\dagger\)</span>, which is a swapping interaction that can be used for state transfer or energy transfer in for example cooling application (side-band cooling).</p>
+</section>
+<section id="blue-sideband">
+<h3>Blue sideband<a class="headerlink" href="#blue-sideband" title="Link to this heading">#</a></h3>
+<p>If, instead, we choose a driving frequency such that <span class="math notranslate nohighlight">\(\Delta = -\omega_b\)</span>, we obtain:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>H4 = H3.expand().subs(Delta, -omega_b)
+H4
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/6d6a9bd553a59c94695169e4012eb5a76aa9c409b5dd25735080c72cfa17b652.png" src="../../_images/6d6a9bd553a59c94695169e4012eb5a76aa9c409b5dd25735080c72cfa17b652.png" />
+</div>
+</div>
+<p>As before, we do a rotating-wave approximation to get rid of fast oscillating terms:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>H5 = drop_terms_containing(H4, [exp(+2 * I * omega_b * t), exp(-2 * I * omega_b * t)])
+H5
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/7207a746f67ae33878c17f4a98feb25c009f2312b7dc6faf9bea68e0931e87ee.png" src="../../_images/7207a746f67ae33878c17f4a98feb25c009f2312b7dc6faf9bea68e0931e87ee.png" />
+</div>
+</div>
+<p>and moving back to the original frame results in:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>U = exp( I * Dagger(a) * a * omega_b * t)  # Delta = -omega_b
+H6 = hamiltonian_transformation(U, H5, independent=True)
+U = exp(-I * Dagger(b) * b * omega_b * t)
+H7 = hamiltonian_transformation(U, H6, independent=True)
+H7 = collect(H7, [alpha**2, g])
+H7
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/e83a0018a35188bb687f4cb0bc09a54145247a72383c6afaf40e1b514d4ffd2d.png" src="../../_images/e83a0018a35188bb687f4cb0bc09a54145247a72383c6afaf40e1b514d4ffd2d.png" />
+</div>
+</div>
+<p>Here, instead of a swap interaction we have obtained an interaction on the form <span class="math notranslate nohighlight">\(a^\dagger b^\dagger + a b\)</span>, which is the parametric amplification Hamiltonian. It can be used to parametrically amplify the states of the optical and mechanical modes, and generated interesting nonclassical states like Schrodinger-cat states.</p>
+</section>
+</section>
+<section id="nonlinear-regime-effective-kerr-nonlinearity">
+<h2>Nonlinear regime: effective Kerr nonlinearity<a class="headerlink" href="#nonlinear-regime-effective-kerr-nonlinearity" title="Link to this heading">#</a></h2>
+<p>In the regime where <span class="math notranslate nohighlight">\(g \sim \omega_b\)</span>, the effect of the coupling to the mechanical mode <span class="math notranslate nohighlight">\(b\)</span> on the optical mode <span class="math notranslate nohighlight">\(a\)</span> is an effective Kerr-nonlinearity, i.e., a term on the form <span class="math notranslate nohighlight">\((a^\dagger a)^2\)</span> in the Hamiltonian. To see this we can perform the so-called polariton defined by the unitary</p>
+<div class="math notranslate nohighlight">
+\[
+U = \exp\left(-\frac{g}{\omega_b} a^\dagger a (b^\dagger - b)\right)
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>H0
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/478859f765511df823d812906fd00d9fe9de25fe8bbb664cb54c1bf05ea8652c.png" src="../../_images/478859f765511df823d812906fd00d9fe9de25fe8bbb664cb54c1bf05ea8652c.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>x = symbols(&quot;x&quot;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>U = exp(- x * Dagger(a) * a * (Dagger(b) - b))
+
+U
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/f210ac3963153d7e1f67a8447dab31406440bf117541ac8a189386993edcd714.png" src="../../_images/f210ac3963153d7e1f67a8447dab31406440bf117541ac8a189386993edcd714.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>H1 = H0.subs(A, 0)
+
+H1
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/478859f765511df823d812906fd00d9fe9de25fe8bbb664cb54c1bf05ea8652c.png" src="../../_images/478859f765511df823d812906fd00d9fe9de25fe8bbb664cb54c1bf05ea8652c.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>H2 = hamiltonian_transformation(U, H1, independent=True, expansion_search=False, N=2)
+
+H3 = normal_ordered_form(H2.expand(), independent=True)
+
+H3
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/6cbce667faa5acda007c66bed45ae4c35fcad98a9ecad2855441556b47565a1d.png" src="../../_images/6cbce667faa5acda007c66bed45ae4c35fcad98a9ecad2855441556b47565a1d.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>H4 = H3.subs({x**2: 0, x**3: 0, x: g/omega_b})  # neglect higher order terms
+
+H4 = collect(H4, Dagger(a)*a)
+
+H4
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/426dccc87b513608771338db24d4dbda0bbe25c4865ff2d164b37e6d10762224.png" src="../../_images/426dccc87b513608771338db24d4dbda0bbe25c4865ff2d164b37e6d10762224.png" />
+</div>
+</div>
+<p>In this Hamiltonian, the mechanical and optical mode is effectively decoupled, but the influence of the mechanical mode on the optical mode is described by the induced Kerr nonlinearity for the optical mode.</p>
+</section>
+<section id="versions">
+<h2>Versions<a class="headerlink" href="#versions" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>%reload_ext version_information
+
+%version_information sympy, sympsi
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table><tr><th>Software</th><th>Version</th></tr><tr><td>Python</td><td>3.4.1 (default, Sep 20 2014, 19:44:17) [GCC 4.2.1 Compatible Apple LLVM 5.1 (clang-503.0.40)]</td></tr><tr><td>IPython</td><td>2.3.0</td></tr><tr><td>OS</td><td>Darwin 13.4.0 x86_64 i386 64bit</td></tr><tr><td>sympy</td><td>0.7.5-git</td></tr><tr><td>sympsi</td><td>0.1.0.dev-0c6e514</td></tr><tr><td colspan='2'>Thu Oct 09 16:16:53 2014 JST</td></tr></table></div></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./17MCM_QM_ipynb/0sympsi_QM_ipynb"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-modules">Setup modules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optomechanical-system">Optomechanical system</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linearized-interaction">Linearized interaction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#red-sideband">Red sideband</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#blue-sideband">Blue sideband</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nonlinear-regime-effective-kerr-nonlinearity">Nonlinear regime: effective Kerr nonlinearity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#versions">Versions</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jonny, assisted by Tom
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
