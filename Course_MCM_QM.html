@@ -363,7 +363,10 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips">14.1. Tips</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paradox-and-infinity">14.2. Paradox and Infinity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maths-and-cs">14.2. Maths and CS</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-1-proofs">14.2.1. Unit 1 : Proofs</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qm-for-everyone">14.3. QM for Everyone</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-quantum-mechanics-of-light">14.3.1. Advanced Quantum Mechanics of Light</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-quantum-mechanics-of-light">14.3.2. The Quantum Mechanics of Light</a></li>
@@ -458,8 +461,12 @@ document.write(`
 </table>
 </div>
 </section>
-<section id="paradox-and-infinity">
-<h2><span class="section-number">14.2. </span>Paradox and Infinity<a class="headerlink" href="#paradox-and-infinity" title="Link to this heading">#</a></h2>
+<section id="maths-and-cs">
+<h2><span class="section-number">14.2. </span>Maths and CS<a class="headerlink" href="#maths-and-cs" title="Link to this heading">#</a></h2>
+<section id="unit-1-proofs">
+<h3><span class="section-number">14.2.1. </span>Unit 1 : Proofs<a class="headerlink" href="#unit-1-proofs" title="Link to this heading">#</a></h3>
+<p>Notes</p>
+</section>
 </section>
 <section id="qm-for-everyone">
 <h2><span class="section-number">14.3. </span>QM for Everyone<a class="headerlink" href="#qm-for-everyone" title="Link to this heading">#</a></h2>
@@ -480,7 +487,7 @@ document.write(`
 <h3><span class="section-number">14.3.1. </span>Advanced Quantum Mechanics of Light<a class="headerlink" href="#advanced-quantum-mechanics-of-light" title="Link to this heading">#</a></h3>
 <p>Notes</p>
 <ul class="simple">
-<li><p>Quantum Seeing in the dark</p>
+<li><p>Quantum Seeing in the Dark</p>
 <ul>
 <li><p>Two Slit Experiment</p>
 <ul>
@@ -490,7 +497,13 @@ document.write(`
 </li>
 </ul>
 </li>
-<li><p>Quantum Zeno Effect(go to pardox and infinity)</p></li>
+<li><p>Mach-Zehnder Interferometer</p>
+<ul>
+<li><p>When this interferometer does not contain any polarizers and both paths have the same length, all the photons will go to one detector as the signal is amplified.</p></li>
+<li><p>When an object is added, this changes the probability and the other detector will receive photons. This is also how quantum bomb detection works.</p></li>
+</ul>
+</li>
+<li><p>Quantum Zeno Effect(go to paradox and infinity)</p></li>
 </ul>
 </section>
 <section id="the-quantum-mechanics-of-light">
@@ -637,23 +650,46 @@ document.write(`
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">m</span><span class="o">=</span><span class="mi">52</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">n</span><span class="o">*=</span><span class="n">m</span><span class="o">-</span><span class="mi">1</span>
+    <span class="n">n</span><span class="o">/=</span><span class="mi">365</span>
+    <span class="n">m</span><span class="o">-=</span><span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.104809701340232e-09
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Birthday Problem</span>
 <span class="n">result</span><span class="o">=</span><span class="kc">False</span>
 <span class="n">count</span><span class="o">=</span><span class="mi">0</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100000</span><span class="p">):</span>
     <span class="n">result_in</span><span class="o">=</span><span class="kc">False</span>
     <span class="n">people</span><span class="o">=</span><span class="mi">23</span>
-    <span class="n">birthdays</span><span class="o">=</span><span class="p">[</span><span class="mi">13</span><span class="p">,</span><span class="mi">101</span><span class="p">,</span><span class="mi">155</span><span class="p">,</span><span class="mi">165</span><span class="p">]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">people</span><span class="o">-</span><span class="mi">4</span><span class="p">):</span>
-        <span class="n">birthdays</span><span class="o">.</span><span class="n">append</span> <span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">365</span><span class="p">))</span>
+    <span class="n">birthdays</span><span class="o">=</span><span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">people</span><span class="p">):</span>
+        <span class="n">birthdays</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">52</span><span class="p">))</span>
     <span class="n">birthdays</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">366</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">53</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">birthdays</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">2</span><span class="p">:</span>
             <span class="n">result</span><span class="o">=</span><span class="kc">True</span>
             <span class="n">result_in</span><span class="o">=</span><span class="kc">True</span>
     <span class="k">if</span> <span class="n">result_in</span><span class="o">==</span><span class="kc">True</span><span class="p">:</span>
         <span class="n">count</span><span class="o">+=</span><span class="mi">1</span>
 <span class="n">count</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>41479
 </pre></div>
 </div>
 </div>
@@ -773,7 +809,10 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips">14.1. Tips</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paradox-and-infinity">14.2. Paradox and Infinity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maths-and-cs">14.2. Maths and CS</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-1-proofs">14.2.1. Unit 1 : Proofs</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qm-for-everyone">14.3. QM for Everyone</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-quantum-mechanics-of-light">14.3.1. Advanced Quantum Mechanics of Light</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-quantum-mechanics-of-light">14.3.2. The Quantum Mechanics of Light</a></li>
