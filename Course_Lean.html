@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Lean &#8212; Jonny Workbook</title>
+    <title>10. Lean &#8212; Jonny Workbook</title>
   
   
   
@@ -63,6 +63,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Course_Lean';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="11. Project Euler Q1-50" href="PE50.html" />
+    <link rel="prev" title="9. MIT_CS6002-CS" href="Course_MIT6002thinking.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -125,8 +127,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -187,12 +187,12 @@
 <li class="toctree-l1"><a class="reference internal" href="05math_as_code.html">7. Math as code</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">CS &amp; Physics</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Course_MIT6001Python.html">8. MIT_CS6001-Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Course_MIT6002thinking.html">9. MIT_CS6002-CS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="PE25.html">10. Project Euler Q1-25</a></li>
-<li class="toctree-l1"><a class="reference internal" href="PE50.html">11. PE Q26-50</a></li>
-<li class="toctree-l1"><a class="reference internal" href="PE75.html">12. PE Q51-</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">10. Lean</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PE50.html">11. Project Euler Q1-50</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PE75.html">12. Project Euler Q51-</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Course_MCM.html">13. Math Computational Methods</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Course_MCM_QM.html">14. Quantum Mechanics</a></li>
 </ul>
@@ -367,17 +367,53 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="lean">
-<h1>Lean<a class="headerlink" href="#lean" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">10. </span>Lean<a class="headerlink" href="#lean" title="Link to this heading">#</a></h1>
 <p>Tactics</p>
 <ul class="simple">
-<li><p>intro : This tactic introduces a hypothesis based on the goal if possible.</p></li>
+<li><p>apply : This tactic applies theorems and assumptions at assumptions. This tactic is similar to rw.</p></li>
+<li><p>assumption : This tactic searches for assumptions that are exactly the same as the goal.</p></li>
+<li><p>contradiction : This tactic proves statements that cannot be proved using other methods.</p></li>
+<li><p>decide : This tactic tries to solve goals by using algorithms.</p></li>
+<li><p>exact : This tactic proves goals based on the theorems and assumptions written after it.</p></li>
+<li><p>have : This tactic introduces an assumption that can be proved based on evidence(providing evidence to prove it is optional when using tactic).</p></li>
+<li><p>intro : This tactic introduces a hypothesis(assumption) based on the goal if possible.</p></li>
+<li><p>left : The goal or hypothesis changes from A or B to A(because A is on the left).</p></li>
+</ul>
+<ul class="simple">
+<li><p>revert : This is the opposite of intro.</p></li>
+<li><p>right : The goal or hypothesis changes from A or B to B(because B is on the right).</p></li>
 <li><p>rfl(reflexitivity) : This tactic proves all goals of the form <span class="math notranslate nohighlight">\(X=X\)</span></p></li>
 <li><p>rw(rewrite) : This rewrites the goal.</p>
 <ul>
 <li><p>Square brackets must be included.</p></li>
 <li><p>Type the theorem in the square brackets.</p></li>
+<li><p>By typing nth_rw (number), this tactic only rewrites the nth place where you can use the theorem or assumption.</p></li>
 </ul>
 </li>
+<li><p>simp : This uses other tactics to try and simplify the goal or hypothesis.</p></li>
+<li><p>symm : <span class="math notranslate nohighlight">\(a=b\)</span> implies <span class="math notranslate nohighlight">\(b=a\)</span></p></li>
+<li><p>tauto : This tactic proves all logic statements.</p></li>
+<li><p>trivial : This tactic proves goals of the form True.</p></li>
+</ul>
+<p>Theorems</p>
+<ul class="simple">
+<li><p>add_assoc : <span class="math notranslate nohighlight">\((a+b)+c=a+(b+c)\quad\)</span>(In Lean, <span class="math notranslate nohighlight">\(a+b+c\)</span> means <span class="math notranslate nohighlight">\((a+b)+c\)</span>.)</p></li>
+<li><p>add_comm : <span class="math notranslate nohighlight">\(a+b=b+a\)</span></p></li>
+<li><p>add_succ : <span class="math notranslate nohighlight">\(a+succ(b)=succ(a+b)\)</span></p></li>
+<li><p>add_zero : <span class="math notranslate nohighlight">\(a+0=a\)</span></p></li>
+<li><p>mul_zero : <span class="math notranslate nohighlight">\(a*0=0\)</span></p></li>
+<li><p>not_not : <span class="math notranslate nohighlight">\(\neg\neg A=A\)</span></p></li>
+<li><p>one_ne_zero : <span class="math notranslate nohighlight">\(1\ne0\)</span></p></li>
+<li><p>pow_one : <span class="math notranslate nohighlight">\(a^1=a\)</span></p></li>
+<li><p>pow_two : <span class="math notranslate nohighlight">\(a^2=a*a\)</span></p></li>
+<li><p>pow_zero : <span class="math notranslate nohighlight">\(a^0=1\)</span></p></li>
+<li><p>succ_add : <span class="math notranslate nohighlight">\(succ(a)+b=succ(a+b)\)</span></p></li>
+<li><p>succ_eq_add_one : <span class="math notranslate nohighlight">\(succ(n)=n+1\)</span></p></li>
+<li><p>zero_add : <span class="math notranslate nohighlight">\(0+a=a\)</span></p></li>
+<li><p>zero_mul : <span class="math notranslate nohighlight">\(0*a=0\)</span></p></li>
+<li><p>zero_ne_one : <span class="math notranslate nohighlight">\(0\ne1\)</span></p></li>
+<li><p>zero_pow_succ : <span class="math notranslate nohighlight">\(0^n=0\quad\)</span>(Where n is a successor(<span class="math notranslate nohighlight">\(n\gt0\)</span>).)</p></li>
+<li><p>zero_pow_zero : <span class="math notranslate nohighlight">\(0^0=1\quad\)</span>(In Lean, <span class="math notranslate nohighlight">\(0^0\)</span> is not undefined.)</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -435,6 +471,24 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="Course_MIT6002thinking.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">9. </span>MIT_CS6002-CS</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="PE50.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">11. </span>Project Euler Q1-50</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
