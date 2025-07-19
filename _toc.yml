@@ -19,7 +19,7 @@ parts:
   chapters:
   - file: Course_MIT6001Python
   - file: Course_MIT6002thinking
-  - file: PE25
+  - file: Course_Lean  
   - file: PE50
   - file: PE75  
   - file: Course_MCM
