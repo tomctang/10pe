@@ -368,6 +368,10 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="lean">
 <h1><span class="section-number">10. </span>Lean<a class="headerlink" href="#lean" title="Link to this heading">#</a></h1>
+<p>Five Lean games</p>
+<ul class="simple">
+<li><p>Natural Number Game, Robo, Set Theory Game, A Lean Introduction to Logic, Knights &amp; Knaves Game</p></li>
+</ul>
 <p>Tactics</p>
 <ul class="simple">
 <li><p>apply : This tactic applies theorems and assumptions at assumptions. This tactic is similar to rw.</p></li>
@@ -394,6 +398,33 @@ document.write(`
 <li><p>symm : <span class="math notranslate nohighlight">\(a=b\)</span> implies <span class="math notranslate nohighlight">\(b=a\)</span></p></li>
 <li><p>tauto : This tactic proves all logic statements.</p></li>
 <li><p>trivial : This tactic proves goals of the form True.</p></li>
+<li><p>use : This tactic replaces the object after the <span class="math notranslate nohighlight">\(\exist\)</span>(exist symbol) with another object or number when there is an <span class="math notranslate nohighlight">\(\exist\)</span> in the proof.</p></li>
+</ul>
+<p>Stuff by Games</p>
+<ul class="simple">
+<li><p>Natural Number Game</p>
+<ul>
+<li><p>This game is where you have to prove theorems about natural numbers(0,1,2,etc…). There are multiple ways to pass through the levels and there is a final boss(Fermat’s Last Theorem) is at the end of power world.</p></li>
+</ul>
+</li>
+<li><p>Robo</p></li>
+<li><p>Set Theory Game</p></li>
+<li><p>Lean Intro to Logic</p>
+<ul>
+<li><p>This game teaches you how to solve logic puzzles.</p></li>
+<li><p>There are two types of worlds.</p>
+<ul>
+<li><p>Normal Worlds : These teach you how to use the exact and have tactic and theorems to complete the levels.</p></li>
+<li><p>Redux Worlds : These how copies of the other worlds but you have to use different tactics to complete the levels.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Knights and Knaves Game</p>
+<ul>
+<li><p>This teachs you how to solve logic puzzles where you have to deduce who is a knight(truthteller) and who is a knave(liar).</p></li>
+</ul>
+</li>
 </ul>
 <p>Theorems</p>
 <ul class="simple">
@@ -417,7 +448,7 @@ document.write(`
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">Unfinished</span> <span class="n">proof</span> <span class="k">for</span> <span class="n">le_total</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">Unfinished</span> <span class="n">proof</span> <span class="k">for</span> <span class="n">le_total</span><span class="p">)</span>
 <span class="n">induction</span> <span class="n">y</span> <span class="k">with</span> <span class="n">d</span> <span class="n">hd</span>
 <span class="n">right</span>
 <span class="n">apply</span> <span class="n">zero_le</span>
@@ -450,16 +481,16 @@ document.write(`
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "sagemath"
         },
         kernelOptions: {
-            name: "python3",
+            name: "sagemath",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'sagemath'</script>
 
                 </article>
               

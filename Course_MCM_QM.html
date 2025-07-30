@@ -58,6 +58,8 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Course_MCM_QM';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -368,10 +370,11 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qm-for-everyone">14.3. QM for Everyone</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-quantum-mechanics-of-light">14.3.1. Advanced Quantum Mechanics of Light</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-quantum-mechanics-of-light">14.3.2. The Quantum Mechanics of Light</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-quantum-mechanics-with-spins">14.3.3. Advanced Quantum Mechanics with Spins</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intro-quantum-probability">14.3.4. Intro &amp; Quantum Probability</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#final-exam">14.3.1. Final Exam</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-quantum-mechanics-of-light">14.3.2. Advanced Quantum Mechanics of Light</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-quantum-mechanics-of-light">14.3.3. The Quantum Mechanics of Light</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-quantum-mechanics-with-spins">14.3.4. Advanced Quantum Mechanics with Spins</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intro-quantum-probability">14.3.5. Intro &amp; Quantum Probability</a></li>
 </ul>
 </li>
 </ul>
@@ -483,8 +486,85 @@ document.write(`
 <li><p><a class="reference external" href="https://www.st-andrews.ac.uk/physics/quvis/simulations_html5/sims/QuantumBombGame/Quantum_bomb.html">Quantum bomb detection</a></p></li>
 <li><p><a class="reference external" href="https://www.st-andrews.ac.uk/physics/quvis/simulations_html5/sims/QuantumEraser/QuantumEraser.html">Quantum eraser with polarizers</a></p></li>
 </ul>
+<section id="final-exam">
+<h3><span class="section-number">14.3.1. </span>Final Exam<a class="headerlink" href="#final-exam" title="Link to this heading">#</a></h3>
+<p>Notes</p>
+<ul class="simple">
+<li><p>P.8 : Check part 3</p></li>
+<li><p>P11 : Check part 2</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">0.28</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="mf">0.0036</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0820000000000000
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">0.9539</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="mf">0.3</span><span class="o">^</span><span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0245679806700000
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mf">0.3</span><span class="o">+</span><span class="mf">0.9539</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="mf">0.3</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.328303287701419
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="n">cos</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="mi">9</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">n</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">n</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">),</span><span class="n">n</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">s</span><span class="p">(</span><span class="n">n</span><span class="p">(</span><span class="n">cos</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="mi">20</span><span class="p">)</span><span class="o">^</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 0.939692620785908 \qquad   0.883022221559489 \qquad   0.829769465589431 \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 0.883485183679467 \qquad   \]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">m</span><span class="o">=</span><span class="mi">52</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">n</span><span class="o">*=</span><span class="n">m</span><span class="o">-</span><span class="mi">1</span>
+    <span class="n">n</span><span class="o">/=</span><span class="mi">365</span>
+    <span class="n">m</span><span class="o">-=</span><span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.104809701340232e-09
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="advanced-quantum-mechanics-of-light">
-<h3><span class="section-number">14.3.1. </span>Advanced Quantum Mechanics of Light<a class="headerlink" href="#advanced-quantum-mechanics-of-light" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">14.3.2. </span>Advanced Quantum Mechanics of Light<a class="headerlink" href="#advanced-quantum-mechanics-of-light" title="Link to this heading">#</a></h3>
 <p>Notes</p>
 <ul class="simple">
 <li><p>Quantum Seeing in the Dark</p>
@@ -507,7 +587,7 @@ document.write(`
 </ul>
 </section>
 <section id="the-quantum-mechanics-of-light">
-<h3><span class="section-number">14.3.2. </span>The Quantum Mechanics of Light<a class="headerlink" href="#the-quantum-mechanics-of-light" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">14.3.3. </span>The Quantum Mechanics of Light<a class="headerlink" href="#the-quantum-mechanics-of-light" title="Link to this heading">#</a></h3>
 <p>Notes</p>
 <ul class="simple">
 <li><p>Light is made of particles.</p>
@@ -584,7 +664,7 @@ document.write(`
 </ul>
 </section>
 <section id="advanced-quantum-mechanics-with-spins">
-<h3><span class="section-number">14.3.3. </span>Advanced Quantum Mechanics with Spins<a class="headerlink" href="#advanced-quantum-mechanics-with-spins" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">14.3.4. </span>Advanced Quantum Mechanics with Spins<a class="headerlink" href="#advanced-quantum-mechanics-with-spins" title="Link to this heading">#</a></h3>
 <p>Notes</p>
 <ul class="simple">
 <li><p>Two-Slit Experiment with Stern-Gerlach Analyzer Loop : There are two results using classical and quantum probability. The quantum probability result is correct where since the path taken is indeterminate(you can also say it takes both paths), the atom’s state does not change.</p>
@@ -600,7 +680,7 @@ document.write(`
 </ul>
 <img src="https://raw.githubusercontent.com/tomctang/NB_img/main/sge.png" alt="seriesgraph" width="500"></section>
 <section id="intro-quantum-probability">
-<h3><span class="section-number">14.3.4. </span>Intro &amp; Quantum Probability<a class="headerlink" href="#intro-quantum-probability" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">14.3.5. </span>Intro &amp; Quantum Probability<a class="headerlink" href="#intro-quantum-probability" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Fermions : Metals conduct electricity do so because there is a “sea of electrons”. This is created from the Pauli exclusion principle, since electrons are fermions, and fermions stay apart, they stay apart.</p></li>
 <li><p>Alpha Particles : Created by radioactive elements. Since it is slow and heavy, it has low penetration power but can damage biological tissue. Smoke detectors use heavy elements to detect smoke as when there is smoke the current flow between the 2 metal plates that are held at different voltages the current is changed.</p></li>
@@ -648,24 +728,6 @@ document.write(`
 </ul>
 </li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">=</span><span class="mi">1</span>
-<span class="n">m</span><span class="o">=</span><span class="mi">52</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-    <span class="n">n</span><span class="o">*=</span><span class="n">m</span><span class="o">-</span><span class="mi">1</span>
-    <span class="n">n</span><span class="o">/=</span><span class="mi">365</span>
-    <span class="n">m</span><span class="o">-=</span><span class="mi">1</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.104809701340232e-09
-</pre></div>
-</div>
-</div>
-</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Birthday Problem</span>
@@ -814,10 +876,11 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qm-for-everyone">14.3. QM for Everyone</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-quantum-mechanics-of-light">14.3.1. Advanced Quantum Mechanics of Light</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-quantum-mechanics-of-light">14.3.2. The Quantum Mechanics of Light</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-quantum-mechanics-with-spins">14.3.3. Advanced Quantum Mechanics with Spins</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intro-quantum-probability">14.3.4. Intro &amp; Quantum Probability</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#final-exam">14.3.1. Final Exam</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-quantum-mechanics-of-light">14.3.2. Advanced Quantum Mechanics of Light</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-quantum-mechanics-of-light">14.3.3. The Quantum Mechanics of Light</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-quantum-mechanics-with-spins">14.3.4. Advanced Quantum Mechanics with Spins</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intro-quantum-probability">14.3.5. Intro &amp; Quantum Probability</a></li>
 </ul>
 </li>
 </ul>
