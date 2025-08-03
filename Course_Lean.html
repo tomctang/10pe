@@ -341,7 +341,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -357,6 +359,15 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#games">10.1. Games</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tactics-theorems">10.2. Tactics &amp; Theorems</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -368,19 +379,217 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="lean">
 <h1><span class="section-number">10. </span>Lean<a class="headerlink" href="#lean" title="Link to this heading">#</a></h1>
+<section id="games">
+<h2><span class="section-number">10.1. </span>Games<a class="headerlink" href="#games" title="Link to this heading">#</a></h2>
 <p>Five Lean games</p>
+<p><strong>Natural Number Game</strong></p>
 <ul class="simple">
-<li><p>Natural Number Game, Robo, Set Theory Game, A Lean Introduction to Logic, Knights &amp; Knaves Game</p></li>
+<li><p>This game is where you have to prove theorems about natural numbers(0,1,2,etc…). There are multiple ways to pass through the levels and there is a final boss(Fermat’s Last Theorem) is at the end of power world.</p></li>
+</ul>
+<p><strong>Set Theory Game</strong></p>
+<p><strong>Lean Intro to Logic</strong></p>
+<ul class="simple">
+<li><p>This game teaches you how to solve logic puzzles.</p></li>
+<li><p>There are two types of worlds.</p>
+<ul>
+<li><p>Normal Worlds : These teach you how to use the exact and have tactic and theorems to complete the levels.</p></li>
+<li><p>Redux Worlds : These how copies of the other worlds but you have to use different tactics to complete the levels.</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Robo</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Planet</p></th>
+<th class="head text-left"><p>key mathematical content</p></th>
+<th class="head"><p>Lean tactics introduced</p></th>
+<th class="head"><p>Boss level</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Logo</p></td>
+<td class="text-left"><p>propositional logic: ∧, ∨, ¬</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">rfl</span></code>, <code class="docutils literal notranslate"><span class="pre">left</span></code>, <code class="docutils literal notranslate"><span class="pre">right</span></code>,<code class="docutils literal notranslate"><span class="pre">tauto</span></code>, …</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Implis</p></td>
+<td class="text-left"><p>propositional logic: ⇒, ⇔</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">apply</span></code>, <code class="docutils literal notranslate"><span class="pre">intro</span></code>, <code class="docutils literal notranslate"><span class="pre">revert</span></code>, <code class="docutils literal notranslate"><span class="pre">rw</span></code>, …</p></td>
+<td><p>A ⇒ B equivalent to ¬ A ∨ B</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Saturn</p></td>
+<td class="text-left"><p>elementary arithmetic, polynomials</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ring</span></code>, <code class="docutils literal notranslate"><span class="pre">rw</span></code> for equations</p></td>
+<td><p>a well-known polynomial sums-of-squares formula</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Quantus</p></td>
+<td class="text-left"><p>predicate logic, even/odd numbers</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">use</span></code>, <code class="docutils literal notranslate"><span class="pre">obtain</span></code>, <code class="docutils literal notranslate"><span class="pre">decide</span></code>, <code class="docutils literal notranslate"><span class="pre">push_neg</span></code></p></td>
+<td><p><a class="reference external" href="https://en.wikipedia.org/wiki/Drinker_paradox">Drinker’s paradox</a></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Luna</p></td>
+<td class="text-left"><p>inequalities</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">linarith</span></code>, <code class="docutils literal notranslate"><span class="pre">omega</span></code></p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Spinoza</p></td>
+<td class="text-left"><p>proof structuring</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">suffices</span></code>, <code class="docutils literal notranslate"><span class="pre">by_contra</span></code>, <code class="docutils literal notranslate"><span class="pre">contrapose</span></code></p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Babylon</p></td>
+<td class="text-left"><p>∑ notation, induction</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">induction'</span></code></p></td>
+<td><p>sum of cubes</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Piazza</p></td>
+<td class="text-left"><p>basic set theory</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ext</span></code>, <code class="docutils literal notranslate"><span class="pre">simp</span></code></p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Prado</p></td>
+<td class="text-left"><p>prime numbers</p></td>
+<td><p>–</p></td>
+<td><p>exactly one even prime</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Euklid</p></td>
+<td class="text-left"><p>∏ notation</p></td>
+<td><p>–</p></td>
+<td><p>infinitely many primes</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Vieta</p></td>
+<td class="text-left"><p>maps (between types)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">funext</span></code></p></td>
+<td><p>another induction exercise</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Epo</p></td>
+<td class="text-left"><p>surjective maps, axiom of choice</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">choose</span></code></p></td>
+<td><p>map surjective ⇔ has right inverse</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Mono</p></td>
+<td class="text-left"><p>injective maps</p></td>
+<td><p>–</p></td>
+<td><p>map injective ⇔ has left inverse</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Iso</p></td>
+<td class="text-left"><p>bijective maps</p></td>
+<td><p>–</p></td>
+<td><p>map bijective ⇔ has inverse</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Samarkand</p></td>
+<td class="text-left"><p>(pre)images of subsets</p></td>
+<td><p>–</p></td>
+<td><p>map surjective ⇔ induced contravariant map on powersets injective</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Cantor</p></td>
+<td class="text-left"><p>fixed points of maps</p></td>
+<td><p>–</p></td>
+<td><p>ℕ-valued sequences uncountable</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Robotswana</p></td>
+<td class="text-left"><p>matrices, trace</p></td>
+<td><p>–</p></td>
+<td><p>characterization of trace map</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Ciao</p></td>
+<td class="text-left"><p>(good-bye planet)</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Knights and Knaves Game</strong></p>
+<ul class="simple">
+<li><p>This teachs you how to solve logic puzzles where you have to deduce who is a knight(truthteller) and who is a knave(liar).</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">--</span> <span class="n">World</span><span class="p">:</span> <span class="n">Equational</span> <span class="n">Reasoning</span>
+<span class="o">--</span> <span class="mi">1</span><span class="p">,</span> <span class="n">A</span> <span class="n">Number</span> <span class="n">Equals</span> <span class="n">Itself</span>
+<span class="n">rfl</span>
+<span class="o">--</span> <span class="mi">2</span><span class="p">,</span> <span class="n">goal</span> <span class="ow">is</span> <span class="n">true</span> <span class="n">by</span> <span class="n">assumption</span>
+<span class="n">exact</span> <span class="n">h</span>
+<span class="o">--</span> <span class="mi">3</span><span class="p">,</span> <span class="n">Substituting</span> <span class="n">Variables</span> <span class="n">By</span> <span class="n">Their</span> <span class="n">Values</span>
+<span class="n">rw</span><span class="p">[</span><span class="n">h</span><span class="p">]</span>
+<span class="n">rw</span><span class="p">[</span><span class="n">g</span><span class="p">]</span>
+<span class="o">--</span> <span class="mi">4</span><span class="p">,</span> <span class="n">Divide</span> <span class="n">both</span> <span class="n">sides</span> <span class="n">of</span> <span class="n">an</span> <span class="n">equation</span>
+<span class="n">exact</span> <span class="n">Nat</span><span class="o">.</span><span class="n">mul_left_cancel</span> <span class="n">four_pos</span> <span class="n">h</span>
+
+<span class="o">--</span> <span class="n">World</span><span class="p">:</span> <span class="n">Logic</span>
+<span class="o">--</span> <span class="mi">1</span><span class="p">,</span> <span class="n">Intro</span>
+<span class="n">exact</span> <span class="n">hP</span>
+<span class="o">--</span> <span class="mi">2</span><span class="p">,</span> <span class="n">And</span><span class="p">,</span> <span class="err">`∧`</span>
+<span class="n">constructor</span>
+<span class="n">assumption</span>
+<span class="n">assumption</span>
+<span class="o">--</span> <span class="mi">3</span><span class="p">,</span> <span class="n">Or</span><span class="p">,</span> <span class="err">`∨`</span>
+<span class="n">left</span>
+<span class="n">assumption</span>
+<span class="o">--</span> <span class="mi">4</span><span class="p">,</span> <span class="n">Implication</span><span class="p">,</span> <span class="err">`→`</span>
+<span class="n">exact</span> <span class="n">hP</span>
+<span class="o">--</span> <span class="mi">5</span><span class="p">,</span> <span class="n">Proving</span> <span class="n">an</span> <span class="n">implication</span><span class="p">,</span> <span class="n">Implication</span> <span class="k">as</span> <span class="n">the</span> <span class="n">goal</span>
+<span class="n">intro</span> <span class="n">h</span>
+<span class="n">assumption</span>
+<span class="o">--</span> <span class="mi">6</span><span class="p">,</span> <span class="n">Proof</span> <span class="n">by</span> <span class="err">`</span><span class="n">cases</span><span class="err">`</span>
+<span class="n">cases</span> <span class="n">h</span>
+<span class="n">exact</span> <span class="n">hPR</span> <span class="n">h_1</span>
+<span class="n">exact</span> <span class="n">hQR</span> <span class="n">h_1</span>
+<span class="o">--</span> <span class="mi">7</span><span class="p">,</span> <span class="n">Logical</span> <span class="n">Equivalence</span><span class="p">,</span> <span class="err">`↔`</span>
+<span class="n">exact</span> <span class="n">PsameQ</span><span class="o">.</span><span class="n">mp</span> <span class="n">hP</span>
+<span class="o">--</span> <span class="mi">8</span><span class="p">,</span> <span class="n">Not</span> <span class="n">Connective</span><span class="p">,</span> <span class="err">¬</span>
+<span class="n">unfold</span> <span class="n">Not</span> <span class="n">at</span> <span class="n">hnP</span>
+<span class="n">exact</span> <span class="n">hnP</span> <span class="n">hP</span>
+<span class="o">--</span> <span class="mi">9</span><span class="p">,</span> <span class="n">From</span> <span class="err">`</span><span class="kc">False</span><span class="err">`</span><span class="p">,</span> <span class="n">anything</span> <span class="n">follows</span><span class="o">.</span>
+<span class="n">contradiction</span>
+<span class="o">--</span> <span class="mi">10</span><span class="p">,</span> <span class="err">`</span><span class="n">have</span><span class="err">`</span>
+<span class="n">have</span> <span class="n">hQ</span><span class="p">:</span><span class="n">Q</span><span class="o">:=</span><span class="n">hPQ</span> <span class="n">hP</span>
+<span class="n">exact</span> <span class="n">hQR</span> <span class="n">hQ</span>
+<span class="o">--</span> <span class="mi">11</span><span class="p">,</span> <span class="err">`</span><span class="n">have</span><span class="err">`</span> <span class="k">with</span> <span class="err">`</span><span class="n">exact</span><span class="err">`</span>
+<span class="n">have</span> <span class="n">hQ</span><span class="p">:</span><span class="n">Q</span><span class="o">:=</span><span class="n">hPQ</span> <span class="n">hP</span>
+<span class="n">exact</span> <span class="n">hQR</span> <span class="n">hQ</span>
+
+<span class="o">--</span> <span class="n">World</span><span class="p">:</span> <span class="n">Simplification</span>
+<span class="o">--</span> <span class="mi">1</span><span class="p">,</span> <span class="err">`</span><span class="n">or_false</span><span class="err">`</span>
+<span class="n">simp</span><span class="p">[</span><span class="n">hnQ</span><span class="p">]</span> <span class="n">at</span> <span class="n">h</span>
+<span class="n">assumption</span>
+<span class="o">--</span> <span class="mi">2</span><span class="p">,</span>
+<span class="n">simp</span><span class="p">[</span><span class="n">h</span><span class="p">]</span>
+<span class="o">--</span> <span class="mi">3</span><span class="p">,</span> <span class="err">`</span><span class="n">not_or</span><span class="err">`</span>
+<span class="n">simp</span><span class="p">[</span><span class="n">not_or</span><span class="p">]</span> <span class="n">at</span> <span class="n">h</span>
+<span class="n">assumption</span>
+<span class="o">--</span> <span class="mi">4</span><span class="p">,</span> <span class="err">`</span><span class="n">not_and_or</span><span class="err">`</span>
+<span class="n">simp</span><span class="p">[</span><span class="err">←</span><span class="n">not_and_or</span><span class="p">]</span>
+<span class="n">simp</span><span class="p">[</span><span class="n">not_and_or</span><span class="p">]</span> <span class="n">at</span> <span class="n">h</span>
+<span class="n">assumption</span>
+<span class="o">--</span> <span class="mi">5</span><span class="p">,</span> <span class="err">`</span><span class="n">by_contra</span><span class="err">`</span><span class="p">,</span> <span class="err">`</span><span class="n">not_not</span><span class="err">`</span>
+<span class="n">simp</span><span class="p">[</span><span class="n">not_not</span><span class="p">]</span> <span class="n">at</span> <span class="n">hP</span>
+<span class="n">assumption</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="tactics-theorems">
+<h2><span class="section-number">10.2. </span>Tactics &amp; Theorems<a class="headerlink" href="#tactics-theorems" title="Link to this heading">#</a></h2>
+<p>Categorize tactics by</p>
+<ul class="simple">
+<li><p>manipulate the goal</p></li>
+<li><p>manipulate the assumptions</p></li>
+<li><p>manipulate both/either</p></li>
 </ul>
 <p>Tactics</p>
 <ul class="simple">
 <li><p>apply : This tactic applies theorems and assumptions at assumptions. This tactic is similar to rw.</p></li>
-<li><p>assumption : This tactic searches for assumptions that are exactly the same as the goal.</p></li>
+<li><p>assumption : Searches for assumptions that can directly prove the goal.</p></li>
+<li><p>cases : Considers the cases for and &amp; or statements and objects(similar to induction but without hypothesis).</p></li>
 <li><p>contradiction : This tactic proves statements that cannot be proved using other methods.</p></li>
 <li><p>decide : This tactic tries to solve goals by using algorithms.</p></li>
-<li><p>exact : This tactic proves goals based on the theorems and assumptions written after it.</p></li>
-<li><p>have : This tactic introduces an assumption that can be proved based on evidence(providing evidence to prove it is optional when using tactic).</p></li>
-<li><p>intro : This tactic introduces a hypothesis(assumption) based on the goal if possible.</p></li>
+<li><p>exact : Proves goals based on the theorems and assumptions written after it.</p></li>
+<li><p>have : Introduces an assumption that can be proved based on evidence(providing evidence to prove it is optional when using tactic).</p></li>
+<li><p>induction : Uses induction to prove the goal by considering base case then using a hypothesis to prove the other part.</p></li>
+<li><p>intro : Introduces a hypothesis(assumption) based on the goal if possible(similar to fun(<span class="math notranslate nohighlight">\(\lambda\)</span>)).</p></li>
 <li><p>left : The goal or hypothesis changes from A or B to A(because A is on the left).</p></li>
 </ul>
 <ul class="simple">
@@ -399,32 +608,6 @@ document.write(`
 <li><p>tauto : This tactic proves all logic statements.</p></li>
 <li><p>trivial : This tactic proves goals of the form True.</p></li>
 <li><p>use : This tactic replaces the object after the <span class="math notranslate nohighlight">\(\exist\)</span>(exist symbol) with another object or number when there is an <span class="math notranslate nohighlight">\(\exist\)</span> in the proof.</p></li>
-</ul>
-<p>Stuff by Games</p>
-<ul class="simple">
-<li><p>Natural Number Game</p>
-<ul>
-<li><p>This game is where you have to prove theorems about natural numbers(0,1,2,etc…). There are multiple ways to pass through the levels and there is a final boss(Fermat’s Last Theorem) is at the end of power world.</p></li>
-</ul>
-</li>
-<li><p>Robo</p></li>
-<li><p>Set Theory Game</p></li>
-<li><p>Lean Intro to Logic</p>
-<ul>
-<li><p>This game teaches you how to solve logic puzzles.</p></li>
-<li><p>There are two types of worlds.</p>
-<ul>
-<li><p>Normal Worlds : These teach you how to use the exact and have tactic and theorems to complete the levels.</p></li>
-<li><p>Redux Worlds : These how copies of the other worlds but you have to use different tactics to complete the levels.</p></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Knights and Knaves Game</p>
-<ul>
-<li><p>This teachs you how to solve logic puzzles where you have to deduce who is a knight(truthteller) and who is a knave(liar).</p></li>
-</ul>
-</li>
 </ul>
 <p>Theorems</p>
 <ul class="simple">
@@ -470,6 +653,7 @@ document.write(`
 </div>
 </div>
 </div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -526,6 +710,22 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#games">10.1. Games</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tactics-theorems">10.2. Tactics &amp; Theorems</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
