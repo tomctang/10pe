@@ -11,6 +11,11 @@ def fastFib(n, memo={}):
         return result
 
 def prime(num):
+    """Check if a number is prime.
+    Args:
+        num (int): The number to check.
+    Returns:
+        bool: True if the number is prime, False otherwise."""
     if num==1:
         return False
     else:
