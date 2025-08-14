@@ -24,6 +24,7 @@ parts:
   - file: PE75  
   - file: Course_MCM
   - file: Course_MCM_QM
+  - file: Course_MCM_QFT
   
 - caption: Notebook
   numbered: true
