@@ -367,6 +367,15 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combinatorics">7.1. Combinatorics</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enumeration-using-asymptotic">7.1.1. Enumeration using Asymptotic</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-equations-in-coding">7.1.2. Useful Equations in Coding</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#general">7.1.2.1. General</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#catalan-numbers">7.1.2.2. Catalan Numbers</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#narayana-numbers">7.1.2.3. Narayana numbers</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#stirling-numbers-of-the-first-kind">7.1.2.4. Stirling numbers of the first kind</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#stirling-numbers-of-the-second-kind">7.1.2.5. Stirling numbers of the second kind</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bell-number">7.1.2.6. Bell number</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursion-difference-equation-generating-function">7.2. Recursion, Difference Equation &amp; Generating Function</a><ul class="nav section-nav flex-column">
@@ -450,6 +459,151 @@ document.write(`
 <img src="https://raw.githubusercontent.com/tomctang/NB_img/main/binomial_fibonacci.png" alt="Binomial_Fibonacci" width="500"><section id="enumeration-using-asymptotic">
 <h3><span class="section-number">7.1.1. </span>Enumeration using Asymptotic<a class="headerlink" href="#enumeration-using-asymptotic" title="Link to this heading">#</a></h3>
 <p>Asymptotic enumeration methods provide quantitative information about the growth rate of functions that count combinatorial objects.</p>
+</section>
+<section id="useful-equations-in-coding">
+<h3><span class="section-number">7.1.2. </span><a class="reference external" href="https://blog.shahjalalshohag.com/equation-list/">Useful Equations in Coding</a><a class="headerlink" href="#useful-equations-in-coding" title="Link to this heading">#</a></h3>
+<section id="general">
+<h4><span class="section-number">7.1.2.1. </span>General<a class="headerlink" href="#general" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \displaystyle \sum \limits_{0\leq k \leq n} {n-k \choose k} = Fib_{n+1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \displaystyle {n \choose k}={n \choose n-k}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \displaystyle {n \choose k}+{n \choose k+1}={n+1 \choose k+1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \displaystyle k{n \choose k}=n{n-1 \choose k-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \displaystyle {n \choose k}=\frac{n}{k}{n-1 \choose k-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \sum \limits_{i=0}^n{n \choose i}=2^n\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \sum \limits_{i\geq 0}{n \choose 2i}=2^{n-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \sum \limits_{i\geq 0}{n \choose 2i+1}=2^{n-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \sum \limits_{i= 0}^k \left( -1 \right) ^i{n \choose i}=\left( -1 \right) ^k{n-1 \choose k}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \sum \limits_{i= 0}^k{n+i \choose i}= \sum \limits_{i= 0}^k{n+i \choose n} = {n+k+1 \choose k}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \displaystyle1{n \choose 1}+2{n \choose 2}+3{n \choose 3}+…+n{n \choose n}=n2^{n-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \displaystyle1^2{n \choose 1}+2^2{n \choose 2}+3^2{n \choose 3}+…+n^2{n \choose n}=(n+n^2)2^{n-2}\)</span></p></li>
+<li><p><strong>Vandermonde’s Identify:</strong> <span class="math notranslate nohighlight">\(\displaystyle \sum \limits_{k=0}^r{m \choose k}{n \choose r-k}={m+n \choose r}\)</span></p></li>
+<li><p><strong>Hockey-Stick Identify:</strong> <span class="math notranslate nohighlight">\(\displaystyle \ n,r \in N, n &gt; r, \sum \limits_{i=r}^n{i \choose r}={n+1 \choose r+1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \sum \limits_{i=0}^k{k \choose i}^2={2k \choose k}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \sum \limits_{k=0}^n{n \choose k}{n \choose n-k}={2n \choose n}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \sum \limits_{k=q}^n{n \choose k}{k \choose q}=2^{n-q}{n \choose q}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \sum \limits_{i=0}^nk^i{n \choose i}=(k+1)^n\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \sum \limits_{i=0}^n{2n \choose i}=2^{2n-1}+\frac{1}{2}{2n \choose n}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \sum \limits_{i=1}^n{n \choose i}{n-1 \choose i-1}={2n-1 \choose n-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \sum \limits_{i=0}^n{2n \choose i}^2=\frac{1}{2} \left( {4n \choose 2n}+{2n \choose n}^2 \right)\)</span></p></li>
+<li><p><strong>Highest Power of <span class="math notranslate nohighlight">\(\displaystyle 2\)</span> that divides <span class="math notranslate nohighlight">\(^{2n}C_n\)</span>:</strong> Let <span class="math notranslate nohighlight">\(\displaystyle x\)</span> be the number of <span class="math notranslate nohighlight">\(1s\)</span> in the binary representation. Then the number of odd terms will be <span class="math notranslate nohighlight">\(\displaystyle 2^x\)</span>. Let it form a sequence. The <span class="math notranslate nohighlight">\(n\)</span>-th value in the sequence (starting from <span class="math notranslate nohighlight">\(n\)</span> = 0) gives the highest power of <span class="math notranslate nohighlight">\(\displaystyle 2\)</span> that divides <span class="math notranslate nohighlight">\(^{2n}C_n\)</span>.</p></li>
+<li><p><strong>Pascal Triangle</strong></p>
+<ol class="arabic simple">
+<li><p>In a row <span class="math notranslate nohighlight">\(\displaystyle p\)</span> where <span class="math notranslate nohighlight">\(\displaystyle p\)</span> is a prime number, all the terms in that row except the <span class="math notranslate nohighlight">\(1s\)</span> are multiples of <span class="math notranslate nohighlight">\(\displaystyle p\)</span>.</p></li>
+<li><p>Parity: To count odd terms in row <span class="math notranslate nohighlight">\(n\)</span>, convert <span class="math notranslate nohighlight">\(n\)</span> to binary. Let <span class="math notranslate nohighlight">\(\displaystyle x\)</span> be the number of <span class="math notranslate nohighlight">\(1s\)</span> in the binary representation. Then the number of odd terms will be <span class="math notranslate nohighlight">\(\displaystyle 2^x\)</span>.</p></li>
+<li><p>Every entry in row <span class="math notranslate nohighlight">\(\displaystyle 2^n-1, n\geq 0,\)</span> is odd.</p></li>
+</ol>
+</li>
+<li><p>An integer <span class="math notranslate nohighlight">\(n\geq 2\)</span> is prime if and only if all the intermediate binomial coefficients <span class="math notranslate nohighlight">\(\displaystyle \displaystyle {n \choose 1},{n \choose 2},…, {n \choose n-1}\)</span> are divisible by <span class="math notranslate nohighlight">\(n\)</span>.</p></li>
+<li><p><strong>Kummer’s Theorem:</strong> For given integers <span class="math notranslate nohighlight">\(n\geq m\geq 0\)</span> and a prime number <span class="math notranslate nohighlight">\(\displaystyle p\)</span>, the largest power of <span class="math notranslate nohighlight">\(\displaystyle p\)</span> dividing <span class="math notranslate nohighlight">\(\displaystyle \displaystyle {n \choose m}\)</span> is equal to the number of carries when <span class="math notranslate nohighlight">\(m\)</span> is added to <span class="math notranslate nohighlight">\(n\)</span>-<span class="math notranslate nohighlight">\(m\)</span> in base <span class="math notranslate nohighlight">\(\displaystyle p\)</span>. For implementation take inspiration from lucas theorem.</p></li>
+<li><p>Number of different binary sequences of length <span class="math notranslate nohighlight">\(n\)</span> such that no two <span class="math notranslate nohighlight">\(0\)</span>’s are adjacent=<span class="math notranslate nohighlight">\(\displaystyle Fib_{n+1}\)</span></p></li>
+<li><p><strong>Combination with repetition:</strong> Let’s say we choose <span class="math notranslate nohighlight">\(\displaystyle \displaystyle k\)</span> elements from an <span class="math notranslate nohighlight">\(n\)</span>-element set, the order doesn’t matter and each element can be chosen more than once. In that case, the number of different combinations is: <span class="math notranslate nohighlight">\(\displaystyle \displaystyle {n+k-1 \choose k}\)</span></p></li>
+<li><p>Number of ways to divide <span class="math notranslate nohighlight">\(n\)</span> persons in <span class="math notranslate nohighlight">\(\displaystyle \frac{n}{k}\)</span> equal groups i.e. each having size <span class="math notranslate nohighlight">\(\displaystyle \displaystyle k\)</span> is
+$<span class="math notranslate nohighlight">\(\displaystyle \frac{n!}{k!^{\frac{n}{k}} \left( \frac{n}{k} \right) !}= \prod \limits_{n \geq k}^{n-=k}{n-1 \choose k-1}\)</span>$</p></li>
+<li><p>The number non-negative solution of the equation: <span class="math notranslate nohighlight">\(\displaystyle x_1+x_2+x_3+…+x_k=n \text{ is}{n+k-1 \choose n}\)</span></p></li>
+<li><p>Number of ways to choose <span class="math notranslate nohighlight">\(n\)</span> ids from <span class="math notranslate nohighlight">\(\displaystyle 1\)</span> to b such that every id has distance at least k <span class="math notranslate nohighlight">\(\displaystyle \displaystyle =\left( \frac{b-(n-1)(k-1)}{n} \right)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \displaystyle \sum \limits_{i=1,3,5,\dots}^{i\leq n} \binom{n}{i} a^{n-i}b^i = \frac{1}{2} ((a+b)^n-(a-b)^n)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \displaystyle \sum \limits_{i=0}^{n} \dfrac{\binom{k}{i}}{\binom{n}{i}} = \dfrac{\binom{n+1}{n-k+1}}{\binom{n}{k}}\)</span></p></li>
+<li><p><strong>Derangement:</strong> a permutation of the elements of a set, such that no element appears in its original position. Let <span class="math notranslate nohighlight">\(d(n)\)</span> be the number of derangements of the identity permutation fo size <span class="math notranslate nohighlight">\(n\)</span>.
+$<span class="math notranslate nohighlight">\(d(n)=(n-1) \cdot (d(n-1)+d(n-2)) \, \text{where}\;d(0)=1,d(1)=0\)</span>$</p></li>
+<li><p><strong>Involutions:</strong> permutations such that <span class="math notranslate nohighlight">\(\displaystyle p^2 =\)</span> identity permutation. <span class="math notranslate nohighlight">\(\displaystyle a_0 = a_1 = 1\)</span> and <span class="math notranslate nohighlight">\(\displaystyle a_n=a_{n-1} + (n-1)a_{n-2}\)</span> for <span class="math notranslate nohighlight">\(n&gt;1\)</span>.</p></li>
+<li><p>Let <span class="math notranslate nohighlight">\(T(n,k)\)</span> be the number of permutations of size <span class="math notranslate nohighlight">\(n\)</span> for which all cycles have length <span class="math notranslate nohighlight">\(\displaystyle \leq k\)</span>.
+$<span class="math notranslate nohighlight">\(T(n, k)=     
+\begin{cases}
+  n! &amp; ; n \le k \\
+  n \cdot T(n-1, k) - F(n-1, k) \cdot T(n-k-1, k) &amp; ; n &gt; k \\
+\end{cases} \)</span><span class="math notranslate nohighlight">\(
+Here \)</span>\displaystyle F(n, k) = n \cdot (n - 1) \cdot … \cdot (n - k + 1)$</p></li>
+<li><p><strong>Lucas Theorem</strong></p>
+<ol class="arabic simple">
+<li><p>If <span class="math notranslate nohighlight">\(\displaystyle p\)</span> is prime, then <span class="math notranslate nohighlight">\(\displaystyle \left(\frac{p^{a}}{k}\right) \equiv 0 (\mod\; p)\)</span></p></li>
+<li><p>For non-negative integers <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(n\)</span> and a prime <span class="math notranslate nohighlight">\(\displaystyle p\)</span>, the following congruence relation holds:
+$<span class="math notranslate nohighlight">\(\displaystyle \left(\frac{m}{n}\right) \equiv \prod_{i=0}^{k} \left(\frac{m_{i}}{n_{i}}\right) (mod\; p),\)</span><span class="math notranslate nohighlight">\(
+where,
+\)</span>m=m_{k} p^{k} +m_{k-1} p^{k-1}+…+m_{1} p+m_{0}<span class="math notranslate nohighlight">\(,
+and
+\)</span>n=n_{k}p^{k}+n_{k-1}p^{k-1}+…+n_{1}p+n_{0}<span class="math notranslate nohighlight">\(
+are the base \)</span>\displaystyle p<span class="math notranslate nohighlight">\( expansions of \)</span>m<span class="math notranslate nohighlight">\( and \)</span>n<span class="math notranslate nohighlight">\( respectively. This uses the convention that \)</span>\displaystyle \left(\frac{m}{n}\right)=0<span class="math notranslate nohighlight">\(,when \)</span>m&lt;n$.</p></li>
+</ol>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \sum_{i=0}^{n}  {n \choose i } \cdot i^{k}\)</span> <br />
+= <span class="math notranslate nohighlight">\(\displaystyle \sum_{i=0}^{n}  {n \choose i } \cdot \sum_{j=0}^{k}{ \left\{ \begin{matrix} k\cr j \end{matrix} \right\} \cdot i^{\underline{j}}}\)</span> <br />
+= <span class="math notranslate nohighlight">\(\displaystyle \sum_{i=0}^{n} {n \choose i } \cdot \sum_{j=0}^{k} \left\{ \begin{matrix} k\cr j \end{matrix} \right\} \cdot  j! {n \choose i }\)</span> <br />
+= <span class="math notranslate nohighlight">\(\displaystyle \sum_{i=0}^{n} \frac{n!}{(n-i)!} \cdot \sum_{j=0}^{k} \left\{ \begin{matrix}k\cr j \end{matrix} \right\} \cdot \frac{1}{(i-j)!}\)</span> <br />
+= <span class="math notranslate nohighlight">\(\displaystyle \sum_{i=0}^{n} \sum_{j=0}^{k} \frac{n!}{(n-i)!} \cdot  \left\{\begin{matrix} k\cr j \end{matrix} \right\} \cdot \frac{1}{(i-j)!}\)</span> <br />
+= n!<span class="math notranslate nohighlight">\(\displaystyle \sum_{i=0}^{n} \sum_{j=0}^{k} \left\{ \begin{matrix} k\cr j \end{matrix} \right\} \cdot \frac{1}{(n-i)!} \cdot \frac{1}{(i-j)!}\)</span> <br />
+= n!<span class="math notranslate nohighlight">\(\displaystyle \sum_{i=0}^{n} \sum_{j=0}^{k} \left\{ \begin{matrix} k\cr j \end{matrix} \right\} \cdot { n-j \choose n-i} \cdot \frac{1}{(n-j)!}\)</span> <br />
+= n!<span class="math notranslate nohighlight">\(\displaystyle \sum_{j=0}^{k} \left\{ \begin{matrix} k\cr j \end{matrix} \right\} \cdot \frac{1}{(n-j)!} \sum_{i=0}^{n} \cdot { n-j \choose n-i}\)</span> <br />
+= <span class="math notranslate nohighlight">\(\displaystyle \sum_{j=0}^{k} \left\{\begin{matrix} k\cr j \end{matrix} \right\} \cdot n^{\underline{j}} \cdot 2^{n-j}\)</span> <br />
+Here <span class="math notranslate nohighlight">\(n^{\underline{j}}=P(n,j)=\dfrac{n!}{(n-j)!}\)</span> and <span class="math notranslate nohighlight">\(\displaystyle \left\{ \begin{matrix} k\cr j \end{matrix} \right\}\)</span> is stirling number of the second kind.
+So, instead of <span class="math notranslate nohighlight">\(O(n)\)</span>, now you can calculate the original equation in <span class="math notranslate nohighlight">\(O(k^2)\)</span> or even in <span class="math notranslate nohighlight">\(O(k \log^2 n)\)</span> using NTT.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \displaystyle \sum \limits_{i=0}^{n-1} {i \choose j} x^i = x^j(1-x)^{-j-1}\left( 1- x^n \sum \limits_{i=0}^j {n \choose i} x^{j-i} (1-x)^i \right)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle x_{0}, x_{1}, x_{2}, x_{3}, … , x_{n}\)</span>
+<span class="math notranslate nohighlight">\(\displaystyle x_{0} + x_{1}, x_{1} + x_{2}, x_{2}+x_{3}, … x_{n}\)</span>
+…
+If we continuously do this <span class="math notranslate nohighlight">\(n\)</span> times then the polynomial of the first column of the <span class="math notranslate nohighlight">\(n\)</span>-th row will be
+<span class="math notranslate nohighlight">\(\displaystyle p(n)=\sum_{k=0}^{n}{n \choose k} \cdot x(k)\)</span></p></li>
+<li><p>If <span class="math notranslate nohighlight">\(\displaystyle P(n)=\sum_{k=0}^{n}{n \choose k} \cdot Q(k)\)</span>, then,
+<span class="math notranslate nohighlight">\(Q(n)=\sum_{k=0}^{n}(-1)^{n-k}{n \choose k} \cdot P(k)\)</span></p></li>
+<li><p>If <span class="math notranslate nohighlight">\(\displaystyle P(n)=\sum_{k=0}^{n}(-1)^{k}{n \choose k} \cdot Q(k)\)</span> , then,
+<span class="math notranslate nohighlight">\(Q(n)=\sum_{k=0}^{n}(-1)^{k}{n \choose k} \cdot P(k)\)</span></p></li>
+</ol>
+</section>
+<section id="catalan-numbers">
+<h4><span class="section-number">7.1.2.2. </span>Catalan Numbers<a class="headerlink" href="#catalan-numbers" title="Link to this heading">#</a></h4>
+<ol class="arabic simple" start="42">
+<li><p><span class="math notranslate nohighlight">\(\displaystyle C_n=\frac{1}{n+1}{2n \choose n}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle C_0=1,C_1=1\text{ and }C_n=\sum \limits_{k=0}^{n-1}C_k C_{n-1-k}\)</span></p></li>
+<li><p>Number of correct bracket sequence consisting of <span class="math notranslate nohighlight">\(n\)</span> opening and <span class="math notranslate nohighlight">\(n\)</span> closing brackets.</p></li>
+<li><p>The number of ways to completely parenthesize <span class="math notranslate nohighlight">\(n\)</span>+<span class="math notranslate nohighlight">\(\displaystyle 1\)</span> factors.</p></li>
+<li><p>The number of triangulations of a convex polygon with <span class="math notranslate nohighlight">\(n\)</span>+<span class="math notranslate nohighlight">\(\displaystyle 2\)</span> sides (i.e. the number of partitions of polygon into disjoint triangles by using the diagonals).</p></li>
+<li><p>The number of ways to connect the <span class="math notranslate nohighlight">\(\displaystyle 2n\)</span> points on a circle to form <span class="math notranslate nohighlight">\(n\)</span> disjoint i.e. non-intersecting chords.</p></li>
+<li><p>The number of monotonic lattice paths from point <span class="math notranslate nohighlight">\(\displaystyle (0,0)\)</span> to point <span class="math notranslate nohighlight">\(\displaystyle (n,n)\)</span> in a square lattice of size <span class="math notranslate nohighlight">\(n\times n\)</span>, which do not pass above the main diagonal (i.e. connecting <span class="math notranslate nohighlight">\(\displaystyle (0,0)\)</span> to <span class="math notranslate nohighlight">\(\displaystyle (n,n)\)</span>).</p></li>
+<li><p>The number of rooted full binary trees with <span class="math notranslate nohighlight">\(n\)</span>+<span class="math notranslate nohighlight">\(\displaystyle 1\)</span> leaves (vertices are not numbered). A rooted binary tree is full if every vertex has either two children or no children.</p></li>
+<li><p>Number of permutations of <span class="math notranslate nohighlight">\(\displaystyle {1, …, n}\)</span> that avoid the pattern <span class="math notranslate nohighlight">\(\displaystyle 123\)</span> (or any of the other patterns of length <span class="math notranslate nohighlight">\(3\)</span>); that is, the number of permutations with no three-term increasing sub-sequence. For <span class="math notranslate nohighlight">\(n = 3\)</span>, these permutations are <span class="math notranslate nohighlight">\(\displaystyle 132,\ 213,\ 231,\ 312\)</span> and <span class="math notranslate nohighlight">\(321.\)</span> For <span class="math notranslate nohighlight">\(n = 4\)</span>, they are <span class="math notranslate nohighlight">\(\displaystyle 1432,\ 2143,\ 2413,\ 2431,\ 3142,\ 3214,\ 3241,\ 3412,\ 3421,\ 4132,\ 4213,\ 4231,\ 4312\)</span> and <span class="math notranslate nohighlight">\(4321.\)</span></p></li>
+<li><p><strong>Balanced Parentheses count with prefix:</strong> The count of balanced parentheses sequences consisting of <span class="math notranslate nohighlight">\(n+k\)</span> pairs of parentheses where the first <span class="math notranslate nohighlight">\(\displaystyle \displaystyle k\)</span> symbols are open brackets. Let the number be <span class="math notranslate nohighlight">\(\displaystyle C_n^{(k)}\)</span>, then
+$<span class="math notranslate nohighlight">\(\displaystyle \displaystyle C_n^{(k)} = \frac{k+1}{n+k+1} \binom{2n+k}{n}\)</span>$</p></li>
+</ol>
+</section>
+<section id="narayana-numbers">
+<h4><span class="section-number">7.1.2.3. </span>Narayana numbers<a class="headerlink" href="#narayana-numbers" title="Link to this heading">#</a></h4>
+<ol class="arabic simple" start="52">
+<li><p><span class="math notranslate nohighlight">\(N(n,k)=\frac{1}{n}\left(\frac{n}{k}\right)\left(\frac{n}{k-1}\right)\)</span></p></li>
+<li><p>The number of expressions containing <span class="math notranslate nohighlight">\(n\)</span> pairs of parentheses, which are correctly matched and which contain <span class="math notranslate nohighlight">\(\displaystyle \displaystyle k\)</span> distinct nestings. For instance, <span class="math notranslate nohighlight">\(N(4, 2) = 6\)</span> as with four pairs of parentheses six sequences can be created which each contain two times the sub-pattern ‘()’.</p></li>
+</ol>
+</section>
+<section id="stirling-numbers-of-the-first-kind">
+<h4><span class="section-number">7.1.2.4. </span>Stirling numbers of the first kind<a class="headerlink" href="#stirling-numbers-of-the-first-kind" title="Link to this heading">#</a></h4>
+<ol class="arabic simple" start="54">
+<li><p>The Stirling numbers of the first kind count permutations according to their number of cycles (counting fixed points as cycles of length one).</p></li>
+<li><p><span class="math notranslate nohighlight">\(S(n,k)\)</span> counts the number of permutations of <span class="math notranslate nohighlight">\(n\)</span> elements with <span class="math notranslate nohighlight">\(\displaystyle \displaystyle k\)</span> disjoint cycles.</p></li>
+<li><p><span class="math notranslate nohighlight">\(S(n,k)=(n-1) \cdot S(n-1,k)+S(n-1,k-1),\)</span> where <span class="math notranslate nohighlight">\(S(0,0)=1,S(n,0)=S(0,n)=0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \displaystyle\sum_{k=0}^{n}S(n,k) = n!\)</span></p></li>
+<li><p>The unsigned Stirling numbers may also be defined algebraically, as the coefficient of the rising factorial:
+$<span class="math notranslate nohighlight">\(\displaystyle x^{\bar{n}} = x(x+1)...(x+n-1) = \sum_{k=0}^{n}{ S(n, k) x^k}\)</span>$</p></li>
+<li><p>Lets <span class="math notranslate nohighlight">\([n, k]\)</span> be the stirling number of the first kind, then
+$<span class="math notranslate nohighlight">\(\displaystyle \bigl[\!\begin{smallmatrix} n \\ n\ -\ k \end{smallmatrix}\!\bigr] = \sum_{0 \leq i_1 &lt; i_2 &lt; i_k &lt; n}{i_1i_2....i_k.}\)</span>$</p></li>
+</ol>
+</section>
+<section id="stirling-numbers-of-the-second-kind">
+<h4><span class="section-number">7.1.2.5. </span>Stirling numbers of the second kind<a class="headerlink" href="#stirling-numbers-of-the-second-kind" title="Link to this heading">#</a></h4>
+<ol class="arabic simple" start="60">
+<li><p>Stirling number of the second kind is the number of ways to partition a set of n objects into k non-empty subsets.</p></li>
+<li><p><span class="math notranslate nohighlight">\(S(n,k)=k \cdot S(n-1,k)+S(n-1,k-1)\)</span>, (where ; S(0,0)=1,S(n,0)=S(0,n)=0)</p></li>
+<li><p><span class="math notranslate nohighlight">\(S(n,2)=2^{n-1}-1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(S(n,k) \cdot k!\)</span> = number of ways to color <span class="math notranslate nohighlight">\(n\)</span> nodes using colors from <span class="math notranslate nohighlight">\(\displaystyle 1\)</span> to <span class="math notranslate nohighlight">\(\displaystyle \displaystyle k\)</span> such that each color is used at least once.</p></li>
+<li><p>An <span class="math notranslate nohighlight">\(r\)</span>-associated Stirling number of the second kind is the number of ways to partition a set of <span class="math notranslate nohighlight">\(n\)</span> objects into <span class="math notranslate nohighlight">\(\displaystyle \displaystyle k\)</span> subsets, with each subset containing at least <span class="math notranslate nohighlight">\(r\)</span> elements. It is denoted by <span class="math notranslate nohighlight">\(S_r( n , k )\)</span> and obeys the recurrence relation. $<span class="math notranslate nohighlight">\(\displaystyle \displaystyle S_r(n+1,k) = k S_r(n,k) + \binom{n}{r-1} S_r(n-r+1,k-1)\)</span>$</p></li>
+<li><p>Denote the n objects to partition by the integers <span class="math notranslate nohighlight">\(\displaystyle 1, 2, …., n\)</span>. Define the reduced Stirling numbers of the second kind, denoted <span class="math notranslate nohighlight">\(S^d(n, k)\)</span>, to be the number of ways to partition the integers <span class="math notranslate nohighlight">\(\displaystyle 1, 2, …., n\)</span> into k nonempty subsets such that all elements in each subset have pairwise distance at least d. That is, for any integers i and j in a given subset, it is required that <span class="math notranslate nohighlight">\(|i - j| \geq d\)</span>. It has been shown that these numbers satisfy, $<span class="math notranslate nohighlight">\(S^d(n, k) = S(n - d + 1, k - d + 1), n \geq k \geq d\)</span>$</p></li>
+</ol>
+</section>
+<section id="bell-number">
+<h4><span class="section-number">7.1.2.6. </span>Bell number<a class="headerlink" href="#bell-number" title="Link to this heading">#</a></h4>
+<ol class="arabic simple" start="66">
+<li><p>Counts the number of partitions of a set.</p></li>
+<li><p><span class="math notranslate nohighlight">\(B_{n+1}=\displaystyle\sum_{k=0}^{n}\left(\frac{n}{k}\right) \cdot B_{k}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(B_{n}=\displaystyle\sum_{k=0}^{n}S(n,k)\)</span> ,where <span class="math notranslate nohighlight">\(S(n,k)\)</span> is stirling number of second kind.</p></li>
+</ol>
+</section>
 </section>
 </section>
 <section id="recursion-difference-equation-generating-function">
@@ -4789,6 +4943,15 @@ Complex numbers expand the scope of the exponential function, and bring trigonom
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combinatorics">7.1. Combinatorics</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enumeration-using-asymptotic">7.1.1. Enumeration using Asymptotic</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-equations-in-coding">7.1.2. Useful Equations in Coding</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#general">7.1.2.1. General</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#catalan-numbers">7.1.2.2. Catalan Numbers</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#narayana-numbers">7.1.2.3. Narayana numbers</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#stirling-numbers-of-the-first-kind">7.1.2.4. Stirling numbers of the first kind</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#stirling-numbers-of-the-second-kind">7.1.2.5. Stirling numbers of the second kind</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bell-number">7.1.2.6. Bell number</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursion-difference-equation-generating-function">7.2. Recursion, Difference Equation &amp; Generating Function</a><ul class="nav section-nav flex-column">
