@@ -8,6 +8,8 @@ parts:
   chapters:
   - file: Alevel_math
   - file: Alevel_math_further
+  - file: Course_MCM
+  - file: Course_Lean  
   - file: 00intro_math
   - file: 01number_algebra
   - file: 02discrete_continuous
@@ -19,10 +21,8 @@ parts:
   chapters:
   - file: Course_MIT6001Python
   - file: Course_MIT6002thinking
-  - file: Course_Lean  
   - file: PE50
   - file: PE75  
-  - file: Course_MCM
   - file: Course_MCM_QM
   - file: Course_MCM_QFT
   
