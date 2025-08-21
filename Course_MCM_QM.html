@@ -486,7 +486,82 @@ document.write(`
 </li>
 </ul>
 </li>
+<li><p>Dirac Notation : This notation is a way to represent vectors, matrices, and vector products.</p>
+<ul>
+<li><p>Bra : [add notes]</p></li>
+<li><p>Ket : [add notes]</p></li>
 </ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ket_psi</span> <span class="o">=</span> <span class="n">SR</span><span class="o">.</span><span class="n">symbol</span><span class="p">(</span><span class="s1">&#39;|psi&gt;&#39;</span><span class="p">,</span> <span class="n">latex_name</span><span class="o">=</span><span class="s1">&#39;|</span><span class="se">\\</span><span class="s1">psi</span><span class="se">\\</span><span class="s1">rangle&#39;</span><span class="p">)</span>
+<span class="n">bra_psi</span> <span class="o">=</span> <span class="n">SR</span><span class="o">.</span><span class="n">symbol</span><span class="p">(</span><span class="s1">&#39;&lt;psi|&#39;</span><span class="p">,</span> <span class="n">latex_name</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">langle</span><span class="se">\\</span><span class="s1">psi|&#39;</span><span class="p">)</span>
+<span class="n">ket_phi</span> <span class="o">=</span> <span class="n">SR</span><span class="o">.</span><span class="n">symbol</span><span class="p">(</span><span class="s1">&#39;|phi&gt;&#39;</span><span class="p">,</span> <span class="n">latex_name</span><span class="o">=</span><span class="s1">&#39;|</span><span class="se">\\</span><span class="s1">phi</span><span class="se">\\</span><span class="s1">rangle&#39;</span><span class="p">)</span>
+<span class="n">bra_phi</span> <span class="o">=</span> <span class="n">SR</span><span class="o">.</span><span class="n">symbol</span><span class="p">(</span><span class="s1">&#39;&lt;phi|&#39;</span><span class="p">,</span> <span class="n">latex_name</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">langle</span><span class="se">\\</span><span class="s1">phi|&#39;</span><span class="p">)</span>
+
+<span class="n">s</span><span class="p">(</span><span class="n">ket_psi</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">bra_psi</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">ket_phi</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">bra_phi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle |\psi\rangle \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \langle\psi| \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle |\phi\rangle \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \langle\phi| \qquad   \]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">(</span><span class="n">n</span><span class="p">(</span><span class="n">cos</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">pi</span><span class="o">/</span><span class="mi">8</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">s</span><span class="p">(</span><span class="n">n</span><span class="p">(</span><span class="n">cos</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="mi">6</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 0.146446609406726 \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 0.750000000000000 \qquad   \]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">=</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="n">i</span><span class="p">],</span>
+          <span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span>
+<span class="n">ps</span><span class="o">=</span><span class="n">vector</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="n">i</span><span class="p">])</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">ph</span><span class="o">=</span><span class="n">vector</span><span class="p">([</span><span class="o">-</span><span class="n">i</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">aps</span><span class="o">=</span><span class="n">A</span><span class="o">*</span><span class="n">ps</span>
+<span class="n">aph</span><span class="o">=</span><span class="n">A</span><span class="o">*</span><span class="n">ph</span>
+<span class="n">s</span><span class="p">(</span><span class="n">aps</span><span class="o">.</span><span class="n">dot_product</span><span class="p">(</span><span class="n">ps</span><span class="o">.</span><span class="n">conjugate</span><span class="p">()),</span><span class="n">aps</span><span class="o">.</span><span class="n">dot_product</span><span class="p">(</span><span class="n">ph</span><span class="o">.</span><span class="n">conjugate</span><span class="p">()),</span><span class="n">aph</span><span class="o">.</span><span class="n">dot_product</span><span class="p">(</span><span class="n">ps</span><span class="o">.</span><span class="n">conjugate</span><span class="p">()),</span><span class="n">aph</span><span class="o">.</span><span class="n">dot_product</span><span class="p">(</span><span class="n">ph</span><span class="o">.</span><span class="n">conjugate</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 1 \qquad   1 \qquad   \frac{4}{5} i \qquad   \]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">=</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="o">*</span><span class="n">i</span><span class="p">],</span>
+          <span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="n">i</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">]])</span>
+<span class="n">s</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">eigenvectors_right</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \left[\left(5, \left[\left(1,\,-\frac{1}{2} i\right)\right], 1\right), \left(-5, \left[\left(1,\,2 i\right)\right], 1\right)\right] \qquad   \]</div>
+</div>
+</div>
 </section>
 </section>
 <section id="qm-for-everyone">
