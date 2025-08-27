@@ -10,11 +10,11 @@ parts:
   - file: Alevel_math_further
   - file: Course_MCM
   - file: Course_Lean  
-  - file: 00intro_math
-  - file: 01number_algebra
-  - file: 02discrete_continuous
-  - file: 03real_world
-  - file: 05math_as_code
+  - file: math/00intro_math
+  - file: math/01number_algebra
+  - file: math/02discrete_continuous
+  - file: math/03real_world
+  - file: math/05math_as_code
 
 - caption: CS & Physics
   numbered: true
