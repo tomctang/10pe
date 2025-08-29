@@ -182,11 +182,11 @@
 <li class="toctree-l1"><a class="reference internal" href="Alevel_math_further.html">2. A-level-further</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Course_MCM.html">3. Math Computational Methods</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Course_Lean.html">4. Lean</a></li>
-<li class="toctree-l1"><a class="reference internal" href="00intro_math.html">5. Math-FP-Lang Combo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="01number_algebra.html">6. Number &amp; Algebra</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02discrete_continuous.html">7. Discrete &amp; Continuous</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03real_world.html">8. Real World Math</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05math_as_code.html">9. Math as code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="math/00intro_math.html">5. Math-FP-Lang Combo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="math/01number_algebra.html">6. Number &amp; Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="math/02discrete_continuous.html">7. Discrete &amp; Continuous</a></li>
+<li class="toctree-l1"><a class="reference internal" href="math/03real_world.html">8. Real World Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="math/05math_as_code.html">9. Math as code</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">CS &amp; Physics</span></p>
 <ul class="current nav bd-sidenav">
@@ -365,16 +365,18 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qm">14.1. QM</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#m1-intro-quantum-world">14.1.1. M1. Intro Quantum World</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qm-vs-cm">14.1. QM vs. CM</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qm">14.2. QM</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#m2-advanced-qm-with-spins">14.2.1. M2. Advanced QM with Spins</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#m1-intro-quantum-world">14.2.2. M1. Intro Quantum World</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qm-for-everyone">14.2. QM for Everyone</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#final-exam">14.2.1. Final Exam</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-quantum-mechanics-of-light">14.2.2. Advanced Quantum Mechanics of Light</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-quantum-mechanics-of-light">14.2.3. The Quantum Mechanics of Light</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-quantum-mechanics-with-spins">14.2.4. Advanced Quantum Mechanics with Spins</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intro-quantum-probability">14.2.5. Intro &amp; Quantum Probability</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qm-for-everyone">14.3. QM for Everyone</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#final-exam">14.3.1. Final Exam</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-quantum-mechanics-of-light">14.3.2. Advanced Quantum Mechanics of Light</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-quantum-mechanics-of-light">14.3.3. The Quantum Mechanics of Light</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-quantum-mechanics-with-spins">14.3.4. Advanced Quantum Mechanics with Spins</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intro-quantum-probability">14.3.5. Intro &amp; Quantum Probability</a></li>
 </ul>
 </li>
 </ul>
@@ -391,7 +393,7 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="quantum-mechanics">
 <h1><span class="section-number">14. </span>Quantum Mechanics<a class="headerlink" href="#quantum-mechanics" title="Link to this heading">#</a></h1>
 <p><a class="reference external" href="https://www.edx.org/learn/quantum-physics-mechanics/georgetown-university-quantum-mechanics-for-everyone">QM for Everyone</a> is the experimental foundation, use <a class="reference external" href="https://www.st-andrews.ac.uk/physics/quvis/index.html">Quantum Mechanics interactive games</a></p>
-<p>Sage has no <a class="reference external" href="https://doc.sagemath.org/html/en/reference/algebras/quantum_groups.html">QM-specific module</a>, so use <a class="reference external" href="https://docs.sympy.org/latest/modules/physics/quantum/index.html">SymPy’s quantum module</a>, <a class="reference external" href="https://www.wolfram.com/quantum-computation-framework/">Wolfram Quantum Framework</a>, <a class="reference external" href="https://github.com/qiskit-community/qiskit-community-tutorials/tree/master">Qiskit open-source Python-based quantum computing by IBM</a></p>
+<p>Sage has no <a class="reference external" href="https://doc.sagemath.org/html/en/reference/algebras/quantum_groups.html">QM-specific module</a>, so use <a class="reference external" href="https://docs.sympy.org/latest/modules/physics/quantum/index.html">SymPy’s quantum module</a>, <a class="reference external" href="https://qutip.org/">QuTiP - Quantum Toolbox in Python</a>, <a class="reference external" href="https://www.wolfram.com/quantum-computation-framework/">Wolfram Quantum Framework</a>, <a class="reference external" href="https://github.com/qiskit-community/qiskit-community-tutorials/tree/master">Qiskit python quantum computing by IBM</a>, <a class="reference external" href="https://qojulia.org/">Julia QuantumOptics.jl</a>, <a class="reference external" href="https://jrjohansson.github.io/computing.html">jrjohansson collection</a></p>
 <p>OZ groups: <a class="reference external" href="https://particletheory.science.unimelb.edu.au/">UMel Theoretical Particle Physics</a>, <a class="reference external" href="https://www.sydney.edu.au/science/our-research/research-areas/physics/particle-physics-group.html">USyd</a>, <a class="reference external" href="https://www.unsw.edu.au/science/our-schools/physics/our-research/research-areas">UNSW areas</a></p>
 <p>QM terms:</p>
 <ul class="simple">
@@ -436,14 +438,88 @@ document.write(`
 </tbody>
 </table>
 </div>
+<section id="qm-vs-cm">
+<h2><span class="section-number">14.1. </span>QM vs. CM<a class="headerlink" href="#qm-vs-cm" title="Link to this heading">#</a></h2>
+<img src="https://raw.githubusercontent.com/tomctang/NB_img/main/qmcore.jpg" alt="exp.1" width="500">
+<img src="https://raw.githubusercontent.com/tomctang/NB_img/main/" alt="exp.1" width="500">
+<img src="https://raw.githubusercontent.com/tomctang/NB_img/main/qmdiff22.png" alt="exp.1" width="500">
+<img src="https://raw.githubusercontent.com/tomctang/NB_img/main/qmdiff1.png" alt="exp.1" width="500">
+<img src="https://raw.githubusercontent.com/tomctang/NB_img/main/qmdiff4.png" alt="exp.1" width="500">
+<img src="https://raw.githubusercontent.com/tomctang/NB_img/main/qmschrodequ0.gif" alt="exp.1" width="500">
+<img src="https://raw.githubusercontent.com/tomctang/NB_img/main/qmschrodequ.gif" alt="exp.1" width="500">
+<img src="https://raw.githubusercontent.com/tomctang/NB_img/main/qmschrodequ.png" alt="exp.1" width="500">
+<img src="https://raw.githubusercontent.com/tomctang/NB_img/main/qmschrodequ1.png" alt="exp.1" width="500">
+<img src="https://raw.githubusercontent.com/tomctang/NB_img/main/qmschrodequ2.png" alt="exp.1" width="500">
+<img src="https://raw.githubusercontent.com/tomctang/NB_img/main/qmschrodequ3.png" alt="exp.1" width="500">
+<img src="https://raw.githubusercontent.com/tomctang/NB_img/main/qminfo.jpg" alt="exp.1" width="500">
+</section>
 <section id="qm">
-<h2><span class="section-number">14.1. </span>QM<a class="headerlink" href="#qm" title="Link to this heading">#</a></h2>
-<section id="m1-intro-quantum-world">
-<h3><span class="section-number">14.1.1. </span>M1. Intro Quantum World<a class="headerlink" href="#m1-intro-quantum-world" title="Link to this heading">#</a></h3>
+<h2><span class="section-number">14.2. </span>QM<a class="headerlink" href="#qm" title="Link to this heading">#</a></h2>
+<p>Note: Learn Fourier Analysis</p>
+<p>Symbols &amp; Natural Names</p>
 <ul class="simple">
-<li><p>Fermions : Metals conduct electricity do so because there is a “sea of electrons”. This is created from the Pauli exclusion principle, since electrons are fermions, and fermions stay apart, they stay apart.</p></li>
-<li><p>Alpha Particles : Created by radioactive elements. Since it is slow and heavy, it has low penetration power but can damage biological tissue. Smoke detectors use heavy elements to detect smoke as when there is smoke the current flow between the 2 metal plates that are held at different voltages the current is changed.</p></li>
-<li><p>Magnetic Fields : These are vector fields that are created by magnets.</p>
+<li><p><span class="math notranslate nohighlight">\(\langle\psi|\)</span>: Bra</p></li>
+<li><p><span class="math notranslate nohighlight">\(|\psi\rangle\)</span>: Ket</p></li>
+<li><p><span class="math notranslate nohighlight">\(\langle\psi|\psi\rangle\)</span>: Bra-ket</p></li>
+<li><p><span class="math notranslate nohighlight">\([\hat{A}\hat{B}]\)</span>: Commutator</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{S_z}\)</span>: hatsz (spin on z-axis)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{S_+}\)</span>: hatsp (raising operator)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{S_-}\)</span>: hatsm (lowering operator)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hbar\)</span>: hbar</p></li>
+<li><p><span class="math notranslate nohighlight">\(B\)</span>: magnetic field</p></li>
+</ul>
+<p>Maths Notes</p>
+<ul class="simple">
+<li><p>Linear Algebra</p>
+<ul>
+<li><p>Determinant</p></li>
+<li><p>Eigenvalues</p></li>
+<li><p>Eigenvectors</p></li>
+</ul>
+</li>
+<li><p>ODE</p></li>
+<li><p>Vector Calculus</p></li>
+</ul>
+<section id="m2-advanced-qm-with-spins">
+<h3><span class="section-number">14.2.1. </span>M2. Advanced QM with Spins<a class="headerlink" href="#m2-advanced-qm-with-spins" title="Link to this heading">#</a></h3>
+<p>Notes</p>
+<ul class="simple">
+<li><p>Two-Slit Experiment with Stern-Gerlach Analyzer Loop: There are two results using classical and quantum probability. The quantum probability result is correct where since the path taken is indeterminate(you can also say it takes both paths), the atom’s state does not change.</p>
+<ul>
+<li><p>Detector Variant: If a detector is put in the analyzer loop, the atom’s x state becomes known meaning it no longer has a state in the z direction.</p></li>
+</ul>
+</li>
+<li><p>Einstein-Podolsky-Rosen(EPR) Experiment: This is an experiment where there is a source which fires two atoms with opposite projections in a specific axis and is measured by two analyzers. One analyzer is slightly closer than the other so that we will know the state of the atom that hasn’t entered the analyzer yet because we have measured the other atom’s state. But say the analyzers are very far away. Then wouldn’t the information have been transfered faster than light?</p>
+<ul>
+<li><p>The hidden variables theory that Einstein made was disproved by Bell’s theorems.</p></li>
+</ul>
+</li>
+<li><p>Commutation: <span class="math notranslate nohighlight">\([\hat{A},\hat{B}]=\hat{A}\hat{B}-\hat{B}\hat{A}\)</span> [add notes]</p>
+<ul>
+<li><p>Operator Identity 1: <span class="math notranslate nohighlight">\([\hat{S}_z,\hat{S}_\pm]=\pm\hbar\hat{S}_\pm\)</span>(The <span class="math notranslate nohighlight">\(\pm\)</span> means this works for both <span class="math notranslate nohighlight">\(+\)</span> and <span class="math notranslate nohighlight">\(-\)</span>. Just substitute the same sign for every <span class="math notranslate nohighlight">\(\pm\)</span> to get the right formula.)</p></li>
+<li><p>Operator Identity 2: <span class="math notranslate nohighlight">\([\hat{S}_+,\hat{S}_-]=2\hbar\hat{S}_z\)</span></p></li>
+<li><p>Operator Identity 3: <span class="math notranslate nohighlight">\([\hat{A},\hat{B}]=-[\hat{B}\hat{A}]\)</span></p></li>
+<li><p>Operator Identity 4: <span class="math notranslate nohighlight">\([\hat{A},\hat{A}]=0\)</span></p></li>
+</ul>
+</li>
+<li><p>Spin Operator Rules</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\hat{S}_z|\uparrow\rangle_z=\frac{\hbar}{2}|\uparrow\rangle_z\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{S}_z|\downarrow\rangle_z=-\frac{\hbar}{2}|\downarrow\rangle_z\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{S}_+|\uparrow\rangle_z=0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{S}_+|\downarrow\rangle_z=\hbar|\uparrow\rangle_z\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{S}_-|\uparrow\rangle_z=\hbar|\downarrow\rangle_z\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{S}_-|\downarrow\rangle_z=0\)</span></p></li>
+</ul>
+</li>
+</ul>
+<img src="https://raw.githubusercontent.com/tomctang/NB_img/main/sge.png" alt="seriesgraph" width="500"></section>
+<section id="m1-intro-quantum-world">
+<h3><span class="section-number">14.2.2. </span>M1. Intro Quantum World<a class="headerlink" href="#m1-intro-quantum-world" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Fermions: Metals that conduct electricity do so because there is a “sea of electrons”. This is created from the Pauli exclusion principle, since electrons are fermions, and fermions stay apart, they stay apart.</p></li>
+<li><p>Alpha Particles: Created by radioactive elements. Since it is slow and heavy, it has low penetration power but can damage biological tissue. Smoke detectors use heavy elements to detect smoke as when there is smoke the current flow between the 2 metal plates that are held at different voltages the current is changed.</p></li>
+<li><p>Magnetic Fields: These are vector fields that are created by magnets.</p>
 <ul>
 <li><p>The closer to a magnet you are, the stronger the intensity.</p></li>
 <li><p>Normally the arrows indicate where the north pole of a magnet will be attracted to.</p></li>
@@ -452,28 +528,31 @@ document.write(`
 <li><p>The net force can be calculated by finding the axis of increasing intensity and then finding the projection of the magnet onto the axis. When doing this it is useful to keep the south pole of the magnet on the axis.</p></li>
 </ul>
 </li>
-<li><p>Fat Arrows : For some magnetic fields, they can be represented by fat arrows where the width is the intensity of the magnetic field and the direction of the arrows is indicated by the fat arrow’s direction.</p></li>
-<li><p>Magnetic Needles : These are idealized small magnets like those in compasses.</p></li>
+<li><p>Fat Arrows: For some magnetic fields, they can be represented by fat arrows where the width is the intensity of the magnetic field and the direction of the arrows is indicated by the fat arrow’s direction.</p></li>
+<li><p>Magnetic Needles: These are idealized small magnets like those in compasses.</p></li>
+<li><p>Magnetic fields are always inhomogeneous vector fields which means there divergence is always zero.</p></li>
 </ul>
 </li>
-<li><p>Precession : A rotation that occurs when there is a magnet and a magnetic field.</p>
+<li><p>Precession: A rotation that occurs when there is a magnet and a magnetic field.</p>
 <ul>
 <li><p>Even when there is precession, the projection remains constant as it rotates perpendicular to the axis of increasing field.</p></li>
 </ul>
 </li>
-<li><p>Stern-Gerlach Experiment : Atoms are injected through a region of space where because of a magnetic field, there will be precession. 2 magnets will deflect the atom until it hits the screen where there is a detector.</p>
+<li><p>Stern-Gerlach Experiment(SGE): Atoms are injected through a region of space where because of a magnetic field, there will be precession. 2 magnets will deflect the atom until it hits the screen where there is a detector.</p>
 <ul>
 <li><p>This experiment has many variants.</p></li>
 <li><p>In the quantum world, since everything is random, the atoms’ chance of exiting a specific exit for positive and negative can be calculated using a formula.</p></li>
 <li><p>Each Stern-Gerlach analyzer measures the atom’s projection on a specific axis. If the atom has no projection on that axis then it chooses a random path to take.</p></li>
+<li><p>In the SGE, the inhomogeneous magnetic field’s <span class="math notranslate nohighlight">\(y\)</span> direction can be neglected because the magnetic field should make the effect cancel out on the sides and since the atom is moving along the <span class="math notranslate nohighlight">\(y\)</span> direction, the net force should not change when the position moves along the <span class="math notranslate nohighlight">\(y\)</span> axis.</p></li>
+<li><p>The force on the classical current loop can be calculated using the formula <span class="math notranslate nohighlight">\(\vec{\bf F}(t)=\vec{\nabla} \left (\vec{\mu}(t)\cdot\vec{\bf B}(x,y,z)\right )\)</span> where <span class="math notranslate nohighlight">\(B\)</span> is the magnetic field(this is the notation) and <span class="math notranslate nohighlight">\(mu\)</span> is the effective needle that represents the current loop.</p></li>
 </ul>
 </li>
-<li><p>Birthday Problem : The problem asks you that how many people must be in a large room for the chance of at least 2 people having the same birthday to be a specific number.</p>
+<li><p>Birthday Problem: The problem asks you that how many people must be in a large room for the chance of at least 2 people having the same birthday to be a specific number.</p>
 <ul>
 <li><p>There are many variants.</p></li>
 </ul>
 </li>
-<li><p>Penney’s Game : This is an unfair coin game that seems fair at first. If you pick the sequence of coins first then the other person can always pick a sequence to have a greater chance of winning(unlike the same game but with sequences of 2 coins).</p>
+<li><p>Penney’s Game: This is an unfair coin game that seems fair at first. If you pick the sequence of coins first then the other person can always pick a sequence to have a greater chance of winning(unlike the same game but with sequences of 2 coins).</p>
 <ul>
 <li><p>Rules</p>
 <ol class="arabic simple">
@@ -486,36 +565,149 @@ document.write(`
 </li>
 </ul>
 </li>
-<li><p>Dirac Notation : This notation is a way to represent vectors, matrices, and vector products.</p>
+<li><p>Dirac Notation: This notation is a way to represent vectors, matrices, and vector products.</p>
 <ul>
-<li><p>Bra : [add notes]</p></li>
-<li><p>Ket : [add notes]</p></li>
+<li><p>Bra(<span class="math notranslate nohighlight">\(\langle\phi|\)</span>): This is the Hermitian conjugate of a ket(row vector).</p></li>
+<li><p>Ket(<span class="math notranslate nohighlight">\(|\phi\rangle\)</span>): This represents a column vector.</p></li>
+<li><p>Bra-ket(<span class="math notranslate nohighlight">\(\langle\phi|\psi\rangle\)</span>): This is the inner product(dot product) of the ket and bra(complex number).</p></li>
+<li><p>“Butterfly Diagram”(<span class="math notranslate nohighlight">\(|\psi\rangle\langle\phi|\)</span>): This is the outer product and is more complicated then the first three(matrix).</p>
+<ul>
+<li><p>This is named “Butterfly Diagram” because it looks like one and Dirac did not have a name for it.</p></li>
+</ul>
+</li>
+<li><p>Change of basis: [add notes]</p></li>
 </ul>
 </li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ket_psi</span> <span class="o">=</span> <span class="n">SR</span><span class="o">.</span><span class="n">symbol</span><span class="p">(</span><span class="s1">&#39;|psi&gt;&#39;</span><span class="p">,</span> <span class="n">latex_name</span><span class="o">=</span><span class="s1">&#39;|</span><span class="se">\\</span><span class="s1">psi</span><span class="se">\\</span><span class="s1">rangle&#39;</span><span class="p">)</span>
-<span class="n">bra_psi</span> <span class="o">=</span> <span class="n">SR</span><span class="o">.</span><span class="n">symbol</span><span class="p">(</span><span class="s1">&#39;&lt;psi|&#39;</span><span class="p">,</span> <span class="n">latex_name</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">langle</span><span class="se">\\</span><span class="s1">psi|&#39;</span><span class="p">)</span>
-<span class="n">ket_phi</span> <span class="o">=</span> <span class="n">SR</span><span class="o">.</span><span class="n">symbol</span><span class="p">(</span><span class="s1">&#39;|phi&gt;&#39;</span><span class="p">,</span> <span class="n">latex_name</span><span class="o">=</span><span class="s1">&#39;|</span><span class="se">\\</span><span class="s1">phi</span><span class="se">\\</span><span class="s1">rangle&#39;</span><span class="p">)</span>
-<span class="n">bra_phi</span> <span class="o">=</span> <span class="n">SR</span><span class="o">.</span><span class="n">symbol</span><span class="p">(</span><span class="s1">&#39;&lt;phi|&#39;</span><span class="p">,</span> <span class="n">latex_name</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">langle</span><span class="se">\\</span><span class="s1">phi|&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Bra–Ket algebra built-in Sage</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Ket</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">vector</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        label: symbolic label for Dirac notation, e.g. &#39;psi&#39;</span>
+<span class="sd">        vector: optional Sage vector for numerical representation</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="n">label</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vector</span> <span class="o">=</span> <span class="n">vector</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">symbol</span> <span class="o">=</span> <span class="n">var</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ket_</span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">latex_name</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;|</span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="se">\\</span><span class="s2">rangle&quot;</span><span class="p">)</span>
 
-<span class="n">s</span><span class="p">(</span><span class="n">ket_psi</span><span class="p">)</span>
-<span class="n">s</span><span class="p">(</span><span class="n">bra_psi</span><span class="p">)</span>
-<span class="n">s</span><span class="p">(</span><span class="n">ket_phi</span><span class="p">)</span>
-<span class="n">s</span><span class="p">(</span><span class="n">bra_phi</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;|</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="si">}</span><span class="s2">&gt;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_latex_</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;|</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="si">}</span><span class="se">\\</span><span class="s2">rangle&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">bra</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the corresponding Bra&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">vector</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Bra</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">vector</span><span class="o">.</span><span class="n">conjugate</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">Bra</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__mul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="c1"># Inner product &lt;bra|ket&gt;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Bra</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">vector</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">other</span><span class="o">.</span><span class="n">vector</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">vector</span><span class="o">.</span><span class="n">inner_product</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">vector</span><span class="p">)</span>
+        <span class="c1"># Fallback symbolic</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Bra</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">SR</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">symbol</span> <span class="o">*</span> <span class="n">other</span><span class="o">.</span><span class="n">symbol</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">outer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bra</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Outer product |ket&gt;&lt;bra| → a matrix&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">vector</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">bra</span><span class="o">.</span><span class="n">vector</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">matrix</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">vector</span><span class="p">)</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">matrix</span><span class="p">(</span><span class="n">bra</span><span class="o">.</span><span class="n">vector</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">SR</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">symbol</span> <span class="o">*</span> <span class="n">bra</span><span class="o">.</span><span class="n">symbol</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">tensor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Tensor product |ket1&gt;⊗|ket2&gt;&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">vector</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">other</span><span class="o">.</span><span class="n">vector</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Ket</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">label</span><span class="p">,</span>
+                       <span class="bp">self</span><span class="o">.</span><span class="n">vector</span><span class="o">.</span><span class="n">tensor_product</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">vector</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">Ket</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">label</span><span class="p">)</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Bra</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">vector</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="n">label</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vector</span> <span class="o">=</span> <span class="n">vector</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">symbol</span> <span class="o">=</span> <span class="n">var</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;bra_</span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">latex_name</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">langle</span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2">|&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;&lt;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="si">}</span><span class="s2">|&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_latex_</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">langle</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="si">}</span><span class="s2">|&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__mul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="c1"># Inner product &lt;bra|ket&gt;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Ket</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">vector</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">other</span><span class="o">.</span><span class="n">vector</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">vector</span><span class="o">.</span><span class="n">inner_product</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">vector</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Ket</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">SR</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">symbol</span> <span class="o">*</span> <span class="n">other</span><span class="o">.</span><span class="n">symbol</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">tensor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">vector</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">other</span><span class="o">.</span><span class="n">vector</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Bra</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">label</span><span class="p">,</span>
+                       <span class="bp">self</span><span class="o">.</span><span class="n">vector</span><span class="o">.</span><span class="n">tensor_product</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">vector</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">Bra</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">label</span><span class="p">)</span>
+
+<span class="c1"># Numeric + symbolic states</span>
+<span class="n">psi</span> <span class="o">=</span> <span class="n">Ket</span><span class="p">(</span><span class="s2">&quot;ψ&quot;</span><span class="p">,</span> <span class="n">vector</span><span class="p">([</span><span class="mi">1</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="mi">1</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)]))</span>   <span class="c1"># |ψ&gt;</span>
+<span class="n">phi</span> <span class="o">=</span> <span class="n">Ket</span><span class="p">(</span><span class="s2">&quot;φ&quot;</span><span class="p">,</span> <span class="n">vector</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]))</span>                   <span class="c1"># |φ&gt;</span>
+
+<span class="n">bra_psi</span> <span class="o">=</span> <span class="n">psi</span><span class="o">.</span><span class="n">bra</span><span class="p">()</span>
+<span class="n">bra_phi</span> <span class="o">=</span> <span class="n">phi</span><span class="o">.</span><span class="n">bra</span><span class="p">()</span>
+
+<span class="n">s</span><span class="p">(</span><span class="n">psi</span><span class="o">.</span><span class="n">symbol</span><span class="p">,</span> <span class="n">bra_psi</span><span class="o">.</span><span class="n">symbol</span><span class="p">)</span>  <span class="c1"># shows |ψ⟩ and ⟨ψ|</span>
+
+<span class="n">s</span><span class="p">(</span><span class="s2">&quot;&lt;ψ|ψ&gt; =&quot;</span><span class="p">,</span> <span class="n">bra_psi</span> <span class="o">*</span> <span class="n">psi</span><span class="p">)</span>       <span class="c1"># Inner product = 1 numerically</span>
+<span class="n">s</span><span class="p">(</span><span class="s2">&quot;|ψ&gt;&lt;ψ| =&quot;</span><span class="p">,</span> <span class="n">psi</span><span class="o">.</span><span class="n">outer</span><span class="p">(</span><span class="n">bra_psi</span><span class="p">))</span> <span class="c1"># Outer product</span>
+
+<span class="c1"># Tensor product</span>
+<span class="n">psi_tensor_phi</span> <span class="o">=</span> <span class="n">psi</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="s2">&quot;|ψ&gt;⊗|φ&gt; =&quot;</span><span class="p">,</span> <span class="n">psi_tensor_phi</span><span class="o">.</span><span class="n">symbol</span><span class="p">)</span> <span class="c1"># show symbol</span>
+<span class="n">s</span><span class="p">(</span><span class="s2">&quot;Tensor vector:&quot;</span><span class="p">,</span> <span class="n">psi_tensor_phi</span><span class="o">.</span><span class="n">vector</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_latex math notranslate nohighlight">
-\[\displaystyle |\psi\rangle \qquad   \]</div>
+\[\displaystyle {|ψ\rangle} \qquad   {\langleψ|} \qquad   \]</div>
 <div class="output text_latex math notranslate nohighlight">
-\[\displaystyle \langle\psi| \qquad   \]</div>
+\[\displaystyle \text{\texttt{&lt;ψ|ψ&gt;{ }=}} \qquad   1 \qquad   \]</div>
 <div class="output text_latex math notranslate nohighlight">
-\[\displaystyle |\phi\rangle \qquad   \]</div>
+\[\begin{split}\displaystyle \text{\texttt{|ψ&gt;&lt;ψ|{ }=}} \qquad   \left(\begin{array}{rr}
+\frac{1}{2} &amp; \frac{1}{2} \\
+\frac{1}{2} &amp; \frac{1}{2}
+\end{array}\right) \qquad   \end{split}\]</div>
 <div class="output text_latex math notranslate nohighlight">
-\[\displaystyle \langle\phi| \qquad   \]</div>
+\[\displaystyle \text{\texttt{|ψ&gt;⊗|φ&gt;{ }=}} \qquad   {|ψφ\rangle} \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \text{\texttt{Tensor{ }vector:}} \qquad   \left(\begin{array}{rr}
+\frac{1}{2} \, \sqrt{2} &amp; 0 \\
+\frac{1}{2} \, \sqrt{2} &amp; 0
+\end{array}\right) \qquad   \end{split}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;a b c d&#39;</span><span class="p">)</span>
+<span class="n">A</span><span class="o">=</span><span class="n">matrix</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,[</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">d</span><span class="p">])</span>
+<span class="n">s</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">eigenvalues</span><span class="p">())</span>
+<span class="n">s</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">eigenvectors_right</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">A</span><span class="o">.</span><span class="n">eigenvectors_right</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">norm</span><span class="p">())</span>
+<span class="n">s</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">eigenvectors_right</span><span class="p">()[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">A</span><span class="o">.</span><span class="n">eigenvectors_right</span><span class="p">()[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">norm</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \left[\frac{1}{2} \, a + \frac{1}{2} \, d - \frac{1}{2} \, \sqrt{a^{2} + 4 \, b c - 2 \, a d + d^{2}}, \frac{1}{2} \, a + \frac{1}{2} \, d + \frac{1}{2} \, \sqrt{a^{2} + 4 \, b c - 2 \, a d + d^{2}}\right] \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \left(\frac{2}{\sqrt{{\left| \frac{a - d + \sqrt{a^{2} + 4 \, b c - 2 \, a d + d^{2}}}{b} \right|}^{2} + 4}},\,-\frac{a - d + \sqrt{a^{2} + 4 \, b c - 2 \, a d + d^{2}}}{\sqrt{{\left| \frac{a - d + \sqrt{a^{2} + 4 \, b c - 2 \, a d + d^{2}}}{b} \right|}^{2} + 4} b}\right) \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \left(\frac{2}{\sqrt{{\left| \frac{a - d - \sqrt{a^{2} + 4 \, b c - 2 \, a d + d^{2}}}{b} \right|}^{2} + 4}},\,-\frac{a - d - \sqrt{a^{2} + 4 \, b c - 2 \, a d + d^{2}}}{\sqrt{{\left| \frac{a - d - \sqrt{a^{2} + 4 \, b c - 2 \, a d + d^{2}}}{b} \right|}^{2} + 4} b}\right) \qquad   \]</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -565,7 +757,7 @@ document.write(`
 </section>
 </section>
 <section id="qm-for-everyone">
-<h2><span class="section-number">14.2. </span>QM for Everyone<a class="headerlink" href="#qm-for-everyone" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">14.3. </span>QM for Everyone<a class="headerlink" href="#qm-for-everyone" title="Link to this heading">#</a></h2>
 <p>Quantum Games</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.st-andrews.ac.uk/physics/quvis/simulations_html5/sims/spin1/spin1.html">Stern-Gerlach experiment</a></p></li>
@@ -580,11 +772,11 @@ document.write(`
 <li><p><a class="reference external" href="https://www.st-andrews.ac.uk/physics/quvis/simulations_html5/sims/QuantumEraser/QuantumEraser.html">Quantum eraser with polarizers</a></p></li>
 </ul>
 <section id="final-exam">
-<h3><span class="section-number">14.2.1. </span>Final Exam<a class="headerlink" href="#final-exam" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">14.3.1. </span>Final Exam<a class="headerlink" href="#final-exam" title="Link to this heading">#</a></h3>
 <p>Notes</p>
 <ul class="simple">
-<li><p>P.8 : Check part 3</p></li>
-<li><p>P11 : Check part 2</p></li>
+<li><p>P.8: Check part 3</p></li>
+<li><p>P11: Check part 2</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -657,7 +849,7 @@ document.write(`
 </div>
 </section>
 <section id="advanced-quantum-mechanics-of-light">
-<h3><span class="section-number">14.2.2. </span>Advanced Quantum Mechanics of Light<a class="headerlink" href="#advanced-quantum-mechanics-of-light" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">14.3.2. </span>Advanced Quantum Mechanics of Light<a class="headerlink" href="#advanced-quantum-mechanics-of-light" title="Link to this heading">#</a></h3>
 <p>Notes</p>
 <ul class="simple">
 <li><p>Quantum Seeing in the Dark</p>
@@ -680,7 +872,7 @@ document.write(`
 </ul>
 </section>
 <section id="the-quantum-mechanics-of-light">
-<h3><span class="section-number">14.2.3. </span>The Quantum Mechanics of Light<a class="headerlink" href="#the-quantum-mechanics-of-light" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">14.3.3. </span>The Quantum Mechanics of Light<a class="headerlink" href="#the-quantum-mechanics-of-light" title="Link to this heading">#</a></h3>
 <p>Notes</p>
 <ul class="simple">
 <li><p>Light is made of particles.</p>
@@ -708,29 +900,29 @@ document.write(`
 <li><p>Use a clock that spins starting at 12 o’clock.</p></li>
 <li><p>Spinning rate through air</p>
 <ul>
-<li><p>Red Light : 36000 revolutions per inch(this one is mainly used in experiments)</p></li>
-<li><p>Green Light : 54000 revolutions per inch</p></li>
-<li><p>Blue Light : 72000 revolutions per inch</p></li>
+<li><p>Red Light: 36000 revolutions per inch(this one is mainly used in experiments)</p></li>
+<li><p>Green Light: 54000 revolutions per inch</p></li>
+<li><p>Blue Light: 72000 revolutions per inch</p></li>
 </ul>
 </li>
 <li><p>Reflection</p>
 <ul>
-<li><p>Reflection in air on glass : Multiply length by 0.2 and add 0.5 revolutions(6 hours) to the clock.</p></li>
-<li><p>Reflection in glass on glass : Just multiply length by 0.2</p></li>
+<li><p>Reflection in air on glass: Multiply length by 0.2 and add 0.5 revolutions(6 hours) to the clock.</p></li>
+<li><p>Reflection in glass on glass: Just multiply length by 0.2</p></li>
 </ul>
 </li>
 <li><p>Transmission</p>
 <ul>
-<li><p>Transmission from air to glass : Multiply length by 0.98</p></li>
-<li><p>Transmission from glass to air : Multiply length by 0.98</p></li>
+<li><p>Transmission from air to glass: Multiply length by 0.98</p></li>
+<li><p>Transmission from glass to air: Multiply length by 0.98</p></li>
 </ul>
 </li>
 </ul>
 </li>
 <li><p>Info on Experiments</p>
 <ul>
-<li><p>1-3 : These are experiments where the photons only interact with air and glass.</p></li>
-<li><p>4-? : These experiments mostly have slits that photons have to get through in order to get detected.</p></li>
+<li><p>1-3: These are experiments where the photons only interact with air and glass.</p></li>
+<li><p>4-?: These experiments mostly have slits that photons have to get through in order to get detected.</p></li>
 </ul>
 </li>
 <li><p>Source-Detector Experiments of Light</p>
@@ -757,15 +949,15 @@ document.write(`
 </ul>
 </section>
 <section id="advanced-quantum-mechanics-with-spins">
-<h3><span class="section-number">14.2.4. </span>Advanced Quantum Mechanics with Spins<a class="headerlink" href="#advanced-quantum-mechanics-with-spins" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">14.3.4. </span>Advanced Quantum Mechanics with Spins<a class="headerlink" href="#advanced-quantum-mechanics-with-spins" title="Link to this heading">#</a></h3>
 <p>Notes</p>
 <ul class="simple">
-<li><p>Two-Slit Experiment with Stern-Gerlach Analyzer Loop : There are two results using classical and quantum probability. The quantum probability result is correct where since the path taken is indeterminate(you can also say it takes both paths), the atom’s state does not change.</p>
+<li><p>Two-Slit Experiment with Stern-Gerlach Analyzer Loop: There are two results using classical and quantum probability. The quantum probability result is correct where since the path taken is indeterminate(you can also say it takes both paths), the atom’s state does not change.</p>
 <ul>
-<li><p>Detector Variant : If a detector is put in the analyzer loop, the atom’s x state becomes known meaning it no longer has a state in the z direction.</p></li>
+<li><p>Detector Variant: If a detector is put in the analyzer loop, the atom’s x state becomes known meaning it no longer has a state in the z direction.</p></li>
 </ul>
 </li>
-<li><p>Einstein-Podolsky-Rosen(EPR) Experiment : This is an experiment where there is a source which fires two atoms with opposite projections in a specific axis and is measured by two analyzers. One analyzer is slightly closer than the other so that we will know the state of the atom that hasn’t entered the analyzer yet because we have measured the other atom’s state. But say the analyzers are very far away. Then wouldn’t the information have been transfered faster than light?</p>
+<li><p>Einstein-Podolsky-Rosen(EPR) Experiment: This is an experiment where there is a source which fires two atoms with opposite projections in a specific axis and is measured by two analyzers. One analyzer is slightly closer than the other so that we will know the state of the atom that hasn’t entered the analyzer yet because we have measured the other atom’s state. But say the analyzers are very far away. Then wouldn’t the information have been transfered faster than light?</p>
 <ul>
 <li><p>The hidden variables theory that Einstein made was disproved by Bell’s theorems.</p></li>
 </ul>
@@ -773,11 +965,11 @@ document.write(`
 </ul>
 <img src="https://raw.githubusercontent.com/tomctang/NB_img/main/sge.png" alt="seriesgraph" width="500"></section>
 <section id="intro-quantum-probability">
-<h3><span class="section-number">14.2.5. </span>Intro &amp; Quantum Probability<a class="headerlink" href="#intro-quantum-probability" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">14.3.5. </span>Intro &amp; Quantum Probability<a class="headerlink" href="#intro-quantum-probability" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Fermions : Metals conduct electricity do so because there is a “sea of electrons”. This is created from the Pauli exclusion principle, since electrons are fermions, and fermions stay apart, they stay apart.</p></li>
-<li><p>Alpha Particles : Created by radioactive elements. Since it is slow and heavy, it has low penetration power but can damage biological tissue. Smoke detectors use heavy elements to detect smoke as when there is smoke the current flow between the 2 metal plates that are held at different voltages the current is changed.</p></li>
-<li><p>Magnetic Fields : These are vector fields that are created by magnets.</p>
+<li><p>Fermions: Metals that conduct electricity do so because there is a “sea of electrons”. This is created from the Pauli exclusion principle, since electrons are fermions, and fermions stay apart, they stay apart.</p></li>
+<li><p>Alpha Particles: Created by radioactive elements. Since it is slow and heavy, it has low penetration power but can damage biological tissue. Smoke detectors use heavy elements to detect smoke as when there is smoke the current flow between the 2 metal plates that are held at different voltages the current is changed.</p></li>
+<li><p>Magnetic Fields: These are vector fields that are created by magnets.</p>
 <ul>
 <li><p>The closer to a magnet you are, the stronger the intensity.</p></li>
 <li><p>Normally the arrows indicate where the north pole of a magnet will be attracted to.</p></li>
@@ -786,28 +978,28 @@ document.write(`
 <li><p>The net force can be calculated by finding the axis of increasing intensity and then finding the projection of the magnet onto the axis. When doing this it is useful to keep the south pole of the magnet on the axis.</p></li>
 </ul>
 </li>
-<li><p>Fat Arrows : For some magnetic fields, they can be represented by fat arrows where the width is the intensity of the magnetic field and the direction of the arrows is indicated by the fat arrow’s direction.</p></li>
-<li><p>Magnetic Needles : These are idealized small magnets like those in compasses.</p></li>
+<li><p>Fat Arrows: For some magnetic fields, they can be represented by fat arrows where the width is the intensity of the magnetic field and the direction of the arrows is indicated by the fat arrow’s direction.</p></li>
+<li><p>Magnetic Needles: These are idealized small magnets like those in compasses.</p></li>
 </ul>
 </li>
-<li><p>Precession : A rotation that occurs when there is a magnet and a magnetic field.</p>
+<li><p>Precession: A rotation that occurs when there is a magnet and a magnetic field.</p>
 <ul>
 <li><p>Even when there is precession, the projection remains constant as it rotates perpendicular to the axis of increasing field.</p></li>
 </ul>
 </li>
-<li><p>Stern-Gerlach Experiment : Atoms are injected through a region of space where because of a magnetic field, there will be precession. 2 magnets will deflect the atom until it hits the screen where there is a detector.</p>
+<li><p>Stern-Gerlach Experiment: Atoms are injected through a region of space where because of a magnetic field, there will be precession. 2 magnets will deflect the atom until it hits the screen where there is a detector.</p>
 <ul>
 <li><p>This experiment has many variants.</p></li>
 <li><p>In the quantum world, since everything is random, the atoms’ chance of exiting a specific exit for positive and negative can be calculated using a formula.</p></li>
 <li><p>Each Stern-Gerlach analyzer measures the atom’s projection on a specific axis. If the atom has no projection on that axis then it chooses a random path to take.</p></li>
 </ul>
 </li>
-<li><p>Birthday Problem : The problem asks you that how many people must be in a large room for the chance of at least 2 people having the same birthday to be a specific number.</p>
+<li><p>Birthday Problem: The problem asks you that how many people must be in a large room for the chance of at least 2 people having the same birthday to be a specific number.</p>
 <ul>
 <li><p>There are many variants.</p></li>
 </ul>
 </li>
-<li><p>Penney’s Game : This is an unfair coin game that seems fair at first. If you pick the sequence of coins first then the other person can always pick a sequence to have a greater chance of winning(unlike the same game but with sequences of 2 coins).</p>
+<li><p>Penney’s Game: This is an unfair coin game that seems fair at first. If you pick the sequence of coins first then the other person can always pick a sequence to have a greater chance of winning(unlike the same game but with sequences of 2 coins).</p>
 <ul>
 <li><p>Rules</p>
 <ol class="arabic simple">
@@ -963,16 +1155,18 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qm">14.1. QM</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#m1-intro-quantum-world">14.1.1. M1. Intro Quantum World</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qm-vs-cm">14.1. QM vs. CM</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qm">14.2. QM</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#m2-advanced-qm-with-spins">14.2.1. M2. Advanced QM with Spins</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#m1-intro-quantum-world">14.2.2. M1. Intro Quantum World</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qm-for-everyone">14.2. QM for Everyone</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#final-exam">14.2.1. Final Exam</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-quantum-mechanics-of-light">14.2.2. Advanced Quantum Mechanics of Light</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-quantum-mechanics-of-light">14.2.3. The Quantum Mechanics of Light</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-quantum-mechanics-with-spins">14.2.4. Advanced Quantum Mechanics with Spins</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intro-quantum-probability">14.2.5. Intro &amp; Quantum Probability</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qm-for-everyone">14.3. QM for Everyone</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#final-exam">14.3.1. Final Exam</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-quantum-mechanics-of-light">14.3.2. Advanced Quantum Mechanics of Light</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-quantum-mechanics-of-light">14.3.3. The Quantum Mechanics of Light</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-quantum-mechanics-with-spins">14.3.4. Advanced Quantum Mechanics with Spins</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intro-quantum-probability">14.3.5. Intro &amp; Quantum Probability</a></li>
 </ul>
 </li>
 </ul>

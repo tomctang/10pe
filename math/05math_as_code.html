@@ -1,0 +1,1542 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>9. Math as code &#8212; Jonny Workbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=8dedbda2" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'math/05math_as_code';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="10. MIT_CS6001-Python" href="../Course_MIT6001Python.html" />
+    <link rel="prev" title="8. Real World Math" href="03real_world.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Jonny Workbook</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Mathe &amp; FP/Language</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Alevel_math.html">1. A-level-math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Alevel_math_further.html">2. A-level-further</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Course_MCM.html">3. Math Computational Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Course_Lean.html">4. Lean</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00intro_math.html">5. Math-FP-Lang Combo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01number_algebra.html">6. Number &amp; Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02discrete_continuous.html">7. Discrete &amp; Continuous</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03real_world.html">8. Real World Math</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">9. Math as code</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CS &amp; Physics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Course_MIT6001Python.html">10. MIT_CS6001-Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Course_MIT6002thinking.html">11. MIT_CS6002-CS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PE50.html">12. Project Euler Q1-50</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PE75.html">13. Project Euler Q51-</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Course_MCM_QM.html">14. Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Course_MCM_QFT.html">15. QFT</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notebook</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../nb_past_courses.html">16. Past courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nb_Geo.html">17. Geography and Maps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nb_lottery_simulator.html">18. Lottery Math</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/tomctang/10pe" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/math/05math_as_code.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Math as code</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-name-conventions">9.1. variable name conventions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equals-symbols">9.2. equals symbols</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#square-root-and-complex-numbers">9.3. square root and complex numbers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dot-cross">9.4. dot &amp; cross</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scalar-multiplication">9.4.1. scalar multiplication</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-multiplication">9.4.2. vector multiplication</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dot-product">9.4.3. dot product</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-product">9.4.4. cross product</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sigma">9.5. sigma</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#capital-pi">9.6. capital Pi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pipes">9.7. pipes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-value">9.7.1. absolute value</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#euclidean-norm">9.7.2. Euclidean norm</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#determinant">9.7.3. determinant</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hat">9.8. hat</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#element">9.9. element</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-number-sets">9.10. common number sets</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#real-numbers">9.10.1. <code class="docutils literal notranslate"><span class="pre">ℝ</span></code> real numbers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rational-numbers">9.10.2. <code class="docutils literal notranslate"><span class="pre">ℚ</span></code> rational numbers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integers">9.10.3. <code class="docutils literal notranslate"><span class="pre">ℤ</span></code> integers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#natural-numbers">9.10.4. <code class="docutils literal notranslate"><span class="pre">ℕ</span></code> natural numbers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-numbers">9.10.5. <code class="docutils literal notranslate"><span class="pre">ℂ</span></code> complex numbers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-builder-notation">9.11. Set builder notation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">9.12. functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionaries-are-functions">9.12.1. dictionaries are functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#piecewise-function">9.12.2. piecewise function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-functions">9.12.3. common functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#function-notation">9.12.4. function notation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prime">9.13. prime</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#floor-ceiling">9.14. floor &amp; ceiling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arrows">9.15. arrows</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#material-implication">9.15.1. material implication</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inequality">9.15.2. inequality</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conjunction-disjunction">9.15.3. conjunction &amp; disjunction</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logical-negation">9.16. logical negation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intervals">9.17. intervals</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="math-as-code">
+<h1><span class="section-number">9. </span>Math as code<a class="headerlink" href="#math-as-code" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="#variable-name-conventions"><span class="xref myst">variable name conventions</span></a></p></li>
+<li><p><a class="reference internal" href="#equals-symbols"><span class="xref myst">equals <code class="docutils literal notranslate"><span class="pre">=</span></code> <code class="docutils literal notranslate"><span class="pre">≈</span></code> <code class="docutils literal notranslate"><span class="pre">≠</span></code> <code class="docutils literal notranslate"><span class="pre">:=</span></code></span></a></p></li>
+<li><p><a class="reference internal" href="#square-root-and-complex-numbers"><span class="xref myst">square root and complex numbers <code class="docutils literal notranslate"><span class="pre">√</span></code> <em><code class="docutils literal notranslate"><span class="pre">i</span></code></em></span></a></p></li>
+<li><p><a class="reference internal" href="#dot--cross"><span class="xref myst">dot &amp; cross <code class="docutils literal notranslate"><span class="pre">·</span></code> <code class="docutils literal notranslate"><span class="pre">×</span></code> <code class="docutils literal notranslate"><span class="pre">∘</span></code></span></a></p>
+<ul>
+<li><p><a class="reference internal" href="#scalar-multiplication"><span class="xref myst">scalar multiplication</span></a></p></li>
+<li><p><a class="reference internal" href="#vector-multiplication"><span class="xref myst">vector multiplication</span></a></p></li>
+<li><p><a class="reference internal" href="#dot-product"><span class="xref myst">dot product</span></a></p></li>
+<li><p><a class="reference internal" href="#cross-product"><span class="xref myst">cross product</span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#sigma"><span class="xref myst">sigma <code class="docutils literal notranslate"><span class="pre">Σ</span></code></span></a> - <em>summation</em></p></li>
+<li><p><a class="reference internal" href="#capital-pi"><span class="xref myst">capital Pi <code class="docutils literal notranslate"><span class="pre">Π</span></code></span></a> - <em>products of sequences</em></p></li>
+<li><p><a class="reference internal" href="#pipes"><span class="xref myst">pipes <code class="docutils literal notranslate"><span class="pre">||</span></code></span></a></p>
+<ul>
+<li><p><a class="reference internal" href="#absolute-value"><span class="xref myst">absolute value</span></a></p></li>
+<li><p><a class="reference internal" href="#euclidean-norm"><span class="xref myst">Euclidean norm</span></a></p></li>
+<li><p><a class="reference internal" href="#determinant"><span class="xref myst">determinant</span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#hat"><span class="xref myst">hat <strong><code class="docutils literal notranslate"><span class="pre">â</span></code></strong></span></a> - <em>unit vector</em></p></li>
+<li><p><a class="reference internal" href="#element"><span class="xref myst">“element of” <code class="docutils literal notranslate"><span class="pre">∈</span></code> <code class="docutils literal notranslate"><span class="pre">∉</span></code></span></a></p></li>
+<li><p><a class="reference internal" href="#common-number-sets"><span class="xref myst">common number sets <code class="docutils literal notranslate"><span class="pre">ℝ</span></code> <code class="docutils literal notranslate"><span class="pre">ℤ</span></code> <code class="docutils literal notranslate"><span class="pre">ℚ</span></code> <code class="docutils literal notranslate"><span class="pre">ℕ</span></code></span></a></p></li>
+<li><p><a class="reference internal" href="#function"><span class="xref myst">function <code class="docutils literal notranslate"><span class="pre">ƒ</span></code></span></a></p>
+<ul>
+<li><p><a class="reference internal" href="#piecewise-function"><span class="xref myst">piecewise function</span></a></p></li>
+<li><p><a class="reference internal" href="#common-functions"><span class="xref myst">common functions</span></a></p></li>
+<li><p><a class="reference internal" href="#function-notation"><span class="xref myst">function notation <code class="docutils literal notranslate"><span class="pre">↦</span></code> <code class="docutils literal notranslate"><span class="pre">→</span></code></span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#prime"><span class="xref myst">prime <code class="docutils literal notranslate"><span class="pre">′</span></code></span></a></p></li>
+<li><p><a class="reference internal" href="#floor--ceiling"><span class="xref myst">floor &amp; ceiling <code class="docutils literal notranslate"><span class="pre">⌊</span></code> <code class="docutils literal notranslate"><span class="pre">⌉</span></code></span></a></p></li>
+<li><p><a class="reference internal" href="#arrows"><span class="xref myst">arrows</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="#material-implication"><span class="xref myst">material implication <code class="docutils literal notranslate"><span class="pre">⇒</span></code> <code class="docutils literal notranslate"><span class="pre">→</span></code></span></a></p></li>
+<li><p><a class="reference internal" href="#equality"><span class="xref myst">equality <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> <code class="docutils literal notranslate"><span class="pre">≥</span></code> <code class="docutils literal notranslate"><span class="pre">≫</span></code></span></a></p></li>
+<li><p><a class="reference internal" href="#conjunction--disjunction"><span class="xref myst">conjunction &amp; disjunction <code class="docutils literal notranslate"><span class="pre">∧</span></code> <code class="docutils literal notranslate"><span class="pre">∨</span></code></span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#logical-negation"><span class="xref myst">logical negation <code class="docutils literal notranslate"><span class="pre">¬</span></code> <code class="docutils literal notranslate"><span class="pre">~</span></code> <code class="docutils literal notranslate"><span class="pre">!</span></code></span></a></p></li>
+<li><p><a class="reference internal" href="#intervals"><span class="xref myst">intervals</span></a></p></li>
+</ul>
+<section id="variable-name-conventions">
+<h2><span class="section-number">9.1. </span>variable name conventions<a class="headerlink" href="#variable-name-conventions" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><em>s</em> - italic lowercase letters for scalars (e.g. a number)</p></li>
+<li><p><strong>x</strong> - bold lowercase letters for vectors (e.g. a 2D point)</p></li>
+<li><p><strong>A</strong> - bold uppercase letters for matrices (e.g. a 3D transformation)</p></li>
+<li><p><em>θ</em> - italic lowercase Greek letters for constants and special variables (e.g. <a class="reference external" href="https://en.wikipedia.org/wiki/Spherical_coordinate_system">polar angle <em>θ</em>, <em>theta</em></a>)</p></li>
+</ul>
+</section>
+<section id="equals-symbols">
+<h2><span class="section-number">9.2. </span>equals symbols<a class="headerlink" href="#equals-symbols" title="Link to this heading">#</a></h2>
+<p>There are a number of symbols resembling the equals sign <code class="docutils literal notranslate"><span class="pre">=</span></code>. Here are a few common examples:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">=</span></code> is for equality (values are the same)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">≠</span></code> is for inequality (value are not the same)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">≈</span></code> is for approximately equal to (<code class="docutils literal notranslate"><span class="pre">π</span> <span class="pre">≈</span> <span class="pre">3.14159</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:=</span></code> is for definition (A is defined as B)</p></li>
+</ul>
+<p>In Python:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">## equality</span>
+<span class="mi">2</span> <span class="o">==</span> <span class="mi">3</span>
+
+<span class="c1">## inequality</span>
+<span class="mi">2</span> <span class="o">!=</span> <span class="mi">3</span>
+
+<span class="c1">## approximately equal</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="n">math</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mf">3.14159</span><span class="p">)</span> <span class="c1"># math.isclose doesn&#39;t have a third argument for tolerance, so this is false</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">numpy.testing</span><span class="w"> </span><span class="kn">import</span> <span class="n">assert_almost_equal</span>
+<span class="n">assert_almost_equal</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mf">3.14159</span><span class="p">,</span> <span class="mf">1e-5</span><span class="p">)</span> <span class="c1"># we gave it a the tolerance we want, 5 decimal places. </span>
+<span class="c1"># This is actually a unit test, equivalent to &quot;assert isclose(x,y)&quot;, read on for more. </span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">almost_equal</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mi">7</span><span class="p">):</span> 
+<span class="w">  </span><span class="sd">&#39;&#39;&#39; you can make your own! </span>
+<span class="sd">  in numpy, 1e-7 is the default epsilon</span>
+<span class="sd">  &#39;&#39;&#39;</span>
+  <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="o">**</span> <span class="o">-</span><span class="n">epsilon</span>
+
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>Read more</strong>: programmers got this idea from the [epsilon-delta definition of limit][1]</p>
+</div></blockquote>
+<p><strong>Note</strong>: subclasses of <a class="reference external" href="https://docs.python.org/3/library/unittest.html"><code class="docutils literal notranslate"><span class="pre">unittest.TestCase</span></code></a> come with their own <code class="docutils literal notranslate"><span class="pre">assertAlmostEqual</span></code>.</p>
+<p><strong>Warning</strong>: <em>please</em> don’t use exact <code class="docutils literal notranslate"><span class="pre">==</span></code> equality on floats!</p>
+<p>In mathematical notation, you might see the <code class="docutils literal notranslate"><span class="pre">:=</span></code>, <code class="docutils literal notranslate"><span class="pre">=:</span></code> and <code class="docutils literal notranslate"><span class="pre">=</span></code> symbols being used for <em>definition</em>.<sup>[2]</sup></p>
+<p>For example, the following defines <em>x</em> to be another name for 2<em>kj</em>.</p>
+<p><img alt="equals1" src="http://latex.codecogs.com/svg.latex?x%20%3A%3D%202kj" /></p>
+<!-- x := 2kj -->
+<p>In python, we <em>define</em> our variables and provide aliases with <code class="docutils literal notranslate"><span class="pre">=</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">k</span> <span class="o">*</span> <span class="n">j</span>
+</pre></div>
+</div>
+<p><em>Assignment</em> in python is generally <em>mutable</em> besides special cases like <code class="docutils literal notranslate"><span class="pre">Tuple</span></code>.</p>
+<blockquote>
+<div><p><strong>Note</strong>: Some languages have pre-processor <code class="docutils literal notranslate"><span class="pre">#define</span></code> statements, which are closer to a mathematical <em>define</em>.</p>
+</div></blockquote>
+<p>Notice that <code class="docutils literal notranslate"><span class="pre">def</span></code> is a form of <code class="docutils literal notranslate"><span class="pre">:=</span></code> as well.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">plus</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span> 
+  <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+</pre></div>
+</div>
+<p>The following, on the other hand, represents equality:</p>
+<p><img alt="equals2" src="http://latex.codecogs.com/svg.latex?x%20%3D%202kj" /></p>
+<!-- x = 2kj -->
+<p><strong>Important</strong>: the difference between <code class="docutils literal notranslate"><span class="pre">=</span></code> and <code class="docutils literal notranslate"><span class="pre">==</span></code> can be more obvious in code than it is in math literature! In python, a <code class="docutils literal notranslate"><span class="pre">=</span></code> is an <em>instruction</em>. You’re telling the machine to interact with the namespace, add something to it or change something in it. In python, when you write <code class="docutils literal notranslate"><span class="pre">==</span></code> you’re asking the machine “may I have a <code class="docutils literal notranslate"><span class="pre">bool</span></code>?”. In math, the former case is <em>either</em> covered by <code class="docutils literal notranslate"><span class="pre">:=</span></code> or <code class="docutils literal notranslate"><span class="pre">=</span></code>, while the latter case is <em>usually</em> <code class="docutils literal notranslate"><span class="pre">=</span></code>, and you might have to do some disambiguating in your reading.</p>
+<p>In math, when I write 1 + 1 = 2 I’m making a <em>judgment</em>. It’s not that i’m asking the world (or the chalkboard) for a bool, it’s that I’m keeping track of my beliefs. This distinction is the foundation of <em>unit tests</em> or <em>assertions</em>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="c1"># assert in python takes an expression that lands in bool and a string to be printed if it turns out false. </span>
+<span class="k">assert</span> <span class="n">plus</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;DANGER: PHYSICS IS BROKEN. PLEASE STAY INSIDE. &quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="square-root-and-complex-numbers">
+<h2><span class="section-number">9.3. </span>square root and complex numbers<a class="headerlink" href="#square-root-and-complex-numbers" title="Link to this heading">#</a></h2>
+<p>A square root operation is of the form:</p>
+<p><img alt="squareroot" src="http://latex.codecogs.com/svg.latex?%5Cleft%28%5Csqrt%7Bx%7D%5Cright%29%5E2%20%3D%20x" /></p>
+<!-- \left(\sqrt{x}\right)^2 = x -->
+<p>In programming we use a <code class="docutils literal notranslate"><span class="pre">sqrt</span></code> function, like so:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="c1"># Out: 1.4142135623730951</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="c1"># Out: 1.4142135623730951</span>
+
+</pre></div>
+</div>
+<p>Complex numbers are expressions of the form <img alt="complex" src="http://latex.codecogs.com/svg.latex?a&amp;space;+&amp;space;ib" />, where <img alt="a" src="http://latex.codecogs.com/svg.latex?a" /> is the real part and <img alt="b" src="http://latex.codecogs.com/svg.latex?b" /> is the imaginary part. The imaginary number <img alt="i" src="http://latex.codecogs.com/svg.latex?i" /> is defined as:</p>
+<p><img alt="imaginary" src="http://latex.codecogs.com/svg.latex?i%3D%5Csqrt%7B-1%7D" />.</p>
+<!-- i=\sqrt{-1} -->
+<p>Vanilla python has a <code class="docutils literal notranslate"><span class="pre">complex</span></code> constructor, and a standard module <code class="docutils literal notranslate"><span class="pre">cmath</span></code> for working with them.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">complex</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># Out: (1+1j)s</span>
+
+<span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">complex</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="c1"># TypeError: can&#39;t convert complex to float</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">cmath</span>
+<span class="n">cmath</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">complex</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="c1"># Out: (1.09868411346781+0.45508986056222733j)</span>
+
+<span class="c1"># you need numpy to get conjugate</span>
+<span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="nb">complex</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">))</span>
+<span class="c1"># Out: (0.5-0.5j)</span>
+
+<span class="c1"># we can represent the basic meaning of the imaginary unit like so</span>
+<span class="k">assert</span> <span class="n">cmath</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">complex</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span> <span class="o">==</span> <span class="nb">complex</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>As you can see, it uses <code class="docutils literal notranslate"><span class="pre">j</span></code> to denote the imaginary unit, instead of <code class="docutils literal notranslate"><span class="pre">i</span></code>.</p>
+<p>The <strong>conjugate</strong> of a complex number is <strong>flipping the sign of the imaginary part</strong>.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">z</span></code> is a python <code class="docutils literal notranslate"><span class="pre">complex</span></code> number, <code class="docutils literal notranslate"><span class="pre">z.real</span></code> gets the real part (exactly as an
+object attribute) and <code class="docutils literal notranslate"><span class="pre">z.imag</span></code> gets the imaginary part.</p>
+<p>Just as complex numbers can be interpreted as a sort of wrapper around tuples of
+reals, a complex number data type wraps two floats. Numpy uses this to implement
+complex numbers of different sizes/precisions.</p>
+<p>The syntax is close enough to <code class="docutils literal notranslate"><span class="pre">cmath</span></code>, but it comes with the power and
+convenience of numpy. Importantly, other numpy methods are better at <em>casting</em>
+to and from complex.</p>
+<p>observe the following <a class="reference external" href="https://www.math-only-math.com/the-cube-roots-of-unity.html">cube roots of unity</a></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">z1</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">complex</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span> <span class="c1"># Numpy&#39;s constructor is basically the same.  </span>
+<span class="n">z2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">z1</span><span class="p">)</span> <span class="c1"># but numpy gives us a conjugation function, while the standard module does not. </span>
+
+<span class="k">assert</span> <span class="n">math</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">z1</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="n">z2</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>
+<span class="c1"># TypeError: can&#39;t convert complex to float</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_almost_equal</span><span class="p">(</span><span class="n">z1</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="n">z2</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://docs.scipy.org/doc/numpy/user/basics.types.html">Read on about numpy’s complex numbers</a></p>
+</section>
+<section id="dot-cross">
+<h2><span class="section-number">9.4. </span>dot &amp; cross<a class="headerlink" href="#dot-cross" title="Link to this heading">#</a></h2>
+<p>The dot <code class="docutils literal notranslate"><span class="pre">·</span></code> and cross <code class="docutils literal notranslate"><span class="pre">×</span></code> symbols have different uses depending on context.</p>
+<p>They might seem obvious, but it’s important to understand the subtle differences before we continue into other sections.</p>
+<section id="scalar-multiplication">
+<h3><span class="section-number">9.4.1. </span>scalar multiplication<a class="headerlink" href="#scalar-multiplication" title="Link to this heading">#</a></h3>
+<p>Both symbols can represent simple multiplication of scalars. The following are equivalent:</p>
+<p><img alt="dotcross1" src="http://latex.codecogs.com/svg.latex?5%20%5Ccdot%204%20%3D%205%20%5Ctimes%204" /></p>
+<!-- 5 \cdot 4 = 5 \times 4 -->
+<p>In programming languages we tend to use asterisk for multiplication:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">4</span>
+</pre></div>
+</div>
+<p>Often, the multiplication sign is only used to avoid ambiguity (e.g. between two numbers). Here, we can omit it entirely:</p>
+<p><img alt="dotcross2" src="http://latex.codecogs.com/svg.latex?3kj" /></p>
+<!-- 3kj -->
+<p>If these variables represent scalars, the code would be:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">k</span> <span class="o">*</span> <span class="n">j</span>
+</pre></div>
+</div>
+</section>
+<section id="vector-multiplication">
+<h3><span class="section-number">9.4.2. </span>vector multiplication<a class="headerlink" href="#vector-multiplication" title="Link to this heading">#</a></h3>
+<p>To denote multiplication of one vector with a scalar, or element-wise multiplication of a vector with another vector, we typically do not use the dot <code class="docutils literal notranslate"><span class="pre">·</span></code> or cross <code class="docutils literal notranslate"><span class="pre">×</span></code> symbols. These have different meanings in linear algebra, discussed shortly.</p>
+<p>Let’s take our earlier example but apply it to vectors. For element-wise vector multiplication, you might see an open dot <code class="docutils literal notranslate"><span class="pre">∘</span></code> to represent the <a class="reference external" href="https://en.wikipedia.org/wiki/Hadamard_product_%28matrices%29">Hadamard product</a>.<sup>[2]</sup></p>
+<p><img alt="dotcross3" src="http://latex.codecogs.com/svg.latex?3%5Cmathbf%7Bk%7D%5Ccirc%5Cmathbf%7Bj%7D" /></p>
+<!-- 3\mathbf{k}\circ\mathbf{j} -->
+<p>In other instances, the author might explicitly define a different notation, such as a circled dot <code class="docutils literal notranslate"><span class="pre">⊙</span></code> or a filled circle <code class="docutils literal notranslate"><span class="pre">●</span></code>.<sup>[3]</sup></p>
+<p>Here is how it would look in code, using arrays <code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">y]</span></code> to represent the 2D vectors.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">k</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">j</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+
+<span class="n">tmp</span> <span class="o">=</span> <span class="n">multiply</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">multiply_scalar</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+<span class="c1"># Out: [6, 18]</span>
+</pre></div>
+</div>
+<p>Our <code class="docutils literal notranslate"><span class="pre">multiply</span></code> and <code class="docutils literal notranslate"><span class="pre">multiply_scalar</span></code> functions look like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">multiply</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+  <span class="k">return</span> <span class="p">[</span><span class="n">aa</span> <span class="o">*</span> <span class="n">bb</span> <span class="k">for</span> <span class="n">aa</span><span class="p">,</span><span class="n">bb</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">multiply_scalar</span><span class="p">(</span><span class="n">scalar</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+  <span class="k">return</span> <span class="p">[</span><span class="n">scalar</span> <span class="o">*</span> <span class="n">aa</span> <span class="k">for</span> <span class="n">aa</span> <span class="ow">in</span> <span class="n">a</span><span class="p">]</span>
+
+</pre></div>
+</div>
+<p>Similarly, matrix multiplication typically does not use the dot <code class="docutils literal notranslate"><span class="pre">·</span></code> or cross symbol <code class="docutils literal notranslate"><span class="pre">×</span></code>.</p>
+<p>Numpy’s broadcasted syntax for scaling looks like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">multiply_scalar</span><span class="p">(</span><span class="n">scalar</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span> 
+  <span class="k">return</span> <span class="n">scalar</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="dot-product">
+<h3><span class="section-number">9.4.3. </span>dot product<a class="headerlink" href="#dot-product" title="Link to this heading">#</a></h3>
+<p>The dot symbol <code class="docutils literal notranslate"><span class="pre">·</span></code> can be used to denote the <a class="reference external" href="https://en.wikipedia.org/wiki/Dot_product"><em>dot product</em></a> of two vectors. Sometimes this is called the <em>scalar product</em> since it evaluates to a scalar.</p>
+<p><img alt="dotcross4" src="http://latex.codecogs.com/svg.latex?%5Cmathbf%7Bk%7D%5Ccdot%20%5Cmathbf%7Bj%7D" /></p>
+<!-- \mathbf{k}\cdot \mathbf{j} -->
+<p>It is a very common feature of linear algebra, and with a 3D vector it might look like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">j</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+<span class="c1"># Out: 0</span>
+</pre></div>
+</div>
+<p>The result <code class="docutils literal notranslate"><span class="pre">0</span></code> tells us our vectors are perpendicular. Here is a <code class="docutils literal notranslate"><span class="pre">dot</span></code> function for 3-component vectors:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">dot</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+  <span class="k">return</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="cross-product">
+<h3><span class="section-number">9.4.4. </span>cross product<a class="headerlink" href="#cross-product" title="Link to this heading">#</a></h3>
+<p>The cross symbol <code class="docutils literal notranslate"><span class="pre">×</span></code> can be used to denote the <a class="reference external" href="https://en.wikipedia.org/wiki/Cross_product"><em>cross product</em></a> of two vectors.</p>
+<p><img alt="dotcross5" src="http://latex.codecogs.com/svg.latex?%5Cmathbf%7Bk%7D%5Ctimes%20%5Cmathbf%7Bj%7D" /></p>
+<!-- \mathbf{k}\times \mathbf{j} -->
+<p>In code, it would look like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">j</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">cross</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+<span class="c1"># Out: [ 0, 0, -1 ]</span>
+</pre></div>
+</div>
+<p>Here, we get <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">0,</span> <span class="pre">-1]</span></code>, which is perpendicular to both <strong>k</strong> and <strong>j</strong>.</p>
+<p>Our <code class="docutils literal notranslate"><span class="pre">cross</span></code> function:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">cross</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span> 
+<span class="w">  </span><span class="sd">&#39;&#39;&#39; take two 3D vectors and return their cross product. &#39;&#39;&#39;</span>
+  <span class="n">rx</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+  <span class="n">ry</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+  <span class="n">rz</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+  <span class="k">return</span> <span class="n">rx</span><span class="p">,</span> <span class="n">ry</span><span class="p">,</span> <span class="n">rz</span>
+</pre></div>
+</div>
+<p>It’s good to practice and grok these operations, but in real life you’ll use
+Numpy.</p>
+</section>
+</section>
+<section id="sigma">
+<h2><span class="section-number">9.5. </span>sigma<a class="headerlink" href="#sigma" title="Link to this heading">#</a></h2>
+<p>The big Greek <code class="docutils literal notranslate"><span class="pre">Σ</span></code> (Sigma) is for <a class="reference external" href="https://en.wikipedia.org/wiki/Summation">Summation</a>. In other words: summing up some numbers.</p>
+<p><img alt="sigma" src="http://latex.codecogs.com/svg.latex?%5Csum_%7Bi%3D1%7D%5E%7B100%7Di" /></p>
+<!-- \sum_{i=1}^{100}i -->
+<p>Here, <code class="docutils literal notranslate"><span class="pre">i=1</span></code> says to start at <code class="docutils literal notranslate"><span class="pre">1</span></code> and end at the number above the Sigma, <code class="docutils literal notranslate"><span class="pre">100</span></code>. These are the lower and upper bounds, respectively. The <em>i</em> to the right of the “E” tells us what we are summing. In code:</p>
+<p>Hence, the big sigma is the <code class="docutils literal notranslate"><span class="pre">for</span></code> keyword.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">([</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)])</span>
+<span class="c1"># Out: 5050</span>
+</pre></div>
+</div>
+<p><strong>Tip:</strong> With whole numbers, this particular pattern can be optimized to the
+following (and try to <a class="reference external" href="http://mathcentral.uregina.ca/QQ/database/QQ.02.06/jo1.html">grok the
+proof</a>. The legend
+of how Gauss discovered I can only describe as “typical programmer antics”):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sum_to_n</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="w">  </span><span class="sd">&#39;&#39;&#39; return the sum of integers from 0 to n&#39;&#39;&#39;</span>
+  <span class="k">return</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">n</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Here is another example where the <em>i</em>, or the “what to sum,” is different:</p>
+<p><img alt="sum2" src="http://latex.codecogs.com/svg.latex?%5Csum_%7Bi%3D1%7D%5E%7B100%7D%282i+1%29" /></p>
+<!-- \sum_{i=1}^{100}(2i+1) -->
+<p>In code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">([</span><span class="mi">2</span><span class="o">*</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)])</span>
+<span class="c1"># Out: 10000</span>
+</pre></div>
+</div>
+<p><strong>important</strong>: <code class="docutils literal notranslate"><span class="pre">range</span></code> in python has an <em>inclusive lower bound and exclusive
+upper bound</em>, meaning that <code class="docutils literal notranslate"><span class="pre">...</span> <span class="pre">for</span> <span class="pre">k</span> <span class="pre">in</span> <span class="pre">range(100)</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">the</span> <span class="pre">sum</span> <span class="pre">of</span> <span class="pre">...</span> <span class="pre">for</span> <span class="pre">k=0</span> <span class="pre">to</span> <span class="pre">k=n</span></code>.</p>
+<p>If you’re still not absolutely fluent in indexing for these applications, spend some time with <a class="reference external" href="https://youtu.be/TDpQSa3hJRw">Trev Tutor</a> on youtube.</p>
+<p>The notation can be nested, which is much like nesting a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop. You should
+evaluate the right-most sigma first, unless the author has enclosed them in
+parentheses to alter the order. However, in the following case, since we are
+dealing with finite sums, the order does not matter.</p>
+<p><img alt="sigma3" src="http://latex.codecogs.com/svg.latex?%5Csum_%7Bi%3D1%7D%5E%7B2%7D%5Csum_%7Bj%3D4%7D%5E%7B6%7D%283ij%29" /></p>
+<!-- \sum_{i=1}^{2}\sum_{j=4}^{6}(3ij) -->
+<p>In code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span>
+  <span class="p">[</span><span class="nb">sum</span><span class="p">([</span><span class="mi">3</span><span class="o">*</span><span class="n">i</span><span class="o">*</span><span class="n">j</span> 
+        <span class="k">for</span> <span class="n">j</span> 
+        <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">7</span><span class="p">)])</span> 
+   <span class="k">for</span> <span class="n">i</span> 
+   <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">)])</span>
+<span class="c1"># Out: 135</span>
+</pre></div>
+</div>
+</section>
+<section id="capital-pi">
+<h2><span class="section-number">9.6. </span>capital Pi<a class="headerlink" href="#capital-pi" title="Link to this heading">#</a></h2>
+<p>The capital Pi or “Big Pi” is very similar to <a class="reference internal" href="#sigma"><span class="xref myst">Sigma</span></a>, except we are using multiplication to find the product of a sequence of values.</p>
+<p>Take the following:</p>
+<p><img alt="capitalPi" src="http://latex.codecogs.com/svg.latex?%5Cprod_%7Bi%3D1%7D%5E%7B6%7Di" /></p>
+<!-- \prod_{i=1}^{6}i -->
+<p>This was removed from vanilla python for python 3, but it’s easy to recover with
+a generalization of the list accumulator.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">times</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span> 
+<span class="w">  </span><span class="sd">&#39;&#39;&#39; first, give a name to the multiplication operator &#39;&#39;&#39;</span>
+  <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">functools</span><span class="w"> </span><span class="kn">import</span> <span class="n">reduce</span>
+
+<span class="n">reduce</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+<span class="c1"># Out: 720</span>
+</pre></div>
+</div>
+<p>With reduce, you can actually repeatedly apply a binary function to items of a
+list and accumulate the value <em>for any binary operator</em>. Python gives <code class="docutils literal notranslate"><span class="pre">and</span></code> and
+<code class="docutils literal notranslate"><span class="pre">or</span></code> out of the box like <code class="docutils literal notranslate"><span class="pre">sum</span></code>, but keep <code class="docutils literal notranslate"><span class="pre">reduce</span></code> in mind if you encounter a
+less common binary operator out in the wild.</p>
+<p>Note that in Numpy arrays, the syntax is different (and product is given out of
+the box)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="n">xs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="o">*</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)])</span>
+<span class="n">ys</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+
+<span class="n">xs</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="c1"># Out: 10000</span>
+
+<span class="n">ys</span><span class="o">.</span><span class="n">prod</span><span class="p">()</span>
+<span class="c1"># Out: 720</span>
+</pre></div>
+</div>
+<p>which is better on larger input, but you’re always welcome to use functions for
+ordinary lists as you please.</p>
+</section>
+<section id="pipes">
+<h2><span class="section-number">9.7. </span>pipes<a class="headerlink" href="#pipes" title="Link to this heading">#</a></h2>
+<p>Pipe symbols, known as <em>bars</em>, can mean different things depending on the
+context. Below are three common uses: <a class="reference internal" href="#absolute-value"><span class="xref myst">absolute value</span></a>,
+<a class="reference internal" href="#euclidean-norm"><span class="xref myst">Euclidean norm</span></a>, and <a class="reference internal" href="#determinant"><span class="xref myst">determinant</span></a>.</p>
+<p>These three features all describe the <em>length</em> of an object.</p>
+<section id="absolute-value">
+<h3><span class="section-number">9.7.1. </span>absolute value<a class="headerlink" href="#absolute-value" title="Link to this heading">#</a></h3>
+<p><img alt="pipes1" src="http://latex.codecogs.com/svg.latex?%5Cleft%20%7C%20x%20%5Cright%20%7C" /></p>
+<!-- \left | x \right | -->
+<p>For a number <em>x</em>, <code class="docutils literal notranslate"><span class="pre">|x|</span></code> means the absolute value of <em>x</em>. In code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span>
+<span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="c1"># Out: 5</span>
+</pre></div>
+</div>
+</section>
+<section id="euclidean-norm">
+<h3><span class="section-number">9.7.2. </span>Euclidean norm<a class="headerlink" href="#euclidean-norm" title="Link to this heading">#</a></h3>
+<p><img alt="pipes4" src="http://latex.codecogs.com/svg.latex?%5Cleft%20%5C%7C%20%5Cmathbf%7Bv%7D%20%5Cright%20%5C%7C" /></p>
+<!-- \left \| \mathbf{v} \right \| -->
+<p>For a vector <strong>v</strong>, <code class="docutils literal notranslate"><span class="pre">‖v‖</span></code> is the <a class="reference external" href="https://en.wikipedia.org/wiki/Norm_%28mathematics%29#Euclidean_norm">Euclidean norm</a> of <strong>v</strong>. It is also referred to as the “magnitude” or “length” of a vector.</p>
+<p>Often this is represented by double-bars to avoid ambiguity with the <em>absolute value</em> notation, but sometimes you may see it with single bars:</p>
+<p><img alt="pipes2" src="http://latex.codecogs.com/svg.latex?%5Cleft%20%7C%20%5Cmathbf%7Bv%7D%20%5Cright%20%7C" /></p>
+<!-- \left | \mathbf{v} \right | -->
+<p>Here is an example using an array <code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">y,</span> <span class="pre">z]</span></code> to represent a 3D vector.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">length</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<span class="c1"># Out: 5.0</span>
+
+</pre></div>
+</div>
+<p>The `length** function:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">vec</span><span class="p">):</span>
+  <span class="n">x</span> <span class="o">=</span> <span class="n">vec</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+  <span class="n">y</span> <span class="o">=</span> <span class="n">vec</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+  <span class="n">z</span> <span class="o">=</span> <span class="n">vec</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+  <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">z</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The implementation for arbitrary length’d vectors is left as an exercise for the
+reader.</p>
+<p>In practice, you’ll probably use the following numpy call</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">])</span>
+<span class="c1"># Out: 5.0</span>
+</pre></div>
+</div>
+<p>Resources:</p>
+<ul class="simple">
+<li><p>[numpy.linalg docs](get link to numpy.linalg docs)</p></li>
+</ul>
+</section>
+<section id="determinant">
+<h3><span class="section-number">9.7.3. </span>determinant<a class="headerlink" href="#determinant" title="Link to this heading">#</a></h3>
+<p><img alt="pipes3" src="http://latex.codecogs.com/svg.latex?%5Cleft%20%7C%5Cmathbf%7BA%7D%20%5Cright%20%7C" /></p>
+<!-- \left |\mathbf{A}  \right | -->  [determinant](https://en.wikipedia.org/wiki/Determinant) of matrix **A**.
+<p>Here is an example computing the determinant of a 2x2 identity matrix</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ident_2</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> 
+           <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">ident_2</span><span class="p">)</span>
+<span class="c1"># Out: 1</span>
+</pre></div>
+</div>
+<p>You should watch <a class="reference external" href="https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab">3blue1brown</a>, but in short if a matrix (list of list of numbers)
+is interpreted as hitting a <strong>coordinate system</strong> with a
+<em>squisher-stretcher-rotater</em>, the determinant of that matrix is the <strong>measure of
+how much the unit area/volume of the coordinate system got
+squished-stretched-rotated</strong>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">identity</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span> <span class="c1"># the determinant of the 100 x 100 identity matrix is still one, because the identity matrix doesn&#39;t squish, stretch, or rotate at all. </span>
+<span class="c1"># Out: 1.0</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]))</span> <span class="c1"># 90 degree rotation. </span>
+<span class="c1"># Out: 1.0</span>
+
+</pre></div>
+</div>
+<p>The second matrix was the <a class="reference external" href="https://en.wikipedia.org/wiki/Rotation_matrix"><strong>2D rotation</strong></a> at 90 degrees.</p>
+</section>
+</section>
+<section id="hat">
+<h2><span class="section-number">9.8. </span>hat<a class="headerlink" href="#hat" title="Link to this heading">#</a></h2>
+<p>In geometry, the “hat” symbol above a character is used to represent a <a class="reference external" href="https://en.wikipedia.org/wiki/Unit_vector">unit vector</a>. For example, here is the unit vector of <strong>a</strong>:</p>
+<p><img alt="hat" src="http://latex.codecogs.com/svg.latex?%5Chat%7B%5Cmathbf%7Ba%7D%7D" /></p>
+<!-- \hat{\mathbf{a}} -->
+<p>In Cartesian space, a unit vector is typically length 1. That means each part of the vector will be in the range of -1.0 to 1.0. Here we <em>normalize</em> a 3D vector into a unit vector:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span> <span class="p">]</span>
+<span class="n">normalize</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="c1"># Out: [ 0, 0.8, -0.6 ]</span>
+</pre></div>
+</div>
+<p>If a vector is that which has magnitude and direction, normalization of a vector
+is the operation that deletes magnitude and preserves direction.</p>
+<p>Here is the <code class="docutils literal notranslate"><span class="pre">normalize</span></code> function, operating on 3D vectors:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">normalize</span><span class="p">(</span><span class="n">vec</span><span class="p">):</span>
+  <span class="n">x</span> <span class="o">=</span> <span class="n">vec</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+  <span class="n">y</span> <span class="o">=</span> <span class="n">vec</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+  <span class="n">z</span> <span class="o">=</span> <span class="n">vec</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+  <span class="n">squaredLength</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span> <span class="o">*</span> <span class="n">z</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="n">squaredLength</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
+    <span class="n">length</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">squaredLength</span><span class="p">)</span>
+    <span class="n">vec</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span> <span class="o">/</span> <span class="n">length</span>
+    <span class="n">vec</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span> <span class="o">/</span> <span class="n">length</span>
+    <span class="n">vec</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">z</span> <span class="o">/</span> <span class="n">length</span>
+  
+  <span class="k">return</span> <span class="n">vec</span>
+</pre></div>
+</div>
+<p>Which Numpy’s <strong>broadcasting</strong> syntax sugar can do in fewer lines</p>
+<p>You should try to generalize this to vectors of arbitrary length yourself,
+before reading this…</p>
+<p>Go, I mean it!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">normalize</span><span class="p">(</span><span class="n">vec</span><span class="p">):</span>
+<span class="w">  </span><span class="sd">&#39;&#39;&#39; *sigh* if you don&#39;t do it yourself you&#39;ll never learn! &#39;&#39;&#39;</span>
+  <span class="n">vec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">vec</span><span class="p">)</span> <span class="c1"># ensure that input is casted to numpy</span>
+  <span class="n">length</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">vec</span><span class="p">)</span>
+  <span class="k">if</span> <span class="n">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">vec</span> <span class="o">/</span> <span class="n">length</span>
+</pre></div>
+</div>
+<p>Notice that <strong>broadcasting</strong> here is just short for <code class="docutils literal notranslate"><span class="pre">[x</span> <span class="pre">/</span> <span class="pre">length</span> <span class="pre">for</span> <span class="pre">x</span> <span class="pre">in</span> <span class="pre">vec]</span></code>.
+But it’s actually <strong>faster</strong> on large input, because arrays.</p>
+<p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.linalg.html"><em>Read</em> the Numpy docs. <em>BE</em> the Numpy docs</a></p>
+</section>
+<section id="element">
+<h2><span class="section-number">9.9. </span>element<a class="headerlink" href="#element" title="Link to this heading">#</a></h2>
+<p>In set theory, the “element of” symbol <code class="docutils literal notranslate"><span class="pre">∈</span></code> and <code class="docutils literal notranslate"><span class="pre">∋</span></code> can be used to describe whether something is an element of a <em>set</em>. For example:</p>
+<p><img alt="element1" src="http://latex.codecogs.com/svg.latex?A%3D%5Cleft%20%5C%7B3%2C9%2C14%7D%7B%20%5Cright%20%5C%7D%2C%203%20%5Cin%20A" /></p>
+<!-- A=\left \{3,9,14}{  \right \}, 3 \in A -->
+<p>Here we have a set of numbers <em>A</em> = <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">3,</span> <span class="pre">9,</span> <span class="pre">14</span> <span class="pre">}</span></code> and we are saying <code class="docutils literal notranslate"><span class="pre">3</span></code> is an “element of” that set.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">in</span></code> keyword plays the role of the elementhood function, giving a bool.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">14</span> <span class="p">]</span>
+
+<span class="mi">3</span> <span class="ow">in</span> <span class="n">A</span>
+<span class="c1"># Out: True</span>
+</pre></div>
+</div>
+<p>Python also has <code class="docutils literal notranslate"><span class="pre">set</span></code>. You can wrap any iterable or generator with the <code class="docutils literal notranslate"><span class="pre">set</span></code> keyword to delete
+repeats.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="c1"># Out: {1, 2, 3, 4, 5}</span>
+
+<span class="mi">3</span> <span class="ow">in</span> <span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="c1"># Out: False</span>
+</pre></div>
+</div>
+<p>The backwards <code class="docutils literal notranslate"><span class="pre">∋</span></code> is the same, but the order changes:</p>
+<p><img alt="element2" src="http://latex.codecogs.com/svg.latex?A%3D%5Cleft%20%5C%7B3%2C9%2C14%7D%7B%20%5Cright%20%5C%7D%2C%20A%20%5Cni%203" /></p>
+<!-- A=\left \{3,9,14}{  \right \}, A \ni 3 -->
+<p>You can also use the “not an element of” symbols <code class="docutils literal notranslate"><span class="pre">∉</span></code> and <code class="docutils literal notranslate"><span class="pre">∌</span></code> like so:</p>
+<p><img alt="element3" src="http://latex.codecogs.com/svg.latex?A%3D%5Cleft%20%5C%7B3%2C9%2C14%7D%7B%20%5Cright%20%5C%7D%2C%206%20%5Cnotin%20A" /></p>
+<!-- A=\left \{3,9,14}{  \right \}, 6 \notin A -->
+<p>Which you know is represented by the convenient <code class="docutils literal notranslate"><span class="pre">not</span></code> keyword in python.</p>
+</section>
+<section id="common-number-sets">
+<h2><span class="section-number">9.10. </span>common number sets<a class="headerlink" href="#common-number-sets" title="Link to this heading">#</a></h2>
+<p>You may see some some large <a class="reference external" href="https://en.wikipedia.org/wiki/Blackboard_bold">Blackboard</a> letters among equations. Often, these are used to describe sets.</p>
+<p>For example, we might describe <em>k</em> to be an <a class="reference internal" href="#element"><span class="xref myst">element of</span></a> the set <code class="docutils literal notranslate"><span class="pre">ℝ</span></code>.</p>
+<p><img alt="real" src="http://latex.codecogs.com/svg.latex?k%20%5Cin%20%5Cmathbb%7BR%7D" /></p>
+<!-- k \in \mathbb{R} -->
+<p>Listed below are a few common sets and their symbols.</p>
+<section id="real-numbers">
+<h3><span class="section-number">9.10.1. </span><code class="docutils literal notranslate"><span class="pre">ℝ</span></code> real numbers<a class="headerlink" href="#real-numbers" title="Link to this heading">#</a></h3>
+<p>The large <code class="docutils literal notranslate"><span class="pre">ℝ</span></code> describes the set of <em>real numbers</em>. These include integers, as well as rational and irrational numbers.</p>
+<p>Computers approximate <code class="docutils literal notranslate"><span class="pre">ℝ</span></code> with <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p>
+<p>You can use <code class="docutils literal notranslate"><span class="pre">isinstance</span></code> to check “<em>k</em> ∈ ℝ”, where float and <code class="docutils literal notranslate"><span class="pre">ℝ</span></code> aren’t <em>really</em>
+the same thing but the intuition is close enough.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">isinstance</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
+<span class="c1"># Out: True</span>
+</pre></div>
+</div>
+<p>Again, you may elevate that bool to an <code class="docutils literal notranslate"><span class="pre">assertion</span></code> that makes-or-breaks the whole program
+with the <code class="docutils literal notranslate"><span class="pre">assert</span></code> keyword when you see fit.</p>
+<p><a class="reference external" href="https://youtu.be/zguLmgYWhM0">Excellent resource on floats in python</a></p>
+</section>
+<section id="rational-numbers">
+<h3><span class="section-number">9.10.2. </span><code class="docutils literal notranslate"><span class="pre">ℚ</span></code> rational numbers<a class="headerlink" href="#rational-numbers" title="Link to this heading">#</a></h3>
+<p>Rational numbers are real numbers that can be expressed as a fraction, or
+<em>ratio</em>. Rational numbers cannot have zero as a denominator.</p>
+<p>Imagine taking <code class="docutils literal notranslate"><span class="pre">ℝ</span></code> and removing radicals (like <code class="docutils literal notranslate"><span class="pre">np.sqrt</span></code>) and logarithms (in a
+family called
+<a class="reference external" href="https://en.wikipedia.org/wiki/Transcendental_function">transcendentals</a>),
+that’s basically what <code class="docutils literal notranslate"><span class="pre">ℚ</span></code> is, at least enough for a rough first approximation.</p>
+<p>This also means that all integers are rational numbers, since the denominator can be expressed as 1.</p>
+<p>An irrational number, on the other hand, is one that cannot be expressed as a ratio, like π (<code class="docutils literal notranslate"><span class="pre">math.pi</span></code>).</p>
+<p>A reason a programmer might care about the difference between Q and R is in the
+design of unit tests— <em>fractions are terminating decimals</em>, and sometimes when
+you’re a 100% sure that a number will be a basic rational (like counting change,
+<code class="docutils literal notranslate"><span class="pre">0.25,</span> <span class="pre">0.10,</span> <span class="pre">0.05</span></code>, etc.), you’re allowed to use <code class="docutils literal notranslate"><span class="pre">==</span></code> in unit tests rather than
+<code class="docutils literal notranslate"><span class="pre">isclose</span></code> or <code class="docutils literal notranslate"><span class="pre">assert_almost_equal</span></code>. The point is that you know not to use exact
+equality <code class="docutils literal notranslate"><span class="pre">==</span></code> when anything like <code class="docutils literal notranslate"><span class="pre">sqrt</span></code> or <code class="docutils literal notranslate"><span class="pre">log</span></code> is involved!</p>
+<p>You can work with rationals without dividing them into floatiness with the
+<a class="reference external" href="https://docs.python.org/3.7/library/fractions.html"><code class="docutils literal notranslate"><span class="pre">fractions</span></code> standard module</a></p>
+</section>
+<section id="integers">
+<h3><span class="section-number">9.10.3. </span><code class="docutils literal notranslate"><span class="pre">ℤ</span></code> integers<a class="headerlink" href="#integers" title="Link to this heading">#</a></h3>
+<p>An integer is a whole number. Just imagine starting from zero and one and
+building out an inventory with addition and subtraction.</p>
+<p>An integer has no division, no decimals.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="mi">8</span><span class="o">/</span><span class="mi">7</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="natural-numbers">
+<h3><span class="section-number">9.10.4. </span><code class="docutils literal notranslate"><span class="pre">ℕ</span></code> natural numbers<a class="headerlink" href="#natural-numbers" title="Link to this heading">#</a></h3>
+<p>A natural number, a non-negative integer. Depending on the context and field of study, the set may or may not <strong>start with zero</strong>.</p>
+<p>…ok but, between you and me, <strong>they 200% start with zero</strong>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">ℕ</span></code> also happens to be the first <strong>inductive construction</strong> in the <a class="reference external" href="https://en.wikipedia.org/wiki/Semantics_(computer_science)">study of
+datatypes</a>, consisting of a single axiom (“Zero is a <code class="docutils literal notranslate"><span class="pre">ℕ</span></code>”) and a single
+inference rule (“if <code class="docutils literal notranslate"><span class="pre">n</span></code> is a <code class="docutils literal notranslate"><span class="pre">ℕ</span></code> then <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">+</span> <span class="pre">1</span></code> is also a <code class="docutils literal notranslate"><span class="pre">ℕ</span></code>”)</p>
+<p><code class="docutils literal notranslate"><span class="pre">ℕ</span></code> is not a datatype in python, we can’t use <em>typechecking</em> to disambiguate <code class="docutils literal notranslate"><span class="pre">int</span></code>
+from <code class="docutils literal notranslate"><span class="pre">non-negative</span> <span class="pre">int</span></code>, but in a pinch you could easily write up something that
+combines <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&gt;=</span> <span class="pre">0</span></code> judgments with <code class="docutils literal notranslate"><span class="pre">isinstance(x,</span> <span class="pre">int)</span></code>.</p>
+</section>
+<section id="complex-numbers">
+<h3><span class="section-number">9.10.5. </span><code class="docutils literal notranslate"><span class="pre">ℂ</span></code> complex numbers<a class="headerlink" href="#complex-numbers" title="Link to this heading">#</a></h3>
+<p>As we saw earlier, the complex numbers are a particular wrapper around tuples of
+reals.</p>
+<p>A complex number is a combination of a real and imaginary number, viewed as a co-ordinate in the 2D plane. For more info, see <a class="reference external" href="http://betterexplained.com/articles/a-visual-intuitive-guide-to-imaginary-numbers/">A Visual, Intuitive Guide to Imaginary Numbers</a>.</p>
+<p>We can say <code class="docutils literal notranslate"><span class="pre">ℂ</span> <span class="pre">=</span> <span class="pre">{a</span> <span class="pre">+</span> <span class="pre">b*i</span> <span class="pre">|</span> <span class="pre">a,b</span> <span class="pre">∈</span> <span class="pre">ℝ}</span></code>, which is a notation called</p>
+</section>
+</section>
+<section id="set-builder-notation">
+<h2><span class="section-number">9.11. </span>Set builder notation<a class="headerlink" href="#set-builder-notation" title="Link to this heading">#</a></h2>
+<p>Pythoners have a name for <em>set builder notation</em>; and the name is comprehension</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">}</span></code>: delimiter around iterable (curlybois for <code class="docutils literal notranslate"><span class="pre">dict</span></code> or <code class="docutils literal notranslate"><span class="pre">set</span></code>, <code class="docutils literal notranslate"><span class="pre">[</span></code> for list)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span> <span class="pre">*</span> <span class="pre">i</span></code>: an expression (for instance, earlier when we made a list of odd numbers this
+expression was <code class="docutils literal notranslate"><span class="pre">2*k</span> <span class="pre">+</span> <span class="pre">1</span></code>) to be evaluated for each item in source list.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">|</span></code>: <code class="docutils literal notranslate"><span class="pre">for</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a,b</span> <span class="pre">∈</span> <span class="pre">ℝ</span></code>: this just shows that <code class="docutils literal notranslate"><span class="pre">a,b</span></code> are drawn from a particular place, in
+this case the real numbers.</p></li>
+</ul>
+<p>So if you’ve been writing Python listcomps, that definition of the complex
+numbers wasn’t so bad! Say it with me this time</p>
+<p>`ℂ = {a + b*i | a,b ∈ ℝ}``</p>
+<p><strong>inhaaaaaaless</strong> <em>unison</em> “C IS THE SET OF a + b*i FOR REAL NUMBERS a AND b”</p>
+<p>If you want, you can draw up a grainy picture of an <em>interval</em> of ℂ with <code class="docutils literal notranslate"><span class="pre">zip</span></code>
+and <code class="docutils literal notranslate"><span class="pre">np.linspace</span></code>, and of course list comprehension.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">j</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">complex</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">R</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="p">{</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">*</span> <span class="n">j</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">R</span><span class="p">,</span> <span class="n">R</span><span class="p">)}</span>
+<span class="c1"># too much to print but try it yourself. </span>
+</pre></div>
+</div>
+</section>
+<section id="functions">
+<h2><span class="section-number">9.12. </span>functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h2>
+<p>A <strong>function</strong> transforms an input into an output value. For example, the following is a function:</p>
+<p><img alt="function1" src="http://latex.codecogs.com/svg.latex?x%5E%7B2%7D" /></p>
+<!-- x^{2} -->
+<p>We can give this function a <em>name</em>. Commonly, we use <code class="docutils literal notranslate"><span class="pre">ƒ</span></code> to describe a function, but it could be named <code class="docutils literal notranslate"><span class="pre">A</span></code> or anything else.</p>
+<p><img alt="function2" src="http://latex.codecogs.com/svg.latex?f%5Cleft%20%28x%20%5Cright%20%29%20%3D%20x%5E%7B2%7D" /></p>
+<!-- f\left (x  \right ) = x^{2} -->
+<p>In code, we might name it <code class="docutils literal notranslate"><span class="pre">square</span></code> and write it like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">square</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> 
+  <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+</pre></div>
+</div>
+<p>Sometimes a function is not named, and instead the output is written.</p>
+<p><img alt="function3" src="http://latex.codecogs.com/svg.latex?y%20%3D%20x%5E%7B2%7D" /></p>
+<!-- y = x^{2} -->
+<p>In the above example, <em>x</em> is the input, the transformation is <em>squaring</em>, and <em>y</em>
+is the output. We can express this as an equation because, conventionally, we
+think of <em>x</em> as input and <em>y</em> as output.</p>
+<p>But we have a stronger idea called <strong>anonymous functions</strong> to generalize this.</p>
+<p>Just as we can name strings <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">&quot;Alonzo&quot;</span></code> then call them with their names <em>or</em>
+we can just pass string <em>literals</em>, we also have <strong>function literals</strong>.</p>
+<p>Math first, then python:</p>
+<p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">↦</span> <span class="pre">x^2</span></code> is equivalent to the equational description above.</p>
+<p>Nearly identical, but very different to the untrained eye, is <code class="docutils literal notranslate"><span class="pre">λx.x^2</span></code>, hence
+the python keyword</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+</div>
+<p>Functions can also have multiple parameters, like in a programming language. These are known as <em>arguments</em> in mathematics, and the number of arguments a function takes is known as the <em>arity</em> of the function.</p>
+<p><img alt="function4" src="http://latex.codecogs.com/svg.latex?f%28x%2Cy%29%20%3D%20%5Csqrt%7Bx%5E2%20+%20y%5E2%7D" /></p>
+<!-- f(x,y) = \sqrt{x^2 + y^2} -->
+<section id="dictionaries-are-functions">
+<h3><span class="section-number">9.12.1. </span>dictionaries are functions<a class="headerlink" href="#dictionaries-are-functions" title="Link to this heading">#</a></h3>
+<p>Sometimes mathematicians, like software developers, need to specify <em>maps</em> by
+<em>enumerating each input-output pair</em>* when there is no expression that computes
+output from input.</p>
+<p><strong>Note</strong>: formally, mathematicians require that <strong>functions not be ambiguous</strong>*,
+so when you have a function and you have an input, there can be no uncertainty
+as to what the output should be; you mustn’t be confused about whether an apple
+is red or purple (in introductory algebra courses this is called
+the “vertical line test”, but it applies to all maps). Notice that the
+implementation of hash maps already guarantees this in the case of dictionaries!
+Notice also that we make no such requirement on
+<em>outputs</em>, both an apple <em>and</em> a banana can land on purple! With caveats like
+these, we can <a class="reference external" href="https://en.wikipedia.org/wiki/Bijection,_injection_and_surjection">study the properties of different kinds of functions</a>
+into different kinds, important in compression and security engineering.</p>
+</section>
+<section id="piecewise-function">
+<h3><span class="section-number">9.12.2. </span>piecewise function<a class="headerlink" href="#piecewise-function" title="Link to this heading">#</a></h3>
+<p>Some functions will use different relationships depending on the input value, <em>x</em>.</p>
+<p>The following function <em>ƒ</em> chooses between two “sub functions” depending on the input value.</p>
+<p><img alt="piecewise1" src="http://latex.codecogs.com/svg.latex?f%28x%29%3D%20%5Cbegin%7Bcases%7D%20%5Cfrac%7Bx%5E2-x%7D%7Bx%7D%2C%26%20%5Ctext%7Bif%20%7D%20x%5Cgeq%201%5C%5C%200%2C%20%26%20%5Ctext%7Botherwise%7D%20%5Cend%7Bcases%7D" /></p>
+<!--    f(x)= 
+\begin{cases}
+    \frac{x^2-x}{x},& \text{if } x\geq 1\\
+    0, & \text{otherwise}
+\end{cases} -->
+<p>This is very similar to <code class="docutils literal notranslate"><span class="pre">if</span></code> / <code class="docutils literal notranslate"><span class="pre">else</span></code> in code. The right-side conditions are often written as <strong>“for x &lt; 0”</strong> or <strong>“if x = 0”</strong>. If the condition is true, the function to the left is used.</p>
+<p>In piecewise functions, <strong>“otherwise”</strong> and <strong>“elsewhere”</strong> are analogous to the <code class="docutils literal notranslate"><span class="pre">else</span></code> statement in code.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="n">x</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="k">return</span> <span class="mi">0</span>
+
+</pre></div>
+</div>
+</section>
+<section id="common-functions">
+<h3><span class="section-number">9.12.3. </span>common functions<a class="headerlink" href="#common-functions" title="Link to this heading">#</a></h3>
+<p>There are some function names that are ubiquitous in mathematics. For a programmer, these might be analogous to functions “built-in” to the language (like <code class="docutils literal notranslate"><span class="pre">parseInt</span></code> in JavaScript).</p>
+<p>One such example is the <em>sgn</em> function. This is the <em>signum</em> or <em>sign</em> function. Let’s use <a class="reference internal" href="#piecewise-function"><span class="xref myst">piecewise function</span></a> notation to describe it:</p>
+<p><img alt="sgn" src="http://latex.codecogs.com/svg.latex?sgn%28x%29%20%3A%3D%20%5Cbegin%7Bcases%7D%20-1%26%20%5Ctext%7Bif%20%7D%20x%20%3C%200%5C%5C%200%2C%20%26%20%5Ctext%7Bif%20%7D%20%7Bx%20%3D%200%7D%5C%5C%201%2C%20%26%20%5Ctext%7Bif%20%7D%20x%20%3E%200%5C%5C%20%5Cend%7Bcases%7D" /></p>
+<!-- sgn(x) := 
+\begin{cases}
+    -1& \text{if } x < 0\\
+    0, & \text{if } {x = 0}\\
+    1, & \text{if } x > 0\\
+\end{cases} -->
+<p>In code, it might look like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">signum</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+  <span class="k">elif</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">1</span>
+  <span class="k">else</span><span class="p">:</span> 
+    <span class="k">return</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>See <a class="reference external" href="https://github.com/scijs/signum">signum</a> for this function as a module.</p>
+<p>Other examples of such functions: <em>sin</em>, <em>cos</em>, <em>tan</em>.</p>
+</section>
+<section id="function-notation">
+<h3><span class="section-number">9.12.4. </span>function notation<a class="headerlink" href="#function-notation" title="Link to this heading">#</a></h3>
+<p>In some literature, functions may be defined with more explicit notation. For example, let’s go back to the <code class="docutils literal notranslate"><span class="pre">square</span></code> function we mentioned earlier:</p>
+<p><img alt="function2" src="http://latex.codecogs.com/svg.latex?f%5Cleft%20%28x%20%5Cright%20%29%20%3D%20x%5E%7B2%7D" /></p>
+<!-- f\left (x  \right ) = x^{2} -->
+<p>It might also be written in the following form:</p>
+<p><img alt="mapsto" src="http://latex.codecogs.com/svg.latex?f%20%3A%20x%20%5Cmapsto%20x%5E2" /></p>
+<!-- f : x \mapsto x^2 -->
+<p>The arrow here with a tail typically means “maps to,” as in <em>x maps to x<sup>2</sup></em>.</p>
+<p>Sometimes, when it isn’t obvious, the notation will also describe the <em>domain</em> and <em>codomain</em> of the function. A more formal definition of <em>ƒ</em> might be written as:</p>
+<p><img alt="funcnot" src="http://latex.codecogs.com/svg.latex?%5Cbegin%7Balign*%7D%20f%20%3A%26%5Cmathbb%7BR%7D%20%5Crightarrow%20%5Cmathbb%7BR%7D%5C%5C%20%26x%20%5Cmapsto%20x%5E2%20%5Cend%7Balign*%7D" /></p>
+<!-- \begin{align*}
+f :&\mathbb{R} \rightarrow \mathbb{R}\\
+&x \mapsto x^2 
+\end{align*}
+ -->
+<p>A function’s <em>domain</em> and <em>codomain</em> is a bit like its <em>input</em> and <em>output</em> types, respectively. Here’s another example, using our earlier <em>sgn</em> function, which outputs an integer:</p>
+<p><img alt="domain2" src="http://latex.codecogs.com/svg.latex?sgn%20%3A%20%5Cmathbb%7BR%7D%20%5Crightarrow%20%5Cmathbb%7BZ%7D" /></p>
+<!-- sgn : \mathbb{R} \rightarrow \mathbb{Z} -->
+<p>The arrow here (without a tail) is used to map one <em>set</em> to another.</p>
+<p>In Python and other dynamically typed languages, you might use documentation and/or runtime checks to explain and validate a function’s input/output. Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">square_ints</span><span class="p">(</span><span class="n">k</span><span class="p">):</span> 
+<span class="w">  </span><span class="sd">&#39;&#39;&#39; FEED ME INTEGER &#39;&#39;&#39;</span>
+  <span class="k">try</span><span class="p">:</span> 
+    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="nb">int</span><span class="p">),</span> <span class="s2">&quot;I HUNGER FOR AN INTEGER! &quot;</span>
+    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+  <span class="k">except</span> <span class="ne">AssertionError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="n">e</span>
+</pre></div>
+</div>
+<p>The python of a more glorious future as described in
+<a class="reference external" href="https://www.python.org/dev/peps/pep-0484/">pep484</a> proposes a static type
+checker for Python, but no one’s proposed anything shrewd enough to <em>prevent
+code with type errors from compiling</em> for Python yet.</p>
+<p>As we will see in the following sample of <code class="docutils literal notranslate"><span class="pre">pep484</span></code> Python, the set
+interpretation of domain and codomain makes way for a <em>types</em> interpretation of
+domain and codomain</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">square</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span> 
+<span class="w">  </span><span class="sd">&#39;&#39;&#39; a pep484 annotation isn&#39;t that different from if i declared in the docstring; </span>
+<span class="sd">  </span>
+<span class="sd">  input/domain: a float</span>
+<span class="sd">  output/codomain: another float </span>
+<span class="sd">  &#39;&#39;&#39;</span>
+  <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+</div>
+<p>Other languages, like Java, allow for true method overloading based on the
+static types of a function’s input/output. This is closer to mathematics: two
+functions are not the same if they use a different <em>domain</em>. This is also called
+<em>polymorphism</em> and it explains why <code class="docutils literal notranslate"><span class="pre">'literally'</span> <span class="pre">+</span> <span class="pre">'alonzo'</span></code> concats two strings
+together but <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">+</span> <span class="pre">1</span></code> is addition on numbers.</p>
+</section>
+</section>
+<section id="prime">
+<h2><span class="section-number">9.13. </span>prime<a class="headerlink" href="#prime" title="Link to this heading">#</a></h2>
+<p>The prime symbol (<code class="docutils literal notranslate"><span class="pre">′</span></code>) is often used in variable names to describe things which are similar, without giving it a different name altogether. It can describe the “next value” after some transformation.</p>
+<p>For example, if we take a 2D point <em>(x, y)</em> and rotate it, you might name the result <em>(x′, y′)</em>. Or, the <em>transpose</em> of matrix <strong>M</strong> might be named <strong>M′</strong>.</p>
+<p>In code, we typically just assign the variable a more descriptive name, like <code class="docutils literal notranslate"><span class="pre">transformedPosition</span></code>.</p>
+<p>For a mathematical <a class="reference internal" href="#function"><span class="xref myst">function</span></a>, the prime symbol often describes the <em>derivative</em> of that function. Derivatives will be explained in a future section. Let’s take our earlier function:</p>
+<p><img alt="function2" src="http://latex.codecogs.com/svg.latex?f%5Cleft%20%28x%20%5Cright%20%29%20%3D%20x%5E%7B2%7D" /></p>
+<!-- f\left (x  \right ) = x^{2} -->
+<p>Its derivative could be written with a prime <code class="docutils literal notranslate"><span class="pre">′</span></code> symbol:</p>
+<p><img alt="prime1" src="http://latex.codecogs.com/svg.latex?f%27%28x%29%20%3D%202x" /></p>
+<!-- f'(x) = 2x -->
+<p>In code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> 
+  <span class="k">return</span> <span class="n">Math</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">f_prime</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+  <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span>
+</pre></div>
+</div>
+<p>Multiple prime symbols can be used to describe the second derivative <em>ƒ′′</em> and third derivative <em>ƒ′′′</em>. After this, authors typically express higher orders with roman numerals <em>ƒ</em><sup>IV</sup> or superscript numbers <em>ƒ</em><sup>(n)</sup>.</p>
+</section>
+<section id="floor-ceiling">
+<h2><span class="section-number">9.14. </span>floor &amp; ceiling<a class="headerlink" href="#floor-ceiling" title="Link to this heading">#</a></h2>
+<p>The special brackets <code class="docutils literal notranslate"><span class="pre">⌊x⌋</span></code> and <code class="docutils literal notranslate"><span class="pre">⌈x⌉</span></code> represent the <em>floor</em> and <em>ceil</em> functions, respectively.</p>
+<p><img alt="floor" src="http://latex.codecogs.com/svg.latex?floor%28x%29%20%3D%20%5Clfloor%20x%20%5Crfloor" /></p>
+<!-- floor(x) =  \lfloor x \rfloor -->
+<p><img alt="ceil" src="http://latex.codecogs.com/svg.latex?ceil%28x%29%20%3D%20%5Clceil%20x%20%5Crceil" /></p>
+<!-- ceil(x) =  \lceil x \rceil -->
+<p>In code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="mf">4.8</span><span class="p">)</span>
+<span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="mf">3.1</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="mf">4.9</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="mf">3.001</span><span class="p">)</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>Note</strong>: the Numpy version returns a float, in the above example <code class="docutils literal notranslate"><span class="pre">4.0</span></code>,
+rather than the int <code class="docutils literal notranslate"><span class="pre">4</span></code></p>
+</div></blockquote>
+<p>When the two symbols are mixed <code class="docutils literal notranslate"><span class="pre">⌊x⌉</span></code>, it typically represents a function that rounds to the nearest integer:</p>
+<p><img alt="round" src="http://latex.codecogs.com/svg.latex?round%28x%29%20%3D%20%5Clfloor%20x%20%5Crceil" /></p>
+<!-- round(x) =  \lfloor x \rceil -->
+<p>Python automatically gives you a keyword <code class="docutils literal notranslate"><span class="pre">round</span></code> to call on a number.</p>
+</section>
+<section id="arrows">
+<h2><span class="section-number">9.15. </span>arrows<a class="headerlink" href="#arrows" title="Link to this heading">#</a></h2>
+<p>Arrows are often used in <a class="reference internal" href="#function-notation"><span class="xref myst">function notation</span></a>. Here are a few other areas you might see them.</p>
+<section id="material-implication">
+<h3><span class="section-number">9.15.1. </span>material implication<a class="headerlink" href="#material-implication" title="Link to this heading">#</a></h3>
+<p>Arrows like <code class="docutils literal notranslate"><span class="pre">⇒</span></code> and <code class="docutils literal notranslate"><span class="pre">→</span></code> are sometimes used in logic for <em>material implication.</em> That is, if A is true, then B is also true.</p>
+<p><img alt="material1" src="http://latex.codecogs.com/svg.latex?A%20%5CRightarrow%20B" /></p>
+<!-- A \Rightarrow B -->
+<p>Interpreting this as code might look like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">if_A_then_B</span><span class="p">:</span>
+  <span class="k">if</span> <span class="n">A</span><span class="p">:</span>
+    <span class="k">assert</span> <span class="n">B</span><span class="p">,</span> <span class="s2">&quot;alas, not A!&quot;</span>
+    <span class="k">return</span> <span class="n">B</span>
+</pre></div>
+</div>
+<p>The arrows can go in either direction <code class="docutils literal notranslate"><span class="pre">⇐</span></code> <code class="docutils literal notranslate"><span class="pre">⇒</span></code>, or both <code class="docutils literal notranslate"><span class="pre">⇔</span></code>. When <em>A ⇒ B</em> and <em>B ⇒ A</em>, they are said to be equivalent:</p>
+<p><img alt="material-equiv" src="http://latex.codecogs.com/svg.latex?A%20%5CLeftrightarrow%20B" /></p>
+<!-- A \Leftrightarrow B -->
+</section>
+<section id="inequality">
+<h3><span class="section-number">9.15.2. </span>inequality<a class="headerlink" href="#inequality" title="Link to this heading">#</a></h3>
+<p>In math, the <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> <code class="docutils literal notranslate"><span class="pre">≤</span></code> and <code class="docutils literal notranslate"><span class="pre">≥</span></code> are typically used in the same way we use them in code: <em>less than</em>, <em>greater than</em>, <em>less than or equal to</em> and <em>greater than or equal to</em>, respectively.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="mi">50</span> <span class="o">&gt;</span> <span class="mi">2</span>
+<span class="k">assert</span> <span class="mi">2</span> <span class="o">&lt;</span> <span class="mi">10</span>
+<span class="k">assert</span> <span class="mi">3</span> <span class="o">&lt;=</span> <span class="mi">4</span>
+<span class="k">assert</span> <span class="mi">4</span> <span class="o">&gt;=</span> <span class="mi">4</span>
+</pre></div>
+</div>
+<p>On rare occasions you might see a slash through these symbols, to describe <em>not</em>. As in, <em>k</em> is “not greater than” <em>j</em>.</p>
+<p><img alt="ngt" src="http://latex.codecogs.com/svg.latex?k%20%5Cngtr%20j" /></p>
+<!-- k \ngtr j -->
+<p>The <code class="docutils literal notranslate"><span class="pre">≪</span></code> and <code class="docutils literal notranslate"><span class="pre">≫</span></code> are sometimes used to represent <em>significant</em> inequality. That
+is, <em>k</em> is an <a class="reference external" href="https://en.wikipedia.org/wiki/Order_of_magnitude">order of
+magnitude</a> larger than <em>j</em>.
+Sometimes read “beats”, when I say <code class="docutils literal notranslate"><span class="pre">x^k</span> <span class="pre">≫</span> <span class="pre">log(x)</span></code> what I’m really saying is that
+“polynomial functions grow an order of magnitude faster than logarithms; in a
+word, the polynomial <em>beats</em> the logarithm.”</p>
+<p><img alt="orderofmag" src="http://latex.codecogs.com/svg.latex?k%20%5Cgg%20j" /></p>
+<!-- k \gg j -->
+</section>
+<section id="conjunction-disjunction">
+<h3><span class="section-number">9.15.3. </span>conjunction &amp; disjunction<a class="headerlink" href="#conjunction-disjunction" title="Link to this heading">#</a></h3>
+<p>Another use of arrows in logic is conjunction <code class="docutils literal notranslate"><span class="pre">∧</span></code> and disjunction <code class="docutils literal notranslate"><span class="pre">∨</span></code>. They are analogous to a programmer’s <code class="docutils literal notranslate"><span class="pre">AND</span></code> and <code class="docutils literal notranslate"><span class="pre">OR</span></code> operators, respectively.</p>
+<p>The following shows conjunction <code class="docutils literal notranslate"><span class="pre">∧</span></code>, the logical <code class="docutils literal notranslate"><span class="pre">AND</span></code>.</p>
+<p><img alt="and" src="http://latex.codecogs.com/svg.latex?k%20%3E%202%20%5Cland%20k%20%3C%204%20%5CLeftrightarrow%20k%20%3D%203" /></p>
+<!-- k > 2 \land k <  4 \Leftrightarrow k = 3   -->
+<p>In Python, we just say <code class="docutils literal notranslate"><span class="pre">and</span></code>. Assuming <em>k</em> is a natural number, the logic implies that <em>k</em> is 3:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">lambda</span> <span class="n">k</span><span class="p">:</span> <span class="k">if</span> <span class="p">(</span><span class="n">k</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">):</span> <span class="k">assert</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;Exercise: can this error ever be raised?&quot;</span>
+</pre></div>
+</div>
+<p>Since both sides are equivalent <code class="docutils literal notranslate"><span class="pre">⇔</span></code>, it also implies the following:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">lambda</span> <span class="n">k</span><span class="p">:</span> <span class="k">if</span> <span class="p">(</span><span class="n">k</span> <span class="o">==</span> <span class="mi">3</span><span class="p">):</span> <span class="k">assert</span> <span class="p">(</span><span class="n">k</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">),</span> <span class="s2">&quot;I mean it, think through this exercise.&quot;</span>
+</pre></div>
+</div>
+<p>The down arrow <code class="docutils literal notranslate"><span class="pre">∨</span></code> is logical disjunction, like the OR operator.</p>
+<p><img alt="logic-or" src="http://latex.codecogs.com/svg.latex?A%20%5Clor%20B" /></p>
+<!-- A \lor B -->
+<p>In Python, we have the <code class="docutils literal notranslate"><span class="pre">or</span></code> keyword. Like and, it is a function that will trade
+you one bool for two bools.</p>
+</section>
+</section>
+<section id="logical-negation">
+<h2><span class="section-number">9.16. </span>logical negation<a class="headerlink" href="#logical-negation" title="Link to this heading">#</a></h2>
+<p>Occasionally, the <code class="docutils literal notranslate"><span class="pre">¬</span></code>, <code class="docutils literal notranslate"><span class="pre">~</span></code> and <code class="docutils literal notranslate"><span class="pre">!</span></code> symbols are used to represent logical <code class="docutils literal notranslate"><span class="pre">NOT</span></code>. For example, <em>¬A</em> is only true if A is false.</p>
+<p>Here is a simple example using the <em>not</em> symbol:</p>
+<p><img alt="negation" src="http://latex.codecogs.com/svg.latex?x%20%5Cneq%20y%20%5CLeftrightarrow%20%5Clnot%28x%20%3D%20y%29" /></p>
+<!-- x \neq y \Leftrightarrow \lnot(x = y) -->
+<p>An example of how we might interpret this in code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">!=</span> <span class="n">y</span><span class="p">):</span> <span class="k">assert</span> <span class="ow">not</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">,</span> <span class="s2">&quot;arrr, buried treasure lost forever. &quot;</span>
+</pre></div>
+</div>
+<p><em>Note:</em> The tilde <code class="docutils literal notranslate"><span class="pre">~</span></code> has many different meanings depending on context. For example, <em>row equivalence</em> (matrix theory) or <em>same order of magnitude</em> (discussed in <a class="reference internal" href="#equality"><span class="xref myst">equality</span></a>).</p>
+</section>
+<section id="intervals">
+<h2><span class="section-number">9.17. </span>intervals<a class="headerlink" href="#intervals" title="Link to this heading">#</a></h2>
+<p>Sometimes a function deals with real numbers restricted to some range of values, such a constraint can be represented using an <em>interval</em></p>
+<p>For example we can represent the numbers between zero and one including/not including zero and/or one as:</p>
+<ul class="simple">
+<li><p>Not including zero or one: <img alt="interval-opened-left-opened-right" src="http://latex.codecogs.com/svg.latex?%280%2C%201%29" /></p></li>
+</ul>
+<!-- (0, 1) -->
+<ul class="simple">
+<li><p>Including zero or but not one: <img alt="interval-closed-left-opened-right" src="http://latex.codecogs.com/svg.latex?%5B0%2C%201%29" /></p></li>
+</ul>
+<!-- [0, 1) -->
+<ul class="simple">
+<li><p>Not including zero but including one: <img alt="interval-opened-left-closed-right" src="http://latex.codecogs.com/svg.latex?%280%2C%201%5D" /></p></li>
+</ul>
+<!-- (0, 1] -->
+<ul class="simple">
+<li><p>Including zero and one: <img alt="interval-closed-left-closed-right" src="http://latex.codecogs.com/svg.latex?%5B0%2C%201%5D" /></p></li>
+</ul>
+<!-- [0, 1] -->
+<p>For example we to indicate that a point <code class="docutils literal notranslate"><span class="pre">x</span></code> is in the unit cube in 3D we say:</p>
+<p><img alt="interval-unit-cube" src="http://latex.codecogs.com/svg.latex?x%20%5Cin%20%5B0%2C%201%5D%5E3" /></p>
+<!-- x \in [0, 1]^3 -->
+<p>In Python, we have to be sensitive about <strong>inclusive vs. exclusive boundaries</strong>
+in generators like <code class="docutils literal notranslate"><span class="pre">range</span></code>, but you already know that.</p>
+<p>if you want to play with <em>infinite lists</em> in Python, learn more about <a class="reference external" href="https://jeffknupp.com/blog/2013/04/07/improve-your-python-yield-and-generators-explained/">generators</a></p>
+<p>Intervals are used in conjunction with set operations:</p>
+<ul class="simple">
+<li><p><em>intersection</em> e.g. <img alt="interval-intersection" src="http://latex.codecogs.com/svg.latex?%5B3%2C%205%29%20%5Ccap%20%5B4%2C%206%5D%20%3D%20%5B4%2C%205%29" /></p></li>
+</ul>
+<!-- [3, 5) \cap [4, 6] = [4, 5) -->
+<ul class="simple">
+<li><p><em>union</em> e.g. <img alt="interval-union" src="http://latex.codecogs.com/svg.latex?%5B3%2C%205%29%20%5Ccup%20%5B4%2C%206%5D%20%3D%20%5B3%2C%206%5D" /></p></li>
+</ul>
+<!-- [3, 5) \cup [4, 6] = [3, 6] -->
+<ul class="simple">
+<li><p><em>difference</em> e.g. <img alt="interval-difference-1" src="http://latex.codecogs.com/svg.latex?%5B3%2C%205%29%20-%20%5B4%2C%206%5D%20%3D%20%5B3%2C%204%29" /> and <img alt="interval-difference-2" src="http://latex.codecogs.com/svg.latex?%5B4%2C%206%5D%20-%20%5B3%2C%205%29%20%3D%20%5B5%2C%206%5D" /></p></li>
+</ul>
+<!-- [3, 5) - [4, 6] = [3, 4) -->
+<!-- [4, 6] - [3, 5)  = [5, 6] -->
+<p>Integer versions in basic python look like this</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># intersection of two int intervals</span>
+<span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+<span class="c1"># Out: [4]</span>
+
+<span class="c1"># Union of two int intervals</span>
+<span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="ow">or</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+<span class="c1"># Out: [3, 4, 5, 6]</span>
+
+<span class="c1"># Set difference</span>
+<span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+<span class="c1"># Out: [3]</span>
+
+<span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)]</span>
+<span class="c1"># Out: [5, 6]</span>
+</pre></div>
+</div>
+<p>Using <code class="docutils literal notranslate"><span class="pre">np.linspace</span></code>, we can approximate what the real versions would look like.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">R</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="c1"># intersection of two float intervals</span>
+<span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">R</span> <span class="k">if</span> <span class="mi">3</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">5</span> <span class="ow">and</span> <span class="mi">4</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">6</span><span class="p">]</span>
+
+<span class="c1"># Union of two float intervals</span>
+<span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">R</span> <span class="k">if</span> <span class="mi">3</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">5</span> <span class="ow">or</span> <span class="mi">4</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">6</span><span class="p">]</span>
+
+<span class="c1"># set differences of two float intervals. </span>
+<span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">R</span> <span class="k">if</span> <span class="mi">3</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">5</span> <span class="ow">and</span> <span class="ow">not</span> <span class="p">(</span><span class="mi">4</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">6</span><span class="p">)]</span>
+
+<span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">R</span> <span class="k">if</span> <span class="mi">4</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">6</span> <span class="ow">and</span> <span class="ow">not</span> <span class="p">(</span><span class="mi">3</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">)]</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./math"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="03real_world.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">8. </span>Real World Math</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../Course_MIT6001Python.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">10. </span>MIT_CS6001-Python</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-name-conventions">9.1. variable name conventions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equals-symbols">9.2. equals symbols</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#square-root-and-complex-numbers">9.3. square root and complex numbers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dot-cross">9.4. dot &amp; cross</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scalar-multiplication">9.4.1. scalar multiplication</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-multiplication">9.4.2. vector multiplication</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dot-product">9.4.3. dot product</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-product">9.4.4. cross product</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sigma">9.5. sigma</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#capital-pi">9.6. capital Pi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pipes">9.7. pipes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-value">9.7.1. absolute value</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#euclidean-norm">9.7.2. Euclidean norm</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#determinant">9.7.3. determinant</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hat">9.8. hat</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#element">9.9. element</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-number-sets">9.10. common number sets</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#real-numbers">9.10.1. <code class="docutils literal notranslate"><span class="pre">ℝ</span></code> real numbers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rational-numbers">9.10.2. <code class="docutils literal notranslate"><span class="pre">ℚ</span></code> rational numbers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integers">9.10.3. <code class="docutils literal notranslate"><span class="pre">ℤ</span></code> integers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#natural-numbers">9.10.4. <code class="docutils literal notranslate"><span class="pre">ℕ</span></code> natural numbers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-numbers">9.10.5. <code class="docutils literal notranslate"><span class="pre">ℂ</span></code> complex numbers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-builder-notation">9.11. Set builder notation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">9.12. functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionaries-are-functions">9.12.1. dictionaries are functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#piecewise-function">9.12.2. piecewise function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-functions">9.12.3. common functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#function-notation">9.12.4. function notation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prime">9.13. prime</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#floor-ceiling">9.14. floor &amp; ceiling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arrows">9.15. arrows</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#material-implication">9.15.1. material implication</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inequality">9.15.2. inequality</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conjunction-disjunction">9.15.3. conjunction &amp; disjunction</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logical-negation">9.16. logical negation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intervals">9.17. intervals</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jonny, assisted by Tom
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

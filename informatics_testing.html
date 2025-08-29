@@ -180,11 +180,11 @@
 <li class="toctree-l1"><a class="reference internal" href="Alevel_math_further.html">2. A-level-further</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Course_MCM.html">3. Math Computational Methods</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Course_Lean.html">4. Lean</a></li>
-<li class="toctree-l1"><a class="reference internal" href="00intro_math.html">5. Math-FP-Lang Combo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="01number_algebra.html">6. Number &amp; Algebra</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02discrete_continuous.html">7. Discrete &amp; Continuous</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03real_world.html">8. Real World Math</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05math_as_code.html">9. Math as code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="math/00intro_math.html">5. Math-FP-Lang Combo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="math/01number_algebra.html">6. Number &amp; Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="math/02discrete_continuous.html">7. Discrete &amp; Continuous</a></li>
+<li class="toctree-l1"><a class="reference internal" href="math/03real_world.html">8. Real World Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="math/05math_as_code.html">9. Math as code</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">CS &amp; Physics</span></p>
 <ul class="nav bd-sidenav">
@@ -369,7 +369,8 @@ document.write(`
 <h1>Informatics Testing<a class="headerlink" href="#informatics-testing" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sitting and Standing</span>
+<span class="n">r</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
 <span class="n">seats</span><span class="o">=</span><span class="n">r</span><span class="o">*</span><span class="n">s</span>
 <span class="n">people</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">seats</span><span class="p">,</span><span class="n">people</span><span class="p">),</span><span class="n">people</span><span class="o">-</span><span class="nb">min</span><span class="p">(</span><span class="n">seats</span><span class="p">,</span><span class="n">people</span><span class="p">))</span>
@@ -379,7 +380,8 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mixed Fraction</span>
+<span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
 <span class="k">if</span> <span class="n">a</span><span class="o">%</span><span class="k">b</span>==0:
     <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">//</span><span class="n">b</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
@@ -390,7 +392,8 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ninjas</span>
+<span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
 <span class="n">sneaked</span><span class="o">=</span><span class="mi">0</span>
 <span class="n">time</span><span class="o">=</span><span class="n">b</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
@@ -710,7 +713,8 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ro</span><span class="p">,</span><span class="n">bo</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">rp</span><span class="p">,</span><span class="n">bp</span><span class="o">=</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Baubles</span>
+<span class="n">ro</span><span class="p">,</span><span class="n">bo</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">rp</span><span class="p">,</span><span class="n">bp</span><span class="o">=</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
 <span class="k">if</span> <span class="n">ro</span><span class="o">&gt;=</span><span class="n">rp</span> <span class="ow">and</span> <span class="n">bo</span><span class="o">&gt;=</span><span class="n">bp</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">rp</span><span class="o">!=</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">bp</span><span class="o">!=</span><span class="mi">0</span><span class="p">:</span>
         <span class="n">r</span><span class="o">=</span><span class="n">ro</span><span class="o">-</span><span class="n">rp</span>
@@ -1116,79 +1120,426 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>These people can enter: , Me
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Magic Squares</span>
+<span class="n">n11</span><span class="p">,</span><span class="n">n12</span><span class="p">,</span><span class="n">n21</span><span class="o">=</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<span class="n">n</span><span class="o">=</span><span class="mi">20</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">n13</span><span class="o">=-</span><span class="n">n11</span><span class="o">-</span><span class="n">n12</span><span class="o">+</span><span class="n">n</span>
+    <span class="n">n31</span><span class="o">=-</span><span class="n">n11</span><span class="o">-</span><span class="n">n21</span><span class="o">+</span><span class="n">n</span>
+    <span class="n">n22</span><span class="o">=</span><span class="n">i</span>
+    <span class="n">n23</span><span class="o">=-</span><span class="n">n21</span><span class="o">+</span><span class="n">n</span><span class="o">-</span><span class="n">i</span>
+    <span class="n">n32</span><span class="o">=-</span><span class="n">n12</span><span class="o">+</span><span class="n">n</span><span class="o">-</span><span class="n">i</span>
+    <span class="n">n33</span><span class="o">=-</span><span class="n">n13</span><span class="o">-</span><span class="n">n23</span><span class="o">+</span><span class="n">n</span>
+    <span class="k">if</span> <span class="mi">0</span><span class="o">&lt;</span><span class="n">n11</span><span class="o">&lt;</span><span class="mi">20</span> <span class="ow">and</span> <span class="mi">0</span><span class="o">&lt;</span><span class="n">n12</span><span class="o">&lt;</span><span class="mi">20</span> <span class="ow">and</span> <span class="mi">0</span><span class="o">&lt;</span><span class="n">n13</span><span class="o">&lt;</span><span class="mi">20</span> <span class="ow">and</span> <span class="mi">0</span><span class="o">&lt;</span><span class="n">n21</span><span class="o">&lt;</span><span class="mi">20</span> <span class="ow">and</span> <span class="mi">0</span><span class="o">&lt;</span><span class="n">n22</span><span class="o">&lt;</span><span class="mi">20</span> <span class="ow">and</span> <span class="mi">0</span><span class="o">&lt;</span><span class="n">n23</span><span class="o">&lt;</span><span class="mi">20</span> <span class="ow">and</span> <span class="mi">0</span><span class="o">&lt;</span><span class="n">n31</span><span class="o">&lt;</span><span class="mi">20</span> <span class="ow">and</span> <span class="mi">0</span><span class="o">&lt;</span><span class="n">n32</span><span class="o">&lt;</span><span class="mi">20</span> <span class="ow">and</span> <span class="mi">0</span><span class="o">&lt;</span><span class="n">n33</span><span class="o">&lt;</span><span class="mi">20</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">n11</span><span class="p">,</span><span class="n">n12</span><span class="p">,</span><span class="n">n13</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">n21</span><span class="p">,</span><span class="n">n22</span><span class="p">,</span><span class="n">n23</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">n31</span><span class="p">,</span><span class="n">n32</span><span class="p">,</span><span class="n">n33</span><span class="p">)</span>
+        <span class="k">break</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CODES</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="s1">&#39;Y&#39;</span><span class="p">,</span>
-  <span class="s1">&#39;B&#39;</span><span class="p">:</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span>
-  <span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="s1">&#39;W&#39;</span><span class="p">,</span>
-  <span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="s1">&#39;X&#39;</span><span class="p">,</span>
-  <span class="s1">&#39;E&#39;</span><span class="p">:</span> <span class="s1">&#39;U&#39;</span><span class="p">,</span>
-  <span class="s1">&#39;F&#39;</span><span class="p">:</span> <span class="s1">&#39;S&#39;</span><span class="p">,</span>
-  <span class="s1">&#39;G&#39;</span><span class="p">:</span> <span class="s1">&#39;T&#39;</span><span class="p">,</span>
-  <span class="s1">&#39;H&#39;</span><span class="p">:</span> <span class="s1">&#39;Z&#39;</span><span class="p">,</span>
-  <span class="s1">&#39;I&#39;</span><span class="p">:</span> <span class="s1">&#39;O&#39;</span><span class="p">,</span>
-  <span class="s1">&#39;J&#39;</span><span class="p">:</span> <span class="s1">&#39;R&#39;</span><span class="p">,</span>
-  <span class="s1">&#39;K&#39;</span><span class="p">:</span> <span class="s1">&#39;Q&#39;</span><span class="p">,</span>
-  <span class="s1">&#39;L&#39;</span><span class="p">:</span> <span class="s1">&#39;V&#39;</span><span class="p">,</span>
-  <span class="s1">&#39;M&#39;</span><span class="p">:</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span>
-  <span class="s1">&#39;N&#39;</span><span class="p">:</span> <span class="s1">&#39;M&#39;</span><span class="p">,</span>
-  <span class="s1">&#39;O&#39;</span><span class="p">:</span> <span class="s1">&#39;I&#39;</span><span class="p">,</span>
-  <span class="s1">&#39;P&#39;</span><span class="p">:</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span>
-  <span class="s1">&#39;Q&#39;</span><span class="p">:</span> <span class="s1">&#39;K&#39;</span><span class="p">,</span>
-  <span class="s1">&#39;R&#39;</span><span class="p">:</span> <span class="s1">&#39;J&#39;</span><span class="p">,</span>
-  <span class="s1">&#39;S&#39;</span><span class="p">:</span> <span class="s1">&#39;F&#39;</span><span class="p">,</span>
-  <span class="s1">&#39;T&#39;</span><span class="p">:</span> <span class="s1">&#39;G&#39;</span><span class="p">,</span>
-  <span class="s1">&#39;U&#39;</span><span class="p">:</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span>
-  <span class="s1">&#39;V&#39;</span><span class="p">:</span> <span class="s1">&#39;L&#39;</span><span class="p">,</span>
-  <span class="s1">&#39;W&#39;</span><span class="p">:</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span>
-  <span class="s1">&#39;X&#39;</span><span class="p">:</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span>
-  <span class="s1">&#39;Y&#39;</span><span class="p">:</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span>
-  <span class="s1">&#39;Z&#39;</span><span class="p">:</span> <span class="s1">&#39;H&#39;</span><span class="p">,</span>
-  <span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="s1">&#39;Y&#39;</span><span class="p">,</span>
-  <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span>
-  <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="s1">&#39;W&#39;</span><span class="p">,</span>
-  <span class="s1">&#39;d&#39;</span><span class="p">:</span> <span class="s1">&#39;X&#39;</span><span class="p">,</span>
-  <span class="s1">&#39;e&#39;</span><span class="p">:</span> <span class="s1">&#39;U&#39;</span><span class="p">,</span>
-  <span class="s1">&#39;f&#39;</span><span class="p">:</span> <span class="s1">&#39;S&#39;</span><span class="p">,</span>
-  <span class="s1">&#39;g&#39;</span><span class="p">:</span> <span class="s1">&#39;T&#39;</span><span class="p">,</span>
-  <span class="s1">&#39;h&#39;</span><span class="p">:</span> <span class="s1">&#39;Z&#39;</span><span class="p">,</span>
-  <span class="s1">&#39;i&#39;</span><span class="p">:</span> <span class="s1">&#39;O&#39;</span><span class="p">,</span>
-  <span class="s1">&#39;j&#39;</span><span class="p">:</span> <span class="s1">&#39;R&#39;</span><span class="p">,</span>
-  <span class="s1">&#39;k&#39;</span><span class="p">:</span> <span class="s1">&#39;Q&#39;</span><span class="p">,</span>
-  <span class="s1">&#39;l&#39;</span><span class="p">:</span> <span class="s1">&#39;V&#39;</span><span class="p">,</span>
-  <span class="s1">&#39;m&#39;</span><span class="p">:</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span>
-  <span class="s1">&#39;n&#39;</span><span class="p">:</span> <span class="s1">&#39;M&#39;</span><span class="p">,</span>
-  <span class="s1">&#39;o&#39;</span><span class="p">:</span> <span class="s1">&#39;I&#39;</span><span class="p">,</span>
-  <span class="s1">&#39;p&#39;</span><span class="p">:</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span>
-  <span class="s1">&#39;q&#39;</span><span class="p">:</span> <span class="s1">&#39;K&#39;</span><span class="p">,</span>
-  <span class="s1">&#39;r&#39;</span><span class="p">:</span> <span class="s1">&#39;J&#39;</span><span class="p">,</span>
-  <span class="s1">&#39;s&#39;</span><span class="p">:</span> <span class="s1">&#39;F&#39;</span><span class="p">,</span>
-  <span class="s1">&#39;t&#39;</span><span class="p">:</span> <span class="s1">&#39;G&#39;</span><span class="p">,</span>
-  <span class="s1">&#39;u&#39;</span><span class="p">:</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span>
-  <span class="s1">&#39;v&#39;</span><span class="p">:</span> <span class="s1">&#39;L&#39;</span><span class="p">,</span>
-  <span class="s1">&#39;w&#39;</span><span class="p">:</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span>
-  <span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span>
-  <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span>
-  <span class="s1">&#39;z&#39;</span><span class="p">:</span> <span class="s1">&#39;H&#39;</span><span class="p">,</span>
-  <span class="s1">&#39; &#39;</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
-<span class="p">}</span>
-<span class="n">message</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Message: &#39;</span><span class="p">)</span>
-<span class="n">encoded_message</span><span class="o">=</span><span class="p">[]</span>
-<span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">message</span><span class="p">:</span>
-    <span class="n">encoded_message</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">CODES</span><span class="p">[</span><span class="n">char</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">encoded_message</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Atlantis Rising</span>
+<span class="n">n</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="n">heights</span><span class="o">=</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+<span class="n">count</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">count</span><span class="o">+=</span><span class="n">heights</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&lt;</span><span class="nb">max</span><span class="p">(</span><span class="n">heights</span><span class="p">[:</span><span class="n">i</span><span class="p">])</span> <span class="ow">and</span> <span class="n">heights</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&lt;</span><span class="nb">max</span><span class="p">(</span><span class="n">heights</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">:])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Chimera II</span>
+<span class="n">n</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="n">dna1</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="n">dna2</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="n">required</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="n">broken</span><span class="o">=</span><span class="kc">False</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">required</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">!=</span><span class="n">dna1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">and</span> <span class="n">required</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">!=</span><span class="n">dna2</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PLAN FOILED&quot;</span><span class="p">)</span>
+        <span class="n">broken</span><span class="o">=</span><span class="kc">True</span>
+        <span class="k">break</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">broken</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SUCCESS&quot;</span><span class="p">)</span>
+    <span class="n">count</span><span class="o">=</span><span class="mi">1</span>
+    <span class="n">both</span><span class="o">=</span><span class="n">dna1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">==</span><span class="n">dna2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">side</span><span class="o">=</span><span class="mi">1</span><span class="o">-</span><span class="n">both</span><span class="o">+</span><span class="p">(</span><span class="n">dna2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">==</span><span class="n">required</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">chosen</span><span class="o">=</span><span class="kc">False</span>
+    <span class="n">chosen_side</span><span class="o">=</span><span class="mi">2</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">dna1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="n">dna2</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+            <span class="n">both</span><span class="o">=</span><span class="kc">True</span>
+        <span class="k">elif</span> <span class="n">side</span><span class="o">==</span><span class="mi">1</span> <span class="ow">and</span> <span class="n">dna2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="n">required</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+            <span class="n">side</span><span class="o">=</span><span class="mi">2</span>
+            <span class="n">count</span><span class="o">+=</span><span class="mi">1</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">chosen</span><span class="p">:</span>
+                <span class="n">chosen</span><span class="o">=</span><span class="kc">True</span>
+                <span class="n">chosen_side</span><span class="o">=</span><span class="mi">1</span>
+        <span class="k">elif</span> <span class="n">side</span><span class="o">==</span><span class="mi">2</span> <span class="ow">and</span> <span class="n">dna1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="n">required</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+            <span class="n">side</span><span class="o">=</span><span class="mi">1</span>
+            <span class="n">count</span><span class="o">+=</span><span class="mi">1</span>
+            <span class="n">chosen</span><span class="o">=</span><span class="kc">True</span>
+    <span class="k">if</span> <span class="n">dna1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">==</span><span class="n">dna2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">and</span> <span class="n">chosen_side</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Bernard&#39;s Magic Needles</span>
+<span class="n">n</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="n">haystacks</span><span class="o">=</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+<span class="n">needles</span><span class="o">=</span><span class="p">[]</span>
+<span class="n">word</span><span class="o">=</span><span class="kc">None</span>
+<span class="k">while</span> <span class="n">word</span><span class="o">!=-</span><span class="mi">1</span><span class="p">:</span>
+    <span class="n">word</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+    <span class="n">needles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+<span class="n">needles</span><span class="o">=</span><span class="n">needles</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">needle</span> <span class="ow">in</span> <span class="n">needles</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">needle</span> <span class="ow">in</span> <span class="n">haystacks</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">haystacks</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">needle</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;needle is gone forever&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Medusa&#39;s Snakes</span>
+<span class="n">n</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="n">dna</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="n">old_dna</span><span class="o">=</span><span class="n">dna</span>
+<span class="n">x</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">lo</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">hi</span><span class="o">=</span><span class="n">n</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">test</span><span class="p">(</span><span class="n">dna</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">broken</span><span class="o">=</span><span class="kc">False</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+            <span class="n">dna</span><span class="o">=</span><span class="n">dna</span><span class="p">[</span><span class="n">dna</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;S&#39;</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">:]</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+            <span class="n">dna</span><span class="o">=</span><span class="n">dna</span><span class="p">[</span><span class="n">dna</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;N&#39;</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">:]</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+            <span class="n">dna</span><span class="o">=</span><span class="n">dna</span><span class="p">[</span><span class="n">dna</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">:]</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+            <span class="n">dna</span><span class="o">=</span><span class="n">dna</span><span class="p">[</span><span class="n">dna</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;K&#39;</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">:]</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+            <span class="n">dna</span><span class="o">=</span><span class="n">dna</span><span class="p">[</span><span class="n">dna</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;E&#39;</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">:]</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="n">broken</span><span class="o">=</span><span class="kc">True</span>
+    <span class="k">return</span> <span class="ow">not</span> <span class="n">broken</span>
+<span class="k">while</span> <span class="n">lo</span><span class="o">!=</span><span class="n">hi</span><span class="p">:</span>
+    <span class="n">mid</span><span class="o">=</span><span class="p">(</span><span class="n">lo</span><span class="o">+</span><span class="n">hi</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span>
+    <span class="k">if</span> <span class="n">test</span><span class="p">(</span><span class="n">dna</span><span class="p">,</span><span class="n">mid</span><span class="p">):</span>
+        <span class="n">lo</span><span class="o">=</span><span class="n">mid</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">hi</span><span class="o">=</span><span class="n">mid</span><span class="o">-</span><span class="mi">1</span>
+<span class="c1"># while True:</span>
+<span class="c1">#     if not test(old_dna,x+1):</span>
+<span class="c1">#         break</span>
+<span class="c1">#     x+=1</span>
+<span class="c1"># print(x)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lo</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Backpacking</span>
+<span class="n">n</span><span class="p">,</span><span class="n">k</span><span class="o">=</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<span class="n">dis</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
+<span class="n">cost</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
+<span class="n">cans</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">money</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">ch</span><span class="o">=</span><span class="mi">1000001</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">cost</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">cost</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&lt;=</span><span class="n">cost</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+            <span class="n">ch</span><span class="o">=</span><span class="n">i</span>
+            <span class="k">break</span>
+    <span class="n">x</span><span class="o">=</span><span class="nb">min</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">dis</span><span class="p">),</span><span class="n">ch</span><span class="p">)</span><span class="o">-</span><span class="n">cans</span>
+    <span class="n">cans</span><span class="o">+=</span><span class="n">x</span><span class="o">-</span><span class="n">dis</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">money</span><span class="o">+=</span><span class="n">x</span><span class="o">*</span><span class="n">cost</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">dis</span><span class="o">=</span><span class="n">dis</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+    <span class="n">cost</span><span class="o">=</span><span class="n">cost</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">money</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Space Mission</span>
+<span class="n">n</span><span class="p">,</span><span class="n">f</span><span class="o">=</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<span class="n">cost</span><span class="o">=</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+<span class="c1"># old_cost=cost</span>
+<span class="c1"># other_cost=cost</span>
+<span class="c1"># other_cost.remove(min(cost))</span>
+<span class="c1"># min_cost=min(other_cost)+min(cost)</span>
+<span class="c1"># cost=old_cost</span>
+<span class="c1"># max_day=len(cost)</span>
+<span class="c1"># min_cost_return=cost[-1]</span>
+<span class="c1"># for i in range(len(cost)-1)[::-1]:</span>
+<span class="c1">#     if cost[i]&gt;min_cost_return:</span>
+<span class="c1">#         break</span>
+<span class="c1">#     else:</span>
+<span class="c1">#         max_day-=1</span>
+<span class="c1">#         min_cost_return=cost[i]</span>
+<span class="c1"># print(min_cost_return)</span>
+<span class="c1"># print(max_day)</span>
+<span class="c1"># for i in range(max_day-1)</span>
+<span class="n">max_samples</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cost</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">cost</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">cost</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">cost</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">&lt;</span><span class="n">f</span><span class="p">:</span>
+            <span class="n">max_samples</span><span class="o">=</span><span class="nb">max</span><span class="p">(</span><span class="n">max_samples</span><span class="p">,</span><span class="n">j</span><span class="o">-</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">max_samples</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+    <span class="n">max_samples</span><span class="o">=-</span><span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">max_samples</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Breaking Bars</span>
+<span class="n">n</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="n">a</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">deliciousness</span><span class="p">(</span><span class="n">lst</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">lst</span><span class="p">)))</span>
+<span class="c1"># segment1=[]</span>
+<span class="c1"># max_deliciousness=0</span>
+<span class="c1"># for i in range(n-1):</span>
+<span class="c1">#     segment1.append(a[i])</span>
+<span class="c1">#     segment2=a[i+1:]</span>
+<span class="c1">#     max_deliciousness=max(max_deliciousness,deliciousness(segment1)+deliciousness(segment2))</span>
+<span class="c1"># print(max_deliciousness)</span>
+<span class="c1"># if a==[1]*a.count(1)+[2]*a.count(2) or a==[2]*a.count(2)+[1]*a.count(1):</span>
+<span class="c1">#     print(3)</span>
+<span class="c1"># else:</span>
+<span class="c1">#     print(4)</span>
+<span class="k">if</span> <span class="n">deliciousness</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">==</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">deliciousness</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Beautiful Buildings</span>
+<span class="n">n</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="n">h</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
+<span class="n">ug0</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">max_dif</span><span class="o">=</span><span class="nb">max</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">h</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">h</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span><span class="nb">abs</span><span class="p">(</span><span class="n">h</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">h</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">ug0</span><span class="o">+=</span><span class="nb">abs</span><span class="p">(</span><span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">max_dif</span><span class="o">=</span><span class="nb">max</span><span class="p">(</span><span class="n">max_dif</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">+</span><span class="nb">abs</span><span class="p">(</span><span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span><span class="o">-</span><span class="nb">abs</span><span class="p">(</span><span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ug0</span><span class="o">-</span><span class="n">max_dif</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Nomnomnom</span>
+<span class="n">n</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="n">f</span><span class="o">=</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+<span class="n">limit</span><span class="o">=</span><span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">f</span><span class="o">=</span><span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="n">count</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">eaten</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">for</span> <span class="n">food</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">eaten</span><span class="o">+=</span><span class="n">food</span>
+    <span class="k">if</span> <span class="n">eaten</span><span class="o">&gt;=</span><span class="n">limit</span><span class="p">:</span>
+        <span class="n">limit</span><span class="o">=</span><span class="n">eaten</span>
+        <span class="n">eaten</span><span class="o">=</span><span class="mi">0</span>
+        <span class="n">count</span><span class="o">+=</span><span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Counting to Infinity</span>
+<span class="n">n</span><span class="o">=</span><span class="mi">1000000</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="n">perc</span><span class="o">=</span><span class="p">[]</span>
+<span class="c1"># Mock input function to avoid I/O variability</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
+    <span class="n">inputs</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;12345&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">10000</span>
+    <span class="n">input_idx</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">mock_input</span><span class="p">():</span>
+        <span class="k">global</span> <span class="n">input_idx</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">inputs</span><span class="p">[</span><span class="n">input_idx</span><span class="p">]</span>
+        <span class="n">input_idx</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">result</span>
+
+    <span class="c1"># Code 1: Loop and Append</span>
+    <span class="n">input_idx</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">):</span>
+        <span class="n">n</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">mock_input</span><span class="p">()))</span>
+    <span class="n">h</span><span class="o">=</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="o">-</span><span class="n">start</span>
+    <span class="c1"># print(&quot;Loop and Append:&quot;, h)</span>
+
+    <span class="c1"># Code 2: List Comprehension</span>
+    <span class="n">input_idx</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">mock_input</span><span class="p">())</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)]</span>
+    <span class="n">g</span><span class="o">=</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="o">-</span><span class="n">start</span>
+    <span class="c1"># print(&quot;List Comprehension:&quot;, g)</span>
+    <span class="n">perc</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">h</span><span class="o">-</span><span class="n">g</span><span class="p">)</span><span class="o">/</span><span class="n">h</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">perc</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">perc</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ONCE UPON A MIDNIGHT DREARY
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12.777274612193816
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Heatwave</span>
+<span class="n">n</span><span class="p">,</span><span class="n">h</span><span class="o">=</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<span class="n">heat</span><span class="o">=</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+<span class="n">longest_heatwave</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">current_heatwave</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">for</span> <span class="n">day</span> <span class="ow">in</span> <span class="n">heat</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">day</span><span class="o">&gt;=</span><span class="n">h</span><span class="p">:</span>
+        <span class="n">current_heatwave</span><span class="o">+=</span><span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">longest_heatwave</span><span class="o">=</span><span class="nb">max</span><span class="p">(</span><span class="n">current_heatwave</span><span class="p">,</span><span class="n">longest_heatwave</span><span class="p">)</span>
+        <span class="n">current_heatwave</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">longest_heatwave</span><span class="o">=</span><span class="nb">max</span><span class="p">(</span><span class="n">current_heatwave</span><span class="p">,</span><span class="n">longest_heatwave</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">longest_heatwave</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># IOI Team Announcement</span>
+<span class="n">n</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="n">order</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
+<span class="n">actions</span><span class="o">=</span><span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">actions</span><span class="o">=</span><span class="n">actions</span><span class="o">+</span><span class="p">[</span><span class="s1">&#39;N&#39;</span><span class="p">]</span><span class="o">*</span><span class="n">order</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">actions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;T&#39;</span><span class="p">)</span>
+    <span class="n">order</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">actions</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">action</span> <span class="ow">in</span> <span class="n">actions</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
+N
+T
+N
+N
+T
+N
+T
+T
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Level Ground</span>
+<span class="n">n</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="n">alt</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
+<span class="n">record</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">count</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">last_i</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">count</span><span class="o">+</span><span class="n">last_i</span><span class="o">&gt;</span><span class="n">i</span><span class="p">:</span>
+        <span class="k">continue</span>
+    <span class="n">count</span><span class="o">=</span><span class="mi">0</span>
+    <span class="n">last_i</span><span class="o">=</span><span class="n">i</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">alt</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="n">alt</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+            <span class="n">count</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">break</span>
+    <span class="n">record</span><span class="o">=</span><span class="nb">max</span><span class="p">(</span><span class="n">record</span><span class="p">,(</span><span class="n">count</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">alt</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="n">dna</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">check</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="c1"># TODO: write a function that returns True if the answer is &gt;= x, and False Otherwise</span>
+    <span class="c1"># This function runs the solution from hint 2</span>
+ 
+<span class="n">lo</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># the answer is always at least 0</span>
+<span class="n">hi</span> <span class="o">=</span> <span class="n">N</span> <span class="c1"># the answer is always at most N </span>
+       <span class="c1"># (we could replace this with N//5, but this would not improve the time complexity)</span>
+ 
+<span class="k">while</span> <span class="n">lo</span> <span class="o">!=</span> <span class="n">hi</span><span class="p">:</span>
+    <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">lo</span><span class="o">+</span><span class="n">hi</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span> <span class="c1"># I have a +1 so that this rounds up rather than down. </span>
+                       <span class="c1"># If I rounded down instead, this could cause an infinite loop</span>
+    <span class="k">if</span> <span class="n">check</span><span class="p">(</span><span class="n">mid</span><span class="p">):</span>
+        <span class="n">lo</span> <span class="o">=</span> <span class="n">mid</span> <span class="c1"># the answer is &gt;= mid</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">hi</span> <span class="o">=</span> <span class="n">mid</span><span class="o">-</span><span class="mi">1</span> <span class="c1"># the answer is &lt; mid</span>
+ 
+<span class="nb">print</span><span class="p">(</span><span class="n">lo</span><span class="p">)</span> <span class="c1"># the answer is lo (alternatively hi)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Coloured Walkway</span>
+<span class="n">n</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<span class="n">colour</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
+<span class="n">p</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="n">comp</span><span class="o">=</span><span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()))]</span>
+<span class="k">if</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="ow">in</span> <span class="n">comp</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span><span class="o">%</span><span class="k">1000000007</span>)
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

@@ -1,0 +1,987 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>8. Real World Math &#8212; Jonny Workbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=8dedbda2" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'math/03real_world';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="9. Math as code" href="05math_as_code.html" />
+    <link rel="prev" title="7. Discrete &amp; Continuous" href="02discrete_continuous.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Jonny Workbook</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Mathe &amp; FP/Language</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Alevel_math.html">1. A-level-math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Alevel_math_further.html">2. A-level-further</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Course_MCM.html">3. Math Computational Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Course_Lean.html">4. Lean</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00intro_math.html">5. Math-FP-Lang Combo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01number_algebra.html">6. Number &amp; Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02discrete_continuous.html">7. Discrete &amp; Continuous</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">8. Real World Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05math_as_code.html">9. Math as code</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CS &amp; Physics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Course_MIT6001Python.html">10. MIT_CS6001-Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Course_MIT6002thinking.html">11. MIT_CS6002-CS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PE50.html">12. Project Euler Q1-50</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PE75.html">13. Project Euler Q51-</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Course_MCM_QM.html">14. Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Course_MCM_QFT.html">15. QFT</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notebook</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../nb_past_courses.html">16. Past courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nb_Geo.html">17. Geography and Maps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nb_lottery_simulator.html">18. Lottery Math</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/tomctang/10pe" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/math/03real_world.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Real World Math</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functional-programming">8.1. Functional Programming</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#de-programming">8.1.1. DE &amp; Programming</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#category-theory-programming">8.1.2. Category Theory &amp; Programming</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fp-wolfram-language-from-functional-programming">8.1.3. FP Wolfram Language: from Functional Programming</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coding-theory-information">8.2. Coding Theory &amp; Information</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-analysis">8.3. Data analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistics-probability-theory-spt">8.4. Statistics &amp; Probability Theory(SPT)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#game-theory-decision-operation">8.5. Game Theory &amp; Decision &amp; Operation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-theory">8.6. Quantum Theory</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="real-world-math">
+<h1><span class="section-number">8. </span>Real World Math<a class="headerlink" href="#real-world-math" title="Link to this heading">#</a></h1>
+<section id="functional-programming">
+<h2><span class="section-number">8.1. </span>Functional Programming<a class="headerlink" href="#functional-programming" title="Link to this heading">#</a></h2>
+<section id="de-programming">
+<h3><span class="section-number">8.1.1. </span>DE &amp; Programming<a class="headerlink" href="#de-programming" title="Link to this heading">#</a></h3>
+<p>Functors can be viewed as structures that map functions to their derivatives while preserving mathematical relationships.</p>
+<p><strong>Mathematical Functor: Differentiation Operator</strong> A function <span class="math notranslate nohighlight">\(f(x)\)</span> maps to its derivative <span class="math notranslate nohighlight">\(f'(x)\)</span></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/dbrattli/oslash/wiki/Functors,-Applicatives,-And-Monads-In-Pictures">Functors, Applicatives, and Monads in Pictures</a></p></li>
+<li><p><a class="reference external" href="https://learnyouahaskell.mno2.org/zh-tw/ch11/functors-applicative-functors-and-monoids">Functors, Applicative Functors and Monoids</a></p></li>
+</ul>
+<p>Higher-Order Functors: in more advanced settings, applicative functors and monads can model systems of differential equations by composing multiple functors.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Concept</p></th>
+<th class="head"><p>Mathematics</p></th>
+<th class="head"><p>Haskell Functor Example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Differentiation</p></td>
+<td><p><span class="math notranslate nohighlight">\(f(x)\)</span> → <span class="math notranslate nohighlight">\(f'(x)\)</span></p></td>
+<td><p>Stream-based Taylor series functor</p></td>
+</tr>
+<tr class="row-odd"><td><p>Taylor Series</p></td>
+<td><p>Recursive differential expansion</p></td>
+<td><p>Infinite stream functor</p></td>
+</tr>
+<tr class="row-even"><td><p>Differential Operator</p></td>
+<td><p>Higher-order mappings</p></td>
+<td><p>Functor for applying derivatives</p></td>
+</tr>
+<tr class="row-odd"><td><p>Numerical Methods</p></td>
+<td><p>Euler’s method</p></td>
+<td><p>Recursive functor iteration</p></td>
+</tr>
+<tr class="row-even"><td><p>Coupled Systems</p></td>
+<td><p>Systems of differential equations</p></td>
+<td><p>Functor composition</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="category-theory-programming">
+<h3><span class="section-number">8.1.2. </span>Category Theory &amp; Programming<a class="headerlink" href="#category-theory-programming" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Category Theory</p></th>
+<th class="head"><p>Graph Theory</p></th>
+<th class="head"><p>Differential Equations</p></th>
+<th class="head"><p>Functional Programming</p></th>
+<th class="head"><p>Linguistics</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Objects (Types, Structures)</strong>: Abstract entities in a category.</p></td>
+<td><p><strong>Nodes (Vertices)</strong>: Fundamental units in a graph.</p></td>
+<td><p><strong>State Variables</strong>: x,y,t represent system states.</p></td>
+<td><p><strong>Data Types, Values</strong>: Represented as immutable structures.</p></td>
+<td><p><strong>Words, Morphemes, Syntactic Categories</strong>: Fundamental linguistic units.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Morphisms (Arrows)</strong>: Structure-preserving maps between objects.</p></td>
+<td><p><strong>Edges</strong> (Connections): Relationships between nodes.</p></td>
+<td><p><strong>Derivatives</strong> <span class="math notranslate nohighlight">\(\frac{dx}{dt}\)</span>: Rate of change between states.</p></td>
+<td><p>Functions (<strong>Mappings</strong>): Transform input values into output values.</p></td>
+<td><p>Grammar Rules, Transformations: Define linguistic relationships.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Composition</strong> f∘g: Associativity of mappings.</p></td>
+<td><p>Path Composition: Combining edges to form paths.</p></td>
+<td><p><strong>Successive Differentiation</strong> <span class="math notranslate nohighlight">\(\frac{d}{dt} ​(f∘g)\)</span></p></td>
+<td><p>Function Composition f . g: Chain transformations.</p></td>
+<td><p>Syntactic/Semantic Composition: Meaning built from smaller parts.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Identity Morphism</strong> <span class="math notranslate nohighlight">\(idA\)</span>:A→A: Acts as a neutral element.</p></td>
+<td><p>Self-loops (Trivial Paths): Node connected to itself.</p></td>
+<td><p><strong>Equilibrium State</strong>: <span class="math notranslate nohighlight">\(\frac{dx}{dt} = 0\)</span> (no change).</p></td>
+<td><p>Identity Function id x = x: Leaves values unchanged.</p></td>
+<td><p>Base Forms, Root Morphemes: Core linguistic elements.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Associativity</strong>: h∘(g∘f)=(h∘g)∘f</p></td>
+<td><p>Associativity of Paths: Order of traversal doesn’t change results.</p></td>
+<td><p><strong>Chain Rule</strong>: <span class="math notranslate nohighlight">\(\frac{d}{dt} ​(f∘g)=f'⋅g'\)</span>.</p></td>
+<td><p>Associative Function Composition: (f . g) . h = f . (g . h).</p></td>
+<td><p>Phrase Structure Rules: Hierarchical syntax follows associative principles.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Functors</strong>: Map one category to another while preserving structure.</p></td>
+<td><p>Graph Homomorphisms: Preserve relationships between graphs.</p></td>
+<td><p><strong>Transformations</strong> (Laplace, Fourier): Convert functions to new domains.</p></td>
+<td><p><strong>Higher-Order Functions</strong> (<em>map, fmap</em>): Apply transformations generically.</p></td>
+<td><p>Grammatical Mappings: Transform structures while maintaining meaning.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Monoids</strong>: Categories with one object (single composition rule).</p></td>
+<td><p>Concatenation of Walks: Paths in a graph form a monoid.</p></td>
+<td><p><strong>Differential Operators</strong> <span class="math notranslate nohighlight">\(D=\frac{d}{dx}\)</span>: Form algebraic monoids.</p></td>
+<td><p>Monoids in Functional Programming: Structures like fold, concat.</p></td>
+<td><p>Agglutinative Morphologies: Word formation by concatenation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Monads</strong>: Endofunctors with structure to model computation.</p></td>
+<td><p>Graph Traversals with Constraints: Restricted pathfinding.</p></td>
+<td><p><strong>Iterative Solutions &amp; Integration</strong>: Successive differentiation/integration.</p></td>
+<td><p>Monads (<em>Maybe, IO</em>): Structure computations with effects.</p></td>
+<td><p>Sequential Parsing: Building meaning through ordered language structures.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Natural Transformations</strong>: Transformations between functors.</p></td>
+<td><p>Graph Transformations: Convert graphs into equivalent forms.</p></td>
+<td><p><strong>Change of Variables</strong>: Transform differential equations into simpler forms.</p></td>
+<td><p><strong>Mapping Between Functors</strong> (<em>fmap</em>): Applies functions over wrapped data.</p></td>
+<td><p>Morphological Derivations: Word transformations (e.g., verb → noun).</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Initial/Terminal Objects</strong>: Least/greatest elements in a category.</p></td>
+<td><p>Source/Sink Nodes: Starting or ending points in a graph.</p></td>
+<td><p><strong>Steady-State Solutions</strong>: Fixed points in differential equations.</p></td>
+<td><p>Empty Lists ([]), Unit Type (): Base cases for recursive structures.</p></td>
+<td><p>Base Words vs. Derived Words: Root lexemes vs. inflected forms.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Limits/Colimits</strong>: Universal constructions in category theory.</p></td>
+<td><p>Minimum Spanning Trees, Flows: Graph optimization structures.</p></td>
+<td><p><strong>Fixed Points of DE</strong>: Equilibrium solutions.</p></td>
+<td><p><strong>Recursive Data Types</strong>: Structures defined in terms of themselves.</p></td>
+<td><p>Common Structures in Syntax Trees: Shared hierarchical patterns.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Fixed Points</strong>: F(X)≅X , objects that remain unchanged.</p></td>
+<td><p>Graph Cycles, <strong>Steady States</strong>: Fixed structures in graph transformations.</p></td>
+<td><p><strong>Equilibrium Solutions</strong>: Where <span class="math notranslate nohighlight">\(\frac{dx}{dt} = 0\)</span>.</p></td>
+<td><p><strong>Recursion</strong> (fix f = f (fix f)): Self-referential function calls.</p></td>
+<td><p>Stable Forms in Language: Syntactic patterns that remain unchanged over transformations.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Adjunctions</strong>: Relationship between functors, bridging categories.</p></td>
+<td><p>Network Flow Optimizations: Graph constraints and adjunction-like structures.</p></td>
+<td><p>Adjoint Operators in DE: Pairing transformations.</p></td>
+<td><p>Free and Cofree Monads: Duality in computational structures.</p></td>
+<td><p>Grammar Constraints &amp; Transformations: Relations between linguistic components.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Isomorphisms</strong>: Bijective morphisms between objects.</p></td>
+<td><p>Graph Isomorphisms: Structural equivalence of graphs.</p></td>
+<td><p>Transformation Preserving Solutions: Linearization techniques.</p></td>
+<td><p>Type Equivalences (newtype, Iso): Structurally identical data representations.</p></td>
+<td><p>Synonymy &amp; Paraphrasing: Different expressions preserving meaning.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Categories as Structures</strong>: Model mathematical and logical structures.</p></td>
+<td><p><strong>Graphs as Networks</strong>: Abstract representations of relationships.</p></td>
+<td><p><strong>Systems of DE</strong>: Structured dynamic models.</p></td>
+<td><p><strong>Programs as Expressions</strong>: Functional structure in computations.</p></td>
+<td><p>Languages as Hierarchical Systems: Syntax and semantics with nested structures.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Category Theory</p></th>
+<th class="head"><p>VS. Type theory</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>- formalism abstraction, package “entire theory”  <br> - Bridge between disciplines(to create a homogeneous vocabulary): Physics, Quantum, Topology, Logic, Computer Science</p></td>
+<td><p>- One is Lambda Calculus(untyped), e.g. <a class="reference external" href="https://github.com/orsinium-labs/python-lambda-calculus?tab=readme-ov-file">python-lambda-calculus</a> <br> - as alternatives to set theory as a foundation of mathematics</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>A way of representing things and ways to go between things. A Category <span class="math notranslate nohighlight">\(C\)</span> is defined by:</p>
+<ul class="simple">
+<li><p>Objects <span class="math notranslate nohighlight">\(ob(C)\)</span> &amp; Morphisms <span class="math notranslate nohighlight">\(hom(C)\)</span></p></li>
+<li><p>Composition law (∘) &amp; Associativity: h∘(g∘f)=(h∘g)∘f</p></li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Mathematician</p></th>
+<th class="head"><p>Programmer(Graph or Discrete)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Object</p></td>
+<td><p>Type, Node</p></td>
+</tr>
+<tr class="row-odd"><td><p>Morphism</p></td>
+<td><p>Function, Arrow, directed-edges</p></td>
+</tr>
+<tr class="row-even"><td><p>Functor</p></td>
+<td><p>polymorphic type</p></td>
+</tr>
+<tr class="row-odd"><td><p>Monoid</p></td>
+<td><p>String-like</p></td>
+</tr>
+<tr class="row-even"><td><p>Preorder</p></td>
+<td><p>Acyclic graph</p></td>
+</tr>
+<tr class="row-odd"><td><p>Isomorph</p></td>
+<td><p>The same</p></td>
+</tr>
+<tr class="row-even"><td><p>Natural transformation</p></td>
+<td><p>rearrangement function</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A Simple Category: with composition and identity morphisms</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">DiGraph</span><span class="p">(</span> <span class="p">{</span><span class="mi">1</span> <span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">2</span> <span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="mi">3</span> <span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">]})</span>
+<span class="n">G</span><span class="o">.</span><span class="n">add_edges</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;g∘f&quot;</span><span class="p">)</span>  <span class="p">])</span>
+<span class="n">G</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">edge_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/fb5d8ab90847f50825046e38c4152c2d319892dc44154e992da2f7eb9b237eea.png" src="../_images/fb5d8ab90847f50825046e38c4152c2d319892dc44154e992da2f7eb9b237eea.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This graph is not a category because there is no explicit composition </span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">DiGraph</span><span class="p">()</span>
+<span class="n">G</span><span class="o">.</span><span class="n">add_edges</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">)])</span>  <span class="c1"># Missing (1, 3, &quot;g∘f&quot;)</span>
+<span class="n">G</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">edge_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/36760be16e8974f7e39270ae6faca624c130de59d6d3bf8aee3eb1b4bbbcbf04.png" src="../_images/36760be16e8974f7e39270ae6faca624c130de59d6d3bf8aee3eb1b4bbbcbf04.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This graph is not a category because it lacks identity morphisms</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">DiGraph</span><span class="p">()</span>
+<span class="n">G</span><span class="o">.</span><span class="n">add_edges</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">)])</span>  <span class="c1"># No identity morphisms</span>
+<span class="n">G</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">edge_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/ae3f77200530cccf5a8a7e2afeaebd5a3bca42c5026612fded10c0fd3087bb22.png" src="../_images/ae3f77200530cccf5a8a7e2afeaebd5a3bca42c5026612fded10c0fd3087bb22.png" />
+</div>
+</div>
+<p>Categories .VS. DAGs(Graph Theory)</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>DAG</p></th>
+<th class="head"><p>Category</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Directed edges</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-odd"><td><p>No cycles</p></td>
+<td><p>✅</p></td>
+<td><p>❌ Not always</p></td>
+</tr>
+<tr class="row-even"><td><p>Self-loops allowed?</p></td>
+<td><p>❌ No</p></td>
+<td><p>✅ Yes (identity morphisms)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Must have composable paths?</p></td>
+<td><p>❌ No</p></td>
+<td><p>✅ Yes</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>If a category has no isomorphisms (self-loops) and only strictly hierarchical structure, it could be a DAG.</p>
+<ul class="simple">
+<li><p>e.g. A preorder category, where there is at most one morphism between any two objects and no reversibility, can be represented as a DAG.</p></li>
+<li><p>A poset category is always a DAG because it models partial ordering.</p></li>
+</ul>
+<p>Functor: structure preserving mapping between categories (like rebuilding an organisation)</p>
+<ul class="simple">
+<li><p>In Haskell, functor can be seen as boxes containing all types and functions. Haskell types look like a fractal(can replicate).</p></li>
+</ul>
+<img src="https://raw.githubusercontent.com/tomctang/NB_img/main/hask_category1.png" alt="Category_Hask_Numbers" width="350">
+<p>Category Theory oriented Programming:</p>
+<ul class="simple">
+<li><p>Focus on the type and operators</p></li>
+<li><p>Extreme generalisation and better modularity</p></li>
+</ul>
+</section>
+<section id="fp-wolfram-language-from-functional-programming">
+<h3><span class="section-number">8.1.3. </span>FP Wolfram Language: from <a class="reference external" href="https://www.youtube.com/watch?v=E6RAiKG3pKE&amp;amp;list=WL&amp;amp;index=6&amp;amp;t=301s">Functional Programming</a><a class="headerlink" href="#fp-wolfram-language-from-functional-programming" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">*</span><span class="n">OOP</span><span class="o">*</span><span class="p">)</span>
+<span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">};</span>
+<span class="n">Do</span><span class="p">[</span>
+   <span class="n">data</span><span class="p">[[</span><span class="n">k</span><span class="p">]]</span><span class="o">=</span><span class="n">f</span><span class="p">[</span><span class="n">data</span><span class="p">[[</span><span class="n">k</span><span class="p">]]],</span> <span class="p">{</span><span class="n">k</span><span class="p">,</span><span class="n">Length</span><span class="p">[</span><span class="n">data</span><span class="p">]}</span>
+<span class="p">];</span>
+<span class="n">data</span>
+<span class="p">(</span><span class="o">*</span><span class="n">FP</span><span class="o">*</span><span class="p">)</span>
+<span class="n">Map</span><span class="p">[</span><span class="n">f</span><span class="p">,{</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">}]</span>
+<span class="n">f</span> <span class="o">/@</span> <span class="p">{</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span><span class="p">[</span><span class="n">f</span><span class="p">,</span> <span class="p">{{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">},{</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">},{</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">}}]</span> 
+<span class="n">Map</span><span class="p">[</span><span class="n">f</span><span class="p">,</span> <span class="p">{{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">},{</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">},{</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">}},</span> <span class="p">{</span><span class="mi">1</span><span class="p">}]</span> 
+<span class="n">Map</span><span class="p">[</span><span class="n">f</span><span class="p">,</span> <span class="p">{{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">},{</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">},{</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">}},</span> <span class="p">{</span><span class="mi">2</span><span class="p">}]</span> <span class="p">(</span><span class="o">*</span><span class="p">{</span><span class="mi">2</span><span class="p">}</span> <span class="n">indicates</span> <span class="n">level</span> <span class="mi">2</span><span class="o">*</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span><span class="p">[</span><span class="n">Reverse</span><span class="p">,</span> <span class="p">{{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">},{</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">},{</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">}}]</span> <span class="p">(</span><span class="o">*</span><span class="n">With</span><span class="o">-</span><span class="n">In</span><span class="o">*</span><span class="p">)</span>
+<span class="n">Map</span><span class="p">[</span><span class="n">Reverse</span><span class="p">,</span> <span class="p">{{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">},{</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">},{</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">}},</span> <span class="p">{</span><span class="mi">1</span><span class="p">}]</span> 
+<span class="n">Reverse</span><span class="p">[{{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">},{</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">},{</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">}}]</span> <span class="p">(</span><span class="o">*</span><span class="n">Between</span><span class="o">*</span><span class="p">)</span>
+
+<span class="n">Map</span><span class="p">[</span><span class="n">Sort</span><span class="p">,</span> <span class="p">{{</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">},{</span><span class="n">a</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">b</span><span class="p">},{</span><span class="mi">7</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">}}]</span>
+<span class="n">Sort</span><span class="p">[{{</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">},{</span><span class="n">a</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">b</span><span class="p">},{</span><span class="mi">7</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">}}]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Apply</span><span class="p">[</span><span class="n">g</span><span class="p">,</span><span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]]</span>
+<span class="n">g</span> <span class="o">@@</span> <span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">Apply</span><span class="p">[</span><span class="n">g</span><span class="p">,</span> <span class="p">{{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">},{</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">},{</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">}},</span> <span class="p">{</span><span class="mi">1</span><span class="p">}]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Apply</span><span class="p">[</span><span class="n">Rule</span><span class="p">,{</span><span class="n">x</span><span class="p">,</span><span class="mi">5</span><span class="p">}]</span> <span class="p">(</span><span class="o">*</span><span class="n">a</span> <span class="o">-&gt;</span> <span class="mi">1</span> <span class="ow">is</span> <span class="n">read</span> <span class="k">as</span> <span class="s2">&quot;a maps to 1&quot;</span><span class="o">*</span><span class="p">)</span>
+<span class="n">Apply</span><span class="p">[</span><span class="n">Rule</span><span class="p">,</span> <span class="p">{{</span><span class="n">a</span><span class="p">,</span><span class="mi">1</span><span class="p">},{</span><span class="n">b</span><span class="p">,</span><span class="mi">2</span><span class="p">},{</span><span class="n">c</span><span class="p">,</span><span class="mi">3</span><span class="p">}},</span> <span class="p">{</span><span class="mi">1</span><span class="p">}]</span> <span class="p">(</span><span class="o">*</span><span class="n">turn</span> <span class="n">pairs</span> <span class="n">into</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">rules</span><span class="o">*</span><span class="p">)</span>
+<span class="n">Rule</span> <span class="o">@@@</span> <span class="p">{{</span><span class="n">a</span><span class="p">,</span><span class="mi">1</span><span class="p">},{</span><span class="n">b</span><span class="p">,</span><span class="mi">2</span><span class="p">},{</span><span class="n">c</span><span class="p">,</span><span class="mi">3</span><span class="p">}}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Nest</span><span class="p">[</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">NestList</span><span class="p">[</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">Nest</span><span class="p">[(</span><span class="mi">1</span><span class="o">+</span><span class="n">r</span><span class="p">)</span><span class="c1"># &amp;, A, 5]</span>
+<span class="n">NestList</span><span class="p">[(</span><span class="mi">1</span><span class="o">+</span><span class="n">r</span><span class="p">)</span><span class="c1"># &amp;, A, 5]</span>
+
+<span class="n">NestList</span><span class="p">[</span><span class="mf">1.1</span><span class="c1">#&amp;, 100, 5]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+													.grid-container {
+														display: inline-grid;
+														grid-template-columns: auto;
+													}
+												</style>
+
+												<div><div class="grid-container"><div class="grid-item"><img alt="Output" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGUAAAAVCAIAAADQPLdZAAAA0HpUWHRSYXcgcHJvZmlsZSB0eXBlIGV4aWYAAHjabU9BjsQgDLvzinlCEoIDz6EzjLQ/2OePKWi1rNZVY+PEaUnj++udHhOmkrxERQOE8ObNOkWVhcUq7a43UHZPTz/pbminVX4Fxvav0w8stvpnkdgSeX6BOvsO7EXZlq99na89b73Wc9ElByA/v/7v2XMYCjSc1U0i0KhroiShmJTAG0+Ag4qXiT/JAxGMIeZE7jM4YSPO6ZGQabzmFfJ8PfesfDo1GFVyZ8fvKnbtLjWv8wE16Vqo3N9AxgAAAAlwSFlzAAAOxAAADsQBlSsOGwAAADx0RVh0U29mdHdhcmUAQ3JlYXRlZCB3aXRoIHRoZSBXb2xmcmFtIExhbmd1YWdlIDogd3d3LndvbGZyYW0uY29tXKKmhQAAACF0RVh0Q3JlYXRpb24gVGltZQAyMDI0OjExOjI2IDEyOjA0OjAwcJIRlwAAAWZJREFUWIXtmEGSRDAUQH+65hhWvmOwFVdwBA7gDhwgtnYcIdYcgy43ySzUaDNaixhRqfJWJHmJ+pX/S0KEEHAjzePqDzCMO177uOO1j7/xchyH/NC2rfxEyuJBVzdiBqUUEcUKiLhUZMTzXGVrc861Ab/eAaAsy7UpKKVrXZ/F89xNoihS7n074JWPz+dTbYcqiwfdSzCy3sdxTAjJsmxqGWufjuiLWa7OWWbBskVS/Hd3zBQA6Pt+epZMKPnetwMeANB1nRCi73uYlRLO+WaslcWDLgAwxiilvu9XVZXnedM0kuJBvvQscwacc0JIGIZpmrquq2dRI+vXyFSthmHQtqjB8ULEKIqapsnzvKoqPYuamo9BECAiYwwA0jQNw9CyLA1ZaeT+chynruuiKMbXJEkQ0fM8DWep1/6ybVso3YUpi8pu13WbLSdh5P66ks8/bHPUzr1XuSedt4m476P3cOfjPr4BooxexCPTaXEAAAAASUVORK5CYII="></div><div class="grid-item"><img alt="Output" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAR4AAAAVCAIAAAAfGxb2AAAAznpUWHRSYXcgcHJvZmlsZSB0eXBlIGV4aWYAAHjabU/RjUMhDPtnihshCcGBcXgtlbpBxz9TOJ2oGkTsOE4Qabyej/Qzw1SSl6hogDC8ebNOUmXFQpX2zqsYm+mpJy3b0CmV/wbG1q9TDyy0+rFIbJE8XyDPvgf2omxL177qa/ut13ouuuQI/BH9XnsOQ4GGM7tJBBp5TaQEFJMSeOAG0Ki4m/iNOBDBMcR05D4HZ9iI0z0SMoX7/EKe13PPytPJwVEldnb8ncWu3SXnd34Bdq5a1CEw700AAAAJcEhZcwAADsQAAA7EAZUrDhsAAAA8dEVYdFNvZnR3YXJlAENyZWF0ZWQgd2l0aCB0aGUgV29sZnJhbSBMYW5ndWFnZSA6IHd3dy53b2xmcmFtLmNvbVyipoUAAAAhdEVYdENyZWF0aW9uIFRpbWUAMjAyNDoxMToyNiAxMjowNDowMHCSEZcAAAKhSURBVHic7Zu/cYMwFMYfuQziQ4wBjRtYAVduYQAqLwAD2K0rwwimhjGMz5soBRdCgEgY8ZAg+lWJzAff9+6E/h0GpRQ0Gs3cfMg2oNFsE921NBoUdNfSaFCQ07UsyzK+KctSigcuIiZXEZCNrPgbKF1Nt2s9n0/DMCzLwnuk53kAQL+xbbtzQVPct247TYVhkq1FSreW+CJaKaXjysMwHH4L0N8EQUCRAYA0TRkXuK47+eZz+RcxydaiplM/vohWYum48r63gVGL/x4QAPv+syBichUB2ciKv+rSmabZaeGvterxLkmSpqUeH5cshAoeUNl8QDzULR13XKtHQwCoqqr5mz04DkII6T998HEiHgRnRCImR2r/mtWMCYg9IVwgvohWYukmyEd1rbqdEJKmKQAURcF+DIOqqmDqXHyMh1kWGyImuVrGgoEbcJm1Fmp8Ea3E0k2Qf7bfE1mW7ff7/vsDAO73u2EYvu/Hcdzf81kGFTygsvmAeEgv3eFwSJIkiqKm5adrlWXp+35RFIPKZub6er0wHbJQwQMqmw+Ih/TS2bbtOA4ANL3ro/0bpfR2uw0qCSFBEBRFcblcsixbwKuaHlDZfEA8pJcuDENKaXvUGrX57nkeIeR8Ptu2Hcex7/udA7IFzs65HrgofsAvHpCN4vFFwC7dNPib75Zl5Xl+vV7rf6MoIoQ4jtN277ouAPw14okzxgMXbJMizBKQjcrxRVigdNP45F7xeDy4LcfjMc/z3W7HvZtpmvT9L8TGeOCCbVJEO0tANirHF9EuULppdEet/qHyGE6nE7QWcGqyCpN4/PP4EuhsxtcnA4QQ9i5+ezv/revH0BwgzqVSx+RkIVe1lvgi2uVLN0Zel7d/rmVQ/QG/RoOA/hRSo0HhC5fF/DPA5B1dAAAAAElFTkSuQmCC"></div><div class="grid-item"><img alt="Output" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAAVCAIAAABe5v4lAAAAz3pUWHRSYXcgcHJvZmlsZSB0eXBlIGV4aWYAAHjabU9BjgMhDLvzij4hCcGB5zAtlfYH+/yaAalitR6ROHaSgTR+f97pMWEqyUtUNEAIb96sk1RZWFml3fFG2RbrQ0+6He2UytfA2Pp16oGVrf5ZJLZInn8gz74H9qJsS9e+6mv3W6/1XHTJAXyv/m/tOQwFGs7oJhFo5DWRMqGYlMAbT4CNipeJP5kHIjiGmB25z8EJG3F2j4RM4TWfkOfx3LPy6+TgqDJ3On5HsWu75HzOBy0SWqJOemCVAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAPHRFWHRTb2Z0d2FyZQBDcmVhdGVkIHdpdGggdGhlIFdvbGZyYW0gTGFuZ3VhZ2UgOiB3d3cud29sZnJhbS5jb21coqaFAAAAIXRFWHRDcmVhdGlvbiBUaW1lADIwMjQ6MTE6MjYgMTI6MDQ6MDBwkhGXAAACE0lEQVRYheWXP9biIBDAh5zEF3IGC5+mSGE8gI1WtlxAL2ATL5DWKuQImjLyPIVQeg22GOXjS75EXFb3rfuryEBg/sAMEK01/E8Ef1uBV1GWJbkTRZGRf6zBAMAY01prrS+XixF+ssE/8skG53mOW7osyy+ptkAJ51y7wRg7nU5tOaX0qXl8SNO0f4CUEgCklPj5FWEhBKWUMbbf7138p5QCgPF4bAt3ux0hZLvdegbHndVq9S2ALcIwpJRer9fbt/EEYwwjBt/D3gVjzLgN4Zyjv3GS90RYPwoy59y2yGrdVXTRVUrZs8yfNZhSmmUZzok0HI29jb+yLDPjbTnYKmI7TVOT0LvgnPfY427ww4X0PSNQSo16DV9LKV3mQW5nuCiKNE3NqcjzvP/k1HU9HA6dD5ovlFJTS5MkOR6Pdm8YhphQXLgZXFVVkiTYRkv6M4FSKgzDp5T2YTqdmvZ6vdYe1+EAAIQQUsrNZoNVC7dQXdf+inYxm81wLVMqCSGvW84mAICiKMwJQbIs69/VnuE9HA7tM+wzoTsBAFRVZe8ZABiNRgAghOj6bTAY9PS+H/cABLifl8ulLcXrRFEUXb/N5/Pz+dwQKqVwc04mEwBYLBaNl8qLEELEcew62jGbt3GvBK/m4e3S5vcfD3Ec92fy96CUMvXFBaI9skUURVVVvbM+tSHkORO8DP4X+eT38I/8An4W1cL35CLrAAAAAElFTkSuQmCC"></div><div class="grid-item"><img alt="Output" src="data:image/png;base64,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"></div><div class="grid-item"><img alt="Output" src="data:image/png;base64,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"></div></div></div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">FixedPoint</span><span class="p">[(</span><span class="c1">#+2/#)/2 &amp;, 1.0]</span>
+<span class="n">FixedPointList</span><span class="p">[(</span><span class="c1">#+2/#)/2 &amp;, 1.0]</span>
+
+<span class="n">ListPlot</span><span class="p">[</span><span class="n">FixedPointList</span><span class="p">[(</span><span class="c1"># + 2/#)/2 &amp;, 1.0], </span>
+        <span class="n">PlotStyle</span> <span class="o">-&gt;</span> <span class="p">{</span><span class="n">Blue</span><span class="p">,</span> <span class="n">PointSize</span><span class="p">[</span><span class="n">Medium</span><span class="p">]},</span> 
+        <span class="n">GridLines</span> <span class="o">-&gt;</span> <span class="n">Automatic</span><span class="p">,</span> 
+        <span class="n">AxesLabel</span> <span class="o">-&gt;</span> <span class="p">{</span><span class="s2">&quot;Iteration&quot;</span><span class="p">,</span> <span class="s2">&quot;Value&quot;</span><span class="p">},</span> 
+        <span class="n">PlotRange</span> <span class="o">-&gt;</span> <span class="n">All</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Fold</span><span class="p">[</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">,{</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">}]</span>
+<span class="n">FoldList</span><span class="p">[</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">,{</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">}]</span>
+<span class="n">FoldList</span><span class="p">[</span><span class="n">Max</span><span class="p">,{</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">}]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span><span class="p">[(</span><span class="c1">#+x)&amp;,{1,2,3,4,5}]</span>
+<span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">}</span><span class="o">+</span><span class="n">x</span>
+<span class="n">Apply</span><span class="p">[</span><span class="n">Plus</span><span class="p">,{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">}]</span>
+<span class="n">Total</span><span class="p">[{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">}]</span>
+
+<span class="n">FoldList</span><span class="p">[</span><span class="n">Plus</span><span class="p">,{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">}]</span>
+<span class="n">Accumulate</span><span class="p">[{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">}]</span>
+<span class="n">Total</span><span class="p">[{{</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">},{</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">},{</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">}}]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span><span class="p">[</span><span class="n">Select</span><span class="p">[</span><span class="c1">#,EvenQ]&amp; , {{1,2,3},{4,5,6},{7,8,9}}]</span>
+<span class="n">Map</span><span class="p">[</span><span class="n">Select</span><span class="p">[</span>  <span class="n">EvenQ</span><span class="p">]</span>  <span class="p">,</span> <span class="p">{{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">},{</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">},{</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">}}]</span>
+
+<span class="n">f</span><span class="p">[</span><span class="n">p_</span><span class="p">]</span><span class="o">:=</span><span class="n">Select</span><span class="p">[</span><span class="n">p</span><span class="p">,</span><span class="n">EvenQ</span><span class="p">]</span>
+<span class="n">Map</span><span class="p">[</span><span class="n">f</span> <span class="p">,</span> <span class="p">{{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">},{</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">},{</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">}}]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">If</span><span class="p">[</span><span class="c1">#==0 , 1 , # f[#-1]] &amp;; (* #和f 中间空格表示乘号 *)</span>
+<span class="n">f</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="p">(</span><span class="o">*</span> <span class="mi">5</span><span class="o">!=</span><span class="mi">120</span> <span class="o">*</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><pre style="&#102;&#111;&#110;&#116;&#45;&#102;&#97;&#109;&#105;&#108;&#121;&#58;&#32;&#34;&#67;&#111;&#117;&#114;&#105;&#101;&#114;&#32;&#78;&#101;&#119;&#34;&#44;&#67;&#111;&#117;&#114;&#105;&#101;&#114;&#44;&#109;&#111;&#110;&#111;&#115;&#112;&#97;&#99;&#101;&#59;">&#49;&#50;&#48;</pre></div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Clear</span><span class="p">[</span><span class="n">f</span><span class="p">]</span>
+<span class="n">MapThread</span><span class="p">[</span><span class="n">f</span><span class="p">,{{</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">},{</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">}}]</span>
+<span class="n">BlockMap</span><span class="p">[</span><span class="n">f</span><span class="p">,{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">},</span> <span class="mi">3</span><span class="p">]</span>
+
+<span class="n">BlockMap</span><span class="p">[</span><span class="n">f</span><span class="p">,{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">},</span> <span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">ArrayFilter</span><span class="p">[</span><span class="n">f</span><span class="p">,{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">},</span> <span class="mi">1</span><span class="p">,</span> <span class="n">Padding</span><span class="o">-&gt;</span><span class="kc">None</span><span class="p">]</span>
+<span class="n">ArrayFilter</span><span class="p">[</span><span class="n">Mean</span><span class="p">,{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">},</span> <span class="mi">1</span><span class="p">,</span> <span class="n">Padding</span><span class="o">-&gt;</span><span class="kc">None</span><span class="p">]</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+													.grid-container {
+														display: inline-grid;
+														grid-template-columns: auto;
+													}
+												</style>
+
+												<div><div class="grid-container"><div class="grid-item"><img alt="Output" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAAVCAIAAAD+VVSOAAAA0HpUWHRSYXcgcHJvZmlsZSB0eXBlIGV4aWYAAHjabU/ZbUQhEPunii1hDvBAObxdnpQOUv6aBSUiihFj4zmANL6/7vSYMJWUS1Q0QIjccrNOUWVhsUr7xA/uvHN6+knL9jut8pvA2P51+oHFVv8MElvC5w3Uvm+MPcht+drX+dr11ms9B11yAPLz9H/P2cNQoJEZs0kEGnVNlCQUkxK48QRYqHiZ5Cd5IIJtiFnhfTZO2IizeiQ4jdf8gs+dvbtydWqwVcmdmWAsLnbtrPj8zht77Frfo6LwLgAAAAlwSFlzAAAOxAAADsQBlSsOGwAAADx0RVh0U29mdHdhcmUAQ3JlYXRlZCB3aXRoIHRoZSBXb2xmcmFtIExhbmd1YWdlIDogd3d3LndvbGZyYW0uY29tXKKmhQAAACF0RVh0Q3JlYXRpb24gVGltZQAyMDI0OjExOjI2IDEyOjA3OjUwH1BKPAAAA8dJREFUaIHtmz1uszAYx5+86jE6VJhTVJChQ8wBOgSmTpFgrmDp2MUcoKydQo4QumJ16BkC6k3oYMUvxXw6JqERvwkFf/z/YPt5bNpFURQwM3ON/Lu0gJmZsZgH98zVMg/umatl2ODWdX1xhFI6kqaJMNQspfTvPparfLPVwZ3n+WKx0HVdLGpZFgAURwzDKN/lT2c8re2oFdBuVnl3Q5nNcjzPa5yQxW9c1y0aAIA4jpvuYoybbp2TFv2DaDdb1PlN0xQA0jRVIqAPFzR7ftrN1iqsWblr50fT71fJbPbPoWma+OM5NpSWZfF8LgxDiRZY6CnXZa1N88XwMOp5nlz1SloYhuE0zbIklsFyGwkWAsqS/s7lHSEk1hKLNUUujDGP1KcEbtd1ASDLMn7dVEyicU5Ps0VzWgLHEJ9lGXSF+1riOK48JYQQIUQseUGzXCc3GMexhFmxo1qnRZfZ2rvdg5vR+ap6pmUA0KS+E4wxQkh892WUpKF9xmXT4C7XwhjLZasIIW6ENctmdYULmq2IVAIhBCHUdFdicP9KS3a73cPDg2QIaKAcuU7cbu/3+yzLbNsmhIg7+olwe3vLrzVNOxwOEo1sNpsoitj1drt1Xbc2p7wgeZ5nWeY4jsIGgyD4+PiQq+44jpjx/h/clFLbtu/v7+UFCuR5XpnfJ7bGLr6/vxWImzCPj48AsNvtACCKoufn50srGp3VakUIkZ7DhmEEQVAZ3zfl20VReJ6ncFH8+voCAFXvhs0Tx3FM01wul+v1Wkmz45Hn+Wq1kqioaZrruu/v7wCAMZ7asg3H04nPz08lo8XzPF3Xfd8/pQVx6ex7FCgHi9FsiANAbVrSc4NsWRZC6O3tzTAMQoht20P31Gf+/BaGYZIklYndX4PjOEmS2Lb98vIi0fsZzBJCgiDgXVBKWagZKoNSGkXRfr9XrnDco0A+EJnJNE0xxpUy7JftdtvSjq7rSZKwlQwAfN9HCJmmOejl9enoFNgaZpomMxsEQVEUlUW3vwbDMBBCCCG5pXFsswDg+34cx9zv6+urGEv7yDBNE34fCModoYrcdBcBAABN0+QyZt/3y+FGnKBPT09Jktzd3bU0Im7LJDZqfTpiSJvtrNVfA2Oz2UjIGNSRtFkAWK/X7clhHxkn7sTaGHTg0oL0F1p22ipXV6RFv9qOpM/4empg557tZSZuVq2MU48CAWC5XDb94VQ7h8Nh6GEf++4IiuYu+y7IT9DG64gx1G9/DbzZlug0cbNqZbSYLXckslD4CGZmJsX8zwozV8sPqMnOBkyKaqgAAAAASUVORK5CYII="></div><div class="grid-item"><img alt="Output" src="data:image/png;base64,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"></div><div class="grid-item"><img alt="Output" src="data:image/png;base64,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"></div><div class="grid-item"><img alt="Output" src="data:image/png;base64,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"></div><div class="grid-item"><img alt="Output" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALEAAAAVCAIAAACGxphqAAAAz3pUWHRSYXcgcHJvZmlsZSB0eXBlIGV4aWYAAHjabU/rjYMhDPvPFDdCSIID4/C1VOoGHf9MQXeiqhGxcR5AGq/nI/1MaJbkJSoaIIQ3b9opqiwsztLe8Y1rM8+Hn3LZfqdV/hMY279OP7BY68cg0SVs3kBtvhv2INPl575ftOu113oOuuQA5O/pX89uoSjI4YyuEoFGXRMlCUWlBB64ASzMuKv4jTwQwTbErLA+Gyd0xFk9EozGfX7B5nbrlrk6NdiayZ2ZYCwmeu2s2PzOL3GZWth+dchOAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAPHRFWHRTb2Z0d2FyZQBDcmVhdGVkIHdpdGggdGhlIFdvbGZyYW0gTGFuZ3VhZ2UgOiB3d3cud29sZnJhbS5jb21coqaFAAAAIXRFWHRDcmVhdGlvbiBUaW1lADIwMjQ6MTE6MjYgMTI6MDc6NTAfUEo8AAACuUlEQVRoge2aMa7jIBCG8WpPEaWIjI9hpSXHSIvrKHewT5HOV4hr5xi2q9yDLUaL2MFgPPDeW0V83eOFPwP8M4yTFEoplskY/PrpADL/HdkTGUz2RAaTPZHBYE8sy1IURVVV9qCG/GZVVWkR9BZkLpdLURRN08SHBCzLQg6maZpIna7rCgvyXpmr67puNdrX64WnqX+RUqKReZ4ZY+M4wp+cc865ikYIEa/T9z2swg47EM5527aRYai/u0QOwwPnnCZrThzHkTG2ulIhBBrBnrBfgYBj0BYhAzrzPMeIwImSd02l84QQ4isMQd5tMIE50RWhPbi7nzgej3uneCjLkjy367p5nu/3e8J4aCzLMgzD7XZLrvx4PIQQdV3vnXg4HBhj7/dbj0zTdDqdgiYjj2zWibZtWXR+K6WYo5QFArW673sVUV1hrmc3AoFs1hcZS3SJ2Lm+Cyml3mRYputlaGSfJ+AkNn3jQZ9BZDMhpdRhxHjCRAhBszvkiY4Bdin+SopvucBV/iPb8ETf9/6VxCQTAvaRlgQogVJ5QlGrF6zFHJFSJjlOKIQ0oE6AxeHgVu0+jiNaMjP/5z8kSPH4W8MUjO+oY3RsaGUfbg1zBDrfmEgii4TdnHLOXdUCZcL2s6hWTGsIRe35oTKvElmuzR5lF3Y6mVcbOZKY5dhtn8tkxH4CLlpPCYEj2XURQGVLIrVaJwg6rns3RMrccVfFDQ/JtTnhOhADanECn0W3PaH7FBPkODCNv+qi/Ha9OEQKseqJQB0zJFeFCJSCl3lu7kAdz+dLBJ3NImrr/HbVYU1d12rrNxbX63UYBv/jb1mWmzqBUohpmsg6CUN6Pp9JdDY3PJWOk03XhOB5/P0pqQ8OKeHSVMjnmOfzedeXLvA9CgtLuO+R+uCQEi7NVEMUSdQzn0T+/UQG8weglZ5REuEQtgAAAABJRU5ErkJggg=="></div></div></div></div></div>
+</div>
+</section>
+</section>
+<section id="coding-theory-information">
+<h2><span class="section-number">8.2. </span>Coding Theory &amp; Information<a class="headerlink" href="#coding-theory-information" title="Link to this heading">#</a></h2>
+<p>symbols&lt;-&gt;info, data storage/compression/transmission/cryptography, error detection/correction to protect information</p>
+</section>
+<section id="data-analysis">
+<h2><span class="section-number">8.3. </span>Data analysis<a class="headerlink" href="#data-analysis" title="Link to this heading">#</a></h2>
+<p>Visualisation, Simulation</p>
+</section>
+<section id="statistics-probability-theory-spt">
+<h2><span class="section-number">8.4. </span>Statistics &amp; Probability Theory(SPT)<a class="headerlink" href="#statistics-probability-theory-spt" title="Link to this heading">#</a></h2>
+<p>Descriptive, Inferential, Correlation &amp; Regression, Sample Spaces (countable VS. uncountable), Conditional Probability, Random Variable</p>
+<p>Math built SPT through two ways:</p>
+<ul class="simple">
+<li><p>Discrete approach through combinatorics</p></li>
+<li><p>Continuous approach through measure theory (e.g. modelling Stochastic Processes正态分布，是一种模型，对binomial分布进行模拟)</p></li>
+</ul>
+</section>
+<section id="game-theory-decision-operation">
+<h2><span class="section-number">8.5. </span>Game Theory &amp; Decision &amp; Operation<a class="headerlink" href="#game-theory-decision-operation" title="Link to this heading">#</a></h2>
+<p>Utilities/Strategies, Decision Analysis, Optimization, Stochastic Process Modeling</p>
+</section>
+<section id="quantum-theory">
+<h2><span class="section-number">8.6. </span>Quantum Theory<a class="headerlink" href="#quantum-theory" title="Link to this heading">#</a></h2>
+<p>This is cornerstone of modern physics, with deep roots in Linear Algebra, Functional Analysis, DE, Complex Analysis, Group Theory, Probability &amp; Statistics, Topology, Measure and Variational Calculus</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "sagemath"
+        },
+        kernelOptions: {
+            name: "sagemath",
+            path: "./math"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'sagemath'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="02discrete_continuous.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Discrete &amp; Continuous</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="05math_as_code.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">9. </span>Math as code</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functional-programming">8.1. Functional Programming</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#de-programming">8.1.1. DE &amp; Programming</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#category-theory-programming">8.1.2. Category Theory &amp; Programming</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fp-wolfram-language-from-functional-programming">8.1.3. FP Wolfram Language: from Functional Programming</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coding-theory-information">8.2. Coding Theory &amp; Information</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-analysis">8.3. Data analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistics-probability-theory-spt">8.4. Statistics &amp; Probability Theory(SPT)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#game-theory-decision-operation">8.5. Game Theory &amp; Decision &amp; Operation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-theory">8.6. Quantum Theory</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jonny, assisted by Tom
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
