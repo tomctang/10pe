@@ -6,8 +6,8 @@ parts:
 - caption: Mathe & FP/Language
   numbered: true
   chapters:
-  - file: Alevel_math
-  - file: Alevel_math_further
+  - file: Alevel/Alevel_math
+  - file: Alevel/Alevel_math_further
   - file: Course_MCM
   - file: Course_Lean  
   - file: math/00intro_math
@@ -21,8 +21,8 @@ parts:
   chapters:
   - file: Course_MIT6001Python
   - file: Course_MIT6002thinking
-  - file: PE50
-  - file: PE75  
+  - file: PE/PE50
+  - file: PE/PE75  
   - file: Course_MCM_QM
   - file: Course_MCM_QFT
   
