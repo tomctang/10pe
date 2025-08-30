@@ -176,30 +176,25 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Mathe &amp; FP/Language</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Alevel_math.html">1. A-level-math</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Alevel_math_further.html">2. A-level-further</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Course_MCM.html">3. Math Computational Methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Course_Lean.html">4. Lean</a></li>
-<li class="toctree-l1"><a class="reference internal" href="math/00intro_math.html">5. Math-FP-Lang Combo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="math/01number_algebra.html">6. Number &amp; Algebra</a></li>
-<li class="toctree-l1"><a class="reference internal" href="math/02discrete_continuous.html">7. Discrete &amp; Continuous</a></li>
-<li class="toctree-l1"><a class="reference internal" href="math/03real_world.html">8. Real World Math</a></li>
-<li class="toctree-l1"><a class="reference internal" href="math/05math_as_code.html">9. Math as code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Course_MCM.html">1. Math Computational Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Course_Lean.html">2. Lean</a></li>
+<li class="toctree-l1"><a class="reference internal" href="math/00intro_math.html">3. Math-FP-Lang Combo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="math/01number_algebra.html">4. Number &amp; Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="math/02discrete_continuous.html">5. Discrete &amp; Continuous</a></li>
+<li class="toctree-l1"><a class="reference internal" href="math/03real_world.html">6. Real World Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="math/05math_as_code.html">7. Math as code</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">CS &amp; Physics</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Course_MIT6001Python.html">10. MIT_CS6001-Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Course_MIT6002thinking.html">11. MIT_CS6002-CS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="PE50.html">12. Project Euler Q1-50</a></li>
-<li class="toctree-l1"><a class="reference internal" href="PE75.html">13. Project Euler Q51-</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Course_MCM_QM.html">14. Quantum Mechanics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Course_MCM_QFT.html">15. QFT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Course_MIT6001Python.html">8. MIT_CS6001-Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Course_MIT6002thinking.html">9. MIT_CS6002-CS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Course_MCM_QM.html">10. Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Course_MCM_QFT.html">11. QFT</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Notebook</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="nb_past_courses.html">16. Past courses</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nb_Geo.html">17. Geography and Maps</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nb_lottery_simulator.html">18. Lottery Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nb_past_courses.html">12. Past courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nb_lottery_simulator.html">13. Lottery Math</a></li>
 </ul>
 
     </div>
@@ -1540,6 +1535,37 @@ T
     <span class="nb">print</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span><span class="o">%</span><span class="k">1000000007</span>)
 <span class="k">else</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Making Bank</span>
+<span class="n">n</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="n">classes</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">solve</span><span class="p">(</span><span class="n">days</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">days</span><span class="o">==</span><span class="p">[</span><span class="s1">&#39;M&#39;</span><span class="p">]</span><span class="o">*</span><span class="n">n</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span>
+    <span class="n">max_money</span><span class="o">=</span><span class="n">n</span>
+    <span class="k">for</span> <span class="n">day</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">days</span><span class="p">[</span><span class="n">day</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;C&#39;</span><span class="p">:</span>
+            <span class="n">s</span><span class="o">=</span><span class="mi">1</span>
+            <span class="n">money</span><span class="o">=</span><span class="mi">0</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">day</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">days</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;C&#39;</span><span class="p">:</span>
+                    <span class="n">s</span><span class="o">+=</span><span class="mi">1</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">money</span><span class="o">+=</span><span class="n">s</span>
+            <span class="n">money</span><span class="o">+=</span><span class="n">s</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">day</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">max_money</span><span class="o">=</span><span class="nb">max</span><span class="p">(</span><span class="n">money</span><span class="p">,</span><span class="n">max_money</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">max_money</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">solve</span><span class="p">(</span><span class="n">classes</span><span class="p">,</span><span class="n">n</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
 </pre></div>
 </div>
 </div>
