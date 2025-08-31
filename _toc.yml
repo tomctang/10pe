@@ -30,5 +30,5 @@ parts:
   numbered: true
   chapters:
   - file: nb_past_courses
-  - file: nb_Geo
+  - file: geo/nb_Geo
   - file: nb_lottery_simulator
