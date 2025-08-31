@@ -1,0 +1,1716 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1. Bell States &#8212; Jonny Workbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=8dedbda2" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '17MCM_QM/1Quantum Computing Notebooks';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Jonny Workbook</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Mathe &amp; FP/Language</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Alevel/Alevel_math.html">1. A-level-math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Alevel/Alevel_math_further.html">2. A-level-further</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Course_MCM.html">3. Math Computational Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Course_Lean.html">4. Lean</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../math/00intro_math.html">5. Math-FP-Lang Combo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../math/01number_algebra.html">6. Number &amp; Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../math/02discrete_continuous.html">7. Discrete &amp; Continuous</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../math/03real_world.html">8. Real World Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../math/05math_as_code.html">9. Math as code</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CS &amp; Physics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Course_MIT6001Python.html">10. MIT_CS6001-Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Course_MIT6002thinking.html">11. MIT_CS6002-CS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PE/PE50.html">12. Project Euler Q1-50</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PE/PE75.html">13. Project Euler Q51-</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Course_MCM_QM.html">14. Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Course_MCM_QFT.html">15. QFT</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notebook</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../nb_past_courses.html">16. Past courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../geo/nb_Geo.html">17. Geography and Maps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nb_lottery_simulator.html">18. Lottery Math</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/tomctang/10pe" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/17MCM_QM/1Quantum Computing Notebooks.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>1. Bell States</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">1. Bell States</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-functions-on-qc-hardware">2. Boolean Functions on QC Hardware</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-a-state-lvert-alpha-rangle-jumps-to-eigenstate-lvert-a-i-rangle">3. Probability a state <span class="math notranslate nohighlight">\(\lvert \alpha \rangle\)</span> jumps to Eigenstate <span class="math notranslate nohighlight">\(\lvert a^{(i)}\rangle\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constructing-measurement-operators">Constructing Measurement Operators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expectation-values">Expectation Values</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#superdense-coding">4. Superdense Coding</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#bloch-sphere-examples">5. Bloch Sphere Examples</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p>Quantum Computing Notebooks</p>
+<p>This repository contains SageMath and Python notebooks covering various topics of quantum computing.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://nbviewer.org/github/msqc-goethe/quantum-computing-notebooks/blob/main/sagemath/bell-states.ipynb">View notebook about Bell states online.</a></p></li>
+<li><p><a class="reference external" href="https://nbviewer.org/github/msqc-goethe/quantum-computing-notebooks/blob/main/sagemath/boolean_functions_qc.ipynb">View notebook about boolean functions online.</a></p></li>
+<li><p><a class="reference external" href="https://nbviewer.org/github/msqc-goethe/quantum-computing-notebooks/blob/main/sagemath/measurements.ipynb">View notebook about measurements online.</a></p></li>
+<li><p><a class="reference external" href="https://nbviewer.org/github/msqc-goethe/quantum-computing-notebooks/blob/main/sagemath/super_dense_coding.ipynb">View notebook about super dense coding online.</a></p></li>
+<li><p><a class="reference external" href="https://nbviewer.org/github/msqc-goethe/quantum-computing-notebooks/blob/main/qiskit/bloch-sphere_examples.ipynb">View notebook about the bloch-sphere online.</a></p></li>
+</ul>
+<section class="tex2jax_ignore mathjax_ignore" id="bell-states">
+<h1>1. Bell States<a class="headerlink" href="#bell-states" title="Link to this heading">#</a></h1>
+<p>Let’s write down <span class="math notranslate nohighlight">\(\lvert0\rangle\)</span> and <span class="math notranslate nohighlight">\(\lvert1\rangle\)</span> in vector form.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z_0</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+<span class="n">z_1</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="n">z_0</span><span class="p">,</span> <span class="n">z_1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{r}
+1 \\
+0
+\end{array}\right) \left(\begin{array}{r}
+0 \\
+1
+\end{array}\right)</script></html></div></div>
+</div>
+<p>We can create multiple qubit states with the tensor product.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z_00</span> <span class="o">=</span> <span class="n">z_0</span><span class="o">.</span><span class="n">tensor_product</span><span class="p">(</span><span class="n">z_0</span><span class="p">)</span>
+<span class="n">z_01</span> <span class="o">=</span> <span class="n">z_0</span><span class="o">.</span><span class="n">tensor_product</span><span class="p">(</span><span class="n">z_1</span><span class="p">)</span>
+<span class="n">z_10</span> <span class="o">=</span> <span class="n">z_1</span><span class="o">.</span><span class="n">tensor_product</span><span class="p">(</span><span class="n">z_0</span><span class="p">)</span>
+<span class="n">z_11</span> <span class="o">=</span> <span class="n">z_1</span><span class="o">.</span><span class="n">tensor_product</span><span class="p">(</span><span class="n">z_1</span><span class="p">)</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="n">z_00</span><span class="p">,</span> <span class="n">z_01</span><span class="p">,</span> <span class="n">z_10</span><span class="p">,</span> <span class="n">z_11</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{r}
+1 \\
+0 \\
+\hline
+ 0 \\
+0
+\end{array}\right) \left(\begin{array}{r}
+0 \\
+1 \\
+\hline
+ 0 \\
+0
+\end{array}\right) \left(\begin{array}{r}
+0 \\
+0 \\
+\hline
+ 1 \\
+0
+\end{array}\right) \left(\begin{array}{r}
+0 \\
+0 \\
+\hline
+ 0 \\
+1
+\end{array}\right)</script></html></div></div>
+</div>
+<p>Parallel gates can be expressed as tensor product as well.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">H</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span> <span class="o">*</span> <span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="n">H</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{rr}
+\frac{1}{2} \, \sqrt{2} & \frac{1}{2} \, \sqrt{2} \\
+\frac{1}{2} \, \sqrt{2} & -\frac{1}{2} \, \sqrt{2}
+\end{array}\right)</script></html></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">H_p_I</span> <span class="o">=</span> <span class="n">H</span><span class="o">.</span><span class="n">tensor_product</span><span class="p">(</span><span class="n">identity_matrix</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="n">H_p_I</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{rr|rr}
+\frac{1}{2} \, \sqrt{2} & 0 & \frac{1}{2} \, \sqrt{2} & 0 \\
+0 & \frac{1}{2} \, \sqrt{2} & 0 & \frac{1}{2} \, \sqrt{2} \\
+\hline
+ \frac{1}{2} \, \sqrt{2} & 0 & -\frac{1}{2} \, \sqrt{2} & 0 \\
+0 & \frac{1}{2} \, \sqrt{2} & 0 & -\frac{1}{2} \, \sqrt{2}
+\end{array}\right)</script></html></div></div>
+</div>
+<p>We also need a CNOT gate.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CNOT</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+               <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+               <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+               <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="n">CNOT</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{rrrr}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 1 \\
+0 & 0 & 1 & 0
+\end{array}\right)</script></html></div></div>
+</div>
+<p>Now let’s see if we can get the Bell states.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b_00</span> <span class="o">=</span> <span class="n">CNOT</span> <span class="o">*</span> <span class="n">H_p_I</span> <span class="o">*</span> <span class="n">z_00</span>
+<span class="n">b_01</span> <span class="o">=</span> <span class="n">CNOT</span> <span class="o">*</span> <span class="n">H_p_I</span> <span class="o">*</span> <span class="n">z_01</span>
+<span class="n">b_10</span> <span class="o">=</span> <span class="n">CNOT</span> <span class="o">*</span> <span class="n">H_p_I</span> <span class="o">*</span> <span class="n">z_10</span>
+<span class="n">b_11</span> <span class="o">=</span> <span class="n">CNOT</span> <span class="o">*</span> <span class="n">H_p_I</span> <span class="o">*</span> <span class="n">z_11</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="n">b_00</span><span class="p">,</span> <span class="n">b_01</span><span class="p">,</span> <span class="n">b_10</span><span class="p">,</span> <span class="n">b_11</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{r}
+\frac{1}{2} \, \sqrt{2} \\
+0 \\
+0 \\
+\frac{1}{2} \, \sqrt{2}
+\end{array}\right) \left(\begin{array}{r}
+0 \\
+\frac{1}{2} \, \sqrt{2} \\
+\frac{1}{2} \, \sqrt{2} \\
+0
+\end{array}\right) \left(\begin{array}{r}
+\frac{1}{2} \, \sqrt{2} \\
+0 \\
+0 \\
+-\frac{1}{2} \, \sqrt{2}
+\end{array}\right) \left(\begin{array}{r}
+0 \\
+\frac{1}{2} \, \sqrt{2} \\
+-\frac{1}{2} \, \sqrt{2} \\
+0
+\end{array}\right)</script></html></div></div>
+</div>
+<p>We can show that the bell states form an orthonormal basis:</p>
+<ul class="simple">
+<li><p>All base vectors have the norm 1: <span class="math notranslate nohighlight">\(\langle b_i \rvert b_i \rangle=1\)</span> for all <span class="math notranslate nohighlight">\(i \in {1,\ldots,n}\)</span></p></li>
+<li><p>The base vectors are pairwise orthogonal: <span class="math notranslate nohighlight">\(\langle b_i \rvert b_j \rangle=0\)</span> for all <span class="math notranslate nohighlight">\(i,j \in {1,\ldots,n}\)</span> with <span class="math notranslate nohighlight">\(i\neq j\)</span></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">b_i</span> <span class="ow">in</span> <span class="p">[</span><span class="n">b_00</span><span class="p">,</span> <span class="n">b_01</span><span class="p">,</span> <span class="n">b_10</span><span class="p">,</span> <span class="n">b_11</span><span class="p">]:</span>
+    <span class="n">pretty_print</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="n">b_i</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">b_i</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}1</script></html></div><div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}1</script></html></div><div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}1</script></html></div><div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}1</script></html></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">b_i</span> <span class="ow">in</span> <span class="p">[</span><span class="n">b_00</span><span class="p">,</span> <span class="n">b_01</span><span class="p">,</span> <span class="n">b_10</span><span class="p">,</span> <span class="n">b_11</span><span class="p">]:</span>
+    <span class="k">for</span> <span class="n">b_j</span> <span class="ow">in</span> <span class="p">[</span><span class="n">b_00</span><span class="p">,</span> <span class="n">b_01</span><span class="p">,</span> <span class="n">b_10</span><span class="p">,</span> <span class="n">b_11</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="n">b_i</span> <span class="o">!=</span> <span class="n">b_j</span><span class="p">:</span>
+            <span class="n">pretty_print</span><span class="p">(</span><span class="n">b_i</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">b_j</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{r}
+0
+\end{array}\right)</script></html></div><div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{r}
+0
+\end{array}\right)</script></html></div><div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{r}
+0
+\end{array}\right)</script></html></div><div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{r}
+0
+\end{array}\right)</script></html></div><div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{r}
+0
+\end{array}\right)</script></html></div><div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{r}
+0
+\end{array}\right)</script></html></div><div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{r}
+0
+\end{array}\right)</script></html></div><div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{r}
+0
+\end{array}\right)</script></html></div><div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{r}
+0
+\end{array}\right)</script></html></div><div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{r}
+0
+\end{array}\right)</script></html></div><div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{r}
+0
+\end{array}\right)</script></html></div><div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{r}
+0
+\end{array}\right)</script></html></div></div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="boolean-functions-on-qc-hardware">
+<h1>2. Boolean Functions on QC Hardware<a class="headerlink" href="#boolean-functions-on-qc-hardware" title="Link to this heading">#</a></h1>
+<p>We can express boolean functions as matrices, but often they are irreversible. The following operations always produce the same result, independent of the input. This is clearly not reversible.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f_0</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="n">f_1</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="n">f_0</span><span class="p">,</span> <span class="n">f_1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{rr}
+0 & 0 \\
+1 & 1
+\end{array}\right) \left(\begin{array}{rr}
+1 & 1 \\
+0 & 0
+\end{array}\right)</script></html></div></div>
+</div>
+<p>Let’s apply the operations to the z base kets.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z_0</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+<span class="n">z_1</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="n">f_0</span> <span class="o">*</span> <span class="n">z_0</span><span class="p">,</span> <span class="n">f_0</span> <span class="o">*</span> <span class="n">z_1</span><span class="p">)</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="n">f_1</span> <span class="o">*</span> <span class="n">z_0</span><span class="p">,</span> <span class="n">f_1</span> <span class="o">*</span> <span class="n">z_1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{r}
+0 \\
+1
+\end{array}\right) \left(\begin{array}{r}
+0 \\
+1
+\end{array}\right)</script></html></div><div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{r}
+1 \\
+0
+\end{array}\right) \left(\begin{array}{r}
+1 \\
+0
+\end{array}\right)</script></html></div></div>
+</div>
+<p>We can show easily that these operations are not unitary. Multiplying a unitary matrix with its conjugate transposed results in the unit matrix.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pretty_print</span><span class="p">(</span><span class="n">f_0</span> <span class="o">*</span> <span class="n">f_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">())</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="n">f_1</span> <span class="o">*</span> <span class="n">f_1</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{rr}
+0 & 0 \\
+0 & 2
+\end{array}\right)</script></html></div><div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{rr}
+2 & 0 \\
+0 & 0
+\end{array}\right)</script></html></div></div>
+</div>
+<p>We have a unary (unary: one bit in, one bit out <span class="math notranslate nohighlight">\(\neq\)</span> unitary) function <span class="math notranslate nohighlight">\(f(x)\)</span>. We can create a quantum circuit which calculates <span class="math notranslate nohighlight">\(f\)</span> and preserves the output. Therefore it is reversible and a valid operation. The <span class="math notranslate nohighlight">\(\oplus\)</span> sign represents the binary xor operation.
+<img alt="circuit.png" src="17MCM_QM/attachment:circuit.png" /></p>
+<p>How to construct the matrix <span class="math notranslate nohighlight">\(U_f\)</span>? In general, we can construct the matrix of a unitary operation <span class="math notranslate nohighlight">\(U\)</span> by concatenating the column vectors that arise when we apply <span class="math notranslate nohighlight">\(U\)</span> to the base states:</p>
+<p><span class="math notranslate nohighlight">\(U_f = (U_f\lvert00\rangle, U_f\lvert01\rangle, U_f\lvert10\rangle, U_f\lvert11\rangle)\)</span></p>
+<p>For our <span class="math notranslate nohighlight">\(U_f\)</span>, <span class="math notranslate nohighlight">\(x\)</span> remains the same and <span class="math notranslate nohighlight">\(y\)</span> becomes <span class="math notranslate nohighlight">\(y\oplus f(x)\)</span>, therefore</p>
+<p><span class="math notranslate nohighlight">\(U_f=(\lvert0\rangle\lvert0\oplus f(0)\rangle, \lvert0\rangle\lvert1\oplus f(0)\rangle, \lvert1\rangle\lvert0\oplus f(1)\rangle, \lvert1\rangle\lvert1\oplus f(1)\rangle)\)</span></p>
+<p>If we apply the xor operation (also called addition modulo 2) with the value <span class="math notranslate nohighlight">\(0\)</span> to any bit, it remains the same. With <span class="math notranslate nohighlight">\(1\)</span> it gets inverted, therefore</p>
+<p><span class="math notranslate nohighlight">\(U_f=(\lvert0\rangle\lvert f(0)\rangle, \lvert0\rangle \lvert\overline{f(0)}\rangle,  \lvert1\rangle\lvert f(1)\rangle, \lvert1\rangle \lvert\overline{f(1)}\rangle\)</span>,
+which can be seen as a manual to construct the matrix <span class="math notranslate nohighlight">\(U_f\)</span> for arbitrary functions <span class="math notranslate nohighlight">\(f(x)\)</span>.</p>
+<p>Matrices for the four unary operations <span class="math notranslate nohighlight">\(f(x)=0\)</span>, <span class="math notranslate nohighlight">\(f(x)=1\)</span>, <span class="math notranslate nohighlight">\(f(x)=x\)</span> and <span class="math notranslate nohighlight">\(f(x)=\bar{x}\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zero_rev</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> 
+                   <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> 
+                   <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> 
+                   <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="n">one_rev</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                  <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+                  <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+<span class="n">id_rev</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                 <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                 <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+                 <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+<span class="n">not_rev</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                  <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                  <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="n">zero_rev</span><span class="p">,</span> <span class="n">one_rev</span><span class="p">,</span> <span class="n">id_rev</span><span class="p">,</span> <span class="n">not_rev</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{rrrr}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{array}\right) \left(\begin{array}{rrrr}
+0 & 1 & 0 & 0 \\
+1 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1 \\
+0 & 0 & 1 & 0
+\end{array}\right) \left(\begin{array}{rrrr}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 1 \\
+0 & 0 & 1 & 0
+\end{array}\right) \left(\begin{array}{rrrr}
+0 & 1 & 0 & 0 \\
+1 & 0 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{array}\right)</script></html></div></div>
+</div>
+<p>Let us test the operations. We always set <span class="math notranslate nohighlight">\(y = 0\)</span>, since <span class="math notranslate nohighlight">\(0 \oplus f(x) = f(x)\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z_0</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+<span class="n">z_1</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">op</span> <span class="ow">in</span> <span class="p">[</span><span class="n">zero_rev</span><span class="p">,</span> <span class="n">one_rev</span><span class="p">,</span> <span class="n">id_rev</span><span class="p">,</span> <span class="n">not_rev</span><span class="p">]:</span>
+    <span class="k">for</span> <span class="n">ket</span> <span class="ow">in</span> <span class="p">[</span><span class="n">z_0</span><span class="p">,</span> <span class="n">z_1</span><span class="p">]:</span>
+        <span class="n">pretty_print</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="n">ket</span><span class="o">.</span><span class="n">tensor_product</span><span class="p">(</span><span class="n">z_0</span><span class="p">),</span> <span class="s1">&#39;=&#39;</span><span class="p">,</span> <span class="n">op</span> <span class="o">*</span> <span class="n">ket</span><span class="o">.</span><span class="n">tensor_product</span><span class="p">(</span><span class="n">z_0</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{rrrr}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{array}\right) \verb|*| \left(\begin{array}{r}
+1 \\
+0 \\
+\hline
+ 0 \\
+0
+\end{array}\right) \verb|=| \left(\begin{array}{r}
+1 \\
+0 \\
+0 \\
+0
+\end{array}\right)</script></html></div><div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{rrrr}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{array}\right) \verb|*| \left(\begin{array}{r}
+0 \\
+0 \\
+\hline
+ 1 \\
+0
+\end{array}\right) \verb|=| \left(\begin{array}{r}
+0 \\
+0 \\
+1 \\
+0
+\end{array}\right)</script></html></div><div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{rrrr}
+0 & 1 & 0 & 0 \\
+1 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1 \\
+0 & 0 & 1 & 0
+\end{array}\right) \verb|*| \left(\begin{array}{r}
+1 \\
+0 \\
+\hline
+ 0 \\
+0
+\end{array}\right) \verb|=| \left(\begin{array}{r}
+0 \\
+1 \\
+0 \\
+0
+\end{array}\right)</script></html></div><div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{rrrr}
+0 & 1 & 0 & 0 \\
+1 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1 \\
+0 & 0 & 1 & 0
+\end{array}\right) \verb|*| \left(\begin{array}{r}
+0 \\
+0 \\
+\hline
+ 1 \\
+0
+\end{array}\right) \verb|=| \left(\begin{array}{r}
+0 \\
+0 \\
+0 \\
+1
+\end{array}\right)</script></html></div><div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{rrrr}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 1 \\
+0 & 0 & 1 & 0
+\end{array}\right) \verb|*| \left(\begin{array}{r}
+1 \\
+0 \\
+\hline
+ 0 \\
+0
+\end{array}\right) \verb|=| \left(\begin{array}{r}
+1 \\
+0 \\
+0 \\
+0
+\end{array}\right)</script></html></div><div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{rrrr}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 1 \\
+0 & 0 & 1 & 0
+\end{array}\right) \verb|*| \left(\begin{array}{r}
+0 \\
+0 \\
+\hline
+ 1 \\
+0
+\end{array}\right) \verb|=| \left(\begin{array}{r}
+0 \\
+0 \\
+0 \\
+1
+\end{array}\right)</script></html></div><div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{rrrr}
+0 & 1 & 0 & 0 \\
+1 & 0 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{array}\right) \verb|*| \left(\begin{array}{r}
+1 \\
+0 \\
+\hline
+ 0 \\
+0
+\end{array}\right) \verb|=| \left(\begin{array}{r}
+0 \\
+1 \\
+0 \\
+0
+\end{array}\right)</script></html></div><div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{rrrr}
+0 & 1 & 0 & 0 \\
+1 & 0 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{array}\right) \verb|*| \left(\begin{array}{r}
+0 \\
+0 \\
+\hline
+ 1 \\
+0
+\end{array}\right) \verb|=| \left(\begin{array}{r}
+0 \\
+0 \\
+1 \\
+0
+\end{array}\right)</script></html></div></div>
+</div>
+<p>Are the operations reversible?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">op</span> <span class="ow">in</span> <span class="p">[</span><span class="n">zero_rev</span><span class="p">,</span> <span class="n">one_rev</span><span class="p">,</span> <span class="n">id_rev</span><span class="p">,</span> <span class="n">not_rev</span><span class="p">]:</span>
+    <span class="n">pretty_print</span><span class="p">(</span><span class="n">zero_rev</span> <span class="o">*</span> <span class="n">zero_rev</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{rrrr}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{array}\right)</script></html></div><div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{rrrr}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{array}\right)</script></html></div><div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{rrrr}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{array}\right)</script></html></div><div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{rrrr}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{array}\right)</script></html></div></div>
+</div>
+<p>We can proof for all <span class="math notranslate nohighlight">\(U_f\)</span> constructed in this way, that they are their own inverse. If <span class="math notranslate nohighlight">\(U_f\)</span> is it’s own inverse, we can apply it two times to a ket <span class="math notranslate nohighlight">\(\lvert xy\rangle\)</span> and receive the initial state. With some transformations, we can show that this works for all <span class="math notranslate nohighlight">\(U_f\)</span> constructed like shown above. Note that <span class="math notranslate nohighlight">\(f(x)\oplus f(x) = 0\)</span> for all <span class="math notranslate nohighlight">\(f(x)\)</span> and <span class="math notranslate nohighlight">\(x\)</span> and that <span class="math notranslate nohighlight">\(y\oplus 0=y\)</span>.</p>
+<p><span class="math notranslate nohighlight">\((U_f U_f)\lvert xy\rangle = U_f(U_f\lvert xy\rangle) = U_f(\lvert x\rangle \lvert y\oplus f(x)\rangle) = \lvert x\rangle\lvert(y\oplus f(x))\oplus f(x)\rangle = \lvert x\rangle\lvert y\oplus (f(x)\oplus f(x))\rangle = \lvert xy\rangle\)</span></p>
+<p>Construction of the matrix is straightforward, we can write a function that converts a lookup table of a boolean function to the corresponding matrix. The input of the function “lookup_table” is a list which contains all values of <span class="math notranslate nohighlight">\(f(x)\)</span>, e.g. <span class="math notranslate nohighlight">\([0,0,0,1]\)</span> for the and-gate.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">get_ket</span><span class="p">(</span><span class="n">bit_str</span><span class="p">):</span>
+    <span class="c1"># create a state vector in z-base from binary string</span>
+    <span class="n">z_0</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+    <span class="n">z_1</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">([</span><span class="mi">1</span><span class="p">])</span>
+    <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">bit_str</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="s1">&#39;0&#39;</span><span class="p">:</span>
+            <span class="n">v</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">tensor_product</span><span class="p">(</span><span class="n">z_0</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">v</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">tensor_product</span><span class="p">(</span><span class="n">z_1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">v</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">flip_bit</span><span class="p">(</span><span class="n">bit</span><span class="p">):</span>
+    <span class="c1"># flip a bit in string form</span>
+    <span class="k">if</span> <span class="n">bit</span> <span class="o">==</span> <span class="s1">&#39;0&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;1&#39;</span>
+    <span class="k">if</span> <span class="n">bit</span> <span class="o">==</span> <span class="s1">&#39;1&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;0&#39;</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">construct_rev_operation</span><span class="p">(</span><span class="n">lookup_table</span><span class="p">):</span>
+    <span class="c1"># construct the matrix for the reversible operation of an arbitrary boolean function,</span>
+    <span class="c1"># the lookup_table contains results of the function for all possible ordered inputs</span>
+    <span class="n">num_input</span> <span class="o">=</span> <span class="n">log</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lookup_table</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="n">num_input</span><span class="p">):</span>
+        <span class="n">m</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">get_ket</span><span class="p">(</span><span class="nb">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">num_input</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">lookup_table</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span><span class="o">.</span><span class="n">list</span><span class="p">())</span>
+        <span class="n">m</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">get_ket</span><span class="p">(</span><span class="nb">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">num_input</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">flip_bit</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">lookup_table</span><span class="p">[</span><span class="n">i</span><span class="p">])))</span><span class="o">.</span><span class="n">list</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">matrix</span><span class="p">(</span><span class="n">m</span><span class="p">)</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let us test the function for the manually created matrices and some additional ones.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pretty_print</span><span class="p">(</span><span class="s1">&#39;Always zero:&#39;</span><span class="p">,</span> <span class="n">construct_rev_operation</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]))</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="s1">&#39;Always one:&#39;</span><span class="p">,</span> <span class="n">construct_rev_operation</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="s1">&#39;Identity:&#39;</span><span class="p">,</span> <span class="n">construct_rev_operation</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="s1">&#39;Not:&#39;</span><span class="p">,</span> <span class="n">construct_rev_operation</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]))</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="s1">&#39;And:&#39;</span><span class="p">,</span> <span class="n">construct_rev_operation</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="s1">&#39;Or:&#39;</span><span class="p">,</span> <span class="n">construct_rev_operation</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="s1">&#39;Xor:&#39;</span><span class="p">,</span> <span class="n">construct_rev_operation</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]))</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="s1">&#39;2-Bit always zero:&#39;</span><span class="p">,</span> <span class="n">construct_rev_operation</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]))</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="s1">&#39;3-Bit and:&#39;</span><span class="p">,</span> <span class="n">construct_rev_operation</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\verb|Always|\phantom{\verb!x!}\verb|zero:| \left(\begin{array}{rrrr}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{array}\right)</script></html></div><div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\verb|Always|\phantom{\verb!x!}\verb|one:| \left(\begin{array}{rrrr}
+0 & 1 & 0 & 0 \\
+1 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1 \\
+0 & 0 & 1 & 0
+\end{array}\right)</script></html></div><div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\verb|Identity:| \left(\begin{array}{rrrr}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 1 \\
+0 & 0 & 1 & 0
+\end{array}\right)</script></html></div><div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\verb|Not:| \left(\begin{array}{rrrr}
+0 & 1 & 0 & 0 \\
+1 & 0 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{array}\right)</script></html></div><div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\verb|And:| \left(\begin{array}{rrrrrrrr}
+1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
+0 & 0 & 0 & 0 & 0 & 0 & 1 & 0
+\end{array}\right)</script></html></div><div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\verb|Or:| \left(\begin{array}{rrrrrrrr}
+1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\
+0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
+0 & 0 & 0 & 0 & 0 & 0 & 1 & 0
+\end{array}\right)</script></html></div><div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\verb|Xor:| \left(\begin{array}{rrrrrrrr}
+1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\
+0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 1
+\end{array}\right)</script></html></div><div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\verb|2-Bit|\phantom{\verb!x!}\verb|always|\phantom{\verb!x!}\verb|zero:| \left(\begin{array}{rrrrrrrr}
+1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 1
+\end{array}\right)</script></html></div><div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\verb|3-Bit|\phantom{\verb!x!}\verb|and:| \left(\begin{array}{rrrrrrrrrrrrrrrr}
+1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0
+\end{array}\right)</script></html></div></div>
+</div>
+<p>Observation: The matrix has <span class="math notranslate nohighlight">\(\begin{pmatrix}1&amp;0\\0&amp;1\end{pmatrix}\)</span> along the diagonal if there is a zero in the result vector and <span class="math notranslate nohighlight">\(\begin{pmatrix}0&amp;1\\1&amp;0\end{pmatrix}\)</span> if there is a one. With this knowledge we can simplify the construction of the matrix.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">simple_construct_rev_operation</span><span class="p">(</span><span class="n">lookup_table</span><span class="p">):</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">identity_matrix</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lookup_table</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">lookup_table</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">m</span><span class="o">.</span><span class="n">swap_rows</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="n">i</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">m</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pretty_print</span><span class="p">(</span><span class="s1">&#39;Always zero:&#39;</span><span class="p">,</span> <span class="n">simple_construct_rev_operation</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]))</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="s1">&#39;Always one:&#39;</span><span class="p">,</span> <span class="n">simple_construct_rev_operation</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="s1">&#39;Identity:&#39;</span><span class="p">,</span> <span class="n">simple_construct_rev_operation</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="s1">&#39;Not:&#39;</span><span class="p">,</span> <span class="n">simple_construct_rev_operation</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]))</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="s1">&#39;And:&#39;</span><span class="p">,</span> <span class="n">simple_construct_rev_operation</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="s1">&#39;Or:&#39;</span><span class="p">,</span> <span class="n">simple_construct_rev_operation</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="s1">&#39;Xor:&#39;</span><span class="p">,</span> <span class="n">simple_construct_rev_operation</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]))</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="s1">&#39;2-Bit always zero:&#39;</span><span class="p">,</span> <span class="n">simple_construct_rev_operation</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]))</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="s1">&#39;3-Bit and:&#39;</span><span class="p">,</span> <span class="n">simple_construct_rev_operation</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\verb|Always|\phantom{\verb!x!}\verb|zero:| \left(\begin{array}{rrrr}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{array}\right)</script></html></div><div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\verb|Always|\phantom{\verb!x!}\verb|one:| \left(\begin{array}{rrrr}
+0 & 1 & 0 & 0 \\
+1 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1 \\
+0 & 0 & 1 & 0
+\end{array}\right)</script></html></div><div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\verb|Identity:| \left(\begin{array}{rrrr}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 1 \\
+0 & 0 & 1 & 0
+\end{array}\right)</script></html></div><div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\verb|Not:| \left(\begin{array}{rrrr}
+0 & 1 & 0 & 0 \\
+1 & 0 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{array}\right)</script></html></div><div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\verb|And:| \left(\begin{array}{rrrrrrrr}
+1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
+0 & 0 & 0 & 0 & 0 & 0 & 1 & 0
+\end{array}\right)</script></html></div><div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\verb|Or:| \left(\begin{array}{rrrrrrrr}
+1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\
+0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
+0 & 0 & 0 & 0 & 0 & 0 & 1 & 0
+\end{array}\right)</script></html></div><div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\verb|Xor:| \left(\begin{array}{rrrrrrrr}
+1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\
+0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 1
+\end{array}\right)</script></html></div><div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\verb|2-Bit|\phantom{\verb!x!}\verb|always|\phantom{\verb!x!}\verb|zero:| \left(\begin{array}{rrrrrrrr}
+1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 1
+\end{array}\right)</script></html></div><div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\verb|3-Bit|\phantom{\verb!x!}\verb|and:| \left(\begin{array}{rrrrrrrrrrrrrrrr}
+1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0
+\end{array}\right)</script></html></div></div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="probability-a-state-lvert-alpha-rangle-jumps-to-eigenstate-lvert-a-i-rangle">
+<h1>3. Probability a state <span class="math notranslate nohighlight">\(\lvert \alpha \rangle\)</span> jumps to Eigenstate <span class="math notranslate nohighlight">\(\lvert a^{(i)}\rangle\)</span><a class="headerlink" href="#probability-a-state-lvert-alpha-rangle-jumps-to-eigenstate-lvert-a-i-rangle" title="Link to this heading">#</a></h1>
+<p>The probability a system jumps in <span class="math notranslate nohighlight">\(\lvert a^{(i)}\rangle\)</span> is postulated as <span class="math notranslate nohighlight">\(P_{\lvert\alpha\rangle\stackrel{\mathsf{A}}{\Rightarrow} \lvert a^{(i)}\rangle} := |\langle a^{(i)} \lvert \alpha \rangle|^2\)</span>. <code class="docutils literal notranslate"><span class="pre">x_0</span></code>, <code class="docutils literal notranslate"><span class="pre">x_1</span></code>, <code class="docutils literal notranslate"><span class="pre">y_0</span></code>, <code class="docutils literal notranslate"><span class="pre">y_1</span></code>, <code class="docutils literal notranslate"><span class="pre">z_0</span></code> and <code class="docutils literal notranslate"><span class="pre">z_1</span></code> are the kets <span class="math notranslate nohighlight">\(\lvert 0\rangle\)</span>, <span class="math notranslate nohighlight">\(\lvert 1\rangle\)</span>, <span class="math notranslate nohighlight">\(\lvert +\rangle\)</span>, <span class="math notranslate nohighlight">\(\lvert -\rangle\)</span>, <span class="math notranslate nohighlight">\(\lvert +i\rangle\)</span> and <span class="math notranslate nohighlight">\(\lvert -i\rangle\)</span>. The capital <code class="docutils literal notranslate"><span class="pre">I</span></code> denotes the imaginary unit in Sagemath. The <code class="docutils literal notranslate"><span class="pre">transpose</span></code> is required to get a column vector.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_0</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">matrix</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+<span class="n">x_1</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">matrix</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+<span class="n">y_0</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">matrix</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="n">I</span><span class="p">))</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+<span class="n">y_1</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">matrix</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="n">I</span><span class="p">))</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+<span class="n">z_0</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+<span class="n">z_1</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="n">x_0</span><span class="p">,</span> <span class="n">x_1</span><span class="p">,</span> <span class="n">y_0</span><span class="p">,</span> <span class="n">y_1</span><span class="p">,</span> <span class="n">z_0</span><span class="p">,</span> <span class="n">z_1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{r}
+\frac{1}{2} \, \sqrt{2} \\
+\frac{1}{2} \, \sqrt{2}
+\end{array}\right) \left(\begin{array}{r}
+\frac{1}{2} \, \sqrt{2} \\
+-\frac{1}{2} \, \sqrt{2}
+\end{array}\right) \left(\begin{array}{r}
+\frac{1}{2} \, \sqrt{2} \\
+\frac{1}{2} i \, \sqrt{2}
+\end{array}\right) \left(\begin{array}{r}
+\frac{1}{2} \, \sqrt{2} \\
+-\frac{1}{2} i \, \sqrt{2}
+\end{array}\right) \left(\begin{array}{r}
+1 \\
+0
+\end{array}\right) \left(\begin{array}{r}
+0 \\
+1
+\end{array}\right)</script></html></div></div>
+</div>
+<p>We calculate the probability that different systems jump in <span class="math notranslate nohighlight">\(\lvert 0 \rangle\)</span>. The <code class="docutils literal notranslate"><span class="pre">conjugate_transpose</span></code> function is used to create a bra from a ket.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pretty_print</span><span class="p">(</span><span class="nb">abs</span><span class="p">((</span><span class="n">z_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">z_0</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="nb">abs</span><span class="p">((</span><span class="n">z_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">z_1</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="nb">abs</span><span class="p">((</span><span class="n">z_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">x_0</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="nb">abs</span><span class="p">((</span><span class="n">z_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">x_1</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="nb">abs</span><span class="p">((</span><span class="n">z_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">y_0</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="nb">abs</span><span class="p">((</span><span class="n">z_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">x_1</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}1</script></html></div><div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}0</script></html></div><div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\frac{1}{2}</script></html></div><div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\frac{1}{2}</script></html></div><div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\frac{1}{2}</script></html></div><div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\frac{1}{2}</script></html></div></div>
+</div>
+<section id="constructing-measurement-operators">
+<h2>Constructing Measurement Operators<a class="headerlink" href="#constructing-measurement-operators" title="Link to this heading">#</a></h2>
+<p>We can construct <span class="math notranslate nohighlight">\(S_x\)</span>, <span class="math notranslate nohighlight">\(S_y\)</span> and <span class="math notranslate nohighlight">\(S_z\)</span> with <span class="math notranslate nohighlight">\(\mathsf{A} = \sum_{i=1}^na_i\lvert a^{(i)}\rangle\langle a^{(i)}\lvert\)</span>. In the following code, the elements of the sum are written down explicitely, since there are only two elements. Note that we dropped the constant <span class="math notranslate nohighlight">\(\hbar / 2\)</span> for simplicity.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Sx</span> <span class="o">=</span> <span class="n">x_0</span> <span class="o">*</span> <span class="n">x_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">-</span> <span class="n">x_1</span> <span class="o">*</span> <span class="n">x_1</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span>
+<span class="n">Sy</span> <span class="o">=</span> <span class="n">y_0</span> <span class="o">*</span> <span class="n">y_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">-</span> <span class="n">y_1</span> <span class="o">*</span> <span class="n">y_1</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span>
+<span class="n">Sz</span> <span class="o">=</span> <span class="n">z_0</span> <span class="o">*</span> <span class="n">z_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">-</span> <span class="n">z_1</span> <span class="o">*</span> <span class="n">z_1</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="n">Sx</span><span class="p">,</span> <span class="n">Sy</span><span class="p">,</span> <span class="n">Sz</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{rr}
+0 & 1 \\
+1 & 0
+\end{array}\right) \left(\begin{array}{rr}
+0 & -i \\
+i & 0
+\end{array}\right) \left(\begin{array}{rr}
+1 & 0 \\
+0 & -1
+\end{array}\right)</script></html></div></div>
+</div>
+</section>
+<section id="expectation-values">
+<h2>Expectation Values<a class="headerlink" href="#expectation-values" title="Link to this heading">#</a></h2>
+<p>The expectation value when “measuring” a state <span class="math notranslate nohighlight">\(\lvert\alpha\rangle\)</span> by an operator <span class="math notranslate nohighlight">\(A\)</span> can be calculated as <span class="math notranslate nohighlight">\(\langle\alpha\rvert A \lvert\alpha\rangle\)</span>. Note that since we dropped the constant <span class="math notranslate nohighlight">\(\hbar / 2\)</span> when we constructed the measurement operators, we need to multiply all expectation values with this constant.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pretty_print</span><span class="p">(</span><span class="n">x_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sx</span> <span class="o">*</span> <span class="n">x_0</span><span class="p">,</span> <span class="n">x_1</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sx</span> <span class="o">*</span> <span class="n">x_1</span><span class="p">)</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="n">y_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sx</span> <span class="o">*</span> <span class="n">y_0</span><span class="p">,</span> <span class="n">y_1</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sx</span> <span class="o">*</span> <span class="n">y_1</span><span class="p">)</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="n">z_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sx</span> <span class="o">*</span> <span class="n">z_0</span><span class="p">,</span> <span class="n">z_1</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sx</span> <span class="o">*</span> <span class="n">z_1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{r}
+1
+\end{array}\right) \left(\begin{array}{r}
+-1
+\end{array}\right)</script></html></div><div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{r}
+0
+\end{array}\right) \left(\begin{array}{r}
+0
+\end{array}\right)</script></html></div><div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{r}
+0
+\end{array}\right) \left(\begin{array}{r}
+0
+\end{array}\right)</script></html></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pretty_print</span><span class="p">(</span><span class="n">x_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sy</span> <span class="o">*</span> <span class="n">x_0</span><span class="p">,</span> <span class="n">x_1</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sy</span> <span class="o">*</span> <span class="n">x_1</span><span class="p">)</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="n">y_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sy</span> <span class="o">*</span> <span class="n">y_0</span><span class="p">,</span> <span class="n">y_1</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sy</span> <span class="o">*</span> <span class="n">y_1</span><span class="p">)</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="n">z_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sy</span> <span class="o">*</span> <span class="n">z_0</span><span class="p">,</span> <span class="n">z_1</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sy</span> <span class="o">*</span> <span class="n">z_1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{r}
+0
+\end{array}\right) \left(\begin{array}{r}
+0
+\end{array}\right)</script></html></div><div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{r}
+1
+\end{array}\right) \left(\begin{array}{r}
+-1
+\end{array}\right)</script></html></div><div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{r}
+0
+\end{array}\right) \left(\begin{array}{r}
+0
+\end{array}\right)</script></html></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pretty_print</span><span class="p">(</span><span class="n">x_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sz</span> <span class="o">*</span> <span class="n">x_0</span><span class="p">,</span> <span class="n">x_1</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sz</span> <span class="o">*</span> <span class="n">x_1</span><span class="p">)</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="n">y_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sz</span> <span class="o">*</span> <span class="n">y_0</span><span class="p">,</span> <span class="n">y_1</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sz</span> <span class="o">*</span> <span class="n">y_1</span><span class="p">)</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="n">z_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sz</span> <span class="o">*</span> <span class="n">z_0</span><span class="p">,</span> <span class="n">z_1</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sz</span> <span class="o">*</span> <span class="n">z_1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{r}
+0
+\end{array}\right) \left(\begin{array}{r}
+0
+\end{array}\right)</script></html></div><div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{r}
+0
+\end{array}\right) \left(\begin{array}{r}
+0
+\end{array}\right)</script></html></div><div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{r}
+1
+\end{array}\right) \left(\begin{array}{r}
+-1
+\end{array}\right)</script></html></div></div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="superdense-coding">
+<h1>4. Superdense Coding<a class="headerlink" href="#superdense-coding" title="Link to this heading">#</a></h1>
+<p>Parts of this notebook are inspired by Michael Loceffs script “A Course in Quantum Computing”, which is a very well written introductions to quantum computing.</p>
+<p>Claim: We can send two bits of information with only one qubit. Careful: It may seem like a qubit contains an infinite amount of information, since we describe the state with two complex numbers, however the state collapses during measurement.
+For the algorithm we’ll make use of the four Bell states:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\lvert\beta_{00}\rangle = \frac{\lvert{00}\rangle + \lvert{11}\rangle}{\sqrt{2}}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\lvert\beta_{01}\rangle = \frac{\lvert{01}\rangle + \lvert{10}\rangle}{\sqrt{2}}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\lvert\beta_{10}\rangle = \frac{\lvert{00}\rangle - \lvert{11}\rangle}{\sqrt{2}}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\lvert\beta_{11}\rangle = \frac{\lvert{01}\rangle - \lvert{10}\rangle}{\sqrt{2}}\)</span></p></li>
+</ul>
+<p>First we need to prepare the state <span class="math notranslate nohighlight">\(\lvert\beta_{00}\rangle\)</span>, which can be done with the following circuit:
+<img alt="circuit_beta_00-2.png" src="17MCM_QM/attachment:circuit_beta_00-2.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi_0</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+<span class="c1"># states of multiple qubits can be derived with the tensor product of single qubit states</span>
+<span class="n">psi_00</span> <span class="o">=</span> <span class="n">psi_0</span><span class="o">.</span><span class="n">tensor_product</span><span class="p">(</span><span class="n">psi_0</span><span class="p">)</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="n">psi_00</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{r}
+1 \\
+0 \\
+\hline
+ 0 \\
+0
+\end{array}\right)</script></html></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># parallel gates are the tensor product of the individual gates</span>
+<span class="c1"># &quot;no gate&quot; is equivalent to the identity matrix</span>
+<span class="n">H</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">H_2</span> <span class="o">=</span> <span class="n">H</span><span class="o">.</span><span class="n">tensor_product</span><span class="p">(</span><span class="n">identity_matrix</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">CNOT</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="n">H_2</span><span class="p">,</span> <span class="n">CNOT</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{rr|rr}
+\frac{1}{2} \, \sqrt{2} & 0 & \frac{1}{2} \, \sqrt{2} & 0 \\
+0 & \frac{1}{2} \, \sqrt{2} & 0 & \frac{1}{2} \, \sqrt{2} \\
+\hline
+ \frac{1}{2} \, \sqrt{2} & 0 & -\frac{1}{2} \, \sqrt{2} & 0 \\
+0 & \frac{1}{2} \, \sqrt{2} & 0 & -\frac{1}{2} \, \sqrt{2}
+\end{array}\right) \left(\begin{array}{rrrr}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 1 \\
+0 & 0 & 1 & 0
+\end{array}\right)</script></html></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># lets prepare the bell state</span>
+<span class="c1"># careful: multiplication is done in reverse order compared to the circuit diagram, </span>
+<span class="c1"># since gates are applied from the left</span>
+<span class="n">bell_00</span> <span class="o">=</span> <span class="n">CNOT</span> <span class="o">*</span> <span class="n">H_2</span> <span class="o">*</span> <span class="n">psi_00</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="n">bell_00</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{r}
+\frac{1}{2} \, \sqrt{2} \\
+0 \\
+0 \\
+\frac{1}{2} \, \sqrt{2}
+\end{array}\right)</script></html></div></div>
+</div>
+<p>Qubits in the bell state are entangled, we can see from the ket that either both collapse to 0 or both collapse to 1. In a preparation step, Alice and Bob both take one of the qubits. This can be done any time before the communication takes place and the qubits can be spatially seperated (we “only” need to asure, that the qubits are not disturbed and lose their entaglement).
+The qubits are spatially seperated, but still represent an inseperable common state!</p>
+<p>To encode her message, Alice applies one of the following gates:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Alice wants to send</p></th>
+<th class="head text-center"><p>Alice applies</p></th>
+<th class="head text-center"><p>Equivalent binary gate</p></th>
+<th class="head text-center"><p>New state</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>$<span class="math notranslate nohighlight">\(00\)</span>$</p></td>
+<td class="text-center"><p>nothing</p></td>
+<td class="text-center"><p>$<span class="math notranslate nohighlight">\(\mathbb{1}\otimes \mathbb{1}\)</span>$</p></td>
+<td class="text-center"><p>$<span class="math notranslate nohighlight">\(\lvert\beta_{00}\rangle\)</span>$</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>$<span class="math notranslate nohighlight">\(01\)</span>$</p></td>
+<td class="text-center"><p>$<span class="math notranslate nohighlight">\(X\)</span>$</p></td>
+<td class="text-center"><p>$<span class="math notranslate nohighlight">\(X\otimes \mathbb{1}\)</span>$</p></td>
+<td class="text-center"><p>$<span class="math notranslate nohighlight">\(\lvert\beta_{01}\rangle\)</span>$</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>$<span class="math notranslate nohighlight">\(10\)</span>$</p></td>
+<td class="text-center"><p>$<span class="math notranslate nohighlight">\(Z\)</span>$</p></td>
+<td class="text-center"><p>$<span class="math notranslate nohighlight">\(Z\otimes \mathbb{1}\)</span>$</p></td>
+<td class="text-center"><p>$<span class="math notranslate nohighlight">\(\lvert\beta_{10}\rangle\)</span>$</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>$<span class="math notranslate nohighlight">\(11\)</span>$</p></td>
+<td class="text-center"><p>$<span class="math notranslate nohighlight">\(iY\)</span>$</p></td>
+<td class="text-center"><p>$<span class="math notranslate nohighlight">\(iY\otimes \mathbb{1}\)</span>$</p></td>
+<td class="text-center"><p>$<span class="math notranslate nohighlight">\(\lvert\beta_{11}\rangle\)</span>$</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The gates manipulate the whole state and therefore also the qubit of Bob, which is indicated by the the tensor product with the identity matrix. But this also means that Bob does not need to do anything with his qubit for the operation! Application of one of the gates transforms the state to one of the other Bell states.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">iY</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">iY</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{rr}
+0 & 1 \\
+1 & 0
+\end{array}\right) \left(\begin{array}{rr}
+1 & 0 \\
+0 & -1
+\end{array}\right) \left(\begin{array}{rr}
+0 & 1 \\
+-1 & 0
+\end{array}\right)</script></html></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_2</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">tensor_product</span><span class="p">(</span><span class="n">identity_matrix</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">Z_2</span> <span class="o">=</span> <span class="n">Z</span><span class="o">.</span><span class="n">tensor_product</span><span class="p">(</span><span class="n">identity_matrix</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">iY_2</span> <span class="o">=</span> <span class="n">iY</span><span class="o">.</span><span class="n">tensor_product</span><span class="p">(</span><span class="n">identity_matrix</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="n">X_2</span><span class="p">,</span> <span class="n">Z_2</span><span class="p">,</span> <span class="n">iY_2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{rr|rr}
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 \\
+\hline
+ 1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0
+\end{array}\right) \left(\begin{array}{rr|rr}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+\hline
+ 0 & 0 & -1 & 0 \\
+0 & 0 & 0 & -1
+\end{array}\right) \left(\begin{array}{rr|rr}
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 \\
+\hline
+ -1 & 0 & 0 & 0 \\
+0 & -1 & 0 & 0
+\end{array}\right)</script></html></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bell_00</span> <span class="o">=</span> <span class="n">identity_matrix</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">*</span> <span class="n">bell_00</span>
+<span class="n">bell_01</span> <span class="o">=</span> <span class="n">X_2</span> <span class="o">*</span> <span class="n">bell_00</span>
+<span class="n">bell_10</span> <span class="o">=</span> <span class="n">Z_2</span> <span class="o">*</span> <span class="n">bell_00</span>
+<span class="n">bell_11</span> <span class="o">=</span> <span class="n">iY_2</span> <span class="o">*</span> <span class="n">bell_00</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="n">bell_00</span><span class="p">,</span> <span class="n">bell_01</span><span class="p">,</span> <span class="n">bell_10</span><span class="p">,</span> <span class="n">bell_11</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{r}
+\frac{1}{2} \, \sqrt{2} \\
+0 \\
+0 \\
+\frac{1}{2} \, \sqrt{2}
+\end{array}\right) \left(\begin{array}{r}
+0 \\
+\frac{1}{2} \, \sqrt{2} \\
+\frac{1}{2} \, \sqrt{2} \\
+0
+\end{array}\right) \left(\begin{array}{r}
+\frac{1}{2} \, \sqrt{2} \\
+0 \\
+0 \\
+-\frac{1}{2} \, \sqrt{2}
+\end{array}\right) \left(\begin{array}{r}
+0 \\
+\frac{1}{2} \, \sqrt{2} \\
+-\frac{1}{2} \, \sqrt{2} \\
+0
+\end{array}\right)</script></html></div></div>
+</div>
+<p>Now Alice only needs to send one qubit to Bob for him to have two qubits in one of the four Bell states. All Bob has to do to decode the message is to measure along the Bell basis. This can be done by transforming the state to the z-basis. A Hadamard and CNOT gate transform from the z- to the Bell-basis, we can do the reverse operation to get back to the z-basis.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">H_2</span> <span class="o">=</span> <span class="n">H</span><span class="o">.</span><span class="n">tensor_product</span><span class="p">(</span><span class="n">identity_matrix</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">BELL_adj</span> <span class="o">=</span> <span class="n">H_2</span> <span class="o">*</span> <span class="n">CNOT</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="n">BELL_adj</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{rrrr}
+\frac{1}{2} \, \sqrt{2} & 0 & 0 & \frac{1}{2} \, \sqrt{2} \\
+0 & \frac{1}{2} \, \sqrt{2} & \frac{1}{2} \, \sqrt{2} & 0 \\
+\frac{1}{2} \, \sqrt{2} & 0 & 0 & -\frac{1}{2} \, \sqrt{2} \\
+0 & \frac{1}{2} \, \sqrt{2} & -\frac{1}{2} \, \sqrt{2} & 0
+\end{array}\right)</script></html></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pretty_print</span><span class="p">(</span><span class="n">BELL_adj</span><span class="o">*</span><span class="n">bell_00</span><span class="p">,</span> <span class="n">BELL_adj</span><span class="o">*</span><span class="n">bell_01</span><span class="p">,</span> <span class="n">BELL_adj</span><span class="o">*</span><span class="n">bell_10</span><span class="p">,</span> <span class="n">BELL_adj</span><span class="o">*</span><span class="n">bell_11</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{r}
+1 \\
+0 \\
+0 \\
+0
+\end{array}\right) \left(\begin{array}{r}
+0 \\
+1 \\
+0 \\
+0
+\end{array}\right) \left(\begin{array}{r}
+0 \\
+0 \\
+1 \\
+0
+\end{array}\right) \left(\begin{array}{r}
+0 \\
+0 \\
+0 \\
+1
+\end{array}\right)</script></html></div></div>
+</div>
+<p>What is the magic?</p>
+<ul class="simple">
+<li><p>Alice sent two bits of classical information with only one qubit. The initial preparation can be done any time beforehand. Bob could fill a whole bag with prepared qubits, fly to the other end of the world end enjoy half the communication cost to communicate with Alice.</p></li>
+<li><p>This is possible because both bits represent a common state and by physically manupilating only one bit, Alice can change the common state of both bits.</p></li>
+<li><p>However she needs to send her bit to Bob for him to make use of it, so there is no violation of Einsteins theory of relativity.</p></li>
+<li><p>The example is simple and easy to follow, but shows that we can do things in the quantum world, which are impossible in the classical world.</p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="bloch-sphere-examples">
+<h1>5. Bloch Sphere Examples<a class="headerlink" href="#bloch-sphere-examples" title="Link to this heading">#</a></h1>
+<p>To run these examples you need to install <a class="reference external" href="https://qiskit.org/documentation/getting_started.html">qiskit</a>. The function <code class="docutils literal notranslate"><span class="pre">hopf_map</span></code> converts the state vector of a 1-qubit state to a vector in the 3D-Bloch Sphere. Remember that the Bloch Sphere is only a visualization, the vector in the sphere is <strong>not</strong> the state vector.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">qiskit.visualization</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot_bloch_vector</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">hopf_map</span><span class="p">(</span><span class="n">state</span><span class="p">):</span>
+    <span class="n">x_0</span> <span class="o">=</span> <span class="n">state</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">real</span>
+    <span class="n">x_1</span> <span class="o">=</span> <span class="n">state</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imag</span>
+    <span class="n">x_2</span> <span class="o">=</span> <span class="n">state</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">real</span>
+    <span class="n">x_3</span> <span class="o">=</span> <span class="n">state</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imag</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">x_0</span> <span class="o">*</span> <span class="n">x_2</span> <span class="o">+</span> <span class="n">x_1</span> <span class="o">*</span> <span class="n">x_3</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">x_3</span> <span class="o">*</span> <span class="n">x_0</span> <span class="o">+</span> <span class="n">x_1</span> <span class="o">*</span> <span class="n">x_2</span><span class="p">)</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">x_0</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">x_1</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">x_2</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">x_3</span> <span class="o">**</span> <span class="mi">2</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot |0&gt;</span>
+<span class="n">plot_bloch_vector</span><span class="p">(</span><span class="n">hopf_map</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/e1370a56bee8b9570045b866e6fd503c2727dacc6644b03113002f69363d0ea6.png" src="../_images/e1370a56bee8b9570045b866e6fd503c2727dacc6644b03113002f69363d0ea6.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot |1&gt;</span>
+<span class="n">plot_bloch_vector</span><span class="p">(</span><span class="n">hopf_map</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/a2a62a90526973fe825d3099086ecc154a5d3965d3c1e2cd37a0792245d75bf6.png" src="../_images/a2a62a90526973fe825d3099086ecc154a5d3965d3c1e2cd37a0792245d75bf6.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot |+&gt;</span>
+<span class="n">plot_bloch_vector</span><span class="p">(</span><span class="n">hopf_map</span><span class="p">((</span><span class="mi">1</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">))))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/b573a6b038326512041054b638d166bfe5921d469d091ba5899376fe6a80b8e8.png" src="../_images/b573a6b038326512041054b638d166bfe5921d469d091ba5899376fe6a80b8e8.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot |-&gt;</span>
+<span class="n">plot_bloch_vector</span><span class="p">(</span><span class="n">hopf_map</span><span class="p">((</span><span class="mi">1</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="o">-</span><span class="mi">1</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">))))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/bfef891ce80962c3a23479105871ffb925ff20bdc2f6b6bbcc06d6938abf01f5.png" src="../_images/bfef891ce80962c3a23479105871ffb925ff20bdc2f6b6bbcc06d6938abf01f5.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot |+i&gt;</span>
+<span class="n">plot_bloch_vector</span><span class="p">(</span><span class="n">hopf_map</span><span class="p">((</span><span class="mi">1</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="mf">1.</span><span class="n">j</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">))))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/7871cc8dffb3e440a991aaa6ec100162ad8e542fd0099a3aec976455ec469c87.png" src="../_images/7871cc8dffb3e440a991aaa6ec100162ad8e542fd0099a3aec976455ec469c87.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot |-i&gt;</span>
+<span class="n">plot_bloch_vector</span><span class="p">(</span><span class="n">hopf_map</span><span class="p">((</span><span class="mi">1</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="o">-</span><span class="mf">1.</span><span class="n">j</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">))))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/fabeb7eb61ad17b91f4f330a15b13fb86e3e5bd378cc82e668f3ab00bf16757c.png" src="../_images/fabeb7eb61ad17b91f4f330a15b13fb86e3e5bd378cc82e668f3ab00bf16757c.png" />
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "sagemath"
+        },
+        kernelOptions: {
+            name: "sagemath",
+            path: "./17MCM_QM"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'sagemath'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">1. Bell States</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-functions-on-qc-hardware">2. Boolean Functions on QC Hardware</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-a-state-lvert-alpha-rangle-jumps-to-eigenstate-lvert-a-i-rangle">3. Probability a state <span class="math notranslate nohighlight">\(\lvert \alpha \rangle\)</span> jumps to Eigenstate <span class="math notranslate nohighlight">\(\lvert a^{(i)}\rangle\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constructing-measurement-operators">Constructing Measurement Operators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expectation-values">Expectation Values</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#superdense-coding">4. Superdense Coding</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#bloch-sphere-examples">5. Bloch Sphere Examples</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jonny, assisted by Tom
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
