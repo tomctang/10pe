@@ -60,7 +60,7 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '17MCM_QM/1QM_calculus-way';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '17MCM_QM/0QM_calculus-way';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -271,7 +271,7 @@
       
       
       
-      <li><a href="../_sources/17MCM_QM/1QM_calculus-way.ipynb" target="_blank"
+      <li><a href="../_sources/17MCM_QM/0QM_calculus-way.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -399,7 +399,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-algebraic-equations">Solving algebraic equations</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#find-the-values-of-k-that-satisfy-schrodinger-s-equation">Find the values of (k) that satisfy Schrodinger’s equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#find-the-values-of-k-that-satisfy-schrodinger-s-equation">Find the values of <span class="math notranslate nohighlight">\(k\)</span> that satisfy Schrodinger’s equation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">For You To Try:</a></li>
 </ul>
 </li>
@@ -449,7 +449,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Project Ideas and Problems to Solve</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#q-harmonic-oscillator-solving-differential-equations">3. Q harmonic oscillator - Solving differential equations</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#q-harmonic-oscillator-solving-des">3. Q harmonic oscillator - Solving DEs</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">For You To Try:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fancier-2d-plotting">Fancier 2D Plotting</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">For You To Try:</a><ul class="nav section-nav flex-column">
@@ -497,22 +497,20 @@ document.write(`
   <p>This SageMath will explain how to define variables and functions, evaluate and plot functions, as well as finding derivatives and integrals of symbolic functions(<strong>Calculus way</strong>).</p>
 <section class="tex2jax_ignore mathjax_ignore" id="free-particle-wave-function">
 <h1>1. Free particle wave function<a class="headerlink" href="#free-particle-wave-function" title="Link to this heading">#</a></h1>
+<p>We will use the quantum mechanical wave function of a free particle as an example. Goals:</p>
 <ul class="simple">
 <li><p>Defining functions and variables</p></li>
 <li><p>Taking derivatives of a function</p></li>
-<li><p>Plotting functions</p></li>
-<li><p>Creating an animated plot</p></li>
+<li><p>Plot the real and imaginary elements of the free particle wave function <span class="math notranslate nohighlight">\(\psi(x,t) = A_0 e^{i(kx - \omega t)}\)</span></p></li>
+<li><p>Create an animated plot of the wave function</p></li>
+<li><p>Check that the wave function satisfies the Schrodinger’s equation</p>
+<ul>
 <li><p>Extract solution from a list of answers</p></li>
 <li><p>Solving algebraic equations</p></li>
 </ul>
-<p>We will use the quantum mechanical wave function of a free particle as an example.</p>
-<p>Goals of this activity:</p>
-<ul class="simple">
-<li><p>Plot the real and imaginary elements of the free particle wave function <span class="math notranslate nohighlight">\(\psi(x,t) = A_0 e^{i(kx - \omega t)}\)</span></p></li>
-<li><p>Create an animated plot of the wave function</p></li>
-<li><p>Check that the wave function satisfies the Schrodinger’s equation</p></li>
+</li>
 </ul>
-<p>Schrodinger’s equation for a one-dimensional system (e.g. think of an electron confined to a nanowire) is <span class="math notranslate nohighlight">\(\frac{-\hbar^2}{2m}\frac{\partial^2}{\partial x^2} \psi(x,t) +V(x)\psi(x,t) = i\hbar \frac{\partial}{\partial t} \psi(x,t)\)</span>.</p>
+<p>Schrodinger’s equation for a 1D system (e.g. think of an electron confined to a nanowire) is <span class="math notranslate nohighlight">\(\frac{-\hbar^2}{2m}\frac{\partial^2}{\partial x^2} \psi(x,t) +V(x)\psi(x,t) = i\hbar \frac{\partial}{\partial t} \psi(x,t)\)</span>.</p>
 <p>A free particle is a particle that does not experience any forces along the direction of motion and can move freely without any walls.  In truth there is no such thing as a free particle since all particle are confined in some ways but as long as the dimensions of confinement are much much larger than the wavelength of the particle we can treat the particle as free.  An electron confined to a nanowire with a length on the order of millimeters would be a good example of this.</p>
 <section id="defining-variables-and-functions">
 <h2>Defining variables and functions<a class="headerlink" href="#defining-variables-and-functions" title="Link to this heading">#</a></h2>
@@ -542,10 +540,6 @@ document.write(`
 <span class="n">s</span><span class="p">(</span><span class="n">psi</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>  <span class="c1">#Nicer looking output</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><html>\(\displaystyle A_{0} e^{\left(-i \, \omega t + i \, k x\right)}\)</html></div><div class="output text_latex math notranslate nohighlight">
-\[\displaystyle A_{0} \qquad   \]</div>
 </div>
 </div>
 </section>
@@ -580,9 +574,6 @@ document.write(`
 <span class="n">P</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>  <span class="c1">#Show the plot</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/a95f5e4d8d4216e5c74053da7dafab87a3749cf09b69369325328b51b2d424e8.png" src="../_images/a95f5e4d8d4216e5c74053da7dafab87a3749cf09b69369325328b51b2d424e8.png" />
 </div>
 </div>
 </section>
@@ -623,15 +614,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/tom/miniconda3/envs/sage-env/lib/python3.12/site-packages/sage/repl/rich_output/display_manager.py:594: RichReprWarning: Exception in _rich_repr_ while displaying object: Error: Neither ImageMagick nor ffmpeg appear to be installed. Saving an animation to a GIF file or displaying an animation requires one of these packages, so please install one of them and try again. See www.imagemagick.org and www.ffmpeg.org for more information.
-  warnings.warn(
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Animation with 10 frames
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="note">
@@ -653,7 +635,7 @@ a.show()
 </ul>
 <section id="calculate-the-probability-density-for-the-free-particle-wave-function">
 <h3>Calculate the probability density for the free particle wave function<a class="headerlink" href="#calculate-the-probability-density-for-the-free-particle-wave-function" title="Link to this heading">#</a></h3>
-<p>The wave function (\psi(x,t)) is called the probability amplitude of the particle.  The probility density (\rho(x,t)) is equal to the magnitude of the probability amplitude squared.  Since (\psi(x,t)) is complex, the magnitude squared <em>is not the same as</em> the square of (\psi(x,t)).  You must multiply (\psi(x,t)) by it’s complex conjugate, which is written as (\psi^<em>(x,t)).  The probability density is then given by (\rho(x,t) = \psi^</em>(x,t) \psi(x,t)).</p>
+<p>The wave function <span class="math notranslate nohighlight">\(\psi(x,t)\)</span> is called the probability amplitude of the particle.  The probility density <span class="math notranslate nohighlight">\(\rho(x,t)\)</span> is equal to the magnitude of the probability amplitude squared.  Since <span class="math notranslate nohighlight">\(\psi(x,t)\)</span> is complex, the magnitude squared <em>is not the same as</em> the square of <span class="math notranslate nohighlight">\(\psi(x,t)\)</span>.  You must multiply <span class="math notranslate nohighlight">\(\psi(x,t)\)</span> by it’s complex conjugate, which is written as <span class="math notranslate nohighlight">\(\psi^*(x,t)\)</span>.  The probability density is then given by <span class="math notranslate nohighlight">\(\rho(x,t) = \psi^*(x,t) \psi(x,t)\)</span>.</p>
 <p>How would you find the probability to find a particle between two points given the probability density?  In other words, how is the probability density related to the probability to find the particle within some region of space?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -677,60 +659,10 @@ a.show()
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">RuntimeError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">assume</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="s1">&#39;real&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">assume</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="s1">&#39;real&#39;</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">assume</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="s1">&#39;real&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">assume</span><span class="p">(</span><span class="n">A_0</span><span class="p">,</span><span class="s1">&#39;real&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">__tmp__</span><span class="o">=</span><span class="n">var</span><span class="p">(</span><span class="s2">&quot;x,t&quot;</span><span class="p">);</span> <span class="n">rho</span> <span class="o">=</span> <span class="n">symbolic_expression</span><span class="p">(</span><span class="n">psi</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">)</span><span class="o">*</span><span class="n">psi</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">conjugate</span><span class="p">()</span> <span class="p">)</span><span class="o">.</span><span class="n">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">)</span><span class="c1">#When defining a function, the results are not printed out ...</span>
-
-<span class="nn">File ~/miniconda3/envs/sage-env/lib/python3.12/site-packages/sage/symbolic/assumptions.py:672,</span> in <span class="ni">assume</span><span class="nt">(*args)</span>
-<span class="g g-Whitespace">    </span><span class="mi">670</span>     <span class="n">assume</span><span class="p">(</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">671</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">672</span>     <span class="n">x</span><span class="o">.</span><span class="n">assume</span><span class="p">()</span>
-
-<span class="nn">File ~/miniconda3/envs/sage-env/lib/python3.12/site-packages/sage/symbolic/assumptions.py:270,</span> in <span class="ni">GenericDeclaration.assume</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">268</span> <span class="k">if</span> <span class="n">must_declare</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">269</span>     <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">270</span>         <span class="n">maxima</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="s2">&quot;declare(</span><span class="si">%s</span><span class="s2">, </span><span class="si">%s</span><span class="s2">)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_var</span><span class="o">.</span><span class="n">_maxima_init_</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">_assumption</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">271</span>     <span class="k">except</span> <span class="ne">RuntimeError</span> <span class="k">as</span> <span class="n">mess</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">272</span>         <span class="k">if</span> <span class="s1">&#39;inconsistent&#39;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">mess</span><span class="p">):</span>  <span class="c1"># note Maxima doesn&#39;t tell you if declarations are redundant</span>
-<span class="g g-Whitespace">    </span><span class="mi">273</span>             <span class="c1"># Inconsistency with one of the active contexts.</span>
-
-<span class="nn">File ~/miniconda3/envs/sage-env/lib/python3.12/site-packages/sage/interfaces/maxima_lib.py:474,</span> in <span class="ni">MaximaLib._eval_line</span><span class="nt">(self, line, locals, reformat, **kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">472</span>         <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="p">[</span><span class="n">ind_semi</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]</span>
-<span class="g g-Whitespace">    </span><span class="mi">473</span>     <span class="k">if</span> <span class="n">statement</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">474</span>         <span class="n">result</span> <span class="o">=</span> <span class="p">((</span><span class="n">result</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="n">result</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">max_to_string</span><span class="p">(</span><span class="n">maxima_eval</span><span class="p">(</span><span class="s2">&quot;#$</span><span class="si">%s</span><span class="s2">$&quot;</span> <span class="o">%</span> <span class="n">statement</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">475</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">476</span>     <span class="n">statement</span> <span class="o">=</span> <span class="n">line</span><span class="p">[:</span><span class="n">ind_dollar</span><span class="p">]</span>
-
-<span class="nn">File ~/miniconda3/envs/sage-env/lib/python3.12/site-packages/sage/libs/ecl.pyx:830,</span> in <span class="ni">sage.libs.ecl.EclObject.__call__ (build/cythonized/sage/libs/ecl.c:11750)</span><span class="nt">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">828</span>     <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">829</span><span class="s2">     lispargs = EclObject(list(args))</span>
-<span class="ne">--&gt; </span><span class="mi">830</span><span class="s2">     return ecl_wrap(ecl_safe_apply(self.obj, (&lt;EclObject&gt;lispargs).obj))</span>
-<span class="g g-Whitespace">    </span><span class="mi">831</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">832</span><span class="s2"> def __richcmp__(left, right, int op):</span>
-
-<span class="nn">File ~/miniconda3/envs/sage-env/lib/python3.12/site-packages/sage/libs/ecl.pyx:358,</span> in <span class="ni">sage.libs.ecl.ecl_safe_apply (build/cythonized/sage/libs/ecl.c:9256)</span><span class="nt">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">356</span><span class="s2">         raise KeyboardInterrupt(&quot;ECL says: </span><span class="si">{}</span><span class="s2">&quot;.format(message))</span>
-<span class="g g-Whitespace">    </span><span class="mi">357</span><span class="s2">     else:</span>
-<span class="ne">--&gt; </span><span class="mi">358</span><span class="s2">         raise RuntimeError(&quot;ECL says: </span><span class="si">{}</span><span class="s2">&quot;.format(message))</span>
-<span class="g g-Whitespace">    </span><span class="mi">359</span><span class="s2"> else:</span>
-<span class="g g-Whitespace">    </span><span class="mi">360</span><span class="s2">     return ret</span>
-
-<span class="ne">RuntimeError</span>: ECL says: declare: argument must be a symbol or a string; found: 4.5
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="id1">
 <h3>For You To Try:<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
-<p>SageMath has a help system that is easy to use.  To figure out how to use a command, type the name of the command followed by the question mark ‘?’.</p>
-<p>SageMath also has an autocomplete feature where you can hit the first few letters of a command followed by the Tab key to get a list of possible commands.  These two tools used together can help you tremendously.</p>
 <ul class="simple">
 <li><p>To see what other assumptions you can make, type ‘assume?’ into the input cell below.</p></li>
 <li><p>To get help with the <strong>integral()</strong> command, first type ‘int’ and then hit Tab to use autocomplete.  Select ‘integral’ from the pop-up list and add a question mark to the end before evaluating the cell by hitting Shift+Enter</p></li>
@@ -805,18 +737,18 @@ f.diff(x,2)
 </ul>
 <section id="momentum-operator">
 <h3>Momentum Operator<a class="headerlink" href="#momentum-operator" title="Link to this heading">#</a></h3>
-<p>In quantum mechanics, all observable quantities have an associated operator.  These operators require a wave function to operate on.  The momentum operator in one-dimension is defined as [\hat{p}=-i\hbar \frac{d}{dx}].  The value of the momentum (p) is found by applying the operator to the wave function.  In other words, [p\psi(x,t) = \hat{p} \psi(x,t)] or, dividing both sides by (\psi(x,t)), [p=\frac{\hat{p}\psi(x,t)}{\psi(x,t)}.]  Notice that (\psi(x,t)) doesn’t cancel out the (\psi(x,t)) in the numerator because the numerator is (\hat{p}) <em>operating</em> on (\psi(x,t)) which is different than multiplying the two terms together.</p>
-<p>The momentum of a free particle is given by (\hbar k), which is what the following calculation demonstrates.</p>
+<p>In quantum mechanics, all observable quantities have an associated operator.  These operators require a wave function to operate on.  The momentum operator in one-dimension is defined as <span class="math notranslate nohighlight">\(\hat{p}=-i\hbar \frac{d}{dx}\)</span>.  The value of the momentum <span class="math notranslate nohighlight">\(p\)</span> is found by applying the operator to the wave function.  In other words, <span class="math notranslate nohighlight">\(p\psi(x,t) = \hat{p} \psi(x,t)\)</span> or, dividing both sides by <span class="math notranslate nohighlight">\(\psi(x,t)\)</span>, <span class="math notranslate nohighlight">\(p=\frac{\hat{p}\psi(x,t)}{\psi(x,t)}.\)</span>  Notice that <span class="math notranslate nohighlight">\(\psi(x,t)\)</span> doesn’t cancel out the <span class="math notranslate nohighlight">\(\psi(x,t)\)</span> in the numerator because the numerator is <span class="math notranslate nohighlight">\(\hat{p}\)</span> <em>operating</em> on <span class="math notranslate nohighlight">\(\psi(x,t)\)</span> which is different than multiplying the two terms together.</p>
+<p>The momentum of a free particle is given by <span class="math notranslate nohighlight">\(\hbar k\)</span>, which is what the following calculation demonstrates.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hbar</span><span class="o">=</span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;hbar&#39;</span><span class="p">,</span><span class="n">latex_name</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;\hbar&#39;</span><span class="p">)</span>  <span class="c1">#This extra defintion will display the hbar symbol when using .show() or pretty_print</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hbar</span><span class="o">=</span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;hbar&#39;</span><span class="p">,</span><span class="n">latex_name</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;\hbar&#39;</span><span class="p">)</span>  <span class="c1">#This extra defintion will display the hbar symbol when using .show()</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">P</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>   <span class="c1">#This will define the momentum operator P</span>
     <span class="k">return</span> <span class="o">-</span><span class="n">i</span><span class="o">*</span><span class="n">hbar</span><span class="o">*</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>    <span class="c1">#The function returns -i*hbar*diff(f,x) when called</span>
 
-<span class="n">P</span><span class="p">(</span><span class="n">psi</span><span class="p">)</span>  <span class="c1">#Calculating momentum using P-operator.  Notice the function psi appears inside parenthese to indicate P is operating on the function</span>
-<span class="n">P</span><span class="p">(</span><span class="n">psi</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>  <span class="c1">#A nicer looking output</span>
-<span class="n">P</span><span class="p">(</span><span class="n">psi</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">))</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>  <span class="c1">#Notice that if I explicitly include the arguments of psi that (x,t) |--&gt; is not included in the output</span>
+<span class="n">P</span><span class="p">(</span><span class="n">psi</span><span class="p">)</span>  <span class="c1">#Calculating momentum using P-operator.  Notice psi indicate P is operating on the function</span>
+<span class="n">P</span><span class="p">(</span><span class="n">psi</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>  
+<span class="n">P</span><span class="p">(</span><span class="n">psi</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">))</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>  <span class="c1"># if I explicitly include the arguments of psi that (x,t) |--&gt; is not included in the output</span>
 
 <span class="n">momentum</span> <span class="o">=</span> <span class="n">P</span><span class="p">(</span><span class="n">psi</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">))</span><span class="o">/</span><span class="n">psi</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">)</span>
 <span class="n">pretty_print</span><span class="p">(</span><span class="s1">&#39;The momentum of a free particle is $p=$&#39;</span><span class="p">,</span> <span class="n">momentum</span><span class="p">)</span>
@@ -827,7 +759,7 @@ f.diff(x,2)
 </section>
 <section id="id3">
 <h3>For You To Try:<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
-<p>Schrodinger’s equation is given by [\frac{-\hbar^2}{2m}\frac{\partial^2}{\partial x^2} \psi(x,t) +V(x)\psi(x,t) = i\hbar \frac{\partial}{\partial t} \psi(x,t).]  In order to demonstrate that (\psi(x,t) = A_0 e^{i(kx - \omega t)}) satisfies this equation, you need to plug this equation for (\psi(x,t)) into both sides of the equation and show both sides are equal to one another.</p>
+<p>Schrodinger’s equation is given by <span class="math notranslate nohighlight">\(\frac{-\hbar^2}{2m}\frac{\partial^2}{\partial x^2} \psi(x,t) +V(x)\psi(x,t) = i\hbar \frac{\partial}{\partial t} \psi(x,t).\)</span>  In order to demonstrate that <span class="math notranslate nohighlight">\(\psi(x,t) = A_0 e^{i(kx - \omega t)}\)</span> satisfies this equation, you need to plug this equation for <span class="math notranslate nohighlight">\(\psi(x,t)\)</span> into both sides of the equation and show both sides are equal to one another.</p>
 <p>First, take the second derivative of the wave function <span class="math notranslate nohighlight">\(\psi(x,t)\)</span> with respect to <span class="math notranslate nohighlight">\(x\)</span> in the cell below.  Multiply this by <span class="math notranslate nohighlight">\(-\hbar^2/(2m)\)</span>.  This will give you the left-hand side of Schrodinger’s equation.</p>
 <p>Next find the first derivative of <span class="math notranslate nohighlight">\(\psi(x,t)\)</span> with respect to <span class="math notranslate nohighlight">\(t\)</span>.  Multiply this result by <span class="math notranslate nohighlight">\(i \hbar\)</span> to get the right-hand side of Schrodinger’s equation.   Compare this equation to the previous equation.  The two equations should agree if you recognize that <span class="math notranslate nohighlight">\(\omega = \hbar k^2/(2m)\)</span>.</p>
 <p>Use <strong>.substitute(omega = hbar k^2/(2*M))</strong> on this second equation and both equations should match, showing that this wave function satisfies Schrodinger’s equation.</p>
@@ -845,21 +777,17 @@ f.diff(x,2)
 <p>We will use the Python <strong>def</strong> command again to define our two functions.   To define the Hamiltonian operator <span class="math notranslate nohighlight">\(\hat{H} = \frac{-\hbar^2}{2m} \frac{d^2}{dx^2} \)</span> we would use a Python definition that returns the desired function.  We can define the energy operator <span class="math notranslate nohighlight">\(\hat{E} = -i \hbar \frac{d}{dt}\)</span> in a similar fashion.  These two functions can then be used to find <span class="math notranslate nohighlight">\(\hat{H}\psi(x,t)\)</span> and <span class="math notranslate nohighlight">\(\hat{E}\psi(x,t)\)</span></p>
 <section id="defining-schrodinger-s-equation-in-sagemath">
 <h3>Defining Schrodinger’s equation in SageMath<a class="headerlink" href="#defining-schrodinger-s-equation-in-sagemath" title="Link to this heading">#</a></h3>
-<p>The left-hand side of Schrodinger’s equation is called the Hamiltonian which you may have heard of in a classical physics course.  The Hamiltonian (\hat{H}) and energy (\hat{E}) are operators which must have a function to operate on.  In this worksheet we use the hat symbol (\hat{}) above the letter to indicate an operator but your instructor may use different notation.  The operator (\hat{H}) is called ‘H-hat’.</p>
-<p>In terms of operators, Schrodinger’s equation can be written as (\hat{H}\psi(x,t) = \hat{E} \psi(x,t)) where we understand that (\hat{H}) and (\hat{E}) operator on the functions immediately to their right.</p>
+<p>The left-hand side of Schrodinger’s equation is called the Hamiltonian which you may have heard of in a classical physics course.  The Hamiltonian <span class="math notranslate nohighlight">\(\hat{H}\)</span> and energy <span class="math notranslate nohighlight">\(\hat{E}\)</span> are operators which must have a function to operate on.  In this worksheet we use the hat symbol <span class="math notranslate nohighlight">\(\hat{}\)</span> above the letter to indicate an operator but your instructor may use different notation.  The operator <span class="math notranslate nohighlight">\(\hat{H}\)</span> is called ‘H-hat’.</p>
+<p>In terms of operators, Schrodinger’s equation can be written as <span class="math notranslate nohighlight">\(\hat{H}\psi(x,t) = \hat{E} \psi(x,t)\)</span> where we understand that <span class="math notranslate nohighlight">\(\hat{H}\)</span> and <span class="math notranslate nohighlight">\(\hat{E}\)</span> operator on the functions immediately to their right.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hbar</span><span class="o">=</span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;hbar&#39;</span><span class="p">,</span><span class="n">latex_name</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;\hbar&#39;</span><span class="p">)</span>  <span class="c1">#This extra defintion will display the hbar symbol when using .show() or pretty_print</span>
-
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hbar</span><span class="o">=</span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;hbar&#39;</span><span class="p">,</span><span class="n">latex_name</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;\hbar&#39;</span><span class="p">)</span>  <span class="c1">#This defintion will display the hbar symbol when using .show() or pretty_print</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">H</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>    <span class="c1">#The first line of the definition must include the name of the function, the variables, and end with a colon</span>
-    <span class="k">return</span> <span class="o">-</span><span class="n">hbar</span><span class="o">^</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="p">)</span><span class="o">*</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>   <span class="c1">#all lines that make up the function must be indented four spaces (one tab); this is a requirement of Python</span>
-
+    <span class="k">return</span> <span class="o">-</span><span class="n">hbar</span><span class="o">^</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="p">)</span><span class="o">*</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>   <span class="c1">#all lines that make up the function must be indented four spaces (one tab)</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">E</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>   <span class="c1">#This function is the right-hand side of Schrodinger&#39;s equation</span>
     <span class="k">return</span> <span class="n">i</span><span class="o">*</span><span class="n">hbar</span><span class="o">*</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">t</span><span class="p">)</span>
-
-
 
 <span class="n">Hamil_term</span><span class="o">=</span><span class="n">H</span><span class="p">(</span><span class="n">psi</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">))</span>   <span class="c1">#Calculate the Hamiltonian operating on psi</span>
 <span class="n">Ener_term</span><span class="o">=</span><span class="n">E</span><span class="p">(</span><span class="n">psi</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">))</span>    <span class="c1">#Calculate the energy operator on psi</span>
@@ -885,8 +813,8 @@ f.diff(x,2)
 <li><p>Type <strong>solve?</strong> into an input cell to see the other options available for the <strong>solve()</strong> command.</p></li>
 </ul>
 <section id="find-the-values-of-k-that-satisfy-schrodinger-s-equation">
-<h3>Find the values of (k) that satisfy Schrodinger’s equation<a class="headerlink" href="#find-the-values-of-k-that-satisfy-schrodinger-s-equation" title="Link to this heading">#</a></h3>
-<p>We’ve already specified the equation that relates (k) and (\omega) but the following will show you how to use SageMath to find this relation using Schrodinger’s equation.  We’ll use the previous definitions of (H) and (E) along with (\psi(x,t)) to find (k).</p>
+<h3>Find the values of <span class="math notranslate nohighlight">\(k\)</span> that satisfy Schrodinger’s equation<a class="headerlink" href="#find-the-values-of-k-that-satisfy-schrodinger-s-equation" title="Link to this heading">#</a></h3>
+<p>We’ve already specified the equation that relates <span class="math notranslate nohighlight">\(k\)</span> and <span class="math notranslate nohighlight">\(\omega\)</span> but the following will show you how to use SageMath to find this relation using Schrodinger’s equation.  We’ll use the previous definitions of <span class="math notranslate nohighlight">\(H\)</span> and <span class="math notranslate nohighlight">\(E\)</span> along with <span class="math notranslate nohighlight">\(\psi(x,t)\)</span> to find <span class="math notranslate nohighlight">\(k\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ans</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">H</span><span class="p">(</span><span class="n">psi</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">))</span><span class="o">==</span><span class="n">E</span><span class="p">(</span><span class="n">psi</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">)),</span><span class="n">k</span><span class="p">)</span>
@@ -905,7 +833,7 @@ f.diff(x,2)
 </section>
 <section id="id4">
 <h3>For You To Try:<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
-<p>Solve the equation (H \psi(x,t) == E \psi(x,t)) for <strong>omega</strong> rather than <strong>k</strong> and show the result is (\omega = \frac{\hbar^2 k^2}{2m}).</p>
+<p>Solve the equation <span class="math notranslate nohighlight">\(H \psi(x,t) == E \psi(x,t)\)</span> for <strong>omega</strong> rather than <strong>k</strong> and show the result is <span class="math notranslate nohighlight">\(\omega = \frac{\hbar^2 k^2}{2m}\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Insert your work here</span>
@@ -924,7 +852,7 @@ f.diff(x,2)
 </ul>
 <section id="double-check-that-k-satisfies-the-wave-equation">
 <h3>Double-check that <span class="math notranslate nohighlight">\(k\)</span> satisfies the wave equation<a class="headerlink" href="#double-check-that-k-satisfies-the-wave-equation" title="Link to this heading">#</a></h3>
-<p>To help practice using SageMath, we will take the solution obtained for (k) and plug it back into Schrodinger’s equation (again).</p>
+<p>To help practice using SageMath, we will take the solution obtained for <span class="math notranslate nohighlight">\(k\)</span> and plug it back into Schrodinger’s equation (again).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ans</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>  <span class="c1">#Extract first equation from list of solutions</span>
@@ -956,7 +884,7 @@ f.diff(x,2)
 <li><p>For an indefinite integral you only need to specify the variable of integration</p></li>
 <li><p>For a definite integral you must specify the variable of integration and the limits.</p>
 <ul>
-<li><p>For example, to integrate the function (f(x)) from (x=0) to (x=L) you’d type:
+<li><p>For example, to integrate the function <span class="math notranslate nohighlight">\(f(x)\)</span> from <span class="math notranslate nohighlight">\(x=0\)</span> to <span class="math notranslate nohighlight">\(x=L\)</span> you’d type:
 integrate(f(x),[x,0,L])</p></li>
 </ul>
 </li>
@@ -966,17 +894,16 @@ integrate(f(x),[x,0,L])</p></li>
 <p>To normalize the wave function, the total probability to find the particle <em>somewhere</em> must equal 1.  Unfortunately with the free particle you run into an issue because the free particle can be anywhere between <span class="math notranslate nohighlight">\(-\infty\)</span> and <span class="math notranslate nohighlight">\(\infty\)</span>.  Using these limits results in a divergent integral.  To get around the infinite integral we will consider the case where the particle is limited to some region between <span class="math notranslate nohighlight">\(x=+L\)</span> and <span class="math notranslate nohighlight">\(x=-L\)</span> where <span class="math notranslate nohighlight">\(L \gg \lambda\)</span> where <span class="math notranslate nohighlight">\(\lambda\)</span> is the wavelength of the free particle.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">norm_integral_1</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">psi</span><span class="o">*</span><span class="n">psi</span><span class="o">.</span><span class="n">conjugate</span><span class="p">(),</span><span class="n">x</span><span class="p">);</span> <span class="n">norm_integral_1</span>    <span class="c1">#Set the value of the indefnite integral equal to norm1 and then display norm1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">norm_integral_1</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">psi</span><span class="o">*</span><span class="n">psi</span><span class="o">.</span><span class="n">conjugate</span><span class="p">(),</span><span class="n">x</span><span class="p">);</span> <span class="n">norm_integral_1</span>   <span class="c1">#Set the value of the indefnite integral = norm1, and display norm1</span>
 <span class="n">solve</span><span class="p">(</span><span class="n">norm_integral_1</span> <span class="o">==</span><span class="mi">1</span><span class="p">,</span><span class="n">A_0</span><span class="p">)</span>  <span class="c1">#Solve for the values of A_0</span>
-
 
 <span class="n">L</span><span class="o">=</span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;L&#39;</span><span class="p">)</span>  <span class="c1">#Define L as a variable</span>
 <span class="n">assume</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="s1">&#39;real&#39;</span><span class="p">)</span>  <span class="c1">#Specify that L is a real quantity</span>
-<span class="n">norm_integral_2</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">psi</span><span class="o">*</span><span class="n">psi</span><span class="o">.</span><span class="n">conjugate</span><span class="p">(),[</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="n">L</span><span class="p">,</span><span class="n">L</span><span class="p">]);</span><span class="n">norm_integral_2</span>   <span class="c1">#Solve the definite integral using -L and L as the lower and upper bounds</span>
+<span class="n">norm_integral_2</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">psi</span><span class="o">*</span><span class="n">psi</span><span class="o">.</span><span class="n">conjugate</span><span class="p">(),[</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="n">L</span><span class="p">,</span><span class="n">L</span><span class="p">]);</span><span class="n">norm_integral_2</span>  <span class="c1">#Solve definite int using -L &amp; L as the lower &amp; upper bounds</span>
 <span class="n">norm_const</span><span class="o">=</span><span class="n">solve</span><span class="p">(</span><span class="n">norm_integral_2</span><span class="o">==</span><span class="mi">1</span><span class="p">,</span><span class="n">A_0</span><span class="p">);</span><span class="n">norm_const</span>  <span class="c1">#Solve for A_0</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="s2">&quot;If the particle is confined to a region of length 2L, the normalization constant $A_0$ is &quot;</span><span class="p">,</span> <span class="n">norm_const</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">rhs</span><span class="p">()</span> <span class="p">)</span>
+<span class="n">show</span><span class="p">(</span><span class="s2">&quot;If the particle is confined to a region of length 2L, the normalization constant $A_0$ is &quot;</span><span class="p">,</span> <span class="n">norm_const</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">rhs</span><span class="p">()</span> <span class="p">)</span>
 
-<span class="n">pretty_print</span><span class="p">(</span><span class="s2">&quot;The wave function \(\psi(x,t)\), including the normalization constant is \(psi(x,t)=\)&quot;</span><span class="p">,</span> <span class="n">psi</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">substitute</span><span class="p">(</span><span class="n">A_0</span><span class="o">=</span><span class="n">norm_const</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">rhs</span><span class="p">()))</span>
+<span class="n">show</span><span class="p">(</span><span class="s2">&quot;The wave function $\psi(x,t)$, including the normalization constant is $psi(x,t)=$&quot;</span><span class="p">,</span> <span class="n">psi</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">substitute</span><span class="p">(</span><span class="n">A_0</span><span class="o">=</span><span class="n">norm_const</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">rhs</span><span class="p">()))</span>
 </pre></div>
 </div>
 </div>
@@ -1010,7 +937,7 @@ integrate(f(x),[x,0,L])</p></li>
 <section id="project-ideas-and-problems-to-solve">
 <h2>Project Ideas and Problems to Solve<a class="headerlink" href="#project-ideas-and-problems-to-solve" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p>Have students find realistic values for masses and velocities for electrons, protons, or neutrons and use de Broglie’s equation to find (k), (\omega), and total energy (E).</p></li>
+<li><p>Have students find realistic values for masses and velocities for electrons, protons, or neutrons and use de Broglie’s equation to find <span class="math notranslate nohighlight">\(k\)</span>, <span class="math notranslate nohighlight">\(\omega\)</span>, and total energy <span class="math notranslate nohighlight">\(E\)</span>.</p></li>
 <li><p>Plot wave functions for electrons and protons on the same plot and have students explain why electron microscopes are used for imaging small objects while ‘proton microscopes’ aren’t as useful.</p></li>
 <li><p>Have students complete homework problems from the end of the textbook chapter.</p></li>
 </ol>
@@ -1019,22 +946,22 @@ integrate(f(x),[x,0,L])</p></li>
 <section class="tex2jax_ignore mathjax_ignore" id="particle-in-1d-box-solving-differential-equations">
 <h1>2. Particle in 1D box - Solving differential equations<a class="headerlink" href="#particle-in-1d-box-solving-differential-equations" title="Link to this heading">#</a></h1>
 <ul class="simple">
-<li><p>Solving differential equations</p></li>
+<li><p>Solving DEs</p></li>
 <li><p>Integrating a function</p></li>
 <li><p>Plotting functions</p></li>
 <li><p>Creating an animated plot</p></li>
 <li><p>Approximate numerical results</p></li>
 <li><p>Expand symbolic expressions</p></li>
 </ul>
-<p>When solving differential equations it helps to specify which variables are real and which are positive using the <strong>assume()</strong> command.</p>
+<p>When solving DEs it helps to specify which variables are real and which are positive using the <strong>assume()</strong> command.</p>
 <ul class="simple">
-<li><p>You need to specify the independent variable of your function.  In this case we specify that <span class="math notranslate nohighlight">\(\psi\)</span> is a function of <span class="math notranslate nohighlight">\(x\)</span>.</p></li>
-<li><p>The differential equation is defined using the Python <strong>def</strong> method.</p>
+<li><p>You need to specify the independent variable (<strong>IV</strong>) of your function.  In this case we specify that <span class="math notranslate nohighlight">\(\psi\)</span> is a function of <span class="math notranslate nohighlight">\(x\)</span>.</p></li>
+<li><p>The DE is defined using the Python <strong>def</strong> method.</p>
 <ul>
-<li><p>This creates a function which we can differential, integrate, or solve using the differential equation solver.</p></li>
+<li><p>This creates a function which we can differential, integrate, or use <strong>desolve()</strong>.</p></li>
+<li><p><strong>desolve()</strong> includes the DE to solve, the dependent variable (<span class="math notranslate nohighlight">\(\psi\)</span> in this case), and the IV x (specified using <strong>ivar=x</strong> to indicate IV).</p></li>
 </ul>
 </li>
-<li><p>Use <strong>desolve()</strong> to solve the differential equation.  The arguments of <strong>desolve()</strong> are the differential equation to solve, the dependent variable (<span class="math notranslate nohighlight">\(\psi\)</span> in this case), and the independent variable x (specified using <strong>ivar=x</strong> to indicate the independent variable).</p></li>
 </ul>
 <section id="find-general-solution-to-schrodinger-s-equation">
 <h2>Find general solution to Schrodinger’s equation<a class="headerlink" href="#find-general-solution-to-schrodinger-s-equation" title="Link to this heading">#</a></h2>
@@ -1045,17 +972,18 @@ integrate(f(x),[x,0,L])</p></li>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">L</span><span class="o">=</span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;psi,m,L&#39;</span><span class="p">)</span>  <span class="c1">#Declare wave function, mass, and box length as variables</span>
 
-<span class="n">Ener</span><span class="o">=</span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;Ener&#39;</span><span class="p">,</span><span class="n">latex_name</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;\mathcal</span><span class="si">{E}</span><span class="s1">&#39;</span><span class="p">)</span>  <span class="c1">#Declare Ener as energy variable but will display a script E when using show() and pretty_print</span>
-<span class="n">hbar</span><span class="o">=</span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;hbar&#39;</span><span class="p">,</span><span class="n">latex_name</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;\hbar&#39;</span><span class="p">)</span>  <span class="c1">#Declares hbar as a variable and displays hbar symbol when using show() and pretty_print</span>
+<span class="n">Ener</span><span class="o">=</span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;Ener&#39;</span><span class="p">,</span><span class="n">latex_name</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;\mathcal</span><span class="si">{E}</span><span class="s1">&#39;</span><span class="p">)</span>  <span class="c1">#Declare Ener as energy variable but will display a script E when using show() </span>
+<span class="n">hbar</span><span class="o">=</span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;hbar&#39;</span><span class="p">,</span><span class="n">latex_name</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;\hbar&#39;</span><span class="p">)</span>  <span class="c1">#Declares hbar as a variable and displays hbar symbol when using show() </span>
 
 <span class="n">assume</span><span class="p">(</span><span class="n">Ener</span><span class="p">,</span><span class="s1">&#39;real&#39;</span><span class="p">)</span>   <span class="c1">#Assume the variable Ener (the energy) only takes real values...</span>
-<span class="n">assume</span><span class="p">(</span><span class="n">Ener</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>   <span class="c1">#... and assume the energy is greater than zero.  These are needed for desolve()</span>
+<span class="n">assume</span><span class="p">(</span><span class="n">Ener</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>        <span class="c1">#... and assume the energy is greater than zero.  These are needed for desolve()</span>
 
 <span class="n">assume</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="s1">&#39;real&#39;</span><span class="p">)</span>   <span class="c1">#Assume the mass is real...</span>
-<span class="n">assume</span><span class="p">(</span><span class="n">m</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>     <span class="c1">#... and positive.  If you don&#39;t make these assumptions you will get an error message asking if these variables are positive, negative, or zero</span>
+<span class="n">assume</span><span class="p">(</span><span class="n">m</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>        <span class="c1">#... and positive.  </span>
+              <span class="c1">#If you don&#39;t make assumptions you will get an error message asking if these variables are positive, negative, or zero</span>
 
-<span class="n">psi</span><span class="o">=</span><span class="n">function</span><span class="p">(</span><span class="s1">&#39;psi&#39;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>   <span class="c1">#To solve the differential equation we must tell SageMath that psi is a function called &#39;psi&#39; with a single dependent variable</span>
-
+<span class="c1">#To solve DE, we must tell Sage that psi is a function called &#39;psi&#39; with a single dependent variable</span>
+<span class="n">psi</span><span class="o">=</span><span class="n">function</span><span class="p">(</span><span class="s1">&#39;psi&#39;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>   
 
 <span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">psi</span><span class="p">):</span>  <span class="c1">#Define the equation to solve.</span>
     <span class="k">return</span> <span class="o">-</span><span class="n">hbar</span><span class="o">^</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="p">)</span><span class="o">*</span><span class="n">diff</span><span class="p">(</span><span class="n">psi</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">Ener</span><span class="o">*</span><span class="n">psi</span>   <span class="c1">#This is the differential equation to be solved</span>
@@ -1071,7 +999,7 @@ integrate(f(x),[x,0,L])</p></li>
 </section>
 <section id="satisfying-boundary-conditions">
 <h2>Satisfying boundary conditions<a class="headerlink" href="#satisfying-boundary-conditions" title="Link to this heading">#</a></h2>
-<p>The boundary conditions require that (\psi(x,t)) must be zero at the two walls.  In other words, (\psi(x=0,t)=0) and (\psi(x=L,t)=0).  Since (\sin(0)=0) and (\cos(0)=1), this means that (K_2=0).  The boundary condition at (x=L) says that (K_1 \sin(\sqrt{2 \mathcal{E} m} x/\hbar) = 0) which is true if the argument of (\sin()) is an integer multiple of (\pi).  Thus (\frac{\sqrt{2 m \mathcal{E}}L}{\hbar} = n \pi) for (n = 1, 2, 3, …).  To be consistent with previous notation we will set (A_0 = K_1).  The wave function for the particle in a box is [\psi(x,t) = A_0 \sin(\frac{n \pi x}{L}).]</p>
+<p>The boundary conditions require that <span class="math notranslate nohighlight">\(\psi(x,t)\)</span> must be zero at the two walls.  In other words, <span class="math notranslate nohighlight">\(\psi(x=0,t)=0\)</span> and <span class="math notranslate nohighlight">\(\psi(x=L,t)=0\)</span>.  Since <span class="math notranslate nohighlight">\(\sin(0)=0\)</span> and <span class="math notranslate nohighlight">\(\cos(0)=1\)</span>, this means that <span class="math notranslate nohighlight">\(K_2=0\)</span>.  The boundary condition at <span class="math notranslate nohighlight">\(x=L\)</span> says that <span class="math notranslate nohighlight">\(K_1 \sin(\sqrt{2 \mathcal{E} m} x/\hbar) = 0\)</span> which is true if the argument of <span class="math notranslate nohighlight">\(\sin()\)</span> is an integer multiple of <span class="math notranslate nohighlight">\(\pi\)</span>.  Thus <span class="math notranslate nohighlight">\(\frac{\sqrt{2 m \mathcal{E}}L}{\hbar} = n \pi\)</span> for <span class="math notranslate nohighlight">\(n = 1, 2, 3, ...\)</span>.  To be consistent with previous notation we will set <span class="math notranslate nohighlight">\(A_0 = K_1\)</span>.  The wave function for the particle in a box is <span class="math notranslate nohighlight">\(\psi(x,t) = A_0 \sin(\frac{n \pi x}{L}).\)</span></p>
 </section>
 <section id="integrating-functions">
 <h2>Integrating functions<a class="headerlink" href="#integrating-functions" title="Link to this heading">#</a></h2>
@@ -1082,7 +1010,7 @@ integrate(f(x),[x,0,L])</p></li>
 </ul>
 <section id="deterimine-normalization-constant">
 <h3>Deterimine normalization constant<a class="headerlink" href="#deterimine-normalization-constant" title="Link to this heading">#</a></h3>
-<p>The integral of the probability density over some region of space gives the probability of finding the particle in that region.  If we integrate over all possible places the particle might be, the total probability has to be 1 ( which corresponds to 100%).  We can use this fact to find the normalization constant (A_0).  In other words, by requiring (\int_0^L \psi^*(x,t) \psi(x,t) dx = 1) we can solve for (A_0).</p>
+<p>The integral of the probability density over some region of space gives the probability of finding the particle in that region.  If we integrate over all possible places the particle might be, the total probability has to be 1 ( which corresponds to 100%).  We can use this fact to find the normalization constant <span class="math notranslate nohighlight">\(A_0\)</span>.  In other words, by requiring <span class="math notranslate nohighlight">\(\int_0^L \psi^*(x,t) \psi(x,t) dx = 1\)</span> we can solve for <span class="math notranslate nohighlight">\(A_0\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A_0</span><span class="p">,</span><span class="n">n</span> <span class="o">=</span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;A_0,n &#39;</span><span class="p">)</span>
@@ -1103,7 +1031,7 @@ integrate(f(x),[x,0,L])</p></li>
 <span class="n">pretty_print</span><span class="p">(</span><span class="s1">&#39;We are only interested in the positive value  which is $A_0=$&#39;</span><span class="p">,</span> <span class="n">norm_const</span><span class="p">)</span>
 
 <span class="n">psi_well</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="o">=</span><span class="n">psi_well</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="o">.</span><span class="n">substitute</span><span class="p">(</span><span class="n">A_0</span><span class="o">=</span><span class="n">norm_const</span><span class="p">)</span>  <span class="c1">#Substitute our value for A_0 into the wave function</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="s1">&#39;The equation for our wave function inside an infinite potential well is $\psi(x)=$&#39;</span><span class="p">,</span> <span class="n">psi_well</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="p">))</span>
+<span class="n">show</span><span class="p">(</span><span class="s1">&#39;The equation for our wave function inside an infinite potential well is $\psi(x)=$&#39;</span><span class="p">,</span> <span class="n">psi_well</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -1121,11 +1049,11 @@ integrate(f(x),[x,0,L])</p></li>
 <span class="n">assume</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="s1">&#39;integer&#39;</span><span class="p">)</span>
 
 <span class="n">probability_not_orthogonal</span><span class="o">=</span><span class="n">integrate</span><span class="p">(</span><span class="n">psi_well</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="o">.</span><span class="n">conjugate</span><span class="p">()</span><span class="o">*</span><span class="n">psi_well</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="p">),[</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">L</span><span class="p">])</span>  <span class="c1">#Calculate for m=n</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="s1">&#39; If both wave functions have same n-value, then $\int_0^a\psi_n^*(x) \psi_n(x)dx$ = &#39;</span><span class="p">,</span> <span class="n">probability_not_orthogonal</span><span class="p">)</span>
+<span class="n">show</span><span class="p">(</span><span class="s1">&#39; If both wave functions have same n-value, then $\int_0^a\psi_n^*(x) \psi_n(x)dx$ = &#39;</span><span class="p">,</span> <span class="n">probability_not_orthogonal</span><span class="p">)</span>
 
 
 <span class="n">probability_orthogonal</span><span class="o">=</span><span class="n">integrate</span><span class="p">(</span><span class="n">psi_well</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="o">.</span><span class="n">conjugate</span><span class="p">()</span><span class="o">*</span><span class="n">psi_well</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">m</span><span class="p">),[</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">L</span><span class="p">])</span>   <span class="c1">#Calculate for m not equal to n</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="s1">&#39; If m is not equal to n, then $\int_0^a\psi_n^*(x) \psi_m(x)dx$ = &#39;</span><span class="p">,</span> <span class="n">probability_orthogonal</span><span class="p">)</span>  <span class="c1">#%todo: \ne or \neq not working</span>
+<span class="n">show</span><span class="p">(</span><span class="s1">&#39; If m is not equal to n, then $\int_0^a\psi_n^*(x) \psi_m(x)dx$ = &#39;</span><span class="p">,</span> <span class="n">probability_orthogonal</span><span class="p">)</span>  <span class="c1">#%todo: \ne or \neq not working</span>
 </pre></div>
 </div>
 </div>
@@ -1135,7 +1063,7 @@ integrate(f(x),[x,0,L])</p></li>
 <section id="d-plots-of-functions">
 <h2>2D plots of functions<a class="headerlink" href="#d-plots-of-functions" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>To plot a function (f(x)) vs. (x) from (x=0) to (x=2), use <strong>plot(f(x),[x,0,2])</strong></p></li>
+<li><p>To plot a function <span class="math notranslate nohighlight">\(f(x)\)</span> vs. <span class="math notranslate nohighlight">\(x\)</span> from <span class="math notranslate nohighlight">\(x=0\)</span> to <span class="math notranslate nohighlight">\(x=2\)</span>, use <strong>plot(f(x),[x,0,2])</strong></p></li>
 <li><p>You can change the color of the line plotted by setting the color argument (e.g. <strong>color=’black’</strong>)</p></li>
 <li><p>Multiple graphs can be combined into a single plot window by adding the <strong>plot()</strong> commands together.</p></li>
 <li><p>Plots have various properties, such as line color, type of line, points plotted, titles, and axes labels that can be changed</p></li>
@@ -1145,7 +1073,7 @@ integrate(f(x),[x,0,L])</p></li>
 <section id="plot-wave-function-and-probabilty-density">
 <h3>Plot wave function and probabilty density<a class="headerlink" href="#plot-wave-function-and-probabilty-density" title="Link to this heading">#</a></h3>
 <p>The following commands demonstrate how to plot the wave function and probability densities for the first three lowest energy states of the 1D particle-in-a-box.</p>
-<p>Since the potential energy (and thus the Hamiltonian) is symmetric about the center of the well (about the point (x=L/2)), the wave functions will either be symmetric or antisymmetric about (x=L/2).  Since we haven’t specified the length of the box we will set (L=1) for purposes of plotting.</p>
+<p>Since the potential energy (and thus the Hamiltonian) is symmetric about the center of the well (about the point <span class="math notranslate nohighlight">\(x=L/2\)</span>), the wave functions will either be symmetric or antisymmetric about <span class="math notranslate nohighlight">\(x=L/2\)</span>.  Since we haven’t specified the length of the box we will set <span class="math notranslate nohighlight">\(L=1\)</span> for purposes of plotting.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi_well_1</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">=</span><span class="n">psi_well</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">substitute</span><span class="p">(</span><span class="n">L</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1">#n = 1 ground state with L=1</span>
@@ -1196,7 +1124,7 @@ To help answer this question, plot the wave functions for the n=4 and n=5 states
 </ul>
 <section id="probabilities-to-find-the-particle">
 <h3>Probabilities to find the particle<a class="headerlink" href="#probabilities-to-find-the-particle" title="Link to this heading">#</a></h3>
-<p>The probability to find a particle between (x=a) and (x=b) is found by integrating the probability density over the region: [\int_a^b \psi^*(x) \psi(x) dx ]</p>
+<p>The probability to find a particle between <span class="math notranslate nohighlight">\(x=a\)</span> and <span class="math notranslate nohighlight">\(x=b\)</span> is found by integrating the probability density over the region: <span class="math notranslate nohighlight">\(\int_a^b \psi^*(x) \psi(x) dx \)</span></p>
 <p>What is the probability to find the particle somewhere in the box?</p>
 <p>What is the probability of finding the particle in the left half of the box (between <span class="math notranslate nohighlight">\(x=0\)</span> and <span class="math notranslate nohighlight">\(x=L/2\)</span>)?</p>
 <p>What is the probability of finding the particle in the left quarter of the box (between <span class="math notranslate nohighlight">\(x=0\)</span> and <span class="math notranslate nohighlight">\(x=L/4\)</span>)?</p>
@@ -1212,7 +1140,7 @@ To help answer this question, plot the wave functions for the n=4 and n=5 states
 
 <span class="n">probability_left_quarter</span><span class="o">=</span><span class="n">integrate</span><span class="p">(</span><span class="n">psi_well</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">conjugate</span><span class="p">()</span><span class="o">*</span><span class="n">psi_well</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">1</span><span class="p">),[</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">L</span><span class="o">/</span><span class="mi">4</span><span class="p">])</span>
 
-<span class="n">pretty_print</span><span class="p">(</span><span class="s2">&quot;The probability to find the particle in the left quarter of the box between $x=0$ and $x=L/4$ is &quot;</span><span class="p">,</span> <span class="n">probability_left_quarter</span><span class="p">,</span> <span class="s2">&quot; = &quot;</span><span class="p">,</span> <span class="n">probability_left_quarter</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="n">digits</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">show</span><span class="p">(</span><span class="s2">&quot;The probability to find the particle in the left quarter of the box between $x=0$ and $x=L/4$ is &quot;</span><span class="p">,</span> <span class="n">probability_left_quarter</span><span class="p">,</span> <span class="s2">&quot; = &quot;</span><span class="p">,</span> <span class="n">probability_left_quarter</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="n">digits</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1339,7 +1267,7 @@ To help answer this question, plot the wave functions for the n=4 and n=5 states
 </section>
 <section id="id8">
 <h2>For You To Try:<a class="headerlink" href="#id8" title="Link to this heading">#</a></h2>
-<p>Why does the probability density of the superposition state vary with time while the pure n=1 and n=2 states do not vary (Hint: The time dependence of the wave function is contained in the term (e^{iE_n t/\hbar}).  What happens to this time dependence when you calculate (\psi^* \psi) for the pure n=1 state or n=2 state? )</p>
+<p>Why does the probability density of the superposition state vary with time while the pure n=1 and n=2 states do not vary (Hint: The time dependence of the wave function is contained in the term <span class="math notranslate nohighlight">\(e^{iE_n t/\hbar}\)</span>.  What happens to this time dependence when you calculate <span class="math notranslate nohighlight">\(\psi^* \psi\)</span> for the pure n=1 state or n=2 state? )</p>
 <p>Plot the real part of a superposition of the n=1 and n=3 states <span class="math notranslate nohighlight">\(\psi_{super}(x,t)=\psi_{n=1}(x,t)+\psi_{n=3}(x,t)\)</span>.  Remember that the time dependency is <span class="math notranslate nohighlight">\(e^{iE_n t/\hbar}\)</span> where <span class="math notranslate nohighlight">\(E_n=\frac{n^2\pi^2\hbar^2}{2mL^2}\)</span> where we have assumed <span class="math notranslate nohighlight">\(\hbar=1\)</span>, <span class="math notranslate nohighlight">\(m=1\)</span>, and <span class="math notranslate nohighlight">\(L=1\)</span> for plotting purposes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1352,16 +1280,15 @@ To help answer this question, plot the wave functions for the n=4 and n=5 states
 <section id="id9">
 <h2>Project Ideas and Problems to Solve<a class="headerlink" href="#id9" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p>Normalize a 50/50 superposition of the n=1 and n=3 state where (\psi_{super}(x,t)=A_{norm}\left( \psi_{n=1}(x,t)+\psi_{n=3}(x,t)\right)).  In other words, find the value of (A_{norm}) such that (\int_{-\infty}^{\infty}\psi^*(x,0) \psi(x,0) dx = 1).</p></li>
-<li><p>Calculate <x> for a particle in a superposition of the n=1 and n=3 states (\psi_{super}(x,t)=\psi_{n=1}(x,t)+\psi_{n=3}(x,t)).</p></li>
-<li><p>Use the fact that the uncertainty of an observable is defined as (\Delta A = \sqrt{&lt; A^2 &gt; - &lt; A &gt;^2}) to find the uncertainty in the position and momentum for the first three states.</p></li>
+<li><p>Normalize a 50/50 superposition of the n=1 and n=3 state where <span class="math notranslate nohighlight">\(\psi_{super}(x,t)=A_{norm}\left( \psi_{n=1}(x,t)+\psi_{n=3}(x,t)\right)\)</span>.  In other words, find the value of <span class="math notranslate nohighlight">\(A_{norm}\)</span> such that <span class="math notranslate nohighlight">\(\int_{-\infty}^{\infty}\psi^*(x,0) \psi(x,0) dx = 1\)</span>.</p></li>
+<li><p>Calculate <x> for a particle in a superposition of the n=1 and n=3 states <span class="math notranslate nohighlight">\(\psi_{super}(x,t)=\psi_{n=1}(x,t)+\psi_{n=3}(x,t)\)</span>.</p></li>
+<li><p>Use the fact that the uncertainty of an observable is defined as <span class="math notranslate nohighlight">\(\Delta A = \sqrt{&lt; A^2 &gt; - &lt; A &gt;^2}\)</span> to find the uncertainty in the position and momentum for the first three states.</p></li>
 <li><p>Repeat the previous question for the superposition of the n=1 and n=3 states.</p></li>
 </ol>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="q-harmonic-oscillator-solving-differential-equations">
-<h1>3. Q harmonic oscillator - Solving differential equations<a class="headerlink" href="#q-harmonic-oscillator-solving-differential-equations" title="Link to this heading">#</a></h1>
-<p>This worksheet assume you can integrate, differentiate, and plot simple graphs.</p>
+<section class="tex2jax_ignore mathjax_ignore" id="q-harmonic-oscillator-solving-des">
+<h1>3. Q harmonic oscillator - Solving DEs<a class="headerlink" href="#q-harmonic-oscillator-solving-des" title="Link to this heading">#</a></h1>
 <ul class="simple">
 <li><p>Solving differential equations</p></li>
 <li><p>Plot dotted, dashed, or solid lines</p></li>
@@ -1386,17 +1313,17 @@ To help answer this question, plot the wave functions for the n=4 and n=5 states
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">omega</span><span class="o">=</span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;psi,m,L,omega&#39;</span><span class="p">)</span>  <span class="c1">#Declare wave function, mass, and box length as variables</span>
 
-<span class="n">Ener</span><span class="o">=</span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;Ener&#39;</span><span class="p">,</span><span class="n">latex_name</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;\mathcal</span><span class="si">{E}</span><span class="s1">&#39;</span><span class="p">)</span>  <span class="c1">#Declare Ener as energy variable but will display a script E when using show() and pretty_print</span>
-<span class="n">hbar</span><span class="o">=</span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;hbar&#39;</span><span class="p">,</span><span class="n">latex_name</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;\hbar&#39;</span><span class="p">)</span>  <span class="c1">#Declares hbar as a variable and displays hbar symbol when using show() and pretty_print</span>
+<span class="n">Ener</span><span class="o">=</span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;Ener&#39;</span><span class="p">,</span><span class="n">latex_name</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;\mathcal</span><span class="si">{E}</span><span class="s1">&#39;</span><span class="p">)</span>  <span class="c1">#Declare Ener as energy variable but will display a script E when using show()  </span>
+<span class="n">hbar</span><span class="o">=</span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;hbar&#39;</span><span class="p">,</span><span class="n">latex_name</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;\hbar&#39;</span><span class="p">)</span>  <span class="c1">#Declares hbar as a variable and displays hbar symbol when using show()  </span>
 
 <span class="n">assume</span><span class="p">(</span><span class="n">Ener</span><span class="p">,</span><span class="s1">&#39;real&#39;</span><span class="p">)</span>   <span class="c1">#Assume the variable Ener (the energy) only takes real values...</span>
 <span class="n">assume</span><span class="p">(</span><span class="n">Ener</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>   <span class="c1">#... and assume the energy is greater than zero.  These are needed for desolve()</span>
 
 <span class="n">assume</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="s1">&#39;real&#39;</span><span class="p">)</span>   <span class="c1">#Assume the mass is real...</span>
-<span class="n">assume</span><span class="p">(</span><span class="n">m</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>     <span class="c1">#... and positive.  If you don&#39;t make these assumptions you will get an error message asking if these variables are positive, negative, or zero</span>
+<span class="n">assume</span><span class="p">(</span><span class="n">m</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>     <span class="c1">#... and positive.   </span>
 
-<span class="n">psi</span><span class="o">=</span><span class="n">function</span><span class="p">(</span><span class="s1">&#39;psi&#39;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>   <span class="c1">#To solve the differential equation we must tell SageMath that psi is a function called &#39;psi&#39; with a single dependent variable</span>
-
+<span class="c1">#To solve the differential equation we must tell SageMath that psi is a function called &#39;psi&#39; with a single dependent variable</span>
+<span class="n">psi</span><span class="o">=</span><span class="n">function</span><span class="p">(</span><span class="s1">&#39;psi&#39;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>   
 
 <span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">psi</span><span class="p">):</span>  <span class="c1">#Define the equation to solve.</span>
     <span class="k">return</span> <span class="o">-</span><span class="n">hbar</span><span class="o">^</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="p">)</span><span class="o">*</span><span class="n">diff</span><span class="p">(</span><span class="n">psi</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="n">omega</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">-</span><span class="n">Ener</span><span class="p">)</span><span class="o">*</span><span class="n">psi</span>   <span class="c1">#This is the differential equation to be solved</span>
@@ -1414,16 +1341,15 @@ To help answer this question, plot the wave functions for the n=4 and n=5 states
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Harmonic Oscillator Wavefunction and energy</span>
 <span class="n">m</span><span class="p">,</span><span class="n">omega</span><span class="o">=</span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;m,omega&#39;</span><span class="p">)</span>
-<span class="n">hbar</span><span class="o">=</span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;hbar&#39;</span><span class="p">,</span><span class="n">latex_name</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;\hbar&#39;</span><span class="p">)</span>                                  <span class="c1">#Declares hbar as a variable and displays hbar symbol when using show() and pretty_print</span>
-<span class="n">alpha</span><span class="o">=</span><span class="n">m</span><span class="o">*</span><span class="n">omega</span><span class="o">/</span><span class="n">hbar</span>                               <span class="c1">#If alpha is defined _after_ the wave functions are defined, you would need to use .substitute(alpha=m*omega/hbar)</span>
+<span class="n">hbar</span><span class="o">=</span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;hbar&#39;</span><span class="p">,</span><span class="n">latex_name</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;\hbar&#39;</span><span class="p">)</span>                                  <span class="c1">#Declares hbar as a variable and displays hbar symbol </span>
+<span class="n">alpha</span><span class="o">=</span><span class="n">m</span><span class="o">*</span><span class="n">omega</span><span class="o">/</span><span class="n">hbar</span>         <span class="c1">#If alpha is defined after the wave functions are defined, you need to use .substitute(alpha=m*omega/hbar)</span>
 
 <span class="n">psi_HO0</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">alpha</span><span class="o">/</span><span class="n">pi</span><span class="p">)</span><span class="o">^</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="n">alpha</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>                        <span class="c1">#n=0 state of 1D harmonic oscillator</span>
 <span class="n">psi_HO1</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">alpha</span><span class="o">^</span><span class="mi">3</span><span class="o">/</span><span class="n">pi</span><span class="p">)</span><span class="o">^</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="n">alpha</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>                  <span class="c1">#n=1 state of 1D harmonic oscillator</span>
 <span class="n">psi_HO2</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">alpha</span><span class="o">/</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">pi</span><span class="p">))</span><span class="o">^</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">alpha</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="n">alpha</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>    <span class="c1">#n=2 state of 1D harmonic oscillator</span>
 <span class="n">psi_HO3</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">alpha</span><span class="o">^</span><span class="mi">3</span><span class="o">/</span><span class="p">(</span><span class="mi">9</span><span class="o">*</span><span class="n">pi</span><span class="p">))</span><span class="o">^</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">alpha</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">3</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="n">alpha</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="c1">#n=3 state of 1D harmonic oscillator</span>
 <span class="n">psi_HO4</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">alpha</span><span class="o">/</span><span class="p">(</span><span class="mi">36</span><span class="o">*</span><span class="n">pi</span><span class="p">))</span><span class="o">^</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">alpha</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">4</span><span class="o">-</span><span class="mi">6</span><span class="o">*</span><span class="n">alpha</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="n">alpha</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>  <span class="c1">#n=4 state of 1D harmonic oscillator</span>
-<span class="n">psi_HO5</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">alpha</span><span class="o">/</span><span class="p">(</span><span class="mi">225</span><span class="o">*</span><span class="n">pi</span><span class="p">))</span><span class="o">^</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">alpha</span><span class="o">^</span><span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">5</span><span class="o">-</span><span class="mi">10</span><span class="o">*</span><span class="n">alpha</span><span class="o">^</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">3</span><span class="o">+</span><span class="mi">15</span><span class="o">*</span><span class="n">alpha</span><span class="o">^</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="n">alpha</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>  <span class="c1">#n=5 state of 1D harmonic oscillator</span>
-
+<span class="n">psi_HO5</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">alpha</span><span class="o">/</span><span class="p">(</span><span class="mi">225</span><span class="o">*</span><span class="n">pi</span><span class="p">))</span><span class="o">^</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">alpha</span><span class="o">^</span><span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">5</span><span class="o">-</span><span class="mi">10</span><span class="o">*</span><span class="n">alpha</span><span class="o">^</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">3</span><span class="o">+</span><span class="mi">15</span><span class="o">*</span><span class="n">alpha</span><span class="o">^</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="n">alpha</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>  <span class="c1">#n=5 state  </span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">E_n</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">omega</span><span class="p">):</span>                                                     <span class="c1">#1D harmonic oscillator energy function</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">hbar</span><span class="o">*</span><span class="n">omega</span>
@@ -1435,9 +1361,9 @@ To help answer this question, plot the wave functions for the n=4 and n=5 states
 </div>
 </div>
 <p>In general, the quantum harmonic oscillator wave function can be found from the following relationships:</p>
-<p>[\psi_n(x) = \left( \frac{1}{2^n n!} \right) \left( \frac{\alpha}{\pi} \right) H_n(\alpha^{1/2}x) e^{-\alpha x^2/2}   ]</p>
+<p><span class="math notranslate nohighlight">\(\psi_n(x) = \left( \frac{1}{2^n n!} \right) \left( \frac{\alpha}{\pi} \right) H_n(\alpha^{1/2}x) e^{-\alpha x^2/2}   \)</span></p>
 <p>where the Hermite polynomial <span class="math notranslate nohighlight">\(H_n(x)\)</span> is found from</p>
-<p>[H_n(x) = (-1)^n e^{x^2} \frac{d^n}{dx^n} e^{-x^2} ]</p>
+<p><span class="math notranslate nohighlight">\(H_n(x) = (-1)^n e^{x^2} \frac{d^n}{dx^n} e^{-x^2} \)</span></p>
 <section id="id10">
 <h2>For You To Try:<a class="headerlink" href="#id10" title="Link to this heading">#</a></h2>
 <p>Prove that the quantum harmonic oscillator wave functions are normalized</p>
@@ -1473,7 +1399,8 @@ To help answer this question, plot the wave functions for the n=4 and n=5 states
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi0_plot</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">=</span><span class="n">psi_HO0</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">substitute</span><span class="p">(</span><span class="n">m</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">omega</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">hbar</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>      <span class="c1">#To plot a function, all variables must be defined - chose variables = 1 for simplicity</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#To plot a function, all variables must be defined - chose variables = 1 for simplicity</span>
+<span class="n">psi0_plot</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">=</span><span class="n">psi_HO0</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">substitute</span><span class="p">(</span><span class="n">m</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">omega</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">hbar</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>      
 
 <span class="n">P</span><span class="o">=</span><span class="n">plot</span><span class="p">(</span><span class="n">psi0_plot</span><span class="p">(</span><span class="n">x</span><span class="p">),[</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;n=1 State of QHO&#39;</span><span class="p">,</span> <span class="n">axes_labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Position x&#39;</span><span class="p">,</span> <span class="s1">&#39;$\psi(x)$&#39;</span><span class="p">],</span><span class="n">axes_labels_size</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">title_pos</span><span class="o">=</span><span class="p">(</span><span class="mf">.3</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
 <span class="n">P</span><span class="o">+=</span> <span class="n">text</span><span class="p">(</span><span class="s1">&#39;Wave function peak&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1.05</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
@@ -1501,9 +1428,9 @@ To help answer this question, plot the wave functions for the n=4 and n=5 states
 <section id="calculate-harmonic-oscillator-energy-from-schrodinger-equation-and-wave-function">
 <h3>Calculate harmonic oscillator energy from Schrodinger equation and wave function<a class="headerlink" href="#calculate-harmonic-oscillator-energy-from-schrodinger-equation-and-wave-function" title="Link to this heading">#</a></h3>
 <p>We can check that the wave functions satisfy Schrodinger’s equation and give the correct energy.  The equation is</p>
-<p>[\hat{H}\psi(x) = E \psi(x).]</p>
+<p><span class="math notranslate nohighlight">\(\hat{H}\psi(x) = E \psi(x).\)</span></p>
 <p>Since <span class="math notranslate nohighlight">\(E\)</span> is a number (unlike <span class="math notranslate nohighlight">\(\hat{H}\)</span>, which is an operator), we can divide both sides of the equation by <span class="math notranslate nohighlight">\(\psi(x)\)</span> and cancel the terms on the right hand side to get an equation for the energy.</p>
-<p>[\frac{\hat{H}\psi(x)}{\psi(x)} = E.]</p>
+<p><span class="math notranslate nohighlight">\(\frac{\hat{H}\psi(x)}{\psi(x)} = E.\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="o">=</span><span class="n">H</span><span class="p">(</span><span class="n">psi_HO0</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">/</span><span class="n">psi_HO0</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -1553,9 +1480,9 @@ To help answer this question, plot the wave functions for the n=4 and n=5 states
 <section id="id12">
 <h2>For You To Try:<a class="headerlink" href="#id12" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Use the Hamiltonian to find the energies of the (n=1), (n=2), and (n=3) states.</p>
+<li><p>Use the Hamiltonian to find the energies of the <span class="math notranslate nohighlight">\(n=1\)</span>, <span class="math notranslate nohighlight">\(n=2\)</span>, and <span class="math notranslate nohighlight">\(n=3\)</span> states.</p>
 <ul>
-<li><p>Remember that (E = \frac{H \psi(x)}{\psi(x)})</p></li>
+<li><p>Remember that <span class="math notranslate nohighlight">\(E = \frac{H \psi(x)}{\psi(x)}\)</span></p></li>
 <li><p>If your resulting equation is a huge mess, try squaring, expanding, then simplifying the equation</p></li>
 </ul>
 </li>
@@ -1595,8 +1522,8 @@ To help answer this question, plot the wave functions for the n=4 and n=5 states
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">omega</span><span class="p">,</span> <span class="n">f</span><span class="o">=</span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;psi,m,L,omega,f&#39;</span><span class="p">)</span>                          <span class="c1">#Declare wave function, mass, and box length as variables</span>
 
-<span class="n">Ener</span><span class="o">=</span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;Ener&#39;</span><span class="p">,</span><span class="n">latex_name</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;\mathcal</span><span class="si">{E}</span><span class="s1">&#39;</span><span class="p">)</span>                       <span class="c1">#Declare Ener as energy variable but will display a script E when using show() and pretty_print</span>
-<span class="n">hbar</span><span class="o">=</span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;hbar&#39;</span><span class="p">,</span><span class="n">latex_name</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;\hbar&#39;</span><span class="p">)</span>                             <span class="c1">#Declares hbar as a variable and displays hbar symbol when using show() and pretty_print</span>
+<span class="n">Ener</span><span class="o">=</span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;Ener&#39;</span><span class="p">,</span><span class="n">latex_name</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;\mathcal</span><span class="si">{E}</span><span class="s1">&#39;</span><span class="p">)</span>                       <span class="c1">#Declare Ener as energy variable but will display a script E </span>
+<span class="n">hbar</span><span class="o">=</span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;hbar&#39;</span><span class="p">,</span><span class="n">latex_name</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;\hbar&#39;</span><span class="p">)</span>                             <span class="c1">#Declares hbar as a variable and displays hbar symbol  </span>
 
 <span class="n">psi</span><span class="o">=</span><span class="n">function</span><span class="p">(</span><span class="s1">&#39;psi&#39;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>    <span class="c1">#Define dummy function</span>
 
@@ -1633,10 +1560,10 @@ To help answer this question, plot the wave functions for the n=4 and n=5 states
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="o">=</span><span class="p">(</span><span class="n">a_plus</span><span class="p">(</span><span class="n">psi_HO0</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">/</span><span class="n">psi_HO1</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 
-<span class="n">pretty_print</span><span class="p">(</span><span class="s1">&#39; \( a_+ \psi_0(x)/\psi_1(x) = \)&#39;</span> <span class="p">,</span><span class="n">f</span><span class="p">)</span>   <span class="c1">#It&#39;s not clear this is equal to one but ...</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="s1">&#39; $ a_+ \psi_0(x)/\psi_1(x) = $&#39;</span> <span class="p">,</span><span class="n">f</span><span class="p">)</span>   <span class="c1">#It&#39;s not clear this is equal to one but ...</span>
 <span class="n">f4</span><span class="o">=</span><span class="p">(</span><span class="n">f</span><span class="o">^</span><span class="mi">4</span><span class="p">)</span>                                              <span class="c1">#... with a little nudge...</span>
 <span class="n">f1</span><span class="o">=</span><span class="p">(</span><span class="n">f4</span><span class="o">^</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">))</span><span class="o">.</span><span class="n">canonicalize_radical</span><span class="p">()</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="s1">&#39; \( a_+ \psi_0(x)/\psi_1(x) = \)&#39;</span> <span class="p">,</span><span class="n">f1</span><span class="p">)</span>  <span class="c1">#...everything works out nicely</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="s1">&#39; $ a_+ \psi_0(x)/\psi_1(x) = $&#39;</span> <span class="p">,</span><span class="n">f1</span><span class="p">)</span>  <span class="c1">#...everything works out nicely</span>
 </pre></div>
 </div>
 </div>
@@ -1652,13 +1579,13 @@ To help answer this question, plot the wave functions for the n=4 and n=5 states
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="o">=</span><span class="p">(</span><span class="n">a_plus</span><span class="p">(</span><span class="n">psi_HO1</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">/</span><span class="n">psi_HO2</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">.</span><span class="n">expand</span><span class="p">()</span><span class="o">.</span><span class="n">combine</span><span class="p">()</span>
 
-<span class="n">pretty_print</span><span class="p">(</span><span class="s1">&#39; \( a_+ \psi_1(x)/\psi_2(x) = \)&#39;</span> <span class="p">,</span><span class="n">f</span><span class="p">)</span> 
+<span class="n">pretty_print</span><span class="p">(</span><span class="s1">&#39; $ a_+ \psi_1(x)/\psi_2(x) = $&#39;</span> <span class="p">,</span><span class="n">f</span><span class="p">)</span> 
 
 <span class="n">f4</span><span class="o">=</span><span class="p">(</span><span class="n">f</span><span class="o">^</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">expand</span><span class="p">()</span>
 <span class="n">f1</span><span class="o">=</span><span class="p">(</span><span class="n">f4</span><span class="o">^</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">))</span><span class="o">.</span><span class="n">canonicalize_radical</span><span class="p">()</span>
 
-<span class="n">pretty_print</span><span class="p">(</span><span class="s1">&#39; \( a_+ \psi_1(x)/\psi_2(x) = \)&#39;</span> <span class="p">,</span><span class="n">f1</span><span class="p">)</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="s1">&#39; or equivalently \( a_+ \psi_1(x) =\)&#39;</span><span class="p">,</span><span class="n">f1</span><span class="p">,</span><span class="s1">&#39; \(\psi_2(x)\)&#39;</span><span class="p">)</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="s1">&#39; $ a_+ \psi_1(x)/\psi_2(x) = $&#39;</span> <span class="p">,</span><span class="n">f1</span><span class="p">)</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="s1">&#39; or equivalently $ a_+ \psi_1(x) =$&#39;</span><span class="p">,</span><span class="n">f1</span><span class="p">,</span><span class="s1">&#39; $\psi_2(x)$&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1702,16 +1629,15 @@ To help answer this question, plot the wave functions for the n=4 and n=5 states
 <h2>Unbound States - Scattering and Tunneling<a class="headerlink" href="#unbound-states-scattering-and-tunneling" title="Link to this heading">#</a></h2>
 <p>Solving the Schrodinger equation for unbound states is good practice for students in devloping an understanding of the wave function.  It also gives students their first glimpse of quantum tunneling.  This worksheet walks you through how to set up and solve the boundary conditions for the wave function and how to plot the graphs to gain deeper understanding.</p>
 <p>The first case is a step potential with particle energy lower than the step potential height (<span class="math notranslate nohighlight">\(E &lt; V_0\)</span>)</p>
-<img src="tunneling_fig1.png" width="400">
 <p>To solve this problem we assume a different wave function in each region but require that (1) the wave functions be continuous at the boundary and (2) the derivatives of the wave functions be continuous at the boundary.  The two wave functions are:</p>
-<p>[\psi_I(x) = A e^{ik_1 x} + B e^{-ik_1 x}]</p>
+<p><span class="math notranslate nohighlight">\(\psi_I(x) = A e^{ik_1 x} + B e^{-ik_1 x}\)</span></p>
 <p>and</p>
-<p>[\psi_{II}(x) = C e^{k_2 x} + D e^{-k_2 x}.]</p>
+<p><span class="math notranslate nohighlight">\(\psi_{II}(x) = C e^{k_2 x} + D e^{-k_2 x}.\)</span></p>
 <p>The wave function must remain finite for all values of <span class="math notranslate nohighlight">\(x\)</span>, which means that the first term in <span class="math notranslate nohighlight">\(\psi_{II}(x)\)</span> must be zero (i.e. <span class="math notranslate nohighlight">\(C=0\)</span>)</p>
 <p>The boundary conditions require:</p>
-<p>[\psi_I(0) = \psi_{II}(0)]</p>
+<p><span class="math notranslate nohighlight">\(\psi_I(0) = \psi_{II}(0)\)</span></p>
 <p>and</p>
-<p>[\frac{d \psi_I(x)}{dx}<em>{x=0} = \frac{d \psi</em>{II}(x)}{dx}_{x=0} .]</p>
+<p><span class="math notranslate nohighlight">\(\frac{d \psi_I(x)}{dx}_{x=0} = \frac{d \psi_{II}(x)}{dx}_{x=0} .\)</span></p>
 <p>These equations are solved long-hand to demonstrate some of the symbolic manipulation functions of SageMath</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">.expand()</span></code>  Distributes and multiplies out all terms</p></li>
@@ -1719,7 +1645,7 @@ To help answer this question, plot the wave functions for the n=4 and n=5 states
 <li><p><code class="docutils literal notranslate"><span class="pre">.full_simplify()</span></code>  Runs numerous simplification routines</p></li>
 </ul>
 <p>Assuming the particles are incident form the left, the coefficient <span class="math notranslate nohighlight">\(A\)</span> is associated with the density of incoming particles.  The reflection coefficient <span class="math notranslate nohighlight">\(R\)</span>, which is the probability that a particle is reflected, can be found from the ratio of incoming to returning particles.</p>
-<p>[R=\frac{BB^<em>}{AA^</em>} = \left| \frac{B}{A} \right|^2 ]</p>
+<p><span class="math notranslate nohighlight">\(R=\frac{BB^*}{AA^*} = \left| \frac{B}{A} \right|^2 \)</span></p>
 <p>As expected, in this case we find that the reflection probability is <span class="math notranslate nohighlight">\(1\)</span>, which means 100% of the particles are reflected back.  However, the particles do penetrate into the classically forbidden region.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1803,7 +1729,7 @@ To help answer this question, plot the wave functions for the n=4 and n=5 states
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Create animated plot of real part of w.f.</span>
-<span class="n">times</span> <span class="o">=</span> <span class="n">sxrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mf">0.5</span><span class="p">)</span>     <span class="c1">#Create a list of the times for evaluation.  sxrange() creates a list of numbers from 0 to 10 in steps of 0.5</span>
+<span class="n">times</span> <span class="o">=</span> <span class="n">sxrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mf">0.5</span><span class="p">)</span>   <span class="c1">#the times for evaluation. sxrange() creates a list of numbers from 0 to 10 in steps of 0.5</span>
 <span class="n">plot_graph</span> <span class="o">=</span> <span class="p">[]</span>   <span class="c1">#Create an empty list to store the plotted graphs at different times</span>
 
 <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">times</span><span class="p">:</span>    <span class="c1">#Loop through all times</span>
@@ -1832,18 +1758,17 @@ To help answer this question, plot the wave functions for the n=4 and n=5 states
 <section id="step-potential-e-v-0">
 <h2>Step Potential: <span class="math notranslate nohighlight">\(E&gt;V_0\)</span><a class="headerlink" href="#step-potential-e-v-0" title="Link to this heading">#</a></h2>
 <p>For this next example we will find the wave function for a particle incident on a step potential with the particle energy larger than the step height.</p>
-<img src="tunneling_fig2.png" width="400">
 <p>We expect that the particle reflection coefficient is no longer 100% in this case but classically we might not expect to see <em>any</em> reflection, but the graph at the bottom of the next cell shows that the reflection probability varies as a function of the energy difference between the particle and step potential.</p>
 <p>The setup is the same as for the <span class="math notranslate nohighlight">\(E&lt;V_0\)</span> case except the wave function in region II is complex (and thus oscillatory).</p>
 <p>The two wave functions are:</p>
-<p>[\psi_I(x) = A e^{ik_1 x} + B e^{-ik_1 x}]</p>
+<p><span class="math notranslate nohighlight">\(\psi_I(x) = A e^{ik_1 x} + B e^{-ik_1 x}\)</span></p>
 <p>and</p>
-<p>[\psi_{II}(x) = C e^{ik_2 x} + D e^{-ik_2 x}.]</p>
+<p><span class="math notranslate nohighlight">\(\psi_{II}(x) = C e^{ik_2 x} + D e^{-ik_2 x}.\)</span></p>
 <p>If we assume there is no particles entering from the right then we must have <span class="math notranslate nohighlight">\(D=0\)</span>.</p>
 <p>The boundary conditions require:</p>
-<p>[\psi_I(0) = \psi_{II}(0)]</p>
+<p><span class="math notranslate nohighlight">\(\psi_I(0) = \psi_{II}(0)\)</span></p>
 <p>and</p>
-<p>[\frac{d \psi_I(x)}{dx}<em>{x=0} = \frac{d \psi</em>{II}(x)}{dx}_{x=0} .]</p>
+<p><span class="math notranslate nohighlight">\(\frac{d \psi_I(x)}{dx}_{x=0} = \frac{d \psi_{II}(x)}{dx}_{x=0} .\)</span></p>
 <p>The function for the reflection probability <span class="math notranslate nohighlight">\(R\)</span> and the transmission probability <span class="math notranslate nohighlight">\(T\)</span> are plotted at the bottom of the next cell.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1927,17 +1852,16 @@ To help answer this question, plot the wave functions for the n=4 and n=5 states
 <section id="barrier-tunneling">
 <h3>Barrier Tunneling<a class="headerlink" href="#barrier-tunneling" title="Link to this heading">#</a></h3>
 <p>This example calculates the wave function for a particle hitting a barrier.  It demonstrates that the particle does in fact tunnel through the barrier</p>
-<img src="tunneling_fig3.png" width="400">
 <p>We now need to have wave functions in each of the three regions.</p>
-<p>[\psi_I(x) = A e^{ik_1 x} + B e^{-ik_1 x}]</p>
+<p><span class="math notranslate nohighlight">\(\psi_I(x) = A e^{ik_1 x} + B e^{-ik_1 x}\)</span></p>
 <p>and</p>
-<p>[\psi_{II}(x) = C e^{ik_2 x} + D e^{-ik_2 x}]</p>
+<p><span class="math notranslate nohighlight">\(\psi_{II}(x) = C e^{ik_2 x} + D e^{-ik_2 x}\)</span></p>
 <p>and</p>
-<p>[\psi_{III}(x) = F e^{ik_1 x} + G e^{-ik_1 x}.]</p>
+<p><span class="math notranslate nohighlight">\(\psi_{III}(x) = F e^{ik_1 x} + G e^{-ik_1 x}.\)</span></p>
 <p>With  no particles incident from the right we can set <span class="math notranslate nohighlight">\(G=0\)</span>.</p>
 <p>The wave function and derivatives of the wave functions must be continuous at both boundaries.  Rather than solving this set of equations long-hand, we’ll use the <code class="docutils literal notranslate"><span class="pre">solve()</span></code> function to find <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(C\)</span>, <span class="math notranslate nohighlight">\(D\)</span>, and <span class="math notranslate nohighlight">\(F\)</span>.</p>
 <p>The transmission probability is</p>
-<p>[T=\frac{FF^<em>}{AA^</em>} = \left| \frac{F}{A} \right|^2.]</p>
+<p><span class="math notranslate nohighlight">\(T=\frac{FF^*}{AA^*} = \left| \frac{F}{A} \right|^2.\)</span></p>
 <p>In this case the transmission probability through the barrier is non-zero, even though the particle should not be able to penetrate the barrier classically.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2047,16 +1971,16 @@ To help answer this question, plot the wave functions for the n=4 and n=5 states
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "sagemath"
+            mode: "python"
         },
         kernelOptions: {
-            name: "sagemath",
+            name: "python3",
             path: "./17MCM_QM"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'sagemath'</script>
+    <script>kernelName = 'python3'</script>
 
                 </article>
               
@@ -2118,7 +2042,7 @@ To help answer this question, plot the wave functions for the n=4 and n=5 states
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-algebraic-equations">Solving algebraic equations</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#find-the-values-of-k-that-satisfy-schrodinger-s-equation">Find the values of (k) that satisfy Schrodinger’s equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#find-the-values-of-k-that-satisfy-schrodinger-s-equation">Find the values of <span class="math notranslate nohighlight">\(k\)</span> that satisfy Schrodinger’s equation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">For You To Try:</a></li>
 </ul>
 </li>
@@ -2168,7 +2092,7 @@ To help answer this question, plot the wave functions for the n=4 and n=5 states
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Project Ideas and Problems to Solve</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#q-harmonic-oscillator-solving-differential-equations">3. Q harmonic oscillator - Solving differential equations</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#q-harmonic-oscillator-solving-des">3. Q harmonic oscillator - Solving DEs</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">For You To Try:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fancier-2d-plotting">Fancier 2D Plotting</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">For You To Try:</a><ul class="nav section-nav flex-column">

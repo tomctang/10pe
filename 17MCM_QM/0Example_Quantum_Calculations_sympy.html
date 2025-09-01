@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Solving Common Introductory Quantum Mechanics Problems using Sympy &#8212; Jonny Workbook</title>
+    <title>Sympy Solving Common Quantum Mechanics Problems &#8212; Jonny Workbook</title>
   
   
   
@@ -60,7 +60,7 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '17MCM_QM/1Example_Quantum_Calculations_sympy';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '17MCM_QM/0Example_Quantum_Calculations_sympy';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -271,7 +271,7 @@
       
       
       
-      <li><a href="../_sources/17MCM_QM/1Example_Quantum_Calculations_sympy.ipynb" target="_blank"
+      <li><a href="../_sources/17MCM_QM/0Example_Quantum_Calculations_sympy.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -355,7 +355,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Solving Common Introductory Quantum Mechanics Problems using Sympy</h1>
+    <h1>Sympy Solving Common Quantum Mechanics Problems</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -365,10 +365,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Solving Common Introductory Quantum Mechanics Problems using Sympy</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-environment">Python environment</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Sympy Solving Common Quantum Mechanics Problems</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-properties-of-wavefunctions">General properties of wavefunctions</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#your-turn">Your Turn</a></li>
 </ul>
@@ -390,7 +387,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-interlude-range-and-loops">Python interlude: range() and loops</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#finis">Finis</a></li>
 </ul>
 
             </nav>
@@ -403,13 +399,14 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="solving-common-introductory-quantum-mechanics-problems-using-sympy">
-<h1>Solving Common Introductory Quantum Mechanics Problems using Sympy<a class="headerlink" href="#solving-common-introductory-quantum-mechanics-problems-using-sympy" title="Link to this heading">#</a></h1>
-<p>Adapted from work of E. Harvey <a class="reference external" href="http://www.chemeddl.org/alfresco/service/org/chemeddl/symmath/frameset?guest=true">JCE Symmath</a> (accessed 2019-09).</p>
-<p>This notebook show basic examples for quantum calculations encountered in undergraduate physical chemistry course. The purpose of this notebook is not to explain the theory behind the calculations, bur rather show how python can be used for solving typical problems.</p>
-<p>This notebook assumes <a class="reference external" href="http://sympy.org">sympy</a> is available and some familiarity with python lists and functions. The <a class="reference external" href="http://docs.sympy.org/latest/tutorial/index.html">sympy tutorial</a> describes all of the functions used in the notebook.</p>
-<section id="objectives">
-<h2>Objectives<a class="headerlink" href="#objectives" title="Link to this heading">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="sympy-solving-common-quantum-mechanics-problems">
+<h1>Sympy Solving Common Quantum Mechanics Problems<a class="headerlink" href="#sympy-solving-common-quantum-mechanics-problems" title="Link to this heading">#</a></h1>
+<p>E. Harvey <a class="reference external" href="http://www.chemeddl.org/alfresco/service/org/chemeddl/symmath/frameset?guest=true">JCE Symmath</a> (2019-09).</p>
+<ul class="simple">
+<li><p>This notebook show basic examples for quantum calculations encountered in undergraduate physical chemistry course.</p></li>
+<li><p>The purpose of this notebook is not to explain the theory behind the calculations, bur rather show how python can be used for solving typical problems.</p></li>
+<li><p>The <a class="reference external" href="http://docs.sympy.org/latest/tutorial/index.html">sympy tutorial</a> describes all of the functions used in the notebook.</p></li>
+</ul>
 <p>After completing this work you should be able to use python and sympy to</p>
 <ol class="arabic simple">
 <li><p>calculate a normalization constant</p></li>
@@ -417,19 +414,13 @@ document.write(`
 <li><p>determine whether a function is an eigenvalue of an operator</p></li>
 <li><p>determine if functions are orthogonal</p></li>
 </ol>
-</section>
-<section id="prerequisites">
-<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">#</a></h2>
+<p>Prerequisites</p>
 <ul class="simple">
 <li><p>basic knowledge of python and sympy</p></li>
 <li><p>the python <a class="reference external" href="http://www.scipy.org">SciPy</a> stack</p></li>
 <li><p>the python <a class="reference external" href="http://www.sympy.org">sympy</a> symbolic computation library</p></li>
 <li><p>basic understanding of eigenfuctions, normalization, orthogonality, and expectation values</p></li>
 </ul>
-</section>
-<section id="python-environment">
-<h2>Python environment<a class="headerlink" href="#python-environment" title="Link to this heading">#</a></h2>
-<p>First, import libaries and initialize sympy’s ‘pretty’ printing.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import and initialize libraries</span>
@@ -445,7 +436,6 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
 <section id="general-properties-of-wavefunctions">
 <h2>General properties of wavefunctions<a class="headerlink" href="#general-properties-of-wavefunctions" title="Link to this heading">#</a></h2>
 <p>Remind yourself of some key properties of wavefunctions. These properties (sometimes call Born’s conditions) are generally found in a discussion on the postulates of quantum mechanics.</p>
@@ -479,9 +469,6 @@ $<span class="math notranslate nohighlight">\( \int_{0}^a \psi(x)^* \psi(x)\; dx
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../_images/ecf5a68b2eebec24994c5da37cfa4d24245ec326569157edff29032ec962c05f.png" src="../_images/ecf5a68b2eebec24994c5da37cfa4d24245ec326569157edff29032ec962c05f.png" />
-</div>
 </div>
 <p>Define a wavefunction <span class="math notranslate nohighlight">\(\psi(x)\)</span> using <code class="docutils literal notranslate"><span class="pre">f</span></code> and a normalization constant.</p>
 <div class="cell docutils container">
@@ -490,9 +477,6 @@ $<span class="math notranslate nohighlight">\( \int_{0}^a \psi(x)^* \psi(x)\; dx
 <span class="n">psi</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/bab636cdab87ac1fa36465464b39a8c91a3af83f311762f5c77f381bf709e5c0.png" src="../_images/bab636cdab87ac1fa36465464b39a8c91a3af83f311762f5c77f381bf709e5c0.png" />
 </div>
 </div>
 <p>sympy’s <code class="docutils literal notranslate"><span class="pre">conjugate()</span></code> gives the complex conjugate. Because <code class="docutils literal notranslate"><span class="pre">psi(x)</span></code> is real, its complex conjugate is the same function.</p>
@@ -503,9 +487,6 @@ $<span class="math notranslate nohighlight">\( \int_{0}^a \psi(x)^* \psi(x)\; dx
 <span class="n">psi</span><span class="p">,</span> <span class="n">psi_star</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/878b18a128bdbcf4f0b54fee5208ea17368c0cddf53f205dd44c4b5a9d331c0b.png" src="../_images/878b18a128bdbcf4f0b54fee5208ea17368c0cddf53f205dd44c4b5a9d331c0b.png" />
 </div>
 </div>
 <section id="python-interlude-complex-numbers-in-sympy-and-python">
@@ -522,20 +503,10 @@ $<span class="math notranslate nohighlight">\( \int_{0}^a \psi(x)^* \psi(x)\; dx
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sympy.core.numbers.ImaginaryUnit
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>complex
 </pre></div>
 </div>
 </div>
@@ -553,9 +524,6 @@ $<span class="math notranslate nohighlight">\( \int_{0}^a \psi(x)^* \psi(x)\; dx
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../_images/d590a7ac4d243f19f47aadc6e34208084251302d90933d2a4d22947da5de8049.png" src="../_images/d590a7ac4d243f19f47aadc6e34208084251302d90933d2a4d22947da5de8049.png" />
-</div>
 </div>
 <p>To determine <span class="math notranslate nohighlight">\(N_0\)</span>, integrate over the domain space. In this case, <span class="math notranslate nohighlight">\(-\infty\)</span> to <span class="math notranslate nohighlight">\(\infty\)</span>, represented in sympy by <code class="docutils literal notranslate"><span class="pre">-oo</span></code> and <code class="docutils literal notranslate"><span class="pre">oo</span></code> (two lowercase letter o ; which look similar to the infinity glyph).</p>
 <div class="cell docutils container">
@@ -566,13 +534,10 @@ $<span class="math notranslate nohighlight">\( \int_{0}^a \psi(x)^* \psi(x)\; dx
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../_images/74b28cee72238ae212ad3a7318cef2884a2c39c375d6f34648e8981e630d56d7.png" src="../_images/74b28cee72238ae212ad3a7318cef2884a2c39c375d6f34648e8981e630d56d7.png" />
-</div>
 </div>
 <p>Solve the equation</p>
 <div class="math notranslate nohighlight">
-\[ \int_{-\infty} ^{\infty} \psi(x)^* \psi(x) dx = 1\]</div>
+\[ \int_{-\infty} ^{\infty} \psi(x)^* \psi(x) dx = 1 \]</div>
 <p>for <span class="math notranslate nohighlight">\(N_0\)</span>. The symbolic solver in sympy equates an expression to zero, and then solves for a variable. We need to rearrange the equation to</p>
 <div class="math notranslate nohighlight">
 \[ \int_{-\infty} ^{\infty} \psi(x)^* \psi(x) dx - 1 = 0\]</div>
@@ -581,9 +546,6 @@ $<span class="math notranslate nohighlight">\( \int_{0}^a \psi(x)^* \psi(x)\; dx
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">solve</span><span class="p">(</span><span class="n">prob</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">N0</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/2d5f613124bda8bbba783abca3f389912795229cafd9271c7dd9d8e94cd148d3.png" src="../_images/2d5f613124bda8bbba783abca3f389912795229cafd9271c7dd9d8e94cd148d3.png" />
 </div>
 </div>
 <p>Although there is only one solution, the brackets tell us sympy returned a list. This is handy if more than one solution exists. To use the normalization constant later, assign the name <code class="docutils literal notranslate"><span class="pre">norm</span></code> to the first (and only) entry in the solution list. Remember, python lists are zero-indexed.</p>
@@ -594,9 +556,6 @@ $<span class="math notranslate nohighlight">\( \int_{0}^a \psi(x)^* \psi(x)\; dx
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../_images/2806ded09d9590a1dbccd87a1d1699228f4eea1c3fc504558ab9a6ab715e4112.png" src="../_images/2806ded09d9590a1dbccd87a1d1699228f4eea1c3fc504558ab9a6ab715e4112.png" />
-</div>
 </div>
 <p>Verify that the normlization constant is correct by substituting <code class="docutils literal notranslate"><span class="pre">norm</span></code> for <span class="math notranslate nohighlight">\(N_0\)</span> in the expression for <code class="docutils literal notranslate"><span class="pre">prob</span></code>.</p>
 <div class="cell docutils container">
@@ -604,9 +563,6 @@ $<span class="math notranslate nohighlight">\( \int_{0}^a \psi(x)^* \psi(x)\; dx
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prob</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">N0</span><span class="p">,</span><span class="n">norm</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/8a18642cdad2710ffc9682e2118d1d4addafb043ee2084b7448269a123ba400a.png" src="../_images/8a18642cdad2710ffc9682e2118d1d4addafb043ee2084b7448269a123ba400a.png" />
 </div>
 </div>
 <p>It is useful to use ‘actual’ numbers and verify the symbolic result.</p>
@@ -616,9 +572,6 @@ $<span class="math notranslate nohighlight">\( \int_{0}^a \psi(x)^* \psi(x)\; dx
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/ecf5a68b2eebec24994c5da37cfa4d24245ec326569157edff29032ec962c05f.png" src="../_images/ecf5a68b2eebec24994c5da37cfa4d24245ec326569157edff29032ec962c05f.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -630,9 +583,6 @@ $<span class="math notranslate nohighlight">\( \int_{0}^a \psi(x)^* \psi(x)\; dx
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../_images/8a18642cdad2710ffc9682e2118d1d4addafb043ee2084b7448269a123ba400a.png" src="../_images/8a18642cdad2710ffc9682e2118d1d4addafb043ee2084b7448269a123ba400a.png" />
-</div>
 </div>
 <p>Suppose we want the probability for <span class="math notranslate nohighlight">\(0 \le x \le 1\)</span>?</p>
 <div class="cell docutils container">
@@ -641,9 +591,6 @@ $<span class="math notranslate nohighlight">\( \int_{0}^a \psi(x)^* \psi(x)\; dx
 <span class="n">N</span><span class="p">(</span><span class="n">integrate</span><span class="p">(</span><span class="n">psi</span><span class="o">*</span><span class="n">psi_star</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)))</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/84a0ab9cbaae13aea873bd78a9002bec7c33eae02396818a60ccf03f017ec2f8.png" src="../_images/84a0ab9cbaae13aea873bd78a9002bec7c33eae02396818a60ccf03f017ec2f8.png" />
 </div>
 </div>
 </section>
@@ -670,9 +617,6 @@ $<span class="math notranslate nohighlight">\( \int_{0}^a \psi(x)^* \psi(x)\; dx
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../_images/3d278e59c8ed607d9be4339ecf30e21a3b043aea8e475714c81e45776fbe3a59.png" src="../_images/3d278e59c8ed607d9be4339ecf30e21a3b043aea8e475714c81e45776fbe3a59.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -690,9 +634,6 @@ $<span class="math notranslate nohighlight">\( \int_{0}^a \psi(x)^* \psi(x)\; dx
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../_images/fff9f3def5b6ae494cf0b84d83348b13f95135381001027cd108e079f59faccf.png" src="../_images/fff9f3def5b6ae494cf0b84d83348b13f95135381001027cd108e079f59faccf.png" />
-</div>
 </div>
 <p>The probability amplitude, <span class="math notranslate nohighlight">\(\psi^2\)</span> has a narrower shape. Is <span class="math notranslate nohighlight">\(\psi\)</span> normlized?</p>
 </section>
@@ -707,9 +648,6 @@ specified region that can be easily changed. We’ll start with x1 = 0 and x2 = 
 <span class="n">integrate</span><span class="p">(</span><span class="n">psi</span><span class="o">*</span><span class="n">psi_star</span><span class="p">,(</span><span class="n">x</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">))</span><span class="o">.</span><span class="n">evalf</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/c87cafcf6c3716d6ce53e861b4571a0a1bdcdfec518b004ed13da141b0109e85.png" src="../_images/c87cafcf6c3716d6ce53e861b4571a0a1bdcdfec518b004ed13da141b0109e85.png" />
 </div>
 </div>
 <p>This process might be repeated frequently. If so, it’s probably worth defining in the form of a python function.</p>
@@ -738,23 +676,6 @@ specified region that can be easily changed. We’ll start with x1 = 0 and x2 = 
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Probability over intervals
-[0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
-0
-0.0967520297463300
-0.187896942616797
-0.268783636774762
-0.336406561104847
-0.389664319040077
-0.429177654852432
-0.456794633513150
-0.474978239375647
-0.486256831944245
-0.492847060782285
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="calculate-average-values">
@@ -769,9 +690,6 @@ specified region that can be easily changed. We’ll start with x1 = 0 and x2 = 
 <span class="n">x_avg</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/278031471b95362008ac3ceb40572100ef9df468ccfb1c20551362ea0728bfe5.png" src="../_images/278031471b95362008ac3ceb40572100ef9df468ccfb1c20551362ea0728bfe5.png" />
 </div>
 </div>
 </section>
@@ -792,9 +710,6 @@ specified region that can be easily changed. We’ll start with x1 = 0 and x2 = 
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sqrt</span><span class="p">(</span><span class="n">sigma_squared</span><span class="p">)</span><span class="o">.</span><span class="n">evalf</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/6d74c54ecaca64dcbadd6b27731284137fa548184656e5977e4c3c3d9e945dfe.png" src="../_images/6d74c54ecaca64dcbadd6b27731284137fa548184656e5977e4c3c3d9e945dfe.png" />
 </div>
 </div>
 </section>
@@ -829,9 +744,6 @@ specified region that can be easily changed. We’ll start with x1 = 0 and x2 = 
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../_images/9f46c47176b66b1b2261cbdc5bc45cc6f4415606ce4417a6cb6750e5e3f4c011.png" src="../_images/9f46c47176b66b1b2261cbdc5bc45cc6f4415606ce4417a6cb6750e5e3f4c011.png" />
-</div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">T_hat()</span></code> returned the result of operating on <span class="math notranslate nohighlight">\(\psi\)</span>. If <span class="math notranslate nohighlight">\(\psi\)</span> is an eigenfunction, we should be able to factor this result into <span class="math notranslate nohighlight">\(a\psi\)</span> where <span class="math notranslate nohighlight">\(a\)</span> is the eigenvalue. Another approach would be to divide both sides by the function and see if the result is a constant.
 $<span class="math notranslate nohighlight">\(\frac{\hat{A}f}{f} = a\)</span>$</p>
@@ -841,9 +753,6 @@ $<span class="math notranslate nohighlight">\(\frac{\hat{A}f}{f} = a\)</span>$</
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../_images/a5cb2cf25083925e42095d28479f221fc156776e62faca942eea1d46e41b687d.png" src="../_images/a5cb2cf25083925e42095d28479f221fc156776e62faca942eea1d46e41b687d.png" />
-</div>
 </div>
 <p>Because this result contains <span class="math notranslate nohighlight">\(x^2\)</span>, it is not a constant. Therefore, <span class="math notranslate nohighlight">\(\psi\)</span> is not an eigenfunction of the kinetic energy operator <span class="math notranslate nohighlight">\(\hat{T}\)</span>.</p>
 <p>How about <span class="math notranslate nohighlight">\(\cos(x)\)</span>?</p>
@@ -852,9 +761,6 @@ $<span class="math notranslate nohighlight">\(\frac{\hat{A}f}{f} = a\)</span>$</
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">T_hat</span><span class="p">(</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/15b32076aed005d279dc0bcd7a3c78fd6f277af611549308da8c7681e3a197b0.png" src="../_images/15b32076aed005d279dc0bcd7a3c78fd6f277af611549308da8c7681e3a197b0.png" />
 </div>
 </div>
 <p>So, <span class="math notranslate nohighlight">\(\cos(x)\)</span> is indeed an eigenfunction of <span class="math notranslate nohighlight">\(\hat{T}\)</span> and the eigenvalue is <span class="math notranslate nohighlight">\(-\hbar^2/2m\)</span>. However, <span class="math notranslate nohighlight">\(\cos(x)\)</span> is not a valid wavefunction for the particle-in-a-box model.  Why not?</p>
@@ -883,9 +789,6 @@ $<span class="math notranslate nohighlight">\(\frac{\hat{A}f}{f} = a\)</span>$</
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../_images/278031471b95362008ac3ceb40572100ef9df468ccfb1c20551362ea0728bfe5.png" src="../_images/278031471b95362008ac3ceb40572100ef9df468ccfb1c20551362ea0728bfe5.png" />
-</div>
 </div>
 <p><span class="math notranslate nohighlight">\(\phi_1\)</span> and <span class="math notranslate nohighlight">\(\phi_2\)</span> are orgthogonal.</p>
 <section id="id2">
@@ -905,33 +808,8 @@ $<span class="math notranslate nohighlight">\(\frac{\hat{A}f}{f} = a\)</span>$</
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>m, n, integral
- --------------------
-(0, 0, 2⋅π)
-(1, 0, 0)
-(2, 0, 0)
-(3, 0, 0)
-(0, 1, 0)
-(1, 1, 2⋅π)
-(2, 1, 0)
-(3, 1, 0)
-(0, 2, 0)
-(1, 2, 0)
-(2, 2, 2⋅π)
-(3, 2, 0)
-(0, 3, 0)
-(1, 3, 0)
-(2, 3, 0)
-(3, 3, 2⋅π)
-</pre></div>
-</div>
-</div>
 </div>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="finis">
-<h1>Finis<a class="headerlink" href="#finis" title="Link to this heading">#</a></h1>
 </section>
 
     <script type="text/x-thebe-config">
@@ -980,10 +858,7 @@ $<span class="math notranslate nohighlight">\(\frac{\hat{A}f}{f} = a\)</span>$</
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Solving Common Introductory Quantum Mechanics Problems using Sympy</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-environment">Python environment</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Sympy Solving Common Quantum Mechanics Problems</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-properties-of-wavefunctions">General properties of wavefunctions</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#your-turn">Your Turn</a></li>
 </ul>
@@ -1005,7 +880,6 @@ $<span class="math notranslate nohighlight">\(\frac{\hat{A}f}{f} = a\)</span>$</
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-interlude-range-and-loops">Python interlude: range() and loops</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#finis">Finis</a></li>
 </ul>
 
   </nav></div>
