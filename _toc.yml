@@ -24,6 +24,7 @@ parts:
   - file: PE/PE50
   - file: PE/PE75  
   - file: Course_MCM_QM
+  - file: How_Dad_organise_QM
   - file: Course_MCM_QFT
   
 - caption: Notebook
