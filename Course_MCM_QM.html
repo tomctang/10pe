@@ -63,7 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Course_MCM_QM';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="15. QFT" href="Course_MCM_QFT.html" />
+    <link rel="next" title="15. M1: Introduction to the quantum world (Wk1)" href="How_Dad_organise_QM.html" />
     <link rel="prev" title="13. Project Euler Q51-" href="PE/PE75.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -195,13 +195,23 @@
 <li class="toctree-l1"><a class="reference internal" href="PE/PE50.html">12. Project Euler Q1-50</a></li>
 <li class="toctree-l1"><a class="reference internal" href="PE/PE75.html">13. Project Euler Q51-</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">14. Quantum Mechanics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Course_MCM_QFT.html">15. QFT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="How_Dad_organise_QM.html">15. M1: Introduction to the quantum world (Wk1)</a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Course_MCM_QFT.html">25. QFT</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Notebook</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="nb_past_courses.html">16. Past courses</a></li>
-<li class="toctree-l1"><a class="reference internal" href="geo/nb_Geo.html">17. Geography and Maps</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nb_lottery_simulator.html">18. Lottery Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nb_past_courses.html">26. Past courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="geo/nb_Geo.html">27. Geography and Maps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nb_lottery_simulator.html">28. Lottery Math</a></li>
 </ul>
 
     </div>
@@ -389,7 +399,6 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="quantum-mechanics">
 <h1><span class="section-number">14. </span>Quantum Mechanics<a class="headerlink" href="#quantum-mechanics" title="Link to this heading">#</a></h1>
 <p>Sage has no <a class="reference external" href="https://doc.sagemath.org/html/en/reference/algebras/quantum_groups.html">QM-specific module</a>, so use <a class="reference external" href="https://docs.sympy.org/latest/modules/physics/quantum/index.html">SymPy’s quantum module</a>, <a class="reference external" href="https://qutip.org/">QuTiP - Quantum Toolbox in Python</a>, <a class="reference external" href="https://www.wolfram.com/quantum-computation-framework/">Wolfram Quantum Framework</a>, <a class="reference external" href="https://github.com/qiskit-community/qiskit-community-tutorials/tree/master">Qiskit python quantum computing by IBM</a>, <a class="reference external" href="https://qojulia.org/">Julia QuantumOptics.jl</a>, <a class="reference external" href="https://jrjohansson.github.io/computing.html">jrjohansson collection</a></p>
-<p>Note: Learn Fourier Analysis</p>
 <p>Symbols &amp; Natural Names</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\langle\psi|\)</span>: Bra</p></li>
@@ -404,6 +413,7 @@ document.write(`
 </ul>
 <p>Maths Notes</p>
 <ul class="simple">
+<li><p>Learn Fourier Analysis</p></li>
 <li><p>Linear Algebra</p>
 <ul>
 <li><p>Determinant</p></li>
@@ -720,7 +730,6 @@ document.write(`
 <section id="m1-intro-quantum-world">
 <h2><span class="section-number">14.2. </span>M1. Intro Quantum World<a class="headerlink" href="#m1-intro-quantum-world" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>QM supports Chemistry, so it’s founational to Life Sciences, eg. use solutions to Schrödinger Eq to describe how chemical bonds are formed between atoms.</p></li>
 <li><p>Quantum Systems: systems governed by QM laws, which differ from classical physics. Q-systems exhibit phenomena such as superposition, entanglement, and quantum tunneling.</p></li>
 <li><p>QM Principles:</p>
 <ul>
@@ -730,6 +739,7 @@ document.write(`
 </ul>
 </li>
 </ul>
+<img src="https://raw.githubusercontent.com/tomctang/NB_img/main/qmcore.jpg" alt="exp.1" width="650">
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Fields</p></th>
@@ -742,26 +752,31 @@ document.write(`
 <tbody>
 <tr class="row-even"><td><p><strong>Quantum Computing</strong></p></td>
 <td><p>Qubits: Basic unit of quantum information</p></td>
-<td><p>Superposition: Utilizing quantum states for parallel processing</p></td>
-<td><p>Quantum Algorithms: Algorithms designed for quantum computers</p></td>
+<td><p>Superposition: Utilizing Q states for parallel processing</p></td>
+<td><p>Q Algorithms: Algorithms designed for Q computers</p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>Quantum Communication</strong></p></td>
 <td><p>Quantum Key Distribution: Securely distributing cryptographic keys</p></td>
-<td><p>Teleportation: Instantaneous transfer of quantum information.</p></td>
-<td><p>Quantum Internet: Global quantum communication network.</p></td>
+<td><p>Teleportation: Instantaneous transfer of Q information.</p></td>
+<td><p>Q Internet: Q communication network.</p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-even"><td><p><strong>Quantum Sensing and Metrology</strong></p></td>
-<td><p>Atomic Clocks: Extremely precise timekeeping using quantum properties.</p></td>
-<td><p>Magnetic Resonance Imaging: Quantum-based imaging technology for medical diagnosis</p></td>
-<td><p>Quantum Metrology: High-precision measurement in various scientific fields</p></td>
-<td><p>Quantum Gyroscopes: Advanced navigation and rotation sensing devices.</p></td>
+<td><p>Atomic Clocks: Extremely precise timekeeping using Q properties.</p></td>
+<td><p>MRI: Q-based imaging technology for medical diagnosis</p></td>
+<td><p>Q Metrology: High-precision measurement in many fields</p></td>
+<td><p>Q Gyroscopes: Advanced navigation and rotation sensing devices.</p></td>
+</tr>
+<tr class="row-odd"><td><p>QM supports Chemistry, so it’s founational to Life Sciences</p></td>
+<td><p>eg. use solutions to Schrödinger Eq to describe how chemical bonds are formed between atoms.</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<img src="https://raw.githubusercontent.com/tomctang/NB_img/main/qmcore.jpg" alt="exp.1" width="650">
 <img src="https://raw.githubusercontent.com/tomctang/NB_img/main/qminfo.jpg" alt="exp.1" width="500">
 <ul class="simple">
 <li><p>Fermions: Metals that conduct electricity do so because there is a “sea of electrons”. This is created from the Pauli exclusion principle, since electrons are fermions, and fermions stay apart, they stay apart.</p></li>
@@ -1072,11 +1087,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="Course_MCM_QFT.html"
+       href="How_Dad_organise_QM.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">15. </span>QFT</p>
+        <p class="prev-next-title"><span class="section-number">15. </span>M1: Introduction to the quantum world (Wk1)</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

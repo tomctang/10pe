@@ -1,0 +1,999 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>15. M1: Introduction to the quantum world (Wk1) &#8212; Jonny Workbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=8dedbda2" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'How_Dad_organise_QM';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="25. QFT" href="Course_MCM_QFT.html" />
+    <link rel="prev" title="14. Quantum Mechanics" href="Course_MCM_QM.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Jonny Workbook</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Mathe &amp; FP/Language</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Alevel/Alevel_math.html">1. A-level-math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Alevel/Alevel_math_further.html">2. A-level-further</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Course_MCM.html">3. Math Computational Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Course_Lean.html">4. Lean</a></li>
+<li class="toctree-l1"><a class="reference internal" href="math/00intro_math.html">5. Math-FP-Lang Combo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="math/01number_algebra.html">6. Number &amp; Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="math/02discrete_continuous.html">7. Discrete &amp; Continuous</a></li>
+<li class="toctree-l1"><a class="reference internal" href="math/03real_world.html">8. Real World Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="math/05math_as_code.html">9. Math as code</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CS &amp; Physics</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Course_MIT6001Python.html">10. MIT_CS6001-Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Course_MIT6002thinking.html">11. MIT_CS6002-CS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PE/PE50.html">12. Project Euler Q1-50</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PE/PE75.html">13. Project Euler Q51-</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Course_MCM_QM.html">14. Quantum Mechanics</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">15. M1: Introduction to the quantum world (Wk1)</a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Course_MCM_QFT.html">25. QFT</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notebook</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="nb_past_courses.html">26. Past courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="geo/nb_Geo.html">27. Geography and Maps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nb_lottery_simulator.html">28. Lottery Math</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/tomctang/10pe" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/How_Dad_organise_QM.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>M1: Introduction to the quantum world (Wk1)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">15. M1: Introduction to the quantum world (Wk1)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#m2-advanced-quantum-mechanics-with-spin-wk2">16. M2: Advanced quantum mechanics with spin (Wk2)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#m3-the-quantum-mechanics-of-light-wk3">17. M3: The quantum mechanics of light (Wk3)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#m4-advanced-quantum-mechanics-of-light-wk4">18. M4: Advanced quantum mechanics of light (Wk4)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#m5-quantum-operators-and-their-identities-wk5-6">19. M5: Quantum operators and their identities (Wk5-6)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#m6-qm-of-simple-harmonic-oscillator-w8-9">20. M6: QM of simple harmonic oscillator (W8-9)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#m7-quantum-angular-momentum-and-hydrogen-wk10-12">21. M7: Quantum angular momentum and hydrogen (Wk10-12)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#m8-approximation-methods-wk13-and-15">22. M8: Approximation methods (Wk13 and 15)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#m9-time-evolution-wk16">23. M9: Time evolution (Wk16)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#m10-photons-and-ligo-wk17">24. M10: Photons and LIGO (Wk17)</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p>learning outcomes - Upon successfully completing this course, you will:</p>
+<ul class="simple">
+<li><p>M1: Be able to describe how the principle of superposition underlies wave-particle duality and use the quantum superposition of states to analyze properties of spin (Stern-Gerlach experiments) and light (one-, two-, and multiple slits and the Mach-Zehnder interferometer).</p></li>
+<li><p>M2: Distinguish between events, alternative ways an event occurs, tagging, and measurement; be able to use the mathematical formalism of quantum mechanics to describe these different phenomena and how they allow for delayed choice experiments.</p></li>
+<li><p>M3: Describe how entanglement requires quantum mechanics to violate local realism and how experiments verify that this occurs.</p></li>
+<li><p>M4: Explain how an interaction-free experiment allows for quantum seeing in the dark and the details of how such an experiment is carried out.</p></li>
+<li><p>M5: Know the four fundamental operator identities of quantum mechanics (Leibniz rule, Hadamard lemma, exponential disentangling identity, and Baker-Campbell-Hausdorff formula), in all of their variants, and be able to use them in quantum calculations.</p></li>
+<li><p>M6: Use the Schrödinger factorization method to solve bound-state energy eigenvalue problems (determining the energies algebraically) and couple it with the translation operator (or the subsidiary condition) to find the wavefunctions; explain why the energy levels are discrete and describe how to use the node theorem to verify completeness.</p></li>
+<li><p>M7: Use quantum principles employed in the class to explain properties of hydrogen including how to use spectroscopy to measure its mass, the radius of the nucleus, how it is used in radio astronomy, and how the probability distribution of electrons are measured in momentum space.</p></li>
+<li><p>M8: Use approximation methods of perturbation theory and the variational method to learn about quantum systems that cannot be solved exactly.</p></li>
+<li><p>M9: Calculate how time evolution is employed to describe oscillatory motion of the simple harmonic oscillator and the rotational motion of a nuclear spin; be able to use the Trotter form of the time-ordered product.</p></li>
+<li><p>M10: Quantize light, describe what a photon is, how single photons are measured, how to verify you have a single-photon light source, how to squeeze light, and how quantum properties of light are used in gravitational wave detection.</p></li>
+</ul>
+<section id="m1-introduction-to-the-quantum-world-wk1">
+<h1><span class="section-number">15. </span>M1: Introduction to the quantum world (Wk1)<a class="headerlink" href="#m1-introduction-to-the-quantum-world-wk1" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>This week covers the classical and quantum Stern-Gerlach experiment and probability</p></li>
+<li><p>We use the phenomena of spin to introduce you to the strangeness of the quantum world, show why QM is stochastic (meaning results can occur randomly, but with predictable probabilities to occur), and describe how to predict the probabilities that quantum events will occur.</p></li>
+<li><p>Problem Set 1</p>
+<ol class="arabic simple">
+<li><p>Eigenvalues and eigenvectors of a general Hermitian 2 x 2 matrix</p></li>
+<li><p>Completeness</p></li>
+</ol>
+</li>
+</ul>
+<p><strong>Index</strong></p>
+<ul class="simple">
+<li><p>Change of basis, M1, p22</p></li>
+<li><p>Completeness, M1, p27</p></li>
+<li><p>Current loops, M1, p6</p></li>
+<li><p>Dirac notation, M1, p18, M1, p20, M1, p21, M1, p22</p></li>
+<li><p>Eigenvalue, M1, p19, M1, p26</p></li>
+<li><p>Eigenvector, M1, p19, M1, p26</p></li>
+<li><p>Hermitian conjugate, M1, p19</p></li>
+<li><p>Hermitian matrix, M1, p19</p></li>
+<li><p>Magnetic field, M1, p4, M1, p9</p></li>
+<li><p>Magnetic needles, M1, p5</p></li>
+<li><p>Probability, M1, p 14, M1, p 15, M1, p 16</p></li>
+<li><p>Stern-Gerlach, classical, M1, p 7</p></li>
+<li><p>Stern-Gerlach, rotating, M1, p 23</p></li>
+<li><p>Tensor product, M1, p 27</p></li>
+</ul>
+</section>
+<section id="m2-advanced-quantum-mechanics-with-spin-wk2">
+<h1><span class="section-number">16. </span>M2: Advanced quantum mechanics with spin (Wk2)<a class="headerlink" href="#m2-advanced-quantum-mechanics-with-spin-wk2" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>This week covers complementarity, delayed choice experiments, Einstein-Podolsky-Rosen experiments, Bell experiments, and magnetic resonance imaging</p></li>
+<li><p>Here we already move to quite advanced material. We discover why quantum mechanics is a nonlocal theory, that it cannot be described by any hidden variables, and that the concept of complementarity governs when quantum interference occurs and when it does not. We also examine phenomena that seem to require faster than light messaging and quantum objects moving backwards in time; we find that neither is actually needed - one needs to think carefully to understand how this is so. We also are introduced to the first of our four quantum operator identities (the Leibniz identity).</p></li>
+<li><p>Problem Set 2</p>
+<ol class="arabic simple">
+<li><p>Equivalent states</p></li>
+<li><p>More spin eigenstates</p></li>
+</ol>
+</li>
+</ul>
+<p><strong>Index</strong></p>
+<ul class="simple">
+<li><p>Bell’s experiment, M2, p22</p></li>
+<li><p>Collapse theory, M2, p34</p></li>
+<li><p>Commutator, M2, p6</p></li>
+<li><p>Complementarity, M2, p10</p></li>
+<li><p>Delayed choice, M2, p20, M2, p23, Mp25</p></li>
+<li><p>Entanglement, M2, p19, M2, p26</p></li>
+<li><p>EPR paradox, M2, p19, M2, p20</p></li>
+<li><p>Hidden variables, M2, p21, M2, p31</p></li>
+<li><p>Leibniz rule identity, M2, p9</p></li>
+<li><p>Local realism, M2, p32</p></li>
+<li><p>Local realism, theory, M2, p22, M2, p30, M2, p31</p></li>
+<li><p>Many worlds interpretation , M2, p34</p></li>
+<li><p>MRI, M2, p29</p></li>
+<li><p>NMR, M2, p 27, M2, p 28</p></li>
+<li><p>Pilot wave theory, M2, p 34</p></li>
+<li><p>Projection operator, M2, p 15</p></li>
+<li><p>Quantum seeing in the dark, M2, p 17, M4, p 7, M4, p 10, M4, p 20</p></li>
+<li><p>operator, M2, p 5, M2, p 7</p></li>
+<li><p>operator, eigenvalues and eigenvectors, M2, p 13</p></li>
+<li><p>operator (total spin), M2, p 9, M2, p 36</p></li>
+<li><p>operator (total spin), eigenvalues, M2, p 36</p></li>
+<li><p>Separation fallacy, M2, p 25</p></li>
+<li><p>Spooky action at a distance, M2, p 19, M2, p 32</p></li>
+<li><p>Stern-Gerlach analyzer loop, M2, p 2, M2, p 16</p></li>
+<li><p>Superposition, M2, p 10</p></li>
+<li><p>Tensor product, Dirac notation, M2, p 24</p></li>
+<li><p>Wheeler’s delayed choice experiment, M2, p 11</p></li>
+</ul>
+</section>
+<section id="m3-the-quantum-mechanics-of-light-wk3">
+<h1><span class="section-number">17. </span>M3: The quantum mechanics of light (Wk3)<a class="headerlink" href="#m3-the-quantum-mechanics-of-light-wk3" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>This week covers light—partial reflection, moving through one, two and multiple slits, the quantum mystery, mirrors, lenses, and normalization</p></li>
+<li><p>We start our coverage of the quantum mechanics of light, which will be revisited many times in the class. Here, we describe what a quantum particle is and how we can determine the behavior of quantum particles in a range of different situations and experiments, including what we call the quantum mystery. This approach is based on Feynman’s path integral methodology for quantum mechanics.</p></li>
+<li><p>Problem Set 3</p>
+<ol class="arabic simple">
+<li><p>Quantum Key Distribution in the BB84 protocol</p></li>
+<li><p>Eavesdropping</p></li>
+</ol>
+</li>
+</ul>
+<p><strong>Index</strong></p>
+<ul class="simple">
+<li><p>Complex numbers, M3, p26</p></li>
+<li><p>Diffraction, double slit, M3, p16, M3, p17</p></li>
+<li><p>Diffraction, single slit, M3, p15, M3, p17</p></li>
+<li><p>Diffraction grating, M3, p22</p></li>
+<li><p>Double slit experiment, M3, p13, M3, p18, M3, p19</p></li>
+<li><p>Imperfect detectors, M3, p20</p></li>
+<li><p>Lenses, M3, p23</p></li>
+<li><p>Light, transmission through glass, M3, p6</p></li>
+<li><p>Multiple reflections, M3, p7</p></li>
+<li><p>Normalization, M3, p 23, M3, p 24</p></li>
+<li><p>Partial reflection, M3, p 3, M3, p 5</p></li>
+<li><p>Photon self-reflection, M3, p 22</p></li>
+<li><p>Quantum key distribution, M3, p 29, M3, p 30</p></li>
+<li><p>Quantum mystery, M3, p 19, M3, p 21</p></li>
+<li><p>Quantum rules for light, M3, p 2</p></li>
+<li><p>Single slit experiment, M3, p 10, M3, p 11, M3, p 12, M3, p 13</p></li>
+<li><p>Three-slit experiment, M3, p 21</p></li>
+<li><p>Two slit experiment, Dirac approach, M3, p 27, M3, p 28</p></li>
+<li><p>Wave motion, M3, p 26</p></li>
+<li><p>Wave-particle duality, M3, p 1, M3, p 4</p></li>
+<li><p>Wavefunction, M3, p 25</p></li>
+<li><p>Waves, M3, p 14</p></li>
+</ul>
+</section>
+<section id="m4-advanced-quantum-mechanics-of-light-wk4">
+<h1><span class="section-number">18. </span>M4: Advanced quantum mechanics of light (Wk4)<a class="headerlink" href="#m4-advanced-quantum-mechanics-of-light-wk4" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>This week covers polarization of light, the Mach-Zehnder interferometer, quantum seeing in the dark, the Hong-Ou-Mandel experiment, and indistinguishability</p></li>
+<li><p>This material is plain out weird. We show you how you can see something without looking at it and we describe how photons enjoy themselves so much that if they have an opportunity to “pair up” they always will.</p></li>
+<li><p>Problem Set 4</p>
+<ol class="arabic simple">
+<li><p>Rabi Oscillations</p></li>
+<li><p>Probability and energy of bosons</p></li>
+</ol>
+</li>
+</ul>
+<p><strong>Index</strong></p>
+<ul class="simple">
+<li><p>Beam splitter, M4, p8</p></li>
+<li><p>Binomial coefficient, M4, p31</p></li>
+<li><p>Binomial theorem, M4, p31</p></li>
+<li><p>Bosons, M4, p25, M4, p29, M4, p33</p></li>
+<li><p>Boson states, counting, M4, p 30, M4, p32</p></li>
+<li><p>Compound probability amplitudes, M4, p26</p></li>
+<li><p>Dark count, M4, p3</p></li>
+<li><p>Fermions, M4, p30</p></li>
+<li><p>Hong-Ou-Mandel experiment, M4, p27</p></li>
+<li><p>Interaction free measurement, M4, p1, M4, p2, M4, p7</p></li>
+<li><p>Interaction free measurement, efficiency, M4, p3</p></li>
+<li><p>Mach-Zehnder interferometer, M4, p4, M4, p5, M4, p7, M10, p10</p></li>
+<li><p>Mach-Zehnder interferometer, applications, M4, p6</p></li>
+<li><p>Mach-Zehnder interferometer, Dirac approach, M4, p9</p></li>
+<li><p>Many-body physics, M4, p28</p></li>
+<li><p>Michelson-Morley experiment, M4, p6</p></li>
+<li><p>Particle bunching, M4, p 25</p></li>
+<li><p>Polarization, M4, p 12, M4, p 13</p></li>
+<li><p>Polarization rotator, M4, p 17</p></li>
+<li><p>Polarization in Dirac notation, M4, p 16, M4, p 18</p></li>
+<li><p>Polarized beam splitter, M4, p 19</p></li>
+<li><p>Polarized interferometer, M4, p 19</p></li>
+<li><p>Experiments with polarizers, M4, p 13, M4, p 17, M4, p 18</p></li>
+<li><p>Quantum camera, M4, p 21</p></li>
+<li><p>Quantum eraser, M4, p 12</p></li>
+<li><p>Quantum seeing in the dark, M2, p 17, M4, p 7, M4, p 10, M4, p 20</p></li>
+<li><p>Quantum Zeno effect, M4, p 14</p></li>
+<li><p>Rabi oscillations, M4, p 32</p></li>
+<li><p>Single photon source, M4, p 8</p></li>
+<li><p>Two slit experiment with polarizers, M4, p 22, M4, p 23, M4, p 24</p></li>
+<li><p>Zeno’s paradox, M4, p 11</p></li>
+</ul>
+</section>
+<section id="m5-quantum-operators-and-their-identities-wk5-6">
+<h1><span class="section-number">19. </span>M5: Quantum operators and their identities (Wk5-6)<a class="headerlink" href="#m5-quantum-operators-and-their-identities-wk5-6" title="Link to this heading">#</a></h1>
+<p>Week 7: Midterm 1</p>
+<ul class="simple">
+<li><p>These two weeks cover three of the four fundamental operator identities (Leibniz, Hadamard, and exponential disentangling) along with their variants. It also covers Pauli spin matrices, the canonical commutation relation and position and momentum eigenstates.</p></li>
+<li><p>In this module, we develop two more of the four fundamental operator identities that are the workhorses of quantum-mechanics calculation: the Hadamard lemma with the exponential re-ordering and braiding operator variants and the disentangling identity. In the process, we also learn about the canonical commutation relation, which underlies all of the subsequent quantum phenomena, and arises from the fact that atomic spectra have sharp lines.</p></li>
+<li><p>Problem Set 5</p>
+<ol class="arabic simple">
+<li><p>Stern Gerlach</p></li>
+<li><p>Exponentiation of Pauli Matrices</p></li>
+<li><p>Working with Pauli identities</p></li>
+<li><p>Exponential disentangling</p></li>
+<li><p>Exponential disentangling for symplectic matrices</p></li>
+</ol>
+</li>
+<li><p>Problem Set 6</p>
+<ol class="arabic simple">
+<li><p>Commutator of momentum with an exponential</p></li>
+<li><p>Braiding and exponential re-ordering</p></li>
+<li><p>Hadamard for Pauli matrices</p></li>
+<li><p>Gaussian wavepacket</p></li>
+<li><p>The free particle</p></li>
+</ol>
+</li>
+</ul>
+<p><strong>Index</strong></p>
+<ul class="simple">
+<li><p>Abelian group, M5, p7</p></li>
+<li><p>Braiding Identity, M5, p28</p></li>
+<li><p>Canonical commutation relation, M5, p17, M5, p18</p></li>
+<li><p>Commutator of powers of position and momentum, M5, p20, M5, p27</p></li>
+<li><p>DeBroglie wavelengths, M5, p25</p></li>
+<li><p>Exponential disentangling, M5, p8, M5, p9, M5, p14, M5, p15, M6, p30  Mod. 7, p6</p></li>
+<li><p>Fluctuations, M5, p19</p></li>
+<li><p>Free particle, M5, p26</p></li>
+<li><p>Free particle, 3D, M5, p31</p></li>
+<li><p>Gaussian integral, M5, p30</p></li>
+<li><p>Gaussian wavepacket, M5, p30</p></li>
+<li><p>Hadamard lemma, M5, p22</p></li>
+<li><p>Hadamard lemma, special case, M5, p21</p></li>
+<li><p>Hamiltonian of a free particle, M5, p26</p></li>
+<li><p>Lie algebra, M5, p7</p></li>
+<li><p>Lie groups, M5, p7</p></li>
+<li><p>Momentum, eigenstate, M5, p23, M6, p15</p></li>
+<li><p>Pauli spin matrices, M5, p 1, M5, p 2</p></li>
+<li><p>Pauli matrix identities, M5, p 5</p></li>
+<li><p>Arbitrary matrices in terms of Pauli spin matrices, M5, p 4</p></li>
+<li><p>Pauli spin matrices, eigenvalues, M5, p 2</p></li>
+<li><p>Pauli spin matrices, triple product, M5, p 2</p></li>
+<li><p>Position eigenstate, M5, p 23</p></li>
+<li><p>Probability of measurement, M5, p 19</p></li>
+<li><p>Spin operator matrix, theta-phi direction, M5, p 3</p></li>
+<li><p>Similarity transform, M5, p 21</p></li>
+<li><p>SU(2) algebra, M5, p 7</p></li>
+<li><p>Symplectic matrix, M5, p 9</p></li>
+<li><p>Wavefunction, momentum in position space, M5, p 24</p></li>
+<li><p>Wavefunction, position in momentum space, M5, p 24</p></li>
+<li><p>Zero fluctuation state, M5, p 19</p></li>
+</ul>
+</section>
+<section id="m6-qm-of-simple-harmonic-oscillator-w8-9">
+<h1><span class="section-number">20. </span>M6: QM of simple harmonic oscillator (W8-9)<a class="headerlink" href="#m6-qm-of-simple-harmonic-oscillator-w8-9" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>These two weeks cover the free particle on a circle, introduction to the factorization method, Heisenberg’s uncertainty principle, Baker-Campbell-Hausdorff formula, simple harmonic oscillator wavefunction, coherent states, squeezed states, and applications</p></li>
+<li><p>We develop the description of another important quantum system: the harmonic oscillator. We see the fourth fundamental operator identity (Baker-Campbell-Hausdorff identity and its Weyl form). We also explore the Schrödinger factorization method and Dirac’s abstract methodology.</p></li>
+<li><p>Problem Set 7</p>
+<ol class="arabic simple">
+<li><p>Momentum states on a circle</p></li>
+<li><p>Position operator on a circle</p></li>
+<li><p>Lennard-Jones potential</p></li>
+<li><p>Operators and the simple harmonic oscillator</p></li>
+<li><p>Uncertainty</p></li>
+</ol>
+</li>
+<li><p>Problem Set 8</p>
+<ol class="arabic simple">
+<li><p>Application of Baker-Campbell Hausdorff formula to the simple harmonic oscillator</p></li>
+<li><p>Wavefunction in momentum space</p></li>
+<li><p>Coherent states</p></li>
+<li><p>Squeezed states</p></li>
+<li><p>Simple harmonic oscillator in 3D and the Deuteron</p></li>
+</ol>
+</li>
+</ul>
+<p><strong>Index</strong></p>
+<ul class="simple">
+<li><p>Baker Campbell Hausdorff identity, M6, p21</p></li>
+<li><p>BCH identity, Weyl form, M6, p22, M6, p36</p></li>
+<li><p>Coherent state, M6, p27, M6, p38, M9, p3</p></li>
+<li><p>Degeneracy, M6, p40</p></li>
+<li><p>Deuteron, M6, p34</p></li>
+<li><p>Exponential disentangling, M5, p8, M5, p9, M5, p14, M5, p15, M6, p30  Mod. 7, p6</p></li>
+<li><p>Factorization, M6, p1, M6, p4, M7, p53</p></li>
+<li><p>Hadamard identity, M6, p22</p></li>
+<li><p>Hamiltonian, M6, p8</p></li>
+<li><p>Hamiltonian operator, M6, p22</p></li>
+<li><p>Lennard Jones Potential, M6, p17</p></li>
+<li><p>Lowering operator, M6, p14, M6, p18, M6, p22, M6, p29</p></li>
+<li><p>Momentum, eigenstate, M5, p23, M6, p15</p></li>
+<li><p>Momentum, operator, M6, p15, M6, p22</p></li>
+<li><p>Morse potential, M6, p7, M6, p35, M6, p40, M7, p37</p></li>
+<li><p>Node, M6, p 12</p></li>
+<li><p>Normal ordering, M6, p 18</p></li>
+<li><p>Position operator, M6, p 3, M6, p 16, M6, p 22</p></li>
+<li><p>Raising operator, M6, p 14, M6, p 18, M6, p 22, M6, p 29</p></li>
+<li><p>Simple harmonic oscillator, M6, p 7, M6, p 8, M6, p 19, M6, p 22, M6, p 26, M6, p 33, M6, p 35, M7, p 52, M9, p 4</p></li>
+<li><p>Simple harmonic oscillator in 3 dimension, M6, p 32, M6, p 40</p></li>
+<li><p>Simple harmonic oscillator, factorization, M6, p 10</p></li>
+<li><p>Squeezed state, M6, p 28, M6, p 39, M9, p 5, M9, p 10, M10, p 13</p></li>
+<li><p>Squeezing operator, M6, p 28, M6, p 29, M6, p 31, M6, p 39</p></li>
+<li><p>Uncertainty principle, M6, p 6, M6, p 19, M8, p 9</p></li>
+<li><p>Variational principle, M6, p 34</p></li>
+<li><p>Virial theorem, M6, p 6, , M7, p 54</p></li>
+</ul>
+</section>
+<section id="m7-quantum-angular-momentum-and-hydrogen-wk10-12">
+<h1><span class="section-number">21. </span>M7: Quantum angular momentum and hydrogen (Wk10-12)<a class="headerlink" href="#m7-quantum-angular-momentum-and-hydrogen-wk10-12" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>These three weeks cover angular momentum operators, rotations, spherical harmonics, Schroedinger factorization method (general case), EPR, node theorem, time of flight, separation of variables, radial momentum, isotropic simple harmonic oscillator, hydrogen energy eigenvalues, wavefunctions (in position and momentum space), Pickering lines, discovery of deuterium, and e-2e spectroscopy.</p></li>
+<li><p>We develop the theory for describing rotations and angular momentum and the general Schrödinger factorization method. Then we apply this approach to three-dimensional central force problem, which allows us to describe hydrogen. You will learn how, by just measuring the color of light, we can determine the mass and the size of the proton! We also will show you how you can measure how electrons are distributed around the nucleus.</p></li>
+<li><p>Problem Set 9</p>
+<ol class="arabic simple">
+<li><p>Angular momentum uncertainty and hidden variables for Bell experiments</p></li>
+<li><p>Molecular rotation spectroscopy</p></li>
+<li><p>Orthogonality of spherical harmonics</p></li>
+<li><p>Normalization of eigenstates in the factorization method</p></li>
+<li><p>The subsidiary condition and wavefunctions</p></li>
+</ol>
+</li>
+<li><p>Problem Set 10</p>
+<ol class="arabic simple">
+<li><p>Factorization chain for a circle</p></li>
+<li><p>The subsidiary condition and wavefunctions</p></li>
+<li><p>The tanh^2 potential</p></li>
+<li><p>Separation of variables in 2D</p></li>
+<li><p>Morse potential</p></li>
+</ol>
+</li>
+<li><p>Problem Set 11</p>
+<ol class="arabic simple">
+<li><p>Normalization factor of the isotropic simple harmonic oscillator</p></li>
+<li><p>Using factorization to find the energies of the 2D simple harmonic oscillator and Coulomb problems</p></li>
+<li><p>Testing the validity of Coulomb’s law</p></li>
+<li><p>The virial theorem and the size of atoms</p></li>
+<li><p>Kramers-Pasternack relation for positive powers</p></li>
+</ol>
+</li>
+<li><p>Problem Set 12</p>
+<ol class="arabic simple">
+<li><p>Kramers-Pasternack II</p></li>
+<li><p>Kramers-Pasternack for inverse moments 3,4,5</p></li>
+<li><p>Uncertainty and Hydrogen</p></li>
+<li><p>Hydrogen in momentum space</p></li>
+<li><p>Hydrogen in momentum space II</p></li>
+</ol>
+</li>
+</ul>
+<p><strong>Index</strong></p>
+<ul class="simple">
+<li><p>Angular momentum, M7, p1, M7, p12</p></li>
+<li><p>Angular momentum commutation relations, M7, p1</p></li>
+<li><p>Angular momentum eigenstates, M7, p1</p></li>
+<li><p>Angular momentum lowering operator, M7, p1</p></li>
+<li><p>Angular momentum raising operator, M7, p1</p></li>
+<li><p>Angular momentum, total squared, M7, p1</p></li>
+<li><p>Balmer series, M7, p44</p></li>
+<li><p>Bell’s inequality, M7, p 14, M7, p15</p></li>
+<li><p>Copenhagen interpretation, M7, p26</p></li>
+<li><p>Coulomb problem Mod 7, p43</p></li>
+<li><p>Coulomb wavefunctions, M7, p47, M7, p48, M7, p49</p></li>
+<li><p>Deuterium, M7, p45, M7, p46</p></li>
+<li><p>Electron momentum spectroscopy, M7, p58, M7, p59, , M7, p60</p></li>
+<li><p>Einstein Podolsky Rosen experiment, M7, p26</p></li>
+<li><p>Factorization, M6, p1, M6, p4, M7, p53</p></li>
+<li><p>Factorization chain, circle, M7, p33</p></li>
+<li><p>Factorization chains, M7, p11</p></li>
+<li><p>Factorization, Cartesian hydrogen, M7, p57</p></li>
+<li><p>Hydrogen, M7, p43, M7, p44, M7, p47, M8, p3, M8, p4, M8, p6, M8, p9, M8, p10, M8, p11</p></li>
+<li><p>Hydrogen, degeneracy, M7, p43</p></li>
+<li><p>Hydrogen, energy eigenstates, M7, p43</p></li>
+<li><p>Hydrogen, factorization, M7, p43</p></li>
+<li><p>Intertwining, M7, p11</p></li>
+<li><p>Kramers Pasternack relation, M7, p56, M8, p7, M8, p8</p></li>
+<li><p>Laguerre polynomials, M7, p41, M7, p47</p></li>
+<li><p>Lie group, non-abelian, M7, p2</p></li>
+<li><p>Molecular rotation spectroscopy, M7, p16</p></li>
+<li><p>Moment of inertia, M7, p16</p></li>
+<li><p>Morse potential, M6, p7, M6, p35, M6, p40, M7, p37</p></li>
+<li><p>Node theorem, M7, p 11, M7, p 21, M7, p 22, M7, p 23, M7, p 24</p></li>
+<li><p>Pickering lines, M7, p 44</p></li>
+<li><p>Pickering-Fowler hypothesis, M7, p 44</p></li>
+<li><p>Position states in the theta-phi direction, M7, p 5</p></li>
+<li><p>Proton mass, M7, p 45</p></li>
+<li><p>Quantum numbers, M7, p 1, M7, p 12, M7, p 51</p></li>
+<li><p>Quantum rotations, general, M7, p 4, M7, p 5</p></li>
+<li><p>Radial momentum, M7, p 30, M7, p 31, M8, p 9</p></li>
+<li><p>Radial translation, M7, p 32</p></li>
+<li><p>Schrodinger factorization method, M7, p 11, M7, p 20</p></li>
+<li><p>Separation of variables, kinetic energy, M7, p 31</p></li>
+<li><p>Separation of variables in 2 dimensions, M7, p 36</p></li>
+<li><p>Simple harmonic oscillator, M6, p 7, M6, p 8, M6, p 19, M6, p 22, M6, p 26, M6, p 33, M6, p 35, M7, p 52, M9, p 4</p></li>
+<li><p>Simple harmonic oscillator in 2 dimensions, M7, p 53</p></li>
+<li><p>Simple harmonic oscillator, 3D isotropic, M7, p 39</p></li>
+<li><p>Simple harmonic oscillator, 3D isotropic wavefunctions, M7, p 40, M7, p 42</p></li>
+<li><p>Spherical harmonics, M7, p 6, M7, p 10, M7, p 50</p></li>
+<li><p>Spherical harmonics, d-wave, M7, p 9</p></li>
+<li><p>Spherical harmonics, orthogonality of, M7, p 17</p></li>
+<li><p>Spherical harmonics, p-wave, M7, p 8</p></li>
+<li><p>Spherical harmonics, s-wave, M7, p 7</p></li>
+<li><p>Spin singlet state, M7, p 12</p></li>
+<li><p>Spin singlet state, arbitrary direction, M7, p 13</p></li>
+<li><p>Spin triplet state, M7, p 12</p></li>
+<li><p>Subsidiary condition, M7, p 11, M7, p 19</p></li>
+<li><p>Superpotential, M7, p 11</p></li>
+<li><p>Time of flight experiment, M7, p 27, M7, p 28, M7, p 29</p></li>
+<li><p>Two-body problem, M7, p 25</p></li>
+<li><p>Uncertainty, M7, p 28, M7, p 29</p></li>
+<li><p>Vector operators, M7, p 1, M7, p 2</p></li>
+<li><p>Vector operators, rotations of, M7, p 2, M7, p 3</p></li>
+<li><p>Virial theorem, M6, p 6, , M7, p 54</p></li>
+<li><p>Wavefunction nodes, M7, p 11</p></li>
+</ul>
+</section>
+<section id="m8-approximation-methods-wk13-and-15">
+<h1><span class="section-number">22. </span>M8: Approximation methods (Wk13 and 15)<a class="headerlink" href="#m8-approximation-methods-wk13-and-15" title="Link to this heading">#</a></h1>
+<p>Week 14: Midterm II</p>
+<ul class="simple">
+<li><p>These two weeks discuss nondegenerate first and second-order perturbation theory, Feynman-Hellmann theorem, hyperfine structure of hydrogen and radio astronomy, proton charge radius, particle in a box, variational principle, and the argument that attractive potentials in one and two dimensions always have bound states.</p></li>
+<li><p>Not every problem can be solved exactly; we show you some approximation methods that are used in quantum mechanics. This allows us to describe how radio astronomy works and how potentials can always trap particles in one and two dimensions, but not in  three.</p></li>
+<li><p>Problem Set 13</p>
+<ol class="arabic simple">
+<li><p>Perturbation theory of the anharmonic simple harmonic oscillator</p></li>
+<li><p>Muonic hydrogen</p></li>
+<li><p>Landau-Zener problem</p></li>
+<li><p>Particle in a 2D circular box</p></li>
+<li><p>Time dependence of squeezed states</p></li>
+</ol>
+</li>
+</ul>
+<p><strong>Index</strong></p>
+<ul class="simple">
+<li><p>Bound states, M8, p19, M8, p20, M8, p21, M8, p22, M8, p23</p></li>
+<li><p>Feynman-Hellmann theorem, M8, p1</p></li>
+<li><p>Hydrogen, M7, p43, M7, p44, M7, p47, M8, p3, M8, p4, M8, p6, M8, p9, M8, p10, M8, p11</p></li>
+<li><p>Hyperfine structure, M8, p2, M8, p3, M8, p4, M8, p5</p></li>
+<li><p>Kramers Pasternack relation, M7, p56, M8, p7, M8, p8</p></li>
+<li><p>Perturbation theory, M8, p 14, M9, p 6</p></li>
+<li><p>Perturbation theory, first order, M8, p 1</p></li>
+<li><p>Perturbation theory, second order, M8, p 12</p></li>
+<li><p>Proton charge radius, M8, p 13</p></li>
+<li><p>Radial momentum, M7, p 30, M7, p 31, M8, p 9</p></li>
+<li><p>Radio astronomy, M8, p 5</p></li>
+<li><p>Schrodinger equation, M8, p 18</p></li>
+<li><p>Uncertainty principle, M6, p 6, M6, p 19, M8, p 9</p></li>
+</ul>
+</section>
+<section id="m9-time-evolution-wk16">
+<h1><span class="section-number">23. </span>M9: Time evolution (Wk16)<a class="headerlink" href="#m9-time-evolution-wk16" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>This week examines the Trotter formula and the time-ordered product, the time-dependence of coherent states and cyclotron resonance, and discusses how we quantize light.</p></li>
+<li><p>We describe the science behind magnetic resonance imaging (MRI), used in hospitals.</p></li>
+</ul>
+<p><strong>Index</strong></p>
+<ul class="simple">
+<li><p>Anharmonic oscillator, M9, p6</p></li>
+<li><p>Coherent state, M6, p27, M6, p38, M9, p3</p></li>
+<li><p>Cyclotron, M9, p11</p></li>
+<li><p>Muonic hydrogen, M9, p7</p></li>
+<li><p>Landau-Zener problem , M9, p8</p></li>
+<li><p>Maxwell’s equations, M9, p12, M9, p13</p></li>
+<li><p>Perturbation theory, M8, p 14, M9, p 6</p></li>
+<li><p>Phase space, M9, p 4</p></li>
+<li><p>Simple harmonic oscillator, M6, p 7, M6, p 8, M6, p 19, M6, p 22, M6, p 26, M6, p 33, M6, p 35, M7, p 52, M9, p 4</p></li>
+<li><p>Simple harmonic oscillator, classical, M9, p 2</p></li>
+<li><p>Squeezed state, M6, p 28, M6, p 39, M9, p 5, M9, p 10, M10, p 13</p></li>
+<li><p>Time dependence, M9, p 3, M9, p 5, M9, p 10</p></li>
+<li><p>Time evolution, M9, p 1</p></li>
+<li><p>Transcendental equation, M9, p 9</p></li>
+<li><p>Trotter formula, M9, p 1</p></li>
+</ul>
+</section>
+<section id="m10-photons-and-ligo-wk17">
+<h1><span class="section-number">24. </span>M10: Photons and LIGO (Wk17)<a class="headerlink" href="#m10-photons-and-ligo-wk17" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>This week explains what a photon is, how we measure them, and how we can tell we have a single-photon source of light. It also discusses how the laser interferometry gravitational-wave observatory works.</p></li>
+<li><p>No one should finish a quantum-mechanics class without knowing what a photon is. We describe how single photons are detected, what squeezed light is and how LIGO can measure distances small enough that it can detect gravitational waves.</p></li>
+</ul>
+<p><strong>Index</strong></p>
+<ul class="simple">
+<li><p>Heterodyne, M10, p7, M10, p9</p></li>
+<li><p>Homodyne, M10, p8, M10, p9</p></li>
+<li><p>LIGO, M10, p11, M10, p12, M10, 13, M10, p14</p></li>
+<li><p>Mach-Zehnder interferometer, M4, p4, M4, p5, M4, p7, M10, p10</p></li>
+<li><p>Michelson-Morley interferometer, M10, p11</p></li>
+<li><p>Photomultiplier tube, M10, p 2, M10, p 3</p></li>
+<li><p>Photon, M10, p 1, M10, p 2, M10, p 3, M10, p 4, M10, p 5, M10, p 6, M10, p 10</p></li>
+<li><p>Squeezed state, M6, p 28, M6, p 39, M9, p 5, M9, p 10, M10, p 13</p></li>
+</ul>
+<p>Week 18 and 19: Final exam</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Course_MCM_QM.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">14. </span>Quantum Mechanics</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Course_MCM_QFT.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">25. </span>QFT</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">15. M1: Introduction to the quantum world (Wk1)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#m2-advanced-quantum-mechanics-with-spin-wk2">16. M2: Advanced quantum mechanics with spin (Wk2)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#m3-the-quantum-mechanics-of-light-wk3">17. M3: The quantum mechanics of light (Wk3)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#m4-advanced-quantum-mechanics-of-light-wk4">18. M4: Advanced quantum mechanics of light (Wk4)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#m5-quantum-operators-and-their-identities-wk5-6">19. M5: Quantum operators and their identities (Wk5-6)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#m6-qm-of-simple-harmonic-oscillator-w8-9">20. M6: QM of simple harmonic oscillator (W8-9)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#m7-quantum-angular-momentum-and-hydrogen-wk10-12">21. M7: Quantum angular momentum and hydrogen (Wk10-12)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#m8-approximation-methods-wk13-and-15">22. M8: Approximation methods (Wk13 and 15)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#m9-time-evolution-wk16">23. M9: Time evolution (Wk16)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#m10-photons-and-ligo-wk17">24. M10: Photons and LIGO (Wk17)</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jonny, assisted by Tom
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
