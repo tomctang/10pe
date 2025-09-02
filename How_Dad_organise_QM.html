@@ -58,6 +58,8 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'How_Dad_organise_QM';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -387,7 +389,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="how-dad-learn-qm">
 <h1><span class="section-number">15. </span>How Dad learn QM<a class="headerlink" href="#how-dad-learn-qm" title="Link to this heading">#</a></h1>
-<p>learning outcomes - Upon successfully completing this course, you will:</p>
+<p><strong>Learning outcomes</strong> - upon successfully completing this course, you will:</p>
 <ul class="simple">
 <li><p>M1: Be able to describe how the principle of superposition underlies wave-particle duality and use the quantum superposition of states to analyze properties of spin (Stern-Gerlach experiments) and light (one-, two-, and multiple slits and the Mach-Zehnder interferometer).</p></li>
 <li><p>M2: Distinguish between events, alternative ways an event occurs, tagging, and measurement; be able to use the mathematical formalism of quantum mechanics to describe these different phenomena and how they allow for delayed choice experiments.</p></li>
@@ -400,6 +402,21 @@ document.write(`
 <li><p>M9: Calculate how time evolution is employed to describe oscillatory motion of the simple harmonic oscillator and the rotational motion of a nuclear spin; be able to use the Trotter form of the time-ordered product.</p></li>
 <li><p>M10: Quantize light, describe what a photon is, how single photons are measured, how to verify you have a single-photon light source, how to squeeze light, and how quantum properties of light are used in gravitational wave detection.</p></li>
 </ul>
+<p><strong>Important Topics</strong></p>
+<ul class="simple">
+<li><p>Magnetic needles and current loops</p></li>
+<li><p>Calculating probabilities</p></li>
+<li><p>Using Dirac Notation/operators to analyze quantum systems</p></li>
+<li><p>Reflection and transmission of light</p></li>
+<li><p>Polarization of light</p></li>
+<li><p>Stern Gerlach experiment/ analyzer loops</p></li>
+<li><p>Bell’s Theorem experiment</p></li>
+<li><p>Wheeler’s delayed choice experiment</p></li>
+<li><p>Einstein, Podolsky, Rosen (EPR) Experiment</p></li>
+<li><p>Light and slit experiments / quantum mystery</p></li>
+<li><p>Mach Zender Interferometer / quantum seeing in the dark experiments</p></li>
+<li><p>Hong Ou Mandel Experiment</p></li>
+</ul>
 <section id="m1-introduction-to-the-quantum-world-wk1">
 <h2><span class="section-number">15.1. </span>M1: Introduction to the quantum world (Wk1)<a class="headerlink" href="#m1-introduction-to-the-quantum-world-wk1" title="Link to this heading">#</a></h2>
 <ul class="simple">
@@ -411,6 +428,29 @@ document.write(`
 <li><p>Completeness</p></li>
 </ol>
 </li>
+</ul>
+<p><strong>Notes/Math Definitions</strong></p>
+<ul class="simple">
+<li><p>Hermitian matrix <span class="math notranslate nohighlight">\(\hat{A}\)</span> satisfies <span class="math notranslate nohighlight">\(\hat{A}^{\dagger} = A\)</span> where
+<span class="math notranslate nohighlight">\(\dagger\)</span> denotes the hermitian conjugate (transpose and complex
+conjugate).</p></li>
+<li><p>The hermitian conjugate of a bra is a ket, and vice versa; don’t
+forget to switch the sign of complex numbers too!</p></li>
+<li><p>Hermitian operators are not necessarily self adjoint.</p>
+<ul>
+<li><p>An operator is hermitian if it is equal to its hermitian conjugate,  as written above.</p></li>
+<li><p>A hermitian operator can act on states to the left and to the right.</p></li>
+<li><p>If you are given an operator in matrix form, you can easily tell whether or not it is hermitian: If the matrix has real numbers along the diagonal and zeroes elsewhere, then it corresponds to a Hermitian operator whose eigenvalues are listed along the diagonal.</p></li>
+<li><p>On the other hand, if an operator is self-adjoint, then the operator has a complete set of real eigenvalues.</p></li>
+</ul>
+</li>
+<li><p>A bra can be represented by a row vector, whereas a ket can be
+represented by a column vector. Operators can be represented by
+matrices.</p></li>
+<li><p>Eigenvectors of hermitian operators form an orthonormal basis.</p></li>
+<li><p><span class="math notranslate nohighlight">\(|\uparrow\rangle_{z} = |\downarrow\rangle_{-z}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\langle \psi \mid \phi \rangle = \langle \phi \mid \psi \rangle^{*}\)</span></p></li>
+<li><p>A matrix is a representation of an operator in a particular basis.</p></li>
 </ul>
 <p><strong>Index</strong></p>
 <ul class="simple">
@@ -441,6 +481,71 @@ document.write(`
 <li><p>More spin eigenstates</p></li>
 </ol>
 </li>
+</ul>
+<p><strong>Notes/Math Definitions</strong></p>
+<ul>
+<li><p>Linear operators preserve scalar multiplication and vector addition,
+that is:
+$<span class="math notranslate nohighlight">\((\alpha \hat{A} + \beta \hat{B})|\psi\rangle = \alpha \hat{A}|\psi\rangle + \beta \hat{B}|\psi\rangle\)</span><span class="math notranslate nohighlight">\(
+and    \)</span><span class="math notranslate nohighlight">\(\hat{A}(\alpha|\psi\rangle + \beta|\phi\rangle) = \alpha \hat{A}|\psi\rangle + \beta \hat{A}|\phi\rangle\)</span>$</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{S}_{z}|\uparrow\rangle_{z} = \frac{\hbar}{2}|\uparrow\rangle_{z}\)</span>
+and
+<span class="math notranslate nohighlight">\(\hat{S}_{z}|\downarrow\rangle_{z} = -\frac{\hbar}{2}|\downarrow\rangle_{z}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{S}_{+}|\downarrow\rangle_{z} = \hbar|\uparrow\rangle_{z}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{S}_{+}|\uparrow\rangle_{z} = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{S}_{-}|\uparrow\rangle_{z} = \hbar|\downarrow\rangle_{z}\)</span> and
+<span class="math notranslate nohighlight">\(\hat{S}_{-}|\downarrow\rangle_{z} = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\([\hat{A}, \hat{B}] = \hat{A} \hat{B} - \hat{B} \hat{A}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\([\hat{A}, \hat{B}] = -[\hat{B}, \hat{A}]\)</span></p></li>
+<li><p>If 2 operators commute, their commutator is equal to 0; if they do
+NOT commute then their commutator is nonzero. If two operators do
+not commute then we cannot find a complete set of eigenstates that
+are simultaneous eigenstates of both operators.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\left[\hat{S}_{z}, \hat{S}_{+}\right] = \hbar \hat{S}_{+}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\left[\hat{S}_{z}, \hat{S}_{-}\right] = -\hbar \hat{S}_{-}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\left[\hat{S}_{+}, \hat{S}_{-}\right] = 2 \hbar \hat{S}_{z}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{S}_{x} = \frac{1}{2}\left(\hat{S}_{+} + \hat{S}_{-}\right)\)</span>
+and
+<span class="math notranslate nohighlight">\(\hat{S}_{y} = \frac{1}{2 i}\left(\hat{S}_{+} - \hat{S}_{-}\right)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{S}_{+} = \hat{S}_{x} + i \hat{S}_{y}\)</span> and
+<span class="math notranslate nohighlight">\(\hat{S}_{-} = \hat{S}_{x} - i \hat{S}_{y}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\left[\hat{S}_{i}, \hat{S}_{j}\right] = i \hbar \sum_{k} \epsilon_{i j k} \hat{S}_{k}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{S}^{2} = \hat{S}_{x}^{2} + \hat{S}_{y}^{2} + \hat{S}_{z}^{2}\)</span></p></li>
+<li><p>Leibnitz Identity:
+$<span class="math notranslate nohighlight">\([\hat{A} \hat{B}, \hat{C}] = \hat{A}[\hat{B}, \hat{C}] + [\hat{A}, \hat{C}] \hat{B}\)</span>$</p></li>
+<li><div class="math notranslate nohighlight">
+\[\begin{split}\hat{S}_{z} = \begin{pmatrix}
+        \frac{\hbar}{2} &amp; 0 \\
+        0 &amp; -\frac{\hbar}{2}
+        \end{pmatrix}\end{split}\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\hat{S}_{z}|\uparrow\rangle_{z} = \frac{\hbar}{2}|\uparrow\rangle_{z}\)</span>
+and
+<span class="math notranslate nohighlight">\(\hat{S}_{z}|\downarrow\rangle_{z} = -\frac{\hbar}{2}|\downarrow\rangle_{z}\)</span></p></li>
+<li><p>Spin operators in <span class="math notranslate nohighlight">\(x, y\)</span> and <span class="math notranslate nohighlight">\(z\)</span> are all hermitian, whereas spin
+raising and lowering operators are NOT hermitian.</p></li>
+<li><p>A projection operator <span class="math notranslate nohighlight">\(\hat{P}\)</span> satisfies <span class="math notranslate nohighlight">\(\hat{P}^{2} = \hat{P}\)</span>,
+which is called an idempotent operator. If we have a normalized
+quantum state <span class="math notranslate nohighlight">\(|\psi\rangle\)</span>, then the operator
+<span class="math notranslate nohighlight">\(|\psi\rangle \langle \psi|\)</span> is a projection operator. The sum (or
+integral) over all projection operators (also called ‘projectors’)
+is the identity matrix. We often use this to ‘multiply by 1.’</p></li>
+<li><div class="math notranslate nohighlight">
+\[|\uparrow\rangle_{z} = \frac{1}{\sqrt{2}}\left(|\uparrow\rangle_{x} + |\downarrow\rangle_{x}\right)\]</div>
+</li>
+<li><p>The <span class="math notranslate nohighlight">\(\otimes\)</span> symbol is called the tensor product; we use this to
+describe quantum states that have different properties, which live
+in different vector spaces. (For example, position and spin, or spin
+and an atomic energy state, and so on…)</p></li>
+<li><div class="math notranslate nohighlight">
+\[\langle a| \otimes \langle b| \cdot |c\rangle \otimes |d\rangle = \langle a|c\rangle \times \langle b|d\rangle = \langle a|c\rangle \langle b|d\rangle\]</div>
+</li>
+<li><p>Superpositioner in Stern Gerlach experiments: transforms
+<span class="math notranslate nohighlight">\(|GS\rangle\)</span> to <span class="math notranslate nohighlight">\(\frac{1}{\sqrt{2}}(|GS\rangle + |ES\rangle)\)</span></p></li>
+<li><p>De-exciter in Stern Gerlach experiments: behaves as a ground state
+filter</p></li>
+<li><p>Exciter in Stern Gerlach experiments: transforms ground state into
+the excited state</p></li>
 </ul>
 <p><strong>Index</strong></p>
 <ul class="simple">
@@ -523,6 +628,45 @@ document.write(`
 </ol>
 </li>
 </ul>
+<p><strong>M4 Notes/Math Definitions</strong></p>
+<ul class="simple">
+<li><p>A 50-50 beam splitter in Mach Zehnder Interferometer apparatus
+transforms the incident light <span class="math notranslate nohighlight">\(|I\rangle\)</span> into a superposition of
+reflected and transmitted light, denoted by
+$<span class="math notranslate nohighlight">\(\frac{1}{\sqrt{2}}(|R\rangle + |T\rangle)\)</span>$</p></li>
+<li><p>When we make measurements on an arbitrary state <span class="math notranslate nohighlight">\(|\psi\rangle\)</span> we
+apply the projection operator (projector) corresponding to our
+measurement onto the state <span class="math notranslate nohighlight">\(|\psi\rangle\)</span>. Then, to calculate the
+probability, we take the modulus squared of our new state, including
+the projector.</p></li>
+<li><p>When light is polarized in the <span class="math notranslate nohighlight">\(\theta\)</span> direction, we express this as:
+<span class="math notranslate nohighlight">\(|\theta\rangle = \cos \theta |V\rangle + \sin \theta |H\rangle.\)</span>
+Note that <span class="math notranslate nohighlight">\(|H\rangle\)</span> and <span class="math notranslate nohighlight">\(|V\rangle\)</span> form an orthonormal basis which means that
+<span class="math notranslate nohighlight">\(\langle H | H \rangle = \langle V | V \rangle =1\)</span> and <span class="math notranslate nohighlight">\(\langle V | H \rangle = \langle H | V \rangle =0\)</span></p></li>
+<li><p>We also define the following state for polarizer problems:
+$<span class="math notranslate nohighlight">\(|-\theta\rangle = \cos \theta |V\rangle - \sin \theta |H\rangle\)</span>$</p></li>
+<li><p>If we wish to represent the polarization as a spinor (vector) we
+get: $<span class="math notranslate nohighlight">\(\begin{pmatrix}
+    \cos \theta \\
+    \sin \theta
+    \end{pmatrix} = \cos \theta |V\rangle + \sin \theta |H\rangle\)</span>$</p></li>
+<li><p>When a photon goes through a polarizer, it always corresponds to
+being measured, which we accomplish by applying the appropriate
+projection operator onto the photon’s state.</p></li>
+<li><p>When a photon goes through a polarization rotator, on the other
+hand, it does not correspond to a measurement. It is just a way to
+manipulate the direction of the polarization of the photon. We write
+the action of the rotator as an operator that changes the angle of
+polarization of a polarization state vector as follows:
+$<span class="math notranslate nohighlight">\(|\theta\rangle \rightarrow \left|\theta + \phi_{\text{rotator}}\right\rangle\)</span><span class="math notranslate nohighlight">\(
+if the physical rotator rotates the polarization by
+\)</span>\phi_{\text{rotator}}$.</p></li>
+<li><p>The binomial coefficient tells us the general formula for <span class="math notranslate nohighlight">\(k\)</span>
+collections from <span class="math notranslate nohighlight">\(n\)</span> objects is:
+<span class="math notranslate nohighlight">\(\frac{n!}{k!(n-k)!} = \binom{n}{k}\)</span></p></li>
+<li><p>Binomial theorem:
+<span class="math notranslate nohighlight">\((a + b)^{n} = \sum_{k=0}^{n} \binom{n}{k} a^{k} b^{n-k}\)</span></p></li>
+</ul>
 <p><strong>Index</strong></p>
 <ul class="simple">
 <li><p>Beam splitter, M4, p8</p></li>
@@ -560,7 +704,7 @@ document.write(`
 </section>
 <section id="m5-quantum-operators-and-their-identities-wk5-6">
 <h2><span class="section-number">15.5. </span>M5: Quantum operators and their identities (Wk5-6)<a class="headerlink" href="#m5-quantum-operators-and-their-identities-wk5-6" title="Link to this heading">#</a></h2>
-<p>Week 7: Midterm 1</p>
+<p>Week 7: Midterm 1. Focus on: the four operator identities and how to use them; the factorization method; angular momentum; rotations; position eigenstates and spherical harmonics. This exam will not include questions on the hydrogen atom or central force problems from Wk11.</p>
 <ul class="simple">
 <li><p>These two weeks cover three of the four fundamental operator identities (Leibniz, Hadamard, and exponential disentangling) along with their variants. It also covers Pauli spin matrices, the canonical commutation relation and position and momentum eigenstates.</p></li>
 <li><p>In this module, we develop two more of the four fundamental operator identities that are the workhorses of quantum-mechanics calculation: the Hadamard lemma with the exponential re-ordering and braiding operator variants and the disentangling identity. In the process, we also learn about the canonical commutation relation, which underlies all of the subsequent quantum phenomena, and arises from the fact that atomic spectra have sharp lines.</p></li>
@@ -582,6 +726,38 @@ document.write(`
 <li><p>The free particle</p></li>
 </ol>
 </li>
+</ul>
+<p><strong>M5-6: Notes/Math Definitions</strong></p>
+<p>Four Fundamental Operator Identities</p>
+<ul>
+<li><p>Leibnitz Rule:
+$<span class="math notranslate nohighlight">\([\hat{A} \hat{B}, \hat{C}] = \hat{A}[\hat{B}, \hat{C}] + [\hat{A}, \hat{C}] \hat{B}\)</span>$</p></li>
+<li><p>Hadamard:
+$<span class="math notranslate nohighlight">\(e^{\hat{A}} \hat{B} e^{-\hat{A}} = \sum_{n=0}^{\infty} \frac{1}{n!} \left[\hat{A}, \left[\hat{A}, \ldots \left[\hat{A}, [\hat{A}, \hat{B}]\right] \ldots \right] \right]_n\)</span>$</p></li>
+<li><p>Weyl Form of BCH identity:
+$<span class="math notranslate nohighlight">\(e^{\hat{A}} e^{\hat{B}} = e^{\hat{A} + \hat{B}} e^{\frac{1}{2} [\hat{A}, \hat{B}]} = e^{\frac{1}{2} [\hat{A}, \hat{B}]} e^{\hat{A} + \hat{B}} = e^{\hat{A} + \hat{B} + \frac{1}{2} [\hat{A}, \hat{B}]}\)</span><span class="math notranslate nohighlight">\(
+This holds when \)</span>[\hat{A}, \hat{B}]<span class="math notranslate nohighlight">\( commutes with \)</span>\hat{A}<span class="math notranslate nohighlight">\( and
+\)</span>\hat{B}$.</p></li>
+<li><p>General Form of BCH identity:
+$<span class="math notranslate nohighlight">\(e^{\hat{A}} e^{\hat{B}} = e^{\left( (\hat{A} + \hat{B}) + \frac{1}{2} [\hat{A}, \hat{B}] + \frac{1}{12} [\hat{A}, [\hat{A}, \hat{B}]] + \frac{1}{12} [\hat{B}, [\hat{B}, \hat{A}]] + \ldots \right)}\)</span>$
+This formula comes from the lecture video on BCH.</p></li>
+<li><p>Exponential Disentangling:</p>
+<p>The form of the identity varies depending on your problem and the
+section beginning on Module 6, page 6 provides two examples that are
+worth reviewing. The takeaway is that this procedure lets us rewrite
+an exponential of a matrix in terms of different exponentials of
+matrices that are often easier to calculate and work with.</p>
+<p>Using this identity usually requires remembering the power series
+expansion for <span class="math notranslate nohighlight">\(e^{x}\)</span>:
+$<span class="math notranslate nohighlight">\(e^{x} = \sum_{n=0}^{\infty} \frac{x^{n}}{n!} = 1 + \frac{x}{1!} + \frac{x^{2}}{2!} + \frac{x^{3}}{3!} + \ldots + \frac{x^{n}}{n!}\)</span>$
+You can use a power series to expand exponentials of operators
+(matrices) into a sum with terms that usually either truncate or
+repeat in a useful pattern.</p>
+</li>
+<li><p>Similarity Transformation of Powers (This isn’t one of the four
+identities, but it’s worth knowing; you proved this on Module 5,
+Page 28.)
+$<span class="math notranslate nohighlight">\(\hat{A}^{-1} (\hat{B})^{n} \hat{A} = \left( \hat{A}^{-1} \hat{B} \hat{A} \right)^{n}\)</span>$</p></li>
 </ul>
 <p><strong>Index</strong></p>
 <ul class="simple">
@@ -706,6 +882,53 @@ document.write(`
 </ol>
 </li>
 </ul>
+<p><strong>M7: Notes/Math Definitions</strong></p>
+<ul class="simple">
+<li><p>Angular momentum, <span class="math notranslate nohighlight">\(\hat{\vec{L}}=\hat{\overrightarrow{\vec{r}}} \times \hat{\vec{p}}\)</span></p></li>
+<li><p>Any quantity that obeys these cyclical commutator relations is an angular momentum: <span class="math notranslate nohighlight">\(\left[\hat{L}_{x}, \hat{L}_{y}\right]= i \hbar \hat{L}_{z},\left[\hat{L}_{y}, \hat{L}_{z}\right]=i \hbar \hat{L}_{x}\)</span>, and <span class="math notranslate nohighlight">\(\left[\hat{L}_{z}, \hat{L}_{x}\right]=i \hbar \hat{L}_{y}\)</span>. For example, spin angular momentum also obeys these commutator relations, and therefore has analagous eigenvector-eigenvalue relationships to <span class="math notranslate nohighlight">\(\overrightarrow{\hat{L}}\)</span>.</p></li>
+<li><p>Eigenvector-eigenvalue relationships for angular momentum:
+$<span class="math notranslate nohighlight">\(\overrightarrow{\hat{L}^{2}}|l, m\rangle=\hbar^{2} l(l+1)|l, m\rangle \text { and } \hat{L}_{z}|l, m\rangle=\hbar m|l, m\rangle\)</span>$</p></li>
+<li><p>Note that we showed that <span class="math notranslate nohighlight">\(\hbar^{2}\left[l(l+1)-m^{2}\right] \geq 0\)</span>, which implies that the maximum value of <span class="math notranslate nohighlight">\(m\)</span> is <span class="math notranslate nohighlight">\(l\)</span>, and the minimum value of <span class="math notranslate nohighlight">\(m\)</span> is <span class="math notranslate nohighlight">\(-l\)</span>.</p></li>
+<li><p>Spin: spin is “spin angular momentum”, so we look at the quantum number <span class="math notranslate nohighlight">\(s\)</span> associated with <span class="math notranslate nohighlight">\(\overrightarrow{\hat{S}}^{2}\)</span> such that the eigenvalue of that operator is <span class="math notranslate nohighlight">\(\hbar^{2} s(s+1)\)</span>.</p></li>
+<li><p>Bound states are when a quantum particle is trapped in a potential. The opposite is a continuum state where energy varies continuously and particles can escape to infinity.</p></li>
+<li><p>For bound states the following holds:</p>
+<ul>
+<li><p>Factorization chains are formed by auxiliary hamiltonians given by <span class="math notranslate nohighlight">\(\hat{H}_{i}+1=\hat{A}_{i} \hat{A}_{i}{ }^{\dagger}+E_{i}= \hat{A}_{i+1}^{\dagger} \hat{A_{i+1}}+E_{i+1}\)</span>.</p></li>
+<li><p>Intertwining gives us <span class="math notranslate nohighlight">\(\hat{H}_{i} \hat{A}_{i}^{\dagger}=\hat{A}_{i}^{\dagger} \hat{H}_{i+1}\)</span>.</p></li>
+<li><p>Ground state of the ith auxiliary hamiltonian satisfies <span class="math notranslate nohighlight">\(\hat{A}_{i}\left|\phi_{1}\right\rangle=0\)</span>. This is our subsidiary condition.</p></li>
+<li><p>The ith excited state of <span class="math notranslate nohighlight">\(\hat{H}_{0}\)</span> with every energy <span class="math notranslate nohighlight">\(E_{i}\)</span> is <span class="math notranslate nohighlight">\(\left|\psi_{1}\right\rangle=\hat{A}_{1}^{\dagger} \hat{A}_{2} . . \hat{A}_{i-1}^{\dagger}\left|\phi_{i}\right\rangle\)</span>. Note that this is an unnormalized state. Also note that we cannot have <span class="math notranslate nohighlight">\(\hat{A}_{1}=\hat{A}_{0}^{\dagger}\)</span>.</p></li>
+<li><p>The superpotential is real and continuous.</p></li>
+<li><p>Factorization is not necessarily unique.</p></li>
+<li><p>Wavefunction nodes occur when <span class="math notranslate nohighlight">\(W\left(k^{\prime} \hat{x}\right)\)</span> diverges.</p></li>
+<li><p>Node theorem helps us verify that factorization gave us all the solutions.</p></li>
+</ul>
+</li>
+<li><p>We define radial momentum as <span class="math notranslate nohighlight">\(\hat{P}_{r}=\frac{1}{2} \frac{\hat{r}}{\hat{r}} \cdot \hat{\vec{P}}+\hat{\vec{P}} \cdot \frac{\vec{r}}{\hat{r}}\)</span>. We also have the following commutation relations, which yield <span class="math notranslate nohighlight">\(\hat{P}_{r}=\frac{\hat{\vec{r}}}{\hat{r}} \cdot \hat{\vec{p}}-\frac{i \hbar}{\hat{r}}\)</span>.
+<span class="math notranslate nohighlight">\(-\left[\hat{P}_{\alpha}, \hat{r}\right]=-i \hbar \frac{\hat{r}_{\alpha}}{\hat{r}}\)</span>
+<span class="math notranslate nohighlight">\(-\left[P_{\alpha}, \frac{1}{\hat{r}}\right]=i \hbar \frac{\hat{r}_{\alpha}}{\hat{r}^{3}}\)</span>
+<span class="math notranslate nohighlight">\(-\left[\hat{r}, \hat{P}_{r}\right]=i \hbar\)</span></p>
+<ul>
+<li><p>Note that <span class="math notranslate nohighlight">\(\hat{P}_{r}\)</span> is not an observable! It does not have a complete set of eigenstates, and it does not have all real eigenvalues.</p></li>
+</ul>
+</li>
+<li><p>Kinetic Energy separation of variables into radial and angular momentum: <span class="math notranslate nohighlight">\(K E=\frac{\hat{P}_{r}^{2}}{2 m}+\frac{\hat{\vec{L}^{2}}}{2 \hat{r}^{2}}\)</span></p></li>
+<li><p>Isotropic SHO: <span class="math notranslate nohighlight">\(\hat{H}=\frac{\hat{P}_{r}^{2}}{2 m}+\frac{\hat{\overrightarrow{L^{2}}}}{2 M \hat{r}^{2}}+\frac{1}{2} m \omega^{2} \hat{\overrightarrow{r^{2}}}\)</span>.</p>
+<ul>
+<li><p>We construct the states <span class="math notranslate nohighlight">\(|\psi\rangle=\left|\psi_{r}\right\rangle \otimes|l, m\rangle\)</span> and get <span class="math notranslate nohighlight">\(\hat{H}=|\psi\rangle-\hat{H}_{l}\left|\psi_{r}\right\rangle \otimes|l, m\rangle\)</span> where <span class="math notranslate nohighlight">\(\hat{H}_{l}= \frac{\hat{P}_{r}^{2}}{2 m}+\frac{\hbar^{2} l(l+1)}{2 m \hat{r}^{2}}+\frac{1}{2} m \omega^{2} \hat{\vec{r}}^{2}\)</span></p></li>
+<li><p>We have the eigenvector/value relationship: <span class="math notranslate nohighlight">\(\left.\hat{H}_{l}\left|\psi_{n l}=E_{n l}\right| \psi_{n l}\right\rangle\)</span> where <span class="math notranslate nohighlight">\(n\)</span> is the principal quantum number.</p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> allows us to distinguish different energy eigenstates with the same <span class="math notranslate nohighlight">\(l\)</span> value; the energies do not depend on <span class="math notranslate nohighlight">\(m\)</span>.</p></li>
+<li><p>Properties of superpotential: superpotential must be positive as <span class="math notranslate nohighlight">\(r\)</span> goes to <span class="math notranslate nohighlight">\(\infty\)</span>; as <span class="math notranslate nohighlight">\(r\)</span> goes to 0 , the superpotential diverges with negative coefficients.</p></li>
+</ul>
+</li>
+<li><p>Hydrogen</p>
+<ul>
+<li><p>Hamiltonian for Hydrogen: <span class="math notranslate nohighlight">\(\hat{H}=\frac{\hat{\vec{P}}^{2}}{2 \mu}-\frac{e^{2}}{\hat{r}}\)</span> where <span class="math notranslate nohighlight">\(\mu=\frac{m_{e} m_{p}}{m_{e}+m_{p}}\)</span></p></li>
+<li><p>We can use separation of variables to get: <span class="math notranslate nohighlight">\(\hat{H}=\frac{\hat{P}_{r}^{2}}{2 \mu}+\frac{\hat{\vec{L}}^{2}}{2 \mu \hat{r}^{2}}-\frac{e^{2}}{\hat{r}}\)</span></p></li>
+<li><p>In this problem we denote our ladder operators <span class="math notranslate nohighlight">\(B_{r}(l)\)</span> and we say that <span class="math notranslate nohighlight">\(\hat{H}_{l}=\hat{B}_{r}^{\dagger}(l) \hat{B}_{r}(l)+E_{l}^{a u x}\)</span></p></li>
+<li><p>For intertwining we find: <span class="math notranslate nohighlight">\(\hat{B}_{r}(l) \hat{B}_{r}^{\dagger}(l)+E_{l}=\hat{H}_{l+1}\)</span></p></li>
+</ul>
+</li>
+</ul>
 <p><strong>Index</strong></p>
 <ul class="simple">
 <li><p>Angular momentum, M7, p1, M7, p12</p></li>
@@ -788,6 +1011,40 @@ document.write(`
 </ol>
 </li>
 </ul>
+<p><strong>M8: Notes/Math Definitions</strong></p>
+<ul class="simple">
+<li><p>Virial theorem: <span class="math notranslate nohighlight">\(\hat{r} \hat{p}_{r}\)</span> is what we call the virial. This theorem tells us that the expectation value of the potential energy is equal to the expectation value of the kinetic energy for SHO . So we can write, <span class="math notranslate nohighlight">\(\langle P E\rangle=\langle K E\rangle=\frac{1}{2}\left\langle\mathrm{E}_{\text {total }}\right\rangle\)</span></p></li>
+<li><p>First order perterbation theory:</p>
+<ul>
+<li><p>The variational method: A method of approximation that we can also use to solve problems exactly. For example, we take the SHO Hamiltonian and perturb it to obtain <span class="math notranslate nohighlight">\(\hat{H(\delta)}=\frac{\hat{p}^{2}}{2 m}+\frac{1}{2} k(1+ \delta) \hat{x}^{2}\)</span>. We can expand the energy in a Taylor series, and we then say that <span class="math notranslate nohighlight">\(\left.E_{n}(\delta) \approx\left\langle\psi_{n}^{0}\right| \hat{H}(\delta)\right)\left|\psi_{n}^{0}\right\rangle\)</span>, where the <span class="math notranslate nohighlight">\(\left|\psi_{n}^{0}\right\rangle\)</span> is the unperturbed eigenstate. After solving for <span class="math notranslate nohighlight">\(E_{n}(\delta)\)</span>, this gives the correct first order approximation.</p></li>
+<li><p>Feynman - Hellman Theorem: <span class="math notranslate nohighlight">\(\frac{d E(\lambda)}{d \lambda}=\langle\psi(\lambda)| \frac{d \hat{H}(\lambda)}{d \lambda}|\psi(\lambda)\rangle\)</span>, where <span class="math notranslate nohighlight">\(\lambda\)</span> is some parameter.</p></li>
+</ul>
+</li>
+<li><p>Kramers-Pasternack relation:
+$<span class="math notranslate nohighlight">\(
+\frac{2 m}{n^{2} a_{0}^{2}}\langle n l| \hat{r}^{m-1}|n l\rangle=\frac{2(2 m-1)}{a_{0}}\langle n l| \hat{r}^{m-2}|n l\rangle-\frac{1}{2}(m-1)\left(\left(2 l^{2}+1\right)^{2}-(m-1)^{2}\right)\langle n l| \hat{r}^{m-3}|n l\rangle
+\)</span>$</p></li>
+<li><p>Hyperfine structure of Hydrogen:</p>
+<ul>
+<li><p>We calculate the Hamiltonian of the magnetic interactions between the proton and the electron by determining the magnetic field due to the proton at the location of the electron and find it to be <span class="math notranslate nohighlight">\(\Delta \hat{H}=\frac{g g_{p} \mu_{B}^{2} m_{e} \mu_{0}}{4 \pi m_{p} \hbar^{2}}\left(\frac{3 \hat{\vec{S}}_{e} \cdot \hat{\vec{r}} \hat{\vec{S}}_{p} \cdot \hat{\vec{r}}}{\hat{r}^{5}}-\frac{\hat{\vec{S}}_{e} \cdot \hat{\vec{S}}_{p}}{\hat{r}^{3}}+\frac{8 \pi}{3} \hat{\vec{S}}_{e} \cdot \hat{\vec{S}}_{p} \delta(\hat{\vec{r}})\right)\)</span></p></li>
+<li><p>We then calculate the expectation value of <span class="math notranslate nohighlight">\(\Delta \hat{H}\)</span> with the state <span class="math notranslate nohighlight">\(|P s i\rangle=|n l\rangle \otimes|l m\rangle \otimes\left|s^{e}\right\rangle \otimes\left|s_{p}\right\rangle\)</span>, which works out to be <span class="math notranslate nohighlight">\(\Delta \hat{H}=\frac{2 g g_{p} \mu_{B}^{2} m_{e} \mu_{0}}{3 \pi m_{p} \hbar^{2} a_{0}^{3}}\left\langle s_{e}\right| \otimes\left\langle s_{p}\right| \hat{\vec{S}}_{e} \cdot \hat{\vec{S}}_{p}\left|s_{e}\right\rangle \otimes\left|s_{p}\right\rangle\)</span>.</p></li>
+<li><p>Using the eigenvalues of <span class="math notranslate nohighlight">\(\hat{\overrightarrow{S_{e}}} \cdot \hat{\overrightarrow{S_{p}}}\)</span> for the singlet and triplet states, we conclude that <span class="math notranslate nohighlight">\(\Delta E_{\text {singlet-triplet }}= \frac{2 g g_{p} \mu_{B}^{2} m_{e} \mu_{0}}{3 \pi m_{p} a_{0}^{3}}\)</span></p></li>
+<li><p>In astronomy, hyperfine hydrogen transitions can tell us how fast objects in space are moving using the red shift from the Doppler effect</p></li>
+<li><p>Energy splitting in hydrogen is one of the most accurately measured results with about 13 digits of accuracy. It is measured in a hydrogen maser, an atomic clock similar to a laser.</p></li>
+</ul>
+</li>
+<li><p>Second-order perturbation theory:</p>
+<ul>
+<li><p>Now, we write our perturbed Hamiltonian as <span class="math notranslate nohighlight">\(H \hat{( } \lambda)=\hat{H}_{0}+\lambda V(\hat{x})\)</span>, which has energy eigenvalues <span class="math notranslate nohighlight">\(E_{n}(\lambda)\)</span></p></li>
+<li><p>Then we expand the energy as
+$<span class="math notranslate nohighlight">\(E_{n}(\lambda)=E_{n}(0)+\left.\lambda \frac{d E_{n}(\lambda)}{d \lambda}\right|_{\lambda=0}+\left.\frac{\lambda^{2}}{2} \frac{d^{2} E_{n}(\lambda)}{d \lambda^{2}}\right|_{\lambda=0}+\ldots\)</span>$</p></li>
+<li><p>We then must calculate that second derivative and use it to find the second-order approximation of the energy, which is done in detail in lecture</p></li>
+</ul>
+</li>
+<li><p>Proton charge radius: In our Hydrogen calculations, we assumed the nucleus was a point charge, but this is not quite accurate. We are able to calculate how the size of the nucleus affects the energy levels of Hydrogen and how they shift, telling us how accurate our measurements must be to determine the size of the nucleus.</p></li>
+<li><p>Schrodinger equation: <span class="math notranslate nohighlight">\(\frac{-\hbar^{2}}{2 m} \psi^{\prime \prime}(\hat{x})+V(\hat{x}) \psi(\hat{x})=E \psi(\hat{x})\)</span></p></li>
+<li><p>Note that all one-dimensional potentials that approach 0 for large arguments, are nonpositive, and are piecewise continuous have a bound state</p></li>
+</ul>
 <p><strong>Index</strong></p>
 <ul class="simple">
 <li><p>Bound states, M8, p19, M8, p20, M8, p21, M8, p22, M8, p23</p></li>
@@ -820,6 +1077,18 @@ document.write(`
 </ol>
 </li>
 </ul>
+<p><strong>M9: Notes/Math Definitions</strong></p>
+<ul class="simple">
+<li><p>Time dependence of coherent states: We showed that the time evolution of of <span class="math notranslate nohighlight">\(|\alpha\rangle\)</span>, which we denote as <span class="math notranslate nohighlight">\(|\alpha(t)\rangle\)</span>, follows by simply time evolving the parameter <span class="math notranslate nohighlight">\(\alpha\)</span> via <span class="math notranslate nohighlight">\(\alpha \rightarrow \alpha e^{-i \omega t}\)</span> plus an additional timedependent complex phase, but that phase ends up not contributing to expectation values, so it is not very important).</p></li>
+<li><p>Maxwell’s Equations and Waves</p>
+<ul>
+<li><p>Recall that we can write standing waves in the form <span class="math notranslate nohighlight">\(A e^{i \vec{k} x-i \omega t}\)</span></p></li>
+<li><p>We denote the classical electric field as <span class="math notranslate nohighlight">\(\vec{E}(\vec{r}, t)=\sum_{l}\left(\vec{\varepsilon}_{l} E_{l}(t) e^{i \vec{k}_{l} \cdot \vec{r}}+\right.\)</span> c.c. <span class="math notranslate nohighlight">\()\)</span>, where index <span class="math notranslate nohighlight">\(l\)</span> denotes the mode for the wave, <span class="math notranslate nohighlight">\(\vec{k}_{l}\)</span> is its wavevector, <span class="math notranslate nohighlight">\(\vec{\varepsilon}_{l}\)</span> is its polarization and <span class="math notranslate nohighlight">\(E_{l}(t)\)</span> is its amplitude (which can be complex).</p></li>
+<li><p>We arrived at the final results for the electric and magnetic fields: <span class="math notranslate nohighlight">\(\vec{E}(\vec{r}, t)=\sum_{l} \vec{\varepsilon}_{l} E_{l}(0) e^{i \vec{k}_{l} \cdot \vec{r}-i \omega_{l} t}+ c c\)</span> and <span class="math notranslate nohighlight">\(\vec{B}(\vec{r}, t)=\sum_{l} \frac{\vec{k}_{l} \times \vec{\varepsilon}_{l}}{\omega_{l}} E_{l}(0) e^{i \vec{k}_{l} \cdot \vec{r}-i \omega_{l} t}+c c\)</span></p></li>
+<li><p>In class, you used these results to calculate the energy stored by quantized light in a very large box. Refer to Module 9, Page 13.</p></li>
+</ul>
+</li>
+</ul>
 <p><strong>Index</strong></p>
 <ul class="simple">
 <li><p>Anharmonic oscillator, M9, p6</p></li>
@@ -844,6 +1113,34 @@ document.write(`
 <ul class="simple">
 <li><p>This week explains what a photon is, how we measure them, and how we can tell we have a single-photon source of light. It also discusses how the laser interferometry gravitational-wave observatory works.</p></li>
 <li><p>No one should finish a quantum-mechanics class without knowing what a photon is. We describe how single photons are detected, what squeezed light is and how LIGO can measure distances small enough that it can detect gravitational waves.</p></li>
+</ul>
+<p><strong>M10: Notes/Math Definitions</strong></p>
+<ul class="simple">
+<li><p>General principles of the photon:</p>
+<ul>
+<li><p>The have definite particle number, but not definite energy/frequency.</p></li>
+<li><p>They have a finite extent in time.</p></li>
+<li><p>They can be detected only once.</p></li>
+<li><p>They are detected as a discrete package, always the same size.</p></li>
+<li><p>They show interference patterns after many are collected.</p></li>
+</ul>
+</li>
+<li><p>Heterodyne detection: used to amplify a weak signal and also to reduce the oscillation rate by using the phenomenon of beats</p>
+<ul>
+<li><p>Refer to page Module 10, page 7 for the experimental set up.</p></li>
+<li><p>Initial state: <span class="math notranslate nohighlight">\(\left|\psi_{i n}\right\rangle=\left|\alpha_{1}(t)\right\rangle \otimes\left|\alpha_{2}(t)\right\rangle\)</span></p></li>
+<li><p>Ultimately, we find the following final expression for the electrical current output: <span class="math notranslate nohighlight">\(i_{4}(t)= 2|t|^{2} e \eta \Phi_{1}^{\text {phot }}\left(1-\cos \left(\left(\omega_{1}-\omega_{2}\right) t-\phi_{1}+\phi_{2}\right)\right.\)</span></p></li>
+</ul>
+</li>
+<li><p>Homodyne detection: Here we pick <span class="math notranslate nohighlight">\(\omega_{1}=\omega_{2}, \epsilon_{1}=\epsilon_{2}\)</span>, and <span class="math notranslate nohighlight">\(r=t=\frac{1}{\sqrt{2}}\)</span>.</p>
+<ul>
+<li><p>Refer to Module 10, page 8 for the experimental set up.</p></li>
+<li><p>Using the experimental set up shown we can write the raising and lowering operators at each output port: <span class="math notranslate nohighlight">\(\hat{a}_{3}=r \hat{a_{1}}+t \hat{a_{2}}\)</span> and <span class="math notranslate nohighlight">\(\hat{a_{4}}=t \hat{a_{1}}-r \hat{a_{2}}\)</span>, where <span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(t\)</span> are the reflection and transmission coefficients, respectively. Note that when light is reflected through glass, we accumulate a <span class="math notranslate nohighlight">\(180^{\circ}\)</span> phase difference, hence the negative sign.</p></li>
+<li><p>We then have that <span class="math notranslate nohighlight">\(\hat{N_{3}}=\hat{a_{3}}{ }^{\dagger} \hat{a_{3}}\)</span> and <span class="math notranslate nohighlight">\(\hat{N}_{4}=\hat{a_{4}}{ }^{\dagger} \hat{a_{4}}\)</span>, where these are the number operators at the output ports.</p></li>
+</ul>
+</li>
+<li><p>LIGO (laser interferometry gravitational-wave observatory) uses two Michelson-Morely type interferometers. LIGO uses squeezed light to yield high precision measurements: to get high accuracy, we want to time our measurements to precisely the points in time where the uncertainty is minimal.</p></li>
+<li><p>LIGO uses the <span class="math notranslate nohighlight">\(\hat{P}\)</span> quadrature operator which measures light near its zero (the <span class="math notranslate nohighlight">\(\hat{Q}\)</span> quadrature operator measures light near its maximum amplitude).</p></li>
 </ul>
 <p><strong>Index</strong></p>
 <ul class="simple">
