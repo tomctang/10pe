@@ -522,6 +522,9 @@ For example, one can form a linear combination using addition and scalar multipl
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="_images/2cdd1684ee13cd1adc3eeaff74ad9056701c98b508f9ace1efd5af5d5090229b.png" src="_images/2cdd1684ee13cd1adc3eeaff74ad9056701c98b508f9ace1efd5af5d5090229b.png" />
+</div>
 </div>
 <p>Bras can be created using the <code class="docutils literal notranslate"><span class="pre">Bra</span></code> class directly or by using the <code class="docutils literal notranslate"><span class="pre">Dagger</span></code> class
 on an expression involving kets:</p>
@@ -530,6 +533,9 @@ on an expression involving kets:</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ip</span> <span class="o">=</span> <span class="n">Dagger</span><span class="p">(</span><span class="n">state</span><span class="p">)</span><span class="o">*</span><span class="n">state</span><span class="p">;</span> <span class="n">ip</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/9d3e286b4a5cd36ff7339d47877b0782a73d88fb7d03269ca5dafc5feb9b7034.png" src="_images/9d3e286b4a5cd36ff7339d47877b0782a73d88fb7d03269ca5dafc5feb9b7034.png" />
 </div>
 </div>
 <p>Because this is a standard SymPy expression, we can use standard SymPy functions and methods
@@ -540,6 +546,9 @@ by <code class="docutils literal notranslate"><span class="pre">qapply</span></c
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">qapply</span><span class="p">(</span><span class="n">expand</span><span class="p">(</span><span class="n">ip</span><span class="p">))</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/25677df56609798f5fa3a77785fcf0a5ded017f0e6ba32e1df93844674787de5.png" src="_images/25677df56609798f5fa3a77785fcf0a5ded017f0e6ba32e1df93844674787de5.png" />
 </div>
 </div>
 </section>
@@ -564,6 +573,9 @@ multiplication/composition as is seen by expanding a polynomial of operators:</p
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="_images/cc63d34b63726cbb565db9f73d9826207f30a0441d8bb1fc351888e4ff82d9d8.png" src="_images/cc63d34b63726cbb565db9f73d9826207f30a0441d8bb1fc351888e4ff82d9d8.png" />
+</div>
 </div>
 <p>Commutators of operators can also be created:</p>
 <div class="cell docutils container">
@@ -571,6 +583,9 @@ multiplication/composition as is seen by expanding a polynomial of operators:</p
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">comm</span> <span class="o">=</span> <span class="n">Commutator</span><span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">B</span><span class="p">,</span><span class="n">B</span><span class="o">+</span><span class="n">C</span><span class="p">);</span> <span class="n">comm</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/37e8ec20e3df5d759010fc20a50ee4c394a8b3e2ce514c7a1f2981321c65e4e6.png" src="_images/37e8ec20e3df5d759010fc20a50ee4c394a8b3e2ce514c7a1f2981321c65e4e6.png" />
 </div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">expand</span></code> function has custom logic for expanding commutators using standard commutator
@@ -581,6 +596,9 @@ relations:</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="_images/8635d06d6aa0e742618cf8f483cf705b6abe3e38a3efdd37596204fcd59aa0f4.png" src="_images/8635d06d6aa0e742618cf8f483cf705b6abe3e38a3efdd37596204fcd59aa0f4.png" />
+</div>
 </div>
 <p>Any commutator can be performed (<span class="math notranslate nohighlight">\([A,B]\rightarrow AB-BA\)</span>) using the <code class="docutils literal notranslate"><span class="pre">doit</span></code> method:</p>
 <div class="cell docutils container">
@@ -588,6 +606,9 @@ relations:</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span><span class="o">.</span><span class="n">doit</span><span class="p">()</span><span class="o">.</span><span class="n">expand</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/a1205c77f5113525c68795e8b0f4fed2de3f232ab6b1e6d854b5a46d522d03cc.png" src="_images/a1205c77f5113525c68795e8b0f4fed2de3f232ab6b1e6d854b5a46d522d03cc.png" />
 </div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">Dagger</span></code> class also works with operators and is aware of the properties of unitary
@@ -597,6 +618,9 @@ and hermitian operators:</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Dagger</span><span class="p">(</span><span class="n">_</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/a91e0f42c7061fd37fb9c3a8df4bca76f446f1a6331e90c83b6ebb042cba7eb2.png" src="_images/a91e0f42c7061fd37fb9c3a8df4bca76f446f1a6331e90c83b6ebb042cba7eb2.png" />
 </div>
 </div>
 </section>
@@ -611,6 +635,9 @@ and hermitian operators:</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="_images/97b24d4e01db090a73b2c72d5fa8be783a71ee237222b271aab9349507415e9c.png" src="_images/97b24d4e01db090a73b2c72d5fa8be783a71ee237222b271aab9349507415e9c.png" />
+</div>
 </div>
 <p>Once a tensor product has been created, it can be simplified,</p>
 <div class="cell docutils container">
@@ -619,6 +646,24 @@ and hermitian operators:</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_72469/1014556276.py:1: SymPyDeprecationWarning: 
+
+tensor_product_simp has been deprecated. The transformations
+performed by this function are now done automatically when
+tensor products are combined.
+
+See https://docs.sympy.org/latest/explanation/active-deprecations.html#deprecated-tensorproduct-simp
+for details.
+
+This has been deprecated since SymPy version 1.14. It
+will be removed in a future version of SymPy.
+
+  tensor_product_simp(_)
+</pre></div>
+</div>
+<img alt="_images/97b24d4e01db090a73b2c72d5fa8be783a71ee237222b271aab9349507415e9c.png" src="_images/97b24d4e01db090a73b2c72d5fa8be783a71ee237222b271aab9349507415e9c.png" />
+</div>
 </div>
 <p>and expanded:</p>
 <div class="cell docutils container">
@@ -626,6 +671,9 @@ and hermitian operators:</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expand</span><span class="p">(</span><span class="n">_</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/07fd9c22ab75b44cf3356bd0161485c6a1ac93fa73604a495d4fb4b4d7e47ff3.png" src="_images/07fd9c22ab75b44cf3356bd0161485c6a1ac93fa73604a495d4fb4b4d7e47ff3.png" />
 </div>
 </div>
 </section>

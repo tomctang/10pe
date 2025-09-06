@@ -382,6 +382,25 @@ document.write(`
 <h1>Codeforces Testing<a class="headerlink" href="#codeforces-testing" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 791A - Bear and Big Brother</span>
+<span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<span class="n">n</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">while</span> <span class="n">a</span><span class="o">&lt;=</span><span class="n">b</span><span class="p">:</span>
+    <span class="n">a</span><span class="o">*=</span><span class="mi">3</span>
+    <span class="n">b</span><span class="o">*=</span><span class="mi">2</span>
+    <span class="n">n</span><span class="o">+=</span><span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 339A - Helpful Maths</span>
 <span class="n">string</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
 <span class="n">num</span><span class="o">=</span><span class="p">[]</span>
@@ -413,6 +432,40 @@ document.write(`
     <span class="k">else</span><span class="p">:</span>
         <span class="n">x</span><span class="o">-=</span><span class="mi">1</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 281A - Word Capitalization</span>
+<span class="n">lst</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="n">lst</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="n">lst</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lst</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Konjac
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 266A - Stones on the Table</span>
+<span class="n">n</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="n">stones</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="n">count</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">stones</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="n">stones</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]:</span>
+        <span class="n">count</span><span class="o">+=</span><span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

@@ -534,13 +534,19 @@ document.write(`
 
 <span class="n">psi</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">)</span> <span class="o">=</span> <span class="n">A_0</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="n">omega</span><span class="o">*</span><span class="n">t</span><span class="p">))</span>  <span class="c1">#This is a how you define a function.  Arguments of the function are placed in parentheses.</span>
 <span class="n">psi</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">)</span> <span class="c1"># When a function is defined SageMath does not output the equation.  </span>
-<span class="n">psi</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> 
+<span class="n">s</span><span class="p">(</span><span class="n">psi</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">))</span>
 
 <span class="n">psi</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>  <span class="c1">#Functions are evaluated by plugging in values for the arguments.  </span>
             <span class="c1"># Notice that the wave function at x=0, t=0 has the value of A_0</span>
 <span class="n">s</span><span class="p">(</span><span class="n">psi</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>  <span class="c1">#Nicer looking output</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle A_{0} e^{\left(-i \, \omega t + i \, k x\right)} \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle A_{0} \qquad   \]</div>
 </div>
 </div>
 </section>
@@ -576,6 +582,9 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="_images/85193187d47e95c895f1e62f11a1d87dcec41b35b0e8d81c340a9b3cd3e37e77.png" src="_images/85193187d47e95c895f1e62f11a1d87dcec41b35b0e8d81c340a9b3cd3e37e77.png" />
+</div>
 </div>
 </section>
 <section id="for-you-to-try">
@@ -608,10 +617,30 @@ document.write(`
 
 <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">times</span><span class="p">:</span>    <span class="c1">#Loop through all times</span>
     <span class="n">new_plot</span><span class="o">=</span><span class="n">plot</span><span class="p">(</span><span class="n">psi_plot_Re</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">),</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span><span class="o">+</span><span class="n">plot</span><span class="p">(</span><span class="n">psi_plot_Im</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">),</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>   <span class="c1">#Create plot at time t for each value of t</span>
-    <span class="n">plot_graph</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_plot</span><span class="p">)</span>    <span class="c1">#Add the new plot to the final list</span>
+    <span class="n">plot_graph</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_plot</span><span class="p">)</span>  <span class="c1"># rgba(170, 221, 221, 1) the new plot to the final list</span>
 
 <span class="n">a</span><span class="o">=</span><span class="n">animate</span><span class="p">(</span><span class="n">plot_graph</span><span class="p">)</span>    <span class="c1">#Combine all plots contained in plot_graph into an animation</span>
-<span class="n">a</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>  <span class="c1">#Show the animation</span>
+<span class="n">show</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>  <span class="c1">#Show the animation</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/tom/miniconda3/envs/sage/lib/python3.12/site-packages/sage/repl/rich_output/display_manager.py:594: RichReprWarning: Exception in _rich_repr_ while displaying object: Error: Neither ImageMagick nor ffmpeg appear to be installed. Saving an animation to a GIF file or displaying an animation requires one of these packages, so please install one of them and try again. See www.imagemagick.org and www.ffmpeg.org for more information.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output text_html"><html>\(\displaystyle \verb|Animation|\verb| |\verb|with|\verb| |\verb|10|\verb| |\verb|frames|\)</html></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_graph</span> <span class="o">=</span> <span class="p">[</span><span class="n">plot</span><span class="p">(</span><span class="n">psi_plot_Re</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">),</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span><span class="o">+</span><span class="n">plot</span><span class="p">(</span><span class="n">psi_plot_Im</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">),</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">sxrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mf">.5</span><span class="p">)]</span>
+<span class="n">a</span><span class="o">=</span><span class="n">animate</span><span class="p">(</span><span class="n">plot_graph</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Animation with 10 frames
 </pre></div>
 </div>
 </div>
@@ -655,11 +684,18 @@ a.show()
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The probability density rho(x,t) for a free partile is&#39;</span><span class="p">,</span> <span class="n">rho</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">))</span>
 
 <span class="c1">#You can typeset the print statement using Latex by calling &#39;s()&#39;...</span>
-<span class="n">show</span><span class="p">(</span><span class="s1">&#39;The probability density $</span><span class="se">\\</span><span class="s1">rho(x,t)$ for a free particle is&#39;</span><span class="p">,</span> <span class="n">rho</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">))</span>
+<span class="n">s</span><span class="p">(</span><span class="s1">&#39;The probability density $</span><span class="se">\\</span><span class="s1">rho(x,t)$ for a free particle is&#39;</span><span class="p">,</span> <span class="n">rho</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">))</span>
 
 <span class="c1">#Notice that print only requires quote marks around text while s() uses parentheses and quote marks</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The probability density rho(x,t) for a free partile is A_0^2
+</pre></div>
+</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \text{\texttt{The{ }probability{ }density{ }{\char`\$}{\char`\\}rho(x,t){\char`\$}{ }for{ }a{ }free{ }particle{ }is}} \qquad   A_{0}^{2} \qquad   \end{split}\]</div>
 </div>
 </div>
 </section>

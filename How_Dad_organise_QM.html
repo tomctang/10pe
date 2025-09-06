@@ -393,15 +393,98 @@ document.write(`
 <h1><span class="section-number">15. </span>How Dad learn QM<a class="headerlink" href="#how-dad-learn-qm" title="Link to this heading">#</a></h1>
 <section id="pre-tips">
 <h2><span class="section-number">15.1. </span>Pre &amp; Tips<a class="headerlink" href="#pre-tips" title="Link to this heading">#</a></h2>
-<p><strong>Learning strategies</strong></p>
-<p>Two approaches of learning QM: calculus/DE way and operator/Algebraic way</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="kn">import</span>                      <span class="n">I</span><span class="p">,</span> <span class="n">symbols</span><span class="p">,</span> <span class="n">Function</span><span class="p">,</span> <span class="n">Derivative</span><span class="p">,</span> <span class="n">sqrt</span><span class="p">,</span> <span class="n">pi</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sympy.physics.quantum</span><span class="w"> </span><span class="kn">import</span>      <span class="n">Operator</span><span class="p">,</span> <span class="n">Dagger</span><span class="p">,</span> <span class="n">Commutator</span><span class="p">,</span> <span class="n">Ket</span><span class="p">,</span> <span class="n">Bra</span><span class="p">,</span> <span class="n">qapply</span><span class="p">,</span> <span class="n">Wavefunction</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sympy.physics.quantum.gate</span><span class="w"> </span><span class="kn">import</span> <span class="n">H</span><span class="p">,</span> <span class="n">X</span>  
+
+<span class="c1"># 1. Defining generic operators</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">Operator</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">Operator</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>
+
+<span class="c1"># 2. Operator algebra</span>
+<span class="n">expr</span> <span class="o">=</span> <span class="p">(</span><span class="n">A</span> <span class="o">+</span> <span class="n">B</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">s</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Expanded operator expression: </span><span class="si">{</span><span class="n">expr</span><span class="o">.</span><span class="n">expand</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># 3. Commutators</span>
+<span class="n">comm</span> <span class="o">=</span> <span class="n">Commutator</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Commutator [A, B]: </span><span class="si">{</span><span class="n">comm</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Evaluated commutator: </span><span class="si">{</span><span class="n">comm</span><span class="o">.</span><span class="n">doit</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># Evaluates to A*B - B*A</span>
+
+<span class="c1"># 4. Operators acting on states (Kets and Bras)</span>
+<span class="n">k</span> <span class="o">=</span> <span class="n">Ket</span><span class="p">(</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">Bra</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">outer_product</span> <span class="o">=</span> <span class="n">k</span> <span class="o">*</span> <span class="n">b</span>
+<span class="n">s</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Outer product: </span><span class="si">{</span><span class="n">outer_product</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Applying operators to states using qapply</span>
+<span class="c1"># Example: Applying a projection operator to a state</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">qapply</span><span class="p">(</span><span class="n">outer_product</span> <span class="o">*</span> <span class="n">b</span><span class="o">.</span><span class="n">dual</span> <span class="o">/</span> <span class="p">(</span><span class="n">b</span> <span class="o">*</span> <span class="n">b</span><span class="o">.</span><span class="n">dual</span><span class="p">))</span>
+<span class="n">s</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Applying projection: </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># 5. Differential Operators (e.g., Position and Momentum)</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">hbar</span><span class="p">,</span> <span class="n">L</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;x hbar L&quot;</span><span class="p">)</span>
+<span class="n">psi</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;psi&quot;</span><span class="p">,</span> <span class="bp">cls</span><span class="o">=</span><span class="n">Function</span><span class="p">)</span>
+
+<span class="c1"># Position operator (multiplication by x)</span>
+<span class="n">xhat</span> <span class="o">=</span> <span class="n">Operator</span><span class="p">(</span><span class="s1">&#39;xhat&#39;</span><span class="p">)</span> <span class="c1"># Represents the operator symbolically</span>
+<span class="c1"># More accurately, using DifferentialOperator for its action:</span>
+<span class="c1"># x_op_action = DifferentialOperator(x * psi(x), psi(x))</span>
+
+<span class="c1"># Momentum operator (-i*hbar*d/dx)</span>
+<span class="n">phat</span> <span class="o">=</span> <span class="n">Operator</span><span class="p">(</span><span class="s1">&#39;phat&#39;</span><span class="p">)</span> <span class="c1"># Represents the operator symbolically</span>
+<span class="c1"># More accurately, using DifferentialOperator for its action:</span>
+<span class="c1"># p_op_action = DifferentialOperator(-I * hbar * Derivative(psi(x), x), psi(x))</span>
+
+<span class="c1"># 6. Quantum Gates (from sympy.physics.quantum.gate)</span>
+<span class="n">q0</span> <span class="o">=</span> <span class="n">Ket</span><span class="p">(</span><span class="s1">&#39;0&#39;</span><span class="p">)</span> <span class="c1"># A basis state</span>
+<span class="n">h_gate</span> <span class="o">=</span> <span class="n">H</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># Hadamard gate on qubit 0</span>
+<span class="n">x_gate</span> <span class="o">=</span> <span class="n">X</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># Pauli X gate on qubit 0</span>
+
+<span class="c1"># Applying a gate to a qubit</span>
+<span class="n">applied_h</span> <span class="o">=</span> <span class="n">qapply</span><span class="p">(</span><span class="n">h_gate</span> <span class="o">*</span> <span class="n">q0</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hadamard applied to |0&gt;: </span><span class="si">{</span><span class="n">applied_h</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># 7. Dagger (Hermitian Conjugate)</span>
+<span class="n">s</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Dagger of A: </span><span class="si">{</span><span class="n">Dagger</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Dagger of Ket k: </span><span class="si">{</span><span class="n">Dagger</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \text{\texttt{A*B{ }+{ }A**2{ }+{ }B*A{ }+{ }B**2}} \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \text{\texttt{Expanded{ }operator{ }expression:{ }A*B{ }+{ }A**2{ }+{ }B*A{ }+{ }B**2}} \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \text{\texttt{Commutator{ }[A,{ }B]:{ }[A,B]}} \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \text{\texttt{Evaluated{ }commutator:{ }A*B{ }{-}{ }B*A}} \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \text{\texttt{Outer{ }product:{ }|k&gt;&lt;b|}} \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \text{\texttt{Applying{ }projection:{ }|k&gt;}} \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \text{\texttt{Hadamard{ }applied{ }to{ }|0&gt;:{ }H(0)*|0&gt;}} \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \text{\texttt{Dagger{ }of{ }A:{ }Dagger(A)}} \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \text{\texttt{Dagger{ }of{ }Ket{ }k:{ }&lt;k|}} \qquad   \]</div>
+</div>
+</div>
+<p><strong>Learning strategies</strong> - two approaches of learning QM: operator/Algebraic way and calculus/DE way</p>
 <ul class="simple">
-<li><p>Calculus way: Start from the Schrödinger equation, heavy use of integrals/DEs/special functions,</p></li>
-<li><p>Operator way: Start from states ∣𝜓⟩ in Hilbert space and operators 𝐴^ acting on them; Use Dirac notation, commutators, and operator identities instead of solving DEs; algebra-heavy (linear algebra, group theory, operator identities); clean reveals structure (symmetries, conservation laws)</p></li>
+<li><p>Operator way: Start from states ∣𝜓⟩ in Hilbert space and operators 𝐴^ acting on them; Use Dirac notation, commutators, and operator identities instead of solving DEs; algebra-heavy (linear algebra, group theory, operator identities); clean structure (symmetries, conservation laws)</p>
+<ul>
+<li><p>Our course is operator-centric, eg. spin systems, four operator identities, Schrödinger factorization and Dirac’s abstract methodology, angular momentum algebra (rotations, spherical harmonics)</p></li>
 </ul>
-<p>Our course is operator-centric, eg. spin systems, four operator identities, Schrödinger factorization and Dirac’s abstract methodology, angular momentum algebra (rotations, spherical harmonics)</p>
-<ul class="simple">
-<li><p>minor calculus elements — eg, wavefunctions in position and momentum space, spherical harmonics, variational method</p></li>
+</li>
+<li><p>Calculus way: Start from the Schrödinger equation, heavy use of integrals/DEs/special functions</p>
+<ul>
+<li><p>minor calculus elements in our course, eg. wavefunctions in position and momentum space, spherical harmonics, variational method</p></li>
+</ul>
+</li>
 </ul>
 <p><strong>Learning outcomes</strong> - upon successfully completing this course, you will:</p>
 <ul class="simple">
@@ -459,11 +542,13 @@ forget to switch the sign of complex numbers too!</p></li>
 </li>
 <li><p>A bra can be represented by a row vector, whereas a ket can be
 represented by a column vector. Operators can be represented by
-matrices.</p></li>
+matrices. A matrix is a representation of an operator in a particular basis.</p>
+<ul>
 <li><p>Eigenvectors of hermitian operators form an orthonormal basis.</p></li>
+</ul>
+</li>
 <li><p><span class="math notranslate nohighlight">\(|\uparrow\rangle_{z} = |\downarrow\rangle_{-z}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\langle \psi \mid \phi \rangle = \langle \phi \mid \psi \rangle^{*}\)</span></p></li>
-<li><p>A matrix is a representation of an operator in a particular basis.</p></li>
 </ul>
 <p><strong>Index</strong></p>
 <ul class="simple">
@@ -1209,16 +1294,16 @@ $<span class="math notranslate nohighlight">\(E_{n}(\lambda)=E_{n}(0)+\left.\lam
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "sagemath"
         },
         kernelOptions: {
-            name: "python3",
+            name: "sagemath",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'sagemath'</script>
 
                 </article>
               

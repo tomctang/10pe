@@ -403,9 +403,19 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z_0</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
 <span class="n">z_1</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="n">z_0</span><span class="p">,</span> <span class="n">z_1</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">z_0</span><span class="p">,</span> <span class="n">z_1</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left(\begin{array}{r}
+1 \\
+0
+\end{array}\right) \qquad   \left(\begin{array}{r}
+0 \\
+1
+\end{array}\right) \qquad   \end{split}\]</div>
 </div>
 </div>
 <p>We can create multiple qubit states with the tensor product.</p>
@@ -415,24 +425,59 @@ document.write(`
 <span class="n">z_01</span> <span class="o">=</span> <span class="n">z_0</span><span class="o">.</span><span class="n">tensor_product</span><span class="p">(</span><span class="n">z_1</span><span class="p">)</span>
 <span class="n">z_10</span> <span class="o">=</span> <span class="n">z_1</span><span class="o">.</span><span class="n">tensor_product</span><span class="p">(</span><span class="n">z_0</span><span class="p">)</span>
 <span class="n">z_11</span> <span class="o">=</span> <span class="n">z_1</span><span class="o">.</span><span class="n">tensor_product</span><span class="p">(</span><span class="n">z_1</span><span class="p">)</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="n">z_00</span><span class="p">,</span> <span class="n">z_01</span><span class="p">,</span> <span class="n">z_10</span><span class="p">,</span> <span class="n">z_11</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">z_00</span><span class="p">,</span> <span class="n">z_01</span><span class="p">,</span> <span class="n">z_10</span><span class="p">,</span> <span class="n">z_11</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left(\begin{array}{r}
+1 \\
+0 \\
+\hline
+ 0 \\
+0
+\end{array}\right) \qquad   \left(\begin{array}{r}
+0 \\
+1 \\
+\hline
+ 0 \\
+0
+\end{array}\right) \qquad   \left(\begin{array}{r}
+0 \\
+0 \\
+\hline
+ 1 \\
+0
+\end{array}\right) \qquad   \left(\begin{array}{r}
+0 \\
+0 \\
+\hline
+ 0 \\
+1
+\end{array}\right) \qquad   \end{split}\]</div>
 </div>
 </div>
 <p>Parallel gates can be expressed as tensor product as well.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">H</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span> <span class="o">*</span> <span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="n">H</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">H</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left(\begin{array}{rr}
+\frac{1}{2} \, \sqrt{2} &amp; \frac{1}{2} \, \sqrt{2} \\
+\frac{1}{2} \, \sqrt{2} &amp; -\frac{1}{2} \, \sqrt{2}
+\end{array}\right) \qquad   \end{split}\]</div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">H_p_I</span> <span class="o">=</span> <span class="n">H</span><span class="o">.</span><span class="n">tensor_product</span><span class="p">(</span><span class="n">identity_matrix</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="n">H_p_I</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">H_p_I</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -444,7 +489,7 @@ document.write(`
                <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
                <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
                <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="n">CNOT</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">CNOT</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -456,7 +501,7 @@ document.write(`
 <span class="n">b_01</span> <span class="o">=</span> <span class="n">CNOT</span> <span class="o">*</span> <span class="n">H_p_I</span> <span class="o">*</span> <span class="n">z_01</span>
 <span class="n">b_10</span> <span class="o">=</span> <span class="n">CNOT</span> <span class="o">*</span> <span class="n">H_p_I</span> <span class="o">*</span> <span class="n">z_10</span>
 <span class="n">b_11</span> <span class="o">=</span> <span class="n">CNOT</span> <span class="o">*</span> <span class="n">H_p_I</span> <span class="o">*</span> <span class="n">z_11</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="n">b_00</span><span class="p">,</span> <span class="n">b_01</span><span class="p">,</span> <span class="n">b_10</span><span class="p">,</span> <span class="n">b_11</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">b_00</span><span class="p">,</span> <span class="n">b_01</span><span class="p">,</span> <span class="n">b_10</span><span class="p">,</span> <span class="n">b_11</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -479,7 +524,7 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">b_i</span> <span class="ow">in</span> <span class="p">[</span><span class="n">b_00</span><span class="p">,</span> <span class="n">b_01</span><span class="p">,</span> <span class="n">b_10</span><span class="p">,</span> <span class="n">b_11</span><span class="p">]:</span>
     <span class="k">for</span> <span class="n">b_j</span> <span class="ow">in</span> <span class="p">[</span><span class="n">b_00</span><span class="p">,</span> <span class="n">b_01</span><span class="p">,</span> <span class="n">b_10</span><span class="p">,</span> <span class="n">b_11</span><span class="p">]:</span>
         <span class="k">if</span> <span class="n">b_i</span> <span class="o">!=</span> <span class="n">b_j</span><span class="p">:</span>
-            <span class="n">pretty_print</span><span class="p">(</span><span class="n">b_i</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">b_j</span><span class="p">)</span>
+            <span class="n">s</span><span class="p">(</span><span class="n">b_i</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">b_j</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -492,7 +537,7 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f_0</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
 <span class="n">f_1</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="n">f_0</span><span class="p">,</span> <span class="n">f_1</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">f_0</span><span class="p">,</span> <span class="n">f_1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -502,8 +547,8 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z_0</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
 <span class="n">z_1</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="n">f_0</span> <span class="o">*</span> <span class="n">z_0</span><span class="p">,</span> <span class="n">f_0</span> <span class="o">*</span> <span class="n">z_1</span><span class="p">)</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="n">f_1</span> <span class="o">*</span> <span class="n">z_0</span><span class="p">,</span> <span class="n">f_1</span> <span class="o">*</span> <span class="n">z_1</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">f_0</span> <span class="o">*</span> <span class="n">z_0</span><span class="p">,</span> <span class="n">f_0</span> <span class="o">*</span> <span class="n">z_1</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">f_1</span> <span class="o">*</span> <span class="n">z_0</span><span class="p">,</span> <span class="n">f_1</span> <span class="o">*</span> <span class="n">z_1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -511,8 +556,8 @@ document.write(`
 <p>We can show easily that these operations are not unitary. Multiplying a unitary matrix with its conjugate transposed results in the unit matrix.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pretty_print</span><span class="p">(</span><span class="n">f_0</span> <span class="o">*</span> <span class="n">f_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">())</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="n">f_1</span> <span class="o">*</span> <span class="n">f_1</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">(</span><span class="n">f_0</span> <span class="o">*</span> <span class="n">f_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">())</span>
+<span class="n">s</span><span class="p">(</span><span class="n">f_1</span> <span class="o">*</span> <span class="n">f_1</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -545,7 +590,7 @@ which can be seen as a manual to construct the matrix <span class="math notransl
                   <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
                   <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
                   <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="n">zero_rev</span><span class="p">,</span> <span class="n">one_rev</span><span class="p">,</span> <span class="n">id_rev</span><span class="p">,</span> <span class="n">not_rev</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">zero_rev</span><span class="p">,</span> <span class="n">one_rev</span><span class="p">,</span> <span class="n">id_rev</span><span class="p">,</span> <span class="n">not_rev</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -557,7 +602,7 @@ which can be seen as a manual to construct the matrix <span class="math notransl
 <span class="n">z_1</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">op</span> <span class="ow">in</span> <span class="p">[</span><span class="n">zero_rev</span><span class="p">,</span> <span class="n">one_rev</span><span class="p">,</span> <span class="n">id_rev</span><span class="p">,</span> <span class="n">not_rev</span><span class="p">]:</span>
     <span class="k">for</span> <span class="n">ket</span> <span class="ow">in</span> <span class="p">[</span><span class="n">z_0</span><span class="p">,</span> <span class="n">z_1</span><span class="p">]:</span>
-        <span class="n">pretty_print</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="n">ket</span><span class="o">.</span><span class="n">tensor_product</span><span class="p">(</span><span class="n">z_0</span><span class="p">),</span> <span class="s1">&#39;=&#39;</span><span class="p">,</span> <span class="n">op</span> <span class="o">*</span> <span class="n">ket</span><span class="o">.</span><span class="n">tensor_product</span><span class="p">(</span><span class="n">z_0</span><span class="p">))</span>
+        <span class="n">s</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="n">ket</span><span class="o">.</span><span class="n">tensor_product</span><span class="p">(</span><span class="n">z_0</span><span class="p">),</span> <span class="s1">&#39;=&#39;</span><span class="p">,</span> <span class="n">op</span> <span class="o">*</span> <span class="n">ket</span><span class="o">.</span><span class="n">tensor_product</span><span class="p">(</span><span class="n">z_0</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -566,7 +611,7 @@ which can be seen as a manual to construct the matrix <span class="math notransl
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">op</span> <span class="ow">in</span> <span class="p">[</span><span class="n">zero_rev</span><span class="p">,</span> <span class="n">one_rev</span><span class="p">,</span> <span class="n">id_rev</span><span class="p">,</span> <span class="n">not_rev</span><span class="p">]:</span>
-    <span class="n">pretty_print</span><span class="p">(</span><span class="n">zero_rev</span> <span class="o">*</span> <span class="n">zero_rev</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">())</span>
+    <span class="n">s</span><span class="p">(</span><span class="n">zero_rev</span> <span class="o">*</span> <span class="n">zero_rev</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -611,15 +656,15 @@ which can be seen as a manual to construct the matrix <span class="math notransl
 <p>Let us test the function for the manually created matrices and some additional ones.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pretty_print</span><span class="p">(</span><span class="s1">&#39;Always zero:&#39;</span><span class="p">,</span> <span class="n">construct_rev_operation</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]))</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="s1">&#39;Always one:&#39;</span><span class="p">,</span> <span class="n">construct_rev_operation</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="s1">&#39;Identity:&#39;</span><span class="p">,</span> <span class="n">construct_rev_operation</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="s1">&#39;Not:&#39;</span><span class="p">,</span> <span class="n">construct_rev_operation</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]))</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="s1">&#39;And:&#39;</span><span class="p">,</span> <span class="n">construct_rev_operation</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="s1">&#39;Or:&#39;</span><span class="p">,</span> <span class="n">construct_rev_operation</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="s1">&#39;Xor:&#39;</span><span class="p">,</span> <span class="n">construct_rev_operation</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]))</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="s1">&#39;2-Bit always zero:&#39;</span><span class="p">,</span> <span class="n">construct_rev_operation</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]))</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="s1">&#39;3-Bit and:&#39;</span><span class="p">,</span> <span class="n">construct_rev_operation</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">(</span><span class="s1">&#39;Always zero:&#39;</span><span class="p">,</span> <span class="n">construct_rev_operation</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]))</span>
+<span class="n">s</span><span class="p">(</span><span class="s1">&#39;Always one:&#39;</span><span class="p">,</span> <span class="n">construct_rev_operation</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
+<span class="n">s</span><span class="p">(</span><span class="s1">&#39;Identity:&#39;</span><span class="p">,</span> <span class="n">construct_rev_operation</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
+<span class="n">s</span><span class="p">(</span><span class="s1">&#39;Not:&#39;</span><span class="p">,</span> <span class="n">construct_rev_operation</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]))</span>
+<span class="n">s</span><span class="p">(</span><span class="s1">&#39;And:&#39;</span><span class="p">,</span> <span class="n">construct_rev_operation</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
+<span class="n">s</span><span class="p">(</span><span class="s1">&#39;Or:&#39;</span><span class="p">,</span> <span class="n">construct_rev_operation</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
+<span class="n">s</span><span class="p">(</span><span class="s1">&#39;Xor:&#39;</span><span class="p">,</span> <span class="n">construct_rev_operation</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]))</span>
+<span class="n">s</span><span class="p">(</span><span class="s1">&#39;2-Bit always zero:&#39;</span><span class="p">,</span> <span class="n">construct_rev_operation</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]))</span>
+<span class="n">s</span><span class="p">(</span><span class="s1">&#39;3-Bit and:&#39;</span><span class="p">,</span> <span class="n">construct_rev_operation</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
 </pre></div>
 </div>
 </div>
@@ -639,15 +684,15 @@ which can be seen as a manual to construct the matrix <span class="math notransl
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pretty_print</span><span class="p">(</span><span class="s1">&#39;Always zero:&#39;</span><span class="p">,</span> <span class="n">simple_construct_rev_operation</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]))</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="s1">&#39;Always one:&#39;</span><span class="p">,</span> <span class="n">simple_construct_rev_operation</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="s1">&#39;Identity:&#39;</span><span class="p">,</span> <span class="n">simple_construct_rev_operation</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="s1">&#39;Not:&#39;</span><span class="p">,</span> <span class="n">simple_construct_rev_operation</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]))</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="s1">&#39;And:&#39;</span><span class="p">,</span> <span class="n">simple_construct_rev_operation</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="s1">&#39;Or:&#39;</span><span class="p">,</span> <span class="n">simple_construct_rev_operation</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="s1">&#39;Xor:&#39;</span><span class="p">,</span> <span class="n">simple_construct_rev_operation</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]))</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="s1">&#39;2-Bit always zero:&#39;</span><span class="p">,</span> <span class="n">simple_construct_rev_operation</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]))</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="s1">&#39;3-Bit and:&#39;</span><span class="p">,</span> <span class="n">simple_construct_rev_operation</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">(</span><span class="s1">&#39;Always zero:&#39;</span><span class="p">,</span> <span class="n">simple_construct_rev_operation</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]))</span>
+<span class="n">s</span><span class="p">(</span><span class="s1">&#39;Always one:&#39;</span><span class="p">,</span> <span class="n">simple_construct_rev_operation</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
+<span class="n">s</span><span class="p">(</span><span class="s1">&#39;Identity:&#39;</span><span class="p">,</span> <span class="n">simple_construct_rev_operation</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
+<span class="n">s</span><span class="p">(</span><span class="s1">&#39;Not:&#39;</span><span class="p">,</span> <span class="n">simple_construct_rev_operation</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]))</span>
+<span class="n">s</span><span class="p">(</span><span class="s1">&#39;And:&#39;</span><span class="p">,</span> <span class="n">simple_construct_rev_operation</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
+<span class="n">s</span><span class="p">(</span><span class="s1">&#39;Or:&#39;</span><span class="p">,</span> <span class="n">simple_construct_rev_operation</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
+<span class="n">s</span><span class="p">(</span><span class="s1">&#39;Xor:&#39;</span><span class="p">,</span> <span class="n">simple_construct_rev_operation</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]))</span>
+<span class="n">s</span><span class="p">(</span><span class="s1">&#39;2-Bit always zero:&#39;</span><span class="p">,</span> <span class="n">simple_construct_rev_operation</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]))</span>
+<span class="n">s</span><span class="p">(</span><span class="s1">&#39;3-Bit and:&#39;</span><span class="p">,</span> <span class="n">simple_construct_rev_operation</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
 </pre></div>
 </div>
 </div>
@@ -664,7 +709,7 @@ which can be seen as a manual to construct the matrix <span class="math notransl
 <span class="n">y_1</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">matrix</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="n">I</span><span class="p">))</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
 <span class="n">z_0</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
 <span class="n">z_1</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="n">x_0</span><span class="p">,</span> <span class="n">x_1</span><span class="p">,</span> <span class="n">y_0</span><span class="p">,</span> <span class="n">y_1</span><span class="p">,</span> <span class="n">z_0</span><span class="p">,</span> <span class="n">z_1</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">x_0</span><span class="p">,</span> <span class="n">x_1</span><span class="p">,</span> <span class="n">y_0</span><span class="p">,</span> <span class="n">y_1</span><span class="p">,</span> <span class="n">z_0</span><span class="p">,</span> <span class="n">z_1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -672,12 +717,12 @@ which can be seen as a manual to construct the matrix <span class="math notransl
 <p>We calculate the probability that different systems jump in <span class="math notranslate nohighlight">\(\lvert 0 \rangle\)</span>. The <code class="docutils literal notranslate"><span class="pre">conjugate_transpose</span></code> function is used to create a bra from a ket.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pretty_print</span><span class="p">(</span><span class="nb">abs</span><span class="p">((</span><span class="n">z_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">z_0</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="nb">abs</span><span class="p">((</span><span class="n">z_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">z_1</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="nb">abs</span><span class="p">((</span><span class="n">z_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">x_0</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="nb">abs</span><span class="p">((</span><span class="n">z_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">x_1</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="nb">abs</span><span class="p">((</span><span class="n">z_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">y_0</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="nb">abs</span><span class="p">((</span><span class="n">z_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">x_1</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">(</span><span class="nb">abs</span><span class="p">((</span><span class="n">z_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">z_0</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="nb">abs</span><span class="p">((</span><span class="n">z_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">z_1</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="nb">abs</span><span class="p">((</span><span class="n">z_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">x_0</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="nb">abs</span><span class="p">((</span><span class="n">z_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">x_1</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="nb">abs</span><span class="p">((</span><span class="n">z_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">y_0</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="nb">abs</span><span class="p">((</span><span class="n">z_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">x_1</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -690,7 +735,7 @@ which can be seen as a manual to construct the matrix <span class="math notransl
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Sx</span> <span class="o">=</span> <span class="n">x_0</span> <span class="o">*</span> <span class="n">x_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">-</span> <span class="n">x_1</span> <span class="o">*</span> <span class="n">x_1</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span>
 <span class="n">Sy</span> <span class="o">=</span> <span class="n">y_0</span> <span class="o">*</span> <span class="n">y_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">-</span> <span class="n">y_1</span> <span class="o">*</span> <span class="n">y_1</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span>
 <span class="n">Sz</span> <span class="o">=</span> <span class="n">z_0</span> <span class="o">*</span> <span class="n">z_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">-</span> <span class="n">z_1</span> <span class="o">*</span> <span class="n">z_1</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="n">Sx</span><span class="p">,</span> <span class="n">Sy</span><span class="p">,</span> <span class="n">Sz</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">Sx</span><span class="p">,</span> <span class="n">Sy</span><span class="p">,</span> <span class="n">Sz</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -701,27 +746,27 @@ which can be seen as a manual to construct the matrix <span class="math notransl
 <p>The expectation value when “measuring” a state <span class="math notranslate nohighlight">\(\lvert\alpha\rangle\)</span> by an operator <span class="math notranslate nohighlight">\(A\)</span> can be calculated as <span class="math notranslate nohighlight">\(\langle\alpha\rvert A \lvert\alpha\rangle\)</span>. Note that since we dropped the constant <span class="math notranslate nohighlight">\(\hbar / 2\)</span> when we constructed the measurement operators, we need to multiply all expectation values with this constant.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pretty_print</span><span class="p">(</span><span class="n">x_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sx</span> <span class="o">*</span> <span class="n">x_0</span><span class="p">,</span> <span class="n">x_1</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sx</span> <span class="o">*</span> <span class="n">x_1</span><span class="p">)</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="n">y_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sx</span> <span class="o">*</span> <span class="n">y_0</span><span class="p">,</span> <span class="n">y_1</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sx</span> <span class="o">*</span> <span class="n">y_1</span><span class="p">)</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="n">z_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sx</span> <span class="o">*</span> <span class="n">z_0</span><span class="p">,</span> <span class="n">z_1</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sx</span> <span class="o">*</span> <span class="n">z_1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">(</span><span class="n">x_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sx</span> <span class="o">*</span> <span class="n">x_0</span><span class="p">,</span> <span class="n">x_1</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sx</span> <span class="o">*</span> <span class="n">x_1</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">y_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sx</span> <span class="o">*</span> <span class="n">y_0</span><span class="p">,</span> <span class="n">y_1</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sx</span> <span class="o">*</span> <span class="n">y_1</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">z_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sx</span> <span class="o">*</span> <span class="n">z_0</span><span class="p">,</span> <span class="n">z_1</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sx</span> <span class="o">*</span> <span class="n">z_1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pretty_print</span><span class="p">(</span><span class="n">x_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sy</span> <span class="o">*</span> <span class="n">x_0</span><span class="p">,</span> <span class="n">x_1</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sy</span> <span class="o">*</span> <span class="n">x_1</span><span class="p">)</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="n">y_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sy</span> <span class="o">*</span> <span class="n">y_0</span><span class="p">,</span> <span class="n">y_1</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sy</span> <span class="o">*</span> <span class="n">y_1</span><span class="p">)</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="n">z_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sy</span> <span class="o">*</span> <span class="n">z_0</span><span class="p">,</span> <span class="n">z_1</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sy</span> <span class="o">*</span> <span class="n">z_1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">(</span><span class="n">x_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sy</span> <span class="o">*</span> <span class="n">x_0</span><span class="p">,</span> <span class="n">x_1</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sy</span> <span class="o">*</span> <span class="n">x_1</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">y_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sy</span> <span class="o">*</span> <span class="n">y_0</span><span class="p">,</span> <span class="n">y_1</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sy</span> <span class="o">*</span> <span class="n">y_1</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">z_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sy</span> <span class="o">*</span> <span class="n">z_0</span><span class="p">,</span> <span class="n">z_1</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sy</span> <span class="o">*</span> <span class="n">z_1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pretty_print</span><span class="p">(</span><span class="n">x_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sz</span> <span class="o">*</span> <span class="n">x_0</span><span class="p">,</span> <span class="n">x_1</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sz</span> <span class="o">*</span> <span class="n">x_1</span><span class="p">)</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="n">y_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sz</span> <span class="o">*</span> <span class="n">y_0</span><span class="p">,</span> <span class="n">y_1</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sz</span> <span class="o">*</span> <span class="n">y_1</span><span class="p">)</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="n">z_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sz</span> <span class="o">*</span> <span class="n">z_0</span><span class="p">,</span> <span class="n">z_1</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sz</span> <span class="o">*</span> <span class="n">z_1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">(</span><span class="n">x_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sz</span> <span class="o">*</span> <span class="n">x_0</span><span class="p">,</span> <span class="n">x_1</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sz</span> <span class="o">*</span> <span class="n">x_1</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">y_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sz</span> <span class="o">*</span> <span class="n">y_0</span><span class="p">,</span> <span class="n">y_1</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sz</span> <span class="o">*</span> <span class="n">y_1</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">z_0</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sz</span> <span class="o">*</span> <span class="n">z_0</span><span class="p">,</span> <span class="n">z_1</span><span class="o">.</span><span class="n">conjugate_transpose</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sz</span> <span class="o">*</span> <span class="n">z_1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -746,7 +791,7 @@ For the algorithm we’ll make use of the four Bell states:</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi_0</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
 <span class="c1"># states of multiple qubits can be derived with the tensor product of single qubit states</span>
 <span class="n">psi_00</span> <span class="o">=</span> <span class="n">psi_0</span><span class="o">.</span><span class="n">tensor_product</span><span class="p">(</span><span class="n">psi_0</span><span class="p">)</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="n">psi_00</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">psi_00</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -758,7 +803,7 @@ For the algorithm we’ll make use of the four Bell states:</p>
 <span class="n">H</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
 <span class="n">H_2</span> <span class="o">=</span> <span class="n">H</span><span class="o">.</span><span class="n">tensor_product</span><span class="p">(</span><span class="n">identity_matrix</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
 <span class="n">CNOT</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="n">H_2</span><span class="p">,</span> <span class="n">CNOT</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">H_2</span><span class="p">,</span> <span class="n">CNOT</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -769,7 +814,7 @@ For the algorithm we’ll make use of the four Bell states:</p>
 <span class="c1"># careful: multiplication is done in reverse order compared to the circuit diagram, </span>
 <span class="c1"># since gates are applied from the left</span>
 <span class="n">bell_00</span> <span class="o">=</span> <span class="n">CNOT</span> <span class="o">*</span> <span class="n">H_2</span> <span class="o">*</span> <span class="n">psi_00</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="n">bell_00</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">bell_00</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -815,7 +860,7 @@ The qubits are spatially seperated, but still represent an inseperable common st
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
 <span class="n">Z</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
 <span class="n">iY</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">iY</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">iY</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -825,7 +870,7 @@ The qubits are spatially seperated, but still represent an inseperable common st
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_2</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">tensor_product</span><span class="p">(</span><span class="n">identity_matrix</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
 <span class="n">Z_2</span> <span class="o">=</span> <span class="n">Z</span><span class="o">.</span><span class="n">tensor_product</span><span class="p">(</span><span class="n">identity_matrix</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
 <span class="n">iY_2</span> <span class="o">=</span> <span class="n">iY</span><span class="o">.</span><span class="n">tensor_product</span><span class="p">(</span><span class="n">identity_matrix</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="n">X_2</span><span class="p">,</span> <span class="n">Z_2</span><span class="p">,</span> <span class="n">iY_2</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">X_2</span><span class="p">,</span> <span class="n">Z_2</span><span class="p">,</span> <span class="n">iY_2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -836,7 +881,7 @@ The qubits are spatially seperated, but still represent an inseperable common st
 <span class="n">bell_01</span> <span class="o">=</span> <span class="n">X_2</span> <span class="o">*</span> <span class="n">bell_00</span>
 <span class="n">bell_10</span> <span class="o">=</span> <span class="n">Z_2</span> <span class="o">*</span> <span class="n">bell_00</span>
 <span class="n">bell_11</span> <span class="o">=</span> <span class="n">iY_2</span> <span class="o">*</span> <span class="n">bell_00</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="n">bell_00</span><span class="p">,</span> <span class="n">bell_01</span><span class="p">,</span> <span class="n">bell_10</span><span class="p">,</span> <span class="n">bell_11</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">bell_00</span><span class="p">,</span> <span class="n">bell_01</span><span class="p">,</span> <span class="n">bell_10</span><span class="p">,</span> <span class="n">bell_11</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -846,14 +891,14 @@ The qubits are spatially seperated, but still represent an inseperable common st
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">H_2</span> <span class="o">=</span> <span class="n">H</span><span class="o">.</span><span class="n">tensor_product</span><span class="p">(</span><span class="n">identity_matrix</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
 <span class="n">BELL_adj</span> <span class="o">=</span> <span class="n">H_2</span> <span class="o">*</span> <span class="n">CNOT</span>
-<span class="n">pretty_print</span><span class="p">(</span><span class="n">BELL_adj</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">BELL_adj</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pretty_print</span><span class="p">(</span><span class="n">BELL_adj</span><span class="o">*</span><span class="n">bell_00</span><span class="p">,</span> <span class="n">BELL_adj</span><span class="o">*</span><span class="n">bell_01</span><span class="p">,</span> <span class="n">BELL_adj</span><span class="o">*</span><span class="n">bell_10</span><span class="p">,</span> <span class="n">BELL_adj</span><span class="o">*</span><span class="n">bell_11</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">(</span><span class="n">BELL_adj</span><span class="o">*</span><span class="n">bell_00</span><span class="p">,</span> <span class="n">BELL_adj</span><span class="o">*</span><span class="n">bell_01</span><span class="p">,</span> <span class="n">BELL_adj</span><span class="o">*</span><span class="n">bell_10</span><span class="p">,</span> <span class="n">BELL_adj</span><span class="o">*</span><span class="n">bell_11</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

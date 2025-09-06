@@ -1,0 +1,930 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Harmonic Oscillator &#8212; Jonny Workbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=8dedbda2" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '17MCM_QM/Harmonic Oscillator';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Jonny Workbook</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Mathe &amp; FP/Language</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Alevel/Alevel_math.html">1. A-level-math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Alevel/Alevel_math_further.html">2. A-level-further</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Course_MCM.html">3. Math Computational Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Course_Lean.html">4. Lean</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../math/00intro_math.html">5. Math-FP-Lang Combo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../math/01number_algebra.html">6. Number &amp; Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../math/02discrete_continuous.html">7. Discrete &amp; Continuous</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../math/03real_world.html">8. Real World Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../math/05math_as_code.html">9. Math as code</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CS &amp; Physics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Course_MIT6001Python.html">10. MIT_CS6001-Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Course_MIT6002thinking.html">11. MIT_CS6002-CS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PE/PE50.html">12. Project Euler Q1-50</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PE/PE75.html">13. Project Euler Q51-</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Course_MCM_QM.html">14. Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../How_Dad_organise_QM.html">15. How Dad learn QM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Course_MCM_QFT.html">16. QFT</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notebook</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../nb_past_courses.html">17. Past courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../geo/nb_Geo.html">18. Geography and Maps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nb_lottery_simulator.html">19. Lottery Math</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/tomctang/10pe" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/17MCM_QM/Harmonic Oscillator.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Harmonic Oscillator</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Harmonic Oscillator</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#numerically-solving-the-schrodinger-equation">Numerically Solving the Schrödinger Equation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method">Method</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discretization">Discretization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#forward-and-backward-first-order-differential">Forward and Backward first order differential</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-representation">Matrix representation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-differential">Second order Differential</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-the-schrodinger-equation">Solving the Schrödinger Equation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#infinite-square-well">Infinite Square Well</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="harmonic-oscillator">
+<h1>Harmonic Oscillator<a class="headerlink" href="#harmonic-oscillator" title="Link to this heading">#</a></h1>
+<p>To compute the solutions to the harmonic oscillator, we use our previous methods of constructng the Hamiltonian as a matrix, and then using the linear algebra of Numpy to find the eigen values and eigen vectors.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="n">hbar</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">m</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">omega</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">2014</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mf">20.0</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span><span class="n">a</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
+<span class="n">h</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># Should be equal to 2*np.pi/(N-1)</span>
+<span class="n">V</span> <span class="o">=</span> <span class="mf">.5</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="n">omega</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">x</span>
+<span class="c1"># V[N/2]=2/h   # This would add a &quot;delta&quot; spike in the center.</span>
+<span class="n">Mdd</span> <span class="o">=</span> <span class="mf">1.</span><span class="o">/</span><span class="p">(</span><span class="n">h</span><span class="o">*</span><span class="n">h</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span><span class="p">),</span><span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">H</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="n">hbar</span><span class="o">*</span><span class="n">hbar</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mf">2.0</span><span class="o">*</span><span class="n">m</span><span class="p">)</span><span class="o">*</span><span class="n">Mdd</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">V</span><span class="p">)</span> 
+<span class="n">En</span><span class="p">,</span><span class="n">psiT</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eigh</span><span class="p">(</span><span class="n">H</span><span class="p">)</span> <span class="c1"># This computes the eigen values and eigenvectors</span>
+<span class="n">psi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">psiT</span><span class="p">)</span> 
+<span class="c1"># The psi now contain the wave functions ordered so that psi[n] if the n-th eigen state.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We want to verify that these resuls make sense, so we plot the wave functions and compute the norms. Note that the eigenvectors are normalized in such a way that <span class="math notranslate nohighlight">\(\sum psi_n^2(x_i) = 1\)</span>. This <em>does not</em> take into account the step size that we used for discretizing the space. We want to plot the wave functions in such a way that they plot the same independent of our choice of step size. To do this we need to divide the array of numbers by <span class="math notranslate nohighlight">\(\sqrt{\Delta x}\)</span> before plotting.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check the normalization of the wave function arrays.</span>
+<span class="n">notok</span><span class="o">=</span><span class="kc">False</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">psi</span><span class="p">)):</span>
+    <span class="c1"># s = np.sum(psi[n]*psi[n])</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">psi</span><span class="p">[</span><span class="n">n</span><span class="p">])</span>  <span class="c1"># This does the same as the line above.</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">s</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">0.00001</span><span class="p">:</span> <span class="c1"># Check if it is different from one.</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wave function </span><span class="si">{}</span><span class="s2"> is not normalized to 1 but </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">s</span><span class="p">))</span>
+        <span class="n">notok</span><span class="o">=</span><span class="kc">True</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">notok</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;All the psi_n(x) are normalized.&quot;</span><span class="p">)</span>
+
+<span class="n">fig2</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">7</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Harmonic Oscillator&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$\psi(x)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span><span class="n">V</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="o">-</span><span class="n">a</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span><span class="n">a</span><span class="o">/</span><span class="mf">2.</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mf">0.1</span><span class="o">*</span><span class="n">V</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;grey&quot;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;V(x) scaled by 0.1&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">((</span><span class="o">-</span><span class="mf">.8</span><span class="p">,</span><span class="mf">1.</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">((</span><span class="o">-</span><span class="mf">6.</span><span class="p">,</span><span class="mf">6.</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">psi</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">N</span><span class="o">//</span><span class="mi">8</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="n">psi</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">h</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;$E_</span><span class="si">{}</span><span class="s2">$=</span><span class="si">{:3.1f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">En</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">psi</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">h</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;$E_</span><span class="si">{}</span><span class="s2">$=</span><span class="si">{:3.1f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">En</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Solution to harmonic oscillator&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;Harmonic_Oscillator_WaveFunctions.pdf&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We want to now plot the initial wave function. We could try to shift the already calculated <span class="math notranslate nohighlight">\(\psi_0(x)\)</span> array, but it is better to compute the function from a formula. The <em>main reason</em> for making this plot is to make sure the <em>normalization</em> of the function is correct. We would want the <em>same normalization</em> as our <span class="math notranslate nohighlight">\(\psi_n(x)\)</span> arrays, so we need to muliply the function by <span class="math notranslate nohighlight">\(\sqrt{\Delta x}\)</span>, which we then divide out again when we plot. Doing this makes sure that the <span class="math notranslate nohighlight">\(c_n\)</span> factors we compute later are correct and with the same normalization.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig2</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">7</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Harmonic Oscillator and displaced ground state.&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$\psi(x)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span><span class="n">V</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="o">-</span><span class="n">a</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span><span class="n">a</span><span class="o">/</span><span class="mf">2.</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mf">0.1</span><span class="o">*</span><span class="n">V</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;grey&quot;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;V(x) scaled by 0.1&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">((</span><span class="o">-</span><span class="mf">.1</span><span class="p">,</span><span class="mf">1.</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">((</span><span class="o">-</span><span class="mf">5.</span><span class="p">,</span><span class="mf">8.</span><span class="p">))</span>
+<span class="n">a0</span><span class="o">=</span><span class="mf">5.</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="p">(</span><span class="n">m</span><span class="o">*</span><span class="n">omega</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">hbar</span><span class="p">))</span><span class="o">**</span><span class="mf">0.25</span>
+<span class="n">psi0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">h</span><span class="p">)</span><span class="o">*</span><span class="n">alpha</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">a0</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="n">omega</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">hbar</span><span class="p">))</span>  <span class="c1"># This is the formula for the displaced state.</span>
+<span class="n">n0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">psi0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Check the normalization of psi0: &quot;</span><span class="p">,</span><span class="n">n0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">psi0</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">h</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Displaced state $\Psi(x,0)$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="n">psi</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">h</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Ground state $\psi_0(x)$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;Displaced_state.pdf&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can now compute the <span class="math notranslate nohighlight">\(c_n\)</span> factors as a simple sum of the product of the initial wave and the <span class="math notranslate nohighlight">\(\psi_n(x)\)</span> eigen states. There are many ways to accomplish this, looping over the <span class="math notranslate nohighlight">\(N\)</span> eigen states. The way I do this below is particularly efficient, creating a new Numpy array of the <span class="math notranslate nohighlight">\(c_n\)</span> factors. The line commented out does the calculation using list comprehension. The second line does this as a matrix multiplication.</p>
+<p>We now compute the energy of this initial state, so we can plot the line on our graph. This was not part of the homework assignment, but it is nice to be able to draw this. We compute the energy as: . We also compute the energy as <span class="math notranslate nohighlight">\(E=\int \Psi^*(x,t=0)  \hat{\mathrm{H}} \Psi(x,t-0)\)</span>, and compare.</p>
+<p>Once we have the <span class="math notranslate nohighlight">\(c_n\)</span> we can sum them to make sure the normalization is indeed correct: <span class="math notranslate nohighlight">\(\sum |c_n|^2 =1\)</span>.</p>
+<p>We can also use them to calculate the expactation value of the energy of the state: <span class="math notranslate nohighlight">\(&lt;E&gt;=\sum |c_n|^2 E_n\)</span>, which we can check against an algebraic computation:
+$<span class="math notranslate nohighlight">\( &lt;E&gt; = &lt;T&gt; + &lt;V&gt; = \frac{1}{2}\hbar\omega + \frac{1}{2}m\omega^2 |x_0|^2 = \frac{1}{2} + \frac{1}{2} 5^2 = 13\)</span><span class="math notranslate nohighlight">\(
+And finally we can also compute it directly from the Hamiltonian:
+\)</span><span class="math notranslate nohighlight">\(&lt;E&gt; = &lt;\Psi(x,0)| \hat{\mathrm{H}} | \Psi(x,0)&gt; = \int \Psi^*(x,0)H \Psi(x,0) dx\)</span>$.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># cn=np.array([np.sum(psi[i]*psi0) for i in range(N)],dtype=&#39;float&#39;)</span>
+<span class="n">cn</span> <span class="o">=</span> <span class="n">psi</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">psi0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cn</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">18</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Check sum: </span><span class="si">{:6.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">cn</span><span class="o">*</span><span class="n">cn</span><span class="p">)))</span>
+<span class="n">E</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">conjugate</span><span class="p">(</span><span class="n">cn</span><span class="p">)</span><span class="o">*</span><span class="n">cn</span><span class="o">*</span><span class="n">En</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&lt;E&gt; = </span><span class="si">{:9.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">E</span><span class="p">))</span>
+<span class="n">E_check</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">conjugate</span><span class="p">(</span><span class="n">psi0</span><span class="p">)</span><span class="o">*</span><span class="n">H</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">psi0</span><span class="p">))</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Check E=&quot;</span><span class="p">,</span><span class="n">E_check</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We now want to compute:
+$<span class="math notranslate nohighlight">\(\Psi(x,t)=\sum_n c_n \psi_n(x) e^{-i(n+\frac{1}{2})\omega t}\)</span><span class="math notranslate nohighlight">\(
+For a particular time \)</span>t<span class="math notranslate nohighlight">\( we thus want an array of numbers representing \)</span>\Psi<span class="math notranslate nohighlight">\( at that time. A technical detail here is that we want to sum all the \)</span>n<span class="math notranslate nohighlight">\( values for a particular \)</span>x_i<span class="math notranslate nohighlight">\( of the product \)</span>c_n*\psi_n*\phi(t)$. Our wavefunctions are arranged in such a way that this would be a sum over the columns instead of over the rows (which is what we did when checking the normalization). We can circumvent this priblem by using the original transposed version, psiT, of the wavefunctions. Below are three different implementation of this function, the first one is a bit more straight forward but slow, the second one is a bit faster (about a factor of 2.5), the third is fastest.</p>
+<p>At this point you should start to worry about numerical accuracy. It turns out that for this particular situation the method we are using is accurate enough, and the solution is <em>stable</em>, that is, there are no diverging terms in the calculation. This will not be true for all situations where you solve the Schrödinger equation using matrix inversion (i.e. finding the eigen vectors). In many situations, including scattering, you will need to use more sophisticated ways of obtaining solutions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This version creates an array of zeros, to which it then sequentially adds each of the terms in the sum.</span>
+<span class="c1"># Note that we use the global psi array.</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">psi_xt</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">cn</span><span class="p">):</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;complex128&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span> 
+        <span class="n">out</span> <span class="o">+=</span> <span class="n">cn</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">*</span><span class="n">psi</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="n">omega</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+
+<span class="c1"># This version uses np.sum to accomplish the same thing as the function above.</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">psi_xt2</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">cn</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cn</span><span class="p">))</span> 
+    <span class="n">times</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="n">omega</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">psiT</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">cn</span><span class="o">*</span><span class="n">times</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+
+<span class="c1"># This version uses np.sum and now also the previously calculated energyes.</span>
+<span class="c1"># This way, psi_xt3 will work even if the potential is distorted and the energy levels are no longer (n+0.5)*hbar*omega</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">psi_xt3</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">cn</span><span class="p">):</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">psiT</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">cn</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">En</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">hbar</span><span class="p">))</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig2</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Harmonic Oscillator&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$\psi(x)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span><span class="n">V</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="o">-</span><span class="n">a</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span><span class="n">a</span><span class="o">/</span><span class="mf">2.</span><span class="o">+</span><span class="mf">1.</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mf">0.05</span><span class="o">*</span><span class="n">V</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;grey&quot;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;V(x) scaled by 0.05&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="o">-</span><span class="n">a</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span><span class="n">a</span><span class="o">/</span><span class="mf">2.</span><span class="p">],[</span><span class="n">E</span><span class="o">*</span><span class="mf">0.05</span><span class="p">,</span><span class="n">E</span><span class="o">*</span><span class="mf">0.05</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;grey&quot;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;dashed&quot;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;&lt;E&gt; scaled by 0.05&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">((</span><span class="o">-</span><span class="mf">.1</span><span class="p">,</span><span class="mf">0.8</span><span class="p">))</span>
+<span class="c1"># plt.plot(x,psi0/np.sqrt(h),color=&#39;#dddddd&#39;)</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">0.</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">4.</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span><span class="mf">3.</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">4.</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">]:</span> <span class="c1"># np.linspace(0,np.pi,8):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">psi_xt3</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">cn</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">h</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;t=</span><span class="si">{:5.3}</span><span class="s2">$\pi$&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">t</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;Displaced_state_vs_time.pdf&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can turn the restults into a little movie for a more dramatic effect. The ‘animation’ from matplotlib can do this for us. Since we run inside an HTML notebook, we need to render the movie into an html5 video for it to display.</p>
+<p>The animation system wants an init() function that draws the frame, the axis, and everything else that does not change. The animate(t) function will then only draw the updated curve. To do this efficiently, we ask for the actual line object that is drawn for the plot, and then we only update the data for that line object.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.animation</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">animation</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span>
+
+<span class="n">fig3</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">7</span><span class="p">])</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig3</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">autoscale_on</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+
+<span class="n">line</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([],</span> <span class="p">[],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">time_template</span> <span class="o">=</span> <span class="s1">&#39;time = </span><span class="si">{:9.2f}</span><span class="s1">s&#39;</span>
+<span class="n">time_text</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.93</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ax</span><span class="o">.</span><span class="n">transAxes</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">init</span><span class="p">():</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Harmonic Oscillator&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$\psi(x)$&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span><span class="n">V</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="o">-</span><span class="n">a</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span><span class="n">a</span><span class="o">/</span><span class="mf">2.</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mf">0.05</span><span class="o">*</span><span class="n">V</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;grey&quot;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;V(x) scaled by 0.05&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="o">-</span><span class="n">a</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span><span class="n">a</span><span class="o">/</span><span class="mf">2.</span><span class="p">],[</span><span class="n">E</span><span class="o">*</span><span class="mf">0.05</span><span class="p">,</span><span class="n">E</span><span class="o">*</span><span class="mf">0.05</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;grey&quot;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;dashed&quot;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;&lt;E&gt; scaled by 0.05&quot;</span><span class="p">)</span>
+    <span class="n">line</span><span class="o">.</span><span class="n">set_data</span><span class="p">([],</span> <span class="p">[])</span>
+    <span class="n">time_text</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="n">time_template</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">0.</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">line</span><span class="p">,</span> <span class="n">time_text</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">animate</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="c1">#t = (float(i)/100.)*(4.*np.pi/omega)</span>
+    <span class="n">line</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">psi_xt3</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">cn</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">h</span><span class="p">)))</span>
+    <span class="n">time_text</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="n">time_template</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">line</span><span class="p">,</span>  <span class="n">time_text</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can now calculate and run the animation. This will take a bit of time to calculate, about 30 seconds. To see the animation, you <em>must</em> run a live version of the notebook, not the static version on GitHub. If you do this in a notebook, then you need to turn the animation into a video and then display the the video in the notebook. If you run this from the prompt, you can show the animation directly.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">frame_rate</span> <span class="o">=</span> <span class="mi">30</span>     <span class="c1"># Frame rate in Hz. Make higher for smoother movie, but it takes longer to compute.</span>
+<span class="n">time_slowdown</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># Run time x times slower than normal. Since omega=1, we want this about 10.</span>
+<span class="n">ani</span> <span class="o">=</span> <span class="n">animation</span><span class="o">.</span><span class="n">FuncAnimation</span><span class="p">(</span><span class="n">fig3</span><span class="p">,</span> <span class="n">animate</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="n">omega</span><span class="p">,</span><span class="n">frame_rate</span><span class="o">*</span><span class="n">time_slowdown</span><span class="p">),</span>
+                              <span class="n">interval</span><span class="o">=</span><span class="mf">1000.</span><span class="o">/</span><span class="n">frame_rate</span><span class="p">,</span> <span class="n">blit</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">init_func</span><span class="o">=</span><span class="n">init</span><span class="p">)</span>
+<span class="n">HTML</span><span class="p">(</span><span class="n">ani</span><span class="o">.</span><span class="n">to_html5_video</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="numerically-solving-the-schrodinger-equation">
+<h1>Numerically Solving the Schrödinger Equation<a class="headerlink" href="#numerically-solving-the-schrodinger-equation" title="Link to this heading">#</a></h1>
+<p>In this Python notebook, we will work on finding a purely numerical solution to the time independent Schrödinger Equation (SE).
+$<span class="math notranslate nohighlight">\( -\frac{\hbar^2}{2m}\frac{d^2}{d x^2} \psi(x) + V(x)\psi(x) = E\psi(x)\)</span>$</p>
+<p>In the process, I hope to convince you, even more than before, that that the SE is indeed an eigen equation.</p>
+<p>This notebook can easily be modified for any other potential you would like to try.</p>
+<section id="method">
+<h2>Method<a class="headerlink" href="#method" title="Link to this heading">#</a></h2>
+<p>The method we will use here is called the <a class="reference external" href="https://en.wikipedia.org/wiki/Finite_difference_method">“Finite Difference Method”</a> (see the linked Wikipedia article). In this method we will turn the function <span class="math notranslate nohighlight">\(\psi(x)\)</span> into a vector, which is a list in Python, and the operator of the differential equation into a <em>matrix</em>. We then end up with a matrix eigenequation, which we can diagonalize to get our answer.</p>
+<section id="discretization">
+<h3>Discretization<a class="headerlink" href="#discretization" title="Link to this heading">#</a></h3>
+<p>The process of discretization is simply turning our continuous space <span class="math notranslate nohighlight">\(x\)</span>, into a discrete number of steps, <span class="math notranslate nohighlight">\(N\)</span>, and our function <span class="math notranslate nohighlight">\(\psi(x)\)</span> into an array of size <span class="math notranslate nohighlight">\(N\)</span>. We thus have <span class="math notranslate nohighlight">\(N\)</span> values <span class="math notranslate nohighlight">\(x_i\)</span>, which have a stepsize <span class="math notranslate nohighlight">\(h = \Delta x = x_{i+1} - x_i\)</span>. Our choice of the <em>size</em> of our space, <span class="math notranslate nohighlight">\(N\)</span>, turns out to be important. Too large a number will slow down our computation and require too much computer memory, too small a number and the answers we compute will not be sufficiently accurate. A common practice is to start with a small number <span class="math notranslate nohighlight">\(N\)</span> and then increase it until the accuracy is acceptable. The actual value you obtain in the end will depend on the problem you are studying.</p>
+</section>
+<section id="forward-and-backward-first-order-differential">
+<h3>Forward and Backward first order differential<a class="headerlink" href="#forward-and-backward-first-order-differential" title="Link to this heading">#</a></h3>
+<p>We first need to develop how we will take the derivative of our function. Going back to our introduction to calculus, we remember that the derivative was defined as:
+$<span class="math notranslate nohighlight">\(
+\frac{d}{dx} f(x) = \lim_{\Delta x \rightarrow 0} \frac{f(x+\Delta x) - f(x)}{\Delta x} \approx \frac{f(x+h) - f(x)}{h} + \mathrm{O}(h)
+\)</span><span class="math notranslate nohighlight">\(
+When we take a *finite difference*, we simply not take the limit all the way down to 0, but stop at \)</span>\Delta x = h<span class="math notranslate nohighlight">\(. Note that for this equation we evaluate the point just *after* \)</span>x<span class="math notranslate nohighlight">\(, which we call the *forward difference*. If you actually let \)</span>\Delta x \rightarrow 0<span class="math notranslate nohighlight">\(, then this does not matter, but if you do a finite difference, you can also do:
+\)</span><span class="math notranslate nohighlight">\(
+\frac{d}{dx} f(x) = \lim_{\Delta x \rightarrow 0} \frac{f(x) - f(x-\Delta x)}{\Delta x} \approx \frac{f(x) - f(x-h)}{h} + \mathrm{O}(h)
+\)</span>$
+which is known as the <em>backward difference</em>.</p>
+<p>You can also comput a <em>central difference</em>, but cannot use steps of <span class="math notranslate nohighlight">\(\frac{1}{2}\Delta x\)</span>, since that does not exist in our space. The central difference is then a combination of the previous two:
+$<span class="math notranslate nohighlight">\(
+\frac{d}{dx} f(x) = \lim_{\Delta x \rightarrow 0} \frac{f(x+\Delta x) - f(x-\Delta x)}{2\Delta x}\approx \frac{f(x+h) - f(x-h)}{2h} + \mathrm{O}(h^2)
+\)</span>$
+This last one is a little more accurate than the first two.</p>
+<p>Note that for any of these approximations to a derivative, we have a problem at the edges of our space. (In Python, C and Java, our space goes from <span class="math notranslate nohighlight">\(n=0\)</span> to <span class="math notranslate nohighlight">\(n=N-1\)</span>, in Fortran <span class="math notranslate nohighlight">\(n=1\)</span> to <span class="math notranslate nohighlight">\(N\)</span>.) Either on one end or the other, there is no <span class="math notranslate nohighlight">\(x-\Delta x\)</span> or <span class="math notranslate nohighlight">\(x+\Delta x\)</span>. Here, we are just not going to worry about this detail.</p>
+<section id="matrix-representation">
+<h4>Matrix representation<a class="headerlink" href="#matrix-representation" title="Link to this heading">#</a></h4>
+<p>We now want to turn the equation into a matrix equation for us to evaluate. If you just want to take the derivative of a function stored in an array, then this is not needed, you can run a loop and evaluate the equation for each <span class="math notranslate nohighlight">\(x_i\)</span>, but if you want to solve a differential equation, we need the matrix.</p>
+<p>We introduce the vectors <span class="math notranslate nohighlight">\(f(x) = [f_0,f_1,f_2,...,f_{N-1}]\)</span> and for the derivative <span class="math notranslate nohighlight">\(f'(x) = [f'_0,f'_1,f'_2...,f'_{N-1}]\)</span>. The forward difference derivative can then be written as:
+$<span class="math notranslate nohighlight">\( f'_i = (f_{i+1} - f_i)/h \)</span><span class="math notranslate nohighlight">\(
+And the matrix equation for the forward difference derivative is just:
+\)</span><span class="math notranslate nohighlight">\(
+\begin{pmatrix}f'_0 \\ f'_1 \\\vdots \\ f'_{N-1}\end{pmatrix} = \frac{1}{h}
+\begin{pmatrix} -1 &amp; 1 &amp; 0 &amp; &amp; \\ 0 &amp; -1 &amp; 1 &amp; &amp; \\ &amp; &amp; \ddots &amp; \ddots \\
+&amp; &amp; &amp; -1 &amp; \end{pmatrix}\begin{pmatrix}f_0 \\ f_1 \\\vdots \\ f_{N-1}\end{pmatrix}
+\)</span><span class="math notranslate nohighlight">\(
+We note that the last entry in the matrix will not be correct because there is no element for \)</span>N$. We can fix this up by taking the <em>backward</em> derivative at the last point.</p>
+<p>We now check that this works. Using Python and Numpy we will take the derivative of <span class="math notranslate nohighlight">\(\sin(x)\)</span> and plot the result.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="c1"># Define the number of points in our space, N</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">128</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+<span class="c1"># Define the x space from 0 to a with N-1 divisions.</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
+<span class="c1"># We want to store step size, this is the reliable way:</span>
+<span class="n">h</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># Should be equal to 2*np.pi/(N-1)</span>
+<span class="c1"># Compute the function, y = sin(x). With numpy this is easy:</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="c1"># We compute the matrix using the np.diag(np.ones(N),0) which creates a </span>
+<span class="c1"># diagonal matrix of 1 of NxN size. Multiply by -1 to get -1 diagonal array.</span>
+<span class="c1"># You get an +1 off-diagonal array of ones, with np.diag(np.ones(N-1),1)</span>
+<span class="c1"># Note that you need N-1 for an NxN array, since the off diagonal is one smaller.</span>
+<span class="c1"># Add the two together and normalize by 1/h</span>
+<span class="n">Md</span> <span class="o">=</span> <span class="mf">1.</span><span class="o">/</span><span class="n">h</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span> <span class="o">-</span><span class="mf">1.</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span><span class="p">),</span><span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="mi">1</span><span class="p">))</span>
+<span class="c1"># Compute the derivative of y into yp by matrix multiplication:</span>
+<span class="n">yp</span> <span class="o">=</span> <span class="n">Md</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="c1"># Plot the results.</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">yp</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># Don&#39;t plot last value, which is invalid</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="second-order-differential">
+<h2>Second order Differential<a class="headerlink" href="#second-order-differential" title="Link to this heading">#</a></h2>
+<p>We can now extend this method to the second order differential. If we take the backward differential of the result of a forward differential, we get:
+$<span class="math notranslate nohighlight">\(
+\frac{d^2}{dx^2}f(x) = \lim_{\Delta x \rightarrow 0} \frac{f'(x)-f'(x-\Delta x)}{\Delta x} =  \lim_{\Delta x \rightarrow 0} \frac{f(x+\Delta x) - f(x) - (f(x) - f(x-\Delta x))}{\Delta x^2} \\
+\frac{d^2}{dx^2}f(x) = \lim_{\Delta x \rightarrow 0} \frac{f(x+\Delta x) - 2f(x) + f(x-\Delta x))}{\Delta x^2} \approx \frac{f(x+h) - 2f(x) + f(x-h))}{h^2}
+\)</span><span class="math notranslate nohighlight">\(
+So in the discrete space we can write this as:
+\)</span><span class="math notranslate nohighlight">\( f''_i = (f_{i+1} - 2f_i + f_{i-1})/h^2 \)</span><span class="math notranslate nohighlight">\(
+And finally, as a matrix equation, the second derivative is then:
+\)</span><span class="math notranslate nohighlight">\(
+\begin{pmatrix}f''_0 \\ f''_1 \\ f''_2 \\\vdots \\ f''_{N-1}\end{pmatrix} = \frac{1}{h^2}
+\begin{pmatrix} -2 &amp; 1 &amp; 0 &amp; 0 &amp; \\ 1 &amp; -2 &amp; 1 &amp; 0 &amp; \\ 
+0&amp; 1 &amp; -2 &amp; 1 &amp;  \\ &amp;  &amp; \ddots &amp; \ddots &amp; \ddots &amp;\\
+&amp;  &amp; &amp; 1 &amp; -2 \end{pmatrix}\begin{pmatrix}f_0 \\ f_1 \\ f_2 \\\vdots \\ f_{N-1}\end{pmatrix}
+\)</span><span class="math notranslate nohighlight">\(
+Where now we note that at both ends of our array we will get an inaccurate answer unless we do some fixup. The fixup in this case is to use the same elements as the row below (at the start) or the row above (at the end), so we get \)</span>f’’<em>0 = f’’<em>1<span class="math notranslate nohighlight">\( and \)</span>f’’</em>{N-1} = f’’</em>{N-2}$, which is not great but better than the alternative.</p>
+<p>We can now try this matrix in Python and compute the second derivative of our <span class="math notranslate nohighlight">\(y(x)\)</span> array.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Mdd</span> <span class="o">=</span> <span class="mf">1.</span><span class="o">/</span><span class="p">(</span><span class="n">h</span><span class="o">*</span><span class="n">h</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span> <span class="o">-</span><span class="mf">2.</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span><span class="p">),</span><span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Mdd</span><span class="p">)</span>
+<span class="n">ypp</span> <span class="o">=</span> <span class="n">Mdd</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">yp</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>     <span class="c1"># Last value is invalid, don&#39;t plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">ypp</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># First and last value is invalid.</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="solving-the-schrodinger-equation">
+<h2>Solving the Schrödinger Equation<a class="headerlink" href="#solving-the-schrodinger-equation" title="Link to this heading">#</a></h2>
+<p>We can now setup the Schrodinger Equation as a matrix equation:
+$<span class="math notranslate nohighlight">\(
+\hat H = \frac{\hbar^2}{2m}\frac{d^2}{d x^2} + V \\
+\hat H \psi(x) = E \psi(x)
+\)</span><span class="math notranslate nohighlight">\(
+We now know the matrix for taking the second order derivative. The matrix for the potential is simply the values of the potential on the diagonal of the matrix: \)</span>\mathbf{V}_{i=j} = V_i$.</p>
+<p>Writing out the matrix for <span class="math notranslate nohighlight">\(\mathbf{H}\)</span> we get:
+$<span class="math notranslate nohighlight">\(
+\mathbf{H} = \frac{-\hbar^2}{2 m h^2} \begin{pmatrix} -2 &amp; 1 &amp; 0 &amp; 0 &amp; \\ 1 &amp; -2 &amp; 1 &amp; 0 &amp; \\ 
+0&amp; 1 &amp; -2 &amp; 1 &amp;  \\ &amp;  &amp; \ddots &amp; \ddots &amp; \ddots &amp;\\
+&amp;  &amp; &amp; 1 &amp; -2 \end{pmatrix} + 
+\begin{pmatrix} V_0 &amp; 0 &amp; 0 &amp; &amp; \\ 0 &amp; V_1 &amp; 0 &amp; &amp; \\ 0 &amp; 0 &amp; V_2 &amp; &amp; \\ &amp; &amp; &amp;\ddots &amp; \\ &amp;&amp;&amp;&amp;V_{N-1}\end{pmatrix}
+\)</span>$</p>
+<p>It is worth looking at the matrix of the Hamiltonian and notice the symmetry: <span class="math notranslate nohighlight">\(\mathbf{H}^T = \mathbf{H}\)</span>, so the transpose of the matrix is identical to the matrix. Since the matrix is <em>real</em> everywhere, the complex conjugate is also the same: <span class="math notranslate nohighlight">\(\mathbf{H}^*=\mathbf{H}\)</span>. Combining these two statements, we can say that the Hamiltonian is Hermetian: <span class="math notranslate nohighlight">\(\mathbf{H}^\dagger = \mathbf{H}\)</span>. We will come back to this later in the course.</p>
+<section id="infinite-square-well">
+<h3>Infinite Square Well<a class="headerlink" href="#infinite-square-well" title="Link to this heading">#</a></h3>
+<p>The very simplest system to solve for is the infinite square well, for which <span class="math notranslate nohighlight">\(V=0\)</span>. We will readily recognize the results as alternating <span class="math notranslate nohighlight">\(\cos(x)\)</span> and <span class="math notranslate nohighlight">\(\sin(x)\)</span> functions, and the energy levels are:
+$<span class="math notranslate nohighlight">\(
+E_i = \frac{n^2\pi^2\hbar^2}{2ma^2}
+\)</span><span class="math notranslate nohighlight">\(
+First, we need to discuss a subtlety. The Infinite Square Well from \)</span>-a/2<span class="math notranslate nohighlight">\( to \)</span>a/2<span class="math notranslate nohighlight">\( has \)</span>V=\infty<span class="math notranslate nohighlight">\( *at* these points. We get into trouble trying to entery \)</span>\infty<span class="math notranslate nohighlight">\( in our potential, so what we need to do is just limit the coputational space from \)</span>-a/2+h<span class="math notranslate nohighlight">\( to \)</span>a/2-h<span class="math notranslate nohighlight">\(, where \)</span>h<span class="math notranslate nohighlight">\( is our step size. That way we force the wavefunction to zero at the end points. 
+We compute this in the next box. I create \)</span>x_{full}<span class="math notranslate nohighlight">\( as the full x-axis from \)</span>-a/2<span class="math notranslate nohighlight">\( to \)</span>a/2<span class="math notranslate nohighlight">\(, but take \)</span>N+2$ steps. I then leave out the first and last point when calculating the wavefunctions. At the end, before plotting, I add a zero to the beginning and end of the wavefunctions, so that we get the expected result for plotting.</p>
+<p>Note I again import everything and setup all the definitions, so this block is stand-alone, and can be copy-pasted into another notebook.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">scipy.linalg</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">scl</span>
+<span class="n">hbar</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">m</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">512</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span><span class="n">a</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
+<span class="c1"># We want to store step size, this is the reliable way:</span>
+<span class="n">h</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># Should be equal to 2*np.pi/(N-1)</span>
+<span class="n">V</span> <span class="o">=</span> <span class="mf">0.</span><span class="o">*</span><span class="n">x</span>
+<span class="n">Mdd</span> <span class="o">=</span> <span class="mf">1.</span><span class="o">/</span><span class="p">(</span><span class="n">h</span><span class="o">*</span><span class="n">h</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span><span class="p">),</span><span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">H</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="n">hbar</span><span class="o">*</span><span class="n">hbar</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mf">2.0</span><span class="o">*</span><span class="n">m</span><span class="p">)</span><span class="o">*</span><span class="n">Mdd</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">V</span><span class="p">)</span> 
+<span class="n">E</span><span class="p">,</span><span class="n">psiT</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eigh</span><span class="p">(</span><span class="n">H</span><span class="p">)</span> <span class="c1"># This computes the eigen values and eigenvectors</span>
+<span class="n">psi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">psiT</span><span class="p">)</span>   <span class="c1"># We take the transpose of psiT to the wavefunction vectors can accessed as psi[n]</span>
+<span class="c1">#</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We now want to plot these wavefunctions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">psi</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">N</span><span class="o">-</span><span class="mi">10</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>   <span class="c1"># Flip the wavefunctions if it is negative at large x, so plots are more consistent.</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="n">psi</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">h</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;$E_</span><span class="si">{}</span><span class="s2">$=</span><span class="si">{:&gt;8.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">E</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">psi</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">h</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;$E_</span><span class="si">{}</span><span class="s2">$=</span><span class="si">{:&gt;8.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">E</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Solutions to the Infinite Square Well&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;Infinite_Square_Well_WaveFunctions.pdf&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We now also want to check that the energy levels do indeed correspond to the known levels:
+$<span class="math notranslate nohighlight">\(
+E_n = \frac{n^2 \pi^2 \hbar^2}{2 m a^2}
+\)</span>$</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;E[</span><span class="si">{}</span><span class="s2">] = </span><span class="si">{:9.4f}</span><span class="s2">, E_</span><span class="si">{}</span><span class="s2"> =</span><span class="si">{:9.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">E</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">hbar</span><span class="o">*</span><span class="n">hbar</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">a</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can see that as N gets larger the results for the energy levels become more accurate. Values of N as large as 1024 or 20148 still give results quickly on modern computers.</p>
+<p>A final test shows the accuracy of our calculation in the orthonormality of the states:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:16.9e}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">psi</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="n">psi</span><span class="p">[</span><span class="n">i</span><span class="p">])),</span><span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./17MCM_QM"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Harmonic Oscillator</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#numerically-solving-the-schrodinger-equation">Numerically Solving the Schrödinger Equation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method">Method</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discretization">Discretization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#forward-and-backward-first-order-differential">Forward and Backward first order differential</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-representation">Matrix representation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-differential">Second order Differential</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-the-schrodinger-equation">Solving the Schrödinger Equation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#infinite-square-well">Infinite Square Well</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jonny, assisted by Tom
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
