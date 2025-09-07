@@ -372,7 +372,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m5-operators-identities-wk5-6">13.6. M5: Operators &amp; identities (Wk5-6)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m6-simple-harmonic-oscillator-wk8-9">13.7. M6: Simple harmonic oscillator (Wk8-9)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m7-angular-momentum-hydrogen-wk10-12">13.8. M7: Angular momentum &amp; hydrogen (Wk10-12)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m8-approximation-methods-wk13-and-15">13.9. M8: Approximation methods (Wk13 and 15)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m8-approximation-methods-wk13-15">13.9. M8: Approximation methods (Wk13-15)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m9-time-evolution-wk16">13.10. M9: Time evolution (Wk16)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m10-photons-ligo-wk17">13.11. M10: Photons &amp; LIGO (Wk17)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix">13.12. Appendix</a></li>
@@ -403,18 +403,18 @@ document.write(`
 
 <span class="c1"># 2. Operator algebra</span>
 <span class="n">expr</span> <span class="o">=</span> <span class="p">(</span><span class="n">A</span> <span class="o">+</span> <span class="n">B</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
-<span class="n">s</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Expanded operator expression: </span><span class="si">{</span><span class="n">expr</span><span class="o">.</span><span class="n">expand</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="s2">&quot;Expanded operator expression:&quot;</span><span class="p">,</span> <span class="n">expr</span><span class="o">.</span><span class="n">expand</span><span class="p">())</span>
 
 <span class="c1"># 3. Commutators</span>
 <span class="n">comm</span> <span class="o">=</span> <span class="n">Commutator</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
-<span class="n">s</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Commutator [A, B]: </span><span class="si">{</span><span class="n">comm</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="n">s</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Evaluated commutator: </span><span class="si">{</span><span class="n">comm</span><span class="o">.</span><span class="n">doit</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># Evaluates to A*B - B*A</span>
+<span class="n">s</span><span class="p">(</span><span class="s2">&quot;Commutator [A, B]:&quot;</span><span class="p">,</span> <span class="n">comm</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="s2">&quot;Evaluated commutator:&quot;</span><span class="p">,</span> <span class="n">comm</span><span class="o">.</span><span class="n">doit</span><span class="p">())</span> <span class="c1"># Evaluates to A*B - B*A</span>
 
 <span class="c1"># 4. Operators acting on states (Kets and Bras)</span>
 <span class="n">k</span> <span class="o">=</span> <span class="n">Ket</span><span class="p">(</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">Bra</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
 <span class="n">outer_product</span> <span class="o">=</span> <span class="n">k</span> <span class="o">*</span> <span class="n">b</span>
-<span class="n">s</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Outer product: </span><span class="si">{</span><span class="n">outer_product</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="s2">&quot;Outer product:&quot;</span><span class="p">,</span> <span class="n">outer_product</span><span class="p">)</span>
 
 <span class="c1"># Applying operators to states using qapply</span>
 <span class="c1"># Example: Applying a projection operator to a state</span>
@@ -452,15 +452,13 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_latex math notranslate nohighlight">
-\[\displaystyle \text{\texttt{A*B{ }+{ }A**2{ }+{ }B*A{ }+{ }B**2}} \qquad   \]</div>
+\[\displaystyle \text{\texttt{Expanded{ }operator{ }expression:}} \qquad   \text{\texttt{A*B{ }+{ }A**2{ }+{ }B*A{ }+{ }B**2}} \qquad   \]</div>
 <div class="output text_latex math notranslate nohighlight">
-\[\displaystyle \text{\texttt{Expanded{ }operator{ }expression:{ }A*B{ }+{ }A**2{ }+{ }B*A{ }+{ }B**2}} \qquad   \]</div>
+\[\displaystyle \text{\texttt{Commutator{ }[A,{ }B]:}} \qquad   \text{\texttt{[A,B]}} \qquad   \]</div>
 <div class="output text_latex math notranslate nohighlight">
-\[\displaystyle \text{\texttt{Commutator{ }[A,{ }B]:{ }[A,B]}} \qquad   \]</div>
+\[\displaystyle \text{\texttt{Evaluated{ }commutator:}} \qquad   \text{\texttt{A*B{ }{-}{ }B*A}} \qquad   \]</div>
 <div class="output text_latex math notranslate nohighlight">
-\[\displaystyle \text{\texttt{Evaluated{ }commutator:{ }A*B{ }{-}{ }B*A}} \qquad   \]</div>
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle \text{\texttt{Outer{ }product:{ }|k&gt;&lt;b|}} \qquad   \]</div>
+\[\displaystyle \text{\texttt{Outer{ }product:}} \qquad   \text{\texttt{|k&gt;&lt;b|}} \qquad   \]</div>
 <div class="output text_latex math notranslate nohighlight">
 \[\displaystyle \text{\texttt{Applying{ }projection:{ }|k&gt;}} \qquad   \]</div>
 <div class="output text_latex math notranslate nohighlight">
@@ -517,11 +515,15 @@ document.write(`
 <h2><span class="section-number">13.2. </span>M1: Intro QM (Wk1)<a class="headerlink" href="#m1-intro-qm-wk1" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>This week covers the classical and quantum Stern-Gerlach experiment and probability</p></li>
-<li><p>We use the phenomena of spin to introduce you to the strangeness of the quantum world, show why QM is stochastic (meaning results can occur randomly, but with predictable probabilities to occur), and describe how to predict the probabilities that quantum events will occur.</p></li>
+<li><p>We use the phenomena of spin to introduce you to the strangeness of the quantum world, show why QM is stochastic (meaning results can occur randomly, but with predictable probabilities to occur), Dirac notation, and describe how to predict the probabilities that quantum events will occur.</p></li>
 <li><p>Problem Set 1</p>
 <ol class="arabic simple">
 <li><p>Eigenvalues and eigenvectors of a general Hermitian 2 x 2 matrix</p></li>
-<li><p>Completeness</p></li>
+<li><p>Completeness, or is the set of eigenvectors complete</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\hat{I}= \sum_{n=1}^N |e_n\rangle\langle e_n|\)</span></p></li>
+</ul>
+</li>
 </ol>
 </li>
 </ul>
@@ -557,22 +559,26 @@ matrices. A matrix is a representation of an operator in a particular basis.</p>
 <li><p>Eigenvalue, M1, p19, M1, p26; Eigenvector, M1, p19, M1, p26</p></li>
 <li><p>Hermitian conjugate, M1, p19; Hermitian matrix, M1, p19</p></li>
 <li><p>Magnetic field, M1, p4, M1, p9; Magnetic needles, M1, p5</p></li>
-<li><p>Probability, M1, p 14, M1, p 15, M1, p 16</p></li>
-<li><p>Stern-Gerlach, classical, M1, p 7; Stern-Gerlach, rotating, M1, p 23</p></li>
-<li><p>Tensor product, M1, p 27</p></li>
+<li><p>Probability, M1, p14, M1, p15, M1, p16</p></li>
+<li><p>Stern-Gerlach, classical, M1, p7; Stern-Gerlach, rotating, M1, p23</p></li>
+<li><p>Tensor product, M1, p27</p></li>
 </ul>
 </section>
 <section id="m2-advanced-qm-spins-wk2">
 <h2><span class="section-number">13.3. </span>M2: Advanced QM - spins (Wk2)<a class="headerlink" href="#m2-advanced-qm-spins-wk2" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>This week covers complementarity, delayed choice experiments, Einstein-Podolsky-Rosen experiments, Bell experiments, and magnetic resonance imaging</p></li>
-<li><p>Here we already move to quite advanced material. We discover why quantum mechanics is a nonlocal theory, that it cannot be described by any hidden variables, and that the concept of complementarity governs when quantum interference occurs and when it does not.</p></li>
+<li><p>This week covers complementarity, Wheeler’s delayed choice experiments, Einstein-Podolsky-Rosen experiments, Bell experiments, and magnetic resonance imaging</p>
+<ul>
+<li><p>Stern Gerlach experiment/ analyzer loops, Analog of the two-slit experiment,</p></li>
+</ul>
+</li>
+<li><p>We discover why quantum mechanics is a nonlocal theory, that it cannot be described by any hidden variables, and that the concept of complementarity governs when quantum interference occurs and when it does not.</p></li>
 <li><p>We also examine phenomena that seem to require faster than light messaging and quantum objects moving backwards in time; we find that neither is actually needed - one needs to think carefully to understand how this is so.</p></li>
-<li><p>We also are introduced to the first of our four quantum operator identities (the Leibniz identity).</p></li>
+<li><p>Introduce first of four quantum operator identities (the Leibniz identity).</p></li>
 <li><p>Problem Set 2</p>
 <ol class="arabic simple">
-<li><p>Equivalent states</p></li>
-<li><p>More spin eigenstates</p></li>
+<li><p>Equivalent states - We say two states are the same if they are related by a complex phase</p></li>
+<li><p>More spin eigenstates - total spin operator, eigenvalues of total spin, eigenvalues of total spin</p></li>
 </ol>
 </li>
 </ul>
@@ -580,31 +586,31 @@ matrices. A matrix is a representation of an operator in a particular basis.</p>
 <ul class="simple">
 <li><p>Linear operators preserve scalar multiplication and vector addition, that is:</p>
 <ul>
-<li><p><span class="math notranslate nohighlight">\((\alpha \hat{A} + \beta \hat{B})|\psi\rangle = \alpha \hat{A}|\psi\rangle + \beta \hat{B}|\psi\rangle\)</span>
-and</p></li>
+<li><p><span class="math notranslate nohighlight">\((\alpha \hat{A} + \beta \hat{B})|\psi\rangle = \alpha \hat{A}|\psi\rangle + \beta \hat{B}|\psi\rangle\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\hat{A}(\alpha|\psi\rangle + \beta|\phi\rangle) = \alpha \hat{A}|\psi\rangle + \beta \hat{A}|\phi\rangle\)</span></p></li>
 </ul>
 </li>
 <li><p><span class="math notranslate nohighlight">\(\hat{S}_{z}|\uparrow\rangle_{z} = \frac{\hbar}{2}|\uparrow\rangle_{z}\)</span>
-and
+<span class="math notranslate nohighlight">\(\quad\)</span>
 <span class="math notranslate nohighlight">\(\hat{S}_{z}|\downarrow\rangle_{z} = -\frac{\hbar}{2}|\downarrow\rangle_{z}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\hat{S}_{+}|\downarrow\rangle_{z} = \hbar|\uparrow\rangle_{z}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\hat{S}_{+}|\uparrow\rangle_{z} = 0\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\hat{S}_{-}|\uparrow\rangle_{z} = \hbar|\downarrow\rangle_{z}\)</span> and
+<li><p><span class="math notranslate nohighlight">\(\hat{S}_{-}|\uparrow\rangle_{z} = \hbar|\downarrow\rangle_{z}\)</span> <span class="math notranslate nohighlight">\(\quad\)</span>
 <span class="math notranslate nohighlight">\(\hat{S}_{-}|\downarrow\rangle_{z} = 0\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\([\hat{A}, \hat{B}] = \hat{A} \hat{B} - \hat{B} \hat{A}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\([\hat{A}, \hat{B}] = -[\hat{B}, \hat{A}]\)</span></p></li>
-<li><p>If 2 operators commute, their commutator is equal to 0; if they do
-NOT commute then their commutator is nonzero. If two operators do
-not commute then we cannot find a complete set of eigenstates that
-are simultaneous eigenstates of both operators.</p></li>
+<li><p><span class="math notranslate nohighlight">\([\hat{A}, \hat{B}] = -[\hat{B}, \hat{A}]\)</span></p>
+<ul>
+<li><p>If 2 operators commute, their commutator is equal to 0;</p></li>
+<li><p>if they do NOT commute, their commutator is nonzero, then we cannot find a complete set of eigenstates that are simultaneous eigenstates of both operators.</p></li>
+</ul>
+</li>
 <li><p><span class="math notranslate nohighlight">\(\left[\hat{S}_{z}, \hat{S}_{+}\right] = \hbar \hat{S}_{+}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\left[\hat{S}_{z}, \hat{S}_{-}\right] = -\hbar \hat{S}_{-}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\left[\hat{S}_{+}, \hat{S}_{-}\right] = 2 \hbar \hat{S}_{z}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\hat{S}_{x} = \frac{1}{2}\left(\hat{S}_{+} + \hat{S}_{-}\right)\)</span>
-and
+<span class="math notranslate nohighlight">\(\quad\)</span>
 <span class="math notranslate nohighlight">\(\hat{S}_{y} = \frac{1}{2 i}\left(\hat{S}_{+} - \hat{S}_{-}\right)\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\hat{S}_{+} = \hat{S}_{x} + i \hat{S}_{y}\)</span> and
+<li><p><span class="math notranslate nohighlight">\(\hat{S}_{+} = \hat{S}_{x} + i \hat{S}_{y}\)</span> <span class="math notranslate nohighlight">\(\quad\)</span>
 <span class="math notranslate nohighlight">\(\hat{S}_{-} = \hat{S}_{x} - i \hat{S}_{y}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\left[\hat{S}_{i}, \hat{S}_{j}\right] = i \hbar \sum_{k} \epsilon_{i j k} \hat{S}_{k}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\hat{S}^{2} = \hat{S}_{x}^{2} + \hat{S}_{y}^{2} + \hat{S}_{z}^{2}\)</span></p></li>
@@ -615,7 +621,7 @@ and
     0 &amp; -\frac{\hbar}{2}
     \end{pmatrix}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\hat{S}_{z}|\uparrow\rangle_{z} = \frac{\hbar}{2}|\uparrow\rangle_{z}\)</span>
-and
+<span class="math notranslate nohighlight">\(\quad\)</span>
 <span class="math notranslate nohighlight">\(\hat{S}_{z}|\downarrow\rangle_{z} = -\frac{\hbar}{2}|\downarrow\rangle_{z}\)</span></p></li>
 <li><p>Spin operators in <span class="math notranslate nohighlight">\(x, y\)</span> and <span class="math notranslate nohighlight">\(z\)</span> are all hermitian, whereas spin
 raising and lowering operators are NOT hermitian.</p></li>
@@ -628,7 +634,7 @@ is the identity matrix. We often use this to ‘multiply by 1.’</p></li>
 <li><p><span class="math notranslate nohighlight">\(|\uparrow\rangle_{z} = \frac{1}{\sqrt{2}}\left(|\uparrow\rangle_{x} + |\downarrow\rangle_{x}\right)\)</span></p></li>
 <li><p>The <span class="math notranslate nohighlight">\(\otimes\)</span> symbol is called the tensor product; we use this to
 describe quantum states that have different properties, which live
-in different vector spaces. (For example, position and spin, or spin
+in different vector spaces. (eg. position and spin, or spin
 and an atomic energy state, and so on…)</p></li>
 <li><p><span class="math notranslate nohighlight">\(\langle a| \otimes \langle b| \cdot |c\rangle \otimes |d\rangle = \langle a|c\rangle \times \langle b|d\rangle = \langle a|c\rangle \langle b|d\rangle\)</span></p></li>
 <li><p>Superpositioner in Stern Gerlach experiments: transforms
@@ -646,7 +652,7 @@ the excited state</p></li>
 <li><p>Complementarity, M2, p10</p></li>
 <li><p>Delayed choice, M2, p20, M2, p23, Mp25</p>
 <ul>
-<li><p>Wheeler’s delayed choice experiment, M2, p 11</p></li>
+<li><p>Wheeler’s delayed choice experiment, M2, p11</p></li>
 </ul>
 </li>
 <li><p>Entanglement, M2, p19, M2, p26</p></li>
@@ -655,20 +661,20 @@ the excited state</p></li>
 <li><p>Leibniz rule identity, M2, p9</p></li>
 <li><p>Local realism, M2, p32; Local realism, theory, M2, p22, M2, p30, M2, p31</p></li>
 <li><p>Many worlds interpretation , M2, p34</p></li>
-<li><p>MRI, M2, p29;  NMR, M2, p 27, M2, p 28</p></li>
-<li><p>Pilot wave theory, M2, p 34</p></li>
-<li><p>Quantum seeing in the dark, M2, p 17, M4, p 7, M4, p 10, M4, p 20</p></li>
-<li><p>operator, eigenvalues and eigenvectors, M2, p 13</p>
+<li><p>MRI, M2, p29;  NMR, M2, p27, M2, p28</p></li>
+<li><p>Pilot wave theory, M2, p34</p></li>
+<li><p>Quantum seeing in the dark, M2, p17, M4, p7, M4, p10, M4, p20</p></li>
+<li><p>operator, eigenvalues and eigenvectors, M2, p13</p>
 <ul>
-<li><p>Projection operator, M2, p 15</p></li>
+<li><p>Projection operator, M2, p15</p></li>
 </ul>
 </li>
-<li><p>operator (total spin), M2, p 9, M2, p 36; operator (total spin), eigenvalues, M2, p 36</p></li>
-<li><p>Separation fallacy, M2, p 25</p></li>
-<li><p>Spooky action at a distance, M2, p 19, M2, p 32</p></li>
-<li><p>Stern-Gerlach analyzer loop, M2, p 2, M2, p 16</p></li>
-<li><p>Superposition, M2, p 10</p></li>
-<li><p>Tensor product, Dirac notation, M2, p 24</p></li>
+<li><p>operator (total spin), M2, p9, M2, p36; operator (total spin), eigenvalues, M2, p36</p></li>
+<li><p>Separation fallacy, M2, p25</p></li>
+<li><p>Spooky action at a distance, M2, p19, M2, p32</p></li>
+<li><p>Stern-Gerlach analyzer loop, M2, p2, M2, p16</p></li>
+<li><p>Superposition, M2, p10</p></li>
+<li><p>Tensor product, Dirac notation, M2, p24</p></li>
 </ul>
 </section>
 <section id="m3-qm-of-light-wk3">
@@ -694,17 +700,17 @@ the excited state</p></li>
 <li><p>Lenses, M3, p23</p></li>
 <li><p>Light, transmission through glass, M3, p6</p></li>
 <li><p>Multiple reflections, M3, p7</p></li>
-<li><p>Normalization, M3, p 23, M3, p 24</p></li>
-<li><p>Partial reflection, M3, p 3, M3, p 5</p></li>
-<li><p>Photon self-reflection, M3, p 22</p></li>
-<li><p>Quantum key distribution, M3, p 29, M3, p 30</p></li>
-<li><p>Quantum mystery, M3, p 19, M3, p 21</p></li>
-<li><p>Quantum rules for light, M3, p 2</p></li>
-<li><p>Single slit experiment, M3, p 10, M3, p 11, M3, p 12, M3, p 13</p></li>
-<li><p>Two slit experiment, Dirac approach, M3, p 27, M3, p 28; Three-slit experiment, M3, p 21</p></li>
-<li><p>Wave motion, M3, p 26; Waves, M3, p 14</p></li>
-<li><p>Wave-particle duality, M3, p 1, M3, p 4</p></li>
-<li><p>Wavefunction, M3, p 25</p></li>
+<li><p>Normalization, M3, p23, M3, p24</p></li>
+<li><p>Partial reflection, M3, p3, M3, p5</p></li>
+<li><p>Photon self-reflection, M3, p22</p></li>
+<li><p>Quantum key distribution, M3, p29, M3, p30</p></li>
+<li><p>Quantum mystery, M3, p19, M3, p21</p></li>
+<li><p>Quantum rules for light, M3, p2</p></li>
+<li><p>Single slit experiment, M3, p10, M3, p11, M3, p12, M3, p13</p></li>
+<li><p>Two slit experiment, Dirac approach, M3, p27, M3, p28; Three-slit experiment, M3, p21</p></li>
+<li><p>Wave motion, M3, p26; Waves, M3, p14</p></li>
+<li><p>Wave-particle duality, M3, p1, M3, p4</p></li>
+<li><p>Wavefunction, M3, p25</p></li>
 </ul>
 </section>
 <section id="m4-advanced-qm-of-light-wk4">
@@ -764,7 +770,7 @@ collections from <span class="math notranslate nohighlight">\(n\)</span> objects
 <ul class="simple">
 <li><p>Beam splitter, M4, p8</p></li>
 <li><p>Binomial coefficient, M4, p31; Binomial theorem, M4, p31</p></li>
-<li><p>Bosons, M4, p25, M4, p29, M4, p33;  Boson states, counting, M4, p 30, M4, p32</p>
+<li><p>Bosons, M4, p25, M4, p29, M4, p33;  Boson states, counting, M4, p30, M4, p32</p>
 <ul>
 <li><p>Fermions, M4, p30</p></li>
 </ul>
@@ -776,24 +782,24 @@ collections from <span class="math notranslate nohighlight">\(n\)</span> objects
 <li><p>Mach-Zehnder interferometer, M4, p4, M4, p5, M4, p7, M10, p10; applications, M4, p6; Dirac approach, M4, p9</p></li>
 <li><p>Many-body physics, M4, p28</p></li>
 <li><p>Michelson-Morley experiment, M4, p6</p></li>
-<li><p>Particle bunching, M4, p 25</p></li>
-<li><p>Polarization, M4, p 12, M4, p 13;  Polarization rotator, M4, p 17</p></li>
-<li><p>Polarization in Dirac notation, M4, p 16, M4, p 18</p></li>
-<li><p>Polarized beam splitter, M4, p 19</p></li>
-<li><p>Polarized interferometer, M4, p 19</p></li>
-<li><p>Experiments with polarizers, M4, p 13, M4, p 17, M4, p 18</p>
+<li><p>Particle bunching, M4, p25</p></li>
+<li><p>Polarization, M4, p12, M4, p13;  Polarization rotator, M4, p17</p></li>
+<li><p>Polarization in Dirac notation, M4, p16, M4, p18</p></li>
+<li><p>Polarized beam splitter, M4, p19</p></li>
+<li><p>Polarized interferometer, M4, p19</p></li>
+<li><p>Experiments with polarizers, M4, p13, M4, p17, M4, p18</p>
 <ul>
-<li><p>Two slit experiment with polarizers, M4, p 22, M4, p 23, M4, p 24</p></li>
+<li><p>Two slit experiment with polarizers, M4, p22, M4, p23, M4, p24</p></li>
 </ul>
 </li>
-<li><p>Quantum camera, M4, p 21; Quantum eraser, M4, p 12</p></li>
-<li><p>Quantum seeing in the dark, M2, p 17, M4, p 7, M4, p 10, M4, p 20</p></li>
-<li><p>Quantum Zeno effect, M4, p 14</p>
+<li><p>Quantum camera, M4, p21; Quantum eraser, M4, p12</p></li>
+<li><p>Quantum seeing in the dark, M2, p17, M4, p7, M4, p10, M4, p20</p></li>
+<li><p>Quantum Zeno effect, M4, p14</p>
 <ul>
-<li><p>Zeno’s paradox, M4, p 11</p></li>
+<li><p>Zeno’s paradox, M4, p11</p></li>
 </ul>
 </li>
-<li><p>Rabi oscillations, M4, p 32</p></li>
+<li><p>Rabi oscillations, M4, p32</p></li>
 <li><p>Single photon source, M4, p 8</p></li>
 </ul>
 </section>
@@ -877,7 +883,7 @@ Page 28.)</p>
 <ul class="simple">
 <li><p>Abelian group, M5, p7</p>
 <ul>
-<li><p>Lie algebra, M5, p7;  Lie groups, M5, p7; SU(2) algebra, M5, p 7</p></li>
+<li><p>Lie algebra, M5, p7;  Lie groups, M5, p7; SU(2) algebra, M5, p7</p></li>
 </ul>
 </li>
 <li><p>Braiding Identity, M5, p28</p></li>
@@ -891,22 +897,22 @@ Page 28.)</p>
 <li><p>Hadamard lemma, M5, p22; Hadamard lemma, special case, M5, p21</p></li>
 <li><p>Hamiltonian of a free particle, M5, p26</p></li>
 <li><p>Momentum, eigenstate, M5, p23, M6, p15</p></li>
-<li><p>Pauli spin matrices, M5, p 1, M5, p 2</p>
+<li><p>Pauli spin matrices, M5, p1, M5, p2</p>
 <ul>
-<li><p>Pauli matrix identities, M5, p 5</p></li>
-<li><p>Arbitrary matrices in terms of Pauli spin matrices, M5, p 4</p></li>
-<li><p>Pauli spin matrices, eigenvalues, M5, p 2</p></li>
-<li><p>Pauli spin matrices, triple product, M5, p 2</p></li>
+<li><p>Pauli matrix identities, M5, p5</p></li>
+<li><p>Arbitrary matrices in terms of Pauli spin matrices, M5, p4</p></li>
+<li><p>Pauli spin matrices, eigenvalues, M5, p2</p></li>
+<li><p>Pauli spin matrices, triple product, M5, p2</p></li>
 </ul>
 </li>
-<li><p>Position eigenstate, M5, p 23</p></li>
-<li><p>Probability of measurement, M5, p 19</p></li>
-<li><p>Spin operator matrix, theta-phi direction, M5, p 3</p></li>
-<li><p>Similarity transform, M5, p 21</p></li>
-<li><p>Symplectic matrix, M5, p 9</p></li>
-<li><p>Wavefunction, momentum in position space, M5, p 24</p></li>
-<li><p>Wavefunction, position in momentum space, M5, p 24</p></li>
-<li><p>Zero fluctuation state, M5, p 19</p></li>
+<li><p>Position eigenstate, M5, p23</p></li>
+<li><p>Probability of measurement, M5, p19</p></li>
+<li><p>Spin operator matrix, theta-phi direction, M5, p3</p></li>
+<li><p>Similarity transform, M5, p21</p></li>
+<li><p>Symplectic matrix, M5, p9</p></li>
+<li><p>Wavefunction, momentum in position space, M5, p24</p></li>
+<li><p>Wavefunction, position in momentum space, M5, p24</p></li>
+<li><p>Zero fluctuation state, M5, p19</p></li>
 </ul>
 </section>
 <section id="m6-simple-harmonic-oscillator-wk8-9">
@@ -949,18 +955,18 @@ Page 28.)</p>
 <li><p>Momentum, eigenstate, M5, p23, M6, p15</p></li>
 <li><p>Momentum, operator, M6, p15, M6, p22</p></li>
 <li><p>Morse potential, M6, p7, M6, p35, M6, p40, M7, p37</p></li>
-<li><p>Node, M6, p 12</p></li>
-<li><p>Normal ordering, M6, p 18</p></li>
-<li><p>Position operator, M6, p 3, M6, p 16, M6, p 22</p></li>
-<li><p>Raising operator, M6, p 14, M6, p 18, M6, p 22, M6, p 29</p></li>
-<li><p>Simple harmonic oscillator, M6, p 7, M6, p 8, M6, p 19, M6, p 22, M6, p 26, M6, p 33, M6, p 35, M7, p 52, M9, p 4</p></li>
-<li><p>Simple harmonic oscillator in 3 dimension, M6, p 32, M6, p 40</p></li>
-<li><p>Simple harmonic oscillator, factorization, M6, p 10</p></li>
-<li><p>Squeezed state, M6, p 28, M6, p 39, M9, p 5, M9, p 10, M10, p 13</p></li>
-<li><p>Squeezing operator, M6, p 28, M6, p 29, M6, p 31, M6, p 39</p></li>
-<li><p>Uncertainty principle, M6, p 6, M6, p 19, M8, p 9</p></li>
-<li><p>Variational principle, M6, p 34</p></li>
-<li><p>Virial theorem, M6, p 6, , M7, p 54</p></li>
+<li><p>Node, M6, p12</p></li>
+<li><p>Normal ordering, M6, p18</p></li>
+<li><p>Position operator, M6, p3, M6, p16, M6, p22</p></li>
+<li><p>Raising operator, M6, p14, M6, p18, M6, p22, M6, p29</p></li>
+<li><p>Simple harmonic oscillator, M6, p7, M6, p 8, M6, p19, M6, p22, M6, p26, M6, p33, M6, p35, M7, p52, M9, p4</p></li>
+<li><p>Simple harmonic oscillator in 3 dimension, M6, p32, M6, p40</p></li>
+<li><p>Simple harmonic oscillator, factorization, M6, p10</p></li>
+<li><p>Squeezed state, M6, p28, M6, p39, M9, p5, M9, p10, M10, p13</p></li>
+<li><p>Squeezing operator, M6, p28, M6, p29, M6, p31, M6, p39</p></li>
+<li><p>Uncertainty principle, M6, p6, M6, p19, M8, p9</p></li>
+<li><p>Variational principle, M6, p34</p></li>
+<li><p>Virial theorem, M6, p6, , M7, p54</p></li>
 </ul>
 </section>
 <section id="m7-angular-momentum-hydrogen-wk10-12">
@@ -1060,7 +1066,7 @@ Page 28.)</p>
 <li><p>Angular momentum raising operator, M7, p1</p></li>
 <li><p>Angular momentum, total squared, M7, p1</p></li>
 <li><p>Balmer series, M7, p44</p></li>
-<li><p>Bell’s inequality, M7, p 14, M7, p15</p></li>
+<li><p>Bell’s inequality, M7, p14, M7, p15</p></li>
 <li><p>Copenhagen interpretation, M7, p26</p></li>
 <li><p>Coulomb problem Mod 7, p43</p></li>
 <li><p>Coulomb wavefunctions, M7, p47, M7, p48, M7, p49</p></li>
@@ -1082,40 +1088,40 @@ Page 28.)</p>
 <li><p>Molecular rotation spectroscopy, M7, p16</p></li>
 <li><p>Moment of inertia, M7, p16</p></li>
 <li><p>Morse potential, M6, p7, M6, p35, M6, p40, M7, p37</p></li>
-<li><p>Node theorem, M7, p 11, M7, p 21, M7, p 22, M7, p 23, M7, p 24</p></li>
-<li><p>Pickering lines, M7, p 44</p></li>
-<li><p>Pickering-Fowler hypothesis, M7, p 44</p></li>
-<li><p>Position states in the theta-phi direction, M7, p 5</p></li>
-<li><p>Proton mass, M7, p 45</p></li>
-<li><p>Quantum numbers, M7, p 1, M7, p 12, M7, p 51</p></li>
-<li><p>Quantum rotations, general, M7, p 4, M7, p 5</p></li>
-<li><p>Radial momentum, M7, p 30, M7, p 31, M8, p 9</p></li>
-<li><p>Radial translation, M7, p 32</p></li>
-<li><p>Schrodinger factorization method, M7, p 11, M7, p 20</p></li>
-<li><p>Separation of variables, kinetic energy, M7, p 31</p></li>
-<li><p>Separation of variables in 2 dimensions, M7, p 36</p></li>
+<li><p>Node theorem, M7, p11, M7, p21, M7, p22, M7, p23, M7, p24</p></li>
+<li><p>Pickering lines, M7, p44</p></li>
+<li><p>Pickering-Fowler hypothesis, M7, p44</p></li>
+<li><p>Position states in the theta-phi direction, M7, p5</p></li>
+<li><p>Proton mass, M7, p45</p></li>
+<li><p>Quantum numbers, M7, p1, M7, p12, M7, p51</p></li>
+<li><p>Quantum rotations, general, M7, p4, M7, p5</p></li>
+<li><p>Radial momentum, M7, p30, M7, p31, M8, p9</p></li>
+<li><p>Radial translation, M7, p32</p></li>
+<li><p>Schrodinger factorization method, M7, p11, M7, p20</p></li>
+<li><p>Separation of variables, kinetic energy, M7, p31</p></li>
+<li><p>Separation of variables in 2 dimensions, M7, p36</p></li>
 <li><p>Simple harmonic oscillator, M6, p7, M6, p8, M6, p19, M6, p22, M6, p26, M6, p33, M6, p35, M7, p52, M9, p4</p></li>
 <li><p>Simple harmonic oscillator in 2 dimensions, M7, p53</p></li>
 <li><p>Simple harmonic oscillator, 3D isotropic, M7, p39</p></li>
 <li><p>Simple harmonic oscillator, 3D isotropic wavefunctions, M7, p 40, M7, p42</p></li>
 <li><p>Spherical harmonics, M7, p6, M7, p10, M7, p50; d-wave, M7, p9; p-wave, M7, p8; s-wave, M7, p7</p></li>
 <li><p>Spherical harmonics, orthogonality of, M7, p17</p></li>
-<li><p>Spin singlet state, M7, p 12</p></li>
-<li><p>Spin singlet state, arbitrary direction, M7, p 13</p></li>
-<li><p>Spin triplet state, M7, p 12</p></li>
-<li><p>Subsidiary condition, M7, p 11, M7, p 19</p></li>
-<li><p>Superpotential, M7, p 11</p></li>
-<li><p>Time of flight experiment, M7, p 27, M7, p 28, M7, p 29</p></li>
-<li><p>Two-body problem, M7, p 25</p></li>
-<li><p>Uncertainty, M7, p 28, M7, p 29</p></li>
-<li><p>Vector operators, M7, p 1, M7, p 2</p></li>
-<li><p>Vector operators, rotations of, M7, p 2, M7, p 3</p></li>
-<li><p>Virial theorem, M6, p 6, , M7, p 54</p></li>
-<li><p>Wavefunction nodes, M7, p 11</p></li>
+<li><p>Spin singlet state, M7, p12</p></li>
+<li><p>Spin singlet state, arbitrary direction, M7, p13</p></li>
+<li><p>Spin triplet state, M7, p12</p></li>
+<li><p>Subsidiary condition, M7, p11, M7, p19</p></li>
+<li><p>Superpotential, M7, p11</p></li>
+<li><p>Time of flight experiment, M7, p27, M7, p28, M7, p29</p></li>
+<li><p>Two-body problem, M7, p25</p></li>
+<li><p>Uncertainty, M7, p28, M7, p29</p></li>
+<li><p>Vector operators, M7, p1, M7, p2</p></li>
+<li><p>Vector operators, rotations of, M7, p2, M7, p3</p></li>
+<li><p>Virial theorem, M6, p6, , M7, p54</p></li>
+<li><p>Wavefunction nodes, M7, p11</p></li>
 </ul>
 </section>
-<section id="m8-approximation-methods-wk13-and-15">
-<h2><span class="section-number">13.9. </span>M8: Approximation methods (Wk13 and 15)<a class="headerlink" href="#m8-approximation-methods-wk13-and-15" title="Link to this heading">#</a></h2>
+<section id="m8-approximation-methods-wk13-15">
+<h2><span class="section-number">13.9. </span>M8: Approximation methods (Wk13-15)<a class="headerlink" href="#m8-approximation-methods-wk13-15" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>These two weeks discuss nondegenerate first and second-order perturbation theory, Feynman-Hellmann theorem, hyperfine structure of hydrogen and radio astronomy, proton charge radius, particle in a box, variational principle, and the argument that attractive potentials in one and two dimensions always have bound states.</p></li>
 <li><p>Not every problem can be solved exactly; we show you some approximation methods that are used in quantum mechanics. This allows us to describe how radio astronomy works and how potentials can always trap particles in one and two dimensions, but not in  three.</p></li>
@@ -1173,11 +1179,11 @@ $<span class="math notranslate nohighlight">\(E_{n}(\lambda)=E_{n}(0)+\left.\lam
 <li><p>Hyperfine structure, M8, p2, M8, p3, M8, p4, M8, p5</p></li>
 <li><p>Kramers Pasternack relation, M7, p56, M8, p7, M8, p8</p></li>
 <li><p>Perturbation theory, M8, p14, M9, p6;  first order, M8, p1; second order, M8, p12</p></li>
-<li><p>Proton charge radius, M8, p 13</p></li>
-<li><p>Radial momentum, M7, p 30, M7, p 31, M8, p 9</p></li>
-<li><p>Radio astronomy, M8, p 5</p></li>
-<li><p>Schrodinger equation, M8, p 18</p></li>
-<li><p>Uncertainty principle, M6, p 6, M6, p 19, M8, p 9</p></li>
+<li><p>Proton charge radius, M8, p13</p></li>
+<li><p>Radial momentum, M7, p30, M7, p31, M8, p9</p></li>
+<li><p>Radio astronomy, M8, p5</p></li>
+<li><p>Schrodinger equation, M8, p18</p></li>
+<li><p>Uncertainty principle, M6, p6, M6, p19, M8, p9</p></li>
 </ul>
 </section>
 <section id="m9-time-evolution-wk16">
@@ -1215,15 +1221,15 @@ $<span class="math notranslate nohighlight">\(E_{n}(\lambda)=E_{n}(0)+\left.\lam
 <li><p>Muonic hydrogen, M9, p7</p></li>
 <li><p>Landau-Zener problem , M9, p8</p></li>
 <li><p>Maxwell’s equations, M9, p12, M9, p13</p></li>
-<li><p>Perturbation theory, M8, p 14, M9, p 6</p></li>
-<li><p>Phase space, M9, p 4</p></li>
-<li><p>Simple harmonic oscillator, M6, p 7, M6, p 8, M6, p 19, M6, p 22, M6, p 26, M6, p 33, M6, p 35, M7, p 52, M9, p 4</p></li>
-<li><p>Simple harmonic oscillator, classical, M9, p 2</p></li>
-<li><p>Squeezed state, M6, p 28, M6, p 39, M9, p 5, M9, p 10, M10, p 13</p></li>
-<li><p>Time dependence, M9, p 3, M9, p 5, M9, p 10</p></li>
-<li><p>Time evolution, M9, p 1</p></li>
-<li><p>Transcendental equation, M9, p 9</p></li>
-<li><p>Trotter formula, M9, p 1</p></li>
+<li><p>Perturbation theory, M8, p14, M9, p6</p></li>
+<li><p>Phase space, M9, p4</p></li>
+<li><p>Simple harmonic oscillator, M6, p7, M6, p 8, M6, p19, M6, p22, M6, p26, M6, p33, M6, p35, M7, p52, M9, p4</p></li>
+<li><p>Simple harmonic oscillator, classical, M9, p2</p></li>
+<li><p>Squeezed state, M6, p28, M6, p39, M9, p5, M9, p10, M10, p13</p></li>
+<li><p>Time dependence, M9, p3, M9, p5, M9, p 10</p></li>
+<li><p>Time evolution, M9, p1</p></li>
+<li><p>Transcendental equation, M9, p9</p></li>
+<li><p>Trotter formula, M9, p1</p></li>
 </ul>
 </section>
 <section id="m10-photons-ligo-wk17">
@@ -1267,9 +1273,9 @@ $<span class="math notranslate nohighlight">\(E_{n}(\lambda)=E_{n}(0)+\left.\lam
 <li><p>LIGO, M10, p11, M10, p12, M10, 13, M10, p14</p></li>
 <li><p>Mach-Zehnder interferometer, M4, p4, M4, p5, M4, p7, M10, p10</p></li>
 <li><p>Michelson-Morley interferometer, M10, p11</p></li>
-<li><p>Photomultiplier tube, M10, p 2, M10, p 3</p></li>
-<li><p>Photon, M10, p 1, M10, p 2, M10, p 3, M10, p 4, M10, p 5, M10, p 6, M10, p 10</p></li>
-<li><p>Squeezed state, M6, p 28, M6, p 39, M9, p 5, M9, p 10, M10, p 13</p></li>
+<li><p>Photomultiplier tube, M10, p2, M10, p3</p></li>
+<li><p>Photon, M10, p1, M10, p2, M10, p3, M10, p4, M10, p5, M10, p6, M10, p10</p></li>
+<li><p>Squeezed state, M6, p28, M6, p39, M9, p5, M9, p10, M10, p13</p></li>
 </ul>
 <p>Week 18 and 19: Final exam</p>
 </section>
@@ -1355,7 +1361,7 @@ $<span class="math notranslate nohighlight">\(E_{n}(\lambda)=E_{n}(0)+\left.\lam
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m5-operators-identities-wk5-6">13.6. M5: Operators &amp; identities (Wk5-6)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m6-simple-harmonic-oscillator-wk8-9">13.7. M6: Simple harmonic oscillator (Wk8-9)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m7-angular-momentum-hydrogen-wk10-12">13.8. M7: Angular momentum &amp; hydrogen (Wk10-12)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m8-approximation-methods-wk13-and-15">13.9. M8: Approximation methods (Wk13 and 15)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m8-approximation-methods-wk13-15">13.9. M8: Approximation methods (Wk13-15)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m9-time-evolution-wk16">13.10. M9: Time evolution (Wk16)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m10-photons-ligo-wk17">13.11. M10: Photons &amp; LIGO (Wk17)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix">13.12. Appendix</a></li>

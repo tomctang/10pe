@@ -60,7 +60,7 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '0qm_qc_mix-GOOD';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '0qm_qc_sympy-GOOD';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -270,7 +270,7 @@
       
       
       
-      <li><a href="_sources/0qm_qc_mix-GOOD.ipynb" target="_blank"
+      <li><a href="_sources/0qm_qc_sympy-GOOD.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -480,15 +480,10 @@ document.write(`
 <h1>Basic Symbolic QM - dirac<a class="headerlink" href="#basic-symbolic-qm-dirac" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="kn">import</span> <span class="n">init_printing</span>
-<span class="n">init_printing</span><span class="p">(</span><span class="n">use_latex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="kn">import</span> <span class="n">sqrt</span><span class="p">,</span> <span class="n">symbols</span><span class="p">,</span> <span class="n">Rational</span><span class="p">,</span> <span class="n">srepr</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># from sympy import init_printing</span>
+<span class="c1"># init_printing(use_latex=True)</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="kn">import</span> <span class="n">sqrt</span><span class="p">,</span> <span class="n">symbols</span><span class="p">,</span> <span class="n">Rational</span><span class="p">,</span> <span class="n">srepr</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="kn">import</span> <span class="n">expand</span><span class="p">,</span> <span class="n">Eq</span><span class="p">,</span> <span class="n">Symbol</span><span class="p">,</span> <span class="n">simplify</span><span class="p">,</span> <span class="n">exp</span><span class="p">,</span> <span class="n">sin</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">sympy.physics.quantum</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">sympy.physics.quantum.qubit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
@@ -502,26 +497,17 @@ document.write(`
 </div>
 <section id="bras-and-kets">
 <h2>Bras and kets<a class="headerlink" href="#bras-and-kets" title="Link to this heading">#</a></h2>
-<p>Symbolic kets can be created using the <code class="docutils literal notranslate"><span class="pre">Ket</span></code> class as seen here:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">phi</span><span class="p">,</span> <span class="n">psi</span> <span class="o">=</span> <span class="n">Ket</span><span class="p">(</span><span class="s1">&#39;phi&#39;</span><span class="p">),</span> <span class="n">Ket</span><span class="p">(</span><span class="s1">&#39;psi&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>These ket instances are fully symbolic and behave exactly like the corresponding mathematical entities.
+<p>Symbolic kets can be created using the <code class="docutils literal notranslate"><span class="pre">Ket</span></code> class as seen below.
+These ket instances are fully symbolic and behave exactly like the corresponding mathematical entities.
 For example, one can form a linear combination using addition and scalar multiplication:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alpha</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;alpha&#39;</span><span class="p">,</span> <span class="nb">complex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">phi</span><span class="p">,</span> <span class="n">psi</span> <span class="o">=</span> <span class="n">Ket</span><span class="p">(</span><span class="s1">&#39;phi&#39;</span><span class="p">),</span> <span class="n">Ket</span><span class="p">(</span><span class="s1">&#39;psi&#39;</span><span class="p">)</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;alpha&#39;</span><span class="p">,</span> <span class="nb">complex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">beta</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;beta&#39;</span><span class="p">,</span> <span class="nb">complex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">state</span> <span class="o">=</span> <span class="n">alpha</span><span class="o">*</span><span class="n">psi</span> <span class="o">+</span> <span class="n">beta</span><span class="o">*</span><span class="n">phi</span><span class="p">;</span> <span class="n">state</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/2cdd1684ee13cd1adc3eeaff74ad9056701c98b508f9ace1efd5af5d5090229b.png" src="_images/2cdd1684ee13cd1adc3eeaff74ad9056701c98b508f9ace1efd5af5d5090229b.png" />
 </div>
 </div>
 <p>Bras can be created using the <code class="docutils literal notranslate"><span class="pre">Bra</span></code> class directly or by using the <code class="docutils literal notranslate"><span class="pre">Dagger</span></code> class
@@ -532,9 +518,6 @@ on an expression involving kets:</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/9d3e286b4a5cd36ff7339d47877b0782a73d88fb7d03269ca5dafc5feb9b7034.png" src="_images/9d3e286b4a5cd36ff7339d47877b0782a73d88fb7d03269ca5dafc5feb9b7034.png" />
-</div>
 </div>
 <p>Because this is a standard SymPy expression, we can use standard SymPy functions and methods
 for manipulating expression. Here we use expand to multiply this expression out, followed
@@ -544,9 +527,6 @@ by <code class="docutils literal notranslate"><span class="pre">qapply</span></c
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">qapply</span><span class="p">(</span><span class="n">expand</span><span class="p">(</span><span class="n">ip</span><span class="p">))</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/25677df56609798f5fa3a77785fcf0a5ded017f0e6ba32e1df93844674787de5.png" src="_images/25677df56609798f5fa3a77785fcf0a5ded017f0e6ba32e1df93844674787de5.png" />
 </div>
 </div>
 </section>
@@ -559,20 +539,9 @@ one of which is hermitian:</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">Operator</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
 <span class="n">B</span> <span class="o">=</span> <span class="n">Operator</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>
 <span class="n">C</span> <span class="o">=</span> <span class="n">HermitianOperator</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>
+<span class="n">expand</span><span class="p">((</span><span class="n">A</span><span class="o">+</span><span class="n">B</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="c1">#SymPy knows that operators do not commute in polynomial of operators</span>
 </pre></div>
 </div>
-</div>
-</div>
-<p>When used in arithmetic expressions SymPy knows that operators do not commute under
-multiplication/composition as is seen by expanding a polynomial of operators:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expand</span><span class="p">((</span><span class="n">A</span><span class="o">+</span><span class="n">B</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/cc63d34b63726cbb565db9f73d9826207f30a0441d8bb1fc351888e4ff82d9d8.png" src="_images/cc63d34b63726cbb565db9f73d9826207f30a0441d8bb1fc351888e4ff82d9d8.png" />
 </div>
 </div>
 <p>Commutators of operators can also be created:</p>
@@ -582,20 +551,13 @@ multiplication/composition as is seen by expanding a polynomial of operators:</p
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/37e8ec20e3df5d759010fc20a50ee4c394a8b3e2ce514c7a1f2981321c65e4e6.png" src="_images/37e8ec20e3df5d759010fc20a50ee4c394a8b3e2ce514c7a1f2981321c65e4e6.png" />
 </div>
-</div>
-<p>The <code class="docutils literal notranslate"><span class="pre">expand</span></code> function has custom logic for expanding commutators using standard commutator
-relations:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">comm</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">commutator</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># expand() has custom logic for expanding standard commutator relations</span>
+<span class="n">comm</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">commutator</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/8635d06d6aa0e742618cf8f483cf705b6abe3e38a3efdd37596204fcd59aa0f4.png" src="_images/8635d06d6aa0e742618cf8f483cf705b6abe3e38a3efdd37596204fcd59aa0f4.png" />
 </div>
 </div>
 <p>Any commutator can be performed (<span class="math notranslate nohighlight">\([A,B]\rightarrow AB-BA\)</span>) using the <code class="docutils literal notranslate"><span class="pre">doit</span></code> method:</p>
@@ -604,9 +566,6 @@ relations:</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span><span class="o">.</span><span class="n">doit</span><span class="p">()</span><span class="o">.</span><span class="n">expand</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/a1205c77f5113525c68795e8b0f4fed2de3f232ab6b1e6d854b5a46d522d03cc.png" src="_images/a1205c77f5113525c68795e8b0f4fed2de3f232ab6b1e6d854b5a46d522d03cc.png" />
 </div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">Dagger</span></code> class also works with operators and is aware of the properties of unitary
@@ -617,9 +576,6 @@ and hermitian operators:</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/a91e0f42c7061fd37fb9c3a8df4bca76f446f1a6331e90c83b6ebb042cba7eb2.png" src="_images/a91e0f42c7061fd37fb9c3a8df4bca76f446f1a6331e90c83b6ebb042cba7eb2.png" />
-</div>
 </div>
 </section>
 <section id="tensor-products">
@@ -628,39 +584,10 @@ and hermitian operators:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">op</span> <span class="o">=</span> <span class="n">TensorProduct</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="o">+</span><span class="n">C</span><span class="p">)</span>
-<span class="n">state</span> <span class="o">=</span> <span class="n">TensorProduct</span><span class="p">(</span><span class="n">psi</span><span class="p">,</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">state</span> <span class="o">=</span> <span class="n">TensorProduct</span><span class="p">(</span><span class="n">psi</span><span class="p">,</span><span class="n">phi</span><span class="p">)</span> <span class="c1"># Here simplification is automatic</span>
 <span class="n">op</span><span class="o">*</span><span class="n">state</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/97b24d4e01db090a73b2c72d5fa8be783a71ee237222b271aab9349507415e9c.png" src="_images/97b24d4e01db090a73b2c72d5fa8be783a71ee237222b271aab9349507415e9c.png" />
-</div>
-</div>
-<p>Once a tensor product has been created, it can be simplified,</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tensor_product_simp</span><span class="p">(</span><span class="n">_</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_72469/1014556276.py:1: SymPyDeprecationWarning: 
-
-tensor_product_simp has been deprecated. The transformations
-performed by this function are now done automatically when
-tensor products are combined.
-
-See https://docs.sympy.org/latest/explanation/active-deprecations.html#deprecated-tensorproduct-simp
-for details.
-
-This has been deprecated since SymPy version 1.14. It
-will be removed in a future version of SymPy.
-
-  tensor_product_simp(_)
-</pre></div>
-</div>
-<img alt="_images/97b24d4e01db090a73b2c72d5fa8be783a71ee237222b271aab9349507415e9c.png" src="_images/97b24d4e01db090a73b2c72d5fa8be783a71ee237222b271aab9349507415e9c.png" />
 </div>
 </div>
 <p>and expanded:</p>
@@ -669,9 +596,6 @@ will be removed in a future version of SymPy.
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expand</span><span class="p">(</span><span class="n">_</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/07fd9c22ab75b44cf3356bd0161485c6a1ac93fa73604a495d4fb4b4d7e47ff3.png" src="_images/07fd9c22ab75b44cf3356bd0161485c6a1ac93fa73604a495d4fb4b4d7e47ff3.png" />
 </div>
 </div>
 </section>
