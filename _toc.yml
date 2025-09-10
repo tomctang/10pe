@@ -22,6 +22,7 @@ parts:
   - file: Course_MIT6001Python
   - file: Course_MIT6002thinking
   - file: PE_Informatics/PE_tags
+  - file: PE_Informatics/PE_math
   - file: PE_Informatics/PE50
   - file: PE_Informatics/PE100 
   - file: Course_MCM_QM
