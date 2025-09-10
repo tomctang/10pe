@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>14. Project Euler Q51- &#8212; Jonny Workbook</title>
+    <title>15. Project Euler Q51- &#8212; Jonny Workbook</title>
   
   
   
@@ -58,11 +58,13 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'PE_Informatics/PE100';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="15. Quantum Mechanics" href="../Course_MCM_QM.html" />
-    <link rel="prev" title="13. Project Euler Q1-50" href="PE50.html" />
+    <link rel="next" title="16. Quantum Mechanics" href="../Course_MCM_QM.html" />
+    <link rel="prev" title="14. Project Euler Q1-50" href="PE50.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -191,17 +193,18 @@
 <li class="toctree-l1"><a class="reference internal" href="../Course_MIT6001Python.html">10. MIT_CS6001-Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Course_MIT6002thinking.html">11. MIT_CS6002-CS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="PE_tags.html">12. Project Euler Tags</a></li>
-<li class="toctree-l1"><a class="reference internal" href="PE50.html">13. Project Euler Q1-50</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">14. Project Euler Q51-</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Course_MCM_QM.html">15. Quantum Mechanics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../How_Dad_organise_QM.html">16. How Dad learn QM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Course_MCM_QFT.html">17. QFT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PE_math.html">13. Project Euler Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PE50.html">14. Project Euler Q1-50</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">15. Project Euler Q51-</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Course_MCM_QM.html">16. Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../How_Dad_organise_QM.html">17. How Dad learn QM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Course_MCM_QFT.html">18. QFT</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Notebook</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../nb_past_courses.html">18. Past courses</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../geo/nb_Geo.html">19. Geography and Maps</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../nb_lottery_simulator.html">20. Lottery Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nb_past_courses.html">19. Past courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../geo/nb_Geo.html">20. Geography and Maps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nb_lottery_simulator.html">21. Lottery Math</a></li>
 </ul>
 
     </div>
@@ -365,38 +368,41 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-51">14.1. PE 51</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-52">14.2. PE 52</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-53">14.3. PE 53</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-54">14.4. PE 54</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-55">14.5. PE 55</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-56">14.6. PE 56</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-57">14.7. PE 57</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-58">14.8. PE 58</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-59">14.9. PE 59</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-62">14.10. PE 62</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-63">14.11. PE 63</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-65">14.12. PE 65</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-66">14.13. PE 66</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-69">14.14. PE 69</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-71">14.15. PE 71</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-74">14.16. PE 74</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-75">14.17. PE 75</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-79">14.18. PE 79</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-80">14.19. PE 80</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-92">14.20. PE 92</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-99">14.21. PE 99</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-104">14.22. PE 104</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-112">14.23. PE 112</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-121">14.24. PE 121</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-124">14.25. PE 124</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-125">14.26. PE 125</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-162">14.27. PE 162</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-179">14.28. PE 179</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-187">14.29. PE 187</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-188">14.30. PE 188</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-243">14.31. PE 243</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-345">14.32. PE 345</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-51">15.1. PE 51</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-52">15.2. PE 52</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-53">15.3. PE 53</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-54">15.4. PE 54</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-55">15.5. PE 55</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-56">15.6. PE 56</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-57">15.7. PE 57</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-58">15.8. PE 58</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-59">15.9. PE 59</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-62">15.10. PE 62</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-63">15.11. PE 63</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-65">15.12. PE 65</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-66">15.13. PE 66</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-69">15.14. PE 69</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-71">15.15. PE 71</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-74">15.16. PE 74</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-75">15.17. PE 75</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-79">15.18. PE 79</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-80">15.19. PE 80</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-85">15.20. PE 85</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-92">15.21. PE 92</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-99">15.22. PE 99</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-104">15.23. PE 104</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-112">15.24. PE 112</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-121">15.25. PE 121</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-124">15.26. PE 124</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-125">15.27. PE 125</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-162">15.28. PE 162</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-179">15.29. PE 179</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-187">15.30. PE 187</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-188">15.31. PE 188</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-192">15.32. PE 192</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-205">15.33. PE 205</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-243">15.34. PE 243</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-345">15.35. PE 345</a></li>
 </ul>
             </nav>
         </div>
@@ -409,7 +415,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="project-euler-q51">
-<h1><span class="section-number">14. </span>Project Euler Q51-<a class="headerlink" href="#project-euler-q51" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">15. </span>Project Euler Q51-<a class="headerlink" href="#project-euler-q51" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">run</span> PE_pre_running.py
@@ -418,7 +424,7 @@ document.write(`
 </div>
 </div>
 <section id="pe-51">
-<h2><span class="section-number">14.1. </span>PE 51<a class="headerlink" href="#pe-51" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.1. </span>PE 51<a class="headerlink" href="#pe-51" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 51 Prime Digit Replacements</span>
@@ -430,7 +436,7 @@ document.write(`
 </div>
 </section>
 <section id="pe-52">
-<h2><span class="section-number">14.2. </span>PE 52<a class="headerlink" href="#pe-52" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.2. </span>PE 52<a class="headerlink" href="#pe-52" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#52 Permuted Multiples</span>
@@ -463,7 +469,7 @@ document.write(`
 </div>
 </section>
 <section id="pe-53">
-<h2><span class="section-number">14.3. </span>PE 53<a class="headerlink" href="#pe-53" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.3. </span>PE 53<a class="headerlink" href="#pe-53" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 53 Combinatoric Selections</span>
@@ -482,7 +488,7 @@ document.write(`
 </div>
 </section>
 <section id="pe-54">
-<h2><span class="section-number">14.4. </span>PE 54<a class="headerlink" href="#pe-54" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.4. </span>PE 54<a class="headerlink" href="#pe-54" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
@@ -632,7 +638,7 @@ document.write(`
 </div>
 </section>
 <section id="pe-55">
-<h2><span class="section-number">14.5. </span>PE 55<a class="headerlink" href="#pe-55" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.5. </span>PE 55<a class="headerlink" href="#pe-55" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#55 Lychrel Numbers</span>
@@ -663,7 +669,7 @@ document.write(`
 </div>
 </section>
 <section id="pe-56">
-<h2><span class="section-number">14.6. </span>PE 56<a class="headerlink" href="#pe-56" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.6. </span>PE 56<a class="headerlink" href="#pe-56" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#56 Powerful Digit Sum</span>
@@ -684,7 +690,7 @@ document.write(`
 </div>
 </section>
 <section id="pe-57">
-<h2><span class="section-number">14.7. </span>PE 57<a class="headerlink" href="#pe-57" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.7. </span>PE 57<a class="headerlink" href="#pe-57" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 57 Square Root Convergents</span>
@@ -714,7 +720,7 @@ document.write(`
 </div>
 </section>
 <section id="pe-58">
-<h2><span class="section-number">14.8. </span>PE 58<a class="headerlink" href="#pe-58" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.8. </span>PE 58<a class="headerlink" href="#pe-58" title="Link to this heading">#</a></h2>
 <p>The corner_num function works like this:</p>
 <ol class="arabic simple">
 <li><p>1 is the centre of the square.</p></li>
@@ -764,7 +770,7 @@ document.write(`
 </div>
 </section>
 <section id="pe-59">
-<h2><span class="section-number">14.9. </span>PE 59<a class="headerlink" href="#pe-59" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.9. </span>PE 59<a class="headerlink" href="#pe-59" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 59 XOR Decryption</span>
@@ -792,7 +798,7 @@ document.write(`
 </div>
 </section>
 <section id="pe-62">
-<h2><span class="section-number">14.10. </span>PE 62<a class="headerlink" href="#pe-62" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.10. </span>PE 62<a class="headerlink" href="#pe-62" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#62 </span>
@@ -815,7 +821,7 @@ document.write(`
 </div>
 </section>
 <section id="pe-63">
-<h2><span class="section-number">14.11. </span>PE 63<a class="headerlink" href="#pe-63" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.11. </span>PE 63<a class="headerlink" href="#pe-63" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 63 Powerful Digit Counts</span>
@@ -831,7 +837,7 @@ document.write(`
 </div>
 </section>
 <section id="pe-65">
-<h2><span class="section-number">14.12. </span>PE 65<a class="headerlink" href="#pe-65" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.12. </span>PE 65<a class="headerlink" href="#pe-65" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#65 Convergents of e</span>
@@ -870,7 +876,7 @@ document.write(`
 </div>
 </section>
 <section id="pe-66">
-<h2><span class="section-number">14.13. </span>PE 66<a class="headerlink" href="#pe-66" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.13. </span>PE 66<a class="headerlink" href="#pe-66" title="Link to this heading">#</a></h2>
 <p>see <a class="reference external" href="https://en.wikipedia.org/wiki/Pell%27s_equation">https://en.wikipedia.org/wiki/Pell’s_equation</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -881,7 +887,10 @@ document.write(`
 </div>
 </section>
 <section id="pe-69">
-<h2><span class="section-number">14.14. </span>PE 69<a class="headerlink" href="#pe-69" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.14. </span>PE 69<a class="headerlink" href="#pe-69" title="Link to this heading">#</a></h2>
+<p>Euler’s Totient Function (or just Euler <span class="math notranslate nohighlight">\(\phi\)</span> function) has a general formulas as below, <span class="math notranslate nohighlight">\(p_i\)</span> is all of the coprime of x, where x is a positive integer.</p>
+<div class="math notranslate nohighlight">
+\[\phi(x)=x\prod_{i=1}^n(1-\frac{1}{p_i})\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#69 Totient Maximum</span>
@@ -970,7 +979,7 @@ document.write(`
 </div>
 </section>
 <section id="pe-71">
-<h2><span class="section-number">14.15. </span>PE 71<a class="headerlink" href="#pe-71" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.15. </span>PE 71<a class="headerlink" href="#pe-71" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#71 Ordered Fractions </span>
@@ -1008,7 +1017,7 @@ document.write(`
 </div>
 </section>
 <section id="pe-74">
-<h2><span class="section-number">14.16. </span>PE 74<a class="headerlink" href="#pe-74" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.16. </span>PE 74<a class="headerlink" href="#pe-74" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#74 Factorial Chains</span>
@@ -1042,7 +1051,7 @@ document.write(`
 </div>
 </section>
 <section id="pe-75">
-<h2><span class="section-number">14.17. </span>PE 75<a class="headerlink" href="#pe-75" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.17. </span>PE 75<a class="headerlink" href="#pe-75" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#75 Singular Integer Right Triangles</span>
@@ -1074,7 +1083,7 @@ document.write(`
 </div>
 </section>
 <section id="pe-79">
-<h2><span class="section-number">14.18. </span>PE 79<a class="headerlink" href="#pe-79" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.18. </span>PE 79<a class="headerlink" href="#pe-79" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#79 Passcode Derivation</span>
@@ -1085,7 +1094,7 @@ document.write(`
 </div>
 </section>
 <section id="pe-80">
-<h2><span class="section-number">14.19. </span>PE 80<a class="headerlink" href="#pe-80" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.19. </span>PE 80<a class="headerlink" href="#pe-80" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#80 Square Root Digital Expansion</span>
@@ -1139,8 +1148,43 @@ document.write(`
 </div>
 </div>
 </section>
+<section id="pe-85">
+<h2><span class="section-number">15.20. </span>PE 85<a class="headerlink" href="#pe-85" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 85 Counting Rectangles</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">count_rec</span><span class="p">(</span><span class="n">length</span><span class="p">,</span><span class="n">width</span><span class="p">):</span>
+    <span class="n">lst</span><span class="o">=</span><span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">length</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">width</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">length</span><span class="o">-</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">width</span><span class="o">-</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
+
+<span class="n">lst</span><span class="o">=</span><span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="mi">100</span><span class="p">):</span>
+        <span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">count_rec</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">))</span>
+        <span class="k">if</span> <span class="mi">1998000</span><span class="o">&lt;</span><span class="n">count_rec</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="o">&lt;</span><span class="mi">2000000</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Dimensions of grid: &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;, &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">j</span><span class="p">))</span>
+<span class="n">lst</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">lst</span><span class="p">))</span>
+<span class="n">lst</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="mi">1998000</span><span class="o">&lt;</span><span class="n">x</span><span class="o">&lt;</span><span class="mi">2000000</span><span class="p">,</span><span class="n">lst</span><span class="p">))</span>
+<span class="n">lst</span><span class="o">=</span><span class="n">lst</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">lst</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dimensions of grid: 36, 77
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1999998
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="pe-92">
-<h2><span class="section-number">14.20. </span>PE 92<a class="headerlink" href="#pe-92" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.21. </span>PE 92<a class="headerlink" href="#pe-92" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#92 Square Digit Chains</span>
@@ -1165,7 +1209,15 @@ document.write(`
 </div>
 </section>
 <section id="pe-99">
-<h2><span class="section-number">14.21. </span>PE 99<a class="headerlink" href="#pe-99" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.22. </span>PE 99<a class="headerlink" href="#pe-99" title="Link to this heading">#</a></h2>
+<p>In this question, I learned Ordinal theory (VS. Cardinal theory):</p>
+<ul class="simple">
+<li><p>Ordinal data only introduces a ordering/ranking (e.g. A&gt;B), but we don’t know how large A or B is.</p></li>
+<li><p>Cardinal further tell ‘how many’ of each thing, or showing quantity (e.g. 2&gt;1)</p></li>
+</ul>
+<p>When comparing huge numbers, I don’t need to know ‘how many’ they are, I just need to where they are (their ranking). So I can use log to shrink their coordinates:</p>
+<div class="math notranslate nohighlight">
+\[base^{exponent} =e^{exponent⋅log(base)}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 99 Largest Exponential</span>
@@ -1219,7 +1271,7 @@ document.write(`
 </div>
 </section>
 <section id="pe-104">
-<h2><span class="section-number">14.22. </span>PE 104<a class="headerlink" href="#pe-104" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.23. </span>PE 104<a class="headerlink" href="#pe-104" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 104 Pandigital Fibonacci Ends</span>
@@ -1255,7 +1307,7 @@ document.write(`
 </div>
 </section>
 <section id="pe-112">
-<h2><span class="section-number">14.23. </span>PE 112<a class="headerlink" href="#pe-112" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.24. </span>PE 112<a class="headerlink" href="#pe-112" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#112 Bouncy Numbers</span>
@@ -1293,7 +1345,7 @@ document.write(`
 </div>
 </section>
 <section id="pe-121">
-<h2><span class="section-number">14.24. </span>PE 121<a class="headerlink" href="#pe-121" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.25. </span>PE 121<a class="headerlink" href="#pe-121" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">*</span> <span class="mi">121</span> <span class="n">Disc</span> <span class="n">Game</span> <span class="n">Prize</span> <span class="n">Fund</span> 
@@ -1308,7 +1360,7 @@ document.write(`
 </div>
 </section>
 <section id="pe-124">
-<h2><span class="section-number">14.25. </span>PE 124<a class="headerlink" href="#pe-124" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.26. </span>PE 124<a class="headerlink" href="#pe-124" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 124 Ordered Radicals</span>
@@ -1337,7 +1389,7 @@ document.write(`
 </div>
 </section>
 <section id="pe-125">
-<h2><span class="section-number">14.26. </span>PE 125<a class="headerlink" href="#pe-125" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.27. </span>PE 125<a class="headerlink" href="#pe-125" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">*</span> <span class="mi">125</span> <span class="n">Palindromic</span> <span class="n">Sums</span> <span class="o">*</span><span class="p">)</span>
@@ -1370,7 +1422,7 @@ document.write(`
 </div>
 </section>
 <section id="pe-162">
-<h2><span class="section-number">14.27. </span>PE 162<a class="headerlink" href="#pe-162" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.28. </span>PE 162<a class="headerlink" href="#pe-162" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">*</span> <span class="mi">162</span> <span class="n">Hexadecimal</span> <span class="n">Numbers</span> <span class="o">*</span><span class="p">)</span>
@@ -1385,7 +1437,7 @@ document.write(`
 </div>
 </section>
 <section id="pe-179">
-<h2><span class="section-number">14.28. </span>PE 179<a class="headerlink" href="#pe-179" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.29. </span>PE 179<a class="headerlink" href="#pe-179" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 179</span>
@@ -1407,7 +1459,8 @@ document.write(`
 </div>
 </section>
 <section id="pe-187">
-<h2><span class="section-number">14.29. </span>PE 187<a class="headerlink" href="#pe-187" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.30. </span>PE 187<a class="headerlink" href="#pe-187" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Semiprime">A semiprime-counting formula</a>: <span class="math notranslate nohighlight">\(\pi_{2}(n)= \)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#187 FP way</span>
@@ -1461,7 +1514,7 @@ document.write(`
 </div>
 </section>
 <section id="pe-188">
-<h2><span class="section-number">14.30. </span>PE 188<a class="headerlink" href="#pe-188" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.31. </span>PE 188<a class="headerlink" href="#pe-188" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">7</span><span class="o">**</span><span class="mi">7</span>
@@ -1518,8 +1571,98 @@ document.write(`
 </div>
 </div>
 </section>
+<section id="pe-192">
+<h2><span class="section-number">15.32. </span>PE 192<a class="headerlink" href="#pe-192" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://github.com/zhm-real/PathPlanning#papers">path-planning algorithms animations</a></p>
+</section>
+<section id="pe-205">
+<h2><span class="section-number">15.33. </span>PE 205<a class="headerlink" href="#pe-205" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lcm</span><span class="p">(</span><span class="mi">4</span><span class="o">^</span><span class="mi">9</span><span class="p">,</span><span class="mi">6</span><span class="o">^</span><span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>191102976
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 205 Dice Game</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">peter_prob</span><span class="p">():</span>
+    <span class="n">prob</span><span class="o">=</span><span class="nb">dict</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">37</span><span class="p">):</span>
+        <span class="n">prob</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">i</span><span class="p">:</span><span class="mi">0</span><span class="p">})</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+                <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+                    <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+                        <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+                            <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+                                <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+                                    <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+                                        <span class="n">s</span><span class="o">=</span><span class="nb">sum</span><span class="p">([</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">o</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="n">q</span><span class="p">])</span>
+                                        <span class="n">prob</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">s</span><span class="p">:</span><span class="n">prob</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">})</span>
+    <span class="k">return</span> <span class="n">prob</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">colin_prob</span><span class="p">():</span>
+    <span class="n">prob</span><span class="o">=</span><span class="nb">dict</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">37</span><span class="p">):</span>
+        <span class="n">prob</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">i</span><span class="p">:</span><span class="mi">0</span><span class="p">})</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">):</span>
+                <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">):</span>
+                    <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">):</span>
+                        <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">):</span>
+                            <span class="n">s</span><span class="o">=</span><span class="nb">sum</span><span class="p">([</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">])</span>
+                            <span class="n">prob</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">s</span><span class="p">:</span><span class="n">prob</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">})</span>
+    <span class="k">return</span> <span class="n">prob</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{6: 1,
+ 7: 6,
+ 8: 21,
+ 9: 56,
+ 10: 126,
+ 11: 252,
+ 12: 456,
+ 13: 756,
+ 14: 1161,
+ 15: 1666,
+ 16: 2247,
+ 17: 2856,
+ 18: 3431,
+ 19: 3906,
+ 20: 4221,
+ 21: 4332,
+ 22: 4221,
+ 23: 3906,
+ 24: 3431,
+ 25: 2856,
+ 26: 2247,
+ 27: 1666,
+ 28: 1161,
+ 29: 756,
+ 30: 456,
+ 31: 252,
+ 32: 126,
+ 33: 56,
+ 34: 21,
+ 35: 6,
+ 36: 1}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="pe-243">
-<h2><span class="section-number">14.31. </span>PE 243<a class="headerlink" href="#pe-243" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.34. </span>PE 243<a class="headerlink" href="#pe-243" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 243 Resilience</span>
@@ -1544,7 +1687,7 @@ document.write(`
 </div>
 </section>
 <section id="pe-345">
-<h2><span class="section-number">14.32. </span>PE 345<a class="headerlink" href="#pe-345" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.35. </span>PE 345<a class="headerlink" href="#pe-345" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">*</span> <span class="mi">345</span> <span class="o">*</span><span class="p">)</span>
@@ -1610,7 +1753,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">13. </span>Project Euler Q1-50</p>
+        <p class="prev-next-title"><span class="section-number">14. </span>Project Euler Q1-50</p>
       </div>
     </a>
     <a class="right-next"
@@ -1618,7 +1761,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">15. </span>Quantum Mechanics</p>
+        <p class="prev-next-title"><span class="section-number">16. </span>Quantum Mechanics</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1638,38 +1781,41 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-51">14.1. PE 51</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-52">14.2. PE 52</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-53">14.3. PE 53</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-54">14.4. PE 54</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-55">14.5. PE 55</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-56">14.6. PE 56</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-57">14.7. PE 57</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-58">14.8. PE 58</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-59">14.9. PE 59</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-62">14.10. PE 62</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-63">14.11. PE 63</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-65">14.12. PE 65</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-66">14.13. PE 66</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-69">14.14. PE 69</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-71">14.15. PE 71</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-74">14.16. PE 74</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-75">14.17. PE 75</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-79">14.18. PE 79</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-80">14.19. PE 80</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-92">14.20. PE 92</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-99">14.21. PE 99</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-104">14.22. PE 104</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-112">14.23. PE 112</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-121">14.24. PE 121</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-124">14.25. PE 124</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-125">14.26. PE 125</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-162">14.27. PE 162</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-179">14.28. PE 179</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-187">14.29. PE 187</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-188">14.30. PE 188</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-243">14.31. PE 243</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-345">14.32. PE 345</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-51">15.1. PE 51</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-52">15.2. PE 52</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-53">15.3. PE 53</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-54">15.4. PE 54</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-55">15.5. PE 55</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-56">15.6. PE 56</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-57">15.7. PE 57</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-58">15.8. PE 58</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-59">15.9. PE 59</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-62">15.10. PE 62</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-63">15.11. PE 63</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-65">15.12. PE 65</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-66">15.13. PE 66</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-69">15.14. PE 69</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-71">15.15. PE 71</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-74">15.16. PE 74</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-75">15.17. PE 75</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-79">15.18. PE 79</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-80">15.19. PE 80</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-85">15.20. PE 85</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-92">15.21. PE 92</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-99">15.22. PE 99</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-104">15.23. PE 104</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-112">15.24. PE 112</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-121">15.25. PE 121</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-124">15.26. PE 124</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-125">15.27. PE 125</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-162">15.28. PE 162</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-179">15.29. PE 179</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-187">15.30. PE 187</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-188">15.31. PE 188</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-192">15.32. PE 192</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-205">15.33. PE 205</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-243">15.34. PE 243</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-345">15.35. PE 345</a></li>
 </ul>
   </nav></div>
 

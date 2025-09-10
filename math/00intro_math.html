@@ -193,17 +193,18 @@
 <li class="toctree-l1"><a class="reference internal" href="../Course_MIT6001Python.html">10. MIT_CS6001-Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Course_MIT6002thinking.html">11. MIT_CS6002-CS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../PE_Informatics/PE_tags.html">12. Project Euler Tags</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PE_Informatics/PE50.html">13. Project Euler Q1-50</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PE_Informatics/PE100.html">14. Project Euler Q51-</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Course_MCM_QM.html">15. Quantum Mechanics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../How_Dad_organise_QM.html">16. How Dad learn QM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Course_MCM_QFT.html">17. QFT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PE_Informatics/PE_math.html">13. Project Euler Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PE_Informatics/PE50.html">14. Project Euler Q1-50</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PE_Informatics/PE100.html">15. Project Euler Q51-</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Course_MCM_QM.html">16. Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../How_Dad_organise_QM.html">17. How Dad learn QM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Course_MCM_QFT.html">18. QFT</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Notebook</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../nb_past_courses.html">18. Past courses</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../geo/nb_Geo.html">19. Geography and Maps</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../nb_lottery_simulator.html">20. Lottery Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nb_past_courses.html">19. Past courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../geo/nb_Geo.html">20. Geography and Maps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nb_lottery_simulator.html">21. Lottery Math</a></li>
 </ul>
 
     </div>
@@ -371,7 +372,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mind-map-of-math">5.2. Mind Map of Math</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#online-courses">5.3. Online courses</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">5.4. 名词解释</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-hidden-math">5.5. PE-Hidden-Math</a></li>
 </ul>
             </nav>
         </div>
@@ -765,89 +765,6 @@ Poisson’s theorem</p></li>
 <li><p>Vector calculus 向量分析，或向量微积分，“向量分析”有时也用作多元微积分的代名词，包括向量分析，偏微分和多重积分等多元实分析</p></li>
 </ol>
 <img src="https://raw.githubusercontent.com/tomctang/NB_img/main/mapmath.jpg" alt="Map of Math" width="1200"> </section>
-<section id="pe-hidden-math">
-<h2><span class="section-number">5.5. </span>PE-Hidden-Math<a class="headerlink" href="#pe-hidden-math" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><p><strong>Question ordering</strong></p>
-</div></blockquote>
-<ol class="arabic simple" start="69">
-<li><p>Totient Maximum</p></li>
-</ol>
-<p>欧拉函数 Euler’s Totient Function (or <span class="math notranslate nohighlight">\(\phi\)</span> function) has a general formulas as below, <span class="math notranslate nohighlight">\(p_i\)</span> is all of the coprime of x, where x is a positive integer.</p>
-<div class="math notranslate nohighlight">
-\[\phi(x)=x\prod_{i=1}^n(1-\frac{1}{p_i})\]</div>
-<ol class="arabic simple" start="99">
-<li><p>Largest Exponential</p></li>
-</ol>
-<p>In this question, I learned Ordinal theory (VS. Cardinal theory):</p>
-<ul class="simple">
-<li><p>Ordinal data only introduces a ordering/ranking (e.g. A&gt;B), but we don’t know how large A or B is.</p></li>
-<li><p>Cardinal further tell ‘how many’ of each thing, or showing quantity (e.g. 2&gt;1)</p></li>
-</ul>
-<p>When comparing huge numbers, I don’t need to know ‘how many’ they are, I just need to where they are (their ranking). So I can use log to shrink their coordinates:</p>
-<div class="math notranslate nohighlight">
-\[base^{exponent} =e^{exponent⋅log(base)}\]</div>
-<ol class="arabic simple" start="187">
-<li><p>Semiprimes</p></li>
-</ol>
-<p><a class="reference external" href="https://en.wikipedia.org/wiki/Semiprime">A semiprime-counting formula</a>:</p>
-<div class="math notranslate nohighlight">
-\[\pi_{2}(n)= \]</div>
-<blockquote>
-<div><p>Number Theory &amp; Algebra</p>
-</div></blockquote>
-<ul class="simple">
-<li><p>Prime numbers and factorization: 3, 7, 10, 12, 27, 35, 47, 50, 58, 67, 70, 78, 87, 92, 97, 104, 120, 123, 134, 140, 146, 158, 160, 162, 179, 187, 196</p></li>
-<li><p>Divisibility rules and modular arithmetic: 2, 4, 5, 9, 11, 14, 17, 21, 24, 29, 31, 37, 41, 43, 46, 53, 56, 61, 65, 73, 76, 82, 85, 90, 95, 102, 108, 112, 116, 119, 125, 131, 137, 143, 149, 155, 166, 172, 178, 184, 190, 193, 199</p></li>
-<li><p>Number sequences and series: 6, 8, 15, 22, 25, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75, 79, 83, 86, 89, 93, 96, 99, 105, 109, 113, 117, 121, 126, 132, 138, 144, 150, 156, 163, 169, 175, 181, 188, 194</p></li>
-<li><p>Diophantine equations</p></li>
-<li><p>Continued Fraction</p></li>
-<li><p>Polynomial equations: 18, 28, 35, 43, 51, 61, 71, 81, 91, 101, 111, 121, 131, 141, 151, 161, 171, 181, 191, 200</p></li>
-<li><p>Matrix operations: 44, 53, 62, 72, 82, 92, 102, 112, 122, 132, 142, 152, 162, 172, 182, 192</p></li>
-<li><p>Number bases and conversions</p></li>
-<li><p>Algebraic identities</p></li>
-</ul>
-<blockquote>
-<div><p>Algorithms &amp; Data Structures</p>
-</div></blockquote>
-<ul class="simple">
-<li><p>Sorting and searching algorithms: 4, 17, 26, 35, 44, 53, 62, 72, 82, 92, 102, 112, 122, 132, 142, 152, 162, 172, 182, 192 <a class="reference external" href="https://github.com/zhm-real/PathPlanning#papers">path-planning algorithms animations</a></p></li>
-<li><p>Dynamic programming: 18(Maximum path sum I), 67(Maximum path sum II), 187, 198, 202</p></li>
-<li><p>Greedy algorithms: 22, 30, 39, 48, 57, 66, 75, 84, 93, 102, 111, 120, 129, 138, 147, 156, 165, 174, 183, 192</p></li>
-<li><p>Backtracking: 29, 37, 45, 53, 61, 69, 77, 85, 93, 101, 109, 117, 125, 133, 141, 149, 157, 165, 173, 181, 189, 197</p></li>
-<li><p>Recursion: 13, 21, 29, 37, 45, 53, 61, 69, 77, 85, 93, 101, 109, 117, 125, 133, 141, 149, 157, 165, 173, 181, 189, 197</p></li>
-<li><p>Data structures (arrays, lists, stacks, queues, trees, graphs): 19, 27, 35, 43, 51, 59, 67, 75, 83, 91, 99, 107, 115, 123, 131, 139, 147, 155, 163, 171, 179, 187, 195</p></li>
-</ul>
-<blockquote>
-<div><p>Combinatorics and Probability</p>
-</div></blockquote>
-<ul class="simple">
-<li><p>Permutations and combinations: 15, 24, 32, 40, 49, 59, 62, 68, 74, 80, 88, 94, 100, 106, 114, 122, 130, 139, 147, 159, 167, 176, 185, 192, 200</p></li>
-<li><p>Probability theory: 19, 26, 34, 44, 52, 64, 77, 91, 103, 115, 127, 135, 145, 153, 161, 170, 179, 189, 197</p></li>
-<li><p>Combinatorial games</p></li>
-<li><p>Graph theory</p></li>
-<li><p>Lattice paths</p></li>
-</ul>
-<blockquote>
-<div><p>Geometry</p>
-</div></blockquote>
-<ul class="simple">
-<li><p>Geometric sequences and series: 16, 23, 31, 41, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200</p></li>
-<li><p>Pythagorean triples and triangles: 9, 20, 38, 55, 71, 84, 98, 111, 124, 136, 148, 164, 173, 182, 191</p></li>
-<li><p>Polygons and their properties</p></li>
-<li><p>Circle geometry</p></li>
-<li><p>Solid geometry</p></li>
-</ul>
-<blockquote>
-<div><p>Other</p>
-</div></blockquote>
-<ul class="simple">
-<li><p>Cryptography</p></li>
-<li><p>Numerical analysis</p></li>
-<li><p>Calculus</p></li>
-<li><p>Game theory</p></li>
-</ul>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -918,7 +835,6 @@ Poisson’s theorem</p></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mind-map-of-math">5.2. Mind Map of Math</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#online-courses">5.3. Online courses</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">5.4. 名词解释</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-hidden-math">5.5. PE-Hidden-Math</a></li>
 </ul>
   </nav></div>
 
