@@ -21,8 +21,9 @@ parts:
   chapters:
   - file: Course_MIT6001Python
   - file: Course_MIT6002thinking
-  - file: PE/PE50
-  - file: PE/PE75  
+  - file: PE_Informatics/PE_tags
+  - file: PE_Informatics/PE50
+  - file: PE_Informatics/PE75  
   - file: Course_MCM_QM
   - file: How_Dad_organise_QM
   - file: Course_MCM_QFT
