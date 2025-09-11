@@ -399,10 +399,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-179">15.29. PE 179</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-187">15.30. PE 187</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-188">15.31. PE 188</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-192">15.32. PE 192</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-205">15.33. PE 205</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-243">15.34. PE 243</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-345">15.35. PE 345</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-205">15.32. PE 205</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-243">15.33. PE 243</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-345">15.34. PE 345</a></li>
 </ul>
             </nav>
         </div>
@@ -762,11 +761,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>26241
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="pe-59">
@@ -993,11 +987,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(428570, 999997)
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1170,14 +1159,6 @@ document.write(`
 <span class="n">lst</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="mi">1998000</span><span class="o">&lt;</span><span class="n">x</span><span class="o">&lt;</span><span class="mi">2000000</span><span class="p">,</span><span class="n">lst</span><span class="p">))</span>
 <span class="n">lst</span><span class="o">=</span><span class="n">lst</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">lst</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dimensions of grid: 36, 77
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1999998
 </pre></div>
 </div>
 </div>
@@ -1571,24 +1552,8 @@ document.write(`
 </div>
 </div>
 </section>
-<section id="pe-192">
-<h2><span class="section-number">15.32. </span>PE 192<a class="headerlink" href="#pe-192" title="Link to this heading">#</a></h2>
-<p><a class="reference external" href="https://github.com/zhm-real/PathPlanning#papers">path-planning algorithms animations</a></p>
-</section>
 <section id="pe-205">
-<h2><span class="section-number">15.33. </span>PE 205<a class="headerlink" href="#pe-205" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lcm</span><span class="p">(</span><span class="mi">4</span><span class="o">^</span><span class="mi">9</span><span class="p">,</span><span class="mi">6</span><span class="o">^</span><span class="mi">6</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>191102976
-</pre></div>
-</div>
-</div>
-</div>
+<h2><span class="section-number">15.32. </span>PE 205<a class="headerlink" href="#pe-205" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 205 Dice Game</span>
@@ -1607,6 +1572,8 @@ document.write(`
                                     <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
                                         <span class="n">s</span><span class="o">=</span><span class="nb">sum</span><span class="p">([</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">o</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="n">q</span><span class="p">])</span>
                                         <span class="n">prob</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">s</span><span class="p">:</span><span class="n">prob</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">})</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">37</span><span class="p">):</span>
+        <span class="n">prob</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">i</span><span class="p">:</span><span class="n">prob</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">/</span><span class="mi">4</span><span class="o">^</span><span class="mi">9</span><span class="p">})</span>
     <span class="k">return</span> <span class="n">prob</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">colin_prob</span><span class="p">():</span>
     <span class="n">prob</span><span class="o">=</span><span class="nb">dict</span><span class="p">()</span>
@@ -1620,49 +1587,30 @@ document.write(`
                         <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">):</span>
                             <span class="n">s</span><span class="o">=</span><span class="nb">sum</span><span class="p">([</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">])</span>
                             <span class="n">prob</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">s</span><span class="p">:</span><span class="n">prob</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">})</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">37</span><span class="p">):</span>
+        <span class="n">prob</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">i</span><span class="p">:</span><span class="n">prob</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">/</span><span class="mi">6</span><span class="o">^</span><span class="mi">6</span><span class="p">})</span>
     <span class="k">return</span> <span class="n">prob</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{6: 1,
- 7: 6,
- 8: 21,
- 9: 56,
- 10: 126,
- 11: 252,
- 12: 456,
- 13: 756,
- 14: 1161,
- 15: 1666,
- 16: 2247,
- 17: 2856,
- 18: 3431,
- 19: 3906,
- 20: 4221,
- 21: 4332,
- 22: 4221,
- 23: 3906,
- 24: 3431,
- 25: 2856,
- 26: 2247,
- 27: 1666,
- 28: 1161,
- 29: 756,
- 30: 456,
- 31: 252,
- 32: 126,
- 33: 56,
- 34: 21,
- 35: 6,
- 36: 1}
+
+<span class="n">peter</span><span class="o">=</span><span class="n">peter_prob</span><span class="p">()</span>
+<span class="n">colin</span><span class="o">=</span><span class="n">colin_prob</span><span class="p">()</span>
+<span class="n">prob</span><span class="o">=</span><span class="n">colin</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">+</span><span class="n">colin</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="o">+</span><span class="n">colin</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span>
+<span class="n">peter_lst</span><span class="o">=</span><span class="p">[]</span>
+<span class="n">colin_lst</span><span class="o">=</span><span class="p">[]</span>
+<span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">peter</span><span class="p">:</span>
+    <span class="n">peter_lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">peter</span><span class="p">[</span><span class="n">num</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">colin</span><span class="p">:</span>
+    <span class="n">colin_lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">colin</span><span class="p">[</span><span class="n">num</span><span class="p">])</span>
+<span class="n">colin_lst</span><span class="o">=</span><span class="n">colin_lst</span><span class="p">[</span><span class="mi">3</span><span class="p">:]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">peter_lst</span><span class="p">)):</span>
+    <span class="n">prob</span><span class="o">+=</span><span class="n">peter_lst</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="nb">sum</span><span class="p">(</span><span class="n">colin_lst</span><span class="p">[:</span><span class="n">i</span><span class="p">])</span>
+<span class="c1"># print probability</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="pe-243">
-<h2><span class="section-number">15.34. </span>PE 243<a class="headerlink" href="#pe-243" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.33. </span>PE 243<a class="headerlink" href="#pe-243" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 243 Resilience</span>
@@ -1687,7 +1635,7 @@ document.write(`
 </div>
 </section>
 <section id="pe-345">
-<h2><span class="section-number">15.35. </span>PE 345<a class="headerlink" href="#pe-345" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.34. </span>PE 345<a class="headerlink" href="#pe-345" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">*</span> <span class="mi">345</span> <span class="o">*</span><span class="p">)</span>
@@ -1812,10 +1760,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-179">15.29. PE 179</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-187">15.30. PE 187</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-188">15.31. PE 188</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-192">15.32. PE 192</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-205">15.33. PE 205</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-243">15.34. PE 243</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-345">15.35. PE 345</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-205">15.32. PE 205</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-243">15.33. PE 243</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-345">15.34. PE 345</a></li>
 </ul>
   </nav></div>
 
