@@ -378,6 +378,7 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m1-intro-quantum-world">16.2. M1. Intro Quantum World</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m2-advanced-qm-with-spins">16.3. M2. Advanced QM with Spins</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m3-the-qm-of-light">16.4. M3. The QM of Light</a></li>
 </ul>
             </nav>
         </div>
@@ -1040,6 +1041,94 @@ document.write(`
 </li>
 </ul>
 <img src="https://raw.githubusercontent.com/tomctang/NB_img/main/sge.png" alt="seriesgraph" width="500"></section>
+<section id="m3-the-qm-of-light">
+<h2><span class="section-number">16.4. </span>M3. The QM of Light<a class="headerlink" href="#m3-the-qm-of-light" title="Link to this heading">#</a></h2>
+<p>Notes</p>
+<ul class="simple">
+<li><p>Light is made of particles.</p>
+<ul>
+<li><p>This has a long history.</p></li>
+<li><p>This can be proved using an experiment as when you shoot photons randomly through a single then you will get an pattern with a denser patch where the slit is. If instead it was a wave then it would be uniformly distributed.</p></li>
+</ul>
+</li>
+<li><p>Quantum Mechanics Process</p>
+<ol class="arabic simple">
+<li><p>Identify all events.</p></li>
+<li><p>Find all alternative events that can occur.</p></li>
+<li><p>Use quantum rules to find the amplitude arrow.</p>
+<ul>
+<li><p>Arrows rotate at a given speed(see below) based on the colour of the photon(1 revolution for every wavelength travelled).</p></li>
+</ul>
+</li>
+<li><p>Add all the arrows together to construct the final arrow.</p></li>
+<li><p>Square the length of the final arrow to calculate the probability for that event to occur.</p></li>
+<li><p>Add all the probabilities to calculate the total probability.</p></li>
+</ol>
+</li>
+<li><p>Calculation for Amplitude Arrows</p>
+<ul>
+<li><p>Use a clock that spins starting at 12 o’clock.</p></li>
+<li><p>Spinning rate through air</p>
+<ul>
+<li><p>Red Light: 36000 revolutions per inch(this one is mainly used in experiments)</p></li>
+<li><p>Green Light: 54000 revolutions per inch</p></li>
+<li><p>Blue Light: 72000 revolutions per inch</p></li>
+</ul>
+</li>
+<li><p>Reflection</p>
+<ul>
+<li><p>Reflection in air on glass: Multiply length by 0.2 and add 0.5 revolutions(6 hours) to the clock.</p></li>
+<li><p>Reflection in glass on glass: Just multiply length by 0.2</p></li>
+</ul>
+</li>
+<li><p>Transmission</p>
+<ul>
+<li><p>Transmission from air to glass: Multiply length by 0.98</p></li>
+<li><p>Transmission from glass to air: Multiply length by 0.98</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Info on Experiments</p>
+<ul>
+<li><p>1-3: These are experiments where the photons only interact with air and glass.</p></li>
+<li><p>4-?: These experiments mostly have slits that photons have to get through in order to get detected.</p></li>
+</ul>
+</li>
+<li><p>Source-Detector Experiments of Light</p>
+<ol class="arabic simple">
+<li><p>There is only one event so this is boring. Source -&gt; Detector The length is just 1 meaning the final probability is 1.
+<img src="https://raw.githubusercontent.com/tomctang/NB_img/main/experiment1.png" alt="exp.1" width="200"></p></li>
+<li><p>The two alternative events are to reflect of the top of the glass or the bottom of the glass. Calculating gives a probability of 3%.
+<img src="https://raw.githubusercontent.com/tomctang/NB_img/main/experiment2.png" alt="exp.2" width="200"></p></li>
+<li><p>There is only one event which is where the photon gets transmitted. Using quantum rules gives a probability of 96%.
+<img src="https://raw.githubusercontent.com/tomctang/NB_img/main/experiment3.png" alt="exp.3" width="150"></p>
+<ul>
+<li><p>Even if you change the thickness of the glass, the probability is the same because all of them include one event where there is a transmission.</p></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>Two Slit Experiment</p>
+<ul>
+<li><p>This experiment is strange because out of the two slits, when you calculate the final probability for a photon to reach the detector, it is not the sum of the two probability for single slits like you would expect.</p></li>
+<li><p>If you move the detector to where there is a zero probability of the photon reaching the detector and then block a slit, the probability of a photon reaching the detector there increases.</p></li>
+<li><p>This is strange as when you add more blockages, more photons reach the detectors. This is related to quantum seeing in the dark.</p></li>
+</ul>
+</li>
+<li><p>Complex numbers describing oscillations and waves</p>
+<ul>
+<li><p>Oscillations: <span class="math notranslate nohighlight">\(x(t)={\rm Re}\left (Ae^{-i\omega t}\right )\)</span> where <span class="math notranslate nohighlight">\(A=\alpha e^{i\phi_0}\)</span> is the complex amplitude and phase and <span class="math notranslate nohighlight">\(\omega=\sqrt{\frac{k}{m}}\)</span> is the frequency of the oscillator.</p></li>
+<li><p>Wave motion: <span class="math notranslate nohighlight">\(x(t)={\rm Re}\left ( A e^{ikx-i\omega t}\right )\)</span>(where <span class="math notranslate nohighlight">\(A=\alpha e^{i\phi_0}\)</span> just like above)</p></li>
+</ul>
+</li>
+<li><p>Dirac way for two-slit experiment</p>
+<ul>
+<li><p>[add notes]</p></li>
+</ul>
+</li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1116,6 +1205,7 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m1-intro-quantum-world">16.2. M1. Intro Quantum World</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m2-advanced-qm-with-spins">16.3. M2. Advanced QM with Spins</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m3-the-qm-of-light">16.4. M3. The QM of Light</a></li>
 </ul>
   </nav></div>
 
