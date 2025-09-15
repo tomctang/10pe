@@ -368,7 +368,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#number-theory">13.1. Number Theory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#number-theory">13.1. Number Theory</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#divisibility-modular-arithmetic">13.1.1. <strong>1.Divisibility &amp; Modular Arithmetic</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiplicative-additive-functions">13.1.2. <strong>2.Multiplicative &amp; Additive Functions</strong></a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algebra-arithmetic-sequences">13.2. Algebra, Arithmetic &amp; Sequences</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combinatorics-probability">13.3. Combinatorics &amp; Probability</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-theory-algorithms">13.4. Graph Theory &amp; Algorithms</a></li>
@@ -390,7 +394,8 @@ document.write(`
 <h1><span class="section-number">13. </span>Project Euler Math<a class="headerlink" href="#project-euler-math" title="Link to this heading">#</a></h1>
 <section id="number-theory">
 <h2><span class="section-number">13.1. </span>Number Theory<a class="headerlink" href="#number-theory" title="Link to this heading">#</a></h2>
-<p><strong>1.Divisibility &amp; Modular Arithmetic</strong></p>
+<section id="divisibility-modular-arithmetic">
+<h3><span class="section-number">13.1.1. </span><strong>1.Divisibility &amp; Modular Arithmetic</strong><a class="headerlink" href="#divisibility-modular-arithmetic" title="Link to this heading">#</a></h3>
 <ol class="arabic simple" start="106">
 <li><p>for <span class="math notranslate nohighlight">\(i &gt; j\)</span>, <span class="math notranslate nohighlight">\(\displaystyle \gcd(i, j)\)</span> <span class="math notranslate nohighlight">\( = \)</span> <span class="math notranslate nohighlight">\(\displaystyle \gcd(i -j, j)\)</span> <span class="math notranslate nohighlight">\(\displaystyle \leq (i -j)\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\displaystyle \sum_{x = 1}^n \left[ d | x^k \right] = \left \lfloor\dfrac{n}{\prod_{i = 0}{p_i^{\left \lceil \dfrac{e_i}{k}\right \rceil}}}\right \rfloor\)</span>,
@@ -449,7 +454,38 @@ where <span class="math notranslate nohighlight">\(\displaystyle p\)</span> repr
 <li><p>Given n, If <span class="math notranslate nohighlight">\(SUM = LCM(1,n) + LCM(2,n) + … + LCM(n,n)\)</span>
 then SUM = <span class="math notranslate nohighlight">\(\displaystyle \dfrac{n}{2}( \displaystyle\sum _{ d| n}\left( \phi \left( d\right) \times d\right) +1\)</span></p></li>
 </ol>
-<p><strong>2.Multiplicative &amp; Additive Functions</strong></p>
+</section>
+<section id="multiplicative-additive-functions">
+<h3><span class="section-number">13.1.2. </span><strong>2.Multiplicative &amp; Additive Functions</strong><a class="headerlink" href="#multiplicative-additive-functions" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://en.m.wikipedia.org/wiki/Arithmetic_function">Arithmetic function</a> or number-theoretic function is <span class="math notranslate nohighlight">\(f: Z^+ \to C\)</span></p>
+<ul class="simple">
+<li><p>most important arithmetic function are:</p>
+<ul>
+<li><p>additive function if <span class="math notranslate nohighlight">\(a(mn) = a(m) + a(n)\)</span> for all coprime natural numbers m and n;</p>
+<ul>
+<li><p>e.g. log, prime-counting</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://en.m.wikipedia.org/wiki/Multiplicative_function">multiplicative function</a> if <span class="math notranslate nohighlight">\(a(1) = 1\)</span> and <span class="math notranslate nohighlight">\(a(mn) = a(m)a(n)\)</span> for all coprime natural numbers m and n.</p>
+<ul>
+<li><p>e.g. <span class="math notranslate nohighlight">\(gcd(n,k)\)</span>, Totient <span class="math notranslate nohighlight">\(\phi(n)\)</span>, Möbius function <span class="math notranslate nohighlight">\(\mu(n)\)</span>,  divisor function <span class="math notranslate nohighlight">\(\sigma_k(n)\)</span> <a class="reference external" href="http://et.al">et.al</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>What’s the ‘<span class="math notranslate nohighlight">\(\to\)</span>’ in <span class="math notranslate nohighlight">\(f: Z^+ \to C\)</span>?</p>
+<ul>
+<li><p>arithmetic function <span class="math notranslate nohighlight">\(a(n)\)</span> is the function defined by the corresponding Dirichlet series (convolution) <span class="math notranslate nohighlight">\(F_a(s)\)</span></p></li>
+<li><p>so ‘<span class="math notranslate nohighlight">\(\to\)</span>’ is a function <span class="math notranslate nohighlight">\(F_a(s)\)</span>, which is also called a generating function of <span class="math notranslate nohighlight">\(a(n)\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(F_a(s)\)</span> is the most important operation of <span class="math notranslate nohighlight">\(a(n)\)</span></p></li>
+</ul>
+</li>
+<li><p>In math analysis, Taylor series(<span class="math notranslate nohighlight">\(R\)</span>, + group), Fourier series(Torus(<span class="math notranslate nohighlight">\(=R/2πZ\)</span>), + group), Dirichlet(<span class="math notranslate nohighlight">\(Z^+\)</span>, <span class="math notranslate nohighlight">\(*\)</span> group)</p>
+<ul>
+<li><p>From view of Group Theory, Dirichlet convolution results in an Abelian Ring</p></li>
+</ul>
+</li>
+</ul>
 <ol class="arabic simple" start="146">
 <li><p>For any positive integer <span class="math notranslate nohighlight">\(n\)</span>, define <span class="math notranslate nohighlight">\(\displaystyle \mu(n)\)</span> as the sum of the primitive <span class="math notranslate nohighlight">\(n^{th}\)</span> roots of unity. It has values in <span class="math notranslate nohighlight">\(\displaystyle {-1, 0, 1}\)</span> depending on the factorization of <span class="math notranslate nohighlight">\(n\)</span> into prime factors:<br />
 - <span class="math notranslate nohighlight">\(\displaystyle \mu(n)=1\)</span> if <span class="math notranslate nohighlight">\(n\)</span> is a square-free positive integer with an even number of prime factors.<br />
@@ -537,6 +573,7 @@ For example, <br />
 <li><p>Continuing from previous point, <span class="math notranslate nohighlight">\(\displaystyle \displaystyle \left(\frac{p}{5}\right)={\text{infinite concatenation of the sequence}}\left(1,-1,-1,1,0\right) {\text{from }}p \geq 1\)</span>.</p></li>
 <li><p>If <span class="math notranslate nohighlight">\(n\)</span> = <span class="math notranslate nohighlight">\(\displaystyle \displaystyle k^2\)</span> is perfect square then <span class="math notranslate nohighlight">\(\displaystyle \left(\frac{n}{p}\right)=1\)</span> for every odd prime except <span class="math notranslate nohighlight">\(\displaystyle \left(\frac{n}{k}\right)=0\)</span> if k is an odd prime.</p></li>
 </ol>
+</section>
 </section>
 <section id="algebra-arithmetic-sequences">
 <h2><span class="section-number">13.2. </span>Algebra, Arithmetic &amp; Sequences<a class="headerlink" href="#algebra-arithmetic-sequences" title="Link to this heading">#</a></h2>
@@ -824,7 +861,11 @@ cryptography</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#number-theory">13.1. Number Theory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#number-theory">13.1. Number Theory</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#divisibility-modular-arithmetic">13.1.1. <strong>1.Divisibility &amp; Modular Arithmetic</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiplicative-additive-functions">13.1.2. <strong>2.Multiplicative &amp; Additive Functions</strong></a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algebra-arithmetic-sequences">13.2. Algebra, Arithmetic &amp; Sequences</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combinatorics-probability">13.3. Combinatorics &amp; Probability</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-theory-algorithms">13.4. Graph Theory &amp; Algorithms</a></li>
