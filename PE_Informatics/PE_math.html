@@ -370,10 +370,10 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#number-theory">13.1. Number Theory</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algebra-arithmetic-sequences">13.2. Algebra, Arithmetic &amp; Sequences</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometry-trigonometry">13.3. Geometry &amp; Trigonometry</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combinatorics-probability">13.4. Combinatorics &amp; Probability</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-theory-algorithms">13.5. Graph Theory &amp; Algorithms</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computational-methods-algorithms">13.6. Computational Methods &amp; Algorithms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combinatorics-probability">13.3. Combinatorics &amp; Probability</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-theory-algorithms">13.4. Graph Theory &amp; Algorithms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computational-methods-algorithms">13.5. Computational Methods &amp; Algorithms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometry-trigonometry">13.6. Geometry &amp; Trigonometry</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applied-miscellaneous">13.7. Applied / Miscellaneous</a></li>
 </ul>
             </nav>
@@ -540,11 +540,21 @@ For example, <br />
 </section>
 <section id="algebra-arithmetic-sequences">
 <h2><span class="section-number">13.2. </span>Algebra, Arithmetic &amp; Sequences<a class="headerlink" href="#algebra-arithmetic-sequences" title="Link to this heading">#</a></h2>
-<p>1.Basic Arithmetic &amp; Operators</p>
+<p><strong>1.Basic Arithmetic &amp; Operators</strong></p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\( \displaystyle a+b = a \oplus b +2(a \&amp; b)\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\( \displaystyle a + b = a \mid b + a \&amp; b\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\( \displaystyle a \oplus b = a\mid b - a \&amp; b\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\( \displaystyle k_{th}\)</span> bit is set in <span class="math notranslate nohighlight">\(\displaystyle x\)</span> iff <span class="math notranslate nohighlight">\(\displaystyle x \mod 2^{k - 1}\geq 2^k\)</span>. It comes handy when you need to look at the bits of the numbers which are pair sums or subset sums etc.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \displaystyle k_{th}\)</span> bit is set in <span class="math notranslate nohighlight">\(\displaystyle x\)</span> iff <br />
+<span class="math notranslate nohighlight">\(\displaystyle x \mod 2^{k - 1} - x \mod 2^k \neq\ 0\)</span> (<span class="math notranslate nohighlight">\( = 2^k\)</span> to be exact). It comes handy when you need to look at the bits of the numbers which are pair sums or subset sums etc.</p></li>
+<li><p><span class="math notranslate nohighlight">\(n \mod 2^i = n \&amp; (2^i - 1)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle 1\oplus 2 \oplus 3 \oplus \cdots \oplus (4k - 1) = 0\)</span> for any <span class="math notranslate nohighlight">\(\displaystyle \displaystyle k \ge 0\)</span></p></li>
+</ol>
 <p><strong>2.Progressions &amp; Series</strong></p>
 <p><strong>3.Polynomial &amp; Algebraic Structures</strong></p>
 <p><strong>4.Special Numbers</strong></p>
-<ol class="arabic simple" start="103">
+<ol class="arabic simple">
 <li><p>The function is defined as
 <span class="math notranslate nohighlight">\(r_{k}\left(n\right) = \left|{\left(a_{1},a_{2},…,a_{k} \right) \in \mathbf{Z^{k}} : n=a_{1}^{2}+a_{2}^{2}+…+a_{k}^{2}}\right|\)</span></p></li>
 <li><p>The number of ways to write a natural number as sum of two squares is given by <span class="math notranslate nohighlight">\(r_2(n)\)</span>. It is given explicitly by
@@ -553,7 +563,7 @@ For example, <br />
 <ul class="simple">
 <li><p>The prime factorization <span class="math notranslate nohighlight">\(n = 2^{g}p_{1}^{f_{1}}p_{2}^{f_{2}}. . .q_{1}^{h_{1}}q_{2}^{h_{2}}. . . ,\)</span> where <span class="math notranslate nohighlight">\(\displaystyle p_{i}\)</span> are the prime factors of the form <span class="math notranslate nohighlight">\(\displaystyle p_{i} \equiv 1\)</span> (mod 4), and <span class="math notranslate nohighlight">\(q_{i}\)</span> are the prime factors of the form <span class="math notranslate nohighlight">\(q_{i} \equiv 3\)</span> (mod 4) gives another formula <span class="math notranslate nohighlight">\(r_{2}\left(n\right) = 4\left(f_{1}+1\right)\left(f_{2}+1\right)…,\)</span> if all exponents <span class="math notranslate nohighlight">\(h_{1}\)</span>,<span class="math notranslate nohighlight">\(h_{2}\)</span>,… are even. If one or more <span class="math notranslate nohighlight">\(h_{i}\)</span> are odd, then <span class="math notranslate nohighlight">\(r_{2}\left(n\right) = 0.\)</span></p></li>
 </ul>
-<ol class="arabic simple" start="105">
+<ol class="arabic simple">
 <li><p>The number of ways to represent n as the sum of four squares is eight times the sum of all its divisors which are not divisible by 4, i.e.
 <span class="math notranslate nohighlight">\(r_{4}\left( n \right) = 8 \displaystyle\sum _{d| n;4 \nmid d}d\)</span>
 <span class="math notranslate nohighlight">\(r{8}\left(n\right) = 16 \displaystyle\sum {d|n} \left(-1\right)^{n+d}d^{3}\)</span></p></li>
@@ -579,32 +589,8 @@ For example, <br />
 </ol>
 <p><strong>6.Number Manipulations &amp; Properties</strong></p>
 </section>
-<section id="geometry-trigonometry">
-<h2><span class="section-number">13.3. </span>Geometry &amp; Trigonometry<a class="headerlink" href="#geometry-trigonometry" title="Link to this heading">#</a></h2>
-<p>1.Euclidean Geometry</p>
-<p><strong>2.Special Constructions &amp; Properties</strong></p>
-<p><strong>3.Lattice &amp; Discrete Geometry</strong></p>
-<p><strong>4.Trigonometry</strong></p>
-<ol class="arabic simple" start="99">
-<li><p>A Pythagorean triple consists of three positive integers <span class="math notranslate nohighlight">\(\displaystyle a, b,\)</span> and <span class="math notranslate nohighlight">\(\displaystyle C\)</span>, such that <span class="math notranslate nohighlight">\(\displaystyle a^{2}+b^{2}=c^{2}\)</span>. Such a triple is commonly written <span class="math notranslate nohighlight">\(\displaystyle (a, b, c)\)</span></p></li>
-<li><p>Euclid’s formula is a fundamental formula for generating Pythagorean triples given an arbitrary pair of integers <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(n\)</span> with <span class="math notranslate nohighlight">\(m &gt; n &gt; 0\)</span>. The formula states that the integers
-$<span class="math notranslate nohighlight">\( a = m^{2}-n^{2}, \quad b = 2mn, \quad c = m^{2}+n^{2}\)</span><span class="math notranslate nohighlight">\(
-form a Pythagorean triple. The triple generated by Euclid’s formula is primitive if and only if \)</span>m<span class="math notranslate nohighlight">\( and \)</span>n<span class="math notranslate nohighlight">\( are coprime and not both odd. When both \)</span>m<span class="math notranslate nohighlight">\( and \)</span>n<span class="math notranslate nohighlight">\( are odd, then \)</span>a<span class="math notranslate nohighlight">\(, \)</span>b<span class="math notranslate nohighlight">\(, and \)</span>c<span class="math notranslate nohighlight">\( will be even, and the triple will not be primitive; however, dividing \)</span>a<span class="math notranslate nohighlight">\(, \)</span>b<span class="math notranslate nohighlight">\(, and \)</span>c<span class="math notranslate nohighlight">\( by 2 will yield a primitive triple when \)</span>m<span class="math notranslate nohighlight">\( and \)</span>n$ are coprime and both odd.</p></li>
-<li><p>The following will generate all Pythagorean triples uniquely:
-$<span class="math notranslate nohighlight">\(\displaystyle a = k\cdot \left( m^{2}-n^{2}\right), b = k\cdot\left(2mn\right),  c = k\cdot \left(m^{2}+n^{2}\right)\)</span><span class="math notranslate nohighlight">\(
-where m, n, and k are positive integers with \)</span>m &gt; n$, and with m and n coprime and not both odd.</p></li>
-<li><p><strong>Theorem:</strong> The number of Pythagorean triples {a,b,n} with <span class="math notranslate nohighlight">\(max{a,b,n} = n\)</span> is given by
-$<span class="math notranslate nohighlight">\(\displaystyle \dfrac{1}{2}\left( \displaystyle\prod _{ p^{\alpha} || n}\left(2\alpha +1\right) -1\right)\)</span><span class="math notranslate nohighlight">\(
-where the product is over all prime divisors p of the form \)</span>4k+1<span class="math notranslate nohighlight">\(.
-The notation \)</span>\displaystyle p^{\alpha} || n<span class="math notranslate nohighlight">\( stands for the highest exponent \)</span>\displaystyle \alpha<span class="math notranslate nohighlight">\( for which \)</span>\displaystyle p^{\alpha}<span class="math notranslate nohighlight">\( divides \)</span>n$</p></li>
-</ol>
-<p><strong>Example:</strong> For <span class="math notranslate nohighlight">\(n = 2\cdot3^{2}\cdot5^{3}\cdot7^{4}\cdot11^{5}\cdot13^{6},\)</span> the number of Pythagorean triples with hypotenuse n is <span class="math notranslate nohighlight">\(\displaystyle \dfrac{1}{2}\left( 7.13-1\right) =45\)</span>.</p>
-<ul class="simple">
-<li><p>To obtain a formula for the number of Pythagorean triples with hypotenuse less than a specific positive integer N, we may add the numbers corresponding to each <span class="math notranslate nohighlight">\(n &lt; N\)</span> given by the Theorem. There is no simple way to compute this as a function of N.</p></li>
-</ul>
-</section>
 <section id="combinatorics-probability">
-<h2><span class="section-number">13.4. </span>Combinatorics &amp; Probability<a class="headerlink" href="#combinatorics-probability" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">13.3. </span>Combinatorics &amp; Probability<a class="headerlink" href="#combinatorics-probability" title="Link to this heading">#</a></h2>
 <p><strong>1.Counting &amp; Structures</strong></p>
 <ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(\displaystyle \displaystyle \sum \limits_{0\leq k \leq n} {n-k \choose k} = Fib_{n+1}\)</span></p></li>
@@ -724,17 +710,9 @@ $<span class="math notranslate nohighlight">\(\displaystyle \bigl[\!\begin{small
 <p><strong>4.Games &amp; Strategies</strong></p>
 </section>
 <section id="graph-theory-algorithms">
-<h2><span class="section-number">13.5. </span>Graph Theory &amp; Algorithms<a class="headerlink" href="#graph-theory-algorithms" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">13.4. </span>Graph Theory &amp; Algorithms<a class="headerlink" href="#graph-theory-algorithms" title="Link to this heading">#</a></h2>
 <p><strong>1.Graphs &amp; Networks</strong></p>
-<ol class="arabic simple" start="184">
-<li><p><span class="math notranslate nohighlight">\( \displaystyle a+b = a \oplus b +2(a \&amp; b)\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\( \displaystyle a + b = a \mid b + a \&amp; b\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\( \displaystyle a \oplus b = a\mid b - a \&amp; b\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\( \displaystyle k_{th}\)</span> bit is set in <span class="math notranslate nohighlight">\(\displaystyle x\)</span> iff <span class="math notranslate nohighlight">\(\displaystyle x \mod 2^{k - 1}\geq 2^k\)</span>. It comes handy when you need to look at the bits of the numbers which are pair sums or subset sums etc.</p></li>
-<li><p><span class="math notranslate nohighlight">\(\displaystyle \displaystyle k_{th}\)</span> bit is set in <span class="math notranslate nohighlight">\(\displaystyle x\)</span> iff <br />
-<span class="math notranslate nohighlight">\(\displaystyle x \mod 2^{k - 1} - x \mod 2^k \neq\ 0\)</span> (<span class="math notranslate nohighlight">\( = 2^k\)</span> to be exact). It comes handy when you need to look at the bits of the numbers which are pair sums or subset sums etc.</p></li>
-<li><p><span class="math notranslate nohighlight">\(n \mod 2^i = n \&amp; (2^i - 1)\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\displaystyle 1\oplus 2 \oplus 3 \oplus \cdots \oplus (4k - 1) = 0\)</span> for any <span class="math notranslate nohighlight">\(\displaystyle \displaystyle k \ge 0\)</span></p></li>
+<ol class="arabic simple">
 <li><p><strong>Erdos Gallai Theorem:</strong> The degree sequence of an undirected graph is the non-increasing sequence of its vertex degrees <br />
 A sequence of non-negative integers <span class="math notranslate nohighlight">\(d_1 \geq d_2 \geq \cdots \geq d_n\)</span> can be represented as the degree sequence of finite simple graph on <span class="math notranslate nohighlight">\(n\)</span> vertices if and only if <span class="math notranslate nohighlight">\(d_1 + d_2 + \cdots + d_n\)</span> is even and <br />
 <span class="math notranslate nohighlight">\(\displaystyle \sum_{i = 1}^k {d_i \leq k(k - 1)} + \sum_{i = k + 1}^n \min(d_i, k)\)</span> <br />
@@ -744,33 +722,41 @@ holds for every <span class="math notranslate nohighlight">\(\displaystyle \disp
 <p><strong>3.Automata &amp; State Models</strong></p>
 </section>
 <section id="computational-methods-algorithms">
-<h2><span class="section-number">13.6. </span>Computational Methods &amp; Algorithms<a class="headerlink" href="#computational-methods-algorithms" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">13.5. </span>Computational Methods &amp; Algorithms<a class="headerlink" href="#computational-methods-algorithms" title="Link to this heading">#</a></h2>
 <p>1.Iterative &amp; Approximation Methods</p>
 <p><strong>2.Data Structures &amp; Ordering</strong></p>
 <p><strong>3.Large-Scale Computation</strong></p>
 <p><strong>4.Logic &amp; Formal Systems</strong></p>
 </section>
+<section id="geometry-trigonometry">
+<h2><span class="section-number">13.6. </span>Geometry &amp; Trigonometry<a class="headerlink" href="#geometry-trigonometry" title="Link to this heading">#</a></h2>
+<p>1.Euclidean Geometry</p>
+<p><strong>2.Special Constructions &amp; Properties</strong></p>
+<p><strong>3.Lattice &amp; Discrete Geometry</strong></p>
+<p><strong>4.Trigonometry</strong></p>
+<ol class="arabic simple" start="99">
+<li><p>A Pythagorean triple consists of three positive integers <span class="math notranslate nohighlight">\(\displaystyle a, b,\)</span> and <span class="math notranslate nohighlight">\(\displaystyle C\)</span>, such that <span class="math notranslate nohighlight">\(\displaystyle a^{2}+b^{2}=c^{2}\)</span>. Such a triple is commonly written <span class="math notranslate nohighlight">\(\displaystyle (a, b, c)\)</span></p></li>
+<li><p>Euclid’s formula is a fundamental formula for generating Pythagorean triples given an arbitrary pair of integers <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(n\)</span> with <span class="math notranslate nohighlight">\(m &gt; n &gt; 0\)</span>. The formula states that the integers
+$<span class="math notranslate nohighlight">\( a = m^{2}-n^{2}, \quad b = 2mn, \quad c = m^{2}+n^{2}\)</span><span class="math notranslate nohighlight">\(
+form a Pythagorean triple. The triple generated by Euclid’s formula is primitive if and only if \)</span>m<span class="math notranslate nohighlight">\( and \)</span>n<span class="math notranslate nohighlight">\( are coprime and not both odd. When both \)</span>m<span class="math notranslate nohighlight">\( and \)</span>n<span class="math notranslate nohighlight">\( are odd, then \)</span>a<span class="math notranslate nohighlight">\(, \)</span>b<span class="math notranslate nohighlight">\(, and \)</span>c<span class="math notranslate nohighlight">\( will be even, and the triple will not be primitive; however, dividing \)</span>a<span class="math notranslate nohighlight">\(, \)</span>b<span class="math notranslate nohighlight">\(, and \)</span>c<span class="math notranslate nohighlight">\( by 2 will yield a primitive triple when \)</span>m<span class="math notranslate nohighlight">\( and \)</span>n$ are coprime and both odd.</p></li>
+<li><p>The following will generate all Pythagorean triples uniquely:
+$<span class="math notranslate nohighlight">\(\displaystyle a = k\cdot \left( m^{2}-n^{2}\right), b = k\cdot\left(2mn\right),  c = k\cdot \left(m^{2}+n^{2}\right)\)</span><span class="math notranslate nohighlight">\(
+where m, n, and k are positive integers with \)</span>m &gt; n$, and with m and n coprime and not both odd.</p></li>
+<li><p><strong>Theorem:</strong> The number of Pythagorean triples {a,b,n} with <span class="math notranslate nohighlight">\(max{a,b,n} = n\)</span> is given by
+$<span class="math notranslate nohighlight">\(\displaystyle \dfrac{1}{2}\left( \displaystyle\prod _{ p^{\alpha} || n}\left(2\alpha +1\right) -1\right)\)</span><span class="math notranslate nohighlight">\(
+where the product is over all prime divisors p of the form \)</span>4k+1<span class="math notranslate nohighlight">\(.
+The notation \)</span>\displaystyle p^{\alpha} || n<span class="math notranslate nohighlight">\( stands for the highest exponent \)</span>\displaystyle \alpha<span class="math notranslate nohighlight">\( for which \)</span>\displaystyle p^{\alpha}<span class="math notranslate nohighlight">\( divides \)</span>n$</p></li>
+</ol>
+<p><strong>Example:</strong> For <span class="math notranslate nohighlight">\(n = 2\cdot3^{2}\cdot5^{3}\cdot7^{4}\cdot11^{5}\cdot13^{6},\)</span> the number of Pythagorean triples with hypotenuse n is <span class="math notranslate nohighlight">\(\displaystyle \dfrac{1}{2}\left( 7.13-1\right) =45\)</span>.</p>
+<ul class="simple">
+<li><p>To obtain a formula for the number of Pythagorean triples with hypotenuse less than a specific positive integer N, we may add the numbers corresponding to each <span class="math notranslate nohighlight">\(n &lt; N\)</span> given by the Theorem. There is no simple way to compute this as a function of N.</p></li>
+</ul>
+</section>
 <section id="applied-miscellaneous">
 <h2><span class="section-number">13.7. </span>Applied / Miscellaneous<a class="headerlink" href="#applied-miscellaneous" title="Link to this heading">#</a></h2>
 <p>physics<br />
 calendar<br />
-colouring (also games)<br />
-xor<br />
 cryptography</p>
-<ol class="arabic simple" start="184">
-<li><p><span class="math notranslate nohighlight">\( \displaystyle a+b = a \oplus b +2(a \&amp; b)\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\( \displaystyle a + b = a \mid b + a \&amp; b\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\( \displaystyle a \oplus b = a\mid b - a \&amp; b\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\( \displaystyle k_{th}\)</span> bit is set in <span class="math notranslate nohighlight">\(\displaystyle x\)</span> iff <span class="math notranslate nohighlight">\(\displaystyle x \mod 2^{k - 1}\geq 2^k\)</span>. It comes handy when you need to look at the bits of the numbers which are pair sums or subset sums etc.</p></li>
-<li><p><span class="math notranslate nohighlight">\(\displaystyle \displaystyle k_{th}\)</span> bit is set in <span class="math notranslate nohighlight">\(\displaystyle x\)</span> iff <br />
-<span class="math notranslate nohighlight">\(\displaystyle x \mod 2^{k - 1} - x \mod 2^k \neq\ 0\)</span> (<span class="math notranslate nohighlight">\( = 2^k\)</span> to be exact). It comes handy when you need to look at the bits of the numbers which are pair sums or subset sums etc.</p></li>
-<li><p><span class="math notranslate nohighlight">\(n \mod 2^i = n \&amp; (2^i - 1)\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\displaystyle 1\oplus 2 \oplus 3 \oplus \cdots \oplus (4k - 1) = 0\)</span> for any <span class="math notranslate nohighlight">\(\displaystyle \displaystyle k \ge 0\)</span></p></li>
-<li><p><strong>Erdos Gallai Theorem:</strong> The degree sequence of an undirected graph is the non-increasing sequence of its vertex degrees <br />
-A sequence of non-negative integers <span class="math notranslate nohighlight">\(d_1 \geq d_2 \geq \cdots \geq d_n\)</span> can be represented as the degree sequence of finite simple graph on <span class="math notranslate nohighlight">\(n\)</span> vertices if and only if <span class="math notranslate nohighlight">\(d_1 + d_2 + \cdots + d_n\)</span> is even and <br />
-<span class="math notranslate nohighlight">\(\displaystyle \sum_{i = 1}^k {d_i \leq k(k - 1)} + \sum_{i = k + 1}^n \min(d_i, k)\)</span> <br />
-holds for every <span class="math notranslate nohighlight">\(\displaystyle \displaystyle k\)</span> in <span class="math notranslate nohighlight">\(\displaystyle 1 \leq k \leq n\)</span>.</p></li>
-</ol>
 </section>
 </section>
 
@@ -840,10 +826,10 @@ holds for every <span class="math notranslate nohighlight">\(\displaystyle \disp
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#number-theory">13.1. Number Theory</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algebra-arithmetic-sequences">13.2. Algebra, Arithmetic &amp; Sequences</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometry-trigonometry">13.3. Geometry &amp; Trigonometry</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combinatorics-probability">13.4. Combinatorics &amp; Probability</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-theory-algorithms">13.5. Graph Theory &amp; Algorithms</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computational-methods-algorithms">13.6. Computational Methods &amp; Algorithms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combinatorics-probability">13.3. Combinatorics &amp; Probability</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-theory-algorithms">13.4. Graph Theory &amp; Algorithms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computational-methods-algorithms">13.5. Computational Methods &amp; Algorithms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometry-trigonometry">13.6. Geometry &amp; Trigonometry</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applied-miscellaneous">13.7. Applied / Miscellaneous</a></li>
 </ul>
   </nav></div>
