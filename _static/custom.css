@@ -11,7 +11,7 @@ div.body, body, .content {
 div.sphinxsidebar {
     float: left;
     width: 180px;
-    margin-left: 1%;
+    margin-left: 0;
     font-size: 90%;
     word-wrap: break-word;
     overflow-wrap : break-word;
