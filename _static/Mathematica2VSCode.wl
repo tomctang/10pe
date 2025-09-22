@@ -68,19 +68,35 @@ processText[cnt_, type_] := Lookup[prefix, type, ""] <> StringReplace[processIte
 
 processInput[_?(!FreeQ[#, _RasterBox]&)] := "---IMAGE---"
 
-processInput[cnt_] := StringReplace[StringTake[
-    ToString[ToExpression[cnt, StandardForm, HoldComplete], InputForm], 
-        {14, -2}], ", Null, " | (", Null" ~~ EndOfString) -> "\n"]
+processInput[cnt_] := 
+  Module[{expr},
+    expr = Quiet[ToExpression[cnt, StandardForm, HoldComplete]];
+    If[expr === $Failed || Head[expr] === ToExpression,
+      "---INVALID-INPUT---",
+      StringReplace[
+        StringTake[ToString[expr, InputForm], {14, -2}], 
+        {", Null, " | (", Null" ~~ EndOfString) -> "\n"}
+      ]
+    ]
+  ]
 
 mergeMarkdownCells[cells_] := SequenceReplace[cells,{c__?(#["languageId"] === "markdown"&)} :> 
     <|c, "value" -> StringRiffle[Lookup[{c}, "value"], "\n\n"]|>]
                                                                           
 processCell[style_, Cell[cnt_, ___]] :=
-    AssociationThread[{"kind", "languageId", "value"} -> Switch[style,
+  Catch[
+    AssociationThread[{"kind", "languageId", "value"} -> 
+      Switch[style,
         "DisplayFormula" | "DisplayFormulaNumbered", 
-                          {1, "markdown", StringReplace[processItem[cnt], "$" -> "$$"]},
-        "Input" | "Code", {2, "wolfram",  processInput[cnt]},
-        _,                {1, "markdown", processText[cnt, style]}]]
+        {1, "markdown", StringReplace[processItem[cnt], "$" -> "$$"]},
+        "Input" | "Code", 
+        {2, "wolfram", processInput[cnt]},
+        _, 
+        {1, "markdown", processText[cnt, style]}
+      ]
+    ],
+    _, 
+    <|"kind" -> 1, "languageId" -> "markdown", "value" -> "---ERROR-PROCESSING-CELL---"|>]
 
 Mathematica2VSCode[inputFile_?FileExistsQ] := Export[FileBaseName[inputFile] <> ".vsnb", 
     <|"cells" -> mergeMarkdownCells@NotebookImport[inputFile, 
