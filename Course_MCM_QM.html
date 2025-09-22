@@ -64,7 +64,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="17. How Dad learn QM" href="How_Dad_organise_QM.html" />
-    <link rel="prev" title="15. Project Euler Q51-" href="PE_Informatics/PE100.html" />
+    <link rel="prev" title="15. Project Euler Q101-" href="PE_Informatics/PE200.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -194,8 +194,8 @@
 <li class="toctree-l1"><a class="reference internal" href="Course_MIT6002thinking.html">11. MIT_CS6002-CS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="PE_Informatics/PE_tags.html">12. Project Euler Tags</a></li>
 <li class="toctree-l1"><a class="reference internal" href="PE_Informatics/PE_math.html">13. Project Euler Math</a></li>
-<li class="toctree-l1"><a class="reference internal" href="PE_Informatics/PE50.html">14. Project Euler Q1-50</a></li>
-<li class="toctree-l1"><a class="reference internal" href="PE_Informatics/PE100.html">15. Project Euler Q51-</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PE_Informatics/PE100.html">14. Project Euler Q1-100</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PE_Informatics/PE200.html">15. Project Euler Q101-</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">16. Quantum Mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="How_Dad_organise_QM.html">17. How Dad learn QM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Course_MCM_QFT.html">18. QFT</a></li>
@@ -379,6 +379,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m1-intro-quantum-world">16.2. M1. Intro Quantum World</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m2-advanced-qm-with-spins">16.3. M2. Advanced QM with Spins</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m3-the-qm-of-light">16.4. M3. The QM of Light</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m4-advanced-quantum-ideas-with-light">16.5. M4. Advanced Quantum Ideas with Light</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m5-quantum-operators-and-their-identities">16.6. M5. Quantum Operators and their Identities</a></li>
 </ul>
             </nav>
         </div>
@@ -946,16 +948,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle \frac{2}{\sqrt{{\left| \frac{a - d + \sqrt{a^{2} + 4 \, b c - 2 \, a d + d^{2}}}{b} \right|}^{2} + 4}} \qquad   \]</div>
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle -\frac{a - d + \sqrt{a^{2} + 4 \, b c - 2 \, a d + d^{2}}}{\sqrt{{\left| \frac{a - d + \sqrt{a^{2} + 4 \, b c - 2 \, a d + d^{2}}}{b} \right|}^{2} + 4} b} \qquad   \]</div>
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle \frac{2}{\sqrt{{\left| \frac{a - d - \sqrt{a^{2} + 4 \, b c - 2 \, a d + d^{2}}}{b} \right|}^{2} + 4}} \qquad   \]</div>
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle -\frac{a - d + \sqrt{a^{2} + 4 \, b c - 2 \, a d + d^{2}}}{\sqrt{{\left| \frac{a - d - \sqrt{a^{2} + 4 \, b c - 2 \, a d + d^{2}}}{b} \right|}^{2} + 4} b} \qquad   \]</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -966,14 +958,6 @@ document.write(`
 <span class="n">s</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">eigenvectors_right</span><span class="p">()[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">A</span><span class="o">.</span><span class="n">eigenvectors_right</span><span class="p">()[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">norm</span><span class="p">())</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle \left[\frac{1}{2} \, a + \frac{1}{2} \, d - \frac{1}{2} \, \sqrt{a^{2} + 4 \, b c - 2 \, a d + d^{2}}, \frac{1}{2} \, a + \frac{1}{2} \, d + \frac{1}{2} \, \sqrt{a^{2} + 4 \, b c - 2 \, a d + d^{2}}\right] \qquad   \]</div>
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle \left(\frac{2}{\sqrt{{\left| \frac{a - d + \sqrt{a^{2} + 4 \, b c - 2 \, a d + d^{2}}}{b} \right|}^{2} + 4}},\,-\frac{a - d + \sqrt{a^{2} + 4 \, b c - 2 \, a d + d^{2}}}{\sqrt{{\left| \frac{a - d + \sqrt{a^{2} + 4 \, b c - 2 \, a d + d^{2}}}{b} \right|}^{2} + 4} b}\right) \qquad   \]</div>
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle \left(\frac{2}{\sqrt{{\left| \frac{a - d - \sqrt{a^{2} + 4 \, b c - 2 \, a d + d^{2}}}{b} \right|}^{2} + 4}},\,-\frac{a - d - \sqrt{a^{2} + 4 \, b c - 2 \, a d + d^{2}}}{\sqrt{{\left| \frac{a - d - \sqrt{a^{2} + 4 \, b c - 2 \, a d + d^{2}}}{b} \right|}^{2} + 4} b}\right) \qquad   \]</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -1129,6 +1113,52 @@ document.write(`
 </li>
 </ul>
 </section>
+<section id="m4-advanced-quantum-ideas-with-light">
+<h2><span class="section-number">16.5. </span>M4. Advanced Quantum Ideas with Light<a class="headerlink" href="#m4-advanced-quantum-ideas-with-light" title="Link to this heading">#</a></h2>
+<p>Notes</p>
+<ul class="simple">
+<li><p>Quantum Seeing in the Dark</p>
+<ul>
+<li><p>Two Slit Experiment</p>
+<ul>
+<li><p>In the experiment there is interference patterns where the probability of a photon being detected is virtually zero.</p></li>
+<li><p>If the detector is moved there and a path is blocked, then we can see the blockage without looking.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Mach-Zehnder Interferometer</p>
+<ul>
+<li><p>When this interferometer does not contain any polarizers and both paths have the same length, all the photons will go to one detector as the signal is amplified.</p></li>
+<li><p>When an object is added, this changes the probability and the other detector will receive photons. This is also how quantum bomb detection works.</p></li>
+</ul>
+</li>
+<li><p>Quantum Zeno Effect(go to paradox and infinity)</p></li>
+</ul>
+</section>
+<section id="m5-quantum-operators-and-their-identities">
+<h2><span class="section-number">16.6. </span>M5. Quantum Operators and their Identities<a class="headerlink" href="#m5-quantum-operators-and-their-identities" title="Link to this heading">#</a></h2>
+<p>Notes</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pauli Matrix Identities</span>
+<span class="n">paulix</span><span class="o">=</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+                 <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+<span class="n">pauliy</span><span class="o">=</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="n">i</span><span class="p">],</span>
+                 <span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+<span class="n">pauliz</span><span class="o">=</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                 <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">s</span><span class="p">(</span><span class="n">paulix</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span><span class="n">pauliy</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span><span class="n">pauliz</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">paulix</span><span class="o">.</span><span class="n">conjugate</span><span class="p">()</span><span class="o">.</span><span class="n">transpose</span><span class="p">(),</span><span class="n">pauliy</span><span class="o">.</span><span class="n">conjugate</span><span class="p">()</span><span class="o">.</span><span class="n">transpose</span><span class="p">(),</span><span class="n">pauliz</span><span class="o">.</span><span class="n">conjugate</span><span class="p">()</span><span class="o">.</span><span class="n">transpose</span><span class="p">())</span>
+<span class="n">s</span><span class="p">(</span><span class="n">paulix</span><span class="o">.</span><span class="n">inverse</span><span class="p">(),</span><span class="n">pauliy</span><span class="o">.</span><span class="n">inverse</span><span class="p">(),</span><span class="n">pauliz</span><span class="o">.</span><span class="n">inverse</span><span class="p">())</span>
+<span class="n">s</span><span class="p">(</span><span class="n">paulix</span><span class="o">.</span><span class="n">trace</span><span class="p">(),</span><span class="n">pauliy</span><span class="o">.</span><span class="n">trace</span><span class="p">(),</span><span class="n">pauliz</span><span class="o">.</span><span class="n">trace</span><span class="p">())</span>
+<span class="n">s</span><span class="p">(</span><span class="n">paulix</span><span class="o">.</span><span class="n">determinant</span><span class="p">(),</span><span class="n">pauliy</span><span class="o">.</span><span class="n">determinant</span><span class="p">(),</span><span class="n">pauliz</span><span class="o">.</span><span class="n">determinant</span><span class="p">())</span>
+<span class="n">s</span><span class="p">(</span><span class="n">paulix</span><span class="o">*</span><span class="n">pauliy</span><span class="o">*</span><span class="n">pauliz</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1162,12 +1192,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="PE_Informatics/PE100.html"
+       href="PE_Informatics/PE200.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">15. </span>Project Euler Q51-</p>
+        <p class="prev-next-title"><span class="section-number">15. </span>Project Euler Q101-</p>
       </div>
     </a>
     <a class="right-next"
@@ -1206,6 +1236,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m1-intro-quantum-world">16.2. M1. Intro Quantum World</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m2-advanced-qm-with-spins">16.3. M2. Advanced QM with Spins</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m3-the-qm-of-light">16.4. M3. The QM of Light</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m4-advanced-quantum-ideas-with-light">16.5. M4. Advanced Quantum Ideas with Light</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m5-quantum-operators-and-their-identities">16.6. M5. Quantum Operators and their Identities</a></li>
 </ul>
   </nav></div>
 

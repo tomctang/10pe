@@ -1,0 +1,1083 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>15. Project Euler Q101- &#8212; Jonny Workbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=8dedbda2" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'PE_Informatics/PE200';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="16. Quantum Mechanics" href="../Course_MCM_QM.html" />
+    <link rel="prev" title="14. Project Euler Q1-100" href="PE100.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Jonny Workbook</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Mathe &amp; FP/Language</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Alevel/Alevel_math.html">1. A-level-math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Alevel/Alevel_math_further.html">2. A-level-further</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Course_MCM.html">3. Math Computational Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Course_Lean.html">4. Lean</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../math/00intro_math.html">5. Math-FP-Lang Combo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../math/01number_algebra.html">6. Number &amp; Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../math/02discrete_continuous.html">7. Discrete &amp; Continuous</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../math/03real_world.html">8. Real World Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../math/05math_as_code.html">9. Math as code</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CS &amp; Physics</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Course_MIT6001Python.html">10. MIT_CS6001-Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Course_MIT6002thinking.html">11. MIT_CS6002-CS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PE_tags.html">12. Project Euler Tags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PE_math.html">13. Project Euler Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PE100.html">14. Project Euler Q1-100</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">15. Project Euler Q101-</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Course_MCM_QM.html">16. Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../How_Dad_organise_QM.html">17. How Dad learn QM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Course_MCM_QFT.html">18. QFT</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notebook</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../nb_past_courses.html">19. Past courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../geo/nb_Geo.html">20. Geography and Maps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nb_lottery_simulator.html">21. Lottery Math</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/tomctang/10pe" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/PE_Informatics/PE200.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Project Euler Q101-</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-104">15.1. PE 104</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-112">15.2. PE 112</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-113">15.3. PE 113</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-121">15.4. PE 121</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-124">15.5. PE 124</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-125">15.6. PE 125</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-162">15.7. PE 162</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-179">15.8. PE 179</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-187">15.9. PE 187</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-188">15.10. PE 188</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-203">15.11. PE 203</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-205">15.12. PE 205</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-243">15.13. PE 243</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-345">15.14. PE 345</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-700">15.15. PE 700</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-961">15.16. PE 961</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="project-euler-q101">
+<h1><span class="section-number">15. </span>Project Euler Q101-<a class="headerlink" href="#project-euler-q101" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">run</span> PE_pre_running.py
+</pre></div>
+</div>
+</div>
+</div>
+<section id="pe-104">
+<h2><span class="section-number">15.1. </span>PE 104<a class="headerlink" href="#pe-104" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 104 Pandigital Fibonacci Ends</span>
+<span class="n">log_phi</span><span class="o">=</span><span class="n">log</span><span class="p">(</span><span class="n">golden_ratio</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">log_sqrt5</span><span class="o">=</span><span class="n">log</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">s</span><span class="o">=</span><span class="nb">set</span><span class="p">(</span><span class="s1">&#39;123456789&#39;</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">first9</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">num</span><span class="o">*</span><span class="n">log_phi</span><span class="o">-</span><span class="n">log_sqrt5</span>
+    <span class="n">fracpart</span><span class="o">=</span><span class="n">x</span><span class="o">-</span><span class="n">floor</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="mi">10</span><span class="o">^</span><span class="p">(</span><span class="n">fracpart</span><span class="o">+</span><span class="mi">8</span><span class="p">))</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">is_pandigital</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">set</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">num</span><span class="p">))</span><span class="o">==</span><span class="n">s</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">solve</span><span class="p">(</span><span class="n">limit</span><span class="p">):</span>
+    <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="n">limit</span><span class="p">):</span>
+        <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="n">b</span><span class="p">,(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span><span class="o">%</span><span class="k">10</span>^9
+        <span class="k">if</span> <span class="n">is_pandigital</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="ow">and</span> <span class="n">is_pandigital</span><span class="p">(</span><span class="n">first9</span><span class="p">(</span><span class="n">i</span><span class="p">)):</span>
+            <span class="k">return</span> <span class="n">i</span>
+<span class="n">solve</span><span class="p">(</span><span class="mi">10</span><span class="o">^</span><span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>329468
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 104 Pandigital Fibonacci Ends</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">is_pandigital</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">num</span><span class="p">))))</span><span class="o">==</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">limit</span><span class="o">=</span><span class="mi">3000</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">limit</span><span class="p">):</span>
+    <span class="n">num</span><span class="o">=</span><span class="n">fibonacci</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">end</span><span class="o">=</span><span class="n">num</span><span class="o">%</span><span class="p">(</span><span class="n">num</span><span class="o">^</span><span class="mi">9</span><span class="p">)</span>
+    <span class="n">start</span><span class="o">=</span><span class="n">floor</span><span class="p">(</span><span class="mi">10</span><span class="o">^</span><span class="p">(</span><span class="n">n</span><span class="p">(</span><span class="n">frac</span><span class="p">(</span><span class="n">log</span><span class="p">(</span><span class="n">num</span><span class="p">,</span><span class="mi">10</span><span class="p">)))</span><span class="o">+</span><span class="mi">8</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">is_pandigital</span><span class="p">(</span><span class="n">start</span><span class="p">)</span> <span class="ow">and</span> <span class="n">is_pandigital</span><span class="p">(</span><span class="n">end</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="k">break</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;done!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+done!
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 104 Pandigital Fibonacci Ends</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">fib_pandigital_front</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)))[:</span><span class="mi">9</span><span class="p">])</span><span class="o">==</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">fib_pandigital_back</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="o">%</span><span class="k">10</span>^9))))==list(range(1,10))
+<span class="n">limit</span><span class="o">=</span><span class="mi">30000</span>
+<span class="n">lst</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">fibonacci_sequence</span><span class="p">(</span><span class="n">limit</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">fib_pandigital_front</span><span class="p">(</span><span class="n">num</span><span class="p">)</span> <span class="ow">and</span> <span class="n">fib_pandigital_back</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">lst</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">num</span><span class="p">))</span>
+        <span class="k">break</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;done!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>done!
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 104 Pandigital Fibonacci Ends</span>
+<span class="c1"># find quicker solution</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">set_int_max_str_digits</span><span class="p">(</span><span class="mi">1000000</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">fib_pandigital_front</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">fib</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">fastFib</span><span class="p">(</span><span class="n">n</span><span class="p">))))</span>
+    <span class="n">fib</span><span class="o">=</span><span class="n">fib</span><span class="p">[:</span><span class="mi">9</span><span class="p">]</span>
+    <span class="n">fib</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">fib</span><span class="o">==</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="kc">False</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">fib_pandigital_back</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">fib</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">fastFib</span><span class="p">(</span><span class="n">n</span><span class="p">))))</span>
+    <span class="n">fib</span><span class="o">=</span><span class="n">fib</span><span class="p">[</span><span class="o">-</span><span class="mi">9</span><span class="p">:]</span>
+    <span class="n">fib</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">fib</span><span class="o">==</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="kc">False</span>
+
+<span class="n">n</span><span class="o">=</span><span class="mi">89000</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">fib_pandigital_back</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="ow">and</span> <span class="n">fib_pandigital_front</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+        <span class="k">break</span>
+    <span class="n">n</span><span class="o">+=</span><span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pe-112">
+<h2><span class="section-number">15.2. </span>PE 112<a class="headerlink" href="#pe-112" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># rgba(19, 19, 40, 1) Bouncy Numbers</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">time</span><span class="w"> </span><span class="kn">import</span> <span class="n">time</span>
+<span class="n">start</span><span class="o">=</span><span class="n">time</span><span class="p">()</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">listint</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="n">integer</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+    <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">num</span><span class="p">:</span>
+        <span class="n">integer</span><span class="o">=</span><span class="n">integer</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">integer</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">bouncy</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="nb">input</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)))</span>
+    <span class="k">return</span> <span class="nb">input</span><span class="o">!=</span><span class="nb">sorted</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">input</span><span class="o">!=</span><span class="nb">sorted</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">bouncy_percentage</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">sum_bouncy</span><span class="o">=</span><span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">bouncy</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">==</span><span class="kc">True</span><span class="p">:</span>
+            <span class="n">sum_bouncy</span><span class="o">+=</span><span class="mi">1</span>
+    <span class="n">ratio</span><span class="o">=</span><span class="n">sum_bouncy</span><span class="o">/</span><span class="n">n</span>
+    <span class="k">return</span> <span class="n">ratio</span><span class="o">*</span><span class="mi">100</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">bouncy_percentage</span><span class="p">(</span><span class="mi">1587000</span><span class="p">))</span>
+<span class="n">end</span><span class="o">=</span><span class="n">time</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">end</span><span class="o">-</span><span class="n">start</span><span class="p">)</span>
+<span class="c1"># ans - 1587000</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pe-113">
+<h2><span class="section-number">15.3. </span>PE 113<a class="headerlink" href="#pe-113" title="Link to this heading">#</a></h2>
+<p>Use binomial coefficient.</p>
+</section>
+<section id="pe-121">
+<h2><span class="section-number">15.4. </span>PE 121<a class="headerlink" href="#pe-121" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">*</span> <span class="mi">121</span> <span class="n">Disc</span> <span class="n">Game</span> <span class="n">Prize</span> <span class="n">Fund</span> 
+    <span class="n">Person</span> <span class="n">will</span> <span class="n">have</span> <span class="n">to</span> <span class="n">pull</span> <span class="n">out</span> <span class="n">blue</span> <span class="o">&gt;=</span><span class="mi">8</span> <span class="n">times</span><span class="o">*</span><span class="p">)</span>
+<span class="n">ncr</span><span class="p">[</span><span class="n">n_</span><span class="p">,</span><span class="n">r_</span><span class="p">]</span><span class="o">:=</span><span class="n">n</span><span class="o">!</span>/<span class="o">(</span>r!*<span class="o">(</span>n-r<span class="o">)</span>!<span class="o">)</span><span class="w"> </span><span class="o">(</span>*n<span class="w"> </span>choose<span class="w"> </span>r<span class="w"> </span>combinatorics<span class="w"> </span><span class="k">function</span>*<span class="o">)</span>
+<span class="n">blueChance</span><span class="p">[</span><span class="n">blues_</span><span class="p">]</span><span class="o">:=</span>
+<span class="n">lst</span><span class="o">=</span><span class="n">Table</span><span class="p">[</span><span class="n">blueChance</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">*</span><span class="n">ncr</span><span class="p">[</span><span class="mi">15</span><span class="p">,</span><span class="n">n</span><span class="p">],{</span><span class="n">n</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">15</span><span class="p">}]</span>
+<span class="n">n</span><span class="o">=</span><span class="n">Floor</span><span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">Total</span><span class="p">[</span><span class="n">lst</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span><span class="o">^</span><span class="mi">15</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pe-124">
+<h2><span class="section-number">15.5. </span>PE 124<a class="headerlink" href="#pe-124" title="Link to this heading">#</a></h2>
+<p>The sage radical function calculates the product of the distinct prime factors of a number: <span class="math notranslate nohighlight">\(\text{rad}(n)=\Pi_{p|n}p\)</span> where p is prime.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span><span class="o">=</span><span class="p">[</span><span class="n">radical</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">100001</span><span class="p">)]</span>
+<span class="n">sorted_lst</span><span class="o">=</span><span class="nb">sorted</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9990</span><span class="p">,</span><span class="mi">10002</span><span class="p">):</span>
+    <span class="c1"># print(i)</span>
+    <span class="c1"># print(sorted_lst[i])</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span><span class="o">=</span><span class="p">[</span><span class="n">radical</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">100000</span><span class="p">)]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">lst</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">1947</span><span class="p">)</span>
+<span class="c1"># lst.index(1947)+4</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pe-125">
+<h2><span class="section-number">15.6. </span>PE 125<a class="headerlink" href="#pe-125" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">*</span> <span class="mi">125</span> <span class="n">Palindromic</span> <span class="n">Sums</span> <span class="o">*</span><span class="p">)</span>
+<span class="p">(</span><span class="o">*</span> <span class="n">add</span> <span class="n">Boole</span><span class="p">[]</span> <span class="n">to</span> <span class="n">count</span> <span class="n">number</span> <span class="n">of</span> <span class="n">times</span> <span class="n">when</span> <span class="o">&lt;</span><span class="mi">10</span><span class="o">^</span><span class="mi">8</span> <span class="o">*</span><span class="p">)</span>
+<span class="p">(</span><span class="o">*</span> <span class="n">learnt</span> <span class="n">functions</span><span class="p">:</span>
+    <span class="n">Accumulate</span><span class="p">[]</span>
+    <span class="n">AnyTrue</span><span class="p">[{},</span><span class="n">test</span><span class="p">]</span> <span class="n">true</span> <span class="k">if</span> <span class="nb">any</span> <span class="nb">input</span> <span class="n">passes</span> <span class="n">the</span> <span class="n">test</span>
+    <span class="n">MemberQ</span><span class="p">[{},</span><span class="n">___</span><span class="p">]</span> <span class="n">true</span> <span class="k">if</span> <span class="nb">any</span> <span class="n">element</span> <span class="ow">in</span> <span class="nb">list</span> <span class="ow">is</span> <span class="n">___</span>
+    <span class="n">Module</span><span class="p">[]</span><span class="err">???</span> <span class="o">*</span><span class="p">)</span>
+<span class="n">isSumOfConsecutiveSquares</span><span class="p">[</span><span class="n">n_Integer</span><span class="p">]</span> <span class="o">:=</span> 
+ <span class="n">Module</span><span class="p">[{</span><span class="n">maxK</span><span class="p">,</span> <span class="n">sumsOfSquares</span><span class="p">},</span>
+  <span class="n">maxK</span> <span class="o">=</span> <span class="n">Floor</span><span class="p">[</span><span class="n">Sqrt</span><span class="p">[</span><span class="n">n</span><span class="p">]];</span>
+
+  <span class="p">(</span><span class="o">*</span> <span class="n">Generate</span> <span class="n">cumulative</span> <span class="n">sums</span> <span class="n">of</span> <span class="n">consecutive</span> <span class="n">squares</span> <span class="n">starting</span> <span class="kn">from</span><span class="w"> </span><span class="nn">each</span> <span class="n">k</span> <span class="o">*</span><span class="p">)</span>
+  <span class="n">sumsOfSquares</span> <span class="o">=</span> <span class="n">Table</span><span class="p">[</span>
+    <span class="n">Accumulate</span><span class="p">[</span><span class="n">Table</span><span class="p">[(</span><span class="n">k</span> <span class="o">+</span> <span class="n">i</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="p">{</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">maxK</span> <span class="o">-</span> <span class="n">k</span><span class="p">}]],</span>
+    <span class="p">{</span><span class="n">k</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">maxK</span><span class="p">}</span>
+  <span class="p">];</span>
+
+  <span class="p">(</span><span class="o">*</span> <span class="n">Check</span> <span class="k">if</span> <span class="nb">any</span> <span class="nb">sum</span> <span class="n">sequence</span> <span class="n">contains</span> <span class="n">n</span> <span class="k">with</span> <span class="n">more</span> <span class="n">than</span> <span class="n">one</span> <span class="n">term</span> <span class="o">*</span><span class="p">)</span>
+  <span class="n">AnyTrue</span><span class="p">[</span><span class="n">sumsOfSquares</span><span class="p">,</span> <span class="n">MemberQ</span><span class="p">[</span><span class="c1">#, n] &amp;&amp; Length[#] &gt; 1 &amp;]</span>
+<span class="p">]</span>
+
+<span class="n">isSumSquaresPalindromic</span><span class="p">[</span><span class="n">n_Integer</span><span class="p">]</span><span class="o">:=</span><span class="n">isSumOfConsecutiveSquares</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">&amp;&amp;</span><span class="n">PalindromeQ</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+<span class="n">lst</span><span class="o">=</span><span class="n">Table</span><span class="p">[</span><span class="n">isSumSquaresPalindromic</span><span class="p">[</span><span class="n">n</span><span class="p">],{</span><span class="n">n</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">9999</span><span class="p">}];</span>
+<span class="n">Count</span><span class="p">[</span><span class="n">lst</span><span class="p">,</span><span class="kc">True</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pe-162">
+<h2><span class="section-number">15.7. </span>PE 162<a class="headerlink" href="#pe-162" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">*</span> <span class="mi">162</span> <span class="n">Hexadecimal</span> <span class="n">Numbers</span> <span class="o">*</span><span class="p">)</span>
+<span class="n">lst</span><span class="o">=</span><span class="n">Table</span><span class="p">[(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">Factorial</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">Factorial</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="mi">14</span><span class="o">^</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">3</span><span class="p">)),{</span><span class="n">n</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">16</span><span class="p">}];</span>
+<span class="n">lst1</span><span class="o">=</span><span class="n">Table</span><span class="p">[(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">Factorial</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">Factorial</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="mi">16</span><span class="o">^</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">3</span><span class="p">)),{</span><span class="n">n</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">16</span><span class="p">}];</span>
+<span class="n">n</span><span class="o">=</span><span class="p">(</span><span class="n">Total</span><span class="p">[</span><span class="n">lst1</span><span class="p">]</span><span class="o">-</span><span class="n">Total</span><span class="p">[</span><span class="n">lst</span><span class="p">])</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+<span class="n">n</span><span class="o">=</span>
+<span class="n">BaseForm</span><span class="p">[</span><span class="n">Total</span><span class="p">[</span><span class="n">lst</span><span class="p">]</span><span class="o">+</span><span class="n">n</span><span class="p">,</span><span class="mi">16</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pe-179">
+<h2><span class="section-number">15.8. </span>PE 179<a class="headerlink" href="#pe-179" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 179</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">len_factors</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">factors</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+<span class="n">num</span><span class="o">=</span><span class="mi">1</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10000000</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">prime</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">==</span><span class="kc">True</span> <span class="ow">or</span> <span class="n">prime</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">==</span><span class="kc">True</span><span class="p">:</span>
+        <span class="k">pass</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">len_factors</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">==</span><span class="n">len_factors</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">num</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="k">10000</span>==0:
+            <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="n">num</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pe-187">
+<h2><span class="section-number">15.9. </span>PE 187<a class="headerlink" href="#pe-187" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Semiprime">A semiprime-counting formula</a>: <span class="math notranslate nohighlight">\(\pi_{2}(n)= \)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#187 FP way</span>
+<span class="c1"># python way - use sympy library</span>
+<span class="c1"># increasing limit to 10^8 makes it too slow</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="kn">import</span> <span class="n">factorint</span>
+<span class="n">limit</span> <span class="o">=</span> <span class="mi">10</span><span class="o">^</span><span class="mi">6</span>
+<span class="n">count_two_prime_factors</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">limit</span> <span class="p">)</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">factorint</span><span class="p">(</span><span class="n">n</span><span class="p">))</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">count_two_prime_factors</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#187 FP way</span>
+<span class="c1"># sage way</span>
+<span class="n">limit</span> <span class="o">=</span> <span class="mi">10</span><span class="o">^</span><span class="mi">6</span>
+<span class="n">count_two_prime_factors</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">limit</span> <span class="p">)</span> <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">factor</span><span class="p">(</span><span class="n">n</span><span class="p">))</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">count_two_prime_factors</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">*</span> <span class="mi">187</span> <span class="n">Semiprimes</span> 
+    <span class="n">Q</span><span class="p">:</span> <span class="n">the</span> <span class="n">code</span> <span class="n">takes</span> <span class="mi">11</span><span class="nb">min</span><span class="p">,</span> <span class="n">faster</span><span class="err">???</span> <span class="o">*</span><span class="p">)</span>
+<span class="n">Total</span><span class="p">[</span><span class="n">Table</span><span class="p">[</span> 
+            <span class="n">Boole</span><span class="p">[</span> <span class="n">Total</span><span class="p">[</span><span class="n">FactorInteger</span><span class="p">[</span><span class="n">n</span><span class="p">]][[</span><span class="mi">2</span><span class="p">]]</span> <span class="o">==</span> <span class="mi">2</span> <span class="p">]</span>
+            <span class="p">,</span> <span class="p">{</span><span class="n">n</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">99999999</span><span class="p">}</span> <span class="p">]</span> 
+    <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">*</span> <span class="n">speed</span> <span class="n">up</span> <span class="n">but</span> <span class="n">wrong</span> <span class="n">answer</span> <span class="err">??</span> <span class="o">-</span> <span class="n">add</span> <span class="p">{{</span><span class="n">_</span><span class="p">,</span><span class="mi">2</span><span class="p">}}</span> <span class="o">*</span><span class="p">)</span>
+<span class="p">(</span><span class="o">*</span> <span class="n">takes</span> <span class="o">&gt;</span><span class="mi">11</span> <span class="nb">min</span><span class="err">???</span> <span class="o">*</span><span class="p">)</span>
+<span class="n">Count</span><span class="p">[</span> <span class="n">FactorInteger</span> <span class="o">/@</span> <span class="n">Range</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="o">^</span><span class="mi">8</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> 
+      <span class="p">,{{</span><span class="n">_</span><span class="p">,</span> <span class="mi">1</span><span class="p">},{</span><span class="n">_</span><span class="p">,</span> <span class="mi">1</span><span class="p">}}</span> <span class="o">|</span> <span class="p">{{</span><span class="n">_</span><span class="p">,</span><span class="mi">2</span><span class="p">}}</span>
+      <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span><span class="o">=</span><span class="n">Table</span><span class="p">[</span> 
+    <span class="n">Boole</span><span class="p">[</span> <span class="n">Length</span><span class="p">[</span> <span class="n">FactorInteger</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="p">]</span><span class="o">==</span><span class="mi">2</span> <span class="p">],</span>
+    <span class="p">{</span><span class="n">n</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">30</span><span class="p">}]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span><span class="o">=</span><span class="p">{{</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">},{</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">}};</span>
+<span class="n">Total</span><span class="p">[</span><span class="n">lst</span><span class="p">][[</span><span class="mi">2</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pe-188">
+<h2><span class="section-number">15.10. </span>PE 188<a class="headerlink" href="#pe-188" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">7</span><span class="o">**</span><span class="mi">7</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">=</span><span class="mi">7</span>
+<span class="n">n</span><span class="o">=</span><span class="mi">7</span><span class="o">**</span><span class="n">n</span> <span class="o">%</span> <span class="mi">1000000000</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span><span class="o">=</span><span class="mi">8123674</span>
+<span class="n">n</span><span class="o">=</span><span class="mi">1798</span>
+<span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">m</span><span class="o">/</span><span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">=</span><span class="mi">1777</span><span class="p">;</span>
+<span class="n">For</span><span class="p">[</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">1856</span><span class="p">,</span><span class="n">i</span><span class="o">++</span><span class="p">,</span><span class="n">n</span><span class="o">=</span><span class="n">Mod</span><span class="p">[</span><span class="mi">1777</span><span class="o">^</span><span class="n">n</span><span class="p">,</span><span class="mi">10000000</span><span class="p">]]</span>
+<span class="n">n</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">62097</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Mod</span><span class="p">[</span><span class="mi">1777</span><span class="o">^</span><span class="mi">1777</span><span class="p">,</span><span class="mi">100000000</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">00001777</span><span class="p">,</span><span class="mi">87955697</span><span class="p">,</span><span class="mi">70132343</span><span class="p">,</span><span class="mi">33172343</span><span class="p">,</span><span class="mi">65172343</span><span class="p">,</span><span class="mi">5172343</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1777</span><span class="o">^</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pe-203">
+<h2><span class="section-number">15.11. </span>PE 203<a class="headerlink" href="#pe-203" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="n">start</span><span class="o">=</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">n</span><span class="o">=</span><span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">51</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">n</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">binomial</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">))</span>
+<span class="n">n</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+<span class="n">n</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="n">n</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="n">is_squarefree</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">n</span><span class="p">))</span>
+<span class="nb">sum</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="o">-</span><span class="n">start</span><span class="p">)</span><span class="o">*</span><span class="mi">1000</span>
+<span class="c1"># comment last line to show answer</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pe-205">
+<h2><span class="section-number">15.12. </span>PE 205<a class="headerlink" href="#pe-205" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 205 Dice Game</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">peter_prob</span><span class="p">():</span>
+    <span class="n">prob</span><span class="o">=</span><span class="nb">dict</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">37</span><span class="p">):</span>
+        <span class="n">prob</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">i</span><span class="p">:</span><span class="mi">0</span><span class="p">})</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+                <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+                    <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+                        <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+                            <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+                                <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+                                    <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+                                        <span class="n">s</span><span class="o">=</span><span class="nb">sum</span><span class="p">([</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">o</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="n">q</span><span class="p">])</span>
+                                        <span class="n">prob</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">s</span><span class="p">:</span><span class="n">prob</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">})</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">37</span><span class="p">):</span>
+        <span class="n">prob</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">i</span><span class="p">:</span><span class="n">prob</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">/</span><span class="mi">4</span><span class="o">^</span><span class="mi">9</span><span class="p">})</span>
+    <span class="k">return</span> <span class="n">prob</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">colin_prob</span><span class="p">():</span>
+    <span class="n">prob</span><span class="o">=</span><span class="nb">dict</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">37</span><span class="p">):</span>
+        <span class="n">prob</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">i</span><span class="p">:</span><span class="mi">0</span><span class="p">})</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">):</span>
+                <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">):</span>
+                    <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">):</span>
+                        <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">):</span>
+                            <span class="n">s</span><span class="o">=</span><span class="nb">sum</span><span class="p">([</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">])</span>
+                            <span class="n">prob</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">s</span><span class="p">:</span><span class="n">prob</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">})</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">37</span><span class="p">):</span>
+        <span class="n">prob</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">i</span><span class="p">:</span><span class="n">prob</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">/</span><span class="mi">6</span><span class="o">^</span><span class="mi">6</span><span class="p">})</span>
+    <span class="k">return</span> <span class="n">prob</span>
+
+<span class="n">peter</span><span class="o">=</span><span class="n">peter_prob</span><span class="p">()</span>
+<span class="n">colin</span><span class="o">=</span><span class="n">colin_prob</span><span class="p">()</span>
+<span class="n">prob</span><span class="o">=</span><span class="n">colin</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">+</span><span class="n">colin</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="o">+</span><span class="n">colin</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span>
+<span class="n">peter_lst</span><span class="o">=</span><span class="p">[]</span>
+<span class="n">colin_lst</span><span class="o">=</span><span class="p">[]</span>
+<span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">peter</span><span class="p">:</span>
+    <span class="n">peter_lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">peter</span><span class="p">[</span><span class="n">num</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">colin</span><span class="p">:</span>
+    <span class="n">colin_lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">colin</span><span class="p">[</span><span class="n">num</span><span class="p">])</span>
+<span class="n">colin_lst</span><span class="o">=</span><span class="n">colin_lst</span><span class="p">[</span><span class="mi">3</span><span class="p">:]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">peter_lst</span><span class="p">)):</span>
+    <span class="n">prob</span><span class="o">+=</span><span class="n">peter_lst</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="nb">sum</span><span class="p">(</span><span class="n">colin_lst</span><span class="p">[:</span><span class="n">i</span><span class="p">])</span>
+<span class="c1"># print probability</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pe-243">
+<h2><span class="section-number">15.13. </span>PE 243<a class="headerlink" href="#pe-243" title="Link to this heading">#</a></h2>
+<p>The resilience of n is defined by the number of proper fractions when</p>
+<ul class="simple">
+<li><p>the numerators are <span class="math notranslate nohighlight">\(1\)</span> to <span class="math notranslate nohighlight">\(n-1\)</span> and</p></li>
+<li><p>the denominator is <span class="math notranslate nohighlight">\(n\)</span> divided by the total amount of fractions.</p></li>
+<li><p>A fraction is proper when the numerator and denominator are coprime. This means that it can be defined as the totient function of <span class="math notranslate nohighlight">\(n\)</span> divided by <span class="math notranslate nohighlight">\(n-1\)</span></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">resilience</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">euler_phi</span><span class="p">(</span><span class="n">d</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">d</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">solve</span><span class="p">(</span><span class="n">limit</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mi">3</span><span class="o">*</span><span class="mi">5</span><span class="o">*</span><span class="mi">7</span><span class="o">*</span><span class="mi">11</span><span class="p">,</span><span class="n">limit</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="mi">3</span><span class="o">*</span><span class="mi">5</span><span class="o">*</span><span class="mi">7</span><span class="o">*</span><span class="mi">11</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">resilience</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">15499</span><span class="o">/</span><span class="mi">94744</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">d</span>
+    <span class="k">return</span> <span class="kc">False</span>
+<span class="c1"># solve(1000000000) uncomment to show answer</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pe-345">
+<h2><span class="section-number">15.14. </span>PE 345<a class="headerlink" href="#pe-345" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">*</span> <span class="mi">345</span> <span class="o">*</span><span class="p">)</span>
+<span class="n">matrix</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="p">{</span><span class="mi">7</span><span class="p">,</span> <span class="mi">53</span><span class="p">,</span> <span class="mi">183</span><span class="p">,</span> <span class="mi">439</span><span class="p">,</span> <span class="mi">863</span><span class="p">,</span> <span class="mi">497</span><span class="p">,</span> <span class="mi">383</span><span class="p">,</span> <span class="mi">563</span><span class="p">,</span> <span class="mi">79</span><span class="p">,</span> <span class="mi">973</span><span class="p">,</span> <span class="mi">287</span><span class="p">,</span> <span class="mi">63</span><span class="p">,</span> <span class="mi">343</span><span class="p">,</span> <span class="mi">169</span><span class="p">,</span> <span class="mi">583</span><span class="p">},</span>
+  <span class="p">{</span><span class="mi">627</span><span class="p">,</span> <span class="mi">343</span><span class="p">,</span> <span class="mi">773</span><span class="p">,</span> <span class="mi">959</span><span class="p">,</span> <span class="mi">943</span><span class="p">,</span> <span class="mi">767</span><span class="p">,</span> <span class="mi">473</span><span class="p">,</span> <span class="mi">103</span><span class="p">,</span> <span class="mi">699</span><span class="p">,</span> <span class="mi">303</span><span class="p">,</span> <span class="mi">957</span><span class="p">,</span> <span class="mi">703</span><span class="p">,</span> <span class="mi">583</span><span class="p">,</span> <span class="mi">639</span><span class="p">,</span> <span class="mi">913</span><span class="p">},</span>
+  <span class="p">{</span><span class="mi">447</span><span class="p">,</span> <span class="mi">283</span><span class="p">,</span> <span class="mi">463</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">487</span><span class="p">,</span> <span class="mi">463</span><span class="p">,</span> <span class="mi">993</span><span class="p">,</span> <span class="mi">119</span><span class="p">,</span> <span class="mi">883</span><span class="p">,</span> <span class="mi">327</span><span class="p">,</span> <span class="mi">493</span><span class="p">,</span> <span class="mi">423</span><span class="p">,</span> <span class="mi">159</span><span class="p">,</span> <span class="mi">743</span><span class="p">},</span>
+  <span class="p">{</span><span class="mi">217</span><span class="p">,</span> <span class="mi">623</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">399</span><span class="p">,</span> <span class="mi">853</span><span class="p">,</span> <span class="mi">407</span><span class="p">,</span> <span class="mi">103</span><span class="p">,</span> <span class="mi">983</span><span class="p">,</span> <span class="mi">89</span><span class="p">,</span> <span class="mi">463</span><span class="p">,</span> <span class="mi">290</span><span class="p">,</span> <span class="mi">516</span><span class="p">,</span> <span class="mi">212</span><span class="p">,</span> <span class="mi">462</span><span class="p">,</span> <span class="mi">350</span><span class="p">},</span>
+  <span class="p">{</span><span class="mi">960</span><span class="p">,</span> <span class="mi">376</span><span class="p">,</span> <span class="mi">682</span><span class="p">,</span> <span class="mi">962</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">780</span><span class="p">,</span> <span class="mi">486</span><span class="p">,</span> <span class="mi">502</span><span class="p">,</span> <span class="mi">912</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">346</span><span class="p">,</span> <span class="mi">172</span><span class="p">,</span> <span class="mi">812</span><span class="p">,</span> <span class="mi">350</span><span class="p">},</span>
+  <span class="p">{</span><span class="mi">870</span><span class="p">,</span> <span class="mi">456</span><span class="p">,</span> <span class="mi">192</span><span class="p">,</span> <span class="mi">162</span><span class="p">,</span> <span class="mi">593</span><span class="p">,</span> <span class="mi">473</span><span class="p">,</span> <span class="mi">915</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">989</span><span class="p">,</span> <span class="mi">873</span><span class="p">,</span> <span class="mi">823</span><span class="p">,</span> <span class="mi">965</span><span class="p">,</span> <span class="mi">425</span><span class="p">,</span> <span class="mi">329</span><span class="p">,</span> <span class="mi">803</span><span class="p">},</span>
+  <span class="p">{</span><span class="mi">973</span><span class="p">,</span> <span class="mi">965</span><span class="p">,</span> <span class="mi">905</span><span class="p">,</span> <span class="mi">919</span><span class="p">,</span> <span class="mi">133</span><span class="p">,</span> <span class="mi">673</span><span class="p">,</span> <span class="mi">665</span><span class="p">,</span> <span class="mi">235</span><span class="p">,</span> <span class="mi">509</span><span class="p">,</span> <span class="mi">613</span><span class="p">,</span> <span class="mi">673</span><span class="p">,</span> <span class="mi">815</span><span class="p">,</span> <span class="mi">165</span><span class="p">,</span> <span class="mi">992</span><span class="p">,</span> <span class="mi">326</span><span class="p">},</span>
+  <span class="p">{</span><span class="mi">322</span><span class="p">,</span> <span class="mi">148</span><span class="p">,</span> <span class="mi">972</span><span class="p">,</span> <span class="mi">962</span><span class="p">,</span> <span class="mi">286</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">941</span><span class="p">,</span> <span class="mi">541</span><span class="p">,</span> <span class="mi">265</span><span class="p">,</span> <span class="mi">323</span><span class="p">,</span> <span class="mi">925</span><span class="p">,</span> <span class="mi">281</span><span class="p">,</span> <span class="mi">601</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">973</span><span class="p">},</span>
+  <span class="p">{</span><span class="mi">445</span><span class="p">,</span> <span class="mi">721</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">525</span><span class="p">,</span> <span class="mi">473</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">511</span><span class="p">,</span> <span class="mi">164</span><span class="p">,</span> <span class="mi">138</span><span class="p">,</span> <span class="mi">672</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">428</span><span class="p">,</span> <span class="mi">154</span><span class="p">,</span> <span class="mi">448</span><span class="p">,</span> <span class="mi">848</span><span class="p">},</span>
+  <span class="p">{</span><span class="mi">414</span><span class="p">,</span> <span class="mi">456</span><span class="p">,</span> <span class="mi">310</span><span class="p">,</span> <span class="mi">312</span><span class="p">,</span> <span class="mi">798</span><span class="p">,</span> <span class="mi">104</span><span class="p">,</span> <span class="mi">566</span><span class="p">,</span> <span class="mi">520</span><span class="p">,</span> <span class="mi">302</span><span class="p">,</span> <span class="mi">248</span><span class="p">,</span> <span class="mi">694</span><span class="p">,</span> <span class="mi">976</span><span class="p">,</span> <span class="mi">430</span><span class="p">,</span> <span class="mi">392</span><span class="p">,</span> <span class="mi">198</span><span class="p">},</span>
+  <span class="p">{</span><span class="mi">184</span><span class="p">,</span> <span class="mi">829</span><span class="p">,</span> <span class="mi">373</span><span class="p">,</span> <span class="mi">181</span><span class="p">,</span> <span class="mi">631</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">969</span><span class="p">,</span> <span class="mi">613</span><span class="p">,</span> <span class="mi">840</span><span class="p">,</span> <span class="mi">740</span><span class="p">,</span> <span class="mi">778</span><span class="p">,</span> <span class="mi">458</span><span class="p">,</span> <span class="mi">284</span><span class="p">,</span> <span class="mi">760</span><span class="p">,</span> <span class="mi">390</span><span class="p">},</span>
+  <span class="p">{</span><span class="mi">821</span><span class="p">,</span> <span class="mi">461</span><span class="p">,</span> <span class="mi">843</span><span class="p">,</span> <span class="mi">513</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">901</span><span class="p">,</span> <span class="mi">711</span><span class="p">,</span> <span class="mi">993</span><span class="p">,</span> <span class="mi">293</span><span class="p">,</span> <span class="mi">157</span><span class="p">,</span> <span class="mi">274</span><span class="p">,</span> <span class="mi">94</span><span class="p">,</span> <span class="mi">192</span><span class="p">,</span> <span class="mi">156</span><span class="p">,</span> <span class="mi">574</span><span class="p">},</span>
+  <span class="p">{</span><span class="mi">34</span><span class="p">,</span> <span class="mi">124</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">878</span><span class="p">,</span> <span class="mi">450</span><span class="p">,</span> <span class="mi">476</span><span class="p">,</span> <span class="mi">712</span><span class="p">,</span> <span class="mi">914</span><span class="p">,</span> <span class="mi">838</span><span class="p">,</span> <span class="mi">669</span><span class="p">,</span> <span class="mi">875</span><span class="p">,</span> <span class="mi">299</span><span class="p">,</span> <span class="mi">823</span><span class="p">,</span> <span class="mi">329</span><span class="p">,</span> <span class="mi">699</span><span class="p">},</span>
+  <span class="p">{</span><span class="mi">815</span><span class="p">,</span> <span class="mi">559</span><span class="p">,</span> <span class="mi">813</span><span class="p">,</span> <span class="mi">459</span><span class="p">,</span> <span class="mi">522</span><span class="p">,</span> <span class="mi">788</span><span class="p">,</span> <span class="mi">168</span><span class="p">,</span> <span class="mi">586</span><span class="p">,</span> <span class="mi">966</span><span class="p">,</span> <span class="mi">232</span><span class="p">,</span> <span class="mi">308</span><span class="p">,</span> <span class="mi">833</span><span class="p">,</span> <span class="mi">251</span><span class="p">,</span> <span class="mi">631</span><span class="p">,</span> <span class="mi">107</span><span class="p">},</span>
+  <span class="p">{</span><span class="mi">813</span><span class="p">,</span> <span class="mi">883</span><span class="p">,</span> <span class="mi">451</span><span class="p">,</span> <span class="mi">509</span><span class="p">,</span> <span class="mi">615</span><span class="p">,</span> <span class="mi">77</span><span class="p">,</span> <span class="mi">281</span><span class="p">,</span> <span class="mi">613</span><span class="p">,</span> <span class="mi">459</span><span class="p">,</span> <span class="mi">205</span><span class="p">,</span> <span class="mi">380</span><span class="p">,</span> <span class="mi">274</span><span class="p">,</span> <span class="mi">302</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">805</span><span class="p">}</span>
+<span class="p">};</span>
+<span class="n">maxRowTotal</span> <span class="o">=</span> <span class="n">Max</span><span class="p">[</span><span class="n">Total</span> <span class="o">/@</span> <span class="n">matrix</span><span class="p">]</span>
+<span class="n">maxColumnTotal</span><span class="o">=</span><span class="n">Max</span><span class="p">[</span><span class="n">Total</span> <span class="o">/@</span> <span class="n">Transpose</span><span class="p">[</span><span class="n">matrix</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pe-700">
+<h2><span class="section-number">15.15. </span>PE 700<a class="headerlink" href="#pe-700" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 700 Eulercoin</span>
+<span class="n">seq</span><span class="o">=</span><span class="p">[</span><span class="mi">1504170715041707</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">10000000</span><span class="p">):</span>
+    <span class="n">l</span><span class="o">=</span><span class="p">(</span><span class="mi">1504170715041707</span><span class="o">*</span><span class="n">n</span><span class="p">)</span> <span class="o">%</span> <span class="mi">4503599627370517</span>
+    <span class="k">if</span> <span class="n">l</span><span class="o">&lt;</span><span class="n">seq</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+        <span class="n">seq</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<span class="n">seq</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pe-961">
+<h2><span class="section-number">15.16. </span>PE 961<a class="headerlink" href="#pe-961" title="Link to this heading">#</a></h2>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "sagemath"
+        },
+        kernelOptions: {
+            name: "sagemath",
+            path: "./PE_Informatics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'sagemath'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="PE100.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">14. </span>Project Euler Q1-100</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../Course_MCM_QM.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">16. </span>Quantum Mechanics</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-104">15.1. PE 104</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-112">15.2. PE 112</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-113">15.3. PE 113</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-121">15.4. PE 121</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-124">15.5. PE 124</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-125">15.6. PE 125</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-162">15.7. PE 162</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-179">15.8. PE 179</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-187">15.9. PE 187</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-188">15.10. PE 188</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-203">15.11. PE 203</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-205">15.12. PE 205</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-243">15.13. PE 243</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-345">15.14. PE 345</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-700">15.15. PE 700</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-961">15.16. PE 961</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jonny, assisted by Tom
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
