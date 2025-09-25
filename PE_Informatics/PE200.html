@@ -371,19 +371,21 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-104">15.1. PE 104</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-112">15.2. PE 112</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-113">15.3. PE 113</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-121">15.4. PE 121</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-124">15.5. PE 124</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-125">15.6. PE 125</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-162">15.7. PE 162</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-179">15.8. PE 179</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-187">15.9. PE 187</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-188">15.10. PE 188</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-203">15.11. PE 203</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-205">15.12. PE 205</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-243">15.13. PE 243</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-345">15.14. PE 345</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-700">15.15. PE 700</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-961">15.16. PE 961</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-120">15.4. PE 120</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-121">15.5. PE 121</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-124">15.6. PE 124</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-125">15.7. PE 125</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-162">15.8. PE 162</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-179">15.9. PE 179</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-187">15.10. PE 187</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-188">15.11. PE 188</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-203">15.12. PE 203</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-205">15.13. PE 205</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-243">15.14. PE 243</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-345">15.15. PE 345</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-493">15.16. PE 493</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-700">15.17. PE 700</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-sqrt-13">15.18. PE <span class="math notranslate nohighlight">\(\sqrt{13}\)</span></a></li>
 </ul>
             </nav>
         </div>
@@ -439,7 +441,7 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 104 Pandigital Fibonacci Ends</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">is_pandigital</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
     <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">num</span><span class="p">))))</span><span class="o">==</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
-<span class="n">limit</span><span class="o">=</span><span class="mi">3000</span>
+<span class="n">limit</span><span class="o">=</span><span class="mi">10</span><span class="o">^</span><span class="mi">4</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">limit</span><span class="p">):</span>
     <span class="n">num</span><span class="o">=</span><span class="n">fibonacci</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
     <span class="n">end</span><span class="o">=</span><span class="n">num</span><span class="o">%</span><span class="p">(</span><span class="n">num</span><span class="o">^</span><span class="mi">9</span><span class="p">)</span>
@@ -452,8 +454,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
-done!
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>done!
 </pre></div>
 </div>
 </div>
@@ -472,11 +473,6 @@ done!
         <span class="nb">print</span><span class="p">(</span><span class="n">lst</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">num</span><span class="p">))</span>
         <span class="k">break</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;done!&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>done!
 </pre></div>
 </div>
 </div>
@@ -550,8 +546,47 @@ done!
 <h2><span class="section-number">15.3. </span>PE 113<a class="headerlink" href="#pe-113" title="Link to this heading">#</a></h2>
 <p>Use binomial coefficient.</p>
 </section>
+<section id="pe-120">
+<h2><span class="section-number">15.4. </span>PE 120<a class="headerlink" href="#pe-120" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Set total to 0.</p></li>
+<li><p>Iterate through <span class="math notranslate nohighlight">\(3\leq a\leq1000\)</span></p>
+<ul>
+<li><p>Set maximum remainder to 0</p></li>
+<li><p>Iterate through <span class="math notranslate nohighlight">\(1&lt;=k&lt;=2a\)</span>(the remainders will have a pattern)</p>
+<ul>
+<li><p>Find remainder</p></li>
+<li><p>Change maximum remainder if needed</p></li>
+</ul>
+</li>
+<li><p>Increment the total by the maximum remainder</p></li>
+</ul>
+</li>
+<li><p>Display the total</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 120 Square Remainders</span>
+<span class="n">total</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1001</span><span class="p">):</span>
+    <span class="n">max_r</span><span class="o">=</span><span class="mi">0</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">r</span><span class="o">=</span><span class="p">((</span><span class="n">a</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">^</span><span class="n">k</span><span class="o">+</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">^</span><span class="n">k</span><span class="p">)</span><span class="o">%</span><span class="k">a</span>^2
+        <span class="n">max_r</span><span class="o">=</span><span class="nb">max</span><span class="p">(</span><span class="n">max_r</span><span class="p">,</span><span class="n">r</span><span class="p">)</span>
+    <span class="n">total</span><span class="o">+=</span><span class="n">max_r</span>
+<span class="n">total</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>333082500
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="pe-121">
-<h2><span class="section-number">15.4. </span>PE 121<a class="headerlink" href="#pe-121" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.5. </span>PE 121<a class="headerlink" href="#pe-121" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">*</span> <span class="mi">121</span> <span class="n">Disc</span> <span class="n">Game</span> <span class="n">Prize</span> <span class="n">Fund</span> 
@@ -566,7 +601,7 @@ done!
 </div>
 </section>
 <section id="pe-124">
-<h2><span class="section-number">15.5. </span>PE 124<a class="headerlink" href="#pe-124" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.6. </span>PE 124<a class="headerlink" href="#pe-124" title="Link to this heading">#</a></h2>
 <p>The sage radical function calculates the product of the distinct prime factors of a number: <span class="math notranslate nohighlight">\(\text{rad}(n)=\Pi_{p|n}p\)</span> where p is prime.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -592,7 +627,65 @@ done!
 </div>
 </section>
 <section id="pe-125">
-<h2><span class="section-number">15.6. </span>PE 125<a class="headerlink" href="#pe-125" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.7. </span>PE 125<a class="headerlink" href="#pe-125" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">is_palindrome</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="n">reversed_n</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">n</span>
+    <span class="k">while</span> <span class="n">temp</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">reversed_n</span> <span class="o">=</span> <span class="n">reversed_n</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">temp</span> <span class="o">%</span> <span class="mi">10</span>
+        <span class="n">temp</span> <span class="o">//=</span> <span class="mi">10</span>
+    <span class="k">return</span> <span class="n">n</span><span class="o">==</span><span class="n">reversed_n</span>
+
+<span class="n">limit</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="mi">8</span>
+<span class="n">max_k</span> <span class="o">=</span> <span class="n">isqrt</span><span class="p">(</span><span class="n">limit</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># Approx 7071</span>
+<span class="n">squares</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span><span class="o">^</span><span class="mi">2</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">max_k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
+<span class="n">palindromic_sums</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">squares</span><span class="p">)):</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">squares</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">squares</span><span class="p">)):</span>
+        <span class="n">s</span> <span class="o">+=</span> <span class="n">squares</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">s</span> <span class="o">&gt;=</span> <span class="n">limit</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="k">if</span> <span class="n">is_palindrome</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+            <span class="n">palindromic_sums</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="n">total</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">palindromic_sums</span><span class="p">);</span><span class="n">total</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2906969179
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 125 Palindromic Sums</span>
+<span class="n">limit</span><span class="o">=</span><span class="mi">10</span><span class="o">^</span><span class="mi">7</span>
+<span class="n">lst</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">isqrt</span><span class="p">(</span><span class="n">limit</span><span class="o">//</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mi">10</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">))</span>
+<span class="n">total</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">is_palindrome</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">lst</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]))</span> <span class="ow">and</span> <span class="nb">sum</span><span class="p">(</span><span class="n">lst</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span><span class="o">&lt;</span><span class="n">limit</span><span class="p">:</span>
+            <span class="n">total</span><span class="o">+=</span><span class="nb">sum</span><span class="p">(</span><span class="n">lst</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">total</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2245
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>313698021
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">*</span> <span class="mi">125</span> <span class="n">Palindromic</span> <span class="n">Sums</span> <span class="o">*</span><span class="p">)</span>
@@ -625,7 +718,7 @@ done!
 </div>
 </section>
 <section id="pe-162">
-<h2><span class="section-number">15.7. </span>PE 162<a class="headerlink" href="#pe-162" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.8. </span>PE 162<a class="headerlink" href="#pe-162" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">*</span> <span class="mi">162</span> <span class="n">Hexadecimal</span> <span class="n">Numbers</span> <span class="o">*</span><span class="p">)</span>
@@ -640,7 +733,7 @@ done!
 </div>
 </section>
 <section id="pe-179">
-<h2><span class="section-number">15.8. </span>PE 179<a class="headerlink" href="#pe-179" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.9. </span>PE 179<a class="headerlink" href="#pe-179" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 179</span>
@@ -662,7 +755,7 @@ done!
 </div>
 </section>
 <section id="pe-187">
-<h2><span class="section-number">15.9. </span>PE 187<a class="headerlink" href="#pe-187" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.10. </span>PE 187<a class="headerlink" href="#pe-187" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Semiprime">A semiprime-counting formula</a>: <span class="math notranslate nohighlight">\(\pi_{2}(n)= \)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -730,7 +823,7 @@ done!
 </div>
 </section>
 <section id="pe-188">
-<h2><span class="section-number">15.10. </span>PE 188<a class="headerlink" href="#pe-188" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.11. </span>PE 188<a class="headerlink" href="#pe-188" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">7</span><span class="o">**</span><span class="mi">7</span>
@@ -795,7 +888,7 @@ done!
 </div>
 </section>
 <section id="pe-203">
-<h2><span class="section-number">15.11. </span>PE 203<a class="headerlink" href="#pe-203" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.12. </span>PE 203<a class="headerlink" href="#pe-203" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
@@ -816,7 +909,7 @@ done!
 </div>
 </section>
 <section id="pe-205">
-<h2><span class="section-number">15.12. </span>PE 205<a class="headerlink" href="#pe-205" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.13. </span>PE 205<a class="headerlink" href="#pe-205" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 205 Dice Game</span>
@@ -873,7 +966,7 @@ done!
 </div>
 </section>
 <section id="pe-243">
-<h2><span class="section-number">15.13. </span>PE 243<a class="headerlink" href="#pe-243" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.14. </span>PE 243<a class="headerlink" href="#pe-243" title="Link to this heading">#</a></h2>
 <p>The resilience of n is defined by the number of proper fractions when</p>
 <ul class="simple">
 <li><p>the numerators are <span class="math notranslate nohighlight">\(1\)</span> to <span class="math notranslate nohighlight">\(n-1\)</span> and</p></li>
@@ -897,7 +990,7 @@ done!
 </div>
 </section>
 <section id="pe-345">
-<h2><span class="section-number">15.14. </span>PE 345<a class="headerlink" href="#pe-345" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.15. </span>PE 345<a class="headerlink" href="#pe-345" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">*</span> <span class="mi">345</span> <span class="o">*</span><span class="p">)</span>
@@ -925,8 +1018,49 @@ done!
 </div>
 </div>
 </section>
+<section id="pe-493">
+<h2><span class="section-number">15.16. </span>PE 493<a class="headerlink" href="#pe-493" title="Link to this heading">#</a></h2>
+<p>Simple Formula: Number of colours(7) times the probability that colour will appear <span class="math notranslate nohighlight">\(\begin{pmatrix}1-\frac{\begin{pmatrix}60\\20\end{pmatrix}}{\begin{pmatrix}70\\20\end{pmatrix}}\end{pmatrix}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">compute</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">):</span>
+    <span class="n">ans</span><span class="o">=</span><span class="n">binomial</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="n">j</span><span class="p">)</span>
+    <span class="n">tot</span><span class="o">=</span><span class="mi">10</span><span class="o">*</span><span class="n">j</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+        <span class="n">ans</span><span class="o">*=</span><span class="p">(</span><span class="n">tot</span><span class="o">-</span><span class="n">k</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">70</span><span class="o">-</span><span class="n">k</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ans</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 493 Under the Rainbow</span>
+<span class="n">p2</span><span class="o">=</span><span class="n">compute</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">p3</span><span class="o">=</span><span class="n">compute</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">p4</span><span class="o">=</span><span class="n">compute</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">p5</span><span class="o">=</span><span class="n">compute</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">p6</span><span class="o">=</span><span class="n">compute</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">p7</span><span class="o">=</span><span class="mi">1</span><span class="o">-</span><span class="n">p6</span>
+<span class="n">p6</span><span class="o">-=</span><span class="n">p5</span>
+<span class="n">p5</span><span class="o">-=</span><span class="n">p4</span>
+<span class="n">p4</span><span class="o">-=</span><span class="n">p3</span>
+<span class="n">p3</span><span class="o">-=</span><span class="n">p2</span>
+<span class="n">n</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">p2</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="n">p3</span><span class="o">+</span><span class="mi">4</span><span class="o">*</span><span class="n">p4</span><span class="o">+</span><span class="mi">5</span><span class="o">*</span><span class="n">p5</span><span class="o">+</span><span class="mi">6</span><span class="o">*</span><span class="n">p6</span><span class="o">+</span><span class="mi">7</span><span class="o">*</span><span class="n">p7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="p">(</span><span class="mi">7</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">binomial</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span><span class="o">/</span><span class="n">binomial</span><span class="p">(</span><span class="mi">70</span><span class="p">,</span><span class="mi">20</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="pe-700">
-<h2><span class="section-number">15.15. </span>PE 700<a class="headerlink" href="#pe-700" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.17. </span>PE 700<a class="headerlink" href="#pe-700" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 700 Eulercoin</span>
@@ -941,8 +1075,50 @@ done!
 </div>
 </div>
 </section>
-<section id="pe-961">
-<h2><span class="section-number">15.16. </span>PE 961<a class="headerlink" href="#pe-961" title="Link to this heading">#</a></h2>
+<section id="pe-sqrt-13">
+<h2><span class="section-number">15.18. </span>PE <span class="math notranslate nohighlight">\(\sqrt{13}\)</span><a class="headerlink" href="#pe-sqrt-13" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">root13_digit_sum</span><span class="p">(</span><span class="n">digits</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span>
+        <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span>
+            <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">13</span><span class="p">),</span> <span class="n">digits</span><span class="o">=</span><span class="n">digits</span><span class="o">+</span><span class="mi">5</span><span class="p">))</span>  <span class="c1"># +5 to be safe</span>
+            <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:</span><span class="n">digits</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>      <span class="c1"># skip the integer part &#39;3&#39;</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+<span class="c1"># root13_digit_sum(1000)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Bonus Problem</span>
+<span class="n">num</span><span class="o">=</span><span class="n">n</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">13</span><span class="p">),</span><span class="n">digits</span><span class="o">=</span><span class="mi">2000</span><span class="p">)</span>
+<span class="n">lst</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">num</span><span class="p">))</span>
+<span class="n">lst</span><span class="o">=</span><span class="n">lst</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">1002</span><span class="p">]</span>
+<span class="c1"># sum(map(int,lst))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">continued_fraction</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">13</span><span class="p">))[</span><span class="mi">1</span><span class="p">:</span><span class="mi">1003</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bronze_ratio</span><span class="o">=</span><span class="mf">1.5</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1000</span><span class="p">):</span>
+    <span class="n">bronze_ratio</span><span class="o">=</span><span class="mi">3</span><span class="o">+</span><span class="mi">1</span><span class="o">/</span><span class="n">bronze_ratio</span>
+<span class="n">bronze_ratio</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
@@ -1013,19 +1189,21 @@ done!
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-104">15.1. PE 104</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-112">15.2. PE 112</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-113">15.3. PE 113</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-121">15.4. PE 121</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-124">15.5. PE 124</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-125">15.6. PE 125</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-162">15.7. PE 162</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-179">15.8. PE 179</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-187">15.9. PE 187</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-188">15.10. PE 188</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-203">15.11. PE 203</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-205">15.12. PE 205</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-243">15.13. PE 243</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-345">15.14. PE 345</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-700">15.15. PE 700</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-961">15.16. PE 961</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-120">15.4. PE 120</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-121">15.5. PE 121</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-124">15.6. PE 124</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-125">15.7. PE 125</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-162">15.8. PE 162</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-179">15.9. PE 179</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-187">15.10. PE 187</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-188">15.11. PE 188</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-203">15.12. PE 203</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-205">15.13. PE 205</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-243">15.14. PE 243</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-345">15.15. PE 345</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-493">15.16. PE 493</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-700">15.17. PE 700</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-sqrt-13">15.18. PE <span class="math notranslate nohighlight">\(\sqrt{13}\)</span></a></li>
 </ul>
   </nav></div>
 
