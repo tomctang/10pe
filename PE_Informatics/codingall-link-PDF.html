@@ -423,6 +423,51 @@ document.write(`
                   
   <section id="intro">
 <h1>Intro<a class="headerlink" href="#intro" title="Link to this heading">#</a></h1>
+<p>1.<strong>整除性与素数</strong></p>
+<ul class="simple">
+<li><p>质数判定(试除法、Miller-Rabin 算法)</p></li>
+<li><p>质因数分解(试除法、Pollard’sRho算法)</p></li>
+<li><p>埃拉托斯特尼筛法(普通筛、线性筛)</p></li>
+<li><p>算术基本定理(唯一分解定理)
+2.<strong>最大公约数与最小公倍数</strong></p></li>
+<li><p>欧几里得算法(GCD)与扩展欧几里得算法 (求解贝祖等式‘ax+by=gcd(a,b)`)</p></li>
+<li><p>应用:求解线性同余方程、模逆元
+3.<strong>同余与模运算</strong></p></li>
+<li><p>模运算基本性质(加减乘、快速幂) - 高频题型:超级次方</p></li>
+<li><p>线性同余方程‘ax ≡b (mod m)的解法 - 复杂同余方程组优先考虑中国剩余定理</p></li>
+<li><p>中国剩余定理(CRT)及其扩展形式 - 高频题型:好子数组计数 eg.Good Triplets
+4.<strong>欧拉定理与费马小定理</strong></p></li>
+<li><p>欧拉函数<code class="docutils literal notranslate"><span class="pre">q(n)</span></code> 的计算 (质因数分解法、线性筛法)</p></li>
+<li><p>应用:快速求模逆元 (<code class="docutils literal notranslate"><span class="pre">a^(o(m)-1)</span> <span class="pre">mod</span> <span class="pre">m</span></code>，当‘a与‘m’互质时)
+5.<strong>离散对数与原根</strong></p></li>
+<li><p>原根的存在性条件与求解</p></li>
+<li><p>BSGS 算法(大步小步算法)求解离散对数问题</p></li>
+<li><p>应用:Diffie-Hellman密钥交换、EIGamal加密
+6.<strong>二次剩余与二次同余</strong></p></li>
+<li><p>Legendre符号与 Jacobi符号</p></li>
+<li><p>Tonelli-Shanks 算法求解二次剩余方程`x² ≡ a (mod p)</p></li>
+<li><p>应用:Rabin 加密算法
+7.<strong>数论函数与狄利克雷卷积</strong></p></li>
+<li><p>常见数论函数:欧拉函数、莫比乌斯函数、除数函数</p></li>
+<li><p>莫比乌斯反演与容斥原理 - 高频题型: 求 <code class="docutils literal notranslate"><span class="pre">∑gcd(i,j)=k</span></code>的对数</p></li>
+<li><p>前缀和计算技巧(如<code class="docutils literal notranslate"><span class="pre">∑q(i)</span></code>的线性筛优化)
+8.<strong>排列组合计算</strong></p></li>
+<li><p>组合数公式(递推、阶乘逆元预处理)</p></li>
+<li><p>Lucas 定理(组合数取模，适用于大质数模数)</p></li>
+<li><p>容斥原理(集合计数、错位排列) - 高频题型:路径计数中的容斥</p></li>
+<li><p>卡特兰数应用(括号生成、凸多边形划分)</p></li>
+<li><p>区间无平方因子数计数(Project Euler 193)
+9.<strong>生成函数与多项式</strong></p></li>
+<li><p>普通生成函数(OGF)与指数生成函数(EGF)</p></li>
+<li><p>快速傅里叶变换(FFT)在多项式乘法中的应用</p></li>
+<li><p>生成函数解递推关系(如斐波那契数列通项)
+10.<strong>Tips: avoid brute-force and repetitive</strong></p></li>
+<li><p>学会利用筛法预处理(如质数表、欧拉函数表)。</p></li>
+<li><p>大数运算时优先考虑模运算性质简化计算。</p></li>
+<li><p>组合数问题需预处理阶乘和逆元(避免重复计算)。</p></li>
+<li><p>离散对数问题中，BSGS 算法适用于‘p’为质数的情况。</p></li>
+<li><p>将计数问题转化为莫比乌斯反演或生成函数形式 (灵活转换)</p></li>
+</ul>
 <img src="https://raw.githubusercontent.com/tomctang/NB_img/main/codingall.png" alt="vector_cal" width="550">
 <p><strong>Tips &amp; Tricks</strong></p>
 <p>If input array is sorted then</p>

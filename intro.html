@@ -486,7 +486,7 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span> <span class="pre">;</span> <span class="pre">docker</span> <span class="pre">images</span> <span class="pre">;</span> </code></p></li>
 </ul>
 </li>
-<li><p><del>Google Drive - rclone</del>, now Dropbox</p>
+<li><p><del>Google Drive - rclone</del>, now Dropbox &amp; Syncthing (super-fast&#64;home) <del></p>
 <ul class="simple">
 <li><p>sudo -v ; curl <a class="reference external" href="https://rclone.org/install.sh">https://rclone.org/install.sh</a> | sudo bash</p></li>
 <li><p>run “rclone config”, follow guide: <a class="reference external" href="https://rclone.org/drive/">https://rclone.org/drive/</a></p></li>
@@ -498,16 +498,12 @@ document.write(`
 <li><p>sudo nano /etc/systemd/system/rclone-gdrive.service # see T430’s file</p></li>
 <li><p>systemctl daemon-reload</p></li>
 <li><p>sudo systemctl enable rclone-gdrive.service</p></li>
-<li><p>sudo systemctl start rclone-gdrive.service</p></li>
+<li><p>sudo systemctl start rclone-gdrive.service</del></p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>uni-direction synchronize two folders <code class="docutils literal notranslate"><span class="pre">rsync</span> <span class="pre">-avu</span> <span class="pre">--delete</span> <span class="pre">source_folder/</span> <span class="pre">destination_folder/</span></code></p>
-<ul class="simple">
-<li><p>for many PDFs in folder</p></li>
-</ul>
-</li>
+<li><p><del>uni-direction synchronize two folders <code class="docutils literal notranslate"><span class="pre">rsync</span> <span class="pre">-avu</span> <span class="pre">--delete</span> <span class="pre">source_folder/</span> <span class="pre">destination_folder/</span></code></del></p></li>
 <li><p><a class="reference external" href="https://gitlab.winehq.org/wine/wine/-/wikis/Debian-Ubuntu">WineHQ for Foxit PDF</a></p></li>
 <li><p>My PC has two disks, I installed Ubuntu goes along original windows in the first disk (original sys). Now the second disk can’t seen as Ubuntu still hardly manage Microsoft Windows dynamic disk (LDM). Solutions:</p>
 <ul class="simple">

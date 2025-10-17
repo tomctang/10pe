@@ -366,7 +366,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qc">QC</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pre">Pre</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qm-for-everyone">QM for Everyone</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intro-quantum-probability">Intro &amp; Quantum Probability</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-quantum-mechanics-with-spins">Advanced Quantum Mechanics with Spins</a></li>
@@ -380,6 +380,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m3-the-qm-of-light">M3. The QM of Light</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m4-advanced-quantum-ideas-with-light">M4. Advanced Quantum Ideas with Light</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m5-quantum-operators-and-their-identities">M5. Quantum Operators and their Identities</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m6-qm-of-the-simple-harmonic-oscillator">M6. QM of the Simple Harmonic Oscillator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qc">QC</a></li>
 </ul>
             </nav>
         </div>
@@ -393,229 +395,8 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="quantum-mechanics">
 <h1>Quantum Mechanics<a class="headerlink" href="#quantum-mechanics" title="Link to this heading">#</a></h1>
-<section id="qc">
-<h2>QC<a class="headerlink" href="#qc" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">qiskit</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">sqrt</span><span class="p">,</span> <span class="n">pi</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">qiskit</span><span class="w"> </span><span class="kn">import</span> <span class="n">QuantumCircuit</span><span class="p">,</span> <span class="n">BasicAer</span><span class="p">,</span> <span class="n">execute</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">qiskit.visualization</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot_bloch_multivector</span>
-
-<span class="c1"># change alpha beta as you want</span>
-<span class="n">alpha</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">beta</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-
-<span class="c1"># 2D complex vector representing the quantum state</span>
-<span class="n">vector</span> <span class="o">=</span> <span class="p">[</span><span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">]</span>
-
-<span class="c1"># create a quantum circuit with only one qubit</span>
-<span class="n">qc</span> <span class="o">=</span> <span class="n">QuantumCircuit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="c1"># initialzie the qubit as the vector we defined</span>
-<span class="c1"># arg 0 is the index of the only qubit we created</span>
-<span class="n">qc</span><span class="o">.</span><span class="n">initialize</span><span class="p">(</span><span class="n">vector</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-
-
-<span class="c1"># simulate the state</span>
-<span class="c1"># note that statevector_simulator is used for calculating statevector (Quantum State)</span>
-<span class="n">backend</span> <span class="o">=</span> <span class="n">BasicAer</span><span class="o">.</span><span class="n">get_backend</span><span class="p">(</span><span class="s1">&#39;statevector_simulator&#39;</span><span class="p">)</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">execute</span><span class="p">(</span><span class="n">qc</span><span class="p">,</span> <span class="n">backend</span><span class="p">)</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
-<span class="n">state</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">get_statevector</span><span class="p">(</span><span class="n">qc</span><span class="p">)</span>
-
-<span class="c1"># plot the state on a Bloch sphere</span>
-<span class="n">plot_bloch_multivector</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">sqrt</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">qiskit</span><span class="w"> </span><span class="kn">import</span> <span class="n">QuantumCircuit</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">qiskit_aer</span><span class="w"> </span><span class="kn">import</span> <span class="n">AerSimulator</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">qiskit.visualization</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot_bloch_multivector</span>
-
-<span class="c1"># Define coefficients (normalized quantum amplitudes)</span>
-<span class="n">alpha</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">beta</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-
-<span class="c1"># 2D complex vector representing the qubit state</span>
-<span class="n">vector</span> <span class="o">=</span> <span class="p">[</span><span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">]</span>
-
-<span class="c1"># Create a single-qubit quantum circuit</span>
-<span class="n">qc</span> <span class="o">=</span> <span class="n">QuantumCircuit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="c1"># Initialize the qubit with the defined statevector</span>
-<span class="n">qc</span><span class="o">.</span><span class="n">initialize</span><span class="p">(</span><span class="n">vector</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-
-<span class="c1"># Use the Aer simulator backend</span>
-<span class="n">sim</span> <span class="o">=</span> <span class="n">AerSimulator</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;statevector&#39;</span><span class="p">)</span>
-
-<span class="c1"># Run the circuit and get the final statevector</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">sim</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">qc</span><span class="p">)</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
-<span class="n">state</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">get_statevector</span><span class="p">(</span><span class="n">qc</span><span class="p">)</span>
-
-<span class="c1"># Plot the state on the Bloch sphere</span>
-<span class="n">plot_bloch_multivector</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="nn">File ~/miniconda3/lib/python3.13/site-packages/qiskit/result/result.py:301,</span> in <span class="ni">Result.get_statevector</span><span class="nt">(self, experiment, decimals)</span>
-<span class="g g-Whitespace">    </span><span class="mi">299</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">300</span>     <span class="k">return</span> <span class="n">postprocess</span><span class="o">.</span><span class="n">format_statevector</span><span class="p">(</span>
-<span class="ne">--&gt; </span><span class="mi">301</span>         <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="n">experiment</span><span class="p">)[</span><span class="s2">&quot;statevector&quot;</span><span class="p">],</span> <span class="n">decimals</span><span class="o">=</span><span class="n">decimals</span>
-<span class="g g-Whitespace">    </span><span class="mi">302</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">303</span> <span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
-
-<span class="ne">KeyError</span>: &#39;statevector&#39;
-
-<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
-
-<span class="ne">QiskitError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">23</span>
-<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="c1"># Run the circuit and get the final statevector</span>
-<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="n">result</span> <span class="o">=</span> <span class="n">sim</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">qc</span><span class="p">)</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
-<span class="ne">---&gt; </span><span class="mi">23</span> <span class="n">state</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">get_statevector</span><span class="p">(</span><span class="n">qc</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">25</span> <span class="c1"># Plot the state on the Bloch sphere</span>
-<span class="g g-Whitespace">     </span><span class="mi">26</span> <span class="n">plot_bloch_multivector</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
-
-<span class="nn">File ~/miniconda3/lib/python3.13/site-packages/qiskit/result/result.py:304,</span> in <span class="ni">Result.get_statevector</span><span class="nt">(self, experiment, decimals)</span>
-<span class="g g-Whitespace">    </span><span class="mi">300</span>     <span class="k">return</span> <span class="n">postprocess</span><span class="o">.</span><span class="n">format_statevector</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">301</span>         <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="n">experiment</span><span class="p">)[</span><span class="s2">&quot;statevector&quot;</span><span class="p">],</span> <span class="n">decimals</span><span class="o">=</span><span class="n">decimals</span>
-<span class="g g-Whitespace">    </span><span class="mi">302</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">303</span> <span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">304</span>     <span class="k">raise</span> <span class="n">QiskitError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;No statevector for experiment &quot;</span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">experiment</span><span class="p">)</span><span class="si">}</span><span class="s1">&quot;&#39;</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">ex</span>
-
-<span class="ne">QiskitError</span>: &#39;No statevector for experiment &quot;&lt;qiskit.circuit.quantumcircuit.QuantumCircuit object at 0x7b48bcda2570&gt;&quot;&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<p>qubit</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">qiskit</span><span class="w"> </span><span class="kn">import</span> <span class="n">QuantumCircuit</span><span class="p">,</span> <span class="n">BasicAer</span><span class="p">,</span> <span class="n">execute</span>
-
-<span class="c1"># create a quantum circuit with one qubit and one bit</span>
-<span class="n">qc</span> <span class="o">=</span> <span class="n">QuantumCircuit</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>  
-<span class="c1"># apply not gate to the qubit with index 0</span>
-<span class="n">qc</span><span class="o">.</span><span class="n">x</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="c1"># measue the qubit with index 0 and store the result to bit with index 0</span>
-<span class="n">qc</span><span class="o">.</span><span class="n">measure</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
-<span class="c1"># plot the circuit</span>
-<span class="n">qc</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="s1">&#39;mpl&#39;</span><span class="p">)</span>
-<span class="c1"># simulation: run the quantum circuit 1000 times and print all results</span>
-<span class="n">backend</span> <span class="o">=</span> <span class="n">BasicAer</span><span class="o">.</span><span class="n">get_backend</span><span class="p">(</span><span class="s1">&#39;qasm_simulator&#39;</span><span class="p">)</span> 
-<span class="n">result</span> <span class="o">=</span> <span class="n">execute</span><span class="p">(</span><span class="n">qc</span><span class="p">,</span> <span class="n">backend</span><span class="p">,</span> <span class="n">shots</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
-<span class="n">counts</span>  <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">get_counts</span><span class="p">(</span><span class="n">qc</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">counts</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>hadamard gate</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># from qiskit import QuantumCircuit, BasicAer, execute</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">qiskit.visualization</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot_histogram</span>
-
-<span class="c1"># create a quantum circuit with one qubit and one bit</span>
-<span class="n">qc</span> <span class="o">=</span> <span class="n">QuantumCircuit</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-<span class="c1"># apply hadamard gate on qubit 0</span>
-<span class="n">qc</span><span class="o">.</span><span class="n">h</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="c1"># measure qubit 0 to bit 0</span>
-<span class="n">qc</span><span class="o">.</span><span class="n">measure</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
-<span class="c1"># plot the circuit</span>
-<span class="n">qc</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="s1">&#39;mpl&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># simulation: run the quantum circuit 1000 times and print all results</span>
-<span class="c1"># note that qasm_simulator is used for measurements</span>
-<span class="n">backend</span> <span class="o">=</span> <span class="n">BasicAer</span><span class="o">.</span><span class="n">get_backend</span><span class="p">(</span><span class="s1">&#39;qasm_simulator&#39;</span><span class="p">)</span> 
-<span class="n">result</span> <span class="o">=</span> <span class="n">execute</span><span class="p">(</span><span class="n">qc</span><span class="p">,</span> <span class="n">backend</span><span class="p">,</span> <span class="n">shots</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
-<span class="n">counts</span>  <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">get_counts</span><span class="p">(</span><span class="n">qc</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">counts</span><span class="p">)</span> 
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># visualize results</span>
-<span class="n">plot_histogram</span><span class="p">(</span><span class="n">counts</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>X门，Y门，Z门，P门</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">pi</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">qiskit</span><span class="w"> </span><span class="kn">import</span> <span class="n">QuantumCircuit</span><span class="p">,</span> <span class="n">BasicAer</span><span class="p">,</span> <span class="n">execute</span>
-
-<span class="c1"># create a quantum circuit with one qubit and one bit</span>
-<span class="n">qc</span> <span class="o">=</span> <span class="n">QuantumCircuit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="n">qc</span><span class="o">.</span><span class="n">p</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c1"># try different gates: qc.x(0), qc.y(0), qc.z(0), qc.p(pi/2, 0)</span>
-
-<span class="c1"># plot the circuit</span>
-<span class="n">qc</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="s1">&#39;mpl&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># simulation: run the quantum circuit 1000 times and print all results</span>
-<span class="c1"># note that unitary_simulator is used for finding unitary matrices</span>
-<span class="n">backend</span> <span class="o">=</span> <span class="n">BasicAer</span><span class="o">.</span><span class="n">get_backend</span><span class="p">(</span><span class="s1">&#39;unitary_simulator&#39;</span><span class="p">)</span> 
-<span class="n">result</span> <span class="o">=</span> <span class="n">execute</span><span class="p">(</span><span class="n">qc</span><span class="p">,</span> <span class="n">backend</span><span class="p">,</span> <span class="n">shots</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
-<span class="n">result</span><span class="o">.</span><span class="n">get_unitary</span><span class="p">(</span><span class="n">qc</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>CNOT Gate</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">qiskit</span><span class="w"> </span><span class="kn">import</span> <span class="n">QuantumCircuit</span><span class="p">,</span> <span class="n">BasicAer</span><span class="p">,</span> <span class="n">execute</span>
-
-<span class="c1"># create a quantum circuit with 2 qubits and 2 bits</span>
-<span class="n">qc</span> <span class="o">=</span> <span class="n">QuantumCircuit</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-<span class="c1"># apply x gate on qubit 0 and qubit 1</span>
-<span class="n">qc</span><span class="o">.</span><span class="n">x</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
-<span class="c1"># apply cnot gate, qubit 0 is control, qubit 1 is target</span>
-<span class="n">qc</span><span class="o">.</span><span class="n">cx</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> 
-<span class="c1"># measure qubits [0, 1] to bits [0, 1]</span>
-<span class="n">qc</span><span class="o">.</span><span class="n">measure</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
-<span class="c1"># plot the circuit</span>
-<span class="n">qc</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="s1">&#39;mpl&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># simulation: run the quantum circuit 1000 times and print all results</span>
-<span class="n">backend</span> <span class="o">=</span> <span class="n">BasicAer</span><span class="o">.</span><span class="n">get_backend</span><span class="p">(</span><span class="s1">&#39;qasm_simulator&#39;</span><span class="p">)</span> 
-<span class="n">result</span> <span class="o">=</span> <span class="n">execute</span><span class="p">(</span><span class="n">qc</span><span class="p">,</span> <span class="n">backend</span><span class="p">,</span> <span class="n">shots</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
-<span class="n">result</span><span class="o">.</span><span class="n">get_counts</span><span class="p">(</span><span class="n">qc</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
+<section id="pre">
+<h2>Pre<a class="headerlink" href="#pre" title="Link to this heading">#</a></h2>
 <p>Sage has no <a class="reference external" href="https://doc.sagemath.org/html/en/reference/algebras/quantum_groups.html">QM-specific module</a>, so use <a class="reference external" href="https://docs.sympy.org/latest/modules/physics/quantum/index.html">SymPy’s quantum module</a>, <a class="reference external" href="https://qutip.org/">QuTiP - Quantum Toolbox in Python</a>, <a class="reference external" href="https://www.wolfram.com/quantum-computation-framework/">Wolfram Quantum Framework</a>, <a class="reference external" href="https://qojulia.org/">Julia QuantumOptics.jl</a>, <a class="reference external" href="https://jrjohansson.github.io/computing.html">jrjohansson collection</a></p>
 <ul class="simple">
 <li><p>The first application of QM is QC - <a class="reference external" href="https://quantum.cloud.ibm.com/">IBM run on real quantum computers for free</a>, download <a class="reference external" href="https://github.com/qiskit-community/qiskit-community-tutorials/tree/master">Qiskit python quantum computing IBM</a></p></li>
@@ -1438,6 +1219,12 @@ document.write(`
 <li><p>For calculating the exponentials, expand them using the Taylor series.</p></li>
 </ul>
 </li>
+<li><p>Relations between position and momentum</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\langle x|0_p\rangle=\frac{1}{\sqrt{2\pi\hbar}}\)</span></p></li>
+<li><p>Wavefunction: <span class="math notranslate nohighlight">\(|\psi\rangle=\sum_x|x\rangle\,\langle x|\psi\rangle=\sum_x|x\rangle\psi(x)\)</span></p></li>
+</ul>
+</li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1445,11 +1232,6 @@ document.write(`
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">):</span>
     <span class="n">count</span><span class="o">+=</span><span class="n">binomial</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="n">i</span><span class="p">)</span>
 <span class="n">count</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2509
 </pre></div>
 </div>
 </div>
@@ -1601,6 +1383,584 @@ document.write(`
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;x x_0 sigma_x h p&#39;</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">x_0</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">sigma_x</span><span class="o">^</span><span class="mi">2</span><span class="p">))</span><span class="o">*</span><span class="n">e</span><span class="o">^-</span><span class="p">(</span><span class="n">i</span><span class="o">/</span><span class="n">h</span><span class="o">*</span><span class="n">p</span><span class="o">*</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="n">infinity</span><span class="p">,</span><span class="n">infinity</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 2 \, \sqrt{\pi} \sqrt{\sigma_{x}^{2}} e^{\left(-\frac{p^{2} \sigma_{x}^{2} + i \, h p x_{0}}{h^{2}}\right)} \qquad   \]</div>
+</div>
+</div>
+</section>
+<section id="m6-qm-of-the-simple-harmonic-oscillator">
+<h2>M6. QM of the Simple Harmonic Oscillator<a class="headerlink" href="#m6-qm-of-the-simple-harmonic-oscillator" title="Link to this heading">#</a></h2>
+<p>Lecture Notes</p>
+<ul class="simple">
+<li><p>Factorization Method: This is a method that solves quantum mechanics problems using manipulation of operators.</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\hat{H}=\frac{\hat{p}^2}{2m}\)</span></p></li>
+<li><p>Factorized form: <span class="math notranslate nohighlight">\(\hat{H}\hat{A}_k^\dagger\hat{A}_k+E_k\)</span></p></li>
+<li><p>Ladder operator: <span class="math notranslate nohighlight">\(\hat{A}_k=\frac{1}{\sqrt{2m}}(\hat{p}-i\hbar kW(k^\prime\hat{x}))\)</span></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(k\)</span> is a wavenumber.</p></li>
+<li><p><span class="math notranslate nohighlight">\(W\)</span> is a real-valued function called the superpotential.</p></li>
+<li><p>The <span class="math notranslate nohighlight">\(i\)</span> in the ladder operator means that the dagger only changes the sign of the <span class="math notranslate nohighlight">\(i\)</span> term.</p></li>
+</ul>
+</li>
+<li><p>When you plug the ladder operator form into the factorized form of the Hamiltonian,</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\hat{A}_k^\dagger\hat{A}_k=\frac{1}{\sqrt{2m}}(\hat{p}+i\hbar kW(k^\prime\hat{x}))\frac{1}{\sqrt{2m}}(\hat{p})-i\hbar kW(k^\prime \hat{x})\\\qquad\enspace=\frac{1}{2m}(\hat{p}^2+i\hbar kW(k^\prime\hat{x})\hat{p}-i\hbar k\hat{p}W(k^\prime\hat{x})+\hbar^2k^2W^2(k^ \prime\hat{x}))\\\qquad\enspace=\frac{1}{2m}\hat{p}^2-i\hbar k[\hat{p},W(k^\prime\hat{x})]+\hbar^2k^2W^2(k^\prime\hat{x})\)</span></p></li>
+</ul>
+</li>
+<li><p>Baby Hadamard lemma: <span class="math notranslate nohighlight">\(e^{-ik\hat{x}}\hat{p}e^{ik\hat{x}}=\hat{p}+\hbar k\)</span></p>
+<ul>
+<li><p>Commutator form: <span class="math notranslate nohighlight">\([\hat{p},e^{ik\hat{x}}]=\hbar ke^{ik\hat{x}}\)</span></p>
+<ul>
+<li><p>Using Euler’s identity: <span class="math notranslate nohighlight">\([\hat{p},\cos{k\hat{x}}+i\sin{k\hat{x}}]=\hbar k(\cos{k\hat{x}}+i\sin{k\hat{x}})\)</span></p></li>
+<li><p>Use the fact that <span class="math notranslate nohighlight">\(\hat{p}\)</span> commutated with a real function makes an imaginary function and when commutated with an imaginary function makes a real function.</p></li>
+<li><p>Real commutator: <span class="math notranslate nohighlight">\([\hat{p},\cos{k\hat{x}}]=i\hbar k\sin{k\hat{x}}\)</span></p></li>
+<li><p>Imaginary commutator: <span class="math notranslate nohighlight">\(i[\hat{p},\sin{k\hat{x}}]=\hbar k\cos{k\hat{x}}\)</span></p></li>
+<li><p>Use Leibniz rule for other trigonometric functions.</p></li>
+<li><p>Secant function: <span class="math notranslate nohighlight">\([p,\sec{k\hat{x}}]=i\hbar k\tan{k\hat{x}}\sec{k\hat{x}}\)</span></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\([\hat{p},\cos{k\hat{x}}\sec{k\hat{x}}]=[\hat{p},\hat{\mathbb{I}}]=0\)</span></p></li>
+<li><p>Use Leibniz formula: <span class="math notranslate nohighlight">\(\cos{k\hat{x}}[\hat{p},\sec{k\hat{x}}]+[\hat{p},\cos{k\hat{x}}]\sec{k\hat{x}}=0\)</span></p></li>
+<li><p>Substitute from previous formula and rearrange: <span class="math notranslate nohighlight">\(\cos{k\hat{x}}[\hat{p},\sec{k\hat{x}}]=-i\hbar k\sin{k\hat{x}}\sec{k\hat{x}}\)</span></p></li>
+<li><p>Multiply by secant to get the final formula.</p></li>
+</ul>
+</li>
+<li><p>Cosecant function: <span class="math notranslate nohighlight">\([\hat{p},\cosec{k\hat{x}}]=i\hbar k\cot{k\hat{x}}\cosec{k\hat{x}}\)</span></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\([\hat{p},\sin{k\hat{x}}\cosec{k\hat{x}}]=[\hat{p},\hat{\mathbb{I}}]=0\)</span></p></li>
+<li><p>Use Leibniz formula: <span class="math notranslate nohighlight">\(\sin{k\hat{x}}[\hat{p},\cosec{k\hat{x}}]+[\hat{p},\sin{k\hat{x}}]\cosec{k\hat{x}}=0\)</span></p></li>
+<li><p>Substitute, rearrange and multiply by cosecant.</p></li>
+</ul>
+</li>
+<li><p>Tangent function: <span class="math notranslate nohighlight">\([\hat{p},\tan{k\hat{x}}]=-i\hbar k\sec^2{k\hat{x}}\)</span></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\([\hat{p},\tan{k\hat{x}}]=[\hat{p},\sin{k\hat{x}}\sec{k\hat{x}}]\)</span></p></li>
+<li><p>Use Leibniz formula: <span class="math notranslate nohighlight">\([\hat{p},\tan{k\hat{x}}]=\sin{k\hat{x}}[\hat{p},\sec{k\hat{x}}]+[\hat{p},\sin{k\hat{x}}]\sec{k\hat{x}}\)</span></p></li>
+<li><p>Substitute and simplify.</p></li>
+</ul>
+</li>
+<li><p>Cotangent function: <span class="math notranslate nohighlight">\([\hat{p},\cot{k\hat{x}}]=i\hbar k(\cosec^2{k\hat{x}})\)</span></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\([\hat{p},\cot{k\hat{x}}]=[\hat{p},\cos{k\hat{x}}\cosec{k\hat{x}}]\)</span></p></li>
+<li><p>Use Leibniz formula: <span class="math notranslate nohighlight">\([\hat{p},\cot{k\hat{x}}]=\cos{k\hat{x}}[\hat{p},\cosec{k\hat{x}}]+[\hat{p},\cos{k\hat{x}}]\cosec{k\hat{x}}\)</span></p></li>
+<li><p>Substitute and simplify.</p></li>
+</ul>
+</li>
+<li><p>Pattern: <span class="math notranslate nohighlight">\([\hat{p},f(\hat{x})]=-i\hbar f^\prime(\hat{x})\)</span> where <span class="math notranslate nohighlight">\(f^\prime\)</span> is the derivative of <span class="math notranslate nohighlight">\(f\)</span>.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Find the Hamiltonian</p>
+<ul>
+<li><p>Substitute <span class="math notranslate nohighlight">\(\tan{k\hat{x}}\)</span> for the superpotential <span class="math notranslate nohighlight">\(W(k^\prime\hat{x})\)</span>.</p></li>
+<li><p>Evaluate the commutator and simplify: <span class="math notranslate nohighlight">\(\hat{A}^\dagger_k\hat{A}_k=\frac{1}{2m}(\hat{p}^2-\hbar^2k^2)\)</span></p></li>
+<li><p>Substitute into the Hamiltonian and solve for the energy: <span class="math notranslate nohighlight">\(E_k=\frac{\hbar^2k^2}{2m}\)</span></p></li>
+<li><p>Subsidiary condition: <span class="math notranslate nohighlight">\(\hat{A}_k|\psi\rangle=0\)</span></p></li>
+<li><p>Substitute into Hamiltonian: <span class="math notranslate nohighlight">\(\hat{H}|\psi\rangle=(\hat{A}^\dagger_k\hat{A}_k+E_k)|\psi\rangle=\hat{A}^\dagger_k\hat{A}_k|\psi\rangle+E_k|\psi \rangle=E_k|\psi\rangle\)</span></p></li>
+</ul>
+</li>
+<li><p>Boundary condition</p>
+<ul>
+<li><p>Wavefunction</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\psi_k(x)=\langle x|\psi\rangle\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\psi_k(x)=\langle0_x|e^{\frac{i}{\hbar}x\hat{p}}|\psi\rangle\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\psi_k(x)=\sum_{n=0}^\infty=\frac{1}{n!}\begin{pmatrix}\frac{ix}{\hbar}\end{pmatrix}^n\langle0_x|\hat{p}^n|\psi\rangle\)</span></p></li>
+</ul>
+</li>
+<li><p>Use eigenvalue relation and subsidiary relation: <span class="math notranslate nohighlight">\(\hat{p}|\psi\rangle=i\hbar k\tan{k\hat{x}}|\psi\rangle\)</span></p>
+<ul>
+<li><p>When <span class="math notranslate nohighlight">\(n\)</span> is even(<span class="math notranslate nohighlight">\(2m\)</span>), <span class="math notranslate nohighlight">\(\hat{p}^{2m}|\psi\rangle=(\hbar k)^{2m}|\psi\rangle\)</span>.</p></li>
+<li><p>When <span class="math notranslate nohighlight">\(n\)</span> is odd(<span class="math notranslate nohighlight">\(2m+1\)</span>), <span class="math notranslate nohighlight">\(\hat{p}^{2m+1}|\psi\rangle=i(\hbar k)^{2m+1}\tan{k\hat{x}}|\psi\rangle\)</span>.</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\langle0_x|\tan{k\hat{x}}|\psi\rangle=0\)</span></p></li>
+<li><p>This means all odd powers are <span class="math notranslate nohighlight">\(0\)</span>.</p></li>
+</ul>
+</li>
+<li><p>Put in summation form and simplify: <span class="math notranslate nohighlight">\(\psi_k(x)=\cos{k\hat{x}}\langle0_x|\psi\rangle\)</span></p></li>
+<li><p>Take integral for probability since it must be <span class="math notranslate nohighlight">\(1\)</span>: <span class="math notranslate nohighlight">\(\langle0_x|\psi\rangle=\sqrt{\frac{2}{L}}\)</span></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Summary</p>
+<ul>
+<li><p>Hamiltonian: <span class="math notranslate nohighlight">\(\hat{H}=\hat{A}^\dagger_n\hat{A}_n+E_n\)</span></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\hat{A}_n=\frac{1}{\sqrt{2m}}(\hat{p}-\frac{i2\pi\hbar n}{L}\tan{\frac{2\pi n}{L}\hat{x}})\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(E_n=\frac{4\pi^2\hbar^2n^2}{2mL^2}\)</span> for <span class="math notranslate nohighlight">\(n\in\{0,1,2,3,\cdots\}\)</span></p></li>
+</ul>
+</li>
+<li><p>Eigenstate</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\hat{H}|\psi_n\rangle=\frac{4\pi^2\hbar^2n^2}{2mL^2}|\psi_n\rangle\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{p}|\psi_n\rangle=i\hbar k\tan{\frac{2\pi\hbar n\hat{x}}{L}}\psi_n\rangle\)</span></p></li>
+</ul>
+</li>
+<li><p>Wavefunction</p>
+<ul>
+<li><p>Even n: <span class="math notranslate nohighlight">\(\psi_n(x)=\sqrt{\frac{2}{L}}\cos{kx}\)</span></p></li>
+<li><p>Odd n: <span class="math notranslate nohighlight">\(\psi_n(x)=\sqrt{\frac{2}{L}}\sin{kx}\)</span></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Probability density: <span class="math notranslate nohighlight">\(|\alpha e^{im\pi\frac{x}{L}}+\beta e^{im^\prime\pi\frac{x}{L}}|^2\)</span></p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Heisenberg Uncertainty Principle: <span class="math notranslate nohighlight">\(\Delta(x)_\chi\Delta(p)_\chi\geq\frac{\hbar}{2}\)</span></p>
+<ul>
+<li><p>Measurement of two operators</p>
+<ul>
+<li><p>When you take the measurement of two incompatible operators(which means they do not commute <span class="math notranslate nohighlight">\([\hat{A},\hat{B}]\ne0\)</span>), they cannot have both measurements fluctuation free.</p>
+<ul>
+<li><p>When you prepare the state in an eigenstate of one operator, that measurement becomes fluctuation free but since the operators are incompatible, the other operator is not in an eigenstate, which causes that measurement to have fluctuations.</p></li>
+<li><p>But the question is that how small you can make the fluctuations be.</p></li>
+<li><p>This is answered by the Heisenberg uncertatinty principle.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Classical Oscillator</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(x(t)=A\cos{\omega t+\phi}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(p(t)=-\omega mA\sin{\omega t+\phi}\)</span></p></li>
+<li><p>The average position and momentum over time is 0.</p></li>
+<li><p>Average fluctuations</p>
+<ul>
+<li><p>Position: <span class="math notranslate nohighlight">\(\Delta^2(x)=\frac{1}{T}\int_0^TA^2\cos^2{(\omega t+\phi)}dt=\frac{A^2}{2}\)</span></p></li>
+<li><p>Momentum: <span class="math notranslate nohighlight">\(\Delta^2(p)=\frac{1}{T}\int_0^TxA^2\omega^2m^2\sin^2{(\omega t+\phi)}dt=\frac{A^2}{2}\omega^2m^2\)</span></p></li>
+<li><p>Average energy: <span class="math notranslate nohighlight">\(E=\langle p^2\rangle\frac{1}{2m}+\langle x^2\rangle\frac{m\omega^2}{2}=A^2\frac{m\omega^2}{2}\)</span></p></li>
+<li><p>Rewritten form of fluctuations</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\Delta(x)=\frac{\sqrt{E}}{\sqrt{m}\omega}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Delta(p)=\sqrt{Em}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Delta(x)(p)=\frac{E}{\omega}\)</span></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Many of these results will be used in quantum measurements, but the way we describe them is different. Instead of looking at averages over time, quantum fluctuations with regards to fluctuations.</p></li>
+</ul>
+</li>
+<li><p>Quantum Fluctuations</p>
+<ul>
+<li><p>If we prepare a state in <span class="math notranslate nohighlight">\(|\psi\rangle\)</span>, then the average result of measurements for an operator <span class="math notranslate nohighlight">\(\hat{A}\)</span> is <span class="math notranslate nohighlight">\(\langle\psi|\hat{A}|\psi\rangle\)</span>, and similarly for <span class="math notranslate nohighlight">\(\hat{B}\)</span>.</p></li>
+<li><p>The fluctuations are found by subtracting the average and squaring, so <span class="math notranslate nohighlight">\(\Delta^2(A)_\psi=\langle\psi|\hat{A}^2|\psi\rangle-(\langle\psi|\hat{A}|\psi\rangle)^2\)</span></p>
+<ul>
+<li><p>When <span class="math notranslate nohighlight">\(|\psi\rangle\)</span> is an eigenvector of <span class="math notranslate nohighlight">\(\hat{A}\)</span> with eigenvalue <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(\langle\psi|\hat{A}|\psi\rangle=a\)</span></p>
+<ul>
+<li><p>The fluctuations vanish: <span class="math notranslate nohighlight">\(\Delta^2(A)_\psi=0\)</span></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Geometry of Fluctuations</p>
+<ul>
+<li><p>This looks at the other case where <span class="math notranslate nohighlight">\(|\psi\rangle\)</span> is not an eigenstate of <span class="math notranslate nohighlight">\(\hat{A}\)</span></p></li>
+<li><p>Since <span class="math notranslate nohighlight">\(\hat{A}\)</span> is being measured, it must be a Hermitian operator, so <span class="math notranslate nohighlight">\(\Delta^2(A)_\psi=||(\hat{A}-\langle\hat{A}\rangle)|\psi\rangle||^2\)</span></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\|psi\rangle\)</span> is the state we are working with, which we can think of as a vector</p></li>
+<li><p>We operate <span class="math notranslate nohighlight">\(\hat{A}\)</span> on the state to get <span class="math notranslate nohighlight">\(\hat{A}|\psi\rangle\)</span>. All the operator can do is scale and rotate the vector.</p></li>
+<li><p>We project <span class="math notranslate nohighlight">\(\hat{A}|\psi\rangle\)</span> onto <span class="math notranslate nohighlight">\(|\psi\rangle\)</span> to get <span class="math notranslate nohighlight">\(\langle\hat{A}\rangle|\psi\rangle\)</span>.</p></li>
+<li><p>We subtract <span class="math notranslate nohighlight">\(\langle\hat{A}\rangle|\psi\rangle\)</span> from <span class="math notranslate nohighlight">\(\hat{A}|\psi\rangle\)</span> to get a vector perpendicular to the original vector for the state <span class="math notranslate nohighlight">\(|\psi\rangle\)</span> or <span class="math notranslate nohighlight">\((\hat{A}|\psi\rangle)_\perp\)</span>.</p></li>
+</ul>
+</li>
+<li><p>The fluctuation is the norm of the component of <span class="math notranslate nohighlight">\(\hat{A}|\psi\rangle\)</span> that is perpendicular to <span class="math notranslate nohighlight">\(\psi\rangle\)</span>. When the perpendicular component vanishes, the operator is just scaling the state, which means it is an eigenvector.</p></li>
+</ul>
+</li>
+<li><p>Virial theorem and SHO(Simple Harmonic Oscillator)</p>
+<ul>
+<li><p>Virial: <span class="math notranslate nohighlight">\(\hat{x}\hat{p}\)</span></p></li>
+<li><p>Commutators</p>
+<ul>
+<li><p>Kinetic energy: <span class="math notranslate nohighlight">\([\frac{\hat{p}^2}{2m},\hat{x}\hat{p}]=-i\hbar\frac{\hat{p}^2}{m}\)</span></p></li>
+<li><p>Potential energy: <span class="math notranslate nohighlight">\([\frac{m\omega^2}{2}\hat{x}^2,\hat{x}\hat{p}]=i\hbar m\omega^2\hat{x}^2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\langle\psi_n|[\hat{H},\hat{x}\hat{p}]|\psi_n\rangle=0\)</span></p></li>
+<li><p>This means that <span class="math notranslate nohighlight">\(\langle\psi_n|\frac{\hat{p}^2}{m}|\psi_n\rangle=\langle\psi_n|m\omega^2\hat{x}^2|\psi_n\rangle\)</span>, so the average kinetic energy and potential energy in a SHO is the same(this is the virial theorem).</p></li>
+<li><p>The total energy is <span class="math notranslate nohighlight">\(E=\langle\hat{H}\rangle\)</span></p></li>
+</ul>
+</li>
+<li><p>Fluctuations</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\Delta(p)_{\psi_n}=\sqrt{mE}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Delta(x)_{\psi_n}=\frac{\sqrt{E}}{\sqrt{m}\omega}\)</span></p></li>
+<li><p>Product: <span class="math notranslate nohighlight">\(\Delta(p)_{\psi_n}\Delta(x)_{\psi_n}=\frac{E}{\omega}\)</span></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Schwartz inequality: <span class="math notranslate nohighlight">\(|\vec{a}\cdot\vec{b}|\leq|a||b|\)</span></p>
+<ul>
+<li><p>This underlies <span class="math notranslate nohighlight">\(\vec{a}\cdot\vec{b}=|a||b|\cos{\theta}\)</span>.</p></li>
+<li><p>Proof of Schwartz inequality</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(||\phi\rangle-\lambda|\psi\rangle|^2\geq0\)</span></p></li>
+<li><p>Rearrange: <span class="math notranslate nohighlight">\(\langle\phi|\phi\rangle+|\lambda|^2\langle\psi|\psi\rangle\geq\lambda\langle\phi|\psi\rangle+\lambda^*\langle\psi|\phi\rangle\)</span></p></li>
+<li><p>Pick <span class="math notranslate nohighlight">\(\lambda=\frac{\langle\psi|\phi\rangle}{\langle\psi|\psi\rangle}\)</span></p></li>
+<li><p>Substitute and simplify: <span class="math notranslate nohighlight">\(\langle\phi|\phi\rangle\langle\psi|\psi\rangle\geq|\langle\psi|\phi\rangle|^2\)</span></p>
+<ul>
+<li><p>Other form: <span class="math notranslate nohighlight">\(|\langle\psi|\phi\rangle|\leq\sqrt{\langle\phi|\phi\rangle\langle\psi|\psi\rangle}\)</span></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Computation of position-momentum fluctuations</p>
+<ul>
+<li><p>This is the general derivation of the fluctuations with respect to the state <span class="math notranslate nohighlight">\(|\chi\rangle\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\langle\chi|\hat{x}|\chi\rangle=\langle\hat{x}\rangle\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\langle\chi|\hat{p}|\chi\rangle-\langle\hat{p}\rangle\)</span></p></li>
+<li><p>Commutator: <span class="math notranslate nohighlight">\([\hat{x}-\langle\hat{x}\rangle,\hat{p}-\langle\hat{p}\rangle]=i\hbar\)</span>(you can also sandwich a <span class="math notranslate nohighlight">\(\chi\)</span> outside the coommutator because the state is normalized).</p></li>
+<li><p><span class="math notranslate nohighlight">\(|\phi\rangle=(\hat{x}-\langle\hat{x}\rangle)|\chi\rangle\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(|\psi\rangle=(\hat{p}-\langle\hat{p}\rangle)|\chi\rangle\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\langle\phi|\psi\rangle-\langle\psi|\phi\rangle=\langle\phi|\psi\rangle-\langle\phi|\psi\rangle^*=i\hbar\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hbar=2\mathbb{Im}\langle\phi|\psi\rangle\leq2|\langle\phi|\psi\rangle|\leq2\sqrt{\langle\phi|\phi\rangle\langle\psi|\psi\rangle}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Delta^2(x)_\chi=\langle\chi|(\hat{x}-\langle\hat{x}\rangle)^2|\chi\rangle=\langle\phi|\phi\rangle\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Delta^2(p)_\chi=\langle\chi|(\hat{p}-\langle\hat{p}\rangle)^2|\chi\rangle=\langle\psi|\psi\rangle\)</span></p></li>
+<li><p>Calculate and simplify to get the Heisenberg uncertainty principle.</p></li>
+</ul>
+</li>
+<li><p>Summary</p>
+<ul>
+<li><p>This principle tells you several things.</p>
+<ul>
+<li><p>We cannot simultaneously know the position and momentum in any quantum state.</p></li>
+<li><p>If we are in a position eigenstate, the momentum fluctuations must go to infinity, and vice versa.</p></li>
+<li><p>Note that this is a property of a state. It does not link the position and momentum fluctuations and those two are unrelated.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Problem Notes</p>
+<ul class="simple">
+<li><p>To calculate the wave function(<span class="math notranslate nohighlight">\(\tilde{\psi}_n=\frac{1}{\sqrt{2\pi\hbar}}\int_{-\infty}^\infty ce^{-\frac{alpha^2}{2}x^2}e^{-\frac{ipx}{\hbar}}dx\)</span>)</p></li>
+<li><p>Leibniz Rule: <span class="math notranslate nohighlight">\([\hat A\hat B,\hat C]=\hat  A [\hat{B},\hat{C}]+[\hat{A},\hat{C}]\hat{B}\)</span></p>
+<ul>
+<li><p>Another form: <span class="math notranslate nohighlight">\([\hat A,\hat B\hat C]=\hat B[\hat{A},\hat{C}]+[\hat{A},\hat{B}]\hat{C}\)</span></p></li>
+</ul>
+</li>
+</ul>
+<p><span class="math notranslate nohighlight">\(\tilde{\psi}_n(p) \propto e^{-\frac{p^2}{2m\hbar\omega}}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Morse Potential</span>
+<span class="n">var</span><span class="p">(</span><span class="s1">&#39;r_e D_e m a&#39;</span><span class="p">)</span>
+<span class="n">v_morse</span><span class="p">(</span><span class="n">r</span><span class="p">)</span><span class="o">=</span><span class="n">D_e</span><span class="o">*</span><span class="p">(</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">r</span><span class="o">-</span><span class="n">r_e</span><span class="p">)</span><span class="o">/</span><span class="n">a</span><span class="p">)</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">r</span><span class="o">-</span><span class="n">r_e</span><span class="p">)</span><span class="o">/</span><span class="n">a</span><span class="p">))</span>
+<span class="n">s</span><span class="p">(</span><span class="n">v_morse</span><span class="p">(</span><span class="n">r_e</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle -D_{e} \qquad   \]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Lennard-Jones Potential</span>
+<span class="n">var</span><span class="p">(</span><span class="s1">&#39;V_0 x_0&#39;</span><span class="p">)</span>
+<span class="n">v_lj</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">=</span><span class="n">V_0</span><span class="o">*</span><span class="p">((</span><span class="n">x_0</span><span class="o">/</span><span class="n">x</span><span class="p">)</span><span class="o">^</span><span class="mi">12</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">x_0</span><span class="o">/</span><span class="n">x</span><span class="p">)</span><span class="o">^</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">v_lj_approx</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">=-</span><span class="n">V_0</span><span class="o">+</span><span class="mi">36</span><span class="o">*</span><span class="n">V_0</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="n">x_0</span><span class="p">))</span><span class="o">^</span><span class="mi">2</span>
+<span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">0.95</span><span class="p">,</span><span class="mf">1.05</span><span class="p">]:</span>
+    <span class="n">v_lj_val</span><span class="o">=</span><span class="n">v_lj</span><span class="p">(</span><span class="n">val</span><span class="o">*</span><span class="n">x_0</span><span class="p">)</span>
+    <span class="n">v_lj_approx_val</span><span class="o">=</span><span class="n">v_lj_approx</span><span class="p">(</span><span class="n">val</span><span class="o">*</span><span class="n">x_0</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Percentage error for &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">val</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;x_0: &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="nb">abs</span><span class="p">((</span><span class="n">v_lj_val</span><span class="o">-</span><span class="n">v_lj_approx_val</span><span class="p">)</span><span class="o">/</span><span class="n">v_lj_val</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Percentage error for 0.950000000000000x_0: 4.58201651824834
+Percentage error for 1.05000000000000x_0: 2.73552333491867
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="qc">
+<h2>QC<a class="headerlink" href="#qc" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">sqrt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">qiskit</span><span class="w"> </span><span class="kn">import</span> <span class="n">QuantumCircuit</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">qiskit_aer</span><span class="w"> </span><span class="kn">import</span> <span class="n">AerSimulator</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">qiskit.visualization</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot_bloch_multivector</span>
+
+<span class="c1"># Define coefficients (normalized quantum amplitudes)</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">beta</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># 2D complex vector representing the qubit state</span>
+<span class="n">vector</span> <span class="o">=</span> <span class="p">[</span><span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">]</span>
+
+<span class="c1"># Create a single-qubit quantum circuit</span>
+<span class="n">qc</span> <span class="o">=</span> <span class="n">QuantumCircuit</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">qc</span><span class="o">.</span><span class="n">initialize</span><span class="p">(</span><span class="n">vector</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span> <span class="c1"># Initialize the qubit with defined statevector</span>
+<span class="n">qc</span><span class="o">.</span><span class="n">save_statevector</span><span class="p">()</span> <span class="c1"># Tell the simulator to save the final statevector</span>
+
+<span class="c1"># Use the Aer simulator backend</span>
+<span class="n">sim</span> <span class="o">=</span> <span class="n">AerSimulator</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;statevector&#39;</span><span class="p">)</span>
+
+<span class="c1"># Run the circuit and get the final statevector</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">sim</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">qc</span><span class="p">)</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+<span class="n">state</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">get_statevector</span><span class="p">(</span><span class="n">qc</span><span class="p">)</span>
+
+<span class="c1"># Plot the state on the Bloch sphere</span>
+<span class="n">plot_bloch_multivector</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/45267c6411ec75ce0d74396b451a3ade0d882b5d036f12a0adc9975b880c9033.png" src="_images/45267c6411ec75ce0d74396b451a3ade0d882b5d036f12a0adc9975b880c9033.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># qubit</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">qiskit</span><span class="w"> </span><span class="kn">import</span> <span class="n">QuantumCircuit</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">qiskit_aer</span><span class="w"> </span><span class="kn">import</span> <span class="n">AerSimulator</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">qiskit.visualization</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot_histogram</span>
+
+<span class="c1"># Create a quantum circuit with one qubit and one classical bit</span>
+<span class="n">qc</span> <span class="o">=</span> <span class="n">QuantumCircuit</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">qc</span><span class="o">.</span><span class="n">x</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># Apply NOT (X) gate to the qubit</span>
+
+<span class="c1"># Measure the qubit and store the result in the classical bit</span>
+<span class="n">qc</span><span class="o">.</span><span class="n">measure</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">qc</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="s1">&#39;mpl&#39;</span><span class="p">)</span> <span class="c1"># Draw the circuit</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/e74875f4bb38779e3af86b1874ae7d8f6737bb415fe634d97bbe0c72d6641b38.png" src="_images/e74875f4bb38779e3af86b1874ae7d8f6737bb415fe634d97bbe0c72d6641b38.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use the Aer simulator backend</span>
+<span class="n">simulator</span> <span class="o">=</span> <span class="n">AerSimulator</span><span class="p">()</span>
+
+<span class="c1"># Run the circuit 1000 times (shots)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">qc</span><span class="p">,</span> <span class="n">shots</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="mi">1000</span><span class="p">))</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+
+<span class="c1"># Get the measurement counts</span>
+<span class="n">counts</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">get_counts</span><span class="p">(</span><span class="n">qc</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">counts</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;1&#39;: 1000}
+</pre></div>
+</div>
+</div>
+</div>
+<p>hadamard gate</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a quantum circuit with one qubit and one bit</span>
+<span class="n">qc</span> <span class="o">=</span> <span class="n">QuantumCircuit</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># apply hadamard gate on qubit 0</span>
+<span class="n">qc</span><span class="o">.</span><span class="n">h</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="c1"># measure qubit 0 to bit 0</span>
+<span class="n">qc</span><span class="o">.</span><span class="n">measure</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="c1"># plot the circuit</span>
+<span class="n">qc</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="s1">&#39;mpl&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/7aca276781e5df156a3c838fa003306135cca6862de6ec8ab2302e6aaa9a42f5.png" src="_images/7aca276781e5df156a3c838fa003306135cca6862de6ec8ab2302e6aaa9a42f5.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># simulation: run the quantum circuit 1000 times and print all results</span>
+<span class="c1"># Create a quantum circuit with one qubit and one classical bit</span>
+<span class="n">qc</span> <span class="o">=</span> <span class="n">QuantumCircuit</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">qc</span><span class="o">.</span><span class="n">x</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">qc</span><span class="o">.</span><span class="n">measure</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Simulation: run the quantum circuit 1000 times using the QASM simulator</span>
+<span class="n">simulator</span> <span class="o">=</span> <span class="n">AerSimulator</span><span class="p">()</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">qc</span><span class="p">,</span> <span class="n">shots</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="mi">1000</span><span class="p">))</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+
+<span class="c1"># Retrieve and print all measurement results</span>
+<span class="n">counts</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">get_counts</span><span class="p">(</span><span class="n">qc</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">counts</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;1&#39;: 1000}
+</pre></div>
+</div>
+</div>
+</div>
+<p>X，Y，Z，P gates</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a quantum circuit with one qubit and one bit</span>
+<span class="n">qc</span> <span class="o">=</span> <span class="n">QuantumCircuit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">qc</span><span class="o">.</span><span class="n">p</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c1"># try gates: qc.x(0), qc.y(0), qc.z(0), qc.p(pi/2, 0)</span>
+
+<span class="n">qc</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="s1">&#39;mpl&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+
+<span class="ne">CircuitError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
+
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># create a quantum circuit with one qubit and one bit</span>
+
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">qc</span> <span class="o">=</span> <span class="n">QuantumCircuit</span><span class="p">(</span><span class="n">Integer</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">qc</span><span class="o">.</span><span class="n">p</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="n">Integer</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">Integer</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span> <span class="c1"># try gates: qc.x(0), qc.y(0), qc.z(0), qc.p(pi/2, 0)</span>
+
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">qc</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="s1">&#39;mpl&#39;</span><span class="p">)</span>
+
+
+
+<span class="nn">File ~/miniconda3/envs/sage/lib/python3.12/site-packages/qiskit/circuit/quantumcircuit.py:5004,</span> in <span class="ni">QuantumCircuit.p</span><span class="nt">(self, theta, qubit)</span>
+
+<span class="g g-Whitespace">   </span><span class="mi">4992</span> <span class="k">def</span><span class="w"> </span><span class="nf">p</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">theta</span><span class="p">:</span> <span class="n">ParameterValueType</span><span class="p">,</span> <span class="n">qubit</span><span class="p">:</span> <span class="n">QubitSpecifier</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">InstructionSet</span><span class="p">:</span>
+
+<span class="g g-Whitespace">   </span><span class="mi">4993</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Apply :class:`~qiskit.circuit.library.PhaseGate`.</span>
+
+<span class="g g-Whitespace">   </span><span class="mi">4994</span><span class="sd"> </span>
+
+<span class="g g-Whitespace">   </span><span class="mi">4995</span><span class="sd">     For the full matrix form of this gate, see the underlying gate documentation.</span>
+
+<span class="sd">   (...)</span>
+
+<span class="g g-Whitespace">   </span><span class="mi">5002</span><span class="sd">         A handle to the instructions created.</span>
+
+<span class="g g-Whitespace">   </span><span class="mi">5003</span><span class="sd">     &quot;&quot;&quot;</span>
+
+<span class="ne">-&gt; </span><span class="mi">5004</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_append_standard_gate</span><span class="p">(</span><span class="n">StandardGate</span><span class="o">.</span><span class="n">Phase</span><span class="p">,</span> <span class="p">[</span><span class="n">qubit</span><span class="p">],</span> <span class="p">(</span><span class="n">theta</span><span class="p">,))</span>
+
+
+
+<span class="nn">File ~/miniconda3/envs/sage/lib/python3.12/site-packages/qiskit/circuit/quantumcircuit.py:2644,</span> in <span class="ni">QuantumCircuit._append_standard_gate</span><span class="nt">(self, op, qargs, params, label)</span>
+
+<span class="g g-Whitespace">   </span><span class="mi">2642</span> <span class="n">expanded_qargs</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_qbit_argument_conversion</span><span class="p">(</span><span class="n">qarg</span><span class="p">)</span> <span class="k">for</span> <span class="n">qarg</span> <span class="ow">in</span> <span class="n">qargs</span> <span class="ow">or</span> <span class="p">[]]</span>
+
+<span class="g g-Whitespace">   </span><span class="mi">2643</span> <span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+
+<span class="ne">-&gt; </span><span class="mi">2644</span>     <span class="n">Gate</span><span class="o">.</span><span class="n">validate_parameter</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="n">param</span><span class="p">)</span>
+
+<span class="g g-Whitespace">   </span><span class="mi">2646</span> <span class="n">instructions</span> <span class="o">=</span> <span class="n">InstructionSet</span><span class="p">(</span><span class="n">resource_requester</span><span class="o">=</span><span class="n">circuit_scope</span><span class="o">.</span><span class="n">resolve_classical_resource</span><span class="p">)</span>
+
+<span class="g g-Whitespace">   </span><span class="mi">2647</span> <span class="k">for</span> <span class="n">qarg</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">Gate</span><span class="o">.</span><span class="n">broadcast_arguments</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="n">expanded_qargs</span><span class="p">,</span> <span class="p">[]):</span>
+
+
+
+<span class="nn">File ~/miniconda3/envs/sage/lib/python3.12/site-packages/qiskit/circuit/gate.py:261,</span> in <span class="ni">Gate.validate_parameter</span><span class="nt">(self, parameter)</span>
+
+<span class="g g-Whitespace">    </span><span class="mi">259</span>     <span class="k">return</span> <span class="n">parameter</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+
+<span class="g g-Whitespace">    </span><span class="mi">260</span> <span class="k">else</span><span class="p">:</span>
+
+<span class="ne">--&gt; </span><span class="mi">261</span>     <span class="k">raise</span> <span class="n">CircuitError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid param type </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">parameter</span><span class="p">)</span><span class="si">}</span><span class="s2"> for gate </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+
+
+
+<span class="ne">CircuitError</span>: &quot;Invalid param type &lt;class &#39;sage.symbolic.expression.Expression&#39;&gt; for gate p.&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># simulation: run the quantum circuit 1000 times and print all results</span>
+<span class="c1"># note that unitary_simulator is used for finding unitary matrices</span>
+<span class="c1"># Create a simple 2-qubit circuit</span>
+<span class="n">qc</span> <span class="o">=</span> <span class="n">QuantumCircuit</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">qc</span><span class="o">.</span><span class="n">x</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">qc</span><span class="o">.</span><span class="n">cx</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">qc</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="s1">&#39;mpl&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/404ea2c513b47a2b55f65e833d937d70da06e6d8943e4caa83ce9f4cae85888f.png" src="_images/404ea2c513b47a2b55f65e833d937d70da06e6d8943e4caa83ce9f4cae85888f.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># --- Simulation: get the unitary matrix ---</span>
+<span class="n">qc</span><span class="o">.</span><span class="n">save_unitary</span><span class="p">()</span>
+<span class="n">simulator</span> <span class="o">=</span> <span class="n">AerSimulator</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;unitary&#39;</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">qc</span><span class="p">)</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+
+<span class="n">U</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mi">0</span><span class="p">))[</span><span class="s2">&quot;unitary&quot;</span><span class="p">]</span> <span class="c1"># Retrieve the unitary matrix</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="n">np</span><span class="o">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">precision</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">suppress</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">U</span><span class="p">)</span> <span class="c1"># unitary matrix</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Operator([[0.+0.j, 0.+0.j, 0.+0.j, 1.+0.j],
+          [1.+0.j, 0.+0.j, 0.+0.j, 0.+0.j],
+          [0.+0.j, 1.+0.j, 0.+0.j, 0.+0.j],
+          [0.+0.j, 0.+0.j, 1.+0.j, 0.+0.j]],
+         input_dims=(2, 2), output_dims=(2, 2))
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># CNOT Gate</span>
+<span class="c1"># Create a quantum circuit with 2 qubits and 2 classical bits</span>
+<span class="n">qc</span> <span class="o">=</span> <span class="n">QuantumCircuit</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="n">qc</span><span class="o">.</span><span class="n">x</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span> <span class="c1"># Apply X gate on qubits 0 and 1</span>
+<span class="n">qc</span><span class="o">.</span><span class="n">cx</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># Apply CNOT gate (qubit 0 = control, qubit 1 = target)</span>
+
+<span class="c1"># Measure both qubits into their corresponding classical bits</span>
+<span class="n">qc</span><span class="o">.</span><span class="n">measure</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+
+<span class="c1"># simulation: run the quantum circuit 1000 times and print all results</span>
+<span class="n">simulator</span> <span class="o">=</span> <span class="n">AerSimulator</span><span class="p">()</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">qc</span><span class="p">,</span> <span class="n">shots</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="mi">1000</span><span class="p">))</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">get_counts</span><span class="p">(</span><span class="n">qc</span><span class="p">))</span>
+<span class="n">qc</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="s1">&#39;mpl&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;01&#39;: 1000}
+</pre></div>
+</div>
+<img alt="_images/0c1c4bde024613d483f2df2a5a0728d74f63345c7f4029a08499976b18f281e1.png" src="_images/0c1c4bde024613d483f2df2a5a0728d74f63345c7f4029a08499976b18f281e1.png" />
+</div>
+</div>
 </section>
 </section>
 
@@ -1668,7 +2028,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qc">QC</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pre">Pre</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qm-for-everyone">QM for Everyone</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intro-quantum-probability">Intro &amp; Quantum Probability</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-quantum-mechanics-with-spins">Advanced Quantum Mechanics with Spins</a></li>
@@ -1682,6 +2042,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m3-the-qm-of-light">M3. The QM of Light</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m4-advanced-quantum-ideas-with-light">M4. Advanced Quantum Ideas with Light</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m5-quantum-operators-and-their-identities">M5. Quantum Operators and their Identities</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m6-qm-of-the-simple-harmonic-oscillator">M6. QM of the Simple Harmonic Oscillator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qc">QC</a></li>
 </ul>
   </nav></div>
 
