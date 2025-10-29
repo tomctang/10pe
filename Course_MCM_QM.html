@@ -381,6 +381,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m4-advanced-quantum-ideas-with-light">M4. Advanced Quantum Ideas with Light</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m5-quantum-operators-and-their-identities">M5. Quantum Operators and their Identities</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m6-qm-of-the-simple-harmonic-oscillator">M6. QM of the Simple Harmonic Oscillator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m7-quantum-angular-momentum-and-hydrogen">M7. Quantum Angular Momentum and Hydrogen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qc">QC</a></li>
 </ul>
             </nav>
@@ -1390,17 +1391,13 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle 2 \, \sqrt{\pi} \sqrt{\sigma_{x}^{2}} e^{\left(-\frac{p^{2} \sigma_{x}^{2} + i \, h p x_{0}}{h^{2}}\right)} \qquad   \]</div>
-</div>
 </div>
 </section>
 <section id="m6-qm-of-the-simple-harmonic-oscillator">
 <h2>M6. QM of the Simple Harmonic Oscillator<a class="headerlink" href="#m6-qm-of-the-simple-harmonic-oscillator" title="Link to this heading">#</a></h2>
 <p>Lecture Notes</p>
 <ul class="simple">
-<li><p>Factorization Method: This is a method that solves quantum mechanics problems using manipulation of operators.</p>
+<li><p>Factorisation Method: This is a method that solves quantum mechanics problems using manipulation of operators.</p>
 <ul>
 <li><p><span class="math notranslate nohighlight">\(\hat{H}=\frac{\hat{p}^2}{2m}\)</span></p></li>
 <li><p>Factorized form: <span class="math notranslate nohighlight">\(\hat{H}\hat{A}_k^\dagger\hat{A}_k+E_k\)</span></p></li>
@@ -1649,28 +1646,324 @@ document.write(`
 </ul>
 </li>
 </ul>
+<ul class="simple">
+<li><p>The Factorisation Method for the Simple Harmonic Oscillator</p>
+<ul>
+<li><p>Factorisation Method</p>
+<ul>
+<li><p>The Hamiltonian is <span class="math notranslate nohighlight">\(\hat{H}=\frac{\hat{p}^2}{2M}+\frac{1}{2}M\omega^2\hat{x}^2\)</span></p></li>
+<li><p>Let <span class="math notranslate nohighlight">\(\hat{A}=\frac{1}{\sqrt{2M}}(\hat{p}-iM\omega\hat{x})\)</span></p></li>
+<li><p>Identity: <span class="math notranslate nohighlight">\(\hat{H}=\hat{A}^\dagger\hat{A}+\frac{1}{2}\hbar\omega\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{A}^\dagger\hat{A}\)</span> are positive semidefinite operators.</p>
+<ul>
+<li><p>This means that the expectation value but be non-negative.</p></li>
+<li><p>Proof: <span class="math notranslate nohighlight">\(\langle\psi|\hat{A}^\dagger\hat{A}|\psi\rangle=|\hat{A}|\psi\rangle|^2\geq0\)</span></p></li>
+</ul>
+</li>
+<li><p>If the Hamiltonian is in the ground state, then the expectation value is as low as possible, which means in this case the state is <span class="math notranslate nohighlight">\(|0\rangle\)</span>, which satsifies <span class="math notranslate nohighlight">\(\hat{A}|0\rangle=0\)</span>. We call this the subsidiary condition because the operator annihilates the state.</p></li>
+<li><p>Using the subsidary condition, <span class="math notranslate nohighlight">\(\hat{H}|0\rangle=\frac{1}{2}\hbar\omega|0\rangle\)</span>, but since this is just scaling the original state, the ground-state energy is <span class="math notranslate nohighlight">\(\frac{1}{2}\hbar\omega\)</span>.</p></li>
+</ul>
+</li>
+<li><p>Standard Notation</p>
+<ul>
+<li><p>Scale the raising and lowering operators by <span class="math notranslate nohighlight">\(\hat{a}=\frac{i}{\sqrt{\hbar\omega}}\hat{A}=\sqrt{\frac{M\omega}{2\hbar}}\hat{x}+i\frac{1}{\sqrt{2\hbar M\omega}}\hat{p}\)</span></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\hat{p}=(\hat{a}-\hat{a}^\dagger)\frac{\sqrt{\hbar m\omega}}{i\sqrt{2}}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{x}=(\hat{a}+\hat{a}^\dagger)\frac{\sqrt{\hbar }}{\sqrt{2m\omega}}\)</span></p></li>
+</ul>
+</li>
+<li><p>We find that <span class="math notranslate nohighlight">\([\hat{a},\hat{a}^\dagger]=1\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{H}=\hbar\omega(\hat{a}^\dagger\hat{a}+\frac{1}{2})\)</span></p></li>
+<li><p>Intertwining relationship for higher energy states: <span class="math notranslate nohighlight">\(\hat{H}\hat{a}^\dagger=\hat{a}^\dagger(\hat{H}+\hbar\omega)\)</span></p></li>
+</ul>
+</li>
+<li><p>Energy Eigenstates</p>
+<ul>
+<li><p>Claim: <span class="math notranslate nohighlight">\(|n\rangle=c(\hat{a}^\dagger)^n|0\rangle\)</span></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(c\)</span> is the normalization constant.</p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\hat{H}|n\rangle=E_n|n\rangle\)</span> where <span class="math notranslate nohighlight">\(E_n=(n+\frac{1}{2})\hbar\omega|n\rangle\)</span>.</p></li>
+<li><p>Normalization constant: <span class="math notranslate nohighlight">\(c=\frac{1}{\sqrt{n!}}\)</span></p></li>
+</ul>
+</li>
+<li><p>Summary</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\hat{a}=\sqrt{\frac{M\omega}{2\hbar}}\hat{x}+i\frac{1}{\sqrt{2\hbar M\omega}}\hat{p}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\([\hat{a},\hat{a}^\dagger]=1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{H}=\hbar\omega(\hat{a}^\dagger\hat{a}+\frac{1}{2})\)</span></p></li>
+<li><p>The energy eigenfunctions satisfy:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(|n\rangle=\frac{1}{\sqrt{n!}}(\hat{a}^\dagger)^n|0\rangle\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{a}|0\rangle=0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(E_n=(n+\frac{1}{2})\hbar\omega|n\rangle\)</span></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Baker-Campbell-Hausdorff Identity: <span class="math notranslate nohighlight">\(e^{\hat{A}}e^{\hat{B}}=e^{\hat{A}+\hat{B}+\frac{1}{2}[\hat{A},\hat{B}]+\frac{1}{12}[\hat{A},[\hat{A},\hat{B}]]+\frac{1}{12}[\hat{B},[\hat{B},\hat{A}]]+\cdots}\)</span></p>
+<ul>
+<li><p>This is the last fundamental operator identity.</p></li>
+<li><p>It was derived over a period of 45 years from the 1890s to 1940.</p></li>
+<li><p>It allows Lie algebra and Lie group theory to be well-defined.</p></li>
+<li><p>Derivative of an exponential</p>
+<ul>
+<li><p>Consider <span class="math notranslate nohighlight">\(\frac{d}{dt}e^{\hat{A}t}\)</span>.</p></li>
+<li><p>Calculate using power series: <span class="math notranslate nohighlight">\(\frac{d}{dt}e^{\hat{A}t}=\hat{A}e^{\hat{A}t}=e^{\hat{A}t}\hat{A}\)</span></p>
+<ul>
+<li><p>This is just like normal differentiation with ordinary functions.</p></li>
+<li><p>Note that the operator can go on either side.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Weyl form of the BCH identity: <span class="math notranslate nohighlight">\(e^{\hat{A}}e^{\hat{B}}=e^{\hat{A}+\hat{B}}e^{\frac{1}{2}[\hat{A},\hat{B}]}=e^{\frac{1}{2}[\hat{A},\hat{B}]}e^{\hat{A}+\hat{B}}=e^{\hat{A}+\hat{B}+\frac{1}{2}[\hat{A},\hat{B}]}\)</span></p>
+<ul>
+<li><p>This is a simplification of the BCH identity that holds when <span class="math notranslate nohighlight">\([\hat{A},\hat{B}]\)</span> commutes with both <span class="math notranslate nohighlight">\(\hat{A}\)</span> and <span class="math notranslate nohighlight">\(\hat{B}\)</span>.</p>
+<ul>
+<li><p>An example of this would be position and momentum, whose commutator is a number.</p></li>
+</ul>
+</li>
+<li><p>Derivative of exponentials over time: <span class="math notranslate nohighlight">\(\frac{d}{dt}(e^{\hat{A}t}e^{\hat{B}t}e^{-\hat{A}t-\hat{B}t})=[\hat{A},\hat{B}]t(e^{\hat{A}t}e^{\hat{B}t}e^{-\hat{A}t-\hat{B}t})\)</span></p>
+<ul>
+<li><p>This is a first-order differential equation that is easily solved.</p></li>
+</ul>
+</li>
+<li><p>After solving and changing the form of the solution for the DE: <span class="math notranslate nohighlight">\(e^{\hat{A}t}e^{\hat{B}t}=e^{\hat{A}t+\hat{B}t}e^{\frac{t^2}{2}[\hat{A},\hat{B}]}=e^{\frac{t^2}{2}[\hat{A},\hat{B}]}e^{\hat{A}t+\hat{B}t}=e^{\hat{A}t+\hat{B}t+\frac{t^2}{2}[\hat{A},\hat{B}]}\)</span></p></li>
+<li><p>Substitute <span class="math notranslate nohighlight">\(t=1\)</span> for the identity.</p></li>
+</ul>
+</li>
+<li><p>Sneddon’s formula: <span class="math notranslate nohighlight">\(\frac{d}{dt}e^{\hat{A}t}=\int_0^1e^{(1-y)\hat{A}(t)}\frac{d\hat{A}(t)}{dt}e^{y\hat{A}(t)}dy\)</span></p>
+<ul>
+<li><p>The reason this formula is so complicated is because in general, <span class="math notranslate nohighlight">\([\hat{A}(t),\frac{d\hat{A}(t)}{dt}]\ne0\)</span> (an operator doesn’t commute with its derivative).</p></li>
+<li><p>To prove it, calculate the derivative: <span class="math notranslate nohighlight">\(\frac{d}{dt}e^{\hat{A}t}=\hat{A}^\prime(t)+\frac{1}{2}(\hat{A}^\prime(t)\hat{A}(t)+\hat{A}(t)\hat{A}^\prime(t))+\cdots\)</span></p></li>
+</ul>
+</li>
+<li><p>General BCH Derivation</p>
+<ul>
+<li><p>Define <span class="math notranslate nohighlight">\(e^{\hat{A}t}e^{\hat{B}t}=e^{\hat{G}(t)}=e^{\hat{G}_1t+\hat{G}_2t^2+\hat{G}_3t^3+\cdots}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(e^{-\hat{G}t}\frac{d}{dt}(e^{\hat{G}(t)})=e^{-\hat{B}t}e^{-\hat{A}t}\frac{d}{dt}(e^{\hat{A}t}e^{\hat{B}t})\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(e^{-\hat{G}t}\frac{d}{dt}(e^{\hat{G}(t)})=\hat{A}+\hat{B}-t[\hat{B},\hat{A}]+\frac{t^2}{2}[\hat{B},[\hat{B},\hat{A}]]+\cdots\)</span></p></li>
+<li><p>Use Sneddon’s formula on the left hand side: <span class="math notranslate nohighlight">\(\hat{G}^\prime(t)-\frac{1}{2}[\hat{G}(t),\hat{G}^\prime(t)]+\frac{1}{6}[\hat{G}(t),[\hat{G}(t),\hat{G}^\prime(t)]]+\cdots=\hat{A}+\hat{B}-t[\hat{B},\hat{A}]+\frac{t^2}{2}[\hat{B},[\hat{B},\hat{A}]]+\cdots\)</span></p></li>
+<li><p>Compute and plug <span class="math notranslate nohighlight">\(\hat{G}(t)\)</span> in to get the final identity.</p></li>
+</ul>
+</li>
+<li><p>Compare to other identities</p>
+<ul>
+<li><p>Exponential reordering identity: <span class="math notranslate nohighlight">\(e^{\hat{A}}e^{\hat{B}}=e^{\hat{B}+[\hat{A},\hat{B}]+\frac{1}{6}[\hat{A},[\hat{A},\hat{B}]]+\cdots}e^{\hat{A}}\)</span></p>
+<ul>
+<li><p>This two identites are very similar, but they are used for different purposes. So, BCH is ‘halfway’ to the exponential reordering identity…</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Coherent States</p>
+<ul>
+<li><p>Intro</p>
+<ul>
+<li><p>In 1926, Schrodinger discovered the coherent states of the SHO.</p></li>
+<li><p>Coherent states can be thought of as the analog of pulling the object to extend the spring in a classical system.</p></li>
+</ul>
+</li>
+<li><p>Translation of position and momentum</p>
+<ul>
+<li><p>Translation operators</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(e^{-\frac{i}{\hbar}x_0\hat{p}}\)</span> translates the position by <span class="math notranslate nohighlight">\(x_0\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(e^{\frac{i}{\hbar}p_0\hat{p}}\)</span> translates the momentum by <span class="math notranslate nohighlight">\(p_0\)</span>.</p></li>
+</ul>
+</li>
+<li><p>When we apply both of these translation operators on the ground state(<span class="math notranslate nohighlight">\(|0\rangle\)</span>), we use the Weyl form of the BCH to put both operators in the exponent, and we get <span class="math notranslate nohighlight">\(e^{\frac{i}{\hbar}p_0\hat{x}-\frac{i}{\hbar}x_0\hat{p}}\)</span>.</p>
+<ul>
+<li><p>The correction term is <span class="math notranslate nohighlight">\(e^{i}{2\hbar}x_0p_0\)</span>. This is a complex phase and can be ignored.</p></li>
+</ul>
+</li>
+<li><p>Ladder operator form: <span class="math notranslate nohighlight">\(\exp{\begin{pmatrix}ip_0\frac{1}{\sqrt{2m\omega\hbar}}(\hat{a}+\hat{a}^\dagger)-x_0\sqrt{\frac{m\omega}{2\hbar}}(\hat{a}-\hat{a}^\dagger)\end{pmatrix}}|0\rangle\)</span></p></li>
+<li><p>Define <span class="math notranslate nohighlight">\(\alpha=x_0\sqrt{\frac{m\omega}{2\hbar}}+ip_0\frac{1}{\sqrt{2m\omega\hbar}}\)</span>, this means the operator becomes <span class="math notranslate nohighlight">\(\exp{(-\alpha^*\hat{a}+\alpha\hat{a}^\dagger)}=\hat{D}(\alpha)\)</span></p></li>
+<li><p>The operator <span class="math notranslate nohighlight">\(\hat{D}(\alpha)\)</span> is called the displacement operator.</p></li>
+<li><p><span class="math notranslate nohighlight">\(e^{-\alpha^*\hat{a}+\alpha\hat{a}^\dagger}|0\rangle=\hat{D}(\alpha)|0\rangle=|\alpha\rangle\)</span></p>
+<ul>
+<li><p>We call <span class="math notranslate nohighlight">\(|\alpha\rangle\)</span> the coherent state. The parameter <span class="math notranslate nohighlight">\(\alpha\)</span> for the operator describes the shift in position and momentum.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>A coherent state is an eigenstate of <span class="math notranslate nohighlight">\(\hat{a}\)</span>. This can be proven using the Hadamard lemma. However, it is not an eigenstate of <span class="math notranslate nohighlight">\(\hat{a}^\dagger\)</span>.</p>
+<ul>
+<li><p>The eigenvalue relation comes from the shift of position and momentum.</p></li>
+</ul>
+</li>
+<li><p>Coherent states in terms of <span class="math notranslate nohighlight">\(|n\rangle\)</span></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(|\alpha\rangle=e^{\alpha\hat{a}^\dagger}e^{-\alpha^*\hat{a}}e^{-\frac{1}{2}|\alpha|^2[\hat{a},\hat{a}^\dagger]}|0\rangle\)</span></p></li>
+<li><p>Compute commutator, rearrange and annihilate operator: <span class="math notranslate nohighlight">\(|\alpha\rangle=e^{-\frac{1}{2}|\alpha|^2}e^{\alpha\hat{a}^\dagger}|0\rangle\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(|\alpha\rangle=e^{-\frac{1}{2}|\alpha|^2}\sum_{n=0}^\infty\frac{a^n}{\sqrt{n!}}|n\rangle\)</span></p></li>
+<li><p>Using the ladder operator relation(<span class="math notranslate nohighlight">\(\hat{a}|n\rangle=\sqrt{n}|n-1\rangle\)</span>), we show that this is an eigenstate of <span class="math notranslate nohighlight">\(\hat{a}\)</span>.</p>
+<ul>
+<li><p>Operate <span class="math notranslate nohighlight">\(\hat{a}\)</span> on states and use relation: <span class="math notranslate nohighlight">\(\hat{a}|\alpha\rangle=e^{-\frac{1}{2}|\alpha|^2}\sum_{n=0}^\infty\frac{a^n}{\sqrt{n!}}\sqrt{n}|n-1\rangle\)</span></p></li>
+<li><p>Simplify and shift summation: <span class="math notranslate nohighlight">\(\hat{a}|\alpha\rangle=\alpha e^{-\frac{1}{2}|\alpha|^2}\sum_{n=0}^\infty\frac{a^n}{\sqrt{n!}}|n \rangle\)</span></p></li>
+<li><p>Replace RHS with coherent state: <span class="math notranslate nohighlight">\(\hat{a}|\alpha\rangle=\alpha|\alpha\rangle\)</span></p></li>
+</ul>
+</li>
+<li><p>Overlap of two coherent states: <span class="math notranslate nohighlight">\(\langle\beta|\alpha\rangle=e^{-\frac{1}{2}|\alpha|^2-\frac{1}{2}|\beta|^2}\sum_{n=0}^\infty\sum_{m =0}^\infty\frac{\beta^{*m}}{\sqrt{m!}}\frac{\alpha^n}{\sqrt{n!}}\langle m|n\rangle\)</span></p></li>
+<li><p>Compute overlap: <span class="math notranslate nohighlight">\(\langle\beta|\alpha\rangle=e^{-\frac{1}{2}|\alpha|^2-\frac{1}{2}|\beta|^2+\beta^*\alpha}\)</span></p>
+<ul>
+<li><p>If <span class="math notranslate nohighlight">\(\alpha=\beta\)</span>,  the overlap is 1, but if <span class="math notranslate nohighlight">\(\alpha\ne\beta\)</span>, then the overlap is not 0 but gets smaller the more different they are.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Uncertainty</p>
+<ul>
+<li><p>Uncertainty for coherent states: <span class="math notranslate nohighlight">\(\Delta^2(x)_\alpha=\langle\alpha|\hat{x}^2|\alpha\rangle-(\langle\alpha|\hat{x}|\alpha\rangle)^2\)</span></p></li>
+<li><p>Calculate uncertainty: <span class="math notranslate nohighlight">\(\Delta^2(x)_\alpha=\frac{\hbar}{2m\omega}\)</span></p></li>
+<li><p>Fluctuations in momentum: <span class="math notranslate nohighlight">\(\Delta^2(p)_\alpha=\frac{\hbar m\omega}{2}\)</span></p></li>
+<li><p>Product of fluctuations: <span class="math notranslate nohighlight">\(\Delta(x)\Delta(p)=\frac{\hbar}{2}\)</span></p>
+<ul>
+<li><p>This is the same as the ground state, because we can set <span class="math notranslate nohighlight">\(\alpha\)</span> to be 0.</p></li>
+</ul>
+</li>
+<li><p>Since we only shifted the position and momentum of the ground state, it makes sense that the uncertainty is unchanged.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Note: Coherent states will be used as an example in time evolution towards the end of the class.</p></li>
+</ul>
+<ul class="simple">
+<li><p>SHO in 3D</p>
+<ul>
+<li><p>SHO in 3D</p>
+<ul>
+<li><p>Hamiltonian: <span class="math notranslate nohighlight">\(\hat{H}=\frac{\hat{p}_x^2}{2m}+\frac{\hat{p}_y^2}{2m}+\frac{\hat{p}_z^2}{2m}+\frac{1}{2}m\omega_x^2\hat{r}_x^2+\frac{1}{2}m\omega_y^2\hat{r}_y^2+\frac{1}{2}m\omega_z^2\hat{r}_z^2\)</span></p></li>
+<li><p>Canonical commutation relation: <span class="math notranslate nohighlight">\([\hat{r}_i,\hat{p}_j]=i\hbar\delta_{ij}\)</span></p>
+<ul>
+<li><p>Note that operators in different spatial directions commute.</p></li>
+</ul>
+</li>
+<li><p>Ladder operators: <span class="math notranslate nohighlight">\(\hat{a}_j=\sqrt{\frac{m\omega}{2\hbar}}\hat{r}_j+i\sqrt{\frac{1}{2m\omega\hbar}}\hat{p}_j\)</span></p></li>
+<li><p>Commutator of ladder operators: <span class="math notranslate nohighlight">\([\hat{a}_i,\hat{a}_j^\dagger]=\delta_{ij}\)</span></p></li>
+<li><p>Tensor product form of states: <span class="math notranslate nohighlight">\(|\psi_{nx,ny,nz}\rangle=|n_x\rangle\otimes|n_y\rangle\otimes|n_z\rangle\)</span></p></li>
+<li><p>A ladder operator does nothing in the wrong subspace, and it acts like a ladder operator in the right subspace.</p></li>
+<li><p>Example: <span class="math notranslate nohighlight">\(\hat{\mathbb{I}}\otimes\hat{a_y}\otimes\hat{\mathbb{I}}\)</span></p>
+<ul>
+<li><p>We drop the tensor product for simplicity.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Factorisation of Hamiltonian</p>
+<ul>
+<li><p>We put suppress tensor product into <span class="math notranslate nohighlight">\(|n_x,n_y,n_z\rangle\)</span>.</p></li>
+<li><p>Energy: <span class="math notranslate nohighlight">\(E_{n_x,n_y,n_z}=\hbar\omega_x(n_x+\frac{1}{2})+\hbar\omega_y(n_y+\frac{1}{2})+\hbar\omega_z(n_z+\frac{1}{2})\)</span></p></li>
+<li><p>Factorisation of wavefunction: <span class="math notranslate nohighlight">\(\psi_{n_x,n_y,n_z}(r_x,r_y,r_z)=\langle r_x,r_y,r_z|n_x,n_y,n_z\rangle=\langle r_x|n_x\rangle\langle r_y|n_y\rangle\langle r_z|n_z\rangle=\psi_{n_x}(r_x)\psi_{n_y}(r_y)\psi_{n_z}(r_z)\)</span></p></li>
+<li><p>Energy of ground state: <span class="math notranslate nohighlight">\(E_{GS}=\hbar\omega_x\frac{1}{2}+\hbar\omega_y\frac{1}{2}+\hbar\omega_z\frac{1}{2}\)</span></p></li>
+<li><p>Wavefunction of ground state: <span class="math notranslate nohighlight">\(\psi_{GS}(r_x,r_y,r_z)=(\frac{m\omega_x}{\pi\hbar})^\frac{1}{4}(\frac{m\omega_y}{\pi\hbar})^\frac{1}{4}(\frac{m\omega_z}{\pi\hbar})^\frac{1}{4}e^{-\frac{1m}{2\hbar}(\omega_xr_x^2+\omega_yr_y^2+\omega_zr_z^2)}\)</span></p></li>
+</ul>
+</li>
+<li><p>Isotropic 3D SHO</p>
+<ul>
+<li><p>In the Isotropic 3D SHO, we choose the frequencies to be the same(<span class="math notranslate nohighlight">\(\omega_x=\omega_y=\omega_z\)</span>).</p></li>
+<li><p>Hamiltonian: <span class="math notranslate nohighlight">\(\hat{H}=\hbar\omega(\hat{a}_x^\dagger\hat{a}_x+\hat{a}_y^\dagger\hat{a}_y+\hat{a}_z^\dagger\hat{a}_z+\frac{3}{2})\)</span></p></li>
+<li><p>Energy: <span class="math notranslate nohighlight">\(E_{n_x,n_y,n_z}=\hbar\omega(n_x+n_y+n_z+\frac{3}{2})\)</span></p></li>
+<li><p>When we have different sets of n values that have the same sum, we have degeneracy.</p></li>
+</ul>
+</li>
+<li><p>Isotropic Wavefunctions</p>
+<ul>
+<li><p>We use wavefunctions with even powers of the Cartesian coordinates: <span class="math notranslate nohighlight">\((4,0,0),(0,4,0),(0,0,4),(2,2,0),(2,0,2),(0,2,2)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\psi_0(r_x)=(\frac{m\omega}{\pi\hbar})^\frac{1}{4}e^{-\frac{1}{2}\frac{m\omega}{\hbar}\hat{r}_x^2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\psi_2(r_x)=\frac{1}{\sqrt{2}}(\frac{m\omega}{\pi\hbar})^\frac{1}{4}H_2(\sqrt{\frac{m\omega}{\hbar}}\hat{r_x})e^{-\frac{1}{2}\frac{m\omega}{\hbar}\hat{r}_x^2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\psi_4(r_x)=\frac{1}{\sqrt{24}}(\frac{m\omega}{\pi\hbar})^\frac{1}{4}H_4(\sqrt{\frac{m\omega}{\hbar}}\hat{r_x})e^{-\frac{1}{2}\frac{m\omega}{\hbar}\hat{r}_x^2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\psi_{400}+\psi_{040}+\psi_{004}\propto\frac{1}{\sqrt{24}}(16r^2-48r^2+36-32(r_x^2r_y^2+r_y^2r_z^2+r_z^2r_x^2))\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\psi_{220}+\psi_{202}+\psi_{022}\propto\frac{1}{2}(16(r_x^2r_y^2+r_y^2r_z^2+r_z^2r_x^2)-16r^2+12)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\psi_{400}+\psi_{040}+\psi_{004}+\frac{2}{\sqrt{6}}(\psi_{220}+\psi_{202}+\psi_{022})\propto\frac{1}{\sqrt{6}}(8r^4-40r^2+40)\)</span></p>
+<ul>
+<li><p>This is a function of <span class="math notranslate nohighlight">\(r^2\)</span> only.</p></li>
+</ul>
+</li>
+<li><p>But most wavefunctions are not isotropic. This is a principle when we have symmetry in a Hamilonian.</p></li>
+<li><p>Not all wavefunctions have the same symmetry as the Hamiltonian.</p></li>
+</ul>
+</li>
+<li><p>Uncertainty</p>
+<ul>
+<li><p>Uncertainty adds in quadrature for position: <span class="math notranslate nohighlight">\(\Delta^2(\vec{r})_{n_x,n_y,n_z}=\frac{\hbar}{2m\omega}(2n_x+1+2n_y+1+2n_z+1)\)</span></p></li>
+<li><p>Uncertainty also adds in quadrature for momentum: <span class="math notranslate nohighlight">\(\Delta^2(\vec{p})_{n_x,n_y,n_z}=\frac{\hbar m\omega}{2}(2n_x+1+2n_y+1+2n_z+1)\)</span></p></li>
+<li><p>Product of uncertainty: <span class="math notranslate nohighlight">\(\Delta(r)_{n_x,n_y,n_z}Delta(p)_{n_x,n_y,n_z}=\frac{\hbar}{2}(2n_x+2n_y+2n_z+3)\)</span></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <p>Problem Notes</p>
 <ul class="simple">
-<li><p>To calculate the wave function(<span class="math notranslate nohighlight">\(\tilde{\psi}_n=\frac{1}{\sqrt{2\pi\hbar}}\int_{-\infty}^\infty ce^{-\frac{alpha^2}{2}x^2}e^{-\frac{ipx}{\hbar}}dx\)</span>)</p></li>
+<li><p>To calculate the wave function(<span class="math notranslate nohighlight">\(\tilde{\psi}_n=\frac{1}{\sqrt{2\pi\hbar}}\int_{-\infty}^\infty ce^{-\frac{\alpha^2}{2}x^2}e^{-\frac{ipx}{\hbar}}dx\)</span>)</p></li>
 <li><p>Leibniz Rule: <span class="math notranslate nohighlight">\([\hat A\hat B,\hat C]=\hat  A [\hat{B},\hat{C}]+[\hat{A},\hat{C}]\hat{B}\)</span></p>
 <ul>
 <li><p>Another form: <span class="math notranslate nohighlight">\([\hat A,\hat B\hat C]=\hat B[\hat{A},\hat{C}]+[\hat{A},\hat{B}]\hat{C}\)</span></p></li>
 </ul>
 </li>
+<li><p>Wave function: <span class="math notranslate nohighlight">\(\tilde{\psi}_n(p) \propto e^{-\frac{p^2}{2m\hbar\omega}}\)</span></p></li>
+<li><p>Review of SHO eigenstates</p>
+<ul>
+<li><p>Hamiltonian, position, and momentum in terms of ladder operators: <span class="math notranslate nohighlight">\(\hat{H}=\hbar\omega\left (\hat{a}^\dagger\hat{a}+\frac{1}{2}\right );~~~\hat{x}=\sqrt{\frac{\hbar}{2 m\omega}}\left (\hat{a}+\hat{a}^\dagger\right );~~~\hat{p}=\sqrt{\frac{\hbar m\omega}{2}}\frac{1}{i}\left (\hat{a}-\hat{a}^\dagger\right )\)</span></p></li>
+<li><p>Commutation Relations between <span class="math notranslate nohighlight">\(\hat{a}\)</span> and <span class="math notranslate nohighlight">\(\hat{a}^\dagger\)</span></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\left [\hat{a},\left (\hat{a}^\dagger\right)^n\right ]=n\left (\hat{a}^\dagger\right )^{n-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\left [\hat{a}^\dagger,\hat{a}^n\right ]=-n\hat{a}^{n-1}\)</span></p></li>
 </ul>
-<p><span class="math notranslate nohighlight">\(\tilde{\psi}_n(p) \propto e^{-\frac{p^2}{2m\hbar\omega}}\)</span></p>
+</li>
+<li><p>Normalized energy eigenstates: <span class="math notranslate nohighlight">\(|n\rangle=\frac{1}{\sqrt{n!}}\left (\hat{a}^\dagger\right )^n|0\rangle;~~~\hat{a}|0\rangle=0;~~\hat{H}|n\rangle=E_n|n\rangle;~~E_n=\hbar\omega\left (n+\frac{1}{2}\right )\)</span></p></li>
+<li><p>Hadamard Lemma: <span class="math notranslate nohighlight">\(e^{\hat{A}}\hat{B}e^{-\hat{A}}=\hat{B}+[\hat{A},\hat{B}]+\frac{1}{2}[\hat{A},[\hat{A},\hat{B}]]+\cdots\)</span></p></li>
+<li><p>Weyl form of BCH identity: <span class="math notranslate nohighlight">\(e^{\hat{A}}e^{\hat{B}}=e^{\hat{A}+\hat{B}}e^{\frac{1}{2}[\hat{A},\hat{B}]}\)</span></p></li>
+</ul>
+</li>
+<li><p>Expansion of coherent state in the number state basis: <span class="math notranslate nohighlight">\(|\alpha\rangle=e^{-\frac{1}{2}|\alpha|^2}\sum_{m=0}^\infty\frac{\alpha^m}{\sqrt{m!}}|m\rangle\)</span></p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Morse Potential</span>
-<span class="n">var</span><span class="p">(</span><span class="s1">&#39;r_e D_e m a&#39;</span><span class="p">)</span>
-<span class="n">v_morse</span><span class="p">(</span><span class="n">r</span><span class="p">)</span><span class="o">=</span><span class="n">D_e</span><span class="o">*</span><span class="p">(</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">r</span><span class="o">-</span><span class="n">r_e</span><span class="p">)</span><span class="o">/</span><span class="n">a</span><span class="p">)</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">r</span><span class="o">-</span><span class="n">r_e</span><span class="p">)</span><span class="o">/</span><span class="n">a</span><span class="p">))</span>
-<span class="n">s</span><span class="p">(</span><span class="n">v_morse</span><span class="p">(</span><span class="n">r_e</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Coherent States</span>
+<span class="n">var</span><span class="p">(</span><span class="s1">&#39;m n u&#39;</span><span class="p">)</span>
+<span class="n">assume</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="n">m</span><span class="o">+</span><span class="mi">2</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="n">u</span><span class="p">)</span><span class="o">*</span><span class="n">u</span><span class="o">^</span><span class="p">((</span><span class="n">n</span><span class="o">+</span><span class="n">m</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span><span class="n">u</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">infinity</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle -D_{e} \qquad   \]</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Morse Potential</span>
+<span class="n">var</span><span class="p">(</span><span class="s1">&#39;r_e D_e m a&#39;</span><span class="p">)</span>                                    <span class="c1"># Define variables</span>
+<span class="n">v_morse</span><span class="p">(</span><span class="n">r</span><span class="p">)</span><span class="o">=</span><span class="n">D_e</span><span class="o">*</span><span class="p">(</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">r</span><span class="o">-</span><span class="n">r_e</span><span class="p">)</span><span class="o">/</span><span class="n">a</span><span class="p">)</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">r</span><span class="o">-</span><span class="n">r_e</span><span class="p">)</span><span class="o">/</span><span class="n">a</span><span class="p">))</span>    <span class="c1"># Define Morse Potential</span>
+<span class="n">s</span><span class="p">(</span><span class="n">v_morse</span><span class="p">(</span><span class="n">r_e</span><span class="p">))</span>                                       <span class="c1"># Find the Morse Potential at r_e</span>
+<span class="n">s</span><span class="p">(</span><span class="n">derivative</span><span class="p">(</span><span class="n">v_morse</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="mi">2</span><span class="p">)(</span><span class="n">r_e</span><span class="p">))</span>                       <span class="c1"># Find k_morse by taking the second derivative and evaluating at r_e</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Morse Potential 2</span>
+<span class="n">D_e</span><span class="o">=</span><span class="mf">4.75</span>
+<span class="n">a</span><span class="o">=</span><span class="mf">19.3</span>
+<span class="n">r_e</span><span class="o">=</span><span class="mf">0.074</span>
+<span class="n">m</span><span class="o">=</span><span class="mi">938</span><span class="o">*</span><span class="mi">10</span><span class="o">^</span><span class="mi">6</span>
+<span class="n">hbar</span><span class="o">=</span><span class="mi">1240</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">)</span>
+<span class="n">E_morse</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">hbar</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="n">D_e</span><span class="o">/</span><span class="n">m</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">hbar</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="o">^</span><span class="mi">2</span><span class="o">/</span><span class="n">m</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="o">-</span><span class="n">D_e</span>
+<span class="n">E_approx</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">hbar</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="n">D_e</span><span class="o">/</span><span class="n">m</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">D_e</span>
+<span class="n">s</span><span class="p">((</span><span class="n">E_morse</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">-</span><span class="n">E_approx</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span><span class="o">/</span><span class="n">E_morse</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -1682,15 +1975,407 @@ document.write(`
 <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">0.95</span><span class="p">,</span><span class="mf">1.05</span><span class="p">]:</span>
     <span class="n">v_lj_val</span><span class="o">=</span><span class="n">v_lj</span><span class="p">(</span><span class="n">val</span><span class="o">*</span><span class="n">x_0</span><span class="p">)</span>
     <span class="n">v_lj_approx_val</span><span class="o">=</span><span class="n">v_lj_approx</span><span class="p">(</span><span class="n">val</span><span class="o">*</span><span class="n">x_0</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Percentage error for &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">val</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;x_0: &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="nb">abs</span><span class="p">((</span><span class="n">v_lj_val</span><span class="o">-</span><span class="n">v_lj_approx_val</span><span class="p">)</span><span class="o">/</span><span class="n">v_lj_val</span><span class="p">)))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Percentage error for &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">val</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span><span class="o">+</span><span class="s1">&#39;*x_0: &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="nb">abs</span><span class="p">((</span><span class="n">v_lj_val</span><span class="o">-</span><span class="n">v_lj_approx_val</span><span class="p">)</span><span class="o">/</span><span class="n">v_lj_val</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pauli y matrix eigenvectors</span>
+<span class="n">sigma_y</span><span class="o">=</span><span class="n">matrix</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,[</span><span class="mi">0</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="o">-</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">matrix</span><span class="p">(</span><span class="n">sigma_y</span><span class="p">)</span><span class="o">.</span><span class="n">eigenvectors_left</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Normalization Constant</span>
+<span class="n">var</span><span class="p">(</span><span class="s1">&#39;m omega h&#39;</span><span class="p">)</span>
+<span class="n">assume</span><span class="p">(</span><span class="n">m</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">assume</span><span class="p">(</span><span class="n">omega</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">assume</span><span class="p">(</span><span class="n">h</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">m</span><span class="o">*</span><span class="n">omega</span><span class="p">)</span><span class="o">/</span><span class="n">h</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">),</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="n">infinity</span><span class="p">,</span><span class="n">infinity</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Normalization Constant 2</span>
+<span class="n">var</span><span class="p">(</span><span class="s1">&#39;m omega h p c&#39;</span><span class="p">)</span>
+<span class="n">assume</span><span class="p">(</span><span class="n">h</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">assume</span><span class="p">(</span><span class="n">omega</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">c</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="n">p</span><span class="o">^</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">m</span><span class="o">*</span><span class="n">omega</span><span class="o">*</span><span class="n">h</span><span class="p">))),</span><span class="n">p</span><span class="p">,</span><span class="o">-</span><span class="n">infinity</span><span class="p">,</span><span class="n">infinity</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hermite Polynomials</span>
+<span class="n">var</span><span class="p">(</span><span class="s1">&#39;z&#39;</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">h</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">n</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="n">z</span>
+    <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="n">z</span><span class="o">*</span><span class="n">h</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">h</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
+    <span class="n">s</span><span class="p">(</span><span class="n">expand</span><span class="p">(</span><span class="n">h</span><span class="p">(</span><span class="n">i</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">hbar</span><span class="o">*</span><span class="n">beta</span><span class="o">*</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Difference in variational energy and SHO approximated energy for the deuteron</span>
+<span class="c1"># c(speed of light) cancels out in the equation so can be ignored</span>
+<span class="n">hbar</span><span class="o">=</span><span class="mi">1240</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mi">10</span><span class="o">^</span><span class="mi">6</span><span class="o">*</span><span class="n">pi</span><span class="p">)</span>
+<span class="n">beta</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="mi">10</span><span class="o">^</span><span class="mi">5</span>
+<span class="n">V</span><span class="o">=</span><span class="mf">19.1</span>
+<span class="n">m</span><span class="o">=</span><span class="mi">938</span>
+<span class="n">s</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">hbar</span><span class="o">*</span><span class="n">beta</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="n">V</span><span class="o">/</span><span class="n">m</span><span class="p">)</span><span class="o">-</span><span class="n">V</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">beta</span><span class="o">*</span><span class="n">hbar</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="n">m</span><span class="o">*</span><span class="n">V</span><span class="p">))</span><span class="o">^</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">V</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">hbar</span><span class="o">*</span><span class="n">beta</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="n">V</span><span class="o">/</span><span class="n">m</span><span class="p">))</span>
+<span class="n">s</span><span class="p">(</span><span class="n">n</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">hbar</span><span class="o">*</span><span class="n">beta</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="n">V</span><span class="o">/</span><span class="n">m</span><span class="p">)</span><span class="o">-</span><span class="n">V</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="p">(</span><span class="n">beta</span><span class="o">*</span><span class="n">hbar</span><span class="p">)</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="n">m</span><span class="o">*</span><span class="n">V</span><span class="p">))</span><span class="o">^</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">V</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">hbar</span><span class="o">*</span><span class="n">beta</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="n">V</span><span class="o">/</span><span class="n">m</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Percentage error for 0.950000000000000x_0: 4.58201651824834
-Percentage error for 1.05000000000000x_0: 2.73552333491867
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle -\frac{26.5416677684687}{\pi} - \frac{19.1000000000000}{{\left(\frac{0.926410742354928}{\pi} + 1\right)}^{\frac{3}{2}}} + 19.1000000000000 \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle -2.31089903760438 \qquad   \]</div>
+</div>
+</div>
+</section>
+<section id="m7-quantum-angular-momentum-and-hydrogen">
+<h2>M7. Quantum Angular Momentum and Hydrogen<a class="headerlink" href="#m7-quantum-angular-momentum-and-hydrogen" title="Link to this heading">#</a></h2>
+<p>Lecture Notes</p>
+<ul class="simple">
+<li><p>Commutation Relations of Angular Momentum</p>
+<ul>
+<li><p>Angular momentum in QM</p>
+<ul>
+<li><p>Angular momentum is hard.</p></li>
+<li><p>When we work with operators, commutators and states. They may be abstract, but they are not nonintuitive.</p>
+<ul>
+<li><p>Because of this, if you can deal with the abstraction, angular momentum in quantum mechanics is actually simpler then it is in classical mechanics.</p></li>
+</ul>
+</li>
+<li><p>We have to do this because the important forces, the Coulomb interaction in atoms, they are central forces. We also need to do this because we need to deal with spin, and spin is an angular momentum.</p></li>
+</ul>
+</li>
+<li><p>Defining angular momentum</p>
+<ul>
+<li><p>Classical angular momentum: <span class="math notranslate nohighlight">\(\hat{L}=\hat{r}\times\hat{p}\)</span> (<span class="math notranslate nohighlight">\(\times\)</span> represents the cross product)</p></li>
+<li><p>We simply calculate the quantum angular momentum by elevating the classical position and momentum to operators. Normally, we run into operator ordering issues, but because the products always occur with terms along different directions, everything commutes.</p></li>
+<li><p>Quantum angular momentum: <span class="math notranslate nohighlight">\(\hat{L}=\hat{r}\times\hat{p}\)</span></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\hat{L}_x=\hat{r}_y\hat{p}_z-\hat{r}_z\hat{p}_y\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{L}_y=\hat{r}_z\hat{p}_x-\hat{r}_x\hat{p}_z\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{L}_z=\hat{r}_x\hat{p}_y-\hat{r}_y\hat{p}_x\)</span></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Commutators with position and momentum</p>
+<ul>
+<li><p>Commutator of position with angular momentum: <span class="math notranslate nohighlight">\([\hat{r}_i,\hat{L}_j]=[\hat{r}_i,\sum_{kl}\epsilon_{jkl}\hat{r}_k\hat{p}_l]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\([\hat{r}_i,\hat{L}_j]=\sum_{kl}\epsilon_{jkl}[\hat{r}_i,\hat{r}_k\hat{p}_l]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\([\hat{r}_i,\hat{L}_j]=\sum_{kl}\epsilon_{jkl}(\hat{r}_k[\hat{r}_i,\hat{p}_l]+[\hat{r}_i,\hat{r}_k]\hat{p}_l)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\([\hat{r}_i,\hat{L}_j]=\sum_{kl}\epsilon_{jkl}\hat{r}_ki\hbar\delta_{il}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\([\hat{r}_i,\hat{L}_j]=i\hbar\sum_k\epsilon_{ijk}\hat{r}_k\)</span></p></li>
+<li><p>Commutator of momentum with angular momentum: <span class="math notranslate nohighlight">\([\hat{p}_i,\hat{L}_j]=[\hat{p}_i,\sum_{kl}\epsilon_{jkl}\hat{r}_k\hat{p}_l]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\([\hat{p}_i,\hat{L}_j]=\sum_{kl}\epsilon_{jkl}(\hat{r}_k[\hat{p}_i,\hat{p}_l]+[\hat{p}_i,\hat{r}_k]\hat{p}_l)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\([\hat{p}_i,\hat{L}_j]=\sum_{kl}\epsilon_{jkl}[\hat{p}_i,\hat{r}_k]\hat{p}_l\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\([\hat{p}_i,\hat{L}_j]=\sum_{kl}\epsilon_{jkl}(-i\hbar\delta{ki})\hat{p}_l\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\([\hat{p}_i,\hat{L}_j]=i\hbar\sum_k\epsilon_{ijk}\hat{p}_k\)</span></p></li>
+<li><p>You might be able to see that there is a pattern.</p></li>
+<li><p>Pattern: The commutator of a operator with <span class="math notranslate nohighlight">\(\hat{L}_j\)</span> has the same formula but just changing the operator at the end.</p></li>
+<li><p>This operator is called a vector operator.</p></li>
+</ul>
+</li>
+<li><p>Commutators of angular momentum</p>
+<ul>
+<li><p>Commutator of angular momentum with itself: <span class="math notranslate nohighlight">\([\hat{L}_i,\hat{L}_j]=\sum_{kl}\epsilon_{ikl}[\hat{r}_k\hat{p}_l,\hat{L_j}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\([\hat{L}_i,\hat{L}_j]=\sum_{kl}\epsilon_{ikl}(\hat{r}_k[\hat{p}_l,\hat{L}_j]+[\hat{r}_k,\hat{L}_j]\hat{p}_l)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\([\hat{L}_i,\hat{L}_j]=i\hbar\sum_{klm}\epsilon_{ikl}(\epsilon_{ljm}\hat{r}_k\hat{p}_m+\epsilon{kjm}\hat{r}_m\hat{p}_l)\)</span></p></li>
+<li><p>Identity: <span class="math notranslate nohighlight">\(\sum_k=\epsilon_{ijk}\epsilon_{klm}=\delta_{il}\delta_{jm}-\delta_{im}\delta_{jl}\)</span></p></li>
+<li><p>We use this identity to find <span class="math notranslate nohighlight">\([\hat{L}_i,\hat{L}_j]=i\hbar(\hat{r}_i\hat{p}_j-\hat{r}_j\hat{p}_i)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\([\hat{L}_i,\hat{L}_j]=i\hbar\sum_k\epsilon_{ijk}\hat{L}_k\)</span></p></li>
+</ul>
+</li>
+<li><p>Summary</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\([\hat{L}_i,\hat{L}_j]=i\hbar\sum_k\epsilon_{ijk}\hat{L}_k\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\([\hat{L}_i,\hat{L}^2]=[\hat{L}_i,\hat{L}\cdot\hat{L}]=0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\([\hat{r}_i,\hat{L}_j]=i\hbar\sum_k\epsilon_{ijk}\hat{r}_k\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\([\hat{p}_i,\hat{L}_j]=i\hbar\sum_k\epsilon_{ijk}\hat{p}_k\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\([\hat{r}^2,\hat{L}_j]=0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\([\hat{p}^2,\hat{L}_j]=0\)</span></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Angular Momentum Eigenstates</p>
+<ul>
+<li><p>Raising and lowering operators</p>
+<ul>
+<li><p>Raising operator: <span class="math notranslate nohighlight">\(\hat L_+=\hat L_x+i\hat L_y\)</span></p></li>
+<li><p>Lowering operator: <span class="math notranslate nohighlight">\(\hat L_-=\hat L_x-i\hat L_y\)</span></p></li>
+<li><p>Commutation relations</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\([\hat L_z,\hat L_\pm]=\pm\hbar\hat L_\pm\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\([\hat L_+,\hat L_-]=2\hbar\hat L_z\)</span></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Eigenstates and quantum numbers</p>
+<ul>
+<li><p>Since each Cartesian component commutes with the total angular momentum, but they don’t commute with each other, the maximum amount of commuting operators is two.</p>
+<ul>
+<li><p>It is customary to choose <span class="math notranslate nohighlight">\(\hat L_z\)</span> as the Cartesian component.</p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\vec L}^2=\hbar^2 l(l+1)|l,m\rangle\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat L_z=\hbar m|l,m\rangle\)</span></p></li>
+</ul>
+</li>
+<li><p>Raising operator</p>
+<ul>
+<li><p>Our first step is to show <span class="math notranslate nohighlight">\(\hat L_+|l,m\rangle\propto|l,m+1\rangle\)</span>.</p></li>
+<li><p>This comes from the canonical commutation relation: <span class="math notranslate nohighlight">\(\hat L_z(\hat L_+|l,m\rangle)=\hat L_z\hat L_+|l,m\rangle\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat L_z(\hat L_+|l,m\rangle)=\hat L_+\hat L_z|l,m\rangle+[\hat L_z,\hat L_+]|l,m\rangle\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat L_z(\hat L_+|l,m\rangle)=\hat L_+\hbar m|l,m\rangle+\hbar\hat L_+|l,m\rangle\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat L_z(\hat L_+|l,m\rangle)=\hbar(m+1)\hat L_+|l,m\rangle\)</span></p></li>
+<li><p>The raising operator increases the eigenvalue <span class="math notranslate nohighlight">\(m\)</span> by 1 each time it is applied to a state. This is why we call it a raising operator.</p></li>
+<li><p>You can use the same steps to find <span class="math notranslate nohighlight">\(\hat L_z(\hat L_-|l,m\rangle)=\hbar(m-1)\hat L_-|l,m\rangle\)</span></p></li>
+<li><p>The fact that the raising and lowering operators raise and lower the eigenvalue is why we call them ladder operators.</p></li>
+</ul>
+</li>
+<li><p>Positivity</p>
+<ul>
+<li><p>Recall that <span class="math notranslate nohighlight">\(\hat L_x^2+\hat L_y^2=\frac{1}{2}(\hat L_+\hat L_-+\hat L_-\hat L_+)\)</span>.</p></li>
+<li><p>Hence, <span class="math notranslate nohighlight">\(\langle l,m|\hat L_x^2+\hat L_y^2|l,m\rangle\geq0\)</span></p>
+<ul>
+<li><p>This follows from <span class="math notranslate nohighlight">\(\langle l,m|\hat L_+ \hat L_-|l,m\rangle=\parallel\hat L_-|l,m\rangle\parallel^2\geq0\)</span> and similarly for <span class="math notranslate nohighlight">\( \langle l,m|\hat L_-\hat L_+|l,m\rangle=\parallel\hat L_+|l,m\rangle\parallel^2\geq=0\)</span>.</p></li>
+</ul>
+</li>
+<li><p>But, <span class="math notranslate nohighlight">\(\langle l,m|\hat L_x^2+\hat L_y^2|l,m\rangle=\langle l,m|(\hat{\vec L}^2-\hat L_z^2)|l,m\rangle=\hbar^2[l(l+1)-m^2]\)</span></p></li>
+<li><p>So, <span class="math notranslate nohighlight">\(m\leq\sqrt{l(l+1)}\)</span>, implies that there is a maximal m(<span class="math notranslate nohighlight">\(m_{\text{max}}\)</span>) and a minimal m(<span class="math notranslate nohighlight">\(m_{\text{min}}\)</span>).</p></li>
+<li><p>They satisfy <span class="math notranslate nohighlight">\(\hat L_+|l,m_{\text{max}}\rangle=0\)</span> and <span class="math notranslate nohighlight">\(\hat L_-|l,m_{\text{min}}\rangle=0\)</span>.</p></li>
+</ul>
+</li>
+<li><p>Finding <span class="math notranslate nohighlight">\(m_\text{max}\)</span></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\hat L_+|l,m_\text{max}\rangle=0\implies\hat L_-\hat L_+|l,m_\text{max}\rangle=0\)</span></p></li>
+<li><p>But by using the square of the angular momentum and add zero, we have <span class="math notranslate nohighlight">\((\hat{\vec L}^2-\hat L_z^2-\hat L_z)|l,m_\text{max}\rangle=0\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hbar^2(l(l+1)-m_\text{max}^2-m_\text{max})=0\)</span></p></li>
+<li><p>Hence, either <span class="math notranslate nohighlight">\(m_\text{max}=l\)</span> or <span class="math notranslate nohighlight">\(m_\text{max}=-l-1\)</span>.</p></li>
+<li><p>We will determine which one is right at the end of the next section.</p></li>
+</ul>
+</li>
+<li><p>Finding <span class="math notranslate nohighlight">\(m_\text{min}\)</span></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\((\hat{\vec L}^2-\hat L_z^2+\frac{1}{2}[\hat L_+,\hat L_-])|l,m_\text{min}\rangle=0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hbar^2(l(l+1)-m_\text{min}^2+m_\text{min})=0\)</span></p></li>
+<li><p>Hence, either <span class="math notranslate nohighlight">\(m_\text{min}=l+1\)</span> or <span class="math notranslate nohighlight">\(m_\text{min}=-l\)</span></p></li>
+<li><p>Since <span class="math notranslate nohighlight">\(m_\text{max}\geq m_\text{min}\)</span>, <span class="math notranslate nohighlight">\(m_\text{max}=l\)</span> and <span class="math notranslate nohighlight">\(m_\text{min}=-l\)</span>.</p></li>
+</ul>
+</li>
+<li><p>Quantum number <span class="math notranslate nohighlight">\(l\)</span> is integer or half-odd integer</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(m_\text{max}-m_\text{min}=2l\)</span></p></li>
+<li><p>This means we can raise <span class="math notranslate nohighlight">\(|l,m_\text{min}\rangle\)</span> to <span class="math notranslate nohighlight">\(|l,m_\text{max}\rangle\)</span> using <span class="math notranslate nohighlight">\(\hat L_+\)</span> <span class="math notranslate nohighlight">\(2l\)</span> times.</p>
+<ul>
+<li><p>Thus, <span class="math notranslate nohighlight">\(2l\)</span> has to be an integer, meaning <span class="math notranslate nohighlight">\(l\)</span> is an integer or a half-odd integer.</p></li>
+</ul>
+</li>
+<li><p>It turns out that for orbital angular momentum, <span class="math notranslate nohighlight">\(l\)</span> has to be an integer.</p>
+<ul>
+<li><p>Note that this is not true for spin.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Normalisation factors</p>
+<ul>
+<li><p>We require the angular momentum states to be orthonormal: <span class="math notranslate nohighlight">\(\langle l,m|l^\prime, m^\prime\rangle=\delta_{ll^\prime}\delta_{mm^ \prime}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat L_+|l,m\rangle=C_{lm}|l,m+1\rangle\)</span></p></li>
+<li><p>Norm: <span class="math notranslate nohighlight">\(\parallel\hat L_+|l,m\rangle\parallel^2=\langle l,m|(\hat L_+)^\dagger\hat L_+|l,m\rangle\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\parallel\hat L_+|l,m\rangle\parallel^2=\langle l,m|\hat{\vec L}^2-\hat L_z^2+\frac{1}{2}[\hat L_-,\hat L_+]|l,m\rangle\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\parallel\hat L_+|l,m\rangle\parallel^2=\langle l,m|\hat{\vec L}^2-\hat L_z^2+\hat L_z|l,m\rangle\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\parallel\hat L_+|l,m\rangle\parallel^2=\hbar^2\langle l,m|l(l+1)-m^2-m|l,m\rangle\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(C_{lm}^2=\hbar^2(l(l+1)-m(m+1))\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(C_{lm}=\hbar\sqrt{l(l+1)-m(m+1)}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(C_{lm}=\hbar\sqrt{(l-m)(l+1+m)}\)</span></p></li>
+<li><p>For the lowering operator, we follow through the same steps and find <span class="math notranslate nohighlight">\(C_{lm}^\prime=\hbar(\sqrt{(l+m)(l+1-m)})\)</span></p></li>
+</ul>
+</li>
+<li><p>Constructing the eigenstates</p>
+<ul>
+<li><p>Lowest-weight state: <span class="math notranslate nohighlight">\(|l,-l+1\rangle=\frac{1}{\sqrt{2l\cdot1}}\frac{\hat L_+}{\hbar}|l,-l\rangle\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(|l,-l+2\rangle=\frac{1}{\sqrt{2l\cdot1\cdot(2l-1)\cdot2}}\begin{pmatrix}\frac{\hat L_+}{\hbar}\end{pmatrix}^2|l,-l\rangle\)</span></p></li>
+<li><p>Pattern: <span class="math notranslate nohighlight">\(|l,-l+k\rangle=\frac{1}{\sqrt{2l\cdot(2l-1)\cdots(2l-k+1)\cdot k!}}\begin{pmatrix}\frac{\hat L_+}{\hbar}\end{pmatrix}^k|l,-l\rangle\)</span></p></li>
+<li><p>Replace <span class="math notranslate nohighlight">\(k\)</span> by <span class="math notranslate nohighlight">\(l+m\)</span>: <span class="math notranslate nohighlight">\(|l,m\rangle=\sqrt{\frac{(l-m)!}{(2l)!(l+m)!}}\begin{pmatrix}\frac{\hat L_+}{\hbar}\end{pmatrix}^{l+m}|l,-l \rangle\)</span></p></li>
+</ul>
+</li>
+<li><p>Summary</p>
+<ul>
+<li><p>For each l, we have <span class="math notranslate nohighlight">\(2l+1\)</span> “<span class="math notranslate nohighlight">\(m\)</span>” states <span class="math notranslate nohighlight">\(|l,m\rangle\)</span> with <span class="math notranslate nohighlight">\(-l\leq m\leq l\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\vec L}^2|l,m\rangle=\hbar^2l(l+1)|l,m\rangle\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat L_z|l,m\rangle=\hbar m|l,m\rangle\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(|l,m\rangle=\sqrt{\frac{(l-m)!}{(2l)!(l+m)!}}\begin{pmatrix}\frac{\hat L_+}{\hbar}\end{pmatrix}^{l+m}|l,-l \rangle\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat L_+|l,m_\text{max}\rangle=0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat L_-|l,m_\text{min}\rangle=0\)</span></p></li>
+<li><p>Names for <span class="math notranslate nohighlight">\(l\)</span> values</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(l=0\)</span>: singlet</p></li>
+<li><p><span class="math notranslate nohighlight">\(l=\frac{1}{2}\)</span>: doublet</p></li>
+<li><p><span class="math notranslate nohighlight">\(l=1\)</span>: triplet</p></li>
+<li><p><span class="math notranslate nohighlight">\(l=\frac{3}{2}\)</span>: quartet</p></li>
+<li><p><span class="math notranslate nohighlight">\(l=2\)</span>: quintet</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Spherical Harmonics without Derivatives</p>
+<ul>
+<li><p>Spherical harmonics</p>
+<ul>
+<li><p>Spherical harmonics are coordinate-space wavefunctions of angular momentum.</p></li>
+<li><p>Hence, we use the eigenstates of the square of the angular momentum and <span class="math notranslate nohighlight">\(hat L_z\)</span>(<span class="math notranslate nohighlight">\(|l,m\rangle\)</span>) and the angular coordinates in position space(<span class="math notranslate nohighlight">\(|\theta,\phi\rangle\)</span>).</p></li>
+<li><p>Spherical harmonics wavefunctions: <span class="math notranslate nohighlight">\(Y_{l,m}(\theta,\phi)=\langle\theta,\phi|l,m\rangle\)</span></p></li>
+</ul>
+</li>
+<li><p>Angular coordinate states</p>
+<ul>
+<li><p>There are no operators corresponding to angles.</p></li>
+<li><p>In M6, we found that <span class="math notranslate nohighlight">\(\hat x\)</span> was not a good operator, but <span class="math notranslate nohighlight">\(\cos{\frac{2\pi\hat x}{L}}\)</span> and <span class="math notranslate nohighlight">\(\sin{\frac{2\pi\hat x}{L}}\)</span> were well defined because of the periodic boundary conditions on the circle.</p></li>
+<li><p>The same thing happens with angles, except <span class="math notranslate nohighlight">\(L=2\pi\)</span> applies.</p></li>
+<li><p>So, we can work with cosines and sines of the angle operators but not just the angle operators.</p></li>
+<li><p>If we define the radial coordinate by <span class="math notranslate nohighlight">\(\hat r^2=\hat r_x^2+\hat r_y^2+\hat r_z^2\)</span>, then the angle coordinates can be defined entirely in terms of Cartesian position operators.</p></li>
+<li><p>Trigonometric functions of states</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\cos{\hat \theta}=\frac{\hat r_z}{\hat r}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\sin{\hat \theta}=\frac{\hat \rho}{\hat r}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\cos{\hat \phi}=\frac{\hat r_x}{\hat \rho}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\sin{\hat \phi}=\frac{\hat r_y}{\hat \rho}\)</span></p></li>
+</ul>
+</li>
+<li><p>The angular coordinate states are eigenvectors of these operators.</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\cos{\hat \theta}|\theta,\phi\rangle=\cos{\theta}|\theta,\phi\rangle\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\sin{\hat \theta}|\theta,\phi\rangle=\sin{\theta}|\theta,\phi\rangle\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\cos{\hat \phi}|\theta,\phi\rangle=\cos{\phi}|\theta,\phi\rangle\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\sin{\hat \phi}|\theta,\phi\rangle=\sin{\phi}|\theta,\phi\rangle\)</span></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>North pole states</p>
+<ul>
+<li><p>We showed how to determine these states from the north-pole states, which points along the positive z-axis.</p></li>
+<li><p>It is denoted by <span class="math notranslate nohighlight">\(|0_\theta,0_\phi\rangle\)</span>, even though the <span class="math notranslate nohighlight">\(\phi\)</span> value is arbitrary there.</p>
+<ul>
+<li><p>This ends up streamlining the equations.</p></li>
+</ul>
+</li>
+<li><p>We construct different states from the north-pole states by applying two rotations: <span class="math notranslate nohighlight">\(\theta\)</span> about the y-axis followed by <span class="math notranslate nohighlight">\(\phi\)</span> about the z-axis.</p></li>
+<li><p>So, <span class="math notranslate nohighlight">\(\langle\theta,\phi|=\langle0_\theta,0_\phi|e^{\frac{i}{\hbar}\theta\hat L_y}e^{\frac{i}{\hbar}\phi\hat L_z}\)</span> and <span class="math notranslate nohighlight">\(|\theta,\phi\rangle=e^{-\frac{i}{\hbar}\phi\hat L_z}e^{-\frac{i}{\hbar}\theta\hat L_y}|0_\theta,0_\phi\rangle\)</span></p></li>
+</ul>
+</li>
+<li><p>Constructing spherical harmonics</p>
+<ul>
+<li><p>Spherical harmonics: <span class="math notranslate nohighlight">\(Y_{lm}(\theta,\phi)=\langle\theta,\phi|l,m\rangle=\langle0_\theta,0_\phi|e^{\frac{i}{\hbar}\theta\hat L_y}e^{\frac{i}{\hbar}\phi\hat L_z}|l,m\rangle\)</span></p></li>
+<li><p>Evaluate eigenstate: <span class="math notranslate nohighlight">\(Y_{lm}(\theta,\phi)=\langle\theta,\phi|l,m\rangle=e^{im\phi}\langle0_\theta,0_\phi|e^{\frac{i}{\hbar}\theta \hat L_y}|l,m\rangle\)</span></p></li>
+<li><p>Introduce complete set of states: <span class="math notranslate nohighlight">\(Y_{lm}(\theta,\phi)=\langle\theta,\phi|l,m\rangle=e^{im\phi}\langle0_\theta,0_\phi|\sum_{l^ \prime,m^\prime}|l^\prime,m^\prime\rangle\langle l^\prime,m^\prime|e^{\frac{i}{\hbar}\theta\hat L_y}|l,m\rangle\)</span></p></li>
+<li><p>Simplify and pull out summation: <span class="math notranslate nohighlight">\(Y_{lm}(\theta,\phi)=\langle\theta,\phi|l,m\rangle=e^{im\phi}\sum_{m^\prime}\langle0_\theta,0_ \phi||l,m^\prime\rangle\langle l,m^\prime|e^{\frac{i}{\hbar}\theta\hat L_y}|l,m\rangle\)</span></p>
+<ul>
+<li><p>The bra ket on the right is calle the rotation matrix and is equal to <span class="math notranslate nohighlight">\(d^(l)_{m^\prime m}(\theta)\)</span>.</p></li>
+</ul>
+</li>
+<li><p>Because <span class="math notranslate nohighlight">\(\phi\)</span> is arbitrary at the north-pole state, <span class="math notranslate nohighlight">\(\langle0_\theta,\phi|l,m\rangle=e^{im\phi}\langle0_\theta,0_\phi|l,m\rangle\)</span>.</p></li>
+</ul>
+</li>
+<li><p>Summary</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(Y_{lm}(\theta,\phi)=\langle\theta,\phi|l,m\rangle=e^{im\phi}(-1)^m\sqrt{\frac{(2l+1)(l-m)!}{4\pi(l+m)!}}P_l^m(\cos{\theta})\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Y_{l-m}(\theta,\phi)=(-1)^m[Y_{lm}(\theta,\phi)]^*\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(P_l^m(\cos\theta)=\left(\frac{\sin\theta}{2}\right )^m\,\,\sum_{n=0}^{l-m}(-1)^n\frac{(l+m+n)!}{(l-m-n)!(m+n)!n!}\left (\frac{1-\cos\theta}{2}\right )^n\)</span></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Problem Notes</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(Y_{lm}(\theta,\phi)=\sqrt{\frac{(2l+1)(l-m)!}{4\pi(l+m)!}}(-1)^m P_l^m(\cos\theta)e^{im\phi}~~\text{for}~~m\ge 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(P_l^m(\cos\theta)=\left(\frac{\sin\theta}{2}\right )^m\,\,\sum_{n=0}^{l-m}(-1)^n\frac{(l+m+n)!}{(l-m-n)!(m+n)!n!}\left (\frac{1-\cos\theta}{2}\right )^n\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Y_{l\,-|m|}(\theta,\phi)=(-1)^{|m|}\left [Y_{l|m|}(\theta,\phi)\right ]^*\)</span></p></li>
+<li><p>Spin operators: $<span class="math notranslate nohighlight">\(\begin{split}\hat{S}_z|\uparrow\rangle_z&amp;=\frac{\hbar}{2}|\uparrow\rangle_z\\\hat{S}_z|\downarrow\rangle_z&amp;=-\frac{\hbar}{2}|\downarrow\rangle_z\\\hat{S}_+|\uparrow\rangle_z&amp;=0\\\hat{S}_+|\downarrow\rangle_z&amp;=\hbar|\uparrow\rangle_z\\\hat{S}_-|\uparrow\rangle_z&amp;=\hbar|\downarrow\rangle_z\\\hat{S}_-|\downarrow_z\rangle&amp;=0\\\hat{S}_{x} &amp;= \frac{1}{2}(\hat{S}_+ + \hat{S}_-)\\\hat{S}_{y} &amp;= \frac{1}{2i}(\hat{S}_+ - \hat{S}_-)\\\hat{S}_+&amp;=\hat{S}_x+i\hat{S}_y\\\hat{S}_-&amp;=\hat{S}_x-i\hat{S}_y\\\hat{\vec{S}}^2&amp;=\hat{S}_x^2+\hat{S}_y^2+\hat{S}_z^2\\&amp;=\frac{1}{2}\left (\hat{S}_+\hat{S}_-+\hat{S}_-\hat{S}_+\right )+\hat{S}_z\hat{S}_z\end{split}\)</span>$</p></li>
+<li><p>Total spin operator: <span class="math notranslate nohighlight">\(\hat{S}_{\rm tot}=\hat{\vec{S}}_{(1)}+\hat{\vec{S}}_{(2)}\)</span></p></li>
+<li><p>Square of total spin operator: <span class="math notranslate nohighlight">\(\hat{\vec{S}}_{\rm tot}^2=\hat{\vec{S}}_{(1)}^2+\hat{\vec{S}}_{(2)}^2+\hat{S}_+^{(1)}\hat{S}_-^{(2)}+\hat{S}_-^{(1)}\hat{S}_+^{(2)}+2\hat{S}_z^{(1)}\hat{S}_z^{(2)}\)</span></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Orthogonality</span>
+<span class="n">var</span><span class="p">(</span><span class="s1">&#39;theta phi&#39;</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="n">pi</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="mi">1</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">pi</span><span class="p">))</span>                                                                        <span class="c1"># l,m,l&#39;,m&#39;=2,0,0,0</span>
+<span class="n">s</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="n">pi</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="mi">1</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">pi</span><span class="p">),</span><span class="n">theta</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">pi</span><span class="p">))</span>                                                   <span class="c1"># integral over theta</span>
+<span class="n">s</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">15</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">))</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="o">*</span><span class="n">phi</span><span class="p">)</span><span class="o">*</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">15</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">))</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="o">*</span><span class="n">phi</span><span class="p">))</span>                           <span class="c1"># l,l,l&#39;,m&#39;=2,2,2,-2</span>
+<span class="n">s</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">15</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">))</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="o">*</span><span class="n">phi</span><span class="p">)</span><span class="o">*</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">15</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">))</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="o">*</span><span class="n">phi</span><span class="p">),</span><span class="n">theta</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">pi</span><span class="p">))</span>      <span class="c1"># integral over theta</span>
+<span class="n">s</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">15</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">))</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="o">*</span><span class="n">phi</span><span class="p">)</span><span class="o">*</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">15</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">))</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="o">*</span><span class="n">phi</span><span class="p">),</span><span class="n">phi</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">))</span>      <span class="c1"># integral over phi</span>
 </pre></div>
 </div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Particle on a circle</span>
+<span class="n">var</span><span class="p">(</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="o">-</span><span class="n">k</span><span class="o">*</span><span class="n">tan</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">))</span>
+<span class="n">s</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="n">cot</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">34.53</span><span class="o">/</span><span class="mi">10</span><span class="o">^</span><span class="mi">9</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.45300000000000e-8
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">(</span><span class="n">n</span><span class="p">(</span><span class="n">hbar</span><span class="o">^</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">80</span><span class="o">*</span><span class="n">m_c</span><span class="o">*</span><span class="n">a</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="mi">10</span><span class="o">^</span><span class="mi">7</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 3.45228669079009 \qquad   \]</div>
 </div>
 </div>
 </section>
@@ -1727,9 +2412,6 @@ Percentage error for 1.05000000000000x_0: 2.73552333491867
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/45267c6411ec75ce0d74396b451a3ade0d882b5d036f12a0adc9975b880c9033.png" src="_images/45267c6411ec75ce0d74396b451a3ade0d882b5d036f12a0adc9975b880c9033.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1748,9 +2430,6 @@ Percentage error for 1.05000000000000x_0: 2.73552333491867
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/e74875f4bb38779e3af86b1874ae7d8f6737bb415fe634d97bbe0c72d6641b38.png" src="_images/e74875f4bb38779e3af86b1874ae7d8f6737bb415fe634d97bbe0c72d6641b38.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1763,11 +2442,6 @@ Percentage error for 1.05000000000000x_0: 2.73552333491867
 <span class="c1"># Get the measurement counts</span>
 <span class="n">counts</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">get_counts</span><span class="p">(</span><span class="n">qc</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">counts</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;1&#39;: 1000}
 </pre></div>
 </div>
 </div>
@@ -1785,9 +2459,6 @@ Percentage error for 1.05000000000000x_0: 2.73552333491867
 <span class="n">qc</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="s1">&#39;mpl&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/7aca276781e5df156a3c838fa003306135cca6862de6ec8ab2302e6aaa9a42f5.png" src="_images/7aca276781e5df156a3c838fa003306135cca6862de6ec8ab2302e6aaa9a42f5.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1808,11 +2479,6 @@ Percentage error for 1.05000000000000x_0: 2.73552333491867
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;1&#39;: 1000}
-</pre></div>
-</div>
-</div>
 </div>
 <p>X，Y，Z，P gates</p>
 <div class="cell docutils container">
@@ -1822,71 +2488,6 @@ Percentage error for 1.05000000000000x_0: 2.73552333491867
 <span class="n">qc</span><span class="o">.</span><span class="n">p</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c1"># try gates: qc.x(0), qc.y(0), qc.z(0), qc.p(pi/2, 0)</span>
 
 <span class="n">qc</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="s1">&#39;mpl&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-
-<span class="ne">CircuitError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
-
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># create a quantum circuit with one qubit and one bit</span>
-
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">qc</span> <span class="o">=</span> <span class="n">QuantumCircuit</span><span class="p">(</span><span class="n">Integer</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
-
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">qc</span><span class="o">.</span><span class="n">p</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="n">Integer</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">Integer</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span> <span class="c1"># try gates: qc.x(0), qc.y(0), qc.z(0), qc.p(pi/2, 0)</span>
-
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">qc</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="s1">&#39;mpl&#39;</span><span class="p">)</span>
-
-
-
-<span class="nn">File ~/miniconda3/envs/sage/lib/python3.12/site-packages/qiskit/circuit/quantumcircuit.py:5004,</span> in <span class="ni">QuantumCircuit.p</span><span class="nt">(self, theta, qubit)</span>
-
-<span class="g g-Whitespace">   </span><span class="mi">4992</span> <span class="k">def</span><span class="w"> </span><span class="nf">p</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">theta</span><span class="p">:</span> <span class="n">ParameterValueType</span><span class="p">,</span> <span class="n">qubit</span><span class="p">:</span> <span class="n">QubitSpecifier</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">InstructionSet</span><span class="p">:</span>
-
-<span class="g g-Whitespace">   </span><span class="mi">4993</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Apply :class:`~qiskit.circuit.library.PhaseGate`.</span>
-
-<span class="g g-Whitespace">   </span><span class="mi">4994</span><span class="sd"> </span>
-
-<span class="g g-Whitespace">   </span><span class="mi">4995</span><span class="sd">     For the full matrix form of this gate, see the underlying gate documentation.</span>
-
-<span class="sd">   (...)</span>
-
-<span class="g g-Whitespace">   </span><span class="mi">5002</span><span class="sd">         A handle to the instructions created.</span>
-
-<span class="g g-Whitespace">   </span><span class="mi">5003</span><span class="sd">     &quot;&quot;&quot;</span>
-
-<span class="ne">-&gt; </span><span class="mi">5004</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_append_standard_gate</span><span class="p">(</span><span class="n">StandardGate</span><span class="o">.</span><span class="n">Phase</span><span class="p">,</span> <span class="p">[</span><span class="n">qubit</span><span class="p">],</span> <span class="p">(</span><span class="n">theta</span><span class="p">,))</span>
-
-
-
-<span class="nn">File ~/miniconda3/envs/sage/lib/python3.12/site-packages/qiskit/circuit/quantumcircuit.py:2644,</span> in <span class="ni">QuantumCircuit._append_standard_gate</span><span class="nt">(self, op, qargs, params, label)</span>
-
-<span class="g g-Whitespace">   </span><span class="mi">2642</span> <span class="n">expanded_qargs</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_qbit_argument_conversion</span><span class="p">(</span><span class="n">qarg</span><span class="p">)</span> <span class="k">for</span> <span class="n">qarg</span> <span class="ow">in</span> <span class="n">qargs</span> <span class="ow">or</span> <span class="p">[]]</span>
-
-<span class="g g-Whitespace">   </span><span class="mi">2643</span> <span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
-
-<span class="ne">-&gt; </span><span class="mi">2644</span>     <span class="n">Gate</span><span class="o">.</span><span class="n">validate_parameter</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="n">param</span><span class="p">)</span>
-
-<span class="g g-Whitespace">   </span><span class="mi">2646</span> <span class="n">instructions</span> <span class="o">=</span> <span class="n">InstructionSet</span><span class="p">(</span><span class="n">resource_requester</span><span class="o">=</span><span class="n">circuit_scope</span><span class="o">.</span><span class="n">resolve_classical_resource</span><span class="p">)</span>
-
-<span class="g g-Whitespace">   </span><span class="mi">2647</span> <span class="k">for</span> <span class="n">qarg</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">Gate</span><span class="o">.</span><span class="n">broadcast_arguments</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="n">expanded_qargs</span><span class="p">,</span> <span class="p">[]):</span>
-
-
-
-<span class="nn">File ~/miniconda3/envs/sage/lib/python3.12/site-packages/qiskit/circuit/gate.py:261,</span> in <span class="ni">Gate.validate_parameter</span><span class="nt">(self, parameter)</span>
-
-<span class="g g-Whitespace">    </span><span class="mi">259</span>     <span class="k">return</span> <span class="n">parameter</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
-
-<span class="g g-Whitespace">    </span><span class="mi">260</span> <span class="k">else</span><span class="p">:</span>
-
-<span class="ne">--&gt; </span><span class="mi">261</span>     <span class="k">raise</span> <span class="n">CircuitError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid param type </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">parameter</span><span class="p">)</span><span class="si">}</span><span class="s2"> for gate </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
-
-
-
-<span class="ne">CircuitError</span>: &quot;Invalid param type &lt;class &#39;sage.symbolic.expression.Expression&#39;&gt; for gate p.&quot;
 </pre></div>
 </div>
 </div>
@@ -1904,9 +2505,6 @@ Percentage error for 1.05000000000000x_0: 2.73552333491867
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/404ea2c513b47a2b55f65e833d937d70da06e6d8943e4caa83ce9f4cae85888f.png" src="_images/404ea2c513b47a2b55f65e833d937d70da06e6d8943e4caa83ce9f4cae85888f.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1920,15 +2518,6 @@ Percentage error for 1.05000000000000x_0: 2.73552333491867
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="n">np</span><span class="o">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">precision</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">suppress</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">U</span><span class="p">)</span> <span class="c1"># unitary matrix</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Operator([[0.+0.j, 0.+0.j, 0.+0.j, 1.+0.j],
-          [1.+0.j, 0.+0.j, 0.+0.j, 0.+0.j],
-          [0.+0.j, 1.+0.j, 0.+0.j, 0.+0.j],
-          [0.+0.j, 0.+0.j, 1.+0.j, 0.+0.j]],
-         input_dims=(2, 2), output_dims=(2, 2))
 </pre></div>
 </div>
 </div>
@@ -1953,12 +2542,6 @@ Percentage error for 1.05000000000000x_0: 2.73552333491867
 <span class="n">qc</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="s1">&#39;mpl&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;01&#39;: 1000}
-</pre></div>
-</div>
-<img alt="_images/0c1c4bde024613d483f2df2a5a0728d74f63345c7f4029a08499976b18f281e1.png" src="_images/0c1c4bde024613d483f2df2a5a0728d74f63345c7f4029a08499976b18f281e1.png" />
 </div>
 </div>
 </section>
@@ -2043,6 +2626,7 @@ Percentage error for 1.05000000000000x_0: 2.73552333491867
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m4-advanced-quantum-ideas-with-light">M4. Advanced Quantum Ideas with Light</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m5-quantum-operators-and-their-identities">M5. Quantum Operators and their Identities</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m6-qm-of-the-simple-harmonic-oscillator">M6. QM of the Simple Harmonic Oscillator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m7-quantum-angular-momentum-and-hydrogen">M7. Quantum Angular Momentum and Hydrogen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qc">QC</a></li>
 </ul>
   </nav></div>
