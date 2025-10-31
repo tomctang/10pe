@@ -2311,6 +2311,55 @@ document.write(`
 </ul>
 </li>
 <li><p>Because <span class="math notranslate nohighlight">\(\phi\)</span> is arbitrary at the north-pole state, <span class="math notranslate nohighlight">\(\langle0_\theta,\phi|l,m\rangle=e^{im\phi}\langle0_\theta,0_\phi|l,m\rangle\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(Y_{lm}(\theta,\phi)=\langle\theta,\phi|l,m\rangle=e^{im\phi}\langle0_\theta,0_\phi||l,0\rangle\langle l,0|e^{\frac{i}{\hbar}\theta\hat L_y}|l,m\rangle\)</span></p>
+<ul>
+<li><p>The first term is the normalization constant and the second term is the matrix element.</p></li>
+</ul>
+</li>
+<li><p>Rewrite <span class="math notranslate nohighlight">\(\hat L_y=\frac{1}{2i}(\hat L_+-\hat L_-)\)</span>.</p></li>
+<li><p>If we use BCH, the commutators go on forever without a pattern, so we use exponential disentangling.</p></li>
+</ul>
+</li>
+<li><p>Exponential disentangling</p>
+<ul>
+<li><p>Rewrite: <span class="math notranslate nohighlight">\(\langle l,0|e^{\frac{i}{\hbar}\theta\hat L_y}|l,m\rangle=\langle l,0|e^{\frac{\theta}{2\hbar}(\hat L_+-\hat L_-)}|l,m\rangle\)</span></p></li>
+<li><p>Exponential disentangling: <span class="math notranslate nohighlight">\(\langle l,0|e^{\frac{i}{\hbar}\theta\hat L_y}|l,m\rangle=\langle l,0|e^{-\tan{(\frac{\theta}{2})}\frac{\hat L_-}{\hbar}}e^{\ln{(\cos^2{\frac{\theta}{2}})}\frac{\hat L_z}{\hbar}}e^{\tan{(\frac{\theta}{2})}\frac{\hat L_+}{\hbar}}|l,m\rangle\)</span></p>
+<ul>
+<li><p>The expansion for the exponential of the raising operator is a finite polynomial because the raising operator of the state <span class="math notranslate nohighlight">\(|l,l\rangle\)</span> is 0.</p></li>
+<li><p>We evaluate the exponential of <span class="math notranslate nohighlight">\(\hat L_z\)</span> because all the states are eigenstates of <span class="math notranslate nohighlight">\(\hat L_z\)</span>.</p></li>
+<li><p>We only care about the value for <span class="math notranslate nohighlight">\(|l,0\rangle\)</span>, so we only count one term for the exponential of the lowering operator.</p></li>
+</ul>
+</li>
+<li><p>Use <span class="math notranslate nohighlight">\(\frac{\hat L_+}{\hbar}|l,m\rangle=\sqrt{(l-m)(l+m+1)}|l,m+1\rangle\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(e^{\tan{(\frac{\theta}{2})}\frac{\hat L_+}{\hbar}}|l,m\rangle=\sum_{n=0}^\infty\frac{1}{n!}(\tan{(\frac{\theta}{2})})^n(\frac{\hat L_+}{\hbar})^n|l,m\rangle\)</span></p></li>
+<li><p>Assume <span class="math notranslate nohighlight">\(m\geq0\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\((\frac{\hat L_+}{\hbar})^n|l,m\rangle=\Pi_{r=1}^n\sqrt{(l-m-r+1)(l+m+r)}|l,m+n\rangle\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(e^{\ln{(\cos^2{\frac{\theta}{2}})}\frac{\hat L_z}{\hbar}}e^{\tan{(\frac{\theta}{2})}\frac{\hat L_+}{\hbar}}|l,m\rangle=\sum_{n=0}^{l-m}\frac{1}{n!}(\tan{(\frac{\theta}{2})})^n\Pi_{r=1}^n\sqrt{(l-m-r+1)(l+m+r)}e^{\ln{(\cos^2{\frac{\theta}{2}})}\frac{\hat L_z}{\hbar}}|l,m\rangle\)</span></p></li>
+<li><p>Evaluate eigenstate: <span class="math notranslate nohighlight">\(e^{\ln{(\cos^2{\frac{\theta}{2}})}\frac{\hat L_z}{\hbar}}e^{\tan{(\frac{\theta}{2})}\frac{\hat L_+}{\hbar}}|l,m\rangle=\sum_{n=0}^{l-m}\frac{1}{n!}(\tan{(\frac{\theta}{2})})^n\Pi_{r=1}^n\sqrt{(l-m-r+1)(l+m+r)}e^{\ln{(\cos^2{\frac{\theta}{2}})}(m+n)}|l,m\rangle\)</span></p></li>
+<li><p>Evaluate bra-ket: <span class="math notranslate nohighlight">\(\langle l,0|e^{-\tan{(\frac{\theta}{2})}\frac{\hat L_-}{\hbar}}e^{\ln{(\cos^2{\frac{\theta}{2}})}\frac{\hat L_z}{\hbar}}e^{\tan{(\frac{\theta}{2})}\frac{\hat L_+}{\hbar}}|l,m\rangle=\sum_{n=0}^{l-m}\frac{1}{n!}\tan^n{\frac{\theta}{2}}\cos^{2m+2n}{\frac{\theta}{2}}\Pi_{r=1}^{n}\sqrt{(l-m-r+1)(l+m+r)}|l,m+n\rangle\)</span></p></li>
+<li><p>Bring in last factor: <span class="math notranslate nohighlight">\(\langle l,0|e^{-\tan{(\frac{\theta}{2})}\frac{\hat L_-}{\hbar}}e^{\ln{(\cos^2{\frac{\theta}{2}})}\frac{\hat L_z}{\hbar}}e^{\tan{(\frac{\theta}{2})}\frac{\hat L_+}{\hbar}}|l,m\rangle=\sum_{n=0}^{l-m}\frac{1}{n!}\tan^n{\frac{\theta}{2}}\cos^{2m+2n}{\frac{\theta}{2}}\Pi_{r=1}^n\sqrt{(l-m-r+1)(l+m+r)}\langle l,0|e^{-\tan{(\frac{\theta}{2})}\frac{\hat L_-}{\hbar}}|l,m+n\rangle\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\langle l,0|e^{-\tan{(\frac{\theta}{2})}\frac{\hat L_-}{\hbar}}e^{\ln{(\cos^2{\frac{\theta}{2}})}\frac{\hat L_z}{\hbar}}e^{\tan{(\frac{\theta}{2})}\frac{\hat L_+}{\hbar}}|l,m\rangle=\sum_{n=0}^{l-m}\frac{1}{n!(m+n)!}\tan^n{\frac{\theta}{2}}\cos^{2m+2n}{\frac{\theta}{2}}(-\tan{\frac{\theta}{2}})^{m+n}\\\Pi_{r=1}^n\sqrt{(l-m-r+1)(l+m+r)}\Pi_{s=1}^{m+n}\sqrt{(l+m+n-s+1)(l-m-n+s)}\)</span></p></li>
+<li><p>Simplify: <span class="math notranslate nohighlight">\(\langle l,0|e^{-\tan{(\frac{\theta}{2})}\frac{\hat L_-}{\hbar}}e^{\ln{(\cos^2{\frac{\theta}{2}})}\frac{\hat L_z}{\hbar}}e^{\tan{(\frac{\theta}{2})}\frac{\hat L_+}{\hbar}}|l,m\rangle=\sum_{n=0}^{l-m}\frac{(-1)^{m+n}}{n!(m+n)!}(\frac{1}{2})^m\sin^m{\theta}(\sin^2{\frac{\theta}{2}})^n\Pi_{r=1}^n\sqrt{(l-m-r+1)(l+m+r)}\Pi_{s=1}^{m+n}\sqrt{(l+m+n-s+1)(l-m-n+s)}\)</span></p></li>
+<li><p>Evaluate products and simplify: <span class="math notranslate nohighlight">\(\langle l,0|e^{-\tan{(\frac{\theta}{2})}\frac{\hat L_-}{\hbar}}e^{\ln{(\cos^2{\frac{\theta}{2}})}\frac{\hat L_z}{\hbar}}e^{\tan{(\frac{\theta}{2})}\frac{\hat L_+}{\hbar}}|l,m\rangle=\sum_{n=0}^{l-m}\frac{(-\frac{1}{2})^{m+n}}{n!(m+n)!}\sin^m{\theta}(1-\cos{\theta})^n\frac{(l+m+n)!}{(l-m-n)!}\sqrt{\frac{(l-m)!}{(l+m)!}}\)</span></p></li>
+</ul>
+</li>
+<li><p>Legendre</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(Y_{lm}(\theta,\phi)=\langle\theta,\phi|l,m\rangle=\langle0_\theta,0_\phi||l,0\rangle e^{im\phi}(-\frac{1}{2})^m\sin^m{\theta}\sqrt{\frac{(l-m)!}{(l+m)!}}\sum_{n=0}^{l-m}\frac{(-\frac{1}{2})^n}{n!(m+n)!}(1-\cos{\theta})^n\frac{(l+m+n)!}{(l-m-n)!}\)</span></p></li>
+<li><p>Associated Legendre polynomials: <span class="math notranslate nohighlight">\(P_l^m(\cos{\theta})=(\frac{\sin{\theta}}{2})^m\sum_{n=0}^{l-m}(-1)^n\frac{(l+m+n)!}{(l-m-n)!(m+n)!n!}(\frac{1-\cos{\theta}}{2})^n\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Y_{lm}(\theta,\phi)=\langle0_\theta,0_\phi||l,0\rangle e^{im\phi}(-1)^m\sqrt{\frac{(l-m)!}{(l+m)!}}P_l^m(\cos{\theta})\)</span></p></li>
+<li><p>For <span class="math notranslate nohighlight">\(m\leq0\)</span>, <span class="math notranslate nohighlight">\(Y_{l-m}(\theta,\phi)=(-1)^m[Y_{lm}(\theta,\phi)]^*\)</span>.</p></li>
+<li><p>Normalisation constant</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(P_l^l(\cos{\theta})=\frac{\sin^l{\theta}}{2^l}\frac{(2l)!}{l!}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Y_ll(\theta,\phi)=\langle0_\theta,0_\phi||l,0\rangle e^{il\phi}(-1)^m\frac{\sin^l{theta}}{2^l}\frac{\sqrt{(2l)!}}{l!}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(1=\int_0^\pi d\theta\sin^{2l+1}{\theta}\frac{(2l)!}{2^{2l}(l!)^2}\int_0^{2\pi}d\phi|\langle0_\theta,0_\phi||l,0\rangle|^2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(1=\frac{2\pi(2l)!}{4^l(l!)^2}|\langle0_\theta,0_\phi||l,0\rangle|^2\int_0^\pi\sin^{2l+1}{\theta}\)</span></p></li>
+<li><p>Evaluate integral: <span class="math notranslate nohighlight">\(1=\frac{2\pi(2l)!}{4^l(l!)^2}|\langle0_\theta,0_\phi||l,0\rangle|^2\frac{2^{2l+1}(l!)^2}{(2l+1)!}\)</span></p></li>
+<li><p>Simplify: <span class="math notranslate nohighlight">\(1=\frac{4\pi}{2l+1}|\langle0_\theta,0_\phi||l,0\rangle|^2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\langle0_\theta,0_\phi||l,0\rangle=\sqrt{\frac{2l+1}{4\pi}}\)</span></p></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><p>Summary</p>
@@ -2321,6 +2370,82 @@ document.write(`
 </ul>
 </li>
 </ul>
+</li>
+</ul>
+<ul>
+<li><p>Schroedinger Factorisation Method</p>
+<ul class="simple">
+<li><p>Intro</p>
+<ul>
+<li><p>This is an algebraic method developed by Schroedinger in 1940-41 to solve general quantum problems.</p></li>
+<li><p>It can solve all known analytically solvable problems.</p></li>
+<li><p>There are ten steps for bound states and one for continuum solutions.</p>
+<ul>
+<li><p>Bound states are states that less energy than maximum of the potential and they tend to be localised in space.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ol class="arabic">
+<li><p>Factorisation chain</p>
+<ul class="simple">
+<li><p>We construct a factorisation chain, creating auxiliary Hamiltonians <span class="math notranslate nohighlight">\(\hat H_i\)</span> that we also solve in this process.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat H=\hat H_0=\hat A_0^\dagger\hat A_0+E_0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat H_1=\hat A_0\hat A_0^\dagger+E_0=\hat A_1^\dagger\hat A_1+E_1\)</span></p></li>
+<li><p>Repeat</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\hat H_2=\hat A_1\hat A_1^\dagger+E_1=\hat A_2^\dagger\hat A_2+E_2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat H_3=\hat A_2\hat A_2^\dagger+E_2=\hat A_3^\dagger\hat A_3+E_3\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat H_{i+1}=\hat A_i\hat A_i^\dagger+E_i=\hat A_{i+1}^\dagger \hat A_{i+1}+E_{i+1}\)</span></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Intertwining relation</p>
+<ul class="simple">
+<li><p>For intertwining, we move an auxiliary Hamiltonian past an auxiliary raising operator: <span class="math notranslate nohighlight">\(\hat H_i\hat A_i^\dagger=\hat A_i^\dagger\hat H_{i+1}\)</span></p></li>
+<li><p>Proof</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\hat H_i\hat A_i^\dagger=(\hat A_i^\dagger\hat A_i+E_i)\hat A_i^\dagger\)</span></p></li>
+<li><p>Move <span class="math notranslate nohighlight">\(\hat A_i^\dagger\)</span> into the parenthesis: <span class="math notranslate nohighlight">\(\hat H_i\hat A_i^\dagger=(\hat A_i^\dagger\hat A_i\hat A_i^\dagger+E_i\hat A_i^\dagger)\)</span></p></li>
+<li><p>Switch order: <span class="math notranslate nohighlight">\(\hat H_i\hat A_i^\dagger=(\hat A_i^\dagger\hat A_i\hat A_i^\dagger+\hat A_i^\dagger E_i)\)</span></p></li>
+<li><p>Move <span class="math notranslate nohighlight">\(\hat A_i^\dagger\)</span> out of the parenthesis: <span class="math notranslate nohighlight">\(\hat H_i\hat A_i^\dagger=\hat A_i^\dagger(\hat A_i\hat A_i^\dagger+E_i)\)</span></p></li>
+<li><p>Substitute Hamiltonian: <span class="math notranslate nohighlight">\(\hat H_i\hat A_i^\dagger=\hat A_i^\dagger\hat H_{i+1}\)</span></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Subsidiary condition</p>
+<ul class="simple">
+<li><p>Auxiliary Hamiltonian: <span class="math notranslate nohighlight">\(\hat H_i=\hat A_i^\dagger\hat A_i+E_i\)</span></p></li>
+<li><p>Ground state satisfies subsidiary condition: <span class="math notranslate nohighlight">\(\hat A_i|\phi_i\rangle=0\)</span></p>
+<ul>
+<li><p>This subsidiary condition has auxiliary ground state energy E_i.</p></li>
+<li><p>We choose <span class="math notranslate nohighlight">\(\phi\)</span> to be normalised(<span class="math notranslate nohighlight">\(\langle\phi_i|\phi_i\rangle=1\)</span>).</p></li>
+</ul>
+</li>
+<li><p>Recall that <span class="math notranslate nohighlight">\(\hat A_i^\dagger\hat A_i\)</span> is a semidefinite operator, so its smallest expectation value is 0.</p></li>
+<li><p>Hence, if we satisfy the subsidiary condition, we have the minimal energy eigenstate, <span class="math notranslate nohighlight">\((\hat A_i^\dagger\hat A_i+E_i)|\phi_i\rangle=E_i|\phi_i\rangle\)</span>.</p></li>
+<li><p>Proof: <span class="math notranslate nohighlight">\((\hat A_i^\dagger\hat A_i+E_i)|\phi_i\rangle=\hat A_i^\dagger\hat A_i|\phi_i\rangle+E_i|\phi_i\rangle=\hat A_i^\dagger(\hat A_i|\phi_i\rangle)+E_i|\phi_i\rangle=\hat A_i^\dagger(0)+E_i|\phi_i\rangle=E_i|\phi_i\rangle\)</span></p></li>
+</ul>
+</li>
+<li><p>All energy eigenstates</p>
+<ul class="simple">
+<li><p>Claim: <span class="math notranslate nohighlight">\(|\psi_i\rangle=\hat A_1^\dagger\hat A_2^\dagger\hat A_3^\dagger\cdots\hat A_{i-1}^\dagger|\phi_i\rangle\)</span> is the excited state of <span class="math notranslate nohighlight">\(\hat H_0\)</span> with energy <span class="math notranslate nohighlight">\(E_i\)</span>.</p></li>
+<li><p>Proof</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\hat H_0|\psi_i\rangle=\hat H_0\hat A_1^\dagger\hat A_2^\dagger\hat A_3^\dagger\cdots\hat A_{i-1}^\dagger|\phi_i\rangle\)</span></p></li>
+<li><p>Use intertwining: <span class="math notranslate nohighlight">\(\hat H_0|\psi_i\rangle=\hat A_1^\dagger\hat A_2^\dagger\hat A^3\dagger\cdots\hat A_{i-1}^\dagger\hat H_i|\phi_i\rangle\)</span></p></li>
+<li><p>Evaluate eigenstate: <span class="math notranslate nohighlight">\(\hat H_0|\psi_i\rangle=E_i\hat A_1^\dagger\hat A_2^\dagger\hat A^3\dagger\cdots\hat A_{i-1}^\dagger|\phi_i\rangle\)</span></p></li>
+<li><p>Use initial condition: <span class="math notranslate nohighlight">\(\hat H_0|\psi_i\rangle=E_i|\psi_i\rangle\)</span></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h2 class="rubric" id="energy-eigenvalues-are-increasing">Energy eigenvalues are increasing</h2>
+</li>
+</ol>
 </li>
 </ul>
 <p>Problem Notes</p>
