@@ -1430,10 +1430,10 @@ document.write(`
 <li><p>Multiply by secant to get the final formula.</p></li>
 </ul>
 </li>
-<li><p>Cosecant function: <span class="math notranslate nohighlight">\([\hat{p},\cosec{k\hat{x}}]=i\hbar k\cot{k\hat{x}}\cosec{k\hat{x}}\)</span></p>
+<li><p>Cosecant function: <span class="math notranslate nohighlight">\([\hat{p},\csc{k\hat{x}}]=i\hbar k\cot{k\hat{x}}\csc{k\hat{x}}\)</span></p>
 <ul>
-<li><p><span class="math notranslate nohighlight">\([\hat{p},\sin{k\hat{x}}\cosec{k\hat{x}}]=[\hat{p},\hat{\mathbb{I}}]=0\)</span></p></li>
-<li><p>Use Leibniz formula: <span class="math notranslate nohighlight">\(\sin{k\hat{x}}[\hat{p},\cosec{k\hat{x}}]+[\hat{p},\sin{k\hat{x}}]\cosec{k\hat{x}}=0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\([\hat{p},\sin{k\hat{x}}\csc{k\hat{x}}]=[\hat{p},\hat{\mathbb{I}}]=0\)</span></p></li>
+<li><p>Use Leibniz formula: <span class="math notranslate nohighlight">\(\sin{k\hat{x}}[\hat{p},\csc{k\hat{x}}]+[\hat{p},\sin{k\hat{x}}]\csc{k\hat{x}}=0\)</span></p></li>
 <li><p>Substitute, rearrange and multiply by cosecant.</p></li>
 </ul>
 </li>
@@ -1444,10 +1444,10 @@ document.write(`
 <li><p>Substitute and simplify.</p></li>
 </ul>
 </li>
-<li><p>Cotangent function: <span class="math notranslate nohighlight">\([\hat{p},\cot{k\hat{x}}]=i\hbar k(\cosec^2{k\hat{x}})\)</span></p>
+<li><p>Cotangent function: <span class="math notranslate nohighlight">\([\hat{p},\cot{k\hat{x}}]=i\hbar k(\csc^2{k\hat{x}})\)</span></p>
 <ul>
-<li><p><span class="math notranslate nohighlight">\([\hat{p},\cot{k\hat{x}}]=[\hat{p},\cos{k\hat{x}}\cosec{k\hat{x}}]\)</span></p></li>
-<li><p>Use Leibniz formula: <span class="math notranslate nohighlight">\([\hat{p},\cot{k\hat{x}}]=\cos{k\hat{x}}[\hat{p},\cosec{k\hat{x}}]+[\hat{p},\cos{k\hat{x}}]\cosec{k\hat{x}}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\([\hat{p},\cot{k\hat{x}}]=[\hat{p},\cos{k\hat{x}}\csc{k\hat{x}}]\)</span></p></li>
+<li><p>Use Leibniz formula: <span class="math notranslate nohighlight">\([\hat{p},\cot{k\hat{x}}]=\cos{k\hat{x}}[\hat{p},\csc{k\hat{x}}]+[\hat{p},\cos{k\hat{x}}]\sc{k\hat{x}}\)</span></p></li>
 <li><p>Substitute and simplify.</p></li>
 </ul>
 </li>
@@ -2387,7 +2387,7 @@ document.write(`
 </ul>
 </li>
 </ul>
-<ol class="arabic">
+<ol class="arabic simple">
 <li><p>Factorisation chain</p>
 <ul class="simple">
 <li><p>We construct a factorisation chain, creating auxiliary Hamiltonians <span class="math notranslate nohighlight">\(\hat H_i\)</span> that we also solve in this process.</p></li>
@@ -2443,7 +2443,60 @@ document.write(`
 </li>
 </ul>
 </li>
-<li><h2 class="rubric" id="energy-eigenvalues-are-increasing">Energy eigenvalues are increasing</h2>
+<li><p>Energy eigenvalues are increasing</p>
+<ul class="simple">
+<li><p>We first establish that <span class="math notranslate nohighlight">\(\hat A_{i+1}\ne\hat A_i^\dagger\)</span>.</p></li>
+<li><p>It is tempting for <span class="math notranslate nohighlight">\(\hat H_{i+1}=\hat A_i\hat A_i^\dagger+E_i=\hat A_{i+1}^\dagger\hat A_{i+1}+E_{i+1}\)</span> to choose <span class="math notranslate nohighlight">\(\hat A_{i+1}=\hat A_i^\dagger\)</span>, but if we do, then the factorisation terminates at the ith step.</p></li>
+<li><p>Proof</p>
+<ul>
+<li><p>Recall that <span class="math notranslate nohighlight">\(|\psi_{i+1}\rangle=\hat A_1^\dagger\hat A_2^\dagger\hat A_3^\dagger\cdots\hat A_i^\dagger|\phi_i\rangle\)</span>.</p></li>
+<li><p>But this state is 0 because of the subsidiary condition <span class="math notranslate nohighlight">\(\hat A_{i+1}|\phi_{i+1}\rangle=0\)</span></p></li>
+</ul>
+</li>
+<li><p>You might think this never happens, but this happens when a potential only has a finite number of bound states and when I use factorisation, it turns out that I can no longer get another bound state in my problem.</p></li>
+<li><p>This means that the chain will terminate if I choose <span class="math notranslate nohighlight">\(\hat A_{i+1}=\hat A_i^\dagger\)</span> so we can assume that <span class="math notranslate nohighlight">\(\hat A_{i+1}\ne\hat A_i^\dagger\)</span>, but the most important thing we need to assume is <span class="math notranslate nohighlight">\(\hat A_i^\dagger|\phi_{i+1}\rangle\ne0\)</span></p></li>
+<li><p>Now, to prove that the energy eigenvalues are increasing, we just need to show that <span class="math notranslate nohighlight">\(E_{i+1}&gt;E_i\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(E_{i+1}=\langle\phi_{i+1}|\hat H_{i+1}|\phi_{i+1}\rangle\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(E_{i+1}=\langle\phi_{i+1}|\hat A_i\hat A_i^\dagger+E_i|\phi_{i+1}\rangle\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(E_{i+1}=\langle\phi_{i+1}|\hat A_i\hat A_i^\dagger|\phi_{i+1}\rangle+E_i\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(E_{i+1}=\parallel\hat A_i^\dagger|\phi_{i+1}\rangle\parallel^2+E_i\)</span></p></li>
+<li><p>Since <span class="math notranslate nohighlight">\(\parallel\hat A_i^\dagger|\phi_{i+1}\langle\parallel^2\)</span> is nonnegative and it is nonzero, it must be positive so <span class="math notranslate nohighlight">\(E_{i+1}&gt;E_i\)</span>.</p></li>
+</ul>
+</li>
+<li><p>The superpotential is real</p>
+<ul class="simple">
+<li><p>Ladder operators: <span class="math notranslate nohighlight">\(\hat A_i=\frac{1}{\sqrt{2m}}(\hat p-i\hbar k_iW_i(k_i^\prime\hat x))\)</span></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(k_i\)</span> and <span class="math notranslate nohighlight">\(k_i^\prime\)</span> are wavenumbers.</p></li>
+<li><p><span class="math notranslate nohighlight">\(W_i\)</span> is the superpotential.</p></li>
+<li><p>We choose the wavenumbers so that the superpotential is dimensionless.</p></li>
+</ul>
+</li>
+<li><p>We now show that the superpotential must be a real valued function or <span class="math notranslate nohighlight">\(W(k^\prime\hat x)^\dagger=W(k^\prime\hat x)\)</span>.</p></li>
+<li><p>Proof</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\hbar kW(k^\prime\hat x)=\hat B_i\hat C\)</span>, where <span class="math notranslate nohighlight">\(hat B\)</span> and <span class="math notranslate nohighlight">\(hat C\)</span> are Hermitian.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat A^\dagger\hat A\propto(\hat p+i\hat B+\hat C)(\hat p-i\hat B+\hat C)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat A^\dagger\hat A\propto\hat p^2+\hat p\hat C+\hat C\hat p+\hat C^2+i[\hat B,\hat p+\hat C]+\hat B^2\)</span></p></li>
+<li><p>So, if we do not have linear terms in <span class="math notranslate nohighlight">\(\hat p\)</span>, we must have no <span class="math notranslate nohighlight">\(\hat C\)</span> term.</p></li>
+<li><p>Hence, the function <span class="math notranslate nohighlight">\(W\)</span> is real.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Factorisation is not unique</p>
+<ul class="simple">
+<li><p>There may be more than one factorisation chain. We saw this with the SHO, where we found two factorisation chains.</p></li>
+<li><p>Nothing in the procedure guarantees uniqueness and we have counterexamples.</p></li>
+</ul>
+</li>
+<li><p>Wavefunction nodes occur when <span class="math notranslate nohighlight">\(W(k^\prime\hat x)\)</span> diverges</p>
+<ul class="simple">
+<li><p>Auxiliary ground-state wavefunction: <span class="math notranslate nohighlight">\(\langle x|\phi_i\rangle=\phi_i(x)\)</span></p></li>
+<li><p>Subsidiary condition: <span class="math notranslate nohighlight">\(\hat p|\phi_i\rangle=i\hbar kW(k^\prime\hat x)|phi_i\rangle\)</span></p></li>
+<li><p>Multiply by <span class="math notranslate nohighlight">\(\langle x|\)</span>: <span class="math notranslate nohighlight">\(W(k^\prime x)=\frac{\langle x|\hat p|\phi_i\rangle}{i\hbar k\phi_i(x)}\)</span></p></li>
+<li><p>Hence, the superpotential diverges when the auxiliary ground state vanishes unless <span class="math notranslate nohighlight">\(\langle x|\hat p|\phi_i\rangle\)</span>.</p></li>
+</ul>
 </li>
 </ol>
 </li>
