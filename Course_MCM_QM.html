@@ -2048,12 +2048,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle -\frac{26.5416677684687}{\pi} - \frac{19.1000000000000}{{\left(\frac{0.926410742354928}{\pi} + 1\right)}^{\frac{3}{2}}} + 19.1000000000000 \qquad   \]</div>
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle -2.31089903760438 \qquad   \]</div>
-</div>
 </div>
 </section>
 <section id="m7-quantum-angular-momentum-and-hydrogen">
@@ -2495,10 +2489,72 @@ document.write(`
 <li><p>Auxiliary ground-state wavefunction: <span class="math notranslate nohighlight">\(\langle x|\phi_i\rangle=\phi_i(x)\)</span></p></li>
 <li><p>Subsidiary condition: <span class="math notranslate nohighlight">\(\hat p|\phi_i\rangle=i\hbar kW(k^\prime\hat x)|phi_i\rangle\)</span></p></li>
 <li><p>Multiply by <span class="math notranslate nohighlight">\(\langle x|\)</span>: <span class="math notranslate nohighlight">\(W(k^\prime x)=\frac{\langle x|\hat p|\phi_i\rangle}{i\hbar k\phi_i(x)}\)</span></p></li>
-<li><p>Hence, the superpotential diverges when the auxiliary ground state vanishes unless <span class="math notranslate nohighlight">\(\langle x|\hat p|\phi_i\rangle\)</span>.</p></li>
+<li><p>Hence, the superpotential diverges when the auxiliary ground state vanishes unless <span class="math notranslate nohighlight">\(\langle x|\hat p|\phi_i\rangle=0\)</span> at the same <span class="math notranslate nohighlight">\(x\)</span>.</p></li>
+<li><p>Claim: <span class="math notranslate nohighlight">\(\langle x|phi_i\rangle=\langle x|\hat p|\phi_i\rangle=0\)</span> is impossible.</p>
+<ul>
+<li><p>If we the equation is true, then <span class="math notranslate nohighlight">\(phi_i(x)=0\)</span> for all <span class="math notranslate nohighlight">\(x\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\langle x|\hat p^n|\phi_i\rangle=0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\langle x|\hat p^2|\phi_i\rangle=2m(E_i-V_i^\text{aux}(\hat x))\langle x||\phi_i\rangle\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\langle x|\hat p^3|\phi_i\rangle=2m(E_i-V_i^\text{aux}(x))\langle x|\hat p|\phi_i\rangle+2m\langle x|[\hat p,V_i^\text{aux}(\hat x)]|\phi_ i\rangle\)</span></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Superpotential is continuous even if the potential is not</p>
+<ul class="simple">
+<li><p>Suppose we have have a potential that is discontinuous at <span class="math notranslate nohighlight">\(x=x_0\)</span>.</p></li>
+<li><p>A requirement in QM is that the probability density and probability current are continuous. This says that <span class="math notranslate nohighlight">\(\langle\psi|x_0\rangle\langle x_0|\psi\rangle\)</span> and <span class="math notranslate nohighlight">\(\langle\psi|x_0\rangle\langle x_0|\hat p|\psi\rangle\)</span> must both be continuous.</p></li>
+<li><p>The ratio between them is also continuous: <span class="math notranslate nohighlight">\(W(k^\prime x)=\frac{\langle x_0|\hat p|\phi_i\rangle}{i\hbar k\langle x_0|\phi_i\rangle}\)</span></p></li>
+<li><p>Hence, the superpotential must be continuous when the potential is discontinuous.</p></li>
+</ul>
+</li>
+<li><p>Node theorem tells us we have all of the solutions</p>
+<ul class="simple">
+<li><p>A node is a point where the wavefunction vanishes.</p></li>
+<li><p>For all 1D systems and radial problems in higher dimensions, the ground state has no nodes and the number of nodes increases by one for each higher excited energy state.</p></li>
+<li><p>We already saw this for the particle on a circle and the SHO.</p></li>
+<li><p>Using it, we verify that we have all states with the right number of nodes, and we verify that we have all the solutions of the problem.</p></li>
+</ul>
+</li>
+<li><p>Continuum solutions have one factorisation only</p>
+<ul class="simple">
+<li><p>We saw for bound states that <span class="math notranslate nohighlight">\(E_i&lt;E_{i+1}\)</span>.</p></li>
+<li><p>One way to see this change comes from the canonical commutation relation.</p></li>
+<li><p>This cannot be true for continuum solutions as this would make it discontinuous.</p></li>
+<li><p>Hamiltonian: <span class="math notranslate nohighlight">\(\hat H_i=\frac{\hat p^2}{2m}+V_i^\text{aux}(\hat x)\)</span></p>
+<ul>
+<li><p>Auxiliary potential: <span class="math notranslate nohighlight">\(V_{i+1}^\text{aux}(\hat x)=V_i^\text{aux}(\hat x)+\frac{i\hbar k}{m}[\hat p,W_i(k_i^\prime\hat x)]\)</span></p></li>
+</ul>
+</li>
+<li><p>Because the energy levels change continuously, they cannot have a factorisation chain. Instead, they have a single factorisation(for the particle on a circle, there were two independent factorisations).</p></li>
+<li><p>So continuum solutions are solved by <span class="math notranslate nohighlight">\(\hat H=\hat A^\dagger(k)\hat A(k)+E(k)\)</span>.</p></li>
+<li><p>The factorisation depends on the parameter <span class="math notranslate nohighlight">\(k\)</span> and we can do it the same way as we did with the real superpotential.</p></li>
+<li><p>Key difference: All of the <span class="math notranslate nohighlight">\(E(k)\)</span> are larger than the maximal bound-state energy.</p></li>
 </ul>
 </li>
 </ol>
+<ul class="simple">
+<li><p>Conclusion</p>
+<ul>
+<li><p>These rules follow in a simple fashion.</p></li>
+<li><p>We will also develop the whole method further as we use it to solve a number of different problems.</p></li>
+<li><p>We will use this to solve isotropic harmonic oscillator, hydrogen, particles in a box, etc…</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Schroedinger Factorisation Chain</p>
+<ul>
+<li><p>Graphic view of factorisation(<a class="reference external" href="https://youtu.be/Q57MkGQJs1Q&amp;amp;t=16">https://youtu.be/Q57MkGQJs1Q&amp;t=16</a>)</p></li>
+<li><p>SHO revisited</p>
+<ul>
+<li><p>Hamiltonian: <span class="math notranslate nohighlight">\(\hat H=\frac{\hat p^2}{2m}+\frac{1}{2}m\omega^2\hat x^2\)</span></p></li>
+<li><p>Lowering operator: <span class="math notranslate nohighlight">\(\hat A_0=\frac{1}{\sqrt{2m}}(\hat p-i\hbar k_0W(k_0^\prime\hat x))\)</span></p></li>
+</ul>
+</li>
+</ul>
 </li>
 </ul>
 <p>Problem Notes</p>
@@ -2535,25 +2591,41 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">34.53</span><span class="o">/</span><span class="mi">10</span><span class="o">^</span><span class="mi">9</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.45300000000000e-8
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">(</span><span class="n">n</span><span class="p">(</span><span class="n">hbar</span><span class="o">^</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">80</span><span class="o">*</span><span class="n">m_c</span><span class="o">*</span><span class="n">a</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="mi">10</span><span class="o">^</span><span class="mi">7</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Auxiliary ground-state wavefunctions</span>
+<span class="n">var</span><span class="p">(</span><span class="s1">&#39;n L x&#39;</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">L</span><span class="o">*</span><span class="n">cot</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">),</span><span class="n">x</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_latex math notranslate nohighlight">
-\[\displaystyle 3.45228669079009 \qquad   \]</div>
+\[\displaystyle {\left(n + 1\right)} \log\left(\sin\left(\frac{\pi x}{L}\right)\right) \qquad   \]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">phi_1</span><span class="o">=</span><span class="n">c</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">)</span>
+<span class="n">psi_1</span><span class="o">=-</span><span class="n">i</span><span class="o">*</span><span class="n">h</span><span class="o">*</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">phi_1</span><span class="p">,</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="n">pi</span><span class="o">/</span><span class="n">L</span><span class="o">*</span><span class="n">cot</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">phi_1</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">psi_1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle -i \, {\left(\frac{\pi c \cot\left(\frac{\pi x}{L}\right) \sin\left(\frac{\pi x}{L}\right)}{L} + \frac{\pi c \cos\left(\frac{\pi x}{L}\right)}{L}\right)} h \qquad   \]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">phi_2</span><span class="o">=</span><span class="n">c</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span>
+<span class="n">inter</span><span class="o">=</span><span class="n">diff</span><span class="p">(</span><span class="n">phi_2</span><span class="p">,</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">/</span><span class="n">L</span><span class="o">*</span><span class="n">cot</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">phi_2</span>
+<span class="n">psi_2</span><span class="o">=-</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">h</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">inter</span><span class="p">,</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="n">pi</span><span class="o">/</span><span class="n">L</span><span class="o">*</span><span class="n">cot</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">inter</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 2 \, {\left(\frac{2 \, \pi^{2} c \cos\left(\frac{\pi x}{L}\right) \cot\left(\frac{\pi x}{L}\right) \sin\left(\frac{\pi x}{L}\right)}{L^{2}} - \frac{\pi^{2} {\left(\cot\left(\frac{\pi x}{L}\right)^{2} + 1\right)} c \sin\left(\frac{\pi x}{L}\right)^{2}}{L^{2}} + \frac{\pi^{2} c \cos\left(\frac{\pi x}{L}\right)^{2}}{L^{2}} - \frac{\pi^{2} c \sin\left(\frac{\pi x}{L}\right)^{2}}{L^{2}} + \frac{\pi {\left(\frac{\pi c \cot\left(\frac{\pi x}{L}\right) \sin\left(\frac{\pi x}{L}\right)^{2}}{L} + \frac{\pi c \cos\left(\frac{\pi x}{L}\right) \sin\left(\frac{\pi x}{L}\right)}{L}\right)} \cot\left(\frac{\pi x}{L}\right)}{L}\right)} h^{2} \qquad   \]</div>
 </div>
 </div>
 </section>
