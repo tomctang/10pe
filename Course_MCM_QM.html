@@ -1447,7 +1447,7 @@ document.write(`
 <li><p>Cotangent function: <span class="math notranslate nohighlight">\([\hat{p},\cot{k\hat{x}}]=i\hbar k(\csc^2{k\hat{x}})\)</span></p>
 <ul>
 <li><p><span class="math notranslate nohighlight">\([\hat{p},\cot{k\hat{x}}]=[\hat{p},\cos{k\hat{x}}\csc{k\hat{x}}]\)</span></p></li>
-<li><p>Use Leibniz formula: <span class="math notranslate nohighlight">\([\hat{p},\cot{k\hat{x}}]=\cos{k\hat{x}}[\hat{p},\csc{k\hat{x}}]+[\hat{p},\cos{k\hat{x}}]\sc{k\hat{x}}\)</span></p></li>
+<li><p>Use Leibniz formula: <span class="math notranslate nohighlight">\([\hat{p},\cot{k\hat{x}}]=\cos{k\hat{x}}[\hat{p},\csc{k\hat{x}}]+[\hat{p},\cos{k\hat{x}}]\csc{k\hat{x}}\)</span></p></li>
 <li><p>Substitute and simplify.</p></li>
 </ul>
 </li>
@@ -2454,7 +2454,7 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(E_{i+1}=\langle\phi_{i+1}|\hat A_i\hat A_i^\dagger+E_i|\phi_{i+1}\rangle\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(E_{i+1}=\langle\phi_{i+1}|\hat A_i\hat A_i^\dagger|\phi_{i+1}\rangle+E_i\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(E_{i+1}=\parallel\hat A_i^\dagger|\phi_{i+1}\rangle\parallel^2+E_i\)</span></p></li>
-<li><p>Since <span class="math notranslate nohighlight">\(\parallel\hat A_i^\dagger|\phi_{i+1}\langle\parallel^2\)</span> is nonnegative and it is nonzero, it must be positive so <span class="math notranslate nohighlight">\(E_{i+1}&gt;E_i\)</span>.</p></li>
+<li><p>Since <span class="math notranslate nohighlight">\(\parallel\hat A_i^\dagger|\phi_{i+1}\rangle\parallel^2\)</span> is nonnegative and it is nonzero, it must be positive so <span class="math notranslate nohighlight">\(E_{i+1}&gt;E_i\)</span>.</p></li>
 </ul>
 </li>
 <li><p>The superpotential is real</p>
@@ -2469,7 +2469,7 @@ document.write(`
 <li><p>We now show that the superpotential must be a real valued function or <span class="math notranslate nohighlight">\(W(k^\prime\hat x)^\dagger=W(k^\prime\hat x)\)</span>.</p></li>
 <li><p>Proof</p>
 <ul>
-<li><p><span class="math notranslate nohighlight">\(\hbar kW(k^\prime\hat x)=\hat B_i\hat C\)</span>, where <span class="math notranslate nohighlight">\(hat B\)</span> and <span class="math notranslate nohighlight">\(hat C\)</span> are Hermitian.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hbar kW(k^\prime\hat x)=\hat B_i\hat C\)</span>, where <span class="math notranslate nohighlight">\(\hat B\)</span> and <span class="math notranslate nohighlight">\(\hat C\)</span> are Hermitian.</p></li>
 <li><p><span class="math notranslate nohighlight">\(\hat A^\dagger\hat A\propto(\hat p+i\hat B+\hat C)(\hat p-i\hat B+\hat C)\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\hat A^\dagger\hat A\propto\hat p^2+\hat p\hat C+\hat C\hat p+\hat C^2+i[\hat B,\hat p+\hat C]+\hat B^2\)</span></p></li>
 <li><p>So, if we do not have linear terms in <span class="math notranslate nohighlight">\(\hat p\)</span>, we must have no <span class="math notranslate nohighlight">\(\hat C\)</span> term.</p></li>
@@ -2492,7 +2492,7 @@ document.write(`
 <li><p>Hence, the superpotential diverges when the auxiliary ground state vanishes unless <span class="math notranslate nohighlight">\(\langle x|\hat p|\phi_i\rangle=0\)</span> at the same <span class="math notranslate nohighlight">\(x\)</span>.</p></li>
 <li><p>Claim: <span class="math notranslate nohighlight">\(\langle x|phi_i\rangle=\langle x|\hat p|\phi_i\rangle=0\)</span> is impossible.</p>
 <ul>
-<li><p>If we the equation is true, then <span class="math notranslate nohighlight">\(phi_i(x)=0\)</span> for all <span class="math notranslate nohighlight">\(x\)</span>.</p></li>
+<li><p>If we the equation is true, then <span class="math notranslate nohighlight">\(\phi_i(x)=0\)</span> for all <span class="math notranslate nohighlight">\(x\)</span>.</p></li>
 <li><p><span class="math notranslate nohighlight">\(\langle x|\hat p^n|\phi_i\rangle=0\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\langle x|\hat p^2|\phi_i\rangle=2m(E_i-V_i^\text{aux}(\hat x))\langle x||\phi_i\rangle\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\langle x|\hat p^3|\phi_i\rangle=2m(E_i-V_i^\text{aux}(x))\langle x|\hat p|\phi_i\rangle+2m\langle x|[\hat p,V_i^\text{aux}(\hat x)]|\phi_ i\rangle\)</span></p></li>
@@ -2552,10 +2552,109 @@ document.write(`
 <ul>
 <li><p>Hamiltonian: <span class="math notranslate nohighlight">\(\hat H=\frac{\hat p^2}{2m}+\frac{1}{2}m\omega^2\hat x^2\)</span></p></li>
 <li><p>Lowering operator: <span class="math notranslate nohighlight">\(\hat A_0=\frac{1}{\sqrt{2m}}(\hat p-i\hbar k_0W(k_0^\prime\hat x))\)</span></p></li>
+<li><p>When we form <span class="math notranslate nohighlight">\(\hat A_0^\dagger\hat A_0\)</span>, we have the square of the superpotential and its commutator with momentum.</p></li>
+<li><p>So we have two choices for <span class="math notranslate nohighlight">\(\hat A_0\)</span>:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\hat A_0=\frac{1}{\sqrt{2m}}(\hat p-im\omega\hat x)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat A_0=\frac{1}{\sqrt{2m}}(\hat p+im\omega\hat x)\)</span></p></li>
+</ul>
+</li>
+<li><p>But there is a requirement that says that the superpotential must be positive as <span class="math notranslate nohighlight">\(x\)</span> goes to infinity and it must be negative when <span class="math notranslate nohighlight">\(x\)</span> goes to negative infinity.</p></li>
+<li><p>This means that the first choice for <span class="math notranslate nohighlight">\(\hat A_0\)</span> is the correct one.</p></li>
+<li><p>Hamiltonian: <span class="math notranslate nohighlight">\(\hat H_0=\hat A_0^\dagger\hat A_0+E_0\)</span></p></li>
+<li><p>Ground-state energy: <span class="math notranslate nohighlight">\(E_0=\frac{1}{2}\hbar\omega\)</span></p></li>
+<li><p>Compute next term: <span class="math notranslate nohighlight">\(\hat H_1=\hat A_0\hat A_0^\dagger+E_0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat H_1=\hat H_0+[\hat A_0,\hat A_0^\dagger]\)</span></p></li>
+<li><p>Evaluate commutator: <span class="math notranslate nohighlight">\(\hat H_1=\hat H_0+\hbar\omega\)</span></p></li>
+<li><p>So, we find that <span class="math notranslate nohighlight">\(\hat A_1=\hat A_0\)</span> and <span class="math notranslate nohighlight">\(E_1=\frac{3}{2}\hbar\omega\)</span>.</p>
+<ul>
+<li><p>Note that while <span class="math notranslate nohighlight">\(\hat A_{i+1}\ne\hat A_i^\dagger\)</span>, <span class="math notranslate nohighlight">\(\hat A_{i+1}\)</span> can be equal to <span class="math notranslate nohighlight">\(\hat A_i\)</span>.</p></li>
+</ul>
+</li>
+<li><p>Repeat</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\hat A_2=\hat A_0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(E_2=\frac{5}{2}\hbar\omega\)</span></p></li>
+</ul>
+</li>
+<li><p>We find that <span class="math notranslate nohighlight">\(\hat A_n=\hat A_0\)</span> and <span class="math notranslate nohighlight">\(E_n=\frac{2n+1}{2}\hbar\omega\)</span>.</p></li>
+<li><p>State condition: <span class="math notranslate nohighlight">\(|\psi_n\rangle=\hat A_0^\dagger\hat A_1^\dagger\cdots\hat A_{n-1}^\dagger|\phi_n\rangle\)</span></p></li>
+<li><p>But because <span class="math notranslate nohighlight">\(\hat A_n=\hat A_0\)</span>, <span class="math notranslate nohighlight">\(|\psi_n\rangle=(\hat A_0^\dagger)^n|\phi_n\rangle\)</span>.</p>
+<ul>
+<li><p>Note that <span class="math notranslate nohighlight">\(|\phi_n\rangle\)</span> is independent of <span class="math notranslate nohighlight">\(n\)</span> because the subsidiary condition is the same for each of these auxiliary Hamiltonians.</p></li>
+</ul>
+</li>
+<li><p>Normalisation factor: <span class="math notranslate nohighlight">\(\frac{1}{\sqrt{(E_n-E_0)(E_n-E_1)\cdots(E_n-E_{n-1})}}\)</span></p></li>
+<li><p>Plug in energy: <span class="math notranslate nohighlight">\(\frac{1}{\sqrt{(E_n-E_0)(E_n-E_1)\cdots(E_n-E_{n-1})}}=\frac{1}{\sqrt{n!}}\begin{pmatrix}\frac{1}{\hbar\omega}\end{pmatrix}^\frac{n}{2}\)</span></p></li>
+</ul>
+</li>
+<li><p>Particle in a box</p>
+<ul>
+<li><p>This is probably the hardest problem here.</p></li>
+<li><p>This problem is about a particle inside a box with hard walls.</p></li>
+<li><p>The potential is zero inside the box and infinity outside the box so the particle stays in it.</p></li>
+<li><p>The boundary condition for the problem is that the potential is zero at the edge of the box.</p></li>
+<li><p>But inside the box, the Hamiltonian is just <span class="math notranslate nohighlight">\(\hat H=\frac{\hat p^2}{2m}\)</span></p></li>
+<li><p>Factorising seems easy, choose <span class="math notranslate nohighlight">\(W=0\)</span>.</p></li>
+<li><p>But then the raising and lowering operators commute, and there is no chain.</p></li>
+<li><p>This also means that there is also only one solutiion with zero energy which doesn’t satisfy the boundary condition.</p></li>
+<li><p>Next choice: <span class="math notranslate nohighlight">\(W=1\)</span></p></li>
+<li><p>But when we find the ground-state energy, we find that it is negative. So this choice for the superpotential doesn’t work either.</p></li>
+<li><p>We pick <span class="math notranslate nohighlight">\(\hat A_0=\frac{1}{\sqrt{2m}}(\hat p+i\hbar k_0\cot{(k_0\hat x)})\)</span>.</p></li>
+<li><p>Expand: <span class="math notranslate nohighlight">\(\hat A_0^\dagger\hat A_0=\frac{1}{2m}(\hat p^2+i\hbar k_0[\hat p,\cot{(k_0\hat x)}]+\hbar^2k^2\cot^2{(k_0\hat x)})\)</span></p></li>
+<li><p>Compute commutator: <span class="math notranslate nohighlight">\(\hat A_0^\dagger\hat A_0=\frac{1}{2m}(\hat p^2-\hbar^2k_0^2\csc^2{(k_0\hat x)}+\hbar^2k^2\cot^2{(k_0\hat x)})\)</span></p>
+<ul>
+<li><p>The commuatator was worked out in M6 when we solved the particle on a circle.</p></li>
+</ul>
+</li>
+<li><p>We find that <span class="math notranslate nohighlight">\(\hat A_0^\dagger\hat A_0=\frac{\hat p^2}{2m}-\frac{\hbar^2k_0^2}{2m}\)</span></p></li>
+<li><p>This means the energy is positive and it is <span class="math notranslate nohighlight">\(\frac{\hbar^2k_0^2}{2m}\)</span>.</p></li>
+<li><p>We choose <span class="math notranslate nohighlight">\(k_0\)</span> based on the fact that the wavefunction vanishes when the superpotential diverges.</p></li>
+<li><p>Here, it vanishes at the edge of the box so we pick <span class="math notranslate nohighlight">\(k_0=\frac{\pi}{L}\)</span>.</p></li>
+<li><p>First auxiliary Hamiltonian: <span class="math notranslate nohighlight">\(\hat H_1=\frac{1}{2m}(\hat p^2-i\hbar k_0[\hat p,\cot{(k_0\hat x)}]+\hbar^2k_0^2\cot^2{(k_0\hat x)})+\frac{\hbar^ 2k_0^2}{2m}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat H_1=\frac{\hat p^2}{2m}+\frac{\hbar^2k_0^2}{m}\csc^2{(k_0\hat x)}\)</span></p></li>
+<li><p>But this means that the potential has a cosecant in it.</p></li>
+<li><p>This is a shape-preserving or shape-invariant potential.</p></li>
+<li><p>This means we pick the lowering operator to have the exact same form as before.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat A_1=\frac{1}{\sqrt{2m}}(\hat p-i\hbar k_1\cot{(k_1^\prime\hat x)})\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat A_1^\dagger\hat A_1=\frac{1}{2m}(\hat p^2+\hbar^2k_1(k_1^\prime+k_1)\csc^2{(k_1^\prime\hat x)}-\hbar^2k_1^2)\)</span></p></li>
+<li><p>We pick <span class="math notranslate nohighlight">\(k_1^\prime=k_0\)</span>.</p></li>
+<li><p>Two choices for <span class="math notranslate nohighlight">\(k_1\)</span>: <span class="math notranslate nohighlight">\(k_1=k_0\)</span> and <span class="math notranslate nohighlight">\(k_1=-2k_0\)</span></p></li>
+<li><p>But <span class="math notranslate nohighlight">\(k_1=k_0\)</span> implies <span class="math notranslate nohighlight">\(\hat A_1=\hat A_0^\dagger\)</span>.</p></li>
+<li><p>Hamiltonian: <span class="math notranslate nohighlight">\(\hat H_1=\frac{\hat p^2}{2m}+\frac{\hbar^2k_0^2}{m}\csc^2{(k_0\hat x)}\)</span></p></li>
+<li><p>Lowering operator: <span class="math notranslate nohighlight">\(\hat A_1=\frac{1}{\sqrt{2m}}(\hat p+2i\hbar k_0\cot{(k_0\hat x)})\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat H_1=\hat A_1^\dagger\hat A_1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(E_1=4\frac{\hbar^2k_0^2}{2m}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat H_2=\hat A_1\hat A_1^\dagger+E_1=\frac{\hat p^2}{2m}+3\frac{\hbar^2k_0^2}{m}\csc^2{(k_0\hat x)}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat A_2=\frac{1}{\sqrt{2m}}(\hat p-i\hbar k_2\cot{(k_2^\prime\hat x)})\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat A_2^\dagger\hat A_2=\frac{1}{2m}(\hat p^2+\hbar^2k_2(k_2^\prime+k_2)\csc^2{(k_2^\prime\hat x)}-\hbar^2k_2^2)\)</span></p></li>
+<li><p>Pick <span class="math notranslate nohighlight">\(k_2^\prime=k_0\)</span>.</p></li>
+<li><p>Two choices</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(k_2=2k_0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(k_2=-3k_0\)</span></p></li>
+</ul>
+</li>
+<li><p>First choice implies <span class="math notranslate nohighlight">\(\hat A_2=\hat A_1^\dagger\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat H_2=\frac{\hat p^2}{2m}+3\frac{\hbar^2k_0^2}{m}\csc^2{(k_0\hat x)}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat A_2=\frac{1}{\sqrt{2m}}(\hat p+3i\hbar k_0\cot{(k_2\hat x)})\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(E_2=9\frac{\hbar^2k_0^2}{2m}\)</span></p></li>
+<li><p>Pattern</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(k_n^\prime=k_0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(k_n=-(n+1)k_0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(E_n=(n+1)^2\frac{\hbar^2k_0^2}{2m}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat A_n=\frac{1}{\sqrt{2m}}(\hat p+(n+1)i\hbar k_0\cot{(k_0\hat x)})\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat H_n=\frac{\hat p^2}{2m}+n(n+1)\frac{\hbar^2k_0^2}{2m}\csc^2{(k_0\hat x)}\)</span></p></li>
 </ul>
 </li>
 </ul>
 </li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Two-Body Problem and Seperation of Variables</p></li>
 </ul>
 <p>Problem Notes</p>
 <ul class="simple">
@@ -2578,6 +2677,18 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{\sqrt{3} {\left(3 \, \cos\left(\theta\right)^{2} - 1\right)} \sin\left(\theta\right)}{8 \, \pi} \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 0 \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{15 \, e^{\left(-4 i \, \phi\right)} \sin\left(\theta\right)^{5}}{32 \, \pi} \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{e^{\left(-4 i \, \phi\right)}}{2 \, \pi} \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 0 \qquad   \]</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2587,6 +2698,12 @@ document.write(`
 <span class="n">s</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="n">cot</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">))</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle -\log\left(\sec\left(k x\right)\right) \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \log\left(\sin\left(k x\right)\right) \qquad   \]</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -2604,7 +2721,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">phi_1</span><span class="o">=</span><span class="n">c</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">phi_1</span><span class="o">=</span><span class="n">c</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span>
 <span class="n">psi_1</span><span class="o">=-</span><span class="n">i</span><span class="o">*</span><span class="n">h</span><span class="o">*</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">phi_1</span><span class="p">,</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="n">pi</span><span class="o">/</span><span class="n">L</span><span class="o">*</span><span class="n">cot</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">phi_1</span><span class="p">)</span>
 <span class="n">s</span><span class="p">(</span><span class="n">psi_1</span><span class="p">)</span>
 </pre></div>
@@ -2612,20 +2729,21 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_latex math notranslate nohighlight">
-\[\displaystyle -i \, {\left(\frac{\pi c \cot\left(\frac{\pi x}{L}\right) \sin\left(\frac{\pi x}{L}\right)}{L} + \frac{\pi c \cos\left(\frac{\pi x}{L}\right)}{L}\right)} h \qquad   \]</div>
+\[\displaystyle -i \, {\left(\frac{\pi c \cot\left(\frac{\pi x}{L}\right) \sin\left(\frac{\pi x}{L}\right)^{2}}{L} + \frac{2 \, \pi c \cos\left(\frac{\pi x}{L}\right) \sin\left(\frac{\pi x}{L}\right)}{L}\right)} h \qquad   \]</div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">phi_2</span><span class="o">=</span><span class="n">c</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">phi_2</span><span class="o">=</span><span class="n">c</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">^</span><span class="mi">3</span>
 <span class="n">inter</span><span class="o">=</span><span class="n">diff</span><span class="p">(</span><span class="n">phi_2</span><span class="p">,</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">/</span><span class="n">L</span><span class="o">*</span><span class="n">cot</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">phi_2</span>
-<span class="n">psi_2</span><span class="o">=-</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">h</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">inter</span><span class="p">,</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="n">pi</span><span class="o">/</span><span class="n">L</span><span class="o">*</span><span class="n">cot</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">inter</span><span class="p">)</span>
+<span class="n">psi_2</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="n">i</span><span class="o">*</span><span class="n">h</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">inter</span><span class="p">,</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="n">pi</span><span class="o">/</span><span class="n">L</span><span class="o">*</span><span class="n">cot</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">inter</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">expand</span><span class="p">(</span><span class="n">psi_2</span><span class="o">*</span><span class="n">L</span><span class="o">^</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">c</span><span class="o">*</span><span class="n">h</span><span class="o">^</span><span class="mi">2</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_latex math notranslate nohighlight">
-\[\displaystyle 2 \, {\left(\frac{2 \, \pi^{2} c \cos\left(\frac{\pi x}{L}\right) \cot\left(\frac{\pi x}{L}\right) \sin\left(\frac{\pi x}{L}\right)}{L^{2}} - \frac{\pi^{2} {\left(\cot\left(\frac{\pi x}{L}\right)^{2} + 1\right)} c \sin\left(\frac{\pi x}{L}\right)^{2}}{L^{2}} + \frac{\pi^{2} c \cos\left(\frac{\pi x}{L}\right)^{2}}{L^{2}} - \frac{\pi^{2} c \sin\left(\frac{\pi x}{L}\right)^{2}}{L^{2}} + \frac{\pi {\left(\frac{\pi c \cot\left(\frac{\pi x}{L}\right) \sin\left(\frac{\pi x}{L}\right)^{2}}{L} + \frac{\pi c \cos\left(\frac{\pi x}{L}\right) \sin\left(\frac{\pi x}{L}\right)}{L}\right)} \cot\left(\frac{\pi x}{L}\right)}{L}\right)} h^{2} \qquad   \]</div>
+\[\displaystyle -9 \, \pi^{2} \cos\left(\frac{\pi x}{L}\right) \cot\left(\frac{\pi x}{L}\right) \sin\left(\frac{\pi x}{L}\right)^{2} - 6 \, \pi^{2} \cos\left(\frac{\pi x}{L}\right)^{2} \sin\left(\frac{\pi x}{L}\right) + 5 \, \pi^{2} \sin\left(\frac{\pi x}{L}\right)^{3} \qquad   \]</div>
 </div>
 </div>
 </section>
