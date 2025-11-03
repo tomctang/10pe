@@ -2654,7 +2654,98 @@ document.write(`
 </li>
 </ul>
 <ul class="simple">
-<li><p>Two-Body Problem and Seperation of Variables</p></li>
+<li><p>Two-Body Problem and Seperation of Variables</p>
+<ul>
+<li><p>Two-body problem</p>
+<ul>
+<li><p>In the two-body problem we have two particles.</p></li>
+<li><p>We call the first one 1 and the second one 2.</p></li>
+<li><p>The vectors that describe these particles are <span class="math notranslate nohighlight">\(\vec r_1\)</span> and <span class="math notranslate nohighlight">\(\vec r_2\)</span>.</p></li>
+<li><p>The difference between them is <span class="math notranslate nohighlight">\(\vec r_1-\vec r_2\)</span>.</p></li>
+<li><p>Central forces only depend on <span class="math notranslate nohighlight">\(\vec r_1-\vec r_2\)</span>, the distance between the particles.</p></li>
+<li><p>The Coulomb interaction that takes place in atomic physics and that depends only on the distance between the electrons and protons in the nucleus.</p></li>
+</ul>
+</li>
+<li><p>Centre of mass and relative coordinates</p>
+<ul>
+<li><p>In classical mechanics, we work with centre of mass.</p></li>
+<li><p>We do the same in quantum</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\vec R}=\frac{m_1\hat{\vec r_1}+m_2\hat{\vec r_2}}{m_1+m_2}\)</span></p></li>
+<li><p>The centre of mass operator weights the individual operators by the mass.</p></li>
+<li><p>Total momentum: <span class="math notranslate nohighlight">\(\hat{\vec P}=\hat{\vec p_1}+\hat{\vec p_2}\)</span></p></li>
+<li><p>We choose this because momentum is already weighted by mass.</p></li>
+<li><p>If this is correct then the canonical commutation relation between the two operators should work out.</p></li>
+<li><p>Commutator: <span class="math notranslate nohighlight">\([\hat R_i,\hat P_j]=[\frac{m_1\hat r_{1i}+m_2\hat r_{2i}}{m_1+m_2},\hat p_{1j}+\hat p_{2j}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\([\hat R_i,\hat P_j]=\frac{1}{m_1+m_2}[m_1\hat r_{1i}+m_2\hat r_{2i},\hat p_{1j}+\hat p_{2j}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\([\hat R_i,\hat P_j]=\frac{m_1}{m_1+m_2}[\hat r_{1i},\hat p_{1j}]+\frac{m_2}{m_1+m_2}[\hat r_{2i},\hat p_{2j}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\([\hat R_i,\hat P_j]=\frac{m_1}{m_1+m_2}i\hbar\delta_{ij}+\frac{m_2}{m_1+m_2}i\hbar\delta_{ij}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\([\hat R_i,\hat P_j]=i\hbar\delta_{ij}\)</span></p></li>
+<li><p>So these two “average” operators do satisfy the canonical commutation relation.</p></li>
+<li><p>Relative position: <span class="math notranslate nohighlight">\(\hat{\vec r}=\hat{\vec r_1}-\hat{\vec r_2}\)</span></p></li>
+<li><p>Relative momentum: <span class="math notranslate nohighlight">\(\hat{\vec p}=\frac{m_1m_2}{m_1+m_2}(\frac{\hat p_1}{m_1}-\frac{\hat p_2}{m_2})\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\([\hat r_i,\hat p_j]=\frac{m_1m_2}{m_1+m_2}[\hat r_{1i}-\hat r_{2j},\frac{\hat p_{1j}}{m_1}-\frac{\hat p_{2j}}{m_2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\([\hat r_i,\hat p_j]=\frac{m_2}{m_1+m_2}[\hat r_{1i},\hat p_{1j}]+\frac{m_1}{m_1+m_2}[\hat r_{2i},\hat p_{2j}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\([\hat r_i,\hat p_j]=\frac{m_2}{m_1+m_2}i\hbar\delta_{ij}+\frac{m_1}{m_1+m_2}i\hbar\delta_{ij}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\([\hat r_i,\hat p_j]=i\hbar\delta_{ij}\)</span></p></li>
+</ul>
+</li>
+<li><p>Separation of variables</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\hat{\vec R}=\frac{m_1\hat{\vec r_1}+m_2\hat{\vec r_2}}{m_1+m_2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\vec P}=\hat{\vec p_1}+\hat{\vec p_2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\([\hat R_i,\hat P_j]=i\hbar\delta_{ij}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\vec r}=\hat{\vec r_1}-\hat{\vec r_2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\vec p}=\frac{m_1m_2}{m_1+m_2}(\frac{\hat p_1}{m_1}-\frac{\hat p_2}{m_2})\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\([\hat r_i,\hat p_j]=i\hbar\delta_{ij}\)</span></p></li>
+<li><p>We find that <span class="math notranslate nohighlight">\([\hat R_i,\hat p_j]=0\)</span> and <span class="math notranslate nohighlight">\([\hat r_i,\hat P_j]\)</span>.</p></li>
+<li><p>So these operators are independent of each other.</p></li>
+</ul>
+</li>
+<li><p>Kinetic energy</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\hat{\vec p_1}=(\hat{\vec P}+\frac{m_1+m_2}{m_1}\hat{\vec p})\frac{m_1}{m_1+m_2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\vec p_2}=(\hat{\vec P}-\frac{m_1+m_2}{m_2}\hat{\vec p})\frac{m_2}{m_1+m_2}\)</span></p></li>
+<li><p>Kinetic energy: <span class="math notranslate nohighlight">\(\large\frac{\hat{\vec p_1^2}}{2m_1}+\frac{\hat{\vec p_2^2}}{2m_2}=\frac{m_1}{2(m_1+m_2)^2}(\hat{\vec P^2}+2\frac{(m_1+m_2)}{m_1}\hat{\vec P}\cdot\hat{\vec p}+\frac{(m_1+m_2)^2}{m_1^2}\hat{\vec p^2})+\frac{m_2}{2(m_1+m_2)^2}(\hat{\vec P^2}-2\frac{m_1+m_2}{m_2}\hat{\vec P}\cdot\hat{\vec p}+\frac{(m_1+m_2)^2}{m_2^2}\hat{\vec p^2})\)</span></p></li>
+<li><p>Expand and simplify: <span class="math notranslate nohighlight">\(\large\frac{\hat{\vec p_1^2}}{2m_1}+\frac{\hat{\vec p_2^2}}{2m_2}=\frac{\hat{\vec P^2}}{2(m_1+m_2)}+\frac{\hat{\vec p^2}}{2\frac{m_1m_2}{m_1+m_2}}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\large\frac{\hat{\vec p_1^2}}{2m_1}+\frac{\hat{\vec p_2^2}}{2m_2}=\frac{\hat{\vec P^2}}{2M}+\frac{\hat{\vec p^2}}{2\mu}\)</span></p>
+<ul>
+<li><p>Total mass: <span class="math notranslate nohighlight">\(M=m_1+m_2\)</span></p></li>
+<li><p>Reduced mass: <span class="math notranslate nohighlight">\(\mu=\frac{m_1m_2}{m_1+m_2}\)</span></p></li>
+</ul>
+</li>
+<li><p>So kinetic energy also separates into average and relative motion.</p></li>
+</ul>
+</li>
+<li><p>Central forces</p>
+<ul>
+<li><p>Hamiltonian: <span class="math notranslate nohighlight">\(\large\hat H=\frac{\hat{\vec p_1^2}}{2m_1}+\frac{\hat{\vec p_2^2}}{2m_2}+V(|\hat{\vec r_1}-\hat{\vec r_2}|)=\frac{\hat{\vec P^2}}{2M}+\frac{\hat{\vec p^2}}{2\mu}+V(|\hat{\vec r}|)\)</span></p></li>
+<li><p>The system separates into the average motion of a free particle, because there is no potential that depends on average motion, and the relative motion, which has a potential.</p></li>
+<li><p>The relative motion acts like a single particle in the central potential, but with the reduced mass of two particles.</p></li>
+</ul>
+</li>
+<li><p>Angular momentum</p>
+<ul>
+<li><p>Angular momentum about the origin: <span class="math notranslate nohighlight">\(\hat{\vec L}=\hat{\vec L_1}+\hat{\vec L_2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\vec L}=\hat{\vec r_1}\times\hat{\vec p_1}+\hat{\vec r_2}\times\hat{\vec p_2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\vec r_1}=(\frac{M}{m_2}\hat{\vec R}+\hat{\vec r})\frac{m_2}{M}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\vec r_2}=(\frac{M}{m_1}\hat{\vec R}-\hat{\vec r})\frac{m_1}{M}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\vec p_1}=(\hat{\vec P}+\frac{M}{m_1}\hat{\vec p})\frac{m_1}{M}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\vec p_2}=(\hat{\vec P}-\frac{M}{m_2}\hat{\vec p})\frac{m_2}{M}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\vec L}=(\frac{M}{m_2}\hat{\vec R}+\hat{\vec r})\times(\hat{\vec P}+\frac{M}{m_1}\hat{\vec p})\frac{m_1m_2}{M^2}+(\frac{M}{m_1}\hat{\vec R}-\hat{\vec r})\times(\hat{\vec P}-\frac{M}{m_2}\hat{\vec p})\frac{m_1m_2}{M^2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\vec L}=\hat{\vec R}\times\hat{\vec P}+\hat{\vec r}\times\hat{\vec p}\)</span></p></li>
+<li><p>So, the angular momentum also separates into the average and relative angular momentum.</p></li>
+</ul>
+</li>
+<li><p>Summary</p>
+<ul>
+<li><p>When we convert the two-body problem into average and relative position and momentum, we find that the motion separates into the average motion which is that of a free particle, with no forces on it(effective mass being total mass) and the relative motion being the central potential(effective mass being reduced mass).</p></li>
+<li><p>But this doesn’t work for a three body problem.</p></li>
+<li><p>We also found that the angular momentum also separates angular momentum of the centre of mass being the average angular momentum and the angular momentum relative to the mass.</p></li>
+<li><p>This is exactly the same as what we had in classical mechanics.</p></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <p>Problem Notes</p>
 <ul class="simple">
@@ -2728,8 +2819,16 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle -i \, {\left(\frac{\pi c \cot\left(\frac{\pi x}{L}\right) \sin\left(\frac{\pi x}{L}\right)^{2}}{L} + \frac{2 \, \pi c \cos\left(\frac{\pi x}{L}\right) \sin\left(\frac{\pi x}{L}\right)}{L}\right)} h \qquad   \]</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">phi_1</span><span class="o">=</span><span class="n">c</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">**</span><span class="n">Integer</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">psi_1</span><span class="o">=-</span><span class="n">i</span><span class="o">*</span><span class="n">h</span><span class="o">*</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">phi_1</span><span class="p">,</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="n">pi</span><span class="o">/</span><span class="n">L</span><span class="o">*</span><span class="n">cot</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">phi_1</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">s</span><span class="p">(</span><span class="n">psi_1</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;c&#39; is not defined
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
