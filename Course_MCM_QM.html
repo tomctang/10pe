@@ -2697,7 +2697,7 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(\hat{\vec r}=\hat{\vec r_1}-\hat{\vec r_2}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\hat{\vec p}=\frac{m_1m_2}{m_1+m_2}(\frac{\hat p_1}{m_1}-\frac{\hat p_2}{m_2})\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\([\hat r_i,\hat p_j]=i\hbar\delta_{ij}\)</span></p></li>
-<li><p>We find that <span class="math notranslate nohighlight">\([\hat R_i,\hat p_j]=0\)</span> and <span class="math notranslate nohighlight">\([\hat r_i,\hat P_j]\)</span>.</p></li>
+<li><p>We find that <span class="math notranslate nohighlight">\([\hat R_i,\hat p_j]=0\)</span> and <span class="math notranslate nohighlight">\([\hat r_i,\hat P_j]=0\)</span>.</p></li>
 <li><p>So these operators are independent of each other.</p></li>
 </ul>
 </li>
@@ -2747,6 +2747,123 @@ document.write(`
 </ul>
 </li>
 </ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Time-of-flight distance</span>
+<span class="n">c</span><span class="o">=</span><span class="mf">3e8</span>
+<span class="n">k_B</span><span class="o">=</span><span class="mf">1e-3</span><span class="o">/</span><span class="mf">11.6</span>
+<span class="n">T</span><span class="o">=</span><span class="mf">50e-9</span>
+<span class="n">m</span><span class="o">=</span><span class="mf">80.9e9</span><span class="o">/</span><span class="n">c</span><span class="o">^</span><span class="mi">2</span>
+<span class="n">t</span><span class="o">=</span><span class="mi">100</span>
+<span class="n">n</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">k_B</span><span class="o">*</span><span class="n">T</span><span class="o">/</span><span class="n">m</span><span class="p">)</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.379283219539191
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Radial Momentum and Radial Translation Operator</p>
+<ul>
+<li><p>Definition of radial momentum</p>
+<ul>
+<li><p>The radial momentum is just momentum in the radial direction.</p></li>
+<li><p>In classical mechanics, this corresponds to the unit vector in the <span class="math notranslate nohighlight">\(\theta-\phi\)</span> direction.</p></li>
+<li><p>But in quantum mechanics, the radial direction is determined by operators.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\large\hat{\vec e_r}=\frac{\hat{\vec r}}{\hat r}\)</span></p></li>
+<li><p>We try to take the momentum operator as the dot product with this unit vector.</p></li>
+<li><p>But the order of the dot product matters.</p></li>
+<li><p>When this occurs, we take the average of all possible orderings, which will be guaranteed to be Hermitian.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\large\hat p_r=\frac12(\frac{\hat{\vec r}}{\hat r}\cdot\hat{\vec p}+\hat{\vec p}\cdot\frac{\hat{\vec r}}{\hat r})\)</span></p></li>
+</ul>
+</li>
+<li><p>Commutators of momentum and radial position</p>
+<ul>
+<li><p>We do this by calculating commuatators of Cartesian momentum with radial operators.</p></li>
+<li><p>First way</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\([\hat p_\alpha,\hat r^2]=[\hat p_\alpha,\hat r_x^2+\hat r_y^2+\hat r_z^2]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\([\hat p_\alpha,\hat r^2]=[\hat p_\alpha,\hat r_\alpha^2]\)</span></p></li>
+<li><p>Leibniz: <span class="math notranslate nohighlight">\([\hat p_\alpha,\hat r^2]=\hat r_\alpha[\hat p_\alpha,\hat r_\alpha]+[\hat p_\alpha,\hat r_\alpha]\hat r_\alpha\)</span></p></li>
+<li><p>Evaluate commutators: <span class="math notranslate nohighlight">\([\hat p_\alpha,\hat r^2]=-2i\hbar\hat r_\alpha\)</span></p></li>
+</ul>
+</li>
+<li><p>Second way</p>
+<ul>
+<li><p>Leibniz: <span class="math notranslate nohighlight">\([\hat p_\alpha,\hat r^2]=\hat r[\hat p_\alpha,\hat r]+[\hat p_\alpha,\hat r]\hat r\)</span></p></li>
+<li><p>Jacobi identity: <span class="math notranslate nohighlight">\([\hat A,[\hat B,\hat C]]+[\hat B,[\hat C,\hat A]]+[\hat C,[\hat A,\hat B]]=0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\([\hat r^2,[\hat r,\hat p_\alpha]]=-[\hat r,[\hat p_\alpha,\hat r^2]]-[\hat p_\alpha,[\hat r^2,\hat r]]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\([\hat r^2,[\hat r,\hat p_\alpha]]=2i\hbar[\hat r,\hat r_\alpha]=0\)</span></p></li>
+<li><p>But because an operator and its square have the same eigenvectors, this means <span class="math notranslate nohighlight">\([\hat r,[\hat r,\hat p_\alpha]]=0\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\([\hat p_\alpha,\hat r^2]=2\hat r[\hat p_\alpha,\hat r]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(-2i\hbar\hat r_\alpha=2\hat r[\hat p_\alpha,\hat r]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\([\hat p_\alpha,\hat r]=-i\hbar\frac{\hat r_\alpha}{\hat r}\)</span></p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\([\hat p_\alpha,1]=0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\([\hat p_\alpha,\hat r\frac1{\hat r}]=0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat r[\hat p_\alpha,\frac1{\hat r}]+[\hat p_\alpha,\hat r]\frac{1}{\hat r}=0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat r[\hat p_\alpha,\frac1{\hat r}]-i\hbar\frac{\hat r_\alpha}{\hat r}\frac{1}{\hat r}=0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\large[\hat p_\alpha,\frac1{\hat r}]=i\hbar\frac{\hat r_\alpha}{\hat r^3}\)</span></p></li>
+</ul>
+</li>
+<li><p>Back to radial momentum</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\large[\hat p_\alpha,\hat r]=-i\hbar\frac{\hat r_\alpha}{\hat r}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\large[\hat p_\alpha,\frac1{\hat r}]=i\hbar\frac{\hat r_\alpha}{\hat r^3}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat p_r=\frac12(\frac{\hat{\vec r}}{\hat r}\cdot\hat{\vec p}+\hat{\vec p}\cdot\frac{\hat{\vec r}}{\hat r})=\frac{\hat{\vec r}}{\hat r}\cdot\hat{\vec p}+\frac12\sum_{\alpha}[\hat p_\alpha,\frac{\hat r_\alpha}{\hat r}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat p_r=\frac{\hat{\vec r}}{\hat r}\cdot\hat p+\frac12\sum_\alpha(\hat r_\alpha[\hat p_\alpha,\frac1{\hat r}]+[\hat p_\alpha,\hat r_\alpha]\frac1{\hat r})\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat p_r=\frac{\hat{\vec r}}{\hat r}\cdot\hat p-\frac{i\hbar}{\hat r}\)</span></p></li>
+<li><p>Canonical commutation relation: <span class="math notranslate nohighlight">\([\hat r,\hat p_r]=[\hat r,\frac{\hat{\vec r}}{\hat r}\cdot\hat p-\frac{i\hbar}{\hat r}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\([\hat r,\hat p_r]=\sum_\alpha\frac{\hat r_\alpha}{\hat r}[\hat r,\hat p_\alpha]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\([\hat r,\hat p_r]=i\hbar\)</span></p></li>
+<li><p>We call these canonically conjugate variables.</p></li>
+<li><p>The radial momentum is Hermitian, but it is not self-adjoint.</p></li>
+<li><p>To be self-adjoint means to have no complete set of eigenfunctions and its eigenvalues need not be real because it is an unbounded operator.</p></li>
+<li><p>The operator has to not only be Hermitian but also has to have the same domain when it acts of bras vs kets.</p></li>
+<li><p>When we work with infinite dimensional Hilbert spaces and we work with unbounded Hermitian operators, there are extra conditions we need to look into to find out whether the operator is a well-behaved operator.</p></li>
+<li><p>But the key point is that there is no complete set of states so you should never sum over a complete set of eigenstates of the radial momentum operator.</p></li>
+</ul>
+</li>
+<li><p>Radial translation operator</p>
+<ul>
+<li><p>Now we re-express the 3D translation operator into an operator that depends on radial momentum.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\large e^{-\frac i{\hbar}(r_x\hat p_x+r_y\hat p_y+r_z\hat p_z)}=e^{-\frac i{\hbar}(r\sin{\theta}\cos{\phi}\hat p_x+r\sin{\theta}\sin{\phi}\hat p_y+r\cos{\theta}\hat p_z)}\)</span></p></li>
+<li><p>Rotation operators</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(e^{-\frac i{\hbar}\theta\hat L_y}\hat p_ze^{\frac i{\hbar}\theta\hat L_y}=\sin{\theta}\hat p_x+\cos{\theta}\hat p_z\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(e^{-\frac i{\hbar}\phi\hat L_z}(\sin{\theta}\hat p_x+\cos{\theta}\hat p_z)e^{\frac i{\hbar}\phi\hat L_z}=\sin{\theta}\cos{\phi}\hat p_x+\sin{\theta}\sin{\phi}\hat p_y+\cos{\theta}\hat p_z\)</span></p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\large e^{-\frac i{\hbar}(r_x\hat p_x+r_y\hat p_y+r_z\hat p_z)}=e^{-\frac i{\hbar}\phi\hat L_z}e^{-\frac i{\hbar}\theta\hat L_y}e^{-\frac i{\hbar}r\hat p_z}e^{\frac i{\hbar}\theta\hat L_y}e^{\frac i{\hbar}\phi\hat L_z}\)</span></p></li>
+<li><p>We simplify this by acting it on the origin in position space.</p></li>
+<li><p>But we need to first replace the z-component in terms of radial momentum and angular momentum.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat p_z=(\hat p_r-i\frac{\hbar}{\hat r})\cos{\hat \theta}-\frac{\hat{\vec L}\cdot\hat{\vec e_\phi}}{\hat r}\sin{\hat \theta}\)</span></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\hat{\vec e_\phi}=-\sin{\hat \phi}\vec e_x+\cos{\hat \phi}\vec e_y\)</span></p></li>
+<li><p>The details to prove this are complex and technical.</p></li>
+</ul>
+</li>
+<li><p>We pick an infinitesimal translation <span class="math notranslate nohighlight">\(\vec \delta\)</span> in the <span class="math notranslate nohighlight">\(\theta-\phi\)</span> direction and because operators commute, we can multiply on the left by <span class="math notranslate nohighlight">\(e^{\frac i{\hbar}\vec \delta\cdot\hat{\vec p}}\)</span> and on the right by <span class="math notranslate nohighlight">\(e^{-\frac i{\hbar}\vec \delta\cdot\hat{\vec p}}\)</span>. Then we act on the origin state.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\large e^{\frac i{\hbar}\vec \delta\cdot\hat{\vec p}}e^{-\frac i{\hbar}(r_x\hat p_x+r_y\hat p_y+r_z\hat p_z)}=e^{-\frac i{\hbar}\phi\hat L_z}e^{-\frac i{\hbar}\theta\hat L_y}e^{-\frac i{\hbar}r\hat p_z}e^{\frac i{\hbar}\theta\hat L_y}e^{\frac i{\hbar}\phi\hat L_z}e^{-\frac i{\hbar}\vec \delta\cdot\hat{\vec p}}|0_{\vec r}\rangle\)</span></p></li>
+</ul>
+</li>
+<li><p>Separation of variables</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\large e^{\frac i{\hbar}\vec \delta\cdot\hat{\vec p}}e^{-\frac i{\hbar}\phi\hat L_z}e^{-\frac i{\hbar}\theta\hat L_y}e^{-\frac i{\hbar}r\hat p_z}|0,0,\delta\rangle\)</span></p></li>
+<li><p>Put <span class="math notranslate nohighlight">\(\hat p_z\)</span> in terms of spherical coordinates and simplify: <span class="math notranslate nohighlight">\(\large e^{\frac i{\hbar}\vec \delta\cdot\hat{\vec p}}e^{-\frac i{\hbar}\phi\hat L_z}e^{-\frac i{\hbar}\theta\hat L_y}e^{-\frac i{\hbar}r(\hat p_r-i\frac{\hbar}{\hat r})}|0,0,\delta\rangle\)</span></p></li>
+<li><p>We use <span class="math notranslate nohighlight">\(|r\rangle\)</span> for radial coordinates and <span class="math notranslate nohighlight">\(|\theta,\phi\rangle\)</span> for the angular coordinates.</p></li>
+<li><p><span class="math notranslate nohighlight">\(|0,0,\delta\rangle=|\delta\rangle\otimes|\theta=0,\phi=arb\rangle\)</span></p></li>
+<li><p>Taking the limit <span class="math notranslate nohighlight">\(\delta\rightarrow0\)</span> we obtain the result <span class="math notranslate nohighlight">\(e^{-\frac i{\hbar}r(\hat p_r-i\frac{\hbar}{\hat r})}|0_r\rangle\otimes|\theta,\phi \rangle=|r_x,r_y,r_z\rangle\)</span>.</p></li>
+<li><p>It appears to be nonunitary, but is unitary.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <p>Problem Notes</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(Y_{lm}(\theta,\phi)=\sqrt{\frac{(2l+1)(l-m)!}{4\pi(l+m)!}}(-1)^m P_l^m(\cos\theta)e^{im\phi}~~\text{for}~~m\ge 0\)</span></p></li>
@@ -2768,18 +2885,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle \frac{\sqrt{3} {\left(3 \, \cos\left(\theta\right)^{2} - 1\right)} \sin\left(\theta\right)}{8 \, \pi} \qquad   \]</div>
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle 0 \qquad   \]</div>
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle \frac{15 \, e^{\left(-4 i \, \phi\right)} \sin\left(\theta\right)^{5}}{32 \, \pi} \qquad   \]</div>
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle \frac{e^{\left(-4 i \, \phi\right)}}{2 \, \pi} \qquad   \]</div>
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle 0 \qquad   \]</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2790,12 +2895,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle -\log\left(\sec\left(k x\right)\right) \qquad   \]</div>
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle \log\left(\sin\left(k x\right)\right) \qquad   \]</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2805,44 +2904,37 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle {\left(n + 1\right)} \log\left(\sin\left(\frac{\pi x}{L}\right)\right) \qquad   \]</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">phi_1</span><span class="o">=</span><span class="n">c</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;c h L x&#39;</span><span class="p">)</span>
+<span class="n">phi_1</span><span class="o">=</span><span class="n">c</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span>
 <span class="n">psi_1</span><span class="o">=-</span><span class="n">i</span><span class="o">*</span><span class="n">h</span><span class="o">*</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">phi_1</span><span class="p">,</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="n">pi</span><span class="o">/</span><span class="n">L</span><span class="o">*</span><span class="n">cot</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">phi_1</span><span class="p">)</span>
 <span class="n">s</span><span class="p">(</span><span class="n">psi_1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">phi_1</span><span class="o">=</span><span class="n">c</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">**</span><span class="n">Integer</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">psi_1</span><span class="o">=-</span><span class="n">i</span><span class="o">*</span><span class="n">h</span><span class="o">*</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">phi_1</span><span class="p">,</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="n">pi</span><span class="o">/</span><span class="n">L</span><span class="o">*</span><span class="n">cot</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">phi_1</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">s</span><span class="p">(</span><span class="n">psi_1</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;c&#39; is not defined
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">phi_2</span><span class="o">=</span><span class="n">c</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">^</span><span class="mi">3</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;c h L x&#39;</span><span class="p">)</span>
+<span class="n">phi_2</span><span class="o">=</span><span class="n">c</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">^</span><span class="mi">3</span>
 <span class="n">inter</span><span class="o">=</span><span class="n">diff</span><span class="p">(</span><span class="n">phi_2</span><span class="p">,</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">/</span><span class="n">L</span><span class="o">*</span><span class="n">cot</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">phi_2</span>
 <span class="n">psi_2</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="n">i</span><span class="o">*</span><span class="n">h</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">inter</span><span class="p">,</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="n">pi</span><span class="o">/</span><span class="n">L</span><span class="o">*</span><span class="n">cot</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">inter</span><span class="p">)</span>
 <span class="n">s</span><span class="p">(</span><span class="n">expand</span><span class="p">(</span><span class="n">psi_2</span><span class="o">*</span><span class="n">L</span><span class="o">^</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">c</span><span class="o">*</span><span class="n">h</span><span class="o">^</span><span class="mi">2</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle -9 \, \pi^{2} \cos\left(\frac{\pi x}{L}\right) \cot\left(\frac{\pi x}{L}\right) \sin\left(\frac{\pi x}{L}\right)^{2} - 6 \, \pi^{2} \cos\left(\frac{\pi x}{L}\right)^{2} \sin\left(\frac{\pi x}{L}\right) + 5 \, \pi^{2} \sin\left(\frac{\pi x}{L}\right)^{3} \qquad   \]</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Noncommutative variables</span>
+<span class="n">A</span><span class="o">.&lt;</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="o">&gt;=</span><span class="n">FreeAlgebra</span><span class="p">(</span><span class="n">QQ</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">comm</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="o">-</span><span class="n">b</span><span class="o">*</span><span class="n">a</span>
+<span class="n">comm</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 </div>
 </section>
