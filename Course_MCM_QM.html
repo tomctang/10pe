@@ -382,6 +382,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m5-quantum-operators-and-their-identities">M5. Quantum Operators and their Identities</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m6-qm-of-the-simple-harmonic-oscillator">M6. QM of the Simple Harmonic Oscillator</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m7-quantum-angular-momentum-and-hydrogen">M7. Quantum Angular Momentum and Hydrogen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m8-quantum-approximation-methods">M8. Quantum Approximation Methods</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qc">QC</a></li>
 </ul>
             </nav>
@@ -2747,24 +2748,6 @@ document.write(`
 </ul>
 </li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Time-of-flight distance</span>
-<span class="n">c</span><span class="o">=</span><span class="mf">3e8</span>
-<span class="n">k_B</span><span class="o">=</span><span class="mf">1e-3</span><span class="o">/</span><span class="mf">11.6</span>
-<span class="n">T</span><span class="o">=</span><span class="mf">50e-9</span>
-<span class="n">m</span><span class="o">=</span><span class="mf">80.9e9</span><span class="o">/</span><span class="n">c</span><span class="o">^</span><span class="mi">2</span>
-<span class="n">t</span><span class="o">=</span><span class="mi">100</span>
-<span class="n">n</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">k_B</span><span class="o">*</span><span class="n">T</span><span class="o">/</span><span class="n">m</span><span class="p">)</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.379283219539191
-</pre></div>
-</div>
-</div>
-</div>
 <ul class="simple">
 <li><p>Radial Momentum and Radial Translation Operator</p>
 <ul>
@@ -2864,6 +2847,212 @@ document.write(`
 </ul>
 </li>
 </ul>
+<ul class="simple">
+<li><p>Isotropic SHO in 3D</p>
+<ul>
+<li><p>Isotropic SHO</p>
+<ul>
+<li><p>We begin with the Hamiltonian for the 3D SHO where the frequencies for each directions are the same.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat H=\frac{\hat p^2}{2M}+\frac12M\omega^2\hat{\vec r^2}\)</span></p></li>
+<li><p>We solved this in M6 using Cartesian representation. We now solve it using factorisation after separation of variables.</p></li>
+<li><p>Steps</p>
+<ol class="arabic simple">
+<li><p>Factorise the original Hamiltonian.</p></li>
+<li><p>Use intertwining instead of constructing the factorisation chain.</p></li>
+<li><p>Use the translation operator to find wavefunctions.</p></li>
+</ol>
+</li>
+<li><p>Note: We use intertwining as a shortcut where the factorisation complicates but there are little tweaks with the way things work when we do this shortcut.</p></li>
+</ul>
+</li>
+<li><p>Separation of variables</p>
+<ul>
+<li><p>Rewritten Hamiltonian: <span class="math notranslate nohighlight">\(\hat H=\frac{\hat p_r^2}{2M}+\frac{\hat{\vec L^2}}{2M\hat r^2}+\frac12M\omega^2\hat{\vec r^2}\)</span></p></li>
+<li><p>Note that <span class="math notranslate nohighlight">\(\hat H\)</span>, <span class="math notranslate nohighlight">\(\hat{\vec L^2}\)</span>, and <span class="math notranslate nohighlight">\(\hat L_z\)</span> all mutually commute, so we can find simultaneous eigenstates of all three.</p></li>
+<li><p>The angular momentum part has already been solved with eigenvalues of <span class="math notranslate nohighlight">\(\hbar^2l(l+1)\)</span> under <span class="math notranslate nohighlight">\(\hat{\vec L^2}\)</span> and <span class="math notranslate nohighlight">\(\hbar m\)</span> under <span class="math notranslate nohighlight">\(\hat L_z\)</span>.</p></li>
+<li><p>Tensor-product representation: <span class="math notranslate nohighlight">\(|\Psi\rangle=|\psi_r\rangle\otimes|l,m\rangle\)</span></p></li>
+<li><p>Apply Hamiltonian onto state: <span class="math notranslate nohighlight">\(\hat H|\Psi\rangle=\hat H_l|\psi_r\rangle\otimes|l,m\rangle\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat H_l=\frac{\hat p_r^2}{2M}+\frac{\hbar^2l(l+1)}{2M\hat r^2}+\frac12M\omega^2\hat{\vec r^2}\)</span></p></li>
+</ul>
+</li>
+<li><p>Energy Eigenstates</p>
+<ul>
+<li><p>The Hamiltonian operator for angular momentum sector <span class="math notranslate nohighlight">\(\hat H_l\)</span> acts only on the radial sector and defines the energy eigenstate equation via <span class="math notranslate nohighlight">\(\hat H_l|\psi_{nl}\rangle=E_{nl}|\psi_{nl}\rangle\)</span>.</p>
+<ul>
+<li><p>The extra label <span class="math notranslate nohighlight">\(n\)</span> was introduced to distinguish between the different energy eigenstates with the same <span class="math notranslate nohighlight">\(l\)</span> eigenvalues.</p></li>
+<li><p>Note that the energies do not depend on <span class="math notranslate nohighlight">\(m\)</span>.</p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\hat H_l=\frac{\hat p_r^2}{2M}+\frac{\hbar^2l(l+1)}{2M\hat r^2}+\frac12M\omega^2\hat r^2\)</span></p></li>
+</ul>
+</li>
+<li><p>First Factorisation</p>
+<ul>
+<li><p>We have a term like <span class="math notranslate nohighlight">\(\frac1{\hat r}\)</span> and one like <span class="math notranslate nohighlight">\(\hat r\)</span>.</p></li>
+<li><p>The cross terms are constants and the commuatator with radial momentum is like <span class="math notranslate nohighlight">\(\frac1{\hat r^2}\)</span> and a constant.</p></li>
+<li><p>This case is just like the case we discussed about the second factorisation of the 1D SHO.</p></li>
+<li><p>Recall, that we need the superpotential to diverge as <span class="math notranslate nohighlight">\(r\rightarrow0\)</span> because of the domain of the radial position operator.</p></li>
+<li><p>Ansatz: <span class="math notranslate nohighlight">\(\hat A_l=\frac1{\sqrt{2M}}(\hat p_r-i\frac{\alpha_l}{\hat r}-i\beta_l\hat r)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat A_l^\dagger\hat A_l=\frac1{2M}(\hat p_r^2-i[\hat p_r,\frac{\alpha_l}{\hat r}+\beta_l\hat r]+(\frac{\alpha_l}{\hat r}+\beta_l\hat r)^2)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat A_l^\dagger\hat A_l=\frac1{2M}(\hat p_r^2+\frac{\hbar\alpha_l}{\hat r^2}-\hbar\beta_l+\frac{\alpha_l^2}{\hat r^2}+2\alpha_l\beta_l+\beta_l^2\hat r^2)\)</span></p></li>
+<li><p>So we choose either <span class="math notranslate nohighlight">\(\alpha_l=\hbar l\)</span> or <span class="math notranslate nohighlight">\(\alpha_l=-\hbar(l+1)\)</span> and <span class="math notranslate nohighlight">\(\beta_l=\pm M\omega\)</span>.</p></li>
+<li><p>Our requirement that the superpotential must be positive as <span class="math notranslate nohighlight">\(r\rightarrow\infty\)</span> requires <span class="math notranslate nohighlight">\(\beta_l=M\omega\)</span>.</p></li>
+<li><p>But there is also a similar requirement that the superpotential must be negative before it diverges at <span class="math notranslate nohighlight">\(r\rightarrow0\)</span> so we choose <span class="math notranslate nohighlight">\(\alpha_l=-\hbar(l+1)\)</span>.</p></li>
+<li><p>Substitute: <span class="math notranslate nohighlight">\(\hat A_l^\dagger\hat A_l=\frac{\hat p^2}{2m}+\frac{\hbar^2l(l+1)}{2M\hat r^2}+\frac12M\omega^2\hat r^2-\frac12\hbar\omega-\hbar\omega(l+1)=\hat H_l-E_{0l}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(E_{0l}=\hbar\omega(l+\frac32)\)</span></p></li>
+</ul>
+</li>
+<li><p>Intertwining</p>
+<ul>
+<li><p>We use a shortcut to find all of the energy eigenstates of all Hamiltonians at once using the intertwining relation.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat A_l\hat A_l^\dagger+E_{0l}=\hat H_l+[\hat A_l,\hat A_l^\dagger]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat A_l\hat A_l^\dagger+E_{0l}=\frac{\hat p^2}{2m}+\frac{\hbar^2(l+2)(l+1)}{2M\hat r^2}+\frac12M\omega^2\hat r^2+\hbar\omega\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat A_l\hat A_l^\dagger=\hat H_{l+1}+\hbar\omega\)</span></p></li>
+<li><p>Note that this result is slightly different from our standard result.</p></li>
+<li><p>This is occuring because the auxiliary Hamiltonians are related to <span class="math notranslate nohighlight">\(\hat H_l\)</span> by a constant, which is why we can solve all of them at once.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat H_l\hat A_l^\dagger=(\hat A_l^\dagger\hat A_l+E_{0l})\hat A_l^\dagger\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat H_l\hat A_l^\dagger=\hat A_l^\dagger(\hat H_{l+1}+\hbar\omega)\)</span></p></li>
+<li><p>So, the raising operator shifts the Hamiltonian’s index by 1 and the energy by <span class="math notranslate nohighlight">\(\hbar\omega\)</span>.</p></li>
+</ul>
+</li>
+<li><p>Constructing the energy eigenstate</p>
+<ul>
+<li><p>Ground state condition: <span class="math notranslate nohighlight">\(\hat A_l|\psi_{0l}\rangle=0\)</span></p></li>
+<li><p>Energy eigenstates of <span class="math notranslate nohighlight">\(\hat H_{l-m}\)</span>: <span class="math notranslate nohighlight">\(\hat A_{l-m}^\dagger\hat A_{l-m+1}^\dagger\cdots\hat A_{l-1}^\dagger|\psi_{0l}\rangle\)</span></p></li>
+<li><p>Proof</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\hat A_{l-m}^\dagger\hat A_{l-m+1}^\dagger\cdots\hat A_{l-1}^\dagger(\hat H_l+m\hbar\omega)|\psi_{0l}\rangle\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat H_{l-m}\hat A_{l-m}^\dagger\hat A_{l-m+1}^\dagger\cdots\hat A_{l-1}^\dagger|\psi_{0l}\rangle=(E_{0l}+m\hbar\omega)\hat A_{l-m}^\dagger\hat A_{l-m+1}^\dagger\cdots\hat A_{l-1}^\dagger|\psi_{0l}\rangle\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat A_l=\frac1{\sqrt{2M}}(\hat p_r+i\frac{\hbar(l+1)}{\hat r}-iM\omega\hat r)\)</span></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Degeneracy</p>
+<ul>
+<li><p>Cartesian solution: <span class="math notranslate nohighlight">\(E_{n_xn_yn_z}=\hbar\omega(n_x+n_y+n_z+\frac32)\)</span></p></li>
+<li><p>For example, for <span class="math notranslate nohighlight">\(E=\frac72\hbar\omega\)</span>, we have <span class="math notranslate nohighlight">\((2,0,0),(0,2,0),(0,0,2),(1,1,0),(1,0,1),(0,1,1)\)</span> or six states. This corresponds to <span class="math notranslate nohighlight">\(l=2\)</span>(5 states) and <span class="math notranslate nohighlight">\(l=0\)</span>(1 state): 5+1=6.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Coulomb Problem for Hydrogen</p>
+<ul>
+<li><p>Hydrogen</p>
+<ul>
+<li><p>This is the most important problem in the class.</p></li>
+<li><p>It can be solved exactly.</p></li>
+<li><p>In the course of doing so, we encounter a wide range of marvelous phenomena.</p></li>
+<li><p>Top 9 things you can do with the solution</p>
+<ol class="arabic simple">
+<li><p>Explain the atomic spectra</p></li>
+<li><p>Measure the mass of the proton</p></li>
+<li><p>Discover the deuteron</p></li>
+<li><p>Determine that electrons have spin</p></li>
+<li><p>Understand why the g-factor is 2 for an electron</p></li>
+<li><p>Establish the need for quantum field theory</p></li>
+<li><p>Determine that the proton has spin</p></li>
+<li><p>Measure the charge radius of the proton</p></li>
+<li><p>It touches on radio astronomy, QFT, medical imaging…</p></li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>The Coulomb Problem</p>
+<ul>
+<li><p>Hamiltonian: <span class="math notranslate nohighlight">\(\hat H=\frac{\hat{\vec p^2}}{2M}-\frac{e^2}{\hat r}\)</span></p></li>
+<li><p>Reduced mass of hydrogen atom: <span class="math notranslate nohighlight">\(M=\frac{m_em_p}{m_e+m_p}\)</span></p></li>
+<li><p>Separation of variables: <span class="math notranslate nohighlight">\(\hat H=\frac{\hat p_r^2}{2M}+\frac{\hat{\vec L^2}}{2M\hat r^2}-\frac{e^2}{\hat r}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat H_l=\frac{\hat p_r^2}{2M}+\frac{\hbar^2l(l+1)}{2M\hat r^2}-\frac{e^2}{\hat r}\)</span></p></li>
+</ul>
+</li>
+<li><p>First Factorisation</p>
+<ul>
+<li><p>The superpotential has a term that is like <span class="math notranslate nohighlight">\(\frac1{\hat r}\)</span> plus a constant.</p></li>
+<li><p>The square gives an inverse square, inverse and a constant term and the commutator gives an inverse square term, so this should work.</p></li>
+<li><p>The constant must be positive and the coefficient of the inverse power must be negative based on quantum requirements.</p></li>
+<li><p>Ansatz: <span class="math notranslate nohighlight">\(a_0=\frac{\hbar^2}{Me^2}\)</span></p></li>
+<li><p>Bohr radius: <span class="math notranslate nohighlight">\((a_0)\approx0.0529\)</span> nm or <span class="math notranslate nohighlight">\(0.529\)</span> angstroms</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat B_r(l)=\frac1{\sqrt{2M}}(\hat p_r-i\hbar(\frac{\alpha_l}{a_0}+{\beta_l}{\hat r}))\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat B_r(l)^\dagger\hat B_r(l)=\frac1{2M}(\hat p_r^2+\frac{\hbar^2\beta_l}{\hat r^2}+\frac{\hbar^2\alpha_l^2}{a_0^2}+\frac{2\hbar^2\alpha_l\beta_l}{a_0\hat r}+\frac{\hbar^2\beta_l^2}{\hat r^2})\)</span></p></li>
+<li><p>Choices: <span class="math notranslate nohighlight">\(\beta_l=l\)</span> and <span class="math notranslate nohighlight">\(\beta_l=-(l+1)\)</span></p></li>
+<li><p>Choose second option since <span class="math notranslate nohighlight">\(\beta_l&lt;0\)</span> which comes from the quantum requirement.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{2\hbar^2\alpha_l\beta_l}{2Ma_0}=-e^2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha_l=\frac1{l+1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(E_l^\text{aux}=-\frac{e^2}{2(l+1)^2a_0}\)</span></p></li>
+</ul>
+</li>
+<li><p>Intertwining</p>
+<ul>
+<li><p>We use the shortcut to find all energy eigenstates of all Hamiltonians at once using the intertwining relation.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat B_r(l)\hat B_r^\dagger(l)+E_l^\text{aux}=\hat H_l+[\hat B_r(l),\hat B_r^\dagger(l)]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat B_r(l)\hat B_r^\dagger(l)+E_l^\text{aux}=\hat H_{l+1}\)</span></p></li>
+<li><p>This means that we can immediately jump to the eigenstates of all Hamiltonians at once because the angular momentum Hamiltonians are the auxiliary Hamiltonians.</p></li>
+<li><p>Quantum number <span class="math notranslate nohighlight">\(n\)</span>: <span class="math notranslate nohighlight">\(E_l^\text{aux}=-\frac{e^2}{2(l+1)^2a_0}=-\frac{e^2}{2n^2a_0}=E_n\)</span></p></li>
+</ul>
+</li>
+<li><p>Constructing the energy eigenstates</p>
+<ul>
+<li><p>Subsidiary condition: <span class="math notranslate nohighlight">\(\hat B_r(l)|\psi_{n=l+1l}\rangle=0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(|\psi_{nl-m}\rangle=\hat B_r^\dagger(l-m)\hat B_r^\dagger(l-m+1)\cdots\hat B_r^\dagger(l-1)|\psi_{n=l+1l}\rangle\)</span></p></li>
+<li><p>This is an energy eigenstate of <span class="math notranslate nohighlight">\(\hat H_{l-m}\)</span> with energy <span class="math notranslate nohighlight">\(E_n=-\frac{e^2}{2n^2a_0}\)</span>.</p></li>
+<li><p>Note that this process ends with <span class="math notranslate nohighlight">\(m=l\)</span>, because the next raising operator has a “divide by zero” in it.</p></li>
+</ul>
+</li>
+<li><p>Degeneracy</p>
+<ul>
+<li><p>Degeneracy for each angular momentum multiplet <span class="math notranslate nohighlight">\(l\)</span>: <span class="math notranslate nohighlight">\(2l+1\)</span></p></li>
+<li><p>Total degeneracy: <span class="math notranslate nohighlight">\(\sum_{l=0}^{n-1}(2l+1)\)</span></p></li>
+<li><p>We find the sum to be <span class="math notranslate nohighlight">\(n^2\)</span>.</p></li>
+</ul>
+</li>
+<li><p>Energy scales</p>
+<ul>
+<li><p>Rest-mass of electron: <span class="math notranslate nohighlight">\(m_ec^2=510998.950\)</span> eV</p>
+<ul>
+<li><p>Approximation: <span class="math notranslate nohighlight">\(510000\)</span> eV</p></li>
+</ul>
+</li>
+<li><p>Ground-state energy of hydrogen: <span class="math notranslate nohighlight">\(-\frac{e^2}{2a_0}\)</span></p>
+<ul>
+<li><p>Approximation: <span class="math notranslate nohighlight">\(-13.6056980659\)</span> eV</p></li>
+</ul>
+</li>
+<li><p>The number <span class="math notranslate nohighlight">\(13.6\)</span> is then called the Rydberg.</p></li>
+<li><p>Recall that <span class="math notranslate nohighlight">\(a_0=\frac{\hbar^2}{Me^2}\approx0.0529\)</span> nm.</p></li>
+<li><p>For atomic calculations, it is much more convenient to work with the rest mass energy, the Rydberg, the Bohr radius, and <span class="math notranslate nohighlight">\(\hbar c=\frac{1240}{2\pi}\)</span> eV-nm in your calculations.</p></li>
+<li><p>Energy levels</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(E_1=13.6\)</span> eV</p></li>
+<li><p><span class="math notranslate nohighlight">\(E_2=3.4\)</span> eV</p></li>
+<li><p><span class="math notranslate nohighlight">\(E_3=1.5\)</span> eV</p></li>
+<li><p><span class="math notranslate nohighlight">\(E_4=0.85\)</span> eV</p></li>
+<li><p>and so on…</p></li>
+</ul>
+</li>
+<li><p>You can see that they get smaller as they approach zero.</p></li>
+<li><p>When an electron moves between these energy levels, they emit a photon whose energy is given by the energy difference between these levels.</p></li>
+<li><p>This is why you see striking colours with neon lights, sodium lights or krypton lights and so forth.</p></li>
+<li><p>Chemists use flame tests to determine the atoms in a compound by put the compound in a Bunsen burner and look at the colour of the flame.</p></li>
+</ul>
+</li>
+<li><p>Photoproduction</p>
+<ul>
+<li><p>The strongest transitions in atoms occur between energy levels that change the angular momentum by <span class="math notranslate nohighlight">\(\Delta l=\pm1\)</span>.</p></li>
+<li><p>Transitions that go down to the <span class="math notranslate nohighlight">\(n=1\)</span> state are called Lynman series.</p></li>
+<li><p>Ones that go down to the <span class="math notranslate nohighlight">\(n=2\)</span> state instead are called Balmer series.</p></li>
+<li><p>It turns out the Balmer lines are in the optical range and the Lynman series are in the UV.\</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><h2 class="rubric" id="position-space-wavefunctions-of-hydrogen">Position-Space Wavefunctions of Hydrogen</h2>
+</li>
+</ul>
 <p>Problem Notes</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(Y_{lm}(\theta,\phi)=\sqrt{\frac{(2l+1)(l-m)!}{4\pi(l+m)!}}(-1)^m P_l^m(\cos\theta)e^{im\phi}~~\text{for}~~m\ge 0\)</span></p></li>
@@ -2929,12 +3118,172 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Noncommutative variables</span>
-<span class="n">A</span><span class="o">.&lt;</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="o">&gt;=</span><span class="n">FreeAlgebra</span><span class="p">(</span><span class="n">QQ</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">var</span><span class="p">(</span><span class="s1">&#39;h&#39;</span><span class="p">)</span>
+<span class="n">A</span><span class="o">.&lt;</span><span class="n">x</span><span class="p">,</span><span class="n">p</span><span class="o">&gt;=</span><span class="n">FreeAlgebra</span><span class="p">(</span><span class="n">QQ</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">comm</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="o">-</span><span class="n">b</span><span class="o">*</span><span class="n">a</span>
-<span class="n">comm</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">comm</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">p</span><span class="p">)</span><span class="o">=</span><span class="n">i</span><span class="o">*</span><span class="n">h</span>
+<span class="n">s</span><span class="p">(</span><span class="n">comm</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">p</span><span class="p">))</span>                    <span class="c1"># replace with hbar if needed</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle i \, h \qquad   \]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Time-of-flight distance</span>
+<span class="n">c</span><span class="o">=</span><span class="mf">3e8</span>
+<span class="n">k_B</span><span class="o">=</span><span class="mf">1e-3</span><span class="o">/</span><span class="mf">11.6</span>
+<span class="n">T</span><span class="o">=</span><span class="mf">50e-9</span>
+<span class="n">m</span><span class="o">=</span><span class="mf">80.9e9</span><span class="o">/</span><span class="n">c</span><span class="o">^</span><span class="mi">2</span>
+<span class="n">t</span><span class="o">=</span><span class="mi">100</span>
+<span class="n">n</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">k_B</span><span class="o">*</span><span class="n">T</span><span class="o">/</span><span class="n">m</span><span class="p">)</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.379283219539191
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>PS 10, P4, p2</p></li>
+<li><p>Translate maths into sagemath coding for below two cells.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.&lt;</span><span class="n">r_x</span><span class="p">,</span><span class="n">p_x</span><span class="p">,</span><span class="n">r_y</span><span class="p">,</span><span class="n">p_y</span><span class="p">,</span><span class="n">h</span><span class="p">,</span><span class="n">i</span><span class="o">&gt;=</span><span class="n">FreeAlgebra</span><span class="p">(</span><span class="n">ZZ</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">p_p</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">r_x</span><span class="o">*</span><span class="n">p_x</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">r_y</span><span class="o">*</span><span class="n">p_y</span><span class="o">-</span><span class="n">i</span><span class="o">*</span><span class="n">h</span>
+<span class="n">s</span><span class="p">(</span><span class="n">p_p</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 4 r_{x} p_{x} r_{x} p_{x} + 4 r_{x} p_{x} r_{y} p_{y} - 2 r_{x} p_{x} i h + 4 r_{y} p_{y} r_{x} p_{x} + 4 r_{y} p_{y} r_{y} p_{y} - 2 r_{y} p_{y} i h - 2 i h r_{x} p_{x} - 2 i h r_{y} p_{y} + i h i h \qquad   \]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Normalization constant for wavefunction of the isotropic SHO</span>
+<span class="n">var</span><span class="p">(</span><span class="s1">&#39;r M omega h&#39;</span><span class="p">)</span>             <span class="c1"># replace h with hbar if needed</span>
+<span class="n">var</span><span class="p">(</span><span class="s1">&#39;l&#39;</span><span class="p">,</span><span class="n">domain</span><span class="o">=</span><span class="s1">&#39;integer&#39;</span><span class="p">)</span>
+<span class="n">assume</span><span class="p">(</span><span class="n">M</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">assume</span><span class="p">(</span><span class="n">omega</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">assume</span><span class="p">(</span><span class="n">h</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">assume</span><span class="p">(</span><span class="n">l</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="n">r</span><span class="o">^</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">l</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="n">M</span><span class="o">*</span><span class="n">omega</span><span class="o">*</span><span class="n">r</span><span class="o">^</span><span class="mi">2</span><span class="o">/</span><span class="n">h</span><span class="p">),</span><span class="n">r</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">infinity</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{1}{2} \, \left(\frac{M \omega}{h}\right)^{-l - \frac{3}{2}} \Gamma\left(l + \frac{3}{2}\right) \qquad   \]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Balmer series</span>
+<span class="n">f</span><span class="p">(</span><span class="n">m</span><span class="p">)</span><span class="o">=</span><span class="mf">1.00054</span><span class="o">/</span><span class="mi">10973732</span><span class="o">*</span><span class="mi">4</span><span class="o">*</span><span class="n">m</span><span class="o">^</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">m</span><span class="o">^</span><span class="mi">2</span><span class="o">-</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="mi">10</span><span class="o">^</span><span class="mi">10</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mf">3.5</span><span class="o">.</span><span class="mf">.6.5</span><span class="p">]:</span>
+    <span class="n">s</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">f</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 3.0 \qquad   6564.66551215211 \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 3.5 \qquad   5415.29646625342 \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 4.0 \qquad   4862.71519418675 \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 4.5 \qquad   4544.76843148992 \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 5.0 \qquad   4341.70999480960 \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 5.5 \qquad   4202.77527497569 \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 6.0 \qquad   4102.91594509507 \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 6.5 \qquad   4028.42582263510 \qquad   \]</div>
+</div>
+</div>
+</section>
+<section id="m8-quantum-approximation-methods">
+<h2>M8. Quantum Approximation Methods<a class="headerlink" href="#m8-quantum-approximation-methods" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Integrals</span>
+<span class="n">var</span><span class="p">(</span><span class="s1">&#39;theta phi&#39;</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="n">phi</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">),</span><span class="n">theta</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">pi</span><span class="p">))</span>
+<span class="n">s</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="n">phi</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">),</span><span class="n">theta</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">pi</span><span class="p">))</span>
+<span class="n">s</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="n">phi</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">),</span><span class="n">theta</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">pi</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 0 \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 0 \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 0 \qquad   \]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="n">start</span><span class="o">=</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">var</span><span class="p">(</span><span class="s1">&#39;l&#39;</span><span class="p">)</span>
+<span class="n">K_0</span><span class="o">=</span><span class="n">matrix</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">K_p</span><span class="o">=</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
+<span class="n">K_m</span><span class="o">=</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
+<span class="n">A</span><span class="o">=</span><span class="n">l</span><span class="o">*</span><span class="n">K_p</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">l</span><span class="o">*</span><span class="n">K_0</span><span class="o">+</span><span class="n">l</span><span class="o">*</span><span class="n">K_m</span>
+<span class="n">s</span><span class="p">(</span><span class="n">e</span><span class="o">^</span><span class="n">A</span><span class="p">)</span>
+<span class="n">end</span><span class="o">=</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">end</span><span class="o">-</span><span class="n">start</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left(\begin{array}{rr}
+-l + 1 &amp; l \\
+-l &amp; l + 1
+\end{array}\right) \qquad   \end{split}\]</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.08009004592895508
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Singlet-triplet energy and wavelength</span>
+<span class="n">c</span><span class="o">=</span><span class="mi">3</span><span class="o">*</span><span class="mi">10</span><span class="o">^</span><span class="mi">8</span>
+<span class="n">m_e</span><span class="o">=</span><span class="mi">511</span><span class="o">*</span><span class="mi">10</span><span class="o">^</span><span class="mi">3</span><span class="o">/</span><span class="n">c</span><span class="o">^</span><span class="mi">2</span>
+<span class="n">m_p</span><span class="o">=</span><span class="mi">938</span><span class="o">*</span><span class="mi">10</span><span class="o">^</span><span class="mi">6</span><span class="o">/</span><span class="n">c</span><span class="o">^</span><span class="mi">2</span>
+<span class="n">alpha</span><span class="o">=</span><span class="mf">0.007297</span>
+<span class="n">hbar</span><span class="o">=</span><span class="mi">1240</span><span class="o">/</span><span class="mi">2</span><span class="o">/</span><span class="n">pi</span>
+<span class="n">a_0</span><span class="o">=</span><span class="n">hbar</span><span class="o">/</span><span class="n">m_e</span><span class="o">/</span><span class="n">c</span><span class="o">/</span><span class="n">alpha</span>
+<span class="n">g</span><span class="o">=</span><span class="mi">2</span>
+<span class="n">g_p</span><span class="o">=</span><span class="mf">5.59</span>
+<span class="n">mu_B</span><span class="o">=</span><span class="n">e</span><span class="o">*</span><span class="n">hbar</span><span class="o">/</span><span class="mi">2</span><span class="o">/</span><span class="n">m_e</span>
+<span class="n">mu_0</span><span class="o">=</span><span class="mi">4</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">alpha</span><span class="o">*</span><span class="n">hbar</span><span class="o">/</span><span class="n">e</span><span class="o">^</span><span class="mi">2</span><span class="o">/</span><span class="n">c</span>
+<span class="n">d</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">g</span><span class="o">*</span><span class="n">g_p</span><span class="o">*</span><span class="n">mu_B</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">m_e</span><span class="o">*</span><span class="n">mu_0</span><span class="o">/</span><span class="mi">3</span><span class="o">/</span><span class="n">pi</span><span class="o">/</span><span class="n">m_p</span><span class="o">/</span><span class="n">a_0</span><span class="o">^</span><span class="mi">3</span>
+<span class="c1"># d=1765</span>
+<span class="n">l</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">hbar</span><span class="o">/</span><span class="n">d</span><span class="o">/</span><span class="mi">10</span><span class="o">^</span><span class="mi">7</span>
+<span class="n">s</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">n</span><span class="p">(</span><span class="n">l</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 5.88256712306245 \times 10^{-6} \qquad   21.0792324857393 \qquad   \]</div>
 </div>
 </div>
 </section>
@@ -3186,6 +3535,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m5-quantum-operators-and-their-identities">M5. Quantum Operators and their Identities</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m6-qm-of-the-simple-harmonic-oscillator">M6. QM of the Simple Harmonic Oscillator</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m7-quantum-angular-momentum-and-hydrogen">M7. Quantum Angular Momentum and Hydrogen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m8-quantum-approximation-methods">M8. Quantum Approximation Methods</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qc">QC</a></li>
 </ul>
   </nav></div>
