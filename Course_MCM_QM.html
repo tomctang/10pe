@@ -63,7 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Course_MCM_QM';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="How Dad learn QM" href="How_Dad_organise_QM.html" />
+    <link rel="next" title="QFT" href="Course_MCM_QFT.html" />
     <link rel="prev" title="Project Euler Q101-" href="PE_Informatics/PE200.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -195,7 +195,6 @@
 <li class="toctree-l1"><a class="reference internal" href="PE_Informatics/PE100.html">Project Euler Q1-100</a></li>
 <li class="toctree-l1"><a class="reference internal" href="PE_Informatics/PE200.html">Project Euler Q101-</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Quantum Mechanics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="How_Dad_organise_QM.html">How Dad learn QM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Course_MCM_QFT.html">QFT</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Notebook</span></p>
@@ -381,7 +380,20 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m4-advanced-quantum-ideas-with-light">M4. Advanced Quantum Ideas with Light</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m5-quantum-operators-and-their-identities">M5. Quantum Operators and their Identities</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m6-qm-of-the-simple-harmonic-oscillator">M6. QM of the Simple Harmonic Oscillator</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m7-quantum-angular-momentum-and-hydrogen">M7. Quantum Angular Momentum and Hydrogen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m7-quantum-angular-momentum-and-hydrogen">M7. Quantum Angular Momentum and Hydrogen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#commutation-relations-of-angular-momentum">Commutation Relations of Angular Momentum</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#angular-momentum-eigenstates">Angular Momentum Eigenstates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spherical-harmonics-without-derivatives">Spherical Harmonics without Derivatives</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#schroedinger-factorisation-method">Schroedinger Factorisation Method</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#two-body-problem-and-seperation-of-variables">Two-Body Problem and Seperation of Variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#radial-momentum-and-radial-translation-operator">Radial Momentum and Radial Translation Operator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#isotropic-sho-in-3d">Isotropic SHO in 3D</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coulomb-problem-for-hydrogen">Coulomb Problem for Hydrogen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#position-space-wavefunctions-of-hydrogen">Position-Space Wavefunctions of Hydrogen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-notes">Problem Notes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coding">coding</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m8-quantum-approximation-methods">M8. Quantum Approximation Methods</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qc">QC</a></li>
 </ul>
@@ -408,14 +420,27 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(\langle\psi|\)</span>: Bra</p></li>
 <li><p><span class="math notranslate nohighlight">\(|\phi\rangle\)</span>: Ket</p></li>
 <li><p><span class="math notranslate nohighlight">\(\langle\phi|\psi\rangle\)</span>: Bra-ket</p></li>
-<li><p><span class="math notranslate nohighlight">\([\hat{A}\hat{B}]\)</span>: Commutator</p></li>
+<li><p><span class="math notranslate nohighlight">\(\otimes\)</span>: Tensor product</p></li>
+<li><p><span class="math notranslate nohighlight">\([\hat{A},\hat{B}]\)</span>: Commutator</p></li>
+<li><p><span class="math notranslate nohighlight">\(\{\hat{A},\hat{B}\}\)</span>: Anticommutator represented by Poisson Bracket <span class="math notranslate nohighlight">\(\{\}\)</span></p></li>
+<li><p>Spin operators</p>
+<ul>
 <li><p><span class="math notranslate nohighlight">\(\hat{S_z}\)</span>: hatsz (spin on z-axis)</p></li>
 <li><p><span class="math notranslate nohighlight">\(\hat{S_y}\)</span>: hatsy (spin on y-axis)</p></li>
 <li><p><span class="math notranslate nohighlight">\(\hat{S_x}\)</span>: hatsx (spin on x-axis)</p></li>
 <li><p><span class="math notranslate nohighlight">\(\hat{S_+}\)</span>: hatsp (raising operator)</p></li>
 <li><p><span class="math notranslate nohighlight">\(\hat{S_-}\)</span>: hatsm (lowering operator)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\vec S^2}=\hat S_x^2+\hat S_y^2+\hat S_z^2\)</span>: Total spin operator</p></li>
+</ul>
+</li>
+<li><p>Lie algebra</p></li>
 <li><p><span class="math notranslate nohighlight">\(\hbar\)</span>: hbar</p></li>
-<li><p><span class="math notranslate nohighlight">\(B\)</span>: magnetic field</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat H\)</span>: Hamiltonian</p></li>
+<li><p>Angular momentum operators</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\hat {L_z}\)</span> hatlz (angular momentum on z-axis)</p></li>
+</ul>
+</li>
 </ul>
 <p>Maths Notes</p>
 <ul class="simple">
@@ -446,6 +471,7 @@ document.write(`
 <li><p><a class="reference external" href="https://www.st-andrews.ac.uk/physics/quvis/simulations_html5/sims/QuantumBombGame/Quantum_bomb.html">Quantum bomb detection</a></p></li>
 <li><p><a class="reference external" href="https://www.st-andrews.ac.uk/physics/quvis/simulations_html5/sims/QuantumEraser/QuantumEraser.html">Quantum eraser with polarizers</a></p></li>
 </ul>
+<img src="https://raw.githubusercontent.com/tomctang/NB_img/main/qm_process.jpg" alt="Branches-of-Physics" width="500">
 <section id="intro-quantum-probability">
 <h3>Intro &amp; Quantum Probability<a class="headerlink" href="#intro-quantum-probability" title="Link to this heading">#</a></h3>
 <ul class="simple">
@@ -517,6 +543,11 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>41532
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -539,6 +570,10 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 49986 \qquad   50014 \qquad   \]</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -548,20 +583,29 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{385}{1728} \qquad   1343 \qquad   \]</div>
+<img alt="_images/d8ad4e198358b961cbe0d24acfe301d963ec2118b7284a1d4c065327373c4f39.png" src="_images/d8ad4e198358b961cbe0d24acfe301d963ec2118b7284a1d4c065327373c4f39.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="mi">1</span>
-<span class="n">n</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">y</span><span class="o">=</span><span class="mi">0</span>
 <span class="n">m</span><span class="o">=</span><span class="mi">364</span>
 <span class="k">while</span> <span class="n">x</span><span class="o">&gt;</span><span class="mf">0.5</span><span class="p">:</span>
     <span class="n">x</span><span class="o">*=</span><span class="n">m</span>
     <span class="n">m</span><span class="o">-=</span><span class="mi">1</span>
     <span class="n">x</span><span class="o">/=</span><span class="mi">365</span>
-    <span class="n">n</span><span class="o">+=</span><span class="mi">1</span>
-<span class="n">s</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">y</span><span class="o">+=</span><span class="mi">1</span>
+<span class="n">s</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 22 \qquad   \]</div>
 </div>
 </div>
 </section>
@@ -694,10 +738,20 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0820000000000000
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">0.9539</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="mf">0.3</span><span class="o">^</span><span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0245679806700000
 </pre></div>
 </div>
 </div>
@@ -708,12 +762,29 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.328303287701419
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="n">cos</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="mi">9</span><span class="p">)</span>
 <span class="n">s</span><span class="p">(</span><span class="n">n</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">n</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">),</span><span class="n">n</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">3</span><span class="p">))</span>
 <span class="n">s</span><span class="p">(</span><span class="n">n</span><span class="p">(</span><span class="n">cos</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="mi">20</span><span class="p">)</span><span class="o">^</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">x</span><span class="o">=</span><span class="n">cos</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="n">Integer</span><span class="p">(</span><span class="mi">9</span><span class="p">))</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">s</span><span class="p">(</span><span class="n">n</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">n</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="n">Integer</span><span class="p">(</span><span class="mi">2</span><span class="p">)),</span><span class="n">n</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="n">Integer</span><span class="p">(</span><span class="mi">3</span><span class="p">)))</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">s</span><span class="p">(</span><span class="n">n</span><span class="p">(</span><span class="n">cos</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="n">Integer</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span><span class="o">**</span><span class="n">Integer</span><span class="p">(</span><span class="mi">10</span><span class="p">)))</span>
+
+<span class="ne">TypeError</span>: &#39;sage.rings.integer.Integer&#39; object is not callable
 </pre></div>
 </div>
 </div>
@@ -727,6 +798,11 @@ document.write(`
     <span class="n">n</span><span class="o">/=</span><span class="mi">365</span>
     <span class="n">m</span><span class="o">-=</span><span class="mi">1</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.104809701340232e-09
 </pre></div>
 </div>
 </div>
@@ -946,6 +1022,24 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle {|ψ\rangle} \qquad   {\langleψ|} \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \text{\texttt{&lt;ψ|ψ&gt;{ }=}} \qquad   1 \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \text{\texttt{|ψ&gt;&lt;ψ|{ }=}} \qquad   \left(\begin{array}{rr}
+\frac{1}{2} &amp; \frac{1}{2} \\
+\frac{1}{2} &amp; \frac{1}{2}
+\end{array}\right) \qquad   \end{split}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \text{\texttt{|ψ&gt;⊗|φ&gt;{ }=}} \qquad   {|ψφ\rangle} \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \text{\texttt{Tensor{ }vector:}} \qquad   \left(\begin{array}{rr}
+\frac{1}{2} \, \sqrt{2} &amp; 0 \\
+\frac{1}{2} \, \sqrt{2} &amp; 0
+\end{array}\right) \qquad   \end{split}\]</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -953,6 +1047,18 @@ document.write(`
 <span class="n">s</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">d</span><span class="o">+</span><span class="n">sqrt</span><span class="p">(</span><span class="n">a</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="mi">4</span><span class="o">*</span><span class="n">b</span><span class="o">*</span><span class="n">c</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">d</span><span class="o">+</span><span class="n">d</span><span class="o">^</span><span class="mi">2</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">abs</span><span class="p">((</span><span class="n">a</span><span class="o">-</span><span class="n">d</span><span class="o">+</span><span class="n">sqrt</span><span class="p">(</span><span class="n">a</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="mi">4</span><span class="o">*</span><span class="n">b</span><span class="o">*</span><span class="n">c</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">d</span><span class="o">+</span><span class="n">d</span><span class="o">^</span><span class="mi">2</span><span class="p">))</span><span class="o">/</span><span class="n">b</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="n">b</span><span class="p">))</span>
 <span class="n">s</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">abs</span><span class="p">((</span><span class="n">a</span><span class="o">-</span><span class="n">d</span><span class="o">-</span><span class="n">sqrt</span><span class="p">(</span><span class="n">a</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="mi">4</span><span class="o">*</span><span class="n">b</span><span class="o">*</span><span class="n">c</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">d</span><span class="o">+</span><span class="n">d</span><span class="o">^</span><span class="mi">2</span><span class="p">))</span><span class="o">/</span><span class="n">b</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="mi">4</span><span class="p">))</span>
 <span class="n">s</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">d</span><span class="o">+</span><span class="n">sqrt</span><span class="p">(</span><span class="n">a</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="mi">4</span><span class="o">*</span><span class="n">b</span><span class="o">*</span><span class="n">c</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">d</span><span class="o">+</span><span class="n">d</span><span class="o">^</span><span class="mi">2</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">abs</span><span class="p">((</span><span class="n">a</span><span class="o">-</span><span class="n">d</span><span class="o">-</span><span class="n">sqrt</span><span class="p">(</span><span class="n">a</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="mi">4</span><span class="o">*</span><span class="n">b</span><span class="o">*</span><span class="n">c</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">d</span><span class="o">+</span><span class="n">d</span><span class="o">^</span><span class="mi">2</span><span class="p">))</span><span class="o">/</span><span class="n">b</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="n">b</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">15</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">s</span><span class="p">(</span><span class="n">Integer</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">abs</span><span class="p">((</span><span class="n">a</span><span class="o">-</span><span class="n">d</span><span class="o">+</span><span class="n">sqrt</span><span class="p">(</span><span class="n">a</span><span class="o">**</span><span class="n">Integer</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">Integer</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="n">b</span><span class="o">*</span><span class="n">c</span><span class="o">-</span><span class="n">Integer</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">d</span><span class="o">+</span><span class="n">d</span><span class="o">**</span><span class="n">Integer</span><span class="p">(</span><span class="mi">2</span><span class="p">)))</span><span class="o">/</span><span class="n">b</span><span class="p">)</span><span class="o">**</span><span class="n">Integer</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">Integer</span><span class="p">(</span><span class="mi">4</span><span class="p">)))</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">s</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">d</span><span class="o">+</span><span class="n">sqrt</span><span class="p">(</span><span class="n">a</span><span class="o">**</span><span class="n">Integer</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">Integer</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="n">b</span><span class="o">*</span><span class="n">c</span><span class="o">-</span><span class="n">Integer</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">d</span><span class="o">+</span><span class="n">d</span><span class="o">**</span><span class="n">Integer</span><span class="p">(</span><span class="mi">2</span><span class="p">)))</span><span class="o">/</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">abs</span><span class="p">((</span><span class="n">a</span><span class="o">-</span><span class="n">d</span><span class="o">+</span><span class="n">sqrt</span><span class="p">(</span><span class="n">a</span><span class="o">**</span><span class="n">Integer</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">Integer</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="n">b</span><span class="o">*</span><span class="n">c</span><span class="o">-</span><span class="n">Integer</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">d</span><span class="o">+</span><span class="n">d</span><span class="o">**</span><span class="n">Integer</span><span class="p">(</span><span class="mi">2</span><span class="p">)))</span><span class="o">/</span><span class="n">b</span><span class="p">)</span><span class="o">**</span><span class="n">Integer</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">Integer</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span><span class="o">*</span><span class="n">b</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">s</span><span class="p">(</span><span class="n">Integer</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">abs</span><span class="p">((</span><span class="n">a</span><span class="o">-</span><span class="n">d</span><span class="o">-</span><span class="n">sqrt</span><span class="p">(</span><span class="n">a</span><span class="o">**</span><span class="n">Integer</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">Integer</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="n">b</span><span class="o">*</span><span class="n">c</span><span class="o">-</span><span class="n">Integer</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">d</span><span class="o">+</span><span class="n">d</span><span class="o">**</span><span class="n">Integer</span><span class="p">(</span><span class="mi">2</span><span class="p">)))</span><span class="o">/</span><span class="n">b</span><span class="p">)</span><span class="o">**</span><span class="n">Integer</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">Integer</span><span class="p">(</span><span class="mi">4</span><span class="p">)))</span>
+
+<span class="ne">NameError</span>: name &#39;a&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1237,6 +1343,11 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2509
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1257,6 +1368,52 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left(\begin{array}{rr}
+1 &amp; 0 \\
+0 &amp; 1
+\end{array}\right) \qquad   \left(\begin{array}{rr}
+-36 &amp; 0 \\
+0 &amp; -36
+\end{array}\right) \qquad   \left(\begin{array}{rr}
+1 &amp; 0 \\
+0 &amp; 1
+\end{array}\right) \qquad   \end{split}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left(\begin{array}{rr}
+0 &amp; 1 \\
+1 &amp; 0
+\end{array}\right) \qquad   \left(\begin{array}{rr}
+0 &amp; 6 \\
+-6 &amp; 0
+\end{array}\right) \qquad   \left(\begin{array}{rr}
+1 &amp; 0 \\
+0 &amp; -1
+\end{array}\right) \qquad   \end{split}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left(\begin{array}{rr}
+0 &amp; 1 \\
+1 &amp; 0
+\end{array}\right) \qquad   \left(\begin{array}{rr}
+0 &amp; \frac{1}{6} \\
+-\frac{1}{6} &amp; 0
+\end{array}\right) \qquad   \left(\begin{array}{rr}
+1 &amp; 0 \\
+0 &amp; -1
+\end{array}\right) \qquad   \end{split}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 0 \qquad   0 \qquad   0 \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle -1 \qquad   36 \qquad   -1 \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left(\begin{array}{rr}
+6 &amp; 0 \\
+0 &amp; 6
+\end{array}\right) \qquad   \end{split}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \left[1, -1\right] \qquad   \left[-6 \sqrt{-1}, 6 \sqrt{-1}\right] \qquad   \left[1, -1\right] \qquad   \]</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1272,6 +1429,10 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 0.0 \qquad   0.9999999999999998 \qquad   \]</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1283,6 +1444,17 @@ document.write(`
 <span class="n">s</span><span class="p">(</span><span class="n">identity_matrix</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">eigenvalues</span><span class="p">())</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \left[\frac{1}{2} \, a + \frac{1}{2} \, d - \frac{1}{2} \, \sqrt{a^{2} + 4 \, b c - 2 \, a d + d^{2}}, \frac{1}{2} \, a + \frac{1}{2} \, d + \frac{1}{2} \, \sqrt{a^{2} + 4 \, b c - 2 \, a d + d^{2}}\right] \qquad   \left[\frac{1}{2} \, a^{2} + b c + \frac{1}{2} \, d^{2} - \frac{1}{2} \, \sqrt{a^{2} + 4 \, b c - 2 \, a d + d^{2}} {\left(a + d\right)}, \frac{1}{2} \, a^{2} + b c + \frac{1}{2} \, d^{2} + \frac{1}{2} \, \sqrt{a^{2} + 4 \, b c - 2 \, a d + d^{2}} {\left(a + d\right)}\right] \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left(\begin{array}{rr}
+\overline{a} + 6 \, \overline{b} &amp; \overline{f} + 6 \, \overline{g} \\
+\overline{c} + 6 \, \overline{d} &amp; \overline{h} + 6 \, \overline{j}
+\end{array}\right) \qquad   -{\left(c + 6 \, d\right)} {\left(f + 6 \, g\right)} + {\left(a + 6 \, b\right)} {\left(h + 6 \, j\right)} \qquad   \end{split}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \left[1, 1\right] \qquad   \]</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -1306,6 +1478,53 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left(\begin{array}{rr}
+0 &amp; \cos\left(\frac{1}{2} \, \theta\right)^{2} - 12 \, \cos\left(\frac{1}{2} \, \theta\right) \sin\left(\frac{1}{2} \, \theta\right) + 36 \, \sin\left(\frac{1}{2} \, \theta\right)^{2} \\
+\cos\left(\frac{1}{2} \, \theta\right)^{2} + 12 \, \cos\left(\frac{1}{2} \, \theta\right) \sin\left(\frac{1}{2} \, \theta\right) + 36 \, \sin\left(\frac{1}{2} \, \theta\right)^{2} &amp; 0
+\end{array}\right) \qquad   \end{split}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left(\begin{array}{rr}
+0 &amp; -6 \, \cos\left(\frac{1}{2} \, \theta\right)^{2} + 72 \, \cos\left(\frac{1}{2} \, \theta\right) \sin\left(\frac{1}{2} \, \theta\right) - 216 \, \sin\left(\frac{1}{2} \, \theta\right)^{2} \\
+6 \, \cos\left(\frac{1}{2} \, \theta\right)^{2} + 72 \, \cos\left(\frac{1}{2} \, \theta\right) \sin\left(\frac{1}{2} \, \theta\right) + 216 \, \sin\left(\frac{1}{2} \, \theta\right)^{2} &amp; 0
+\end{array}\right) \qquad   \end{split}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left(\begin{array}{rr}
+\cos\left(\frac{1}{2} \, \theta\right)^{2} - 36 \, \sin\left(\frac{1}{2} \, \theta\right)^{2} &amp; 0 \\
+0 &amp; -\cos\left(\frac{1}{2} \, \theta\right)^{2} + 36 \, \sin\left(\frac{1}{2} \, \theta\right)^{2}
+\end{array}\right) \qquad   \end{split}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left(\begin{array}{rr}
+0 &amp; \cos\left(\frac{1}{2} \, \theta\right)^{2} - 36 \, \sin\left(\frac{1}{2} \, \theta\right)^{2} \\
+\cos\left(\frac{1}{2} \, \theta\right)^{2} - 36 \, \sin\left(\frac{1}{2} \, \theta\right)^{2} &amp; 0
+\end{array}\right) \qquad   \end{split}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left(\begin{array}{rr}
+-72 \, \cos\left(\frac{1}{2} \, \theta\right) \sin\left(\frac{1}{2} \, \theta\right) &amp; -6 \, \cos\left(\frac{1}{2} \, \theta\right)^{2} - 216 \, \sin\left(\frac{1}{2} \, \theta\right)^{2} \\
+6 \, \cos\left(\frac{1}{2} \, \theta\right)^{2} + 216 \, \sin\left(\frac{1}{2} \, \theta\right)^{2} &amp; 72 \, \cos\left(\frac{1}{2} \, \theta\right) \sin\left(\frac{1}{2} \, \theta\right)
+\end{array}\right) \qquad   \end{split}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left(\begin{array}{rr}
+\cos\left(\frac{1}{2} \, \theta\right)^{2} + 36 \, \sin\left(\frac{1}{2} \, \theta\right)^{2} &amp; 12 \, \cos\left(\frac{1}{2} \, \theta\right) \sin\left(\frac{1}{2} \, \theta\right) \\
+-12 \, \cos\left(\frac{1}{2} \, \theta\right) \sin\left(\frac{1}{2} \, \theta\right) &amp; -\cos\left(\frac{1}{2} \, \theta\right)^{2} - 36 \, \sin\left(\frac{1}{2} \, \theta\right)^{2}
+\end{array}\right) \qquad   \end{split}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left(\begin{array}{rr}
+72 \, \cos\left(\frac{1}{2} \, \theta\right) \sin\left(\frac{1}{2} \, \theta\right) &amp; \cos\left(\frac{1}{2} \, \theta\right)^{2} - 1296 \, \sin\left(\frac{1}{2} \, \theta\right)^{2} \\
+\cos\left(\frac{1}{2} \, \theta\right)^{2} - 1296 \, \sin\left(\frac{1}{2} \, \theta\right)^{2} &amp; -72 \, \cos\left(\frac{1}{2} \, \theta\right) \sin\left(\frac{1}{2} \, \theta\right)
+\end{array}\right) \qquad   \end{split}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left(\begin{array}{rr}
+0 &amp; -6 \, \cos\left(\frac{1}{2} \, \theta\right)^{2} - 7776 \, \sin\left(\frac{1}{2} \, \theta\right)^{2} \\
+6 \, \cos\left(\frac{1}{2} \, \theta\right)^{2} + 7776 \, \sin\left(\frac{1}{2} \, \theta\right)^{2} &amp; 0
+\end{array}\right) \qquad   \end{split}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left(\begin{array}{rr}
+\cos\left(\frac{1}{2} \, \theta\right)^{2} - 1296 \, \sin\left(\frac{1}{2} \, \theta\right)^{2} &amp; -72 \, \cos\left(\frac{1}{2} \, \theta\right) \sin\left(\frac{1}{2} \, \theta\right) \\
+-72 \, \cos\left(\frac{1}{2} \, \theta\right) \sin\left(\frac{1}{2} \, \theta\right) &amp; -\cos\left(\frac{1}{2} \, \theta\right)^{2} + 1296 \, \sin\left(\frac{1}{2} \, \theta\right)^{2}
+\end{array}\right) \qquad   \end{split}\]</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1313,6 +1532,13 @@ document.write(`
 <span class="n">s</span><span class="p">(</span><span class="n">cos</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span><span class="o">*</span><span class="n">identity_matrix</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">i</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span><span class="o">*</span><span class="n">pauliy</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left(\begin{array}{rr}
+\cos\left(\alpha\right) &amp; -36 \, \sin\left(\alpha\right) \\
+36 \, \sin\left(\alpha\right) &amp; \cos\left(\alpha\right)
+\end{array}\right) \qquad   \end{split}\]</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -1340,6 +1566,35 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{1}{2} \, \sqrt{2} {\left(\sigma_{x} + \sigma_{z}\right)} \qquad   \frac{1}{2} \, \sqrt{2} {\left(\sigma_{y} + \sigma_{z}\right)} \qquad   \frac{1}{2} \, \sqrt{2} {\left(\sigma_{x} + \sigma_{y} + 2 \, \sigma_{z}\right)} \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left(\begin{array}{rr}
+\frac{7}{2} &amp; -\frac{7}{2} \\
+-\frac{5}{2} &amp; -\frac{5}{2}
+\end{array}\right) \qquad   \end{split}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left(\begin{array}{rr}
+3 \, \sqrt{2} \sin\left(1\right) + \cos\left(1\right) &amp; 3 \, \sqrt{2} \sin\left(1\right) \\
+3 \, \sqrt{2} \sin\left(1\right) &amp; -3 \, \sqrt{2} \sin\left(1\right) + \cos\left(1\right)
+\end{array}\right) \qquad   \end{split}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left(\begin{array}{rr}
+3 \, \sqrt{2} \sin\left(1\right) + \cos\left(1\right) &amp; -18 \, \sqrt{2} \sin\left(1\right) \\
+18 \, \sqrt{2} \sin\left(1\right) &amp; -3 \, \sqrt{2} \sin\left(1\right) + \cos\left(1\right)
+\end{array}\right) \qquad   \end{split}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left(\begin{array}{rr}
+{\left(3 \, \sqrt{2} \sin\left(1\right) + \cos\left(1\right)\right)}^{2} + 108 \, \sin\left(1\right)^{2} &amp; -18 \, \sqrt{2} {\left(3 \, \sqrt{2} \sin\left(1\right) + \cos\left(1\right)\right)} \sin\left(1\right) - 3 \, \sqrt{2} {\left(3 \, \sqrt{2} \sin\left(1\right) - \cos\left(1\right)\right)} \sin\left(1\right) \\
+3 \, \sqrt{2} {\left(3 \, \sqrt{2} \sin\left(1\right) + \cos\left(1\right)\right)} \sin\left(1\right) - 18 \, \sqrt{2} {\left(3 \, \sqrt{2} \sin\left(1\right) - \cos\left(1\right)\right)} \sin\left(1\right) &amp; {\left(3 \, \sqrt{2} \sin\left(1\right) - \cos\left(1\right)\right)}^{2} - 108 \, \sin\left(1\right)^{2}
+\end{array}\right) \qquad   \end{split}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left(\begin{array}{rr}
+2 \, \sqrt{3} \sqrt{2} \sin\left(\sqrt{3}\right) + \cos\left(\sqrt{3}\right) &amp; -5 \, \sqrt{3} \sqrt{2} \sin\left(\sqrt{3}\right) \\
+7 \, \sqrt{3} \sqrt{2} \sin\left(\sqrt{3}\right) &amp; -2 \, \sqrt{3} \sqrt{2} \sin\left(\sqrt{3}\right) + \cos\left(\sqrt{3}\right)
+\end{array}\right) \qquad   \end{split}\]</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1352,6 +1607,18 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left(\begin{array}{rr}
+144 \, \beta \delta e^{\left(-6 \, \gamma\right)} + e^{\left(6 \, \gamma\right)} &amp; 12 \, \beta e^{\left(-6 \, \gamma\right)} \\
+12 \, \delta e^{\left(-6 \, \gamma\right)} &amp; e^{\left(-6 \, \gamma\right)}
+\end{array}\right) \qquad   \end{split}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left(\begin{array}{rr}
+e^{\left(6 \, \gamma\right)} &amp; 12 \, \beta e^{\left(6 \, \gamma\right)} \\
+12 \, \delta e^{\left(6 \, \gamma\right)} &amp; 144 \, \beta \delta e^{\left(6 \, \gamma\right)} + e^{\left(-6 \, \gamma\right)}
+\end{array}\right) \qquad   \end{split}\]</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1363,6 +1630,13 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left(\begin{array}{rr}
+-a c e^{b} + e^{\left(-b\right)} &amp; c e^{b} \\
+-a e^{b} &amp; e^{b}
+\end{array}\right) \qquad   \end{split}\]</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1372,6 +1646,16 @@ document.write(`
 <span class="n">s</span><span class="p">(</span><span class="n">kp</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span><span class="n">km</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left(\begin{array}{rr}
+0 &amp; 0 \\
+0 &amp; 0
+\end{array}\right) \qquad   \left(\begin{array}{rr}
+0 &amp; 0 \\
+0 &amp; 0
+\end{array}\right) \qquad   \end{split}\]</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -1384,6 +1668,13 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left(\begin{array}{rr}
+e^{\left(-\beta\right)} &amp; \gamma e^{\left(-\beta\right)} \\
+-\alpha e^{\left(-\beta\right)} &amp; -\alpha \gamma e^{\left(-\beta\right)} + e^{\beta}
+\end{array}\right) \qquad   \end{split}\]</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1391,6 +1682,10 @@ document.write(`
 <span class="n">s</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">x_0</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">sigma_x</span><span class="o">^</span><span class="mi">2</span><span class="p">))</span><span class="o">*</span><span class="n">e</span><span class="o">^-</span><span class="p">(</span><span class="n">i</span><span class="o">/</span><span class="n">h</span><span class="o">*</span><span class="n">p</span><span class="o">*</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="n">infinity</span><span class="p">,</span><span class="n">infinity</span><span class="p">))</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 2 \, \sqrt{\pi} \sqrt{\sigma_{x}^{2}} e^{\left(\frac{6 \, {\left(6 \, p^{2} \sigma_{x}^{2} - h p x_{0}\right)}}{h^{2}}\right)} \qquad   \]</div>
 </div>
 </div>
 </section>
@@ -1571,7 +1866,7 @@ document.write(`
 <li><p>This looks at the other case where <span class="math notranslate nohighlight">\(|\psi\rangle\)</span> is not an eigenstate of <span class="math notranslate nohighlight">\(\hat{A}\)</span></p></li>
 <li><p>Since <span class="math notranslate nohighlight">\(\hat{A}\)</span> is being measured, it must be a Hermitian operator, so <span class="math notranslate nohighlight">\(\Delta^2(A)_\psi=||(\hat{A}-\langle\hat{A}\rangle)|\psi\rangle||^2\)</span></p>
 <ul>
-<li><p><span class="math notranslate nohighlight">\(\|psi\rangle\)</span> is the state we are working with, which we can think of as a vector</p></li>
+<li><p><span class="math notranslate nohighlight">\(|\psi\rangle\)</span> is the state we are working with, which we can think of as a vector.</p></li>
 <li><p>We operate <span class="math notranslate nohighlight">\(\hat{A}\)</span> on the state to get <span class="math notranslate nohighlight">\(\hat{A}|\psi\rangle\)</span>. All the operator can do is scale and rotate the vector.</p></li>
 <li><p>We project <span class="math notranslate nohighlight">\(\hat{A}|\psi\rangle\)</span> onto <span class="math notranslate nohighlight">\(|\psi\rangle\)</span> to get <span class="math notranslate nohighlight">\(\langle\hat{A}\rangle|\psi\rangle\)</span>.</p></li>
 <li><p>We subtract <span class="math notranslate nohighlight">\(\langle\hat{A}\rangle|\psi\rangle\)</span> from <span class="math notranslate nohighlight">\(\hat{A}|\psi\rangle\)</span> to get a vector perpendicular to the original vector for the state <span class="math notranslate nohighlight">\(|\psi\rangle\)</span> or <span class="math notranslate nohighlight">\((\hat{A}|\psi\rangle)_\perp\)</span>.</p></li>
@@ -1608,7 +1903,7 @@ document.write(`
 <ul>
 <li><p><span class="math notranslate nohighlight">\(||\phi\rangle-\lambda|\psi\rangle|^2\geq0\)</span></p></li>
 <li><p>Rearrange: <span class="math notranslate nohighlight">\(\langle\phi|\phi\rangle+|\lambda|^2\langle\psi|\psi\rangle\geq\lambda\langle\phi|\psi\rangle+\lambda^*\langle\psi|\phi\rangle\)</span></p></li>
-<li><p>Pick <span class="math notranslate nohighlight">\(\lambda=\frac{\langle\psi|\phi\rangle}{\langle\psi|\psi\rangle}\)</span></p></li>
+<li><p>Pick <span class="math notranslate nohighlight">\(\lambda=\frac{\langle\psi|\phi\rangle}{\langle\psi|\psi\rangle}\)</span>.</p></li>
 <li><p>Substitute and simplify: <span class="math notranslate nohighlight">\(\langle\phi|\phi\rangle\langle\psi|\psi\rangle\geq|\langle\psi|\phi\rangle|^2\)</span></p>
 <ul>
 <li><p>Other form: <span class="math notranslate nohighlight">\(|\langle\psi|\phi\rangle|\leq\sqrt{\langle\phi|\phi\rangle\langle\psi|\psi\rangle}\)</span></p></li>
@@ -1623,7 +1918,7 @@ document.write(`
 <li><p>This is the general derivation of the fluctuations with respect to the state <span class="math notranslate nohighlight">\(|\chi\rangle\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\langle\chi|\hat{x}|\chi\rangle=\langle\hat{x}\rangle\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\langle\chi|\hat{p}|\chi\rangle-\langle\hat{p}\rangle\)</span></p></li>
-<li><p>Commutator: <span class="math notranslate nohighlight">\([\hat{x}-\langle\hat{x}\rangle,\hat{p}-\langle\hat{p}\rangle]=i\hbar\)</span>(you can also sandwich a <span class="math notranslate nohighlight">\(\chi\)</span> outside the coommutator because the state is normalized).</p></li>
+<li><p>Commutator: <span class="math notranslate nohighlight">\([\hat{x}-\langle\hat{x}\rangle,\hat{p}-\langle\hat{p}\rangle]=i\hbar\)</span>(you can also sandwich a <span class="math notranslate nohighlight">\(\chi\)</span> outside the coommutator because the state is normalized)</p></li>
 <li><p><span class="math notranslate nohighlight">\(|\phi\rangle=(\hat{x}-\langle\hat{x}\rangle)|\chi\rangle\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(|\psi\rangle=(\hat{p}-\langle\hat{p}\rangle)|\chi\rangle\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\langle\phi|\psi\rangle-\langle\psi|\phi\rangle=\langle\phi|\psi\rangle-\langle\phi|\psi\rangle^*=i\hbar\)</span></p></li>
@@ -1900,7 +2195,7 @@ document.write(`
 <ul>
 <li><p>Uncertainty adds in quadrature for position: <span class="math notranslate nohighlight">\(\Delta^2(\vec{r})_{n_x,n_y,n_z}=\frac{\hbar}{2m\omega}(2n_x+1+2n_y+1+2n_z+1)\)</span></p></li>
 <li><p>Uncertainty also adds in quadrature for momentum: <span class="math notranslate nohighlight">\(\Delta^2(\vec{p})_{n_x,n_y,n_z}=\frac{\hbar m\omega}{2}(2n_x+1+2n_y+1+2n_z+1)\)</span></p></li>
-<li><p>Product of uncertainty: <span class="math notranslate nohighlight">\(\Delta(r)_{n_x,n_y,n_z}Delta(p)_{n_x,n_y,n_z}=\frac{\hbar}{2}(2n_x+2n_y+2n_z+3)\)</span></p></li>
+<li><p>Product of uncertainty: <span class="math notranslate nohighlight">\(\Delta(r)_{n_x,n_y,n_z}\Delta(p)_{n_x,n_y,n_z}=\frac{\hbar}{2}(2n_x+2n_y+2n_z+3)\)</span></p></li>
 </ul>
 </li>
 </ul>
@@ -1940,6 +2235,10 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \Gamma\left(\frac{1}{2} \, m + \frac{1}{2} \, n + 1\right) \qquad   \]</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1950,6 +2249,12 @@ document.write(`
 <span class="n">s</span><span class="p">(</span><span class="n">derivative</span><span class="p">(</span><span class="n">v_morse</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="mi">2</span><span class="p">)(</span><span class="n">r_e</span><span class="p">))</span>                       <span class="c1"># Find k_morse by taking the second derivative and evaluating at r_e</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle -D_{e} \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{2 \, D_{e}}{a^{2}} \qquad   \]</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -1966,6 +2271,10 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle -\frac{0.0381623550106610}{\pi^{2} {\left(\frac{0.851519080938624}{\pi} - \frac{0.0381623550106610}{\pi^{2}} - 4.75000000000000\right)}} \qquad   \]</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1980,12 +2289,24 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Percentage error for 0.95*x_0: 4.58201651824834
+Percentage error for 1.05*x_0: 2.73552333491867
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pauli y matrix eigenvectors</span>
 <span class="n">sigma_y</span><span class="o">=</span><span class="n">matrix</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,[</span><span class="mi">0</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="o">-</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
 <span class="n">matrix</span><span class="p">(</span><span class="n">sigma_y</span><span class="p">)</span><span class="o">.</span><span class="n">eigenvectors_left</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(-6*I, [(1, 1.000000000000000?*I)], 1),
+ (6*I, [(1, -1.000000000000000?*I)], 1)]
 </pre></div>
 </div>
 </div>
@@ -2001,6 +2322,10 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{\sqrt{\pi}}{\sqrt{\frac{m \omega}{h}}} \qquad   \]</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2011,6 +2336,10 @@ document.write(`
 <span class="n">s</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">c</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="n">p</span><span class="o">^</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">m</span><span class="o">*</span><span class="n">omega</span><span class="o">*</span><span class="n">h</span><span class="p">))),</span><span class="n">p</span><span class="p">,</span><span class="o">-</span><span class="n">infinity</span><span class="p">,</span><span class="n">infinity</span><span class="p">))</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{\sqrt{\pi} c^{2}}{\sqrt{\frac{1}{h m \omega}}} \qquad   \]</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -2028,10 +2357,48 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 1 \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 2 \, z \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 4 \, z^{2} - 2 \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 8 \, z^{3} - 12 \, z \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 16 \, z^{4} - 48 \, z^{2} + 12 \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 32 \, z^{5} - 160 \, z^{3} + 120 \, z \qquad   \]</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">hbar</span><span class="o">*</span><span class="n">beta</span><span class="o">*</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">36</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">n</span><span class="p">(</span><span class="n">Integer</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="n">Integer</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">hbar</span><span class="o">*</span><span class="n">beta</span><span class="o">*</span><span class="n">pi</span><span class="p">)</span>
+
+<span class="nn">File ~/miniconda3/envs/sage/lib/python3.12/site-packages/sage/symbolic/expression.pyx:6180,</span> in <span class="ni">sage.symbolic.expression.Expression.__call__ (build/cythonized/sage/symbolic/expression.cpp:78763)</span><span class="nt">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">6178</span>         <span class="n">z</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="n">x</span><span class="o">^</span><span class="n">y</span>
+<span class="g g-Whitespace">   </span><span class="mi">6179</span>     <span class="s2">&quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">6180</span><span class="s2">     return self._parent._call_element_(self, *args, **kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">6181</span><span class="s2"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">6182</span><span class="s2"> def variables(self):</span>
+
+<span class="nn">File ~/miniconda3/envs/sage/lib/python3.12/site-packages/sage/symbolic/ring.pyx:1035,</span> in <span class="ni">sage.symbolic.ring.SymbolicRing._call_element_ (build/cythonized/sage/symbolic/ring.c:13674)</span><span class="nt">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1033</span><span class="s2">     d = args[0]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1034</span><span class="s2"> else:</span>
+<span class="ne">-&gt; </span><span class="mi">1035</span><span class="s2">     raise TypeError(&quot;Substitution using function-call syntax &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1036</span><span class="s2">                     &quot;and unnamed arguments has been removed. You &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1037</span><span class="s2">                     &quot;can use named arguments instead, like &quot;</span>
+
+<span class="ne">TypeError</span>: Substitution using function-call syntax and unnamed arguments has been removed. You can use named arguments instead, like EXPR(x=..., y=...)
 </pre></div>
 </div>
 </div>
@@ -2049,14 +2416,41 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle -\frac{26.5416677684687}{\pi} - \frac{19.1000000000000}{{\left(\frac{0.926410742354928}{\pi} + 1\right)}^{\frac{3}{2}}} + 19.1000000000000 \qquad   \]</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">37</span><span class="p">],</span> <span class="n">line</span> <span class="mi">8</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">m</span><span class="o">=</span><span class="n">Integer</span><span class="p">(</span><span class="mi">938</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">s</span><span class="p">(</span><span class="n">Integer</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="n">Integer</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">hbar</span><span class="o">*</span><span class="n">beta</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="n">V</span><span class="o">/</span><span class="n">m</span><span class="p">)</span><span class="o">-</span><span class="n">V</span><span class="o">/</span><span class="p">(</span><span class="n">Integer</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">beta</span><span class="o">*</span><span class="n">hbar</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="n">m</span><span class="o">*</span><span class="n">V</span><span class="p">))</span><span class="o">**</span><span class="p">(</span><span class="n">Integer</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="n">Integer</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span><span class="o">+</span><span class="n">V</span><span class="o">-</span><span class="n">Integer</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="n">hbar</span><span class="o">*</span><span class="n">beta</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="n">V</span><span class="o">/</span><span class="n">m</span><span class="p">))</span>
+<span class="ne">----&gt; </span><span class="mi">8</span> <span class="n">s</span><span class="p">(</span><span class="n">n</span><span class="p">(</span><span class="n">Integer</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="n">Integer</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">hbar</span><span class="o">*</span><span class="n">beta</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="n">V</span><span class="o">/</span><span class="n">m</span><span class="p">)</span><span class="o">-</span><span class="n">V</span><span class="o">/</span><span class="p">(</span><span class="n">Integer</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">beta</span><span class="o">*</span><span class="n">hbar</span><span class="p">)</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="n">m</span><span class="o">*</span><span class="n">V</span><span class="p">))</span><span class="o">**</span><span class="p">(</span><span class="n">Integer</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="n">Integer</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span><span class="o">+</span><span class="n">V</span><span class="o">-</span><span class="n">Integer</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="n">hbar</span><span class="o">*</span><span class="n">beta</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="n">V</span><span class="o">/</span><span class="n">m</span><span class="p">)))</span>
+
+<span class="nn">File ~/miniconda3/envs/sage/lib/python3.12/site-packages/sage/symbolic/expression.pyx:6180,</span> in <span class="ni">sage.symbolic.expression.Expression.__call__ (build/cythonized/sage/symbolic/expression.cpp:78763)</span><span class="nt">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">6178</span>         <span class="n">z</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="n">x</span><span class="o">^</span><span class="n">y</span>
+<span class="g g-Whitespace">   </span><span class="mi">6179</span>     <span class="s2">&quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">6180</span><span class="s2">     return self._parent._call_element_(self, *args, **kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">6181</span><span class="s2"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">6182</span><span class="s2"> def variables(self):</span>
+
+<span class="nn">File ~/miniconda3/envs/sage/lib/python3.12/site-packages/sage/symbolic/ring.pyx:1035,</span> in <span class="ni">sage.symbolic.ring.SymbolicRing._call_element_ (build/cythonized/sage/symbolic/ring.c:13674)</span><span class="nt">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1033</span><span class="s2">     d = args[0]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1034</span><span class="s2"> else:</span>
+<span class="ne">-&gt; </span><span class="mi">1035</span><span class="s2">     raise TypeError(&quot;Substitution using function-call syntax &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1036</span><span class="s2">                     &quot;and unnamed arguments has been removed. You &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1037</span><span class="s2">                     &quot;can use named arguments instead, like &quot;</span>
+
+<span class="ne">TypeError</span>: Substitution using function-call syntax and unnamed arguments has been removed. You can use named arguments instead, like EXPR(x=..., y=...)
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="m7-quantum-angular-momentum-and-hydrogen">
 <h2>M7. Quantum Angular Momentum and Hydrogen<a class="headerlink" href="#m7-quantum-angular-momentum-and-hydrogen" title="Link to this heading">#</a></h2>
-<p>Lecture Notes</p>
+<section id="commutation-relations-of-angular-momentum">
+<h3>Commutation Relations of Angular Momentum<a class="headerlink" href="#commutation-relations-of-angular-momentum" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Commutation Relations of Angular Momentum</p>
-<ul>
 <li><p>Angular momentum in QM</p>
 <ul>
 <li><p>Angular momentum is hard.</p></li>
@@ -2119,11 +2513,10 @@ document.write(`
 </ul>
 </li>
 </ul>
-</li>
-</ul>
+</section>
+<section id="angular-momentum-eigenstates">
+<h3>Angular Momentum Eigenstates<a class="headerlink" href="#angular-momentum-eigenstates" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Angular Momentum Eigenstates</p>
-<ul>
 <li><p>Raising and lowering operators</p>
 <ul>
 <li><p>Raising operator: <span class="math notranslate nohighlight">\(\hat L_+=\hat L_x+i\hat L_y\)</span></p></li>
@@ -2246,11 +2639,10 @@ document.write(`
 </ul>
 </li>
 </ul>
-</li>
-</ul>
+</section>
+<section id="spherical-harmonics-without-derivatives">
+<h3>Spherical Harmonics without Derivatives<a class="headerlink" href="#spherical-harmonics-without-derivatives" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Spherical Harmonics without Derivatives</p>
-<ul>
 <li><p>Spherical harmonics</p>
 <ul>
 <li><p>Spherical harmonics are coordinate-space wavefunctions of angular momentum.</p></li>
@@ -2365,10 +2757,9 @@ document.write(`
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-<ul>
-<li><p>Schroedinger Factorisation Method</p>
+</section>
+<section id="schroedinger-factorisation-method">
+<h3>Schroedinger Factorisation Method<a class="headerlink" href="#schroedinger-factorisation-method" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Intro</p>
 <ul>
@@ -2543,8 +2934,6 @@ document.write(`
 </ul>
 </li>
 </ul>
-</li>
-</ul>
 <ul class="simple">
 <li><p>Schroedinger Factorisation Chain</p>
 <ul>
@@ -2654,9 +3043,10 @@ document.write(`
 </ul>
 </li>
 </ul>
+</section>
+<section id="two-body-problem-and-seperation-of-variables">
+<h3>Two-Body Problem and Seperation of Variables<a class="headerlink" href="#two-body-problem-and-seperation-of-variables" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Two-Body Problem and Seperation of Variables</p>
-<ul>
 <li><p>Two-body problem</p>
 <ul>
 <li><p>In the two-body problem we have two particles.</p></li>
@@ -2746,11 +3136,10 @@ document.write(`
 </ul>
 </li>
 </ul>
-</li>
-</ul>
+</section>
+<section id="radial-momentum-and-radial-translation-operator">
+<h3>Radial Momentum and Radial Translation Operator<a class="headerlink" href="#radial-momentum-and-radial-translation-operator" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Radial Momentum and Radial Translation Operator</p>
-<ul>
 <li><p>Definition of radial momentum</p>
 <ul>
 <li><p>The radial momentum is just momentum in the radial direction.</p></li>
@@ -2845,11 +3234,11 @@ document.write(`
 </ul>
 </li>
 </ul>
-</li>
-</ul>
+</section>
+<section id="isotropic-sho-in-3d">
+<h3>Isotropic SHO in 3D<a class="headerlink" href="#isotropic-sho-in-3d" title="Link to this heading">#</a></h3>
+<img src="https://raw.githubusercontent.com/tomctang/NB_img/main/SHO_3D.png" alt="vector_cal" width="550">
 <ul class="simple">
-<li><p>Isotropic SHO in 3D</p>
-<ul>
 <li><p>Isotropic SHO</p>
 <ul>
 <li><p>We begin with the Hamiltonian for the 3D SHO where the frequencies for each directions are the same.</p></li>
@@ -2935,11 +3324,10 @@ document.write(`
 </ul>
 </li>
 </ul>
-</li>
-</ul>
+</section>
+<section id="coulomb-problem-for-hydrogen">
+<h3>Coulomb Problem for Hydrogen<a class="headerlink" href="#coulomb-problem-for-hydrogen" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Coulomb Problem for Hydrogen</p>
-<ul>
 <li><p>Hydrogen</p>
 <ul>
 <li><p>This is the most important problem in the class.</p></li>
@@ -3043,17 +3431,19 @@ document.write(`
 <li><p>The strongest transitions in atoms occur between energy levels that change the angular momentum by <span class="math notranslate nohighlight">\(\Delta l=\pm1\)</span>.</p></li>
 <li><p>Transitions that go down to the <span class="math notranslate nohighlight">\(n=1\)</span> state are called Lynman series.</p></li>
 <li><p>Ones that go down to the <span class="math notranslate nohighlight">\(n=2\)</span> state instead are called Balmer series.</p></li>
-<li><p>It turns out the Balmer lines are in the optical range and the Lynman series are in the UV.\</p></li>
+<li><p>It turns out the Balmer lines are in the optical range and the Lynman series are in the UV.</p></li>
 </ul>
 </li>
 </ul>
-</li>
+</section>
+<section id="position-space-wavefunctions-of-hydrogen">
+<h3>Position-Space Wavefunctions of Hydrogen<a class="headerlink" href="#position-space-wavefunctions-of-hydrogen" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>String of <span class="math notranslate nohighlight">\(\hat B\)</span> operators</p></li>
 </ul>
-<ul>
-<li><h2 class="rubric" id="position-space-wavefunctions-of-hydrogen">Position-Space Wavefunctions of Hydrogen</h2>
-</li>
-</ul>
-<p>Problem Notes</p>
+</section>
+<section id="problem-notes">
+<h3>Problem Notes<a class="headerlink" href="#problem-notes" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(Y_{lm}(\theta,\phi)=\sqrt{\frac{(2l+1)(l-m)!}{4\pi(l+m)!}}(-1)^m P_l^m(\cos\theta)e^{im\phi}~~\text{for}~~m\ge 0\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(P_l^m(\cos\theta)=\left(\frac{\sin\theta}{2}\right )^m\,\,\sum_{n=0}^{l-m}(-1)^n\frac{(l+m+n)!}{(l-m-n)!(m+n)!n!}\left (\frac{1-\cos\theta}{2}\right )^n\)</span></p></li>
@@ -3062,6 +3452,9 @@ document.write(`
 <li><p>Total spin operator: <span class="math notranslate nohighlight">\(\hat{S}_{\rm tot}=\hat{\vec{S}}_{(1)}+\hat{\vec{S}}_{(2)}\)</span></p></li>
 <li><p>Square of total spin operator: <span class="math notranslate nohighlight">\(\hat{\vec{S}}_{\rm tot}^2=\hat{\vec{S}}_{(1)}^2+\hat{\vec{S}}_{(2)}^2+\hat{S}_+^{(1)}\hat{S}_-^{(2)}+\hat{S}_-^{(1)}\hat{S}_+^{(2)}+2\hat{S}_z^{(1)}\hat{S}_z^{(2)}\)</span></p></li>
 </ul>
+</section>
+<section id="coding">
+<h3>coding<a class="headerlink" href="#coding" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Orthogonality</span>
@@ -3074,6 +3467,18 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{\sqrt{3} {\left(3 \, \cos\left(\theta\right)^{2} - 1\right)} \sin\left(\theta\right)}{8 \, \pi} \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 0 \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{15 \, e^{\left(-20 \, \phi\right)} \sin\left(\theta\right)^{5}}{32 \, \pi} \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{e^{\left(-20 \, \phi\right)}}{2 \, \pi} \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle -\frac{3 \, {\left(e^{\left(-40 \, \pi\right)} - 1\right)} \sin\left(\theta\right)^{5}}{128 \, \pi} \qquad   \]</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3084,6 +3489,12 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle -\log\left(\sec\left(k x\right)\right) \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \log\left(\sin\left(k x\right)\right) \qquad   \]</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3092,6 +3503,10 @@ document.write(`
 <span class="n">s</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">L</span><span class="o">*</span><span class="n">cot</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">),</span><span class="n">x</span><span class="p">))</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle {\left(n + 1\right)} \log\left(\sin\left(\frac{\pi x}{L}\right)\right) \qquad   \]</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -3103,6 +3518,10 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle -5 \, {\left(\frac{\pi c \cot\left(\frac{\pi x}{L}\right) \sin\left(\frac{\pi x}{L}\right)^{2}}{L} + \frac{2 \, \pi c \cos\left(\frac{\pi x}{L}\right) \sin\left(\frac{\pi x}{L}\right)}{L}\right)} h \qquad   \]</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3113,6 +3532,10 @@ document.write(`
 <span class="n">s</span><span class="p">(</span><span class="n">expand</span><span class="p">(</span><span class="n">psi_2</span><span class="o">*</span><span class="n">L</span><span class="o">^</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">c</span><span class="o">*</span><span class="n">h</span><span class="o">^</span><span class="mi">2</span><span class="p">)))</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 225 \, \pi^{2} \cos\left(\frac{\pi x}{L}\right) \cot\left(\frac{\pi x}{L}\right) \sin\left(\frac{\pi x}{L}\right)^{2} + 150 \, \pi^{2} \cos\left(\frac{\pi x}{L}\right)^{2} \sin\left(\frac{\pi x}{L}\right) - 125 \, \pi^{2} \sin\left(\frac{\pi x}{L}\right)^{3} \qquad   \]</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -3129,7 +3552,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_latex math notranslate nohighlight">
-\[\displaystyle i \, h \qquad   \]</div>
+\[\displaystyle 5 \, h \qquad   \]</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -3145,7 +3568,28 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.379283219539191
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">51</span><span class="p">],</span> <span class="n">line</span> <span class="mi">7</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">m</span><span class="o">=</span><span class="n">RealNumber</span><span class="p">(</span><span class="s1">&#39;80.9e9&#39;</span><span class="p">)</span><span class="o">/</span><span class="n">c</span><span class="o">**</span><span class="n">Integer</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">t</span><span class="o">=</span><span class="n">Integer</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">n</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="n">Integer</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="n">k_B</span><span class="o">*</span><span class="n">T</span><span class="o">/</span><span class="n">m</span><span class="p">)</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+
+<span class="nn">File ~/miniconda3/envs/sage/lib/python3.12/site-packages/sage/symbolic/expression.pyx:6180,</span> in <span class="ni">sage.symbolic.expression.Expression.__call__ (build/cythonized/sage/symbolic/expression.cpp:78763)</span><span class="nt">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">6178</span>         <span class="n">z</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="n">x</span><span class="o">^</span><span class="n">y</span>
+<span class="g g-Whitespace">   </span><span class="mi">6179</span>     <span class="s2">&quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">6180</span><span class="s2">     return self._parent._call_element_(self, *args, **kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">6181</span><span class="s2"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">6182</span><span class="s2"> def variables(self):</span>
+
+<span class="nn">File ~/miniconda3/envs/sage/lib/python3.12/site-packages/sage/symbolic/ring.pyx:1035,</span> in <span class="ni">sage.symbolic.ring.SymbolicRing._call_element_ (build/cythonized/sage/symbolic/ring.c:13674)</span><span class="nt">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1033</span><span class="s2">     d = args[0]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1034</span><span class="s2"> else:</span>
+<span class="ne">-&gt; </span><span class="mi">1035</span><span class="s2">     raise TypeError(&quot;Substitution using function-call syntax &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1036</span><span class="s2">                     &quot;and unnamed arguments has been removed. You &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1037</span><span class="s2">                     &quot;can use named arguments instead, like &quot;</span>
+
+<span class="ne">TypeError</span>: Substitution using function-call syntax and unnamed arguments has been removed. You can use named arguments instead, like EXPR(x=..., y=...)
 </pre></div>
 </div>
 </div>
@@ -3214,6 +3658,7 @@ document.write(`
 </div>
 </div>
 </section>
+</section>
 <section id="m8-quantum-approximation-methods">
 <h2>M8. Quantum Approximation Methods<a class="headerlink" href="#m8-quantum-approximation-methods" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
@@ -3256,7 +3701,7 @@ document.write(`
 -l + 1 &amp; l \\
 -l &amp; l + 1
 \end{array}\right) \qquad   \end{split}\]</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.08009004592895508
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.29471302032470703
 </pre></div>
 </div>
 </div>
@@ -3282,8 +3727,30 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle 5.88256712306245 \times 10^{-6} \qquad   21.0792324857393 \qquad   \]</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">57</span><span class="p">],</span> <span class="n">line</span> <span class="mi">15</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="c1"># d=1765</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="n">l</span><span class="o">=</span><span class="n">Integer</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">hbar</span><span class="o">/</span><span class="n">d</span><span class="o">/</span><span class="n">Integer</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">**</span><span class="n">Integer</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">15</span> <span class="n">s</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">n</span><span class="p">(</span><span class="n">l</span><span class="p">))</span>
+
+<span class="nn">File ~/miniconda3/envs/sage/lib/python3.12/site-packages/sage/symbolic/expression.pyx:6180,</span> in <span class="ni">sage.symbolic.expression.Expression.__call__ (build/cythonized/sage/symbolic/expression.cpp:78763)</span><span class="nt">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">6178</span>         <span class="n">z</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="n">x</span><span class="o">^</span><span class="n">y</span>
+<span class="g g-Whitespace">   </span><span class="mi">6179</span>     <span class="s2">&quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">6180</span><span class="s2">     return self._parent._call_element_(self, *args, **kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">6181</span><span class="s2"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">6182</span><span class="s2"> def variables(self):</span>
+
+<span class="nn">File ~/miniconda3/envs/sage/lib/python3.12/site-packages/sage/symbolic/ring.pyx:1035,</span> in <span class="ni">sage.symbolic.ring.SymbolicRing._call_element_ (build/cythonized/sage/symbolic/ring.c:13674)</span><span class="nt">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1033</span><span class="s2">     d = args[0]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1034</span><span class="s2"> else:</span>
+<span class="ne">-&gt; </span><span class="mi">1035</span><span class="s2">     raise TypeError(&quot;Substitution using function-call syntax &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1036</span><span class="s2">                     &quot;and unnamed arguments has been removed. You &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1037</span><span class="s2">                     &quot;can use named arguments instead, like &quot;</span>
+
+<span class="ne">TypeError</span>: Substitution using function-call syntax and unnamed arguments has been removed. You can use named arguments instead, like EXPR(x=..., y=...)
+</pre></div>
+</div>
 </div>
 </div>
 </section>
@@ -3320,6 +3787,9 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="_images/ed8db9fd25e6b74b8abdd3be120f970eaeac5020cb768c8a90dbc79fad3485f2.png" src="_images/ed8db9fd25e6b74b8abdd3be120f970eaeac5020cb768c8a90dbc79fad3485f2.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3338,6 +3808,9 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="_images/c74b2c99be22422e7af00dba011e144f07301c443cfeaaad1dd63fb66a6a9407.png" src="_images/c74b2c99be22422e7af00dba011e144f07301c443cfeaaad1dd63fb66a6a9407.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3350,6 +3823,11 @@ document.write(`
 <span class="c1"># Get the measurement counts</span>
 <span class="n">counts</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">get_counts</span><span class="p">(</span><span class="n">qc</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">counts</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;1&#39;: 1000}
 </pre></div>
 </div>
 </div>
@@ -3367,6 +3845,9 @@ document.write(`
 <span class="n">qc</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="s1">&#39;mpl&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/9e4a807e282b077f7af541e490a2d593a3cc3d84f4c8ce4880234ed10b9fd805.png" src="_images/9e4a807e282b077f7af541e490a2d593a3cc3d84f4c8ce4880234ed10b9fd805.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3387,6 +3868,11 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;1&#39;: 1000}
+</pre></div>
+</div>
+</div>
 </div>
 <p>X，Y，Z，P gates</p>
 <div class="cell docutils container">
@@ -3396,6 +3882,41 @@ document.write(`
 <span class="n">qc</span><span class="o">.</span><span class="n">p</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c1"># try gates: qc.x(0), qc.y(0), qc.z(0), qc.p(pi/2, 0)</span>
 
 <span class="n">qc</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="s1">&#39;mpl&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">CircuitError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">63</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># create a quantum circuit with one qubit and one bit</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">qc</span> <span class="o">=</span> <span class="n">QuantumCircuit</span><span class="p">(</span><span class="n">Integer</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">qc</span><span class="o">.</span><span class="n">p</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="n">Integer</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">Integer</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span> <span class="c1"># try gates: qc.x(0), qc.y(0), qc.z(0), qc.p(pi/2, 0)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">qc</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="s1">&#39;mpl&#39;</span><span class="p">)</span>
+
+<span class="nn">File ~/miniconda3/envs/sage/lib/python3.12/site-packages/qiskit/circuit/quantumcircuit.py:5004,</span> in <span class="ni">QuantumCircuit.p</span><span class="nt">(self, theta, qubit)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4992</span> <span class="k">def</span><span class="w"> </span><span class="nf">p</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">theta</span><span class="p">:</span> <span class="n">ParameterValueType</span><span class="p">,</span> <span class="n">qubit</span><span class="p">:</span> <span class="n">QubitSpecifier</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">InstructionSet</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">4993</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Apply :class:`~qiskit.circuit.library.PhaseGate`.</span>
+<span class="g g-Whitespace">   </span><span class="mi">4994</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">4995</span><span class="sd">     For the full matrix form of this gate, see the underlying gate documentation.</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">   </span><span class="mi">5002</span><span class="sd">         A handle to the instructions created.</span>
+<span class="g g-Whitespace">   </span><span class="mi">5003</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">5004</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_append_standard_gate</span><span class="p">(</span><span class="n">StandardGate</span><span class="o">.</span><span class="n">Phase</span><span class="p">,</span> <span class="p">[</span><span class="n">qubit</span><span class="p">],</span> <span class="p">(</span><span class="n">theta</span><span class="p">,))</span>
+
+<span class="nn">File ~/miniconda3/envs/sage/lib/python3.12/site-packages/qiskit/circuit/quantumcircuit.py:2644,</span> in <span class="ni">QuantumCircuit._append_standard_gate</span><span class="nt">(self, op, qargs, params, label)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2642</span> <span class="n">expanded_qargs</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_qbit_argument_conversion</span><span class="p">(</span><span class="n">qarg</span><span class="p">)</span> <span class="k">for</span> <span class="n">qarg</span> <span class="ow">in</span> <span class="n">qargs</span> <span class="ow">or</span> <span class="p">[]]</span>
+<span class="g g-Whitespace">   </span><span class="mi">2643</span> <span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">2644</span>     <span class="n">Gate</span><span class="o">.</span><span class="n">validate_parameter</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="n">param</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2646</span> <span class="n">instructions</span> <span class="o">=</span> <span class="n">InstructionSet</span><span class="p">(</span><span class="n">resource_requester</span><span class="o">=</span><span class="n">circuit_scope</span><span class="o">.</span><span class="n">resolve_classical_resource</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2647</span> <span class="k">for</span> <span class="n">qarg</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">Gate</span><span class="o">.</span><span class="n">broadcast_arguments</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="n">expanded_qargs</span><span class="p">,</span> <span class="p">[]):</span>
+
+<span class="nn">File ~/miniconda3/envs/sage/lib/python3.12/site-packages/qiskit/circuit/gate.py:261,</span> in <span class="ni">Gate.validate_parameter</span><span class="nt">(self, parameter)</span>
+<span class="g g-Whitespace">    </span><span class="mi">259</span>     <span class="k">return</span> <span class="n">parameter</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">260</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">261</span>     <span class="k">raise</span> <span class="n">CircuitError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid param type </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">parameter</span><span class="p">)</span><span class="si">}</span><span class="s2"> for gate </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+
+<span class="ne">CircuitError</span>: &quot;Invalid param type &lt;class &#39;sage.symbolic.expression.Expression&#39;&gt; for gate p.&quot;
 </pre></div>
 </div>
 </div>
@@ -3413,6 +3934,9 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="_images/93ab5c8f6e02adaa3061202228d8b3be04b1f28e77b22999b3d186220813f670.png" src="_images/93ab5c8f6e02adaa3061202228d8b3be04b1f28e77b22999b3d186220813f670.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3426,6 +3950,15 @@ document.write(`
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="n">np</span><span class="o">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">precision</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">suppress</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">U</span><span class="p">)</span> <span class="c1"># unitary matrix</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Operator([[0.+0.j, 0.+0.j, 0.+0.j, 1.+0.j],
+          [1.+0.j, 0.+0.j, 0.+0.j, 0.+0.j],
+          [0.+0.j, 1.+0.j, 0.+0.j, 0.+0.j],
+          [0.+0.j, 0.+0.j, 1.+0.j, 0.+0.j]],
+         input_dims=(2, 2), output_dims=(2, 2))
 </pre></div>
 </div>
 </div>
@@ -3450,6 +3983,12 @@ document.write(`
 <span class="n">qc</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="s1">&#39;mpl&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;01&#39;: 1000}
+</pre></div>
+</div>
+<img alt="_images/fdd6cb87acb4584ab919939a5b860a4efaf32ee0ff94070450006d6d303b064e.png" src="_images/fdd6cb87acb4584ab919939a5b860a4efaf32ee0ff94070450006d6d303b064e.png" />
 </div>
 </div>
 </section>
@@ -3495,11 +4034,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="How_Dad_organise_QM.html"
+       href="Course_MCM_QFT.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">How Dad learn QM</p>
+        <p class="prev-next-title">QFT</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -3534,7 +4073,20 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m4-advanced-quantum-ideas-with-light">M4. Advanced Quantum Ideas with Light</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m5-quantum-operators-and-their-identities">M5. Quantum Operators and their Identities</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m6-qm-of-the-simple-harmonic-oscillator">M6. QM of the Simple Harmonic Oscillator</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m7-quantum-angular-momentum-and-hydrogen">M7. Quantum Angular Momentum and Hydrogen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m7-quantum-angular-momentum-and-hydrogen">M7. Quantum Angular Momentum and Hydrogen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#commutation-relations-of-angular-momentum">Commutation Relations of Angular Momentum</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#angular-momentum-eigenstates">Angular Momentum Eigenstates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spherical-harmonics-without-derivatives">Spherical Harmonics without Derivatives</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#schroedinger-factorisation-method">Schroedinger Factorisation Method</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#two-body-problem-and-seperation-of-variables">Two-Body Problem and Seperation of Variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#radial-momentum-and-radial-translation-operator">Radial Momentum and Radial Translation Operator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#isotropic-sho-in-3d">Isotropic SHO in 3D</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coulomb-problem-for-hydrogen">Coulomb Problem for Hydrogen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#position-space-wavefunctions-of-hydrogen">Position-Space Wavefunctions of Hydrogen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-notes">Problem Notes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coding">coding</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m8-quantum-approximation-methods">M8. Quantum Approximation Methods</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qc">QC</a></li>
 </ul>
