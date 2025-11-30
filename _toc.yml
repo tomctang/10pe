@@ -26,7 +26,7 @@ parts:
   - file: PE_Informatics/PE100
   - file: PE_Informatics/PE200 
   - file: Course_MCM_QM
-  #- file: How_Dad_organise_QM
+  - file: How_Dad_organise_QM
   - file: Course_MCM_QFT
   
 - caption: Notebook
