@@ -1,32 +1,25 @@
 format: jb-book  # For Jupyter Book; adjust if using another generator
 
 # below are the contents structure
-root: intro  # intro.ipynb, defines the root page ( Indentation not tabs)
+root: intro  # intro.ipynb, defines the root page (Indentation not tabs)
 parts:
-- caption: Mathe & FP/Language
+- caption: Math & FP/Language
   numbered: false
   chapters:
   - file: Alevel/Alevel_math
   - file: Alevel/Alevel_math_further
   - file: Course_MCM
   - file: Course_Lean  
-  - file: math/00intro_math
-  - file: math/01number_algebra
-  - file: math/02discrete_continuous
-  - file: math/03real_world
-#  - file: math/05math_as_code
 
 - caption: CS & Physics
   numbered: false
   chapters:
   - file: Course_MIT6001Python
   - file: Course_MIT6002thinking
-  - file: PE_Informatics/PE_tags
-  - file: PE_Informatics/PE_math
   - file: PE_Informatics/PE100
   - file: PE_Informatics/PE200 
+  - file: PE_Informatics/PE_tags
   - file: Course_MCM_QM
-  - file: How_Dad_organise_QM
   - file: Course_MCM_QFT
   
 - caption: Notebook
@@ -35,3 +28,13 @@ parts:
   - file: nb_past_courses
   - file: geo/nb_Geo
   - file: nb_lottery_simulator
+
+- caption: Notes by Tom
+  numbered: false
+  chapters:
+  - file: math/00intro_math
+  - file: math/01number_algebra
+  - file: math/02discrete_continuous
+  - file: math/03real_world
+#  - file: math/05math_as_code
+  - file: How_Dad_organise_QM
