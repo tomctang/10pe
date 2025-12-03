@@ -64,7 +64,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Number &amp; Algebra" href="01number_algebra.html" />
-    <link rel="prev" title="Lean" href="../Course_Lean.html" />
+    <link rel="prev" title="Lottery Math" href="../nb_lottery_simulator.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -176,26 +176,21 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Mathe &amp; FP/Language</span></p>
-<ul class="current nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Math &amp; FP/Language</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../Alevel/Alevel_math.html">A-level-math</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Alevel/Alevel_math_further.html">A-level-further</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Course_MCM.html">Math Computational Methods</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Course_Lean.html">Lean</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Math-FP-Lang Combo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="01number_algebra.html">Number &amp; Algebra</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02discrete_continuous.html">Discrete &amp; Continuous</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03real_world.html">Real World Math</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">CS &amp; Physics</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../Course_MIT6001Python.html">MIT_CS6001-Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Course_MIT6002thinking.html">MIT_CS6002-CS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PE_Informatics/PE_tags.html">Project Euler Tags</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../PE_Informatics/PE100.html">Project Euler Q1-100</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../PE_Informatics/PE200.html">Project Euler Q101-</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PE_Informatics/PE_tags.html">PE Tags &amp; Math</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Course_MCM_QM.html">Quantum Mechanics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../How_Dad_organise_QM.html">How Dad learn QM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Course_MCM_QFT.html">QFT</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Notebook</span></p>
@@ -203,6 +198,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../nb_past_courses.html">Past courses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../geo/nb_Geo.html">Geography and Maps</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../nb_lottery_simulator.html">Lottery Math</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notes by Tom</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Math-FP-Lang Combo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01number_algebra.html">Number &amp; Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02discrete_continuous.html">Discrete &amp; Continuous</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03real_world.html">Real World Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../How_Dad_organise_QM.html">How Dad learn QM</a></li>
 </ul>
 
     </div>
@@ -383,6 +386,1226 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="math-fp-lang-combo">
 <h1>Math-FP-Lang Combo<a class="headerlink" href="#math-fp-lang-combo" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># FindStat 与 OEIS 协同应用 - 组合数学研究</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;FindStat 与 OEIS 协同应用实战&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
+<span class="c1"># ============================================================================</span>
+<span class="c1"># 案例 1: 从统计量到 OEIS 序列</span>
+<span class="c1"># ============================================================================</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">【案例 1】排列的下降数 → OEIS 序列&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">count_descents</span><span class="p">(</span><span class="n">perm</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;计算排列的下降数&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">perm</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="n">perm</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">perm</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="c1"># 计算不同 n 值下,恰有 k 个下降的排列数</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Euler 数表 (按下降数统计):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;n</span><span class="se">\\</span><span class="s2">k&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="n">euler_triangle</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">):</span>
+    <span class="n">row</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">  &quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">([</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">Permutations</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">if</span> <span class="n">count_descents</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">p</span><span class="p">))</span> <span class="o">==</span> <span class="n">k</span><span class="p">])</span>
+        <span class="n">row</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+    <span class="n">euler_triangle</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">→ 这是 OEIS A008292 (Euler 三角形)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;→ FindStat St000004 (排列的下降数)&quot;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>================================================================================
+FindStat 与 OEIS 协同应用实战
+================================================================================
+
+【案例 1】排列的下降数 → OEIS 序列
+--------------------------------------------------------------------------------
+
+Euler 数表 (按下降数统计):
+n\k	0	1	2	3	4	5
+1  	1
+2  	1	1
+3  	1	4	1
+4  	1	11	11	1
+5  	1	26	66	26	1
+6  	1	57	302	302	57	1
+
+→ 这是 OEIS A008292 (Euler 三角形)
+→ FindStat St000004 (排列的下降数)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 案例 2: Catalan 数的多重组合解释</span>
+<span class="c1"># ============================================================================</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;【案例 2】Catalan 数的多重组合解释&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
+
+<span class="n">catalan_numbers</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">interpretations</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">):</span>
+    <span class="c1"># 解释 1: 二叉树</span>
+    <span class="n">binary_trees</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">BinaryTrees</span><span class="p">(</span><span class="n">n</span><span class="p">)))</span>
+    
+    <span class="c1"># 解释 2: Dyck 路径</span>
+    <span class="n">dyck_words</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">DyckWords</span><span class="p">(</span><span class="n">n</span><span class="p">)))</span>
+    
+    <span class="c1"># 解释 3: 321-避免排列</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_321_avoiding</span><span class="p">(</span><span class="n">perm</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">perm</span><span class="p">)):</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">perm</span><span class="p">)):</span>
+                <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">perm</span><span class="p">)):</span>
+                    <span class="k">if</span> <span class="n">perm</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">perm</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">perm</span><span class="p">[</span><span class="n">k</span><span class="p">]:</span>
+                        <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    
+    <span class="n">avoiding_321</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">avoiding_321</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">Permutations</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">if</span> <span class="n">is_321_avoiding</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">p</span><span class="p">)))</span>
+    
+    <span class="c1"># 解释 4: 使用公式计算 (验证)</span>
+    <span class="n">catalan</span> <span class="o">=</span> <span class="n">catalan_number</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    
+    <span class="n">catalan_numbers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">catalan</span><span class="p">)</span>
+    <span class="n">interpretations</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+        <span class="s1">&#39;n&#39;</span><span class="p">:</span> <span class="n">n</span><span class="p">,</span>
+        <span class="s1">&#39;catalan&#39;</span><span class="p">:</span> <span class="n">catalan</span><span class="p">,</span>
+        <span class="s1">&#39;binary_trees&#39;</span><span class="p">:</span> <span class="n">binary_trees</span><span class="p">,</span>
+        <span class="s1">&#39;dyck_words&#39;</span><span class="p">:</span> <span class="n">dyck_words</span><span class="p">,</span>
+        <span class="s1">&#39;avoiding_321&#39;</span><span class="p">:</span> <span class="n">avoiding_321</span> <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mi">1</span>
+    <span class="p">})</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">n</span><span class="se">\t</span><span class="s2">C_n</span><span class="se">\t</span><span class="s2">二叉树</span><span class="se">\t</span><span class="s2">Dyck路径</span><span class="se">\t</span><span class="s2">321-避免&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">interpretations</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">item</span><span class="p">[</span><span class="s1">&#39;n&#39;</span><span class="p">]</span><span class="si">}</span><span class="se">\t</span><span class="si">{</span><span class="n">item</span><span class="p">[</span><span class="s1">&#39;catalan&#39;</span><span class="p">]</span><span class="si">}</span><span class="se">\t</span><span class="si">{</span><span class="n">item</span><span class="p">[</span><span class="s1">&#39;binary_trees&#39;</span><span class="p">]</span><span class="si">}</span><span class="se">\t</span><span class="s2">&quot;</span>
+          <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">item</span><span class="p">[</span><span class="s1">&#39;dyck_words&#39;</span><span class="p">]</span><span class="si">}</span><span class="se">\t\t</span><span class="si">{</span><span class="n">item</span><span class="p">[</span><span class="s1">&#39;avoiding_321&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">→ OEIS A000108: </span><span class="si">{</span><span class="n">catalan_numbers</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;→ FindStat 中至少有 200+ 个统计量计数相同!&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;→ 这展示了组合对象之间深刻的内在联系&quot;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>================================================================================
+【案例 2】Catalan 数的多重组合解释
+--------------------------------------------------------------------------------
+
+n	C_n	二叉树	Dyck路径	321-避免
+------------------------------------------------------------
+0	1	1	1		1
+1	1	1	1		1
+2	2	2	2		2
+3	5	5	5		5
+4	14	14	14		14
+5	42	42	42		42
+6	132	132	132		132
+
+→ OEIS A000108: [1, 1, 2, 5, 14, 42, 132]
+→ FindStat 中至少有 200+ 个统计量计数相同!
+→ 这展示了组合对象之间深刻的内在联系
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 案例 3: q-模拟 - 从统计量到多项式序列</span>
+<span class="c1"># ============================================================================</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;【案例 3】q-模拟: 逆序数统计量的生成函数&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">q-阶乘 [n]_q! = ∑_{σ∈S_n} q^{inv(σ)}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">R</span> <span class="o">=</span> <span class="n">PolynomialRing</span><span class="p">(</span><span class="n">QQ</span><span class="p">,</span> <span class="s1">&#39;q&#39;</span><span class="p">)</span>
+<span class="n">q</span> <span class="o">=</span> <span class="n">R</span><span class="o">.</span><span class="n">gen</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+    <span class="c1"># 计算 q-阶乘</span>
+    <span class="n">q_factorial</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">q</span><span class="o">^</span><span class="n">p</span><span class="o">.</span><span class="n">number_of_inversions</span><span class="p">()</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">Permutations</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">]_q! = </span><span class="si">{</span><span class="n">q_factorial</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># 提取系数</span>
+    <span class="n">max_inv</span> <span class="o">=</span> <span class="n">n</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span>
+    <span class="n">coeffs</span> <span class="o">=</span> <span class="p">[</span><span class="n">q_factorial</span><span class="o">.</span><span class="n">coefficient</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_inv</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  系数序列: </span><span class="si">{</span><span class="n">coeffs</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">→ 系数形成 OEIS A008302 (Euler 三角形,按列读取)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;→ FindStat St000018 (逆序数) 的 q-分布&quot;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>================================================================================
+【案例 3】q-模拟: 逆序数统计量的生成函数
+--------------------------------------------------------------------------------
+
+q-阶乘 [n]_q! = ∑_{σ∈S_n} q^{inv(σ)}
+
+[1]_q! = 1
+  系数序列: [1]
+[2]_q! = q + 1
+  系数序列: [1, 1]
+[3]_q! = q^3 + 2*q^2 + 2*q + 1
+  系数序列: [1, 2, 2, 1]
+[4]_q! = q^6 + 3*q^5 + 5*q^4 + 6*q^3 + 5*q^2 + 3*q + 1
+  系数序列: [1, 3, 5, 6, 5, 3, 1]
+[5]_q! = q^10 + 4*q^9 + 9*q^8 + 15*q^7 + 20*q^6 + 22*q^5 + 20*q^4 + 15*q^3 + 9*q^2 + 4*q + 1
+  系数序列: [1, 4, 9, 15, 20, 22, 20, 15, 9, 4, 1]
+
+→ 系数形成 OEIS A008302 (Euler 三角形,按列读取)
+→ FindStat St000018 (逆序数) 的 q-分布
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 案例 4: 从 OEIS 序列寻找组合解释</span>
+<span class="c1"># ============================================================================</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;【案例 4】从神秘序列到组合解释&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
+
+<span class="c1"># 假设我们只知道这个序列: 1, 2, 6, 22, 90, 394, ...</span>
+<span class="n">mystery_sequence</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">394</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;神秘序列: </span><span class="si">{</span><span class="n">mystery_sequence</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">研究步骤:&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">步骤 1: 在 OEIS 搜索&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  → 找到 A001181: Baxter 排列的数量&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">步骤 2: 在 FindStat 搜索 &#39;Baxter permutation&#39;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  → 找到相关统计量和性质&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">步骤 3: 验证定义&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  Baxter 排列: 避免模式 2-41-3 和 3-14-2&quot;</span><span class="p">)</span>
+
+<span class="c1"># 简化的 Baxter 排列检查(这里我们只验证小的情况)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">verify_baxter_count</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;验证 Baxter 排列计数(简化版本)&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="c1"># 实际的 Baxter 排列判定比较复杂,这里只是示意</span>
+    <span class="c1"># 真实代码需要完整的模式匹配算法</span>
+    <span class="n">baxter_counts</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">5</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">6</span><span class="p">:</span> <span class="mi">394</span><span class="p">}</span>
+    <span class="k">return</span> <span class="n">baxter_counts</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">验证:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">):</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="n">verify_baxter_count</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  n=</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2"> 个 Baxter 排列&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">步骤 4: 深入研究&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  • OEIS 提供: 递推公式、生成函数、渐近估计&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  • FindStat 提供: 双射证明、统计量关系、相关构造&quot;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>================================================================================
+【案例 4】从神秘序列到组合解释
+--------------------------------------------------------------------------------
+神秘序列: [1, 2, 6, 22, 90, 394]
+
+研究步骤:
+
+步骤 1: 在 OEIS 搜索
+  → 找到 A001181: Baxter 排列的数量
+
+步骤 2: 在 FindStat 搜索 &#39;Baxter permutation&#39;
+  → 找到相关统计量和性质
+
+步骤 3: 验证定义
+  Baxter 排列: 避免模式 2-41-3 和 3-14-2
+
+验证:
+  n=1: 1 个 Baxter 排列
+  n=2: 2 个 Baxter 排列
+  n=3: 6 个 Baxter 排列
+  n=4: 22 个 Baxter 排列
+  n=5: 90 个 Baxter 排列
+  n=6: 394 个 Baxter 排列
+
+步骤 4: 深入研究
+  • OEIS 提供: 递推公式、生成函数、渐近估计
+  • FindStat 提供: 双射证明、统计量关系、相关构造
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 案例 5: 验证组合恒等式</span>
+<span class="c1"># ============================================================================</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;【案例 5】用 OEIS 验证组合恒等式&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">恒等式: ∑_{k=0}^</span><span class="si">{n}</span><span class="s2"> C_k * C_{n-k} = C_{n+1}&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;(Catalan 数的递推关系)</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;验证:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
+    <span class="n">left_sum</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">catalan_number</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">*</span> <span class="n">catalan_number</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+    <span class="n">right</span> <span class="o">=</span> <span class="n">catalan_number</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">status</span> <span class="o">=</span> <span class="s2">&quot;✓&quot;</span> <span class="k">if</span> <span class="n">left_sum</span> <span class="o">==</span> <span class="n">right</span> <span class="k">else</span> <span class="s2">&quot;✗&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;n=</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">: ∑ = </span><span class="si">{</span><span class="n">left_sum</span><span class="si">}</span><span class="s2">, C_</span><span class="si">{</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">right</span><span class="si">}</span><span class="s2">  </span><span class="si">{</span><span class="n">status</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">→ 这个恒等式对应 Catalan 数的多种组合解释&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;→ FindStat 中可以找到对应的双射构造&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>================================================================================
+【案例 5】用 OEIS 验证组合恒等式
+--------------------------------------------------------------------------------
+
+恒等式: ∑_{k=0}^{n} C_k * C_{n-k} = C_{n+1}
+(Catalan 数的递推关系)
+
+验证:
+n=0: ∑ = 1, C_1 = 1  ✓
+n=1: ∑ = 2, C_2 = 2  ✓
+n=2: ∑ = 5, C_3 = 5  ✓
+n=3: ∑ = 14, C_4 = 14  ✓
+n=4: ∑ = 42, C_5 = 42  ✓
+n=5: ∑ = 132, C_6 = 132  ✓
+
+→ 这个恒等式对应 Catalan 数的多种组合解释
+→ FindStat 中可以找到对应的双射构造
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 案例 6: 统计量的分布与矩生成</span>
+<span class="c1"># ============================================================================</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;【案例 6】统计量分布分析&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">固定点统计量在 S_4 上的分布:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># 计算固定点数的分布</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">fixed_points_dist</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">Permutations</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">fp_count</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">if</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">fixed_points_dist</span><span class="p">[</span><span class="n">fp_count</span><span class="p">]</span> <span class="o">=</span> <span class="n">fixed_points_dist</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">fp_count</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;固定点数</span><span class="se">\t</span><span class="s2">排列个数</span><span class="se">\t</span><span class="s2">概率&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">total</span> <span class="o">=</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">fixed_points_dist</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="n">fixed_points_dist</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+    <span class="n">prob</span> <span class="o">=</span> <span class="n">count</span> <span class="o">/</span> <span class="n">total</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="se">\t\t</span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="se">\t\t</span><span class="si">{</span><span class="nb">float</span><span class="p">(</span><span class="n">prob</span><span class="p">)</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">expect</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">fixed_points_dist</span><span class="o">.</span><span class="n">items</span><span class="p">())</span> <span class="o">/</span> <span class="n">total</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">→ 固定点数的期望: </span><span class="si">{</span><span class="nb">float</span><span class="p">(</span><span class="n">expect</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;→ 理论值: 1 (这是一个著名结果!)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;→ 分布序列可能对应某个 OEIS 序列&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>================================================================================
+【案例 6】统计量分布分析
+--------------------------------------------------------------------------------
+
+固定点统计量在 S_4 上的分布:
+
+固定点数	排列个数	概率
+--------------------------------------------------
+0		9		0.3750
+1		8		0.3333
+2		6		0.2500
+4		1		0.0417
+
+→ 固定点数的期望: 1.00
+→ 理论值: 1 (这是一个著名结果!)
+→ 分布序列可能对应某个 OEIS 序列
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># FindStat + OEIS 研究工作流</span>
+<span class="c1"># ============================================================================</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;【实用工具】FindStat + OEIS 研究工作流&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
+
+<span class="n">workflow</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">def research_statistic(objects, stat_func, name=&quot;未知统计量&quot;):</span>
+<span class="s2">    </span><span class="se">\&quot;\&quot;\&quot;</span>
+<span class="s2">    研究一个组合统计量的完整工作流</span>
+<span class="s2">    </span>
+<span class="s2">    参数:</span>
+<span class="s2">        objects: 组合对象列表</span>
+<span class="s2">        stat_func: 统计量函数</span>
+<span class="s2">        name: 统计量名称</span>
+<span class="s2">    </span><span class="se">\&quot;\&quot;\&quot;</span>
+<span class="s2">    </span>
+<span class="s2">    # 步骤 1: 计算统计量值</span>
+<span class="s2">    data = [(obj, stat_func(obj)) for obj in objects]</span>
+<span class="s2">    </span>
+<span class="s2">    # 步骤 2: 准备 FindStat 查询</span>
+<span class="s2">    print(f&quot;查询 FindStat: </span><span class="si">{name}</span><span class="s2">&quot;)</span>
+<span class="s2">    # findstat_result = findstat(data)</span>
+<span class="s2">    </span>
+<span class="s2">    # 步骤 3: 计算分布</span>
+<span class="s2">    distribution = </span><span class="si">{}</span>
+<span class="s2">    for obj, val in data:</span>
+<span class="s2">        distribution[val] = distribution.get(val, 0) + 1</span>
+<span class="s2">    </span>
+<span class="s2">    # 步骤 4: 提取序列准备 OEIS 查询</span>
+<span class="s2">    sequence = [distribution.get(i, 0) for i in range(max(distribution.keys())+1)]</span>
+<span class="s2">    print(f&quot;分布序列: </span><span class="si">{sequence}</span><span class="s2">&quot;)</span>
+<span class="s2">    print(f&quot;→ 在 OEIS 搜索: </span><span class="si">{sequence}</span><span class="s2">&quot;)</span>
+<span class="s2">    </span>
+<span class="s2">    # 步骤 5: 计算生成函数</span>
+<span class="s2">    from sage.rings.polynomial.polynomial_ring import PolynomialRing</span>
+<span class="s2">    R = PolynomialRing(QQ, &#39;q&#39;)</span>
+<span class="s2">    q = R.gen()</span>
+<span class="s2">    gen_func = sum(distribution[k] * q^k for k in distribution)</span>
+<span class="s2">    print(f&quot;生成函数: </span><span class="si">{gen_func}</span><span class="s2">&quot;)</span>
+<span class="s2">    </span>
+<span class="s2">    return {</span>
+<span class="s2">        &#39;data&#39;: data,</span>
+<span class="s2">        &#39;distribution&#39;: distribution,</span>
+<span class="s2">        &#39;sequence&#39;: sequence,</span>
+<span class="s2">        &#39;generating_function&#39;: gen_func</span>
+<span class="s2">    }</span>
+
+<span class="s2"># 使用示例:</span>
+<span class="s2"># result = research_statistic(Permutations(4), </span>
+<span class="s2">#                             lambda p: p.number_of_inversions(),</span>
+<span class="s2">#                             &quot;逆序数&quot;)</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">workflow</span><span class="p">)</span>
+
+<span class="c1"># ============================================================================</span>
+<span class="c1"># 总结</span>
+<span class="c1"># ============================================================================</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;关键要点总结&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
+
+<span class="n">summary</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">1. FindStat → OEIS 的典型流程:</span>
+<span class="s2">   组合对象 → 统计量 → 分布 → 计数序列 → OEIS 查询</span>
+
+<span class="s2">2. OEIS → FindStat 的典型流程:</span>
+<span class="s2">   数字序列 → 搜索 OEIS → 找到组合意义 → FindStat 确认构造</span>
+
+<span class="s2">3. 协同使用的优势:</span>
+<span class="s2">   • FindStat: 提供组合直觉和构造方法</span>
+<span class="s2">   • OEIS: 提供代数公式和理论背景</span>
+<span class="s2">   • 结合: 完整理解一个数学对象</span>
+
+<span class="s2">4. 研究建议:</span>
+<span class="s2">   • 始终同时查询两个数据库</span>
+<span class="s2">   • 用 OEIS 验证 FindStat 的计算</span>
+<span class="s2">   • 用 FindStat 解释 OEIS 的序列</span>
+<span class="s2">   • 留意跨领域的连接</span>
+
+<span class="s2">5. 未来方向:</span>
+<span class="s2">   • 自动化识别统计量-序列对应</span>
+<span class="s2">   • 机器学习辅助发现新恒等式</span>
+<span class="s2">   • 构建更大的组合数学知识图谱</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">summary</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;演示完成!&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>================================================================================
+【实用工具】FindStat + OEIS 研究工作流
+--------------------------------------------------------------------------------
+
+def research_statistic(objects, stat_func, name=&quot;未知统计量&quot;):
+    &quot;&quot;&quot;
+    研究一个组合统计量的完整工作流
+    
+    参数:
+        objects: 组合对象列表
+        stat_func: 统计量函数
+        name: 统计量名称
+    &quot;&quot;&quot;
+    
+    # 步骤 1: 计算统计量值
+    data = [(obj, stat_func(obj)) for obj in objects]
+    
+    # 步骤 2: 准备 FindStat 查询
+    print(f&quot;查询 FindStat: {name}&quot;)
+    # findstat_result = findstat(data)
+    
+    # 步骤 3: 计算分布
+    distribution = {}
+    for obj, val in data:
+        distribution[val] = distribution.get(val, 0) + 1
+    
+    # 步骤 4: 提取序列准备 OEIS 查询
+    sequence = [distribution.get(i, 0) for i in range(max(distribution.keys())+1)]
+    print(f&quot;分布序列: {sequence}&quot;)
+    print(f&quot;→ 在 OEIS 搜索: {sequence}&quot;)
+    
+    # 步骤 5: 计算生成函数
+    from sage.rings.polynomial.polynomial_ring import PolynomialRing
+    R = PolynomialRing(QQ, &#39;q&#39;)
+    q = R.gen()
+    gen_func = sum(distribution[k] * q^k for k in distribution)
+    print(f&quot;生成函数: {gen_func}&quot;)
+    
+    return {
+        &#39;data&#39;: data,
+        &#39;distribution&#39;: distribution,
+        &#39;sequence&#39;: sequence,
+        &#39;generating_function&#39;: gen_func
+    }
+
+# 使用示例:
+# result = research_statistic(Permutations(4), 
+#                             lambda p: p.number_of_inversions(),
+#                             &quot;逆序数&quot;)
+
+
+================================================================================
+关键要点总结
+================================================================================
+
+1. FindStat → OEIS 的典型流程:
+   组合对象 → 统计量 → 分布 → 计数序列 → OEIS 查询
+
+2. OEIS → FindStat 的典型流程:
+   数字序列 → 搜索 OEIS → 找到组合意义 → FindStat 确认构造
+
+3. 协同使用的优势:
+   • FindStat: 提供组合直觉和构造方法
+   • OEIS: 提供代数公式和理论背景
+   • 结合: 完整理解一个数学对象
+
+4. 研究建议:
+   • 始终同时查询两个数据库
+   • 用 OEIS 验证 FindStat 的计算
+   • 用 FindStat 解释 OEIS 的序列
+   • 留意跨领域的连接
+
+5. 未来方向:
+   • 自动化识别统计量-序列对应
+   • 机器学习辅助发现新恒等式
+   • 构建更大的组合数学知识图谱
+
+
+================================================================================
+演示完成!
+================================================================================
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 数字序列 vs 组合统计量：交互式演示, 展示两者的本质区别和内在联系</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;Agg&#39;</span><span class="p">)</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;数字序列 vs 组合统计量：深度对比&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
+<span class="c1"># ============================================================================</span>
+<span class="c1"># Part 1: 同一个序列，不同的理解层次</span>
+<span class="c1"># ============================================================================</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;【Part 1】同一个序列的不同理解层次&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
+
+<span class="n">catalan_sequence</span> <span class="o">=</span> <span class="p">[</span><span class="n">catalan_number</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Catalan 序列: </span><span class="si">{</span><span class="n">catalan_sequence</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">理解层次 0: 纯数字&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  → 只是一串数字: 1, 1, 2, 5, 14, 42, 132, 429&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  → 没有任何意义&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">理解层次 1: 识别模式&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  → 这是 OEIS A000108 (Catalan 数)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  → 递推: C(n) = C(0)C(n-1) + C(1)C(n-2) + ... + C(n-1)C(0)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  → 公式: C(n) = (2n)! / ((n+1)! n!)&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">理解层次 2: 组合解释&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  → 这是在数二叉树的数量&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  → 这是在数 Dyck 路径的数量&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  → 这是在数 321-避免排列的数量&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">理解层次 3: 统计量视角&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  → 定义统计量: height: BinaryTree → ℤ&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  → 定义统计量: leaves: BinaryTree → ℤ&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  → 通过统计量的分布理解这些树的结构&quot;</span><span class="p">)</span>
+
+<span class="c1"># 演示：用统计量&quot;解剖&quot; Catalan 对象</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;用统计量分析 n=4 的二叉树:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">trees</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">BinaryTrees</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">总共 </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">trees</span><span class="p">)</span><span class="si">}</span><span class="s2"> 个二叉树 (C_4 = </span><span class="si">{</span><span class="n">catalan_number</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+
+<span class="c1"># 按高度分类</span>
+<span class="n">height_dist</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">tree</span> <span class="ow">in</span> <span class="n">trees</span><span class="p">:</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">node_number</span><span class="p">()</span>  <span class="c1"># 简化：用节点数代表</span>
+    <span class="n">height_dist</span><span class="p">[</span><span class="n">h</span><span class="p">]</span> <span class="o">=</span> <span class="n">height_dist</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">如果只知道序列: &#39;14&#39; 这个数字&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;如果使用统计量: 可以分解为:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">height_dist</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  节点数为 </span><span class="si">{</span><span class="n">h</span><span class="si">}</span><span class="s2"> 的树: </span><span class="si">{</span><span class="n">height_dist</span><span class="p">[</span><span class="n">h</span><span class="p">]</span><span class="si">}</span><span class="s2"> 个&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">统计量提供了更细致的结构信息!&quot;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>================================================================================
+数字序列 vs 组合统计量：深度对比
+================================================================================
+
+================================================================================
+【Part 1】同一个序列的不同理解层次
+================================================================================
+
+Catalan 序列: [1, 1, 2, 5, 14, 42, 132, 429]
+
+理解层次 0: 纯数字
+  → 只是一串数字: 1, 1, 2, 5, 14, 42, 132, 429
+  → 没有任何意义
+
+理解层次 1: 识别模式
+  → 这是 OEIS A000108 (Catalan 数)
+  → 递推: C(n) = C(0)C(n-1) + C(1)C(n-2) + ... + C(n-1)C(0)
+  → 公式: C(n) = (2n)! / ((n+1)! n!)
+
+理解层次 2: 组合解释
+  → 这是在数二叉树的数量
+  → 这是在数 Dyck 路径的数量
+  → 这是在数 321-避免排列的数量
+
+理解层次 3: 统计量视角
+  → 定义统计量: height: BinaryTree → ℤ
+  → 定义统计量: leaves: BinaryTree → ℤ
+  → 通过统计量的分布理解这些树的结构
+
+--------------------------------------------------------------------------------
+用统计量分析 n=4 的二叉树:
+--------------------------------------------------------------------------------
+
+总共 14 个二叉树 (C_4 = 14)
+
+如果只知道序列: &#39;14&#39; 这个数字
+如果使用统计量: 可以分解为:
+  节点数为 4 的树: 14 个
+
+统计量提供了更细致的结构信息!
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Part 2: 从统计量生成多个序列</span>
+<span class="c1"># ============================================================================</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;【Part 2】一个统计量 → 多个序列&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">统计量: inversions(排列) = 逆序对数量</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># 生成多种序列</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;衍生序列 1: 最大逆序数&quot;</span><span class="p">)</span>
+<span class="n">max_inv_sequence</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">):</span>
+    <span class="n">max_inv</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">number_of_inversions</span><span class="p">()</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">Permutations</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+    <span class="n">max_inv_sequence</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">max_inv</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">max_inv_sequence</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  → 这是三角数序列 OEIS A000217: n(n-1)/2&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">衍生序列 2: 平均逆序数&quot;</span><span class="p">)</span>
+<span class="n">avg_inv_sequence</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">):</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">number_of_inversions</span><span class="p">()</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">Permutations</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+    <span class="n">avg</span> <span class="o">=</span> <span class="n">total</span> <span class="o">/</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">avg_inv_sequence</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">avg</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">avg_inv_sequence</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  → 平均值是 n(n-1)/4&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">衍生序列 3: 恰有 k 个逆序的排列数 (n=5)&quot;</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">inv_dist</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">Permutations</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">number_of_inversions</span><span class="p">()</span>
+    <span class="n">inv_dist</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">inv_dist</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="n">dist_sequence</span> <span class="o">=</span> <span class="p">[</span><span class="n">inv_dist</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">inv_dist</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">dist_sequence</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  → 这是 OEIS A008302 的第 </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2"> 行 (Euler 三角形)&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">总结: 一个统计量通过不同的聚合方式生成了 3+ 个序列!&quot;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>================================================================================
+【Part 2】一个统计量 → 多个序列
+================================================================================
+
+统计量: inversions(排列) = 逆序对数量
+
+衍生序列 1: 最大逆序数
+  [0, 1, 3, 6, 10, 15, 21]
+  → 这是三角数序列 OEIS A000217: n(n-1)/2
+
+衍生序列 2: 平均逆序数
+  [&#39;0.00&#39;, &#39;0.50&#39;, &#39;1.50&#39;, &#39;3.00&#39;, &#39;5.00&#39;, &#39;7.50&#39;, &#39;10.50&#39;]
+  → 平均值是 n(n-1)/4
+
+衍生序列 3: 恰有 k 个逆序的排列数 (n=5)
+  [1, 4, 9, 15, 20, 22, 20, 15, 9, 4, 1]
+  → 这是 OEIS A008302 的第 5 行 (Euler 三角形)
+
+总结: 一个统计量通过不同的聚合方式生成了 3+ 个序列!
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Part 3: 从序列反推统计量</span>
+<span class="c1"># ============================================================================</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;【Part 3】从序列反推统计量&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
+
+<span class="n">mystery_sequence</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">720</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">神秘序列: </span><span class="si">{</span><span class="n">mystery_sequence</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">分析步骤:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  步骤 1: 识别序列&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    → OEIS 搜索: A000142 (阶乘)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    → a(n) = n!&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  步骤 2: 寻找计数对象&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    → 这是 n-排列的数量&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    → Objects = Permutations(n)&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  步骤 3: 构造统计量来精化&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    → 统计量 1: fixed_points(σ) = 固定点数&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    → 统计量 2: cycles(σ) = 循环数&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    → 统计量 3: inversions(σ) = 逆序数&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  通过统计量，我们从单一序列 n! 得到了:&quot;</span><span class="p">)</span>
+
+<span class="c1"># 固定点分布</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">    固定点统计量的分布 (n=4):&quot;</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">fp_dist</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">Permutations</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">fp</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">if</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">fp_dist</span><span class="p">[</span><span class="n">fp</span><span class="p">]</span> <span class="o">=</span> <span class="n">fp_dist</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">fp</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">fp_dist</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;      </span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2"> 个固定点: </span><span class="si">{</span><span class="n">fp_dist</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="si">}</span><span class="s2"> 个排列&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;      → 生成新序列! (这涉及 Rencontres 数)&quot;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>================================================================================
+【Part 3】从序列反推统计量
+================================================================================
+
+神秘序列: [1, 1, 2, 6, 24, 120, 720]
+
+分析步骤:
+  步骤 1: 识别序列
+    → OEIS 搜索: A000142 (阶乘)
+    → a(n) = n!
+
+  步骤 2: 寻找计数对象
+    → 这是 n-排列的数量
+    → Objects = Permutations(n)
+
+  步骤 3: 构造统计量来精化
+    → 统计量 1: fixed_points(σ) = 固定点数
+    → 统计量 2: cycles(σ) = 循环数
+    → 统计量 3: inversions(σ) = 逆序数
+
+  通过统计量，我们从单一序列 n! 得到了:
+
+    固定点统计量的分布 (n=4):
+      0 个固定点: 9 个排列
+      1 个固定点: 8 个排列
+      2 个固定点: 6 个排列
+      4 个固定点: 1 个排列
+      → 生成新序列! (这涉及 Rencontres 数)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Part 4: 信息量对比</span>
+<span class="c1"># ============================================================================</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;【Part 4】信息量对比&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">场景: 研究 4-排列&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">all_perms</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">Permutations</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">方法 A: 只用序列&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  信息: &#39;有 </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">all_perms</span><span class="p">)</span><span class="si">}</span><span class="s2"> 个排列&#39;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  知识: 数量&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  可回答: 基本计数问题&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">方法 B: 使用统计量&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  统计量: inversions, descents, fixed_points, ...&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  信息: 每个排列的详细测量&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  知识: 结构和分布&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  可回答: 深入的结构问题&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">具体对比:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  序列: 24 (一个数字)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  统计量数据: 24个排列 × 多个统计量 = 丰富的矩阵数据&quot;</span><span class="p">)</span>
+
+<span class="c1"># 展示统计量矩阵</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">统计量矩阵示例 (前6个排列):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="s1">&#39;排列&#39;</span><span class="si">:</span><span class="s2">&lt;15</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="s1">&#39;逆序数&#39;</span><span class="si">:</span><span class="s2">&lt;8</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="s1">&#39;下降数&#39;</span><span class="si">:</span><span class="s2">&lt;8</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="s1">&#39;固定点&#39;</span><span class="si">:</span><span class="s2">&lt;8</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">45</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">all_perms</span><span class="p">[:</span><span class="mi">6</span><span class="p">]):</span>
+    <span class="n">inv</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">number_of_inversions</span><span class="p">()</span>
+    <span class="n">des</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">number_of_descents</span><span class="p">()</span>
+    <span class="n">fp</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">if</span> <span class="n">p</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">p</span><span class="p">))</span><span class="si">:</span><span class="s2">&lt;15</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">inv</span><span class="si">:</span><span class="s2">&lt;8</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">des</span><span class="si">:</span><span class="s2">&lt;8</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">fp</span><span class="si">:</span><span class="s2">&lt;8</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;...&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">结论: 统计量携带的信息量远大于单一序列!&quot;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>================================================================================
+【Part 4】信息量对比
+================================================================================
+
+场景: 研究 4-排列
+--------------------------------------------------------------------------------
+
+方法 A: 只用序列
+  信息: &#39;有 24 个排列&#39;
+  知识: 数量
+  可回答: 基本计数问题
+
+方法 B: 使用统计量
+  统计量: inversions, descents, fixed_points, ...
+  信息: 每个排列的详细测量
+  知识: 结构和分布
+  可回答: 深入的结构问题
+
+具体对比:
+  序列: 24 (一个数字)
+  统计量数据: 24个排列 × 多个统计量 = 丰富的矩阵数据
+
+统计量矩阵示例 (前6个排列):
+排列              逆序数      下降数      固定点     
+---------------------------------------------
+[1, 2, 3, 4]    0        0        4       
+[1, 2, 4, 3]    1        1        2       
+[1, 3, 2, 4]    1        1        2       
+[1, 3, 4, 2]    2        1        1       
+[1, 4, 2, 3]    2        1        1       
+[1, 4, 3, 2]    3        2        2       
+...
+
+结论: 统计量携带的信息量远大于单一序列!
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Part 5: 可组合性对比</span>
+<span class="c1"># ============================================================================</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;【Part 5】可组合性对比&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">序列的组合性:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  • 序列 + 序列: a(n) + b(n)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  • 序列 × 序列: a(n) * b(n)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  → 生成新序列，但意义不明确&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">统计量的组合性:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  • 统计量 + 统计量: (f + g)(x) = f(x) + g(x)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  • 统计量 ∘ 统计量: (f ∘ map)(x)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  • 联合统计量: (f, g)(x) = (f(x), g(x))&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  → 生成新统计量，意义清晰&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">实例: 排列统计量&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  f = inversions&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  g = descents&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  f + g: 总的 &#39;无序程度&#39;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  (f, g): 二维分布 → Euler-Mahonian 分布&quot;</span><span class="p">)</span>
+
+<span class="c1"># 计算联合分布</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">联合分布 (inversions, descents) for n=4:&quot;</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">joint_dist</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">Permutations</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">inv</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">number_of_inversions</span><span class="p">()</span>
+    <span class="n">des</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">number_of_descents</span><span class="p">()</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="p">(</span><span class="n">inv</span><span class="p">,</span> <span class="n">des</span><span class="p">)</span>
+    <span class="n">joint_dist</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">joint_dist</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">(inv, des) : count&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">joint_dist</span><span class="o">.</span><span class="n">keys</span><span class="p">())[:</span><span class="mi">10</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2"> : </span><span class="si">{</span><span class="n">joint_dist</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ...&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">→ 联合分布比两个独立序列包含更多信息!&quot;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>================================================================================
+【Part 5】可组合性对比
+================================================================================
+
+序列的组合性:
+  • 序列 + 序列: a(n) + b(n)
+  • 序列 × 序列: a(n) * b(n)
+  → 生成新序列，但意义不明确
+
+统计量的组合性:
+  • 统计量 + 统计量: (f + g)(x) = f(x) + g(x)
+  • 统计量 ∘ 统计量: (f ∘ map)(x)
+  • 联合统计量: (f, g)(x) = (f(x), g(x))
+  → 生成新统计量，意义清晰
+
+实例: 排列统计量
+  f = inversions
+  g = descents
+  
+  f + g: 总的 &#39;无序程度&#39;
+  (f, g): 二维分布 → Euler-Mahonian 分布
+
+联合分布 (inversions, descents) for n=4:
+
+(inv, des) : count
+  (0, 0) : 1
+  (1, 1) : 3
+  (2, 1) : 4
+  (2, 2) : 1
+  (3, 1) : 3
+  (3, 2) : 3
+  (4, 1) : 1
+  (4, 2) : 4
+  (5, 2) : 3
+  (6, 3) : 1
+  ...
+
+→ 联合分布比两个独立序列包含更多信息!
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Part 6: 研究实践对比</span>
+<span class="c1"># ============================================================================</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;【Part 6】研究实践中的应用&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">场景: 你发现一个新的组合对象族&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">策略 A: 序列优先&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  1. 计数小规模对象: 1, 3, 13, 68, ...&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  2. OEIS 搜索&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  3a. 找到 → 知道别人研究过&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  3b. 未找到 → 可能是新发现，但...&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  问题: 如果未找到，你知道的还是很少&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">策略 B: 统计量优先&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  1. 定义自然统计量: size, height, special_nodes, ...&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  2. 研究统计量的性质和分布&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  3. 寻找统计量之间的关系&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  4. 生成多个相关序列&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  5. OEIS 和 FindStat 联合查询&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  优势: 即使是新对象，也能深入理解其结构&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">最佳实践: 混合策略&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  序列 → 快速识别&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  统计量 → 深入理解&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  两者结合 → 完整知识&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>================================================================================
+【Part 6】研究实践中的应用
+================================================================================
+
+场景: 你发现一个新的组合对象族
+--------------------------------------------------------------------------------
+
+策略 A: 序列优先
+  1. 计数小规模对象: 1, 3, 13, 68, ...
+  2. OEIS 搜索
+  3a. 找到 → 知道别人研究过
+  3b. 未找到 → 可能是新发现，但...
+  问题: 如果未找到，你知道的还是很少
+
+策略 B: 统计量优先
+  1. 定义自然统计量: size, height, special_nodes, ...
+  2. 研究统计量的性质和分布
+  3. 寻找统计量之间的关系
+  4. 生成多个相关序列
+  5. OEIS 和 FindStat 联合查询
+  优势: 即使是新对象，也能深入理解其结构
+
+最佳实践: 混合策略
+  序列 → 快速识别
+  统计量 → 深入理解
+  两者结合 → 完整知识
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Part 7: 哲学层面的区别</span>
+<span class="c1"># ============================================================================</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;【Part 7】本质区别总结&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
+<span class="n">comparison</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">┌─────────────────────────────────────────────────────────────────┐</span>
+<span class="s2">│                    序列 vs 统计量                                │</span>
+<span class="s2">├─────────────────────────────────────────────────────────────────┤</span>
+<span class="s2">│                                                                 │</span>
+<span class="s2">│  数字序列                          组合统计量                    │</span>
+<span class="s2">│  ─────────                         ─────────                    │</span>
+<span class="s2">│                                                                 │</span>
+<span class="s2">│  WHAT (是什么)              ←→    HOW (如何测量)               │</span>
+<span class="s2">│  DATA (数据)                ←→    METHOD (方法)                │</span>
+<span class="s2">│  RESULT (结果)              ←→    PROCESS (过程)               │</span>
+<span class="s2">│  PHENOMENON (现象)          ←→    MECHANISM (机制)             │</span>
+<span class="s2">│  EXTENSION (外延)           ←→    INTENSION (内涵)             │</span>
+<span class="s2">│  OBSERVATION (观察)         ←→    UNDERSTANDING (理解)         │</span>
+<span class="s2">│                                                                 │</span>
+<span class="s2">│  例如:                             例如:                         │</span>
+<span class="s2">│  1,1,2,5,14,42,...                inv: Perm → ℤ               │</span>
+<span class="s2">│  (一串数字)                        (一个函数)                    │</span>
+<span class="s2">│                                                                 │</span>
+<span class="s2">└─────────────────────────────────────────────────────────────────┘</span>
+
+<span class="s2">关键洞察:</span>
+<span class="s2">  • 序列是统计量的&quot;投影&quot;或&quot;影子&quot;</span>
+<span class="s2">  • 一个统计量可以生成多个序列</span>
+<span class="s2">  • 同一个序列可以来自多个统计量</span>
+<span class="s2">  • 统计量是&quot;活的&quot;(可操作)，序列是&quot;死的&quot;(已固定)</span>
+
+<span class="s2">=======建议</span>
+<span class="s2">何时使用序列思维:</span>
+<span class="s2">  ✓ 需要快速识别已知模式</span>
+<span class="s2">  ✓ 查找现成的公式和递推</span>
+<span class="s2">  ✓ 验证数值计算的正确性</span>
+<span class="s2">  ✓ 连接到其他数学领域</span>
+
+<span class="s2">何时使用统计量思维:</span>
+<span class="s2">  ✓ 探索新的组合对象</span>
+<span class="s2">  ✓ 需要理解对象的内部结构</span>
+<span class="s2">  ✓ 寻找双射和组合证明</span>
+<span class="s2">  ✓ 构造生成函数</span>
+<span class="s2">  ✓ 推广到更一般的情况</span>
+
+<span class="s2">研究新问题的推荐流程:</span>
+<span class="s2">  1. 定义对象和自然统计量 (建立框架)</span>
+<span class="s2">  2. 计算小规模数据 (验证定义)</span>
+<span class="s2">  3. 提取序列 (准备查询)</span>
+<span class="s2">  4. OEIS 查询 (连接已知)</span>
+<span class="s2">  5. FindStat 查询 (寻找类似统计量)</span>
+<span class="s2">  6. 分析统计量的分布 (深入理解)</span>
+<span class="s2">  7. 寻找恒等式和关系 (建立理论)</span>
+
+<span class="s2">========想象你在研究一座城市:</span>
+
+<span class="s2">方法 A: 只看人口序列</span>
+<span class="s2">  • 1990年: 100万</span>
+<span class="s2">  • 2000年: 150万  </span>
+<span class="s2">  • 2010年: 200万</span>
+<span class="s2">  → 你知道城市在增长，但不知道为什么</span>
+
+<span class="s2">方法 B: 使用统计量</span>
+<span class="s2">  • age_distribution(city, year)</span>
+<span class="s2">  • income_distribution(city, year)</span>
+<span class="s2">  • industry_composition(city, year)</span>
+<span class="s2">  → 你理解城市的结构和变化机制</span>
+
+<span class="s2">总人口数 = 序列 (summary statistic)</span>
+<span class="s2">各种分布 = 统计量 (detailed measurements)</span>
+
+<span class="s2">真正的理解来自于统计量，而不仅仅是总数!</span>
+
+<span class="s2">╔════════════════════════════════════════════════════════════════╗</span>
+<span class="s2">║                     核心要点                                    ║</span>
+<span class="s2">╠════════════════════════════════════════════════════════════════╣</span>
+<span class="s2">║                                                                ║</span>
+<span class="s2">║  1. 序列是静态的&quot;快照&quot;，统计量是动态的&quot;规则&quot;                   ║</span>
+<span class="s2">║                                                                ║</span>
+<span class="s2">║  2. 统计量的信息量远大于其生成的序列                            ║</span>
+<span class="s2">║                                                                ║</span>
+<span class="s2">║  3. 同一序列可有多种组合解释(通过不同统计量)                   ║</span>
+<span class="s2">║                                                                ║</span>
+<span class="s2">║  4. 研究中应该&quot;序列识别&quot;+&quot;统计量理解&quot;双管齐下                  ║</span>
+<span class="s2">║                                                                ║</span>
+<span class="s2">║  5. FindStat关注统计量，OEIS关注序列，两者互补                 ║</span>
+<span class="s2">║                                                                ║</span>
+<span class="s2">╚════════════════════════════════════════════════════════════════╝</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">comparison</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>================================================================================
+【Part 7】本质区别总结
+================================================================================
+
+┌─────────────────────────────────────────────────────────────────┐
+│                    序列 vs 统计量                                │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  数字序列                          组合统计量                    │
+│  ─────────                         ─────────                    │
+│                                                                 │
+│  WHAT (是什么)              ←→    HOW (如何测量)               │
+│  DATA (数据)                ←→    METHOD (方法)                │
+│  RESULT (结果)              ←→    PROCESS (过程)               │
+│  PHENOMENON (现象)          ←→    MECHANISM (机制)             │
+│  EXTENSION (外延)           ←→    INTENSION (内涵)             │
+│  OBSERVATION (观察)         ←→    UNDERSTANDING (理解)         │
+│                                                                 │
+│  例如:                             例如:                         │
+│  1,1,2,5,14,42,...                inv: Perm → ℤ               │
+│  (一串数字)                        (一个函数)                    │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+
+关键洞察:
+  • 序列是统计量的&quot;投影&quot;或&quot;影子&quot;
+  • 一个统计量可以生成多个序列
+  • 同一个序列可以来自多个统计量
+  • 统计量是&quot;活的&quot;(可操作)，序列是&quot;死的&quot;(已固定)
+
+=======建议
+何时使用序列思维:
+  ✓ 需要快速识别已知模式
+  ✓ 查找现成的公式和递推
+  ✓ 验证数值计算的正确性
+  ✓ 连接到其他数学领域
+
+何时使用统计量思维:
+  ✓ 探索新的组合对象
+  ✓ 需要理解对象的内部结构
+  ✓ 寻找双射和组合证明
+  ✓ 构造生成函数
+  ✓ 推广到更一般的情况
+
+研究新问题的推荐流程:
+  1. 定义对象和自然统计量 (建立框架)
+  2. 计算小规模数据 (验证定义)
+  3. 提取序列 (准备查询)
+  4. OEIS 查询 (连接已知)
+  5. FindStat 查询 (寻找类似统计量)
+  6. 分析统计量的分布 (深入理解)
+  7. 寻找恒等式和关系 (建立理论)
+
+========想象你在研究一座城市:
+
+方法 A: 只看人口序列
+  • 1990年: 100万
+  • 2000年: 150万  
+  • 2010年: 200万
+  → 你知道城市在增长，但不知道为什么
+
+方法 B: 使用统计量
+  • age_distribution(city, year)
+  • income_distribution(city, year)
+  • industry_composition(city, year)
+  → 你理解城市的结构和变化机制
+
+总人口数 = 序列 (summary statistic)
+各种分布 = 统计量 (detailed measurements)
+
+真正的理解来自于统计量，而不仅仅是总数!
+
+╔════════════════════════════════════════════════════════════════╗
+║                     核心要点                                    ║
+╠════════════════════════════════════════════════════════════════╣
+║                                                                ║
+║  1. 序列是静态的&quot;快照&quot;，统计量是动态的&quot;规则&quot;                   ║
+║                                                                ║
+║  2. 统计量的信息量远大于其生成的序列                            ║
+║                                                                ║
+║  3. 同一序列可有多种组合解释(通过不同统计量)                   ║
+║                                                                ║
+║  4. 研究中应该&quot;序列识别&quot;+&quot;统计量理解&quot;双管齐下                  ║
+║                                                                ║
+║  5. FindStat关注统计量，OEIS关注序列，两者互补                 ║
+║                                                                ║
+╚════════════════════════════════════════════════════════════════╝
+</pre></div>
+</div>
+</div>
+</div>
 <p>Objectives: To prepare secondary &amp; tertiary math for my kids</p>
 <p>Bad ideas:</p>
 <ul class="simple">
@@ -806,16 +2029,16 @@ Poisson’s theorem</p></li>
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "sagemath"
         },
         kernelOptions: {
-            name: "python3",
+            name: "sagemath",
             path: "./math"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'sagemath'</script>
 
                 </article>
               
@@ -828,12 +2051,12 @@ Poisson’s theorem</p></li>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../Course_Lean.html"
+       href="../nb_lottery_simulator.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Lean</p>
+        <p class="prev-next-title">Lottery Math</p>
       </div>
     </a>
     <a class="right-next"

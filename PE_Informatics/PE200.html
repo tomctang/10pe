@@ -63,7 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'PE_Informatics/PE200';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Quantum Mechanics" href="../Course_MCM_QM.html" />
+    <link rel="next" title="PE Tags &amp; Math" href="PE_tags.html" />
     <link rel="prev" title="Project Euler Q1-100" href="PE100.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -176,26 +176,21 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Mathe &amp; FP/Language</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Math &amp; FP/Language</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../Alevel/Alevel_math.html">A-level-math</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Alevel/Alevel_math_further.html">A-level-further</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Course_MCM.html">Math Computational Methods</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Course_Lean.html">Lean</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../math/00intro_math.html">Math-FP-Lang Combo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../math/01number_algebra.html">Number &amp; Algebra</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../math/02discrete_continuous.html">Discrete &amp; Continuous</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../math/03real_world.html">Real World Math</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">CS &amp; Physics</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../Course_MIT6001Python.html">MIT_CS6001-Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Course_MIT6002thinking.html">MIT_CS6002-CS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="PE_tags.html">Project Euler Tags</a></li>
 <li class="toctree-l1"><a class="reference internal" href="PE100.html">Project Euler Q1-100</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Project Euler Q101-</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PE_tags.html">PE Tags &amp; Math</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Course_MCM_QM.html">Quantum Mechanics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../How_Dad_organise_QM.html">How Dad learn QM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Course_MCM_QFT.html">QFT</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Notebook</span></p>
@@ -203,6 +198,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../nb_past_courses.html">Past courses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../geo/nb_Geo.html">Geography and Maps</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../nb_lottery_simulator.html">Lottery Math</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notes by Tom</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../math/00intro_math.html">Math-FP-Lang Combo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../math/01number_algebra.html">Number &amp; Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../math/02discrete_continuous.html">Discrete &amp; Continuous</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../math/03real_world.html">Real World Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../How_Dad_organise_QM.html">How Dad learn QM</a></li>
 </ul>
 
     </div>
@@ -620,18 +623,31 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 106 Special Subset Sums - Meta-Testing</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">need_testing</span><span class="p">(</span><span class="n">subset</span><span class="p">,</span><span class="n">subset1</span><span class="p">):</span>
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">subset</span><span class="p">)</span><span class="o">==</span><span class="mi">1</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">subset1</span><span class="p">)</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+    <span class="n">s</span><span class="o">=</span><span class="nb">tuple</span><span class="p">(</span><span class="n">subset</span><span class="p">)</span>
+    <span class="n">s1</span><span class="o">=</span><span class="nb">tuple</span><span class="p">(</span><span class="n">subset1</span><span class="p">)</span>
+    <span class="n">broken</span><span class="o">=</span><span class="kc">False</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">subset</span><span class="p">)</span><span class="o">&lt;=</span><span class="mi">1</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">subset1</span><span class="p">)</span><span class="o">&lt;=</span><span class="mi">1</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">False</span>
-    <span class="k">elif</span> <span class="nb">max</span><span class="p">(</span><span class="n">subset1</span><span class="p">)</span><span class="o">&lt;</span><span class="nb">min</span><span class="p">(</span><span class="n">subset</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">max</span><span class="p">(</span><span class="n">subset</span><span class="p">)</span><span class="o">&lt;</span><span class="nb">min</span><span class="p">(</span><span class="n">subset1</span><span class="p">):</span>
-        <span class="k">return</span> <span class="kc">False</span>
-    <span class="k">if</span> <span class="nb">max</span><span class="p">(</span><span class="n">subset1</span><span class="p">)</span><span class="o">&gt;</span><span class="nb">max</span><span class="p">(</span><span class="n">subset</span><span class="p">):</span>
-        
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">pass</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">subset</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">subset1</span><span class="p">)</span>
-<span class="n">var</span><span class="p">(</span><span class="s1">&#39;a b c d&#39;</span><span class="p">)</span>
-<span class="n">lst</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">subset</span><span class="p">)</span><span class="o">==</span><span class="nb">len</span><span class="p">(</span><span class="n">subset1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">max</span><span class="p">(</span><span class="n">subset1</span><span class="p">)</span><span class="o">&lt;</span><span class="nb">min</span><span class="p">(</span><span class="n">subset</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">max</span><span class="p">(</span><span class="n">subset</span><span class="p">)</span><span class="o">&lt;</span><span class="nb">min</span><span class="p">(</span><span class="n">subset1</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">if</span> <span class="nb">max</span><span class="p">(</span><span class="n">subset1</span><span class="p">)</span><span class="o">&gt;</span><span class="nb">max</span><span class="p">(</span><span class="n">subset</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">subset</span><span class="p">)):</span>
+                <span class="k">if</span> <span class="nb">max</span><span class="p">(</span><span class="n">subset</span><span class="p">)</span><span class="o">&gt;</span><span class="nb">max</span><span class="p">(</span><span class="n">subset1</span><span class="p">):</span>
+                    <span class="n">broken</span><span class="o">=</span><span class="kc">True</span>
+                <span class="n">subset</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">subset</span><span class="p">))</span>
+                <span class="n">subset1</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">subset1</span><span class="p">))</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">broken</span><span class="p">:</span> <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">subset</span><span class="p">)):</span>
+                <span class="k">if</span> <span class="nb">max</span><span class="p">(</span><span class="n">subset1</span><span class="p">)</span><span class="o">&gt;</span><span class="nb">max</span><span class="p">(</span><span class="n">subset</span><span class="p">):</span>
+                    <span class="n">broken</span><span class="o">=</span><span class="kc">True</span>
+                    <span class="k">break</span>
+                <span class="n">subset</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">subset</span><span class="p">))</span>
+                <span class="n">subset1</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">subset1</span><span class="p">))</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">broken</span><span class="p">:</span> <span class="k">return</span> <span class="kc">False</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="n">lst</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">]</span>
 <span class="n">tup</span><span class="o">=</span><span class="nb">tuple</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">subset</span> <span class="ow">in</span> <span class="n">subsets</span><span class="p">(</span><span class="n">lst</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">subset</span><span class="o">==</span><span class="p">[]:</span>
@@ -642,19 +658,372 @@ document.write(`
     <span class="k">for</span> <span class="n">subset1</span> <span class="ow">in</span> <span class="n">subsets</span><span class="p">(</span><span class="n">new_lst</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">subset1</span><span class="o">==</span><span class="p">[]:</span>
             <span class="k">continue</span>
+        <span class="c1"># print(subset,subset1)</span>
         <span class="n">need_testing</span><span class="p">(</span><span class="n">subset</span><span class="p">,</span><span class="n">subset1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 3]
-[2, 4]
-[2, 3]
-[1, 4]
-[1, 4]
-[2, 3]
-[2, 4]
-[1, 3]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, 2)
+(1, 2)
+(1, 2)
+(1, 2)
+(1, 2)
+(1, 2)
+(1, 2)
+(1, 2)
+(1, 2)
+(1, 2)
+(1, 2)
+(1, 2)
+(1, 2)
+(1, 2)
+(1, 2)
+(1, 2)
+(2, 3)
+(1, 2, 3)
+(1, 2, 3)
+(1, 2, 3)
+(1, 2, 3)
+(1, 2, 3)
+(1, 2, 3)
+(1, 2, 3)
+(1, 4)
+(1, 2, 4)
+(1, 2, 4)
+(1, 2, 4)
+(3, 4)
+(1, 3, 4)
+(1, 3, 4)
+(1, 3, 4)
+(2, 3, 4)
+(2, 3, 4)
+(2, 3, 4)
+(2, 3, 4)
+(1, 2, 3, 4)
+(1, 2, 3, 4)
+(1, 2, 3, 4)
+(1, 2, 3, 4)
+(1, 5)
+(1, 2, 5)
+(1, 2, 5)
+(1, 2, 5)
+(1, 3, 5)
+(1, 3, 5)
+(1, 3, 5)
+(2, 3, 5)
+(2, 3, 5)
+(2, 3, 5)
+(2, 3, 5)
+(1, 2, 3, 5)
+(1, 2, 3, 5)
+(1, 2, 3, 5)
+(1, 2, 3, 5)
+(4, 5)
+(4, 5)
+(1, 4, 5)
+(1, 4, 5)
+(1, 4, 5)
+(1, 4, 5)
+(2, 4, 5)
+(2, 4, 5)
+(2, 4, 5)
+(2, 4, 5)
+(1, 2, 4, 5)
+(1, 2, 4, 5)
+(1, 2, 4, 5)
+(1, 2, 4, 5)
+(3, 4, 5)
+(3, 4, 5)
+(3, 4, 5)
+(3, 4, 5)
+(1, 3, 4, 5)
+(1, 3, 4, 5)
+(1, 3, 4, 5)
+(1, 3, 4, 5)
+(2, 3, 4, 5)
+(2, 3, 4, 5)
+(2, 3, 4, 5)
+(2, 3, 4, 5)
+(1, 2, 3, 4, 5)
+(1, 6)
+(1, 2, 6)
+(1, 2, 6)
+(1, 2, 6)
+(1, 2, 6)
+(1, 2)
+(1, 2)
+(1, 2)
+(1, 2)
+(1, 3, 6)
+(1, 3, 6)
+(1, 3, 6)
+(1, 3, 6)
+(2, 3, 6)
+(2, 3, 6)
+(2, 3, 6)
+(2, 3, 6)
+(2, 3)
+(1, 2, 3, 6)
+(1, 2, 3, 6)
+(1, 2, 3, 6)
+(1, 2, 3, 6)
+(4, 6)
+(1, 4, 6)
+(1, 4, 6)
+(1, 4, 6)
+(1, 4, 6)
+(2, 4, 6)
+(2, 4, 6)
+(2, 4, 6)
+(1, 2, 4, 6)
+(1, 2, 4, 6)
+(1, 2, 4, 6)
+(1, 2, 4, 6)
+(3, 4, 6)
+(3, 4, 6)
+(3, 4, 6)
+(1, 3, 4, 6)
+(1, 3, 4, 6)
+(1, 3, 4, 6)
+(1, 3, 4, 6)
+(2, 3, 4, 6)
+(2, 3, 4, 6)
+(2, 3, 4, 6)
+(2, 3, 4, 6)
+(1, 2, 3, 4, 6)
+(5, 6)
+(5, 6)
+(5, 6)
+(5, 6)
+(5, 6)
+(5, 6)
+(1, 5, 6)
+(1, 5, 6)
+(1, 5, 6)
+(1, 5, 6)
+(2, 5, 6)
+(2, 5, 6)
+(2, 5, 6)
+(1, 2, 5, 6)
+(1, 2, 5, 6)
+(1, 2, 5, 6)
+(1, 2, 5, 6)
+(3, 5, 6)
+(3, 5, 6)
+(3, 5, 6)
+(1, 3, 5, 6)
+(1, 3, 5, 6)
+(1, 3, 5, 6)
+(1, 3, 5, 6)
+(2, 3, 5, 6)
+(2, 3, 5, 6)
+(2, 3, 5, 6)
+(2, 3, 5, 6)
+(1, 2, 3, 5, 6)
+(4, 5, 6)
+(4, 5, 6)
+(4, 5, 6)
+(4, 5, 6)
+(4, 5, 6)
+(4, 5, 6)
+(1, 4, 5, 6)
+(1, 4, 5, 6)
+(1, 4, 5, 6)
+(1, 4, 5, 6)
+(2, 4, 5, 6)
+(2, 4, 5, 6)
+(2, 4, 5, 6)
+(2, 4, 5, 6)
+(1, 2, 4, 5, 6)
+(3, 4, 5, 6)
+(3, 4, 5, 6)
+(3, 4, 5, 6)
+(3, 4, 5, 6)
+(1, 3, 4, 5, 6)
+(2, 3, 4, 5, 6)
+(1, 7)
+(1, 2, 7)
+(1, 2, 7)
+(1, 2, 7)
+(1, 2, 7)
+(1, 2)
+(1, 2)
+(1, 2)
+(1, 2)
+(1, 3, 7)
+(1, 3, 7)
+(1, 3, 7)
+(1, 3, 7)
+(2, 3, 7)
+(2, 3, 7)
+(2, 3, 7)
+(2, 3, 7)
+(2, 3)
+(1, 2, 3, 7)
+(1, 2, 3, 7)
+(1, 2, 3, 7)
+(1, 2, 3, 7)
+(4, 7)
+(1, 4, 7)
+(1, 4, 7)
+(1, 4, 7)
+(1, 4, 7)
+(2, 4, 7)
+(2, 4, 7)
+(2, 4, 7)
+(1, 2, 4, 7)
+(1, 2, 4, 7)
+(1, 2, 4, 7)
+(1, 2, 4, 7)
+(3, 4, 7)
+(3, 4, 7)
+(3, 4, 7)
+(1, 3, 4, 7)
+(1, 3, 4, 7)
+(1, 3, 4, 7)
+(1, 3, 4, 7)
+(2, 3, 4, 7)
+(2, 3, 4, 7)
+(2, 3, 4, 7)
+(2, 3, 4, 7)
+(1, 2, 3, 4, 7)
+(5, 7)
+(5, 7)
+(5, 7)
+(5, 7)
+(5, 7)
+(1, 5, 7)
+(1, 5, 7)
+(1, 5, 7)
+(1, 5, 7)
+(2, 5, 7)
+(2, 5, 7)
+(2, 5, 7)
+(1, 2, 5, 7)
+(1, 2, 5, 7)
+(1, 2, 5, 7)
+(1, 2, 5, 7)
+(3, 5, 7)
+(3, 5, 7)
+(3, 5, 7)
+(1, 3, 5, 7)
+(1, 3, 5, 7)
+(1, 3, 5, 7)
+(1, 3, 5, 7)
+(2, 3, 5, 7)
+(2, 3, 5, 7)
+(2, 3, 5, 7)
+(2, 3, 5, 7)
+(1, 2, 3, 5, 7)
+(4, 5, 7)
+(4, 5, 7)
+(4, 5, 7)
+(4, 5, 7)
+(4, 5, 7)
+(1, 4, 5, 7)
+(1, 4, 5, 7)
+(1, 4, 5, 7)
+(1, 4, 5, 7)
+(2, 4, 5, 7)
+(2, 4, 5, 7)
+(2, 4, 5, 7)
+(2, 4, 5, 7)
+(1, 2, 4, 5, 7)
+(3, 4, 5, 7)
+(3, 4, 5, 7)
+(3, 4, 5, 7)
+(3, 4, 5, 7)
+(1, 3, 4, 5, 7)
+(2, 3, 4, 5, 7)
+(6, 7)
+(6, 7)
+(6, 7)
+(6, 7)
+(6, 7)
+(6, 7)
+(6, 7)
+(6, 7)
+(6, 7)
+(6, 7)
+(6, 7)
+(6, 7)
+(6, 7)
+(6, 7)
+(6, 7)
+(6, 7)
+(1, 6, 7)
+(1, 6, 7)
+(1, 6, 7)
+(1, 6, 7)
+(2, 6, 7)
+(2, 6, 7)
+(2, 6, 7)
+(1, 2, 6, 7)
+(1, 2, 6, 7)
+(1, 2, 6, 7)
+(1, 2, 6, 7)
+(3, 6, 7)
+(3, 6, 7)
+(3, 6, 7)
+(1, 3, 6, 7)
+(1, 3, 6, 7)
+(1, 3, 6, 7)
+(1, 3, 6, 7)
+(2, 3, 6, 7)
+(2, 3, 6, 7)
+(2, 3, 6, 7)
+(2, 3, 6, 7)
+(1, 2, 3, 6, 7)
+(4, 6, 7)
+(4, 6, 7)
+(4, 6, 7)
+(4, 6, 7)
+(4, 6, 7)
+(1, 4, 6, 7)
+(1, 4, 6, 7)
+(1, 4, 6, 7)
+(1, 4, 6, 7)
+(2, 4, 6, 7)
+(2, 4, 6, 7)
+(2, 4, 6, 7)
+(2, 4, 6, 7)
+(1, 2, 4, 6, 7)
+(3, 4, 6, 7)
+(3, 4, 6, 7)
+(3, 4, 6, 7)
+(3, 4, 6, 7)
+(1, 3, 4, 6, 7)
+(2, 3, 4, 6, 7)
+(5, 6, 7)
+(5, 6, 7)
+(5, 6, 7)
+(5, 6, 7)
+(5, 6, 7)
+(5, 6, 7)
+(5, 6, 7)
+(1, 5, 6, 7)
+(1, 5, 6, 7)
+(1, 5, 6, 7)
+(1, 5, 6, 7)
+(2, 5, 6, 7)
+(2, 5, 6, 7)
+(2, 5, 6, 7)
+(2, 5, 6, 7)
+(1, 2, 5, 6, 7)
+(3, 5, 6, 7)
+(3, 5, 6, 7)
+(3, 5, 6, 7)
+(3, 5, 6, 7)
+(1, 3, 5, 6, 7)
+(2, 3, 5, 6, 7)
+(4, 5, 6, 7)
+(4, 5, 6, 7)
+(4, 5, 6, 7)
+(4, 5, 6, 7)
+(1, 4, 5, 6, 7)
+(2, 4, 5, 6, 7)
+(3, 4, 5, 6, 7)
 </pre></div>
 </div>
 </div>
@@ -3085,11 +3454,11 @@ Optimize solution</p>
       </div>
     </a>
     <a class="right-next"
-       href="../Course_MCM_QM.html"
+       href="PE_tags.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Quantum Mechanics</p>
+        <p class="prev-next-title">PE Tags &amp; Math</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
