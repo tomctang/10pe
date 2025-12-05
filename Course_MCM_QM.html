@@ -3077,12 +3077,68 @@ document.write(`
 <section id="position-space-wavefunctions-of-hydrogen">
 <h3>Position-Space Wavefunctions of Hydrogen<a class="headerlink" href="#position-space-wavefunctions-of-hydrogen" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>String of <span class="math notranslate nohighlight">\(\hat B\)</span> operators</p></li>
+<li><p>String of <span class="math notranslate nohighlight">\(\hat B\)</span> operators</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\hat p_r|n,n-1\rangle=i\hbar(\frac1{na_0}-\frac{n}{\hat r})|n,n-1\rangle\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat B_r^\dagger(n-2)|n,n-1\rangle=\frac{i\hbar(2n-1)}{\sqrt{2M}}(\frac1{n(n-1)a_0}-\frac1{\hat r})|n,n-1\rangle\)</span></p></li>
+<li><p>The following terms get very complicated quickly so they are ommited.</p></li>
+</ul>
+</li>
+<li><p>Recurrence for the polynomials</p>
+<ul>
+<li><p>General form: <span class="math notranslate nohighlight">\(\hat B_r^\dagger(l)\cdots\hat B_r^\dagger(n-2)|n,n-1\rangle=(\frac{2i\hbar}{\sqrt{2M}na_0})^{n-l-1}(\frac{na_0}{2\hat r})^{n-l-1}\sum_{j=0}^{n-l-1}b_j^{(l)}(\frac{2\hat r}{na_0})^j|n,n-1\rangle\)</span></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(b_0^{(n-2)}=-2n+1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(b_1^{(n-2)}=\frac{2n-1}{2(n-1)}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(b_j^{(l)}=(\frac{n+l+1}{2(l+1)}b_{j-1}^{(l+1)}-(j+2l+3)b_j^{(l+1)})\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(b_{-1}^{(l+1)}=b_{n-l-1}^{(l+1)}=0\)</span></p></li>
+<li><p>We won’t solve the recurrence relation but last time we saw that the Laguerre polynomials have a very special property and that property was that they look simple when we compare the ratios of consecutive polynomials.</p></li>
+<li><p>Simplifed form of ratio: <span class="math notranslate nohighlight">\(\frac{b_{j+1}^{(l)}}{b_j^{(l)}}=\frac{j-n+l+1}{(j+1)(j+2l+2)}\)</span></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Laguerre polynomials: <span class="math notranslate nohighlight">\(L_m^{(\alpha)}(x)=\sum_{j=0}^m\frac{(-1)^j}{j!}\begin{pmatrix}m+\alpha\\m-j\end{pmatrix}x^j=\sum_{j=0}^ma_j^{(\alpha,m)}x^j\)</span>
+- <span class="math notranslate nohighlight">\(\frac{a_{j+1}^{(\alpha,m)}}{a_j^{(\alpha,m)}}=\frac{j-m}{(j+1)(\alpha+j+1)}\)</span>
+- So, this string of <span class="math notranslate nohighlight">\(\hat B\)</span> operators acting on the <span class="math notranslate nohighlight">\(l=n-1\)</span> GS is proportional to a Laguerre polynomial with <span class="math notranslate nohighlight">\(m=n-l-1\)</span> and <span class="math notranslate nohighlight">\(\alpha=2l+1\)</span> and the argument of the Laguerre polynomial is <span class="math notranslate nohighlight">\(\frac{2\hat r}{na_0}\)</span>.</p></li>
+<li><p>Back to string of <span class="math notranslate nohighlight">\(\hat B\)</span> operators</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\hat B_r^\dagger(l)\cdots\hat B_r^\dagger(n-2)|n,n-1\rangle=d_{nl}(\frac{2i\hbar}{\sqrt{2M}na_0})^{n-l-1}(\frac{na_0}{2\hat r})^{n-l-1}L_{n-l-1}^{2l+1}(\frac{2\hat r}{na_0})|n,n-1\rangle\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(d_{nl}=\frac{(-1)^{n-l-1}(2n-1)!l!(n-l-1)!}{2^{n-l-1}(n+l)!(n-1)!}\)</span></p></li>
+<li><p>Simplified version: <span class="math notranslate nohighlight">\(\hat B_r^\dagger(l)\cdots\hat B_r^\dagger(n-2)|n,n-1\rangle=\frac{(2n-1)!l!(n-l-1)!}{(n+l)!(n-1)!}(-\frac{i\hbar}{\sqrt{2M}na_0})^{n-l-1}(\frac{na_0}{2\hat r})^{n-l-1}\times L_{n-l-1}^{2l+1}(\frac{2\hat r}{na_0})|n,n-1\rangle\)</span></p></li>
+</ul>
+</li>
+<li><p>Normalization term</p>
+<ul>
+<li><p>We also have to include the normalization constant, which has two sources.</p></li>
+<li><p>One is the factor <span class="math notranslate nohighlight">\(\frac1{\sqrt{(E_n-E_{l+1})(E_n-E_{l+2})\cdots(E_n-E_{n-1})}}\)</span>.</p></li>
+<li><p>The other factor is to guarantee that <span class="math notranslate nohighlight">\(\langle n,n-1|n,n-1\rangle=1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(E_n-E_k=\frac{e^2}{2a_0}(\frac1{k^2}-\frac1{n^2})\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac1{\sqrt{(E_n-E_{l+1})(E_n-E_{l+2})\cdots(E_n-E_{n-1})}}=(\frac{\sqrt{2a_0}n}e)^{n-l-1}\frac{(n-1)!\sqrt{(n+l)!}}{l!\sqrt{(n-l-1)!(2n-1)!}}\)</span></p></li>
+</ul>
+</li>
+<li><p>Normalized string of <span class="math notranslate nohighlight">\(\hat B\)</span> operators</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(|n,l\rangle=(-i)^{n-l-1}\sqrt{\frac{(n-l-1)!(2n-1)!}{(n+l)!}}(\frac{na_0}{2\hat r})^{n-l-1}L_{n-l-1}^{2l+1}(\frac{2\hat r}{na_0})|n,n-1\rangle\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\psi(r,\theta,\phi)=\langle r|\otimes\langle\theta,\phi|\enspace|n,l\rangle\otimes|l,m\rangle\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\psi(r,\theta,\phi)=\langle r|n,l\rangle\langle\theta,\phi|l,m\rangle\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\psi(r,\theta,\phi)=\psi_{nl}(r)Y_{lm}(\theta,\phi)\)</span></p></li>
+</ul>
+</li>
+<li><p>Auxiliary Hamiltonian GS</p>
+<ul>
+<li><p>Use previously derived relation to find <span class="math notranslate nohighlight">\(\langle r|n,n-1\rangle=r^{n-1}e^{-\frac{r}{na_0}}\langle0_r|\frac1{\hat r{n-1}}|n,n-1\rangle\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\langle0_r|\frac1{\hat r^{n-1}}|n,n-1\rangle=(\frac2{na_0})^{n+\frac12}\frac1{\sqrt{(2n)!}}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\langle r|n,n-1\rangle=r^{n-1}e^{-\frac{r}{na_0}}(\frac2{na_0})^{n+\frac12}\frac1{\sqrt{(2n)!}}\)</span></p></li>
+<li><p>Full wavefunction: <span class="math notranslate nohighlight">\(\psi(r,\theta,\phi)=(-i)^{n-l-1}(\frac2{na_0})^\frac32\sqrt{\frac{(n-l-1)!}{2n(n+l)!}}(\frac{r}{na_0})^lL_{n-l-1}^{2l+1}(\frac{2\hat r}{na_0})e^{-\frac{r}{na_0}}Y_{lm}(\theta,\phi)\)</span></p></li>
+</ul>
+</li>
 </ul>
 </section>
 <section id="problem-notes">
 <h3>Problem Notes<a class="headerlink" href="#problem-notes" title="Link to this heading">#</a></h3>
 <ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\hat B_r(l)=\frac1{\sqrt{2M}}(\hat p_r-i\hbar(\frac{\alpha_l}{a_0}+\frac{\beta_l}{\hat r}))\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(Y_{lm}(\theta,\phi)=\sqrt{\frac{(2l+1)(l-m)!}{4\pi(l+m)!}}(-1)^m P_l^m(\cos\theta)e^{im\phi}~~\text{for}~~m\ge 0\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(P_l^m(\cos\theta)=\left(\frac{\sin\theta}{2}\right )^m\,\,\sum_{n=0}^{l-m}(-1)^n\frac{(l+m+n)!}{(l-m-n)!(m+n)!n!}\left (\frac{1-\cos\theta}{2}\right )^n\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(Y_{l\,-|m|}(\theta,\phi)=(-1)^{|m|}\left [Y_{l|m|}(\theta,\phi)\right ]^*\)</span></p></li>
