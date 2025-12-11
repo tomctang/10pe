@@ -20,7 +20,6 @@ parts:
   - file: PE_Informatics/PE200 
   - file: PE_Informatics/PE_tags
   - file: Course_MCM_QM
-  - file: Course_MCM_QFT
   
 - caption: Notebook
   numbered: false
@@ -38,3 +37,5 @@ parts:
   - file: math/03real_world
 #  - file: math/05math_as_code
   - file: How_Dad_organise_QM
+  - file: Course_MCM_QFT
+  - file: How_IntegerSeq_build_math
