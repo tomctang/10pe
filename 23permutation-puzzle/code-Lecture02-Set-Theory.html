@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Geography and Maps &#8212; Jonny Workbook</title>
+    <title>Lecture 2: Set Theory &#8212; Jonny Workbook</title>
   
   
   
@@ -58,11 +58,9 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'geo/nb_Geo';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '23permutation-puzzle/code-Lecture02-Set-Theory';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Lottery Math" href="../nb_lottery_simulator.html" />
-    <link rel="prev" title="Past courses" href="../nb_past_courses.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -125,6 +123,8 @@
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -176,8 +176,8 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Math &amp; FP/Language</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../Alevel/Alevel_math.html">A-level-math</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Alevel/Alevel_math_further.html">A-level-further</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../past/Alevel_math.html">A-level-math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../past/Alevel_math_further.html">A-level-further</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Course_MCM.html">Math Computational Methods</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Course_Lean.html">Lean</a></li>
 </ul>
@@ -191,10 +191,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../Course_MCM_QM.html">Quantum Mechanics</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Notebook</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../nb_past_courses.html">Past courses</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Geography and Maps</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../nb_lottery_simulator.html">Lottery Math</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../past/nb_past_courses.html">Past courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../past/nb_Geo.html">Geography and Maps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../past/nb_lottery_simulator.html">Lottery Math</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Notes by Tom</span></p>
 <ul class="nav bd-sidenav">
@@ -204,7 +204,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../math/03real_world.html">Real World Math</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../How_Dad_organise_QM.html">How Dad learn QM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Course_MCM_QFT.html">QFT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../How_IntegerSeq_build_math.html">How Integer Seq build Math</a></li>
 </ul>
 
     </div>
@@ -274,7 +273,7 @@
       
       
       
-      <li><a href="../_sources/geo/nb_Geo.ipynb" target="_blank"
+      <li><a href="../_sources/23permutation-puzzle/code-Lecture02-Set-Theory.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -358,7 +357,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Geography and Maps</h1>
+    <h1>Lecture 2: Set Theory</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -368,15 +367,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#australia">Australia</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sydney">Sydney</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unsw">UNSW</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#world">World</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">殖民地</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-using-sage-math">2.4 Examples Using Sage Math</a></li>
 </ul>
             </nav>
         </div>
@@ -388,46 +379,161 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="geography-and-maps">
-<h1>Geography and Maps<a class="headerlink" href="#geography-and-maps" title="Link to this heading">#</a></h1>
-<p>I love Geo so much! This figures notebook includes my collection of MAPs and GEO-related pictures.</p>
-<section id="australia">
-<h2>Australia<a class="headerlink" href="#australia" title="Link to this heading">#</a></h2>
-<p><img alt="Australia中文" src="https://raw.githubusercontent.com/ctang83/NB_img/main/amyjonny/au_map.gif" />{width=100%}</p>
-<p><img alt="Australia中文max" src="https://raw.githubusercontent.com/ctang83/NB_img/main/amyjonny/au0.jpg" />{width=100%}</p>
-<p><img alt="Australia中文地质" src="https://raw.githubusercontent.com/ctang83/NB_img/main/amyjonny/au1.jpg" />{width=100%}</p>
-<p><img alt="Australia中文卫星" src="https://raw.githubusercontent.com/ctang83/NB_img/main/amyjonny/au2.jpg" />{width=100%}</p>
-<p><img alt="Australia中文卫星" src="https://raw.githubusercontent.com/ctang83/NB_img/main/amyjonny/pacific_GDP_PD.tif" />{width=100%}</p>
-<section id="sydney">
-<h3>Sydney<a class="headerlink" href="#sydney" title="Link to this heading">#</a></h3>
-<p><img alt="Sydney_CityRail" src="https://raw.githubusercontent.com/ctang83/NB_img/main/amyjonny/Sydney_CityRail.png" />{width=100%}</p>
-<p><img alt="Sydney人口密度1" src="https://raw.githubusercontent.com/ctang83/NB_img/main/amyjonny/Sydney_pop_density.jpg" />{width=100%}</p>
-<p><img alt="Sydney人口密度2" src="https://raw.githubusercontent.com/ctang83/NB_img/main/amyjonny/Sydney_pop_density2.jpg" />{width=100%}</p>
-</section>
-<section id="unsw">
-<h3>UNSW<a class="headerlink" href="#unsw" title="Link to this heading">#</a></h3>
-<p><img alt="UNSW map" src="https://raw.githubusercontent.com/ctang83/NB_img/main/amyjonny/unsw_map.gif" />{width=100%}</p>
-<p><img alt="UNSW卫星" src="https://raw.githubusercontent.com/ctang83/NB_img/main/amyjonny/unsw_ortho2005.jpg" />{width=100%}</p>
-<p><img alt="UNSW aerial1" src="https://raw.githubusercontent.com/ctang83/NB_img/main/amyjonny/UNSW_overhead1.jpg" />{width=100%}</p>
-<p><img alt="UNSW aerial2" src="https://raw.githubusercontent.com/ctang83/NB_img/main/amyjonny/UNSW_overhead2.jpg" />{width=100%}</p>
-</section>
-</section>
-<section id="world">
-<h2>World<a class="headerlink" href="#world" title="Link to this heading">#</a></h2>
-<p><img alt="世界1" src="https://raw.githubusercontent.com/ctang83/NB_img/main/amyjonny/shijie.gif" />{width=100%}</p>
-<p><img alt="世界2 map" src="https://raw.githubusercontent.com/ctang83/NB_img/main/amyjonny/shijie_climate_map.png" />{width=100%}</p>
-<p><img alt="世界3 map" src="https://raw.githubusercontent.com/ctang83/NB_img/main/amyjonny/shijiemax.jpg" />{width=100%}</p>
-<p><strong>World real size</strong></p>
-<p><img alt="World real size" src="https://raw.githubusercontent.com/ctang83/NB_img/main/amyjonny/world_realsize1.png" />{width=100%}</p>
-<p><img alt="World real size" src="https://raw.githubusercontent.com/ctang83/NB_img/main/amyjonny/world_realsize2.png" />{width=100%}</p>
-<section id="id1">
-<h3>殖民地<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
-<p><img alt="法国殖民地1800s" src="https://raw.githubusercontent.com/ctang83/NB_img/main/amyjonny/%E6%B3%95%E5%9B%BD%E6%AE%96%E6%B0%91%E5%9C%B01800s.png" />{width=100%}</p>
-<p><img alt="法国殖民地1920s" src="https://raw.githubusercontent.com/ctang83/NB_img/main/amyjonny/%E6%B3%95%E5%9B%BD%E6%AE%96%E6%B0%91%E5%9C%B01920.png" />{width=100%}</p>
-<p><img alt="法国殖民地500year" src="https://raw.githubusercontent.com/ctang83/NB_img/main/amyjonny/%E6%B3%95%E5%9B%BD%E6%AE%96%E6%B0%91%E5%9C%B0500year.gif" />{width=100%}</p>
-<p><img alt="英国殖民地1921" src="https://raw.githubusercontent.com/ctang83/NB_img/main/amyjonny/%E8%8B%B1%E5%9B%BD%E6%AE%96%E6%B0%91%E5%9C%B01921.png" />{width=100%}</p>
-<p><img alt="英国殖民地五百年加总" src="https://raw.githubusercontent.com/ctang83/NB_img/main/amyjonny/%E8%8B%B1%E5%9B%BD%E6%AE%96%E6%B0%91%E5%9C%B0all.png" />{width=100%}</p>
-</section>
+  <p>This is an ipython (jupyter) worksheet with code from the lecture notes for the course
+<strong>Permutation Puzzles: A Mathematical Perspective</strong>, by Jamie Mulholland</p>
+<p>Coures webpage: <a class="reference external" href="http://www.sfu.ca/~jtmulhol/math302">http://www.sfu.ca/~jtmulhol/math302</a> <br />
+Course notes booklet: <a class="reference external" href="http://www.sfu.ca/~jtmulhol/math302/notes/302notes.pdf">http://www.sfu.ca/~jtmulhol/math302/notes/302notes.pdf</a></p>
+<section class="tex2jax_ignore mathjax_ignore" id="lecture-2-set-theory">
+<h1>Lecture 2: Set Theory<a class="headerlink" href="#lecture-2-set-theory" title="Link to this heading">#</a></h1>
+<section id="examples-using-sage-math">
+<h2>2.4 Examples Using Sage Math<a class="headerlink" href="#examples-using-sage-math" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>S1=Set([1,2,3,4,5]);
+S2=Set([3,4,5,6,7]);
+print S1,S2
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1, 2, 3, 4, 5} {3, 4, 5, 6, 7}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>S1.cardinality()
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>S1.union(S2)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1, 2, 3, 4, 5, 6, 7}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>S1.intersection(S2)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{3, 4, 5}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>S1.difference(S2)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1, 2}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>S2.difference(S1)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{6, 7}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>cartesian_product([S1, S2])
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The Cartesian product of ({1, 2, 3, 4, 5}, {3, 4, 5, 6, 7})
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>for i in cartesian_product([S1,S2]):
+    print i
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, 3)
+(1, 4)
+(1, 5)
+(1, 6)
+(1, 7)
+(2, 3)
+(2, 4)
+(2, 5)
+(2, 6)
+(2, 7)
+(3, 3)
+(3, 4)
+(3, 5)
+(3, 6)
+(3, 7)
+(4, 3)
+(4, 4)
+(4, 5)
+(4, 6)
+(4, 7)
+(5, 3)
+(5, 4)
+(5, 5)
+(5, 6)
+(5, 7)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>2 in S1
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>1 in S2
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
@@ -440,16 +546,16 @@ document.write(`
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "sagemath"
         },
         kernelOptions: {
-            name: "python3",
-            path: "./geo"
+            name: "sagemath",
+            path: "./23permutation-puzzle"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'sagemath'</script>
 
                 </article>
               
@@ -461,24 +567,6 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="../nb_past_courses.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Past courses</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="../nb_lottery_simulator.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Lottery Math</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -495,15 +583,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#australia">Australia</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sydney">Sydney</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unsw">UNSW</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#world">World</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">殖民地</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-using-sage-math">2.4 Examples Using Sage Math</a></li>
 </ul>
   </nav></div>
 

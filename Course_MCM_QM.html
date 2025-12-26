@@ -63,7 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Course_MCM_QM';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Past courses" href="nb_past_courses.html" />
+    <link rel="next" title="Past courses" href="past/nb_past_courses.html" />
     <link rel="prev" title="PE Tags &amp; Math" href="PE_Informatics/PE_tags.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -178,8 +178,8 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Math &amp; FP/Language</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Alevel/Alevel_math.html">A-level-math</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Alevel/Alevel_math_further.html">A-level-further</a></li>
+<li class="toctree-l1"><a class="reference internal" href="past/Alevel_math.html">A-level-math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="past/Alevel_math_further.html">A-level-further</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Course_MCM.html">Math Computational Methods</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Course_Lean.html">Lean</a></li>
 </ul>
@@ -194,9 +194,9 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Notebook</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="nb_past_courses.html">Past courses</a></li>
-<li class="toctree-l1"><a class="reference internal" href="geo/nb_Geo.html">Geography and Maps</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nb_lottery_simulator.html">Lottery Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="past/nb_past_courses.html">Past courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="past/nb_Geo.html">Geography and Maps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="past/nb_lottery_simulator.html">Lottery Math</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Notes by Tom</span></p>
 <ul class="nav bd-sidenav">
@@ -206,7 +206,6 @@
 <li class="toctree-l1"><a class="reference internal" href="math/03real_world.html">Real World Math</a></li>
 <li class="toctree-l1"><a class="reference internal" href="How_Dad_organise_QM.html">How Dad learn QM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Course_MCM_QFT.html">QFT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="How_IntegerSeq_build_math.html">How Integer Seq build Math</a></li>
 </ul>
 
     </div>
@@ -403,9 +402,21 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m8-quantum-approximation-methods">M8. Quantum Approximation Methods</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-order-perturbation-theory-and-the-feynman-hellmann-theorem">First-Order Perturbation Theory and the Feynman-Hellmann Theorem</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-perturbation-theory-via-derivatives">Second-Order Perturbation Theory (via derivatives)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#schrodinger-equation-in-position-space-and-the-square-well-problem">Schrodinger Equation in Position Space and the Square Well Problem</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">coding</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m9-time-evolution">M9. Time Evolution</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-evolution-trotter-formula-and-the-time-ordered-product">Time Evolution, Trotter Formula, and the Time-Ordered Product</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cyclotron-resonance">Cyclotron Resonance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">coding</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m10-photons-and-ligo">M10. Photons and LIGO</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantization-of-light">Quantization of Light</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final">Final</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qc">QC</a></li>
 </ul>
             </nav>
@@ -3205,7 +3216,21 @@ document.write(`
 <ul>
 <li><p><span class="math notranslate nohighlight">\(|\phi_{nl}\rangle=\hat B_r^\dagger(l)\hat B_r^\dagger(l+1)\cdots\hat B_r^\dagger(n-2)\hat r^{n-l-1}P_l^h(\hat r_x, \hat r_y, \hat r_z)|\phi_n\rangle\)</span></p></li>
 <li><p>Evaluating against the state <span class="math notranslate nohighlight">\(\langle r_x,r_y,r_z|\)</span> replaces all the position operators by their eigenvalues and we are left with the wavefunction, once we determine the remaining term <span class="math notranslate nohighlight">\(\langle r_x,r_y,r_z|\phi_n\rangle\)</span>.</p></li>
-<li><p>[add remaining section]</p></li>
+<li><p>We won’t show the details, but this all follows simply from what we did before.</p></li>
+<li><p>We are more interested in computing the momentum-space wavefunctions.</p></li>
+<li><p>The general case can be done, but is very, very long.</p></li>
+<li><p>The challenge is that we do not know how to operate position operators against <span class="math notranslate nohighlight">\(\langle p_x,p_y,p_z|\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\tilde{\psi}_{10}(p_x,p_y,p_z)=\langle p_x,p_y,p_z|\phi_1\rangle\)</span></p></li>
+<li><p>Translation of momentum operator: <span class="math notranslate nohighlight">\(\langle p_x,p_y,p_z|\phi_1\rangle=\langle 0_{\vec p}|e^{-\frac i{\hbar}(p_x\hat r_x+p_y\hat r_y+p_z\hat r_z)}|\phi_1\rangle\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\langle p_x,p_y,p_z|\phi_1\rangle=\sum_{n=0}^\infty\frac{(-1)^n}{n!}(\frac i{\hbar})^n\langle 0_{\vec p}|(p_x\hat r_x+p_y\hat r_y+p_z\hat r_z)^n|\phi_1\rangle\)</span></p></li>
+<li><p>Subsidiary condition: <span class="math notranslate nohighlight">\(\hat p_\alpha|\phi_1\rangle=\frac{i\hbar}{a_0}\frac{\hat r_\alpha}{\hat r}|\phi_1\rangle\)</span></p></li>
+<li><p>Compute summation term for <span class="math notranslate nohighlight">\(n=1\)</span>: <span class="math notranslate nohighlight">\(\langle 0_{\vec p}|p_x\hat r_x+p_y\hat r_y+p_z\hat r_z|\phi_1\rangle\)</span></p></li>
+<li><p>Apply subsidiary condition: <span class="math notranslate nohighlight">\(\frac{a_0}{i\hbar}\langle0_{\vec p}|\hat r(p_x\hat p_x+p_y\hat p_y+p_z\hat p_z)|\phi_1\rangle\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{a_0}{i\hbar}(p_x\langle0_{\vec p}|[\hat r,\hat p_x]|\phi_1\rangle+p_y\langle0_{\vec p}[\hat r,\hat p_y]|\phi_1\rangle+p_z\langle0_{\vec p}|[\hat r,\hat p_z]|\phi_1\rangle)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(-a_0(p_x\langle0_{\vec p}|\frac{\hat r_x}{\hat r}|\phi_1\rangle+p_y\langle 0_{\vec p}|\frac{\hat r_y}{\hat r}|\phi_1\rangle+p_z\langle 0_{\vec p}|\frac{\hat r_z}{\hat r}|\phi_1\rangle)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(-\frac{a_0^2}{i\hbar}(p_x\langle0_{\vec p}|\hat p_x|\phi_1\rangle+p_y\langle0_{\vec p}|\hat p_y|\phi_1\rangle+p_z\langle0_{\vec p}|\hat p_z|\phi_1\rangle)\)</span></p></li>
+<li><p>But all the <span class="math notranslate nohighlight">\(p_\alpha\)</span> operators annihilate against the <span class="math notranslate nohighlight">\(p\)</span> origin state and the whole expression is equal to 0.</p></li>
+<li><p>[continue]</p></li>
 </ul>
 </li>
 </ul>
@@ -3485,16 +3510,39 @@ document.write(`
 </li>
 </ul>
 </section>
+<section id="schrodinger-equation-in-position-space-and-the-square-well-problem">
+<h3>Schrodinger Equation in Position Space and the Square Well Problem<a class="headerlink" href="#schrodinger-equation-in-position-space-and-the-square-well-problem" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Ricatti equation</p>
+<ul>
+<li><p>Ladder operator: <span class="math notranslate nohighlight">\(\hat A=\frac1{\sqrt{2m}}(\hat p-i\hbar kW(k^\prime\hat x))\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat A^\dagger \hat A=\frac1{2m}(\hat p^2-i\hbar k[\hat p,W(k^\prime\hat x)]+\hbar^2 k^2W^2(k^\prime\hat x))\)</span></p></li>
+<li><p>Requirement: <span class="math notranslate nohighlight">\(V(\hat x)-E=-\frac{i\hbar k}{2m}[\hat p,W(k^\prime\hat x)]+\frac{\hbar^2k^2}{2m}W^2(k^\prime\hat x)\)</span></p></li>
+<li><p>Commutation relation: <span class="math notranslate nohighlight">\([\hat p,\hat x^n]=-i\hbar n\hat x^{n-1}\)</span></p></li>
+</ul>
+</li>
+</ul>
+</section>
 <section id="id1">
 <h3>coding<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">0.0529</span><span class="o">*</span><span class="mi">511</span><span class="o">/</span><span class="mi">105700</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">(</span><span class="n">expand</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">^</span><span class="mi">3</span><span class="o">+</span><span class="n">x</span><span class="o">^</span><span class="mi">3</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">4</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span><span class="o">^</span><span class="mi">3</span><span class="o">-</span>
+ <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">^</span><span class="mi">3</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">2</span><span class="p">))</span><span class="o">/</span><span class="mi">20</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.000255741721854305
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">632.4</span><span class="o">/</span><span class="mi">3</span><span class="o">*</span><span class="p">(</span><span class="mf">0.00001</span><span class="o">*</span><span class="mf">0.0529</span><span class="o">/</span><span class="mf">0.000284405</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mf">0.00001</span><span class="o">*</span><span class="mi">186</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="mf">632.4</span><span class="o">*</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span>
 </pre></div>
 </div>
 </div>
@@ -3504,11 +3552,6 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">assume</span><span class="p">(</span><span class="n">x</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">expand</span><span class="p">((</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">sqrt</span><span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="n">sqrt</span><span class="p">((</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">4</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">2</span><span class="p">))</span><span class="o">-</span><span class="n">sqrt</span><span class="p">((</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">sqrt</span><span class="p">((</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span><span class="o">^</span><span class="mi">3</span><span class="p">)</span><span class="o">-</span>
 <span class="n">sqrt</span><span class="p">((</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">^</span><span class="mi">3</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">2</span><span class="p">))</span><span class="o">+</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">3</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">+</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">^</span><span class="mi">3</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x^4 - 3*x^3 - sqrt(1/2)*sqrt(x + 4)*sqrt(x + 3)*sqrt(x + 2)*sqrt(x + 1) - (x + 2)^(3/2)*sqrt(x + 1) - sqrt(x + 2)*(x + 1)^(3/2) - 2*sqrt(x + 2)*sqrt(x + 1)*x + 2*sqrt(x - 1)*x^(3/2) + 3*x^2 + sqrt(x - 2)*sqrt(x)*abs(x - 1) + sqrt(1/2)*sqrt(x^3 - 6*x^2 + 11*x - 6)*sqrt(x) - 3*sqrt(x + 2)*sqrt(x + 1) + sqrt(x - 1)*sqrt(x) - x
 </pre></div>
 </div>
 </div>
@@ -3610,6 +3653,212 @@ document.write(`
 </div>
 </div>
 </section>
+</section>
+<section id="m9-time-evolution">
+<h2>M9. Time Evolution<a class="headerlink" href="#m9-time-evolution" title="Link to this heading">#</a></h2>
+<section id="time-evolution-trotter-formula-and-the-time-ordered-product">
+<h3>Time Evolution, Trotter Formula, and the Time-Ordered Product<a class="headerlink" href="#time-evolution-trotter-formula-and-the-time-ordered-product" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Time evolution</p>
+<ul>
+<li><p>We now need to determine how our quantum states change with time.</p></li>
+<li><p>Time-evolution operator: <span class="math notranslate nohighlight">\(|\psi(t)\rangle=\hat U(t,t_0)|\psi(t_0)\rangle\)</span></p></li>
+<li><p>Requirements</p>
+<ul>
+<li><p>Unitarity: <span class="math notranslate nohighlight">\(\hat U(t,t_0)\)</span></p></li>
+<li><p>Additive: <span class="math notranslate nohighlight">\(\hat U(t,t_0)=\hat U(t,t^\prime)\hat U(t^\prime,t_0)\)</span></p></li>
+</ul>
+</li>
+<li><p>These can be satisfied with <span class="math notranslate nohighlight">\(\hat U(t,t_0)=e^{i\hat O(t-t_0)}\)</span> with <span class="math notranslate nohighlight">\(\hat O\)</span> a Hermitian operator even though this is not the only way we can satisfy these two conditions.</p></li>
+<li><p>But <span class="math notranslate nohighlight">\(\hat O\)</span> also changes over time so we can only use this over small time intervals.</p></li>
+<li><p>We also assume that the Hamiltonian operator is what determines time evolution, since energy governs time evolution in the classical world.</p></li>
+<li><p>So we postulate that the infinitesimal time evolution operator for a constant Hamiltonian is <span class="math notranslate nohighlight">\(\hat U(t+\Delta t,t)=e^{-i\frac{\hat H(t+\frac{\delta t}2)\Delta t}{\hbar}}\)</span>.</p>
+<ul>
+<li><p>This sign is chosen by convention.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Time evolution summary</p>
+<ul>
+<li><p>Long time evolution: <span class="math notranslate nohighlight">\(\hat U(t,t_0)=\hat U(t,t-\Delta t)\hat U(t-\Delta t,t-2\Delta t)\hat U(t-2\Delta t,t-3\Delta t)\cdots\hat U(t_0+\Delta t,t_0)\)</span></p></li>
+<li><p>Constant Hamiltonian: <span class="math notranslate nohighlight">\(\hat U(t,t_0)=e^{-i\frac{\hat H(t-t_0)}{\hbar}}\)</span></p></li>
+<li><p>For each small step, the Hamiltonian is approximately constant, so we have <span class="math notranslate nohighlight">\(\hat U(t,t_0)=e^{-i\frac{\hat H(t-\frac{\Delta t}2)\Delta t}{\hbar}}e^{-i\frac{\hat H(t-\frac{3\Delta t}2)\Delta t}{\hbar}}e^{-i\frac{\hat H(t-\frac{5\Delta t}2)\Delta t}{\hbar}}\cdots e^{-i\frac{\hat H(t_0+\frac{\Delta t}2)\Delta t}{\hbar}}\)</span></p></li>
+<li><p>This is called a time-ordered product.</p></li>
+<li><p>This formula gets more and more accurate as <span class="math notranslate nohighlight">\(\Delta t\rightarrow0\)</span>.</p></li>
+</ul>
+</li>
+<li><p>Time-dependent Schrodinger equation</p>
+<ul>
+<li><p>Derivative of time evolution operator: <span class="math notranslate nohighlight">\(\frac d{dt}\hat U(t,t_0)=\lim_{\Delta t\rightarrow0}\frac{\hat U(t+\Delta t,t_0)-\hat U(t,t_0)}{\Delta t}\)</span></p></li>
+<li><p>Substitute and evaluate: <span class="math notranslate nohighlight">\(i\hbar\frac d{dt}\hat U(t,t_0)=\hat H(t)\hat U(t,t_0)\)</span></p></li>
+<li><p>Recall that <span class="math notranslate nohighlight">\(|\psi(t)\rangle=\hat U(t,t_0)|\psi(t_0)\rangle\)</span>: <span class="math notranslate nohighlight">\(i\hbar\frac d{dt}|\psi(t)\rangle=\hat H(t)|\psi(t)\rangle\)</span></p></li>
+<li><p>The last two equations are called the equation of motion and the time-dependent schrodinger equation in that order.</p></li>
+</ul>
+</li>
+<li><p>Time-independent Hamiltonian</p>
+<ul>
+<li><p>Consider a time-independent Hamiltonian <span class="math notranslate nohighlight">\(\hat H\)</span> and its energy eigenstates $\hat H|n\rangle=E_n|\rangle.</p></li>
+<li><p>General state in superposition: <span class="math notranslate nohighlight">\(|\psi(0)\rangle=\sum_nc_n|n\rangle\)</span></p></li>
+<li><p>Time evolution: <span class="math notranslate nohighlight">\(|\psi(t)\rangle=e^{-i\frac{\hat Ht}{\hbar}}|\psi(0)\rangle\)</span></p></li>
+<li><p>Substitute and evaluate: <span class="math notranslate nohighlight">\(|\psi(t)\rangle=\sum_nc_ne^{-i\frac{E_nt}{\hbar}}|n\rangle\)</span></p></li>
+<li><p>So, time evolution can be carried out by transforming <span class="math notranslate nohighlight">\(c_n\rightarrow c_ne^{-i\frac{E_n t}{\hbar}}\)</span>.</p></li>
+</ul>
+</li>
+<li><p>Example: particle in a box</p>
+<ul>
+<li><p>Recall the particle in an infinite box <span class="math notranslate nohighlight">\(0\le x\le L\)</span>.</p></li>
+<li><p>Wavefunction: <span class="math notranslate nohighlight">\(\psi_n(x)=\sqrt{\frac2L}\sin{\frac{n\pi x}L}\)</span></p></li>
+<li><p>Energy: <span class="math notranslate nohighlight">\(E_n=\frac{\hbar^2\pi^2n^2}{2mL^2}\)</span></p></li>
+<li><p>Superposition: <span class="math notranslate nohighlight">\(\psi(x,0)=\frac1{\sqrt{2}}(\psi_1(x)+\psi_2(x))\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\psi(x,t)=\frac1{\sqrt{2}}(e^{-\frac{iE_1t}{\hbar}}\psi_1(x,0)+e^{-\frac{iE_2t}{\hbar}}\psi_2(x,0))\)</span></p></li>
+<li><p>Pull out factor and substitute frequency: <span class="math notranslate nohighlight">\(\psi(x,t)=\frac1{\sqrt{2}}e^{-i\omega_1t}(\psi_1(x,0)+e^{-3i\omega_1t}\psi_2(x,0))\)</span></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="cyclotron-resonance">
+<h3>Cyclotron Resonance<a class="headerlink" href="#cyclotron-resonance" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Cyclotron resonance</p>
+<ul>
+<li><p>Recall the NMR lecture from M2, where we examined spins precessing in a large magnetic field. We then turned on a second rotating perpendicular magnetic field that rotated at precisely the same rate as the precession.</p></li>
+<li><p>The current loop begins precessing about the large magnetic field and when the perpendicular rotating magnetic field is added, the current loop precesses the rotating magnetic field which is called Rabi precession.</p></li>
+<li><p>The Rabi precession causes the spin of the current loop to flip from up to down and this is what we call Rabi flopping.</p></li>
+</ul>
+</li>
+<li><p>Hamiltonian of spin in a field</p>
+<ul>
+<li><p>Recall that the field and the spin interacts as magnetic dipoles, so <span class="math notranslate nohighlight">\(\hat H=-\vec \mu\cdot\vec B=-\frac{ge}{2mc}\hat{\vec S}\cdot\vec B=-\gamma B_0\frac{\hat S_z}{\hbar}=-\Omega\hat S_z\)</span></p>
+<ul>
+<li><p>Gyromagnetic ratio: <span class="math notranslate nohighlight">\(\gamma=\frac{ge\hbar}{2mc}\)</span></p></li>
+<li><p>Larmor frequency: <span class="math notranslate nohighlight">\(\Omega=\frac{\gamma B_0}{\hbar}\)</span></p></li>
+</ul>
+</li>
+<li><p>We choose the magnetic field along the z-direction here.</p></li>
+<li><p>The eigenstates of the Hamiltonian are the states <span class="math notranslate nohighlight">\(|s,m\rangle\)</span> with energy eigenvalues equal to <span class="math notranslate nohighlight">\(E_m=-\hbar\Omega m\)</span>.</p></li>
+<li><p>Time dependence: <span class="math notranslate nohighlight">\(|s,m;t\rangle=e^{-\frac i{\hbar}\hat H_0t}|s,m;t=0\rangle=e^{-i\Omega mt}|s,m;t=0\rangle\)</span></p></li>
+<li><p>This is what we call precession of the spin about the axis of the field.</p></li>
+</ul>
+</li>
+<li><p>Magnetic resonance experiment</p>
+<ul>
+<li><p>We add a small perpendicular magnetic field that rotates about the z-axis.</p></li>
+<li><p>When the rotation frequency matches the precession of the spin, we are on resonance.</p></li>
+<li><p>In this case, the spin sees a second magnetic field in the x-y axis, so it precesses around that.</p></li>
+<li><p>This causes the spin to flip from up to down in a Rabi oscillation.</p></li>
+<li><p>We now describe this mathematically.</p></li>
+<li><p>Magnetic field: <span class="math notranslate nohighlight">\(\vec B(t)=B_1(\cos{\omega t}\vec e_x-\sin{\omega t}\vec e_y)+B_0\vec e_z\)</span></p>
+<ul>
+<li><p>The z-direction component is the large magnetic field and the other component is the perpendicular rotating magnetic field.</p></li>
+</ul>
+</li>
+<li><p>Hamiltonian: <span class="math notranslate nohighlight">\(\hat H(t)=-\hat{\vec \mu}\cdot\vec B=-\Omega\hat S_z-\frac{\gamma B_1}{\hbar}(\hat S_x\cos{\omega t}-\hat S_y\sin{\omega t})\)</span></p></li>
+<li><p>Our next step is to go to the rotating frame, which rotates at the same rate as the magnetic field.</p></li>
+<li><p>In M7, we learned that rotations are generated by angular momentum, so we transform to the rotating frame using the rotation operator below.</p></li>
+<li><p>Rotation operator: <span class="math notranslate nohighlight">\(\hat D(\omega t,\vec e_z)=e^{-\frac i\hbar\omega t\hat S_z}\)</span></p></li>
+<li><p>Transformed spin: <span class="math notranslate nohighlight">\(\hat S_\alpha(t)=\hat D^\dagger(\omega t,\vec e_z)\hat S_\alpha\hat D(\omega t,\vec e_z)\)</span></p></li>
+<li><p>Transformations</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\hat S_z=\hat S_z\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat S_x(t)=(\hat S_x\cos{\omega t}-\hat S_y\sin{\omega t})\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat S_y(t)=(\hat S_x\sin{\omega t}+\hat S_y\cos{\omega t})\)</span></p></li>
+</ul>
+</li>
+<li><p>We now calculate this using differential equations.</p></li>
+<li><p><span class="math notranslate nohighlight">\(f_x(t)=\hat S_x\cos{\omega t}-\hat S_y\sin{\omega t}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat H(t)=e^{i\omega t\hat S_z}(\Omega\hat S_z-\frac{\gamma B_1}\hbar\hat S_x)e^{-i\omega t\hat S_z}\)</span></p></li>
+<li><p>So the Hamiltonian can be re-expressed as the rotation of a time-independent Hamiltonian.</p></li>
+<li><p>This is a unitary transformation that takes us from the static frame to the rotating frame.</p></li>
+</ul>
+</li>
+<li><p>Unitary transformation</p>
+<ul>
+<li><p>Idea: Define rotating frame wavefunction via <span class="math notranslate nohighlight">\(|\psi(t)\rangle_{rot}=e^{-i\omega t\hat S_z}|\psi(t)\rangle\text{ and }e^{-i\omega t\hat S_z}|\psi(t)\rangle_{rot}=|\psi(t)\rangle\)</span></p></li>
+<li><p>Time-dependent Schrodinger equation: <span class="math notranslate nohighlight">\(i\hbar\frac d{dt}|\psi(t)\rangle=\hat H(t)|\psi(t)\rangle=e^{i\omega t\hat S_z}(-\Omega\hat S_z-\frac{\gamma B_1}\hbar\hat S_x)e^{-i\omega t\hat S_z}|\psi(t)\rangle\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(i\hbar\frac d{dt}|\psi(t)\rangle_{rot}=(-(\Omega-\omega)\hat S_z-\frac{\gamma B_1}\hbar\hat S_x)\)</span></p></li>
+<li><p>This is a time-independent problem which is easy to solve.</p></li>
+<li><p><span class="math notranslate nohighlight">\(|\psi(t)=e^{i\omega t\hat S_z}e^{\frac i\hbar(\Omega-\omega)t\hat S_z+\frac{i\gamma B_1t}{\hbar^2}\hat S_x}|\psi(0)\rangle\)</span></p></li>
+</ul>
+</li>
+<li><p>Application</p>
+<ul>
+<li><p>Transition probability: <span class="math notranslate nohighlight">\(P_{mm'}(t)=|\langle sm'|e^{-\frac i\hbar(\Omega-\omega)t\hat S_z-\frac{i\gamma B_1t}{\hbar^2}\hat S_x}|sm\rangle|^2\)</span></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id2">
+<h3>coding<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;Omega omega t gamma B_1&#39;</span><span class="p">)</span>
+<span class="n">A</span><span class="o">=</span><span class="n">matrix</span><span class="p">([[</span><span class="n">i</span><span class="o">*</span><span class="p">(</span><span class="n">Omega</span><span class="o">-</span><span class="n">omega</span><span class="p">)</span><span class="o">*</span><span class="n">t</span><span class="p">,</span><span class="n">gamma</span><span class="o">*</span><span class="n">B_1</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="mi">0</span><span class="p">],[</span><span class="n">gamma</span><span class="o">*</span><span class="n">B_1</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="mi">0</span><span class="p">,</span><span class="n">gamma</span><span class="o">*</span><span class="n">B_1</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)],[</span><span class="mi">0</span><span class="p">,</span><span class="n">gamma</span><span class="o">*</span><span class="n">B_1</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="o">-</span><span class="n">i</span><span class="p">(</span><span class="n">Omega</span><span class="o">-</span><span class="n">omega</span><span class="p">)</span><span class="o">*</span><span class="n">t</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="m10-photons-and-ligo">
+<h2>M10. Photons and LIGO<a class="headerlink" href="#m10-photons-and-ligo" title="Link to this heading">#</a></h2>
+<section id="quantization-of-light">
+<h3>Quantization of Light<a class="headerlink" href="#quantization-of-light" title="Link to this heading">#</a></h3>
+</section>
+</section>
+<section id="final">
+<h2>Final<a class="headerlink" href="#final" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">comm</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span> <span class="o">-</span> <span class="n">y</span> <span class="o">*</span> <span class="n">x</span>
+
+<span class="c1"># Differential Weyl algebra on the polynomial ring QQ[q]</span>
+<span class="n">D</span> <span class="o">=</span> <span class="n">DifferentialWeylAlgebra</span><span class="p">(</span><span class="n">QQ</span><span class="p">[</span><span class="s1">&#39;q&#39;</span><span class="p">])</span>
+<span class="n">q</span><span class="p">,</span> <span class="n">dq</span> <span class="o">=</span> <span class="n">D</span><span class="o">.</span><span class="n">gens</span><span class="p">()</span>          <span class="c1"># q is position-like, dq is derivative (momentum-like)</span>
+
+<span class="c1"># Map to harmonic oscillator operators</span>
+<span class="c1"># Standard choice: a = sqrt(1/2) * (q + dq), a† = sqrt(1/2) * (q - dq)</span>
+<span class="c1"># But for simple [a, a†]=1 without coefficients:</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">dq</span>
+<span class="n">adag</span> <span class="o">=</span> <span class="n">q</span>                <span class="c1"># then [a, adag] = [q, dq] = 1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">adag</span> <span class="o">==</span> <span class="n">adag</span> <span class="o">*</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>   <span class="c1"># True</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">comm</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">adag</span><span class="p">))</span>              <span class="c1"># 1</span>
+
+<span class="c1">##### hbar</span>
+
+<span class="n">h</span> <span class="o">=</span> <span class="n">SR</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;h&#39;</span><span class="p">)</span>  <span class="c1"># Define hbar as a symbolic parameter first</span>
+<span class="n">R</span><span class="o">.&lt;</span><span class="n">x</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">SR</span><span class="p">[]</span>  <span class="c1"># # Create polynomial ring, Use Symbolic Ring as base</span>
+<span class="n">W</span> <span class="o">=</span> <span class="n">R</span><span class="o">.</span><span class="n">weyl_algebra</span><span class="p">()</span> <span class="c1"># Create Weyl algebra</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">dx</span> <span class="o">=</span> <span class="n">W</span><span class="o">.</span><span class="n">gens</span><span class="p">()</span>     <span class="c1"># Get generators</span>
+
+<span class="n">i</span> <span class="o">=</span> <span class="n">SR</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="o">-</span><span class="n">i</span> <span class="o">*</span> <span class="n">h</span> <span class="o">*</span> <span class="n">dx</span>
+<span class="n">s</span><span class="p">(</span><span class="n">comm</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">p</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.&lt;</span><span class="n">a1</span><span class="p">,</span><span class="n">a2</span><span class="p">,</span><span class="n">a11</span><span class="p">,</span><span class="n">a21</span><span class="o">&gt;=</span><span class="n">FreeAlgebra</span><span class="p">(</span><span class="n">ZZ</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">n1</span><span class="o">=</span><span class="n">a11</span><span class="o">*</span><span class="n">a1</span>
+<span class="n">n2</span><span class="o">=</span><span class="n">a21</span><span class="o">*</span><span class="n">a2</span>
+<span class="p">(</span><span class="n">a11</span><span class="o">*</span><span class="n">a2</span><span class="o">+</span><span class="n">a21</span><span class="o">*</span><span class="n">a1</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="o">==</span><span class="n">n1</span><span class="o">+</span><span class="n">n2</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">a11</span><span class="o">*</span><span class="n">a21</span><span class="o">*</span><span class="n">a2</span><span class="o">*</span><span class="n">a1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="n">a</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="qc">
 <h2>QC<a class="headerlink" href="#qc" title="Link to this heading">#</a></h2>
@@ -3819,7 +4068,7 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="nb_past_courses.html"
+       href="past/nb_past_courses.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
@@ -3876,9 +4125,21 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m8-quantum-approximation-methods">M8. Quantum Approximation Methods</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-order-perturbation-theory-and-the-feynman-hellmann-theorem">First-Order Perturbation Theory and the Feynman-Hellmann Theorem</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-perturbation-theory-via-derivatives">Second-Order Perturbation Theory (via derivatives)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#schrodinger-equation-in-position-space-and-the-square-well-problem">Schrodinger Equation in Position Space and the Square Well Problem</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">coding</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m9-time-evolution">M9. Time Evolution</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-evolution-trotter-formula-and-the-time-ordered-product">Time Evolution, Trotter Formula, and the Time-Ordered Product</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cyclotron-resonance">Cyclotron Resonance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">coding</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m10-photons-and-ligo">M10. Photons and LIGO</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantization-of-light">Quantization of Light</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final">Final</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qc">QC</a></li>
 </ul>
   </nav></div>
