@@ -63,8 +63,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Course_MCM_QM';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Past courses" href="past/nb_past_courses.html" />
-    <link rel="prev" title="PE Tags &amp; Math" href="PE_Informatics/PE_tags.html" />
+    <link rel="next" title="How Dad learn QM" href="How_Dad_organise_QM.html" />
+    <link rel="prev" title="Project Euler Tag-Math" href="PE_Informatics/PE_tags.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -178,8 +178,6 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Math &amp; FP/Language</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="past/Alevel_math.html">A-level-math</a></li>
-<li class="toctree-l1"><a class="reference internal" href="past/Alevel_math_further.html">A-level-further</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Course_MCM.html">Math Computational Methods</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Course_Lean.html">Lean</a></li>
 </ul>
@@ -189,22 +187,14 @@
 <li class="toctree-l1"><a class="reference internal" href="Course_MIT6002thinking.html">MIT_CS6002-CS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="PE_Informatics/PE100.html">Project Euler Q1-100</a></li>
 <li class="toctree-l1"><a class="reference internal" href="PE_Informatics/PE200.html">Project Euler Q101-</a></li>
-<li class="toctree-l1"><a class="reference internal" href="PE_Informatics/PE_tags.html">PE Tags &amp; Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PE_Informatics/PE_tags.html">Project Euler Tag-Math</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Quantum Mechanics</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notebook</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="past/nb_past_courses.html">Past courses</a></li>
-<li class="toctree-l1"><a class="reference internal" href="past/nb_Geo.html">Geography and Maps</a></li>
-<li class="toctree-l1"><a class="reference internal" href="past/nb_lottery_simulator.html">Lottery Math</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Notes by Tom</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="math/00intro_math.html">Math-FP-Lang Combo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="math/01number_algebra.html">Number &amp; Algebra</a></li>
-<li class="toctree-l1"><a class="reference internal" href="math/02discrete_continuous.html">Discrete &amp; Continuous</a></li>
-<li class="toctree-l1"><a class="reference internal" href="math/03real_world.html">Real World Math</a></li>
 <li class="toctree-l1"><a class="reference internal" href="How_Dad_organise_QM.html">How Dad learn QM</a></li>
+
+
 <li class="toctree-l1"><a class="reference internal" href="Course_MCM_QFT.html">QFT</a></li>
 </ul>
 
@@ -409,11 +399,11 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m9-time-evolution">M9. Time Evolution</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-evolution-trotter-formula-and-the-time-ordered-product">Time Evolution, Trotter Formula, and the Time-Ordered Product</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cyclotron-resonance">Cyclotron Resonance</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">coding</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m10-photons-and-ligo">M10. Photons and LIGO</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantization-of-light">Quantization of Light</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#material-notes">Material Notes</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final">Final</a></li>
@@ -3783,27 +3773,113 @@ document.write(`
 </li>
 <li><p>Application</p>
 <ul>
-<li><p>Transition probability: <span class="math notranslate nohighlight">\(P_{mm'}(t)=|\langle sm'|e^{-\frac i\hbar(\Omega-\omega)t\hat S_z-\frac{i\gamma B_1t}{\hbar^2}\hat S_x}|sm\rangle|^2\)</span></p></li>
+<li><p>Transition probability: <span class="math notranslate nohighlight">\(P_{mm'}(t)=|\langle sm'|e^{\frac i\hbar(\Omega-\omega)t\hat S_z-\frac{i\gamma B_1t}{\hbar^2}\hat S_x}|sm\rangle|^2\)</span></p></li>
+<li><p>Example: <a class="reference external" href="https://youtu.be/NN7FF9_CPYk?list=PLxyBMSdBhYxMFmxQz_58t50INLOg8jaKA&amp;amp;t=1053">https://youtu.be/NN7FF9_CPYk?list=PLxyBMSdBhYxMFmxQz_58t50INLOg8jaKA&amp;t=1053</a></p></li>
 </ul>
 </li>
 </ul>
-</section>
-<section id="id2">
-<h3>coding<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;Omega omega t gamma B_1&#39;</span><span class="p">)</span>
-<span class="n">A</span><span class="o">=</span><span class="n">matrix</span><span class="p">([[</span><span class="n">i</span><span class="o">*</span><span class="p">(</span><span class="n">Omega</span><span class="o">-</span><span class="n">omega</span><span class="p">)</span><span class="o">*</span><span class="n">t</span><span class="p">,</span><span class="n">gamma</span><span class="o">*</span><span class="n">B_1</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="mi">0</span><span class="p">],[</span><span class="n">gamma</span><span class="o">*</span><span class="n">B_1</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="mi">0</span><span class="p">,</span><span class="n">gamma</span><span class="o">*</span><span class="n">B_1</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)],[</span><span class="mi">0</span><span class="p">,</span><span class="n">gamma</span><span class="o">*</span><span class="n">B_1</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="o">-</span><span class="n">i</span><span class="p">(</span><span class="n">Omega</span><span class="o">-</span><span class="n">omega</span><span class="p">)</span><span class="o">*</span><span class="n">t</span><span class="p">]])</span>
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 </section>
 <section id="m10-photons-and-ligo">
 <h2>M10. Photons and LIGO<a class="headerlink" href="#m10-photons-and-ligo" title="Link to this heading">#</a></h2>
 <section id="quantization-of-light">
 <h3>Quantization of Light<a class="headerlink" href="#quantization-of-light" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Summary of classical theory in light</p>
+<ul>
+<li><p>Electric field: <span class="math notranslate nohighlight">\(\vec E(\vec r,t)=\sum_l\vec \epsilon_lE_l(t)e^{i\vec k_l\cdot\vec r}+cc\)</span></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\vec k_l=\frac{2\pi}L(n_x,n_y,n_z)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(cc\)</span> stands for complex conjugate.</p></li>
+</ul>
+</li>
+<li><p>Magnetic field: <span class="math notranslate nohighlight">\(\vec B(\vec r,t)=\sum_l\frac{\vec k_l\times\vec \epsilon_l}{\omega_l}E_l(t)e^{i\vec k_l\cdot\vec r}+cc\)</span></p></li>
+<li><p>Energy: <span class="math notranslate nohighlight">\(\epsilon=2\epsilon_0V\sum_l|E_l(0)|^2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\epsilon_l^{(1)}=\sqrt{\frac{\hbar\omega l}{2\epsilon_0 V}}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(E_l(t)=i\epsilon_l^{(1)}\alpha_l(t)\)</span></p></li>
+<li><p>Rewritten energy: <span class="math notranslate nohighlight">\(\epsilon=2\epsilon_0V\sum_l|E_l(0)|^2=2\epsilon_0V\sum_l|E_l(0)|^2=\sum_l\hbar\omega_l|\alpha_l(t)|^2\)</span></p></li>
+<li><p>Quadrature parameters</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(Q_l(t)=\sqrt{\frac\hbar2}(\alpha_l(t)+\alpha_l^*(t))\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(P_l(t)=\sqrt{\frac\hbar2}\frac1i(\alpha_l(t)-\alpha-l^*(t))\)</span></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Quantization</p>
+<ul>
+<li><p>Elevate <span class="math notranslate nohighlight">\(Q_l,P_l\)</span> to operators <span class="math notranslate nohighlight">\(\hat Q_l,\hat P_l\)</span> and the commutator <span class="math notranslate nohighlight">\([\hat Q_l,\hat P_{l^{'}}]=i\hbar\delta_{ll'}\)</span>.</p></li>
+<li><p>Ladder operators</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\hat a_l=\frac1{\sqrt{2\hbar}}(\hat Q_l+i\hat P_l)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat a_l^\dagger=\frac1{\sqrt{2\hbar}}(\hat Q_l-i\hat P_l)\)</span></p></li>
+</ul>
+</li>
+<li><p>Elevate energy to Hamiltonian: <span class="math notranslate nohighlight">\(\hat H=\sum_l\frac{\omega_l}2(\hat Q_l^2+\hat P_l^2)\sum_l\hbar\omega_l(\hat a_l^\dagger\hat a_l+\frac12)\)</span></p></li>
+<li><p>Electric field operator: <span class="math notranslate nohighlight">\(\hat{\vec E}=\hat E^{(+)}+\hat E^{(-)}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\vec E}(\vec r)=\sum_li\epsilon_l^{(1)}\vec \epsilon_l\hat a_le^{i\vec k_l\cdot\vec r}+hc\)</span></p></li>
+</ul>
+</li>
+<li><p>States</p>
+<ul>
+<li><p>Number operator eigenstates: <span class="math notranslate nohighlight">\(|n_1,n_2,n_3,\cdots\rangle=\frac{(\hat a_1^\dagger)^{n_1}}{\sqrt{n_1!}}\frac{(\hat a_2^\dagger)^{n_2}}{\sqrt{n_2!}}\frac{(\hat a_3^\dagger)^{n_3}}{\sqrt{n_3!}}\cdots|0,0,0,\cdots\rangle\)</span></p></li>
+<li><p>Energy: <span class="math notranslate nohighlight">\(E_{n_1,n_2,n_3,\cdots}=\sum_l\hbar\omega_l(n_l+\frac12)\)</span></p></li>
+<li><p>This means the vacuum now has infinite energy.</p></li>
+</ul>
+</li>
+<li><p>Expectation values</p>
+<ul>
+<li><p>Heisenberg representation</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\hat a_l(t)=\hat U_l^\dagger(t)\hat a_l\hat U_l(t)=\hat a_le^{-i\omega_lt}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat a_l^\dagger(t)=\hat U_l^\dagger(t)\hat a_l^\dagger\hat U(t)=\hat a_le^{i\omega_lt}\)</span></p></li>
+</ul>
+</li>
+<li><p>Consider a single mode state <span class="math notranslate nohighlight">\(|n_l\rangle\)</span>.</p></li>
+<li><p>Electric field: <span class="math notranslate nohighlight">\(\langle n_l|\hat E_l(\vec r,t)|n_l\rangle=i\langle n_l|\sum_l\epsilon_l{(1)}(\vec \epsilon_l\hat a_le^{i\vec k_l\cdot\vec r-i\omega_lt}+hc)|n_l\rangle=0\)</span></p></li>
+<li><p>But the fluctuations are not</p></li>
+<li><p>[add notes]</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="material-notes">
+<h3>Material Notes<a class="headerlink" href="#material-notes" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>How to detect single photons(photomultiplier tube)</p>
+<ul>
+<li><p>How it works</p>
+<ol class="arabic simple">
+<li><p>The photon strikes the photocathode releasing an electron into the tube. It is focused onto the first dynode directly below at a high potential(~100V).</p></li>
+<li><p>The electron accelerates towards the dynode and hits it hard, ejecting some(~2-5) electrons from the surface.</p></li>
+<li><p>This continues from around 20-30 stages.</p></li>
+<li><p>The electrons hit the anode at the end, which detects the current.</p></li>
+</ol>
+</li>
+<li><p>This is good enough, but there are also better detectors out there.</p></li>
+</ul>
+</li>
+<li><p>Noise</p>
+<ul>
+<li><p>When detecting single photons, there are a few sources of noise.</p></li>
+<li><p>It is not possible to create an environment where stray photons cannot enter the device. This noise can be reduced by removing extraneous light.</p></li>
+<li><p>The electrons are weakly binded to the photocathode and can be spontaneously “boiled off”. This noise can be reduced by cooling the detector.</p></li>
+<li><p>Ionized matter can also enter the tube, sometimes coming the walls, and charged particles will accelerate towards the first dynode because it is at such a high potential.</p></li>
+<li><p>Another issue is the efficiency of the detector. Sometimes it doesn’t emit an electron, or it fails to focuse onto a dynode.</p></li>
+</ul>
+</li>
+<li><p>Photon sources</p>
+<ul>
+<li><p>The calcium radiative cascade source is the first single-photon source.</p></li>
+<li></li>
+<li><p><span class="math notranslate nohighlight">\(\tiny1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\small1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\large1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\huge1\)</span></p></li>
+</ul>
+</li>
+</ul>
 </section>
 </section>
 <section id="final">
@@ -3843,10 +3919,14 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.&lt;</span><span class="n">a1</span><span class="p">,</span><span class="n">a2</span><span class="p">,</span><span class="n">a11</span><span class="p">,</span><span class="n">a21</span><span class="o">&gt;=</span><span class="n">FreeAlgebra</span><span class="p">(</span><span class="n">ZZ</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
-<span class="n">n1</span><span class="o">=</span><span class="n">a11</span><span class="o">*</span><span class="n">a1</span>
-<span class="n">n2</span><span class="o">=</span><span class="n">a21</span><span class="o">*</span><span class="n">a2</span>
-<span class="p">(</span><span class="n">a11</span><span class="o">*</span><span class="n">a2</span><span class="o">+</span><span class="n">a21</span><span class="o">*</span><span class="n">a1</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="o">==</span><span class="n">n1</span><span class="o">+</span><span class="n">n2</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">a11</span><span class="o">*</span><span class="n">a21</span><span class="o">*</span><span class="n">a2</span><span class="o">*</span><span class="n">a1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.&lt;</span><span class="n">a1</span><span class="p">,</span><span class="n">adag1</span><span class="o">&gt;=</span><span class="n">EuclideanSpace</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">poisson_bracket</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">q_vars</span><span class="p">,</span> <span class="n">p_vars</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute Poisson bracket {f,g}&quot;&quot;&quot;</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">q_i</span><span class="p">,</span> <span class="n">p_i</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">q_vars</span><span class="p">,</span> <span class="n">p_vars</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">+=</span> <span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">q_i</span><span class="p">)</span><span class="o">*</span><span class="n">diff</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">p_i</span><span class="p">)</span> <span class="o">-</span> <span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">p_i</span><span class="p">)</span><span class="o">*</span><span class="n">diff</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">q_i</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+<span class="n">poisson_bracket</span><span class="p">(</span><span class="n">a1</span><span class="p">,</span><span class="n">a2</span><span class="p">,[</span><span class="n">a1</span><span class="p">],[</span><span class="n">a2</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -3855,6 +3935,29 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
 <span class="n">s</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="n">a</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;Omega omega t gamma B_1 h&#39;</span><span class="p">)</span>
+<span class="n">A</span><span class="o">=</span><span class="n">matrix</span><span class="p">([[</span><span class="n">i</span><span class="o">*</span><span class="p">(</span><span class="n">Omega</span><span class="o">-</span><span class="n">omega</span><span class="p">)</span><span class="o">*</span><span class="n">t</span><span class="p">,</span><span class="n">i</span><span class="o">*</span><span class="n">gamma</span><span class="o">*</span><span class="n">B_1</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">h</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="mi">0</span><span class="p">],[</span><span class="n">i</span><span class="o">*</span><span class="n">gamma</span><span class="o">*</span><span class="n">B_1</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">h</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="mi">0</span><span class="p">,</span><span class="n">i</span><span class="o">*</span><span class="n">gamma</span><span class="o">*</span><span class="n">B_1</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">h</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)],[</span><span class="mi">0</span><span class="p">,</span><span class="n">i</span><span class="o">*</span><span class="n">gamma</span><span class="o">*</span><span class="n">B_1</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">h</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="o">-</span><span class="n">i</span><span class="o">*</span><span class="p">(</span><span class="n">Omega</span><span class="o">-</span><span class="n">omega</span><span class="p">)</span><span class="o">*</span><span class="n">t</span><span class="p">]])</span>
+<span class="n">v</span><span class="o">=</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">]])</span>
+<span class="n">s</span><span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">v</span><span class="p">,</span><span class="n">A</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">v</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.&lt;</span><span class="n">a1</span><span class="p">,</span><span class="n">a2</span><span class="p">,</span><span class="n">a11</span><span class="p">,</span><span class="n">a21</span><span class="o">&gt;=</span><span class="n">FreeAlgebra</span><span class="p">(</span><span class="n">ZZ</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">n1</span><span class="o">=</span><span class="n">a11</span><span class="o">*</span><span class="n">a1</span>
+<span class="n">n2</span><span class="o">=</span><span class="n">a21</span><span class="o">*</span><span class="n">a2</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">comm</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="o">-</span><span class="n">b</span><span class="o">*</span><span class="n">a</span>
+<span class="n">comm</span><span class="p">(</span><span class="n">a1</span><span class="p">,</span><span class="n">a2</span><span class="p">)</span><span class="o">=</span><span class="mi">0</span>
+<span class="nb">bool</span><span class="p">(</span><span class="n">a11</span><span class="o">*</span><span class="n">a2</span><span class="o">==</span><span class="n">a2</span><span class="o">*</span><span class="n">a11</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -4064,15 +4167,15 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">PE Tags &amp; Math</p>
+        <p class="prev-next-title">Project Euler Tag-Math</p>
       </div>
     </a>
     <a class="right-next"
-       href="past/nb_past_courses.html"
+       href="How_Dad_organise_QM.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Past courses</p>
+        <p class="prev-next-title">How Dad learn QM</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -4132,11 +4235,11 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m9-time-evolution">M9. Time Evolution</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-evolution-trotter-formula-and-the-time-ordered-product">Time Evolution, Trotter Formula, and the Time-Ordered Product</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cyclotron-resonance">Cyclotron Resonance</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">coding</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m10-photons-and-ligo">M10. Photons and LIGO</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantization-of-light">Quantization of Light</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#material-notes">Material Notes</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final">Final</a></li>
