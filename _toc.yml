@@ -6,8 +6,8 @@ parts:
 - caption: Math & FP/Language
   numbered: false
   chapters:
-  - file: past/Alevel_math
-  - file: past/Alevel_math_further
+  - file: _static/Alevel_math
+  - file: _static/Alevel_math_further
   - file: Course_MCM
   - file: Course_Lean  
 
@@ -24,9 +24,9 @@ parts:
 - caption: Notebook
   numbered: false
   chapters:
-  - file: past/nb_past_courses
-  - file: past/nb_Geo
-  - file: past/nb_lottery_simulator
+  - file: _static/nb_past_courses
+  - file: _static/nb_Geo
+  - file: _static/nb_lottery_simulator
 
 - caption: Notes by Tom
   numbered: false
@@ -38,4 +38,3 @@ parts:
 #  - file: math/05math_as_code
   - file: How_Dad_organise_QM
   - file: Course_MCM_QFT
-  - file: How_IntegerSeq_build_math
