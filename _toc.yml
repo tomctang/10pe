@@ -10,6 +10,7 @@ parts:
   - file: past/Alevel_math_further
   - file: Course_MCM
   - file: Course_Lean  
+  - file: 23permutation-puzzle/Course_Puzzle
 
 - caption: CS & Physics
   numbered: false
@@ -35,6 +36,5 @@ parts:
   - file: math/01number_algebra
   - file: math/02discrete_continuous
   - file: math/03real_world
-#  - file: math/05math_as_code
   - file: How_Dad_organise_QM
   - file: Course_MCM_QFT
