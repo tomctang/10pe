@@ -182,6 +182,7 @@
 <li class="toctree-l1"><a class="reference internal" href="past/Alevel_math_further.html">A-level-further</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Course_MCM.html">Math Computational Methods</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Course_Lean.html">Lean</a></li>
+<li class="toctree-l1"><a class="reference internal" href="23permutation-puzzle/Course_Puzzle.html">Permutation Puzzles</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">CS &amp; Physics</span></p>
 <ul class="current nav bd-sidenav">
@@ -414,7 +415,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#material-notes">Material Notes</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final">Final</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-weyl-algebra-in-sage">Final - Weyl Algebra in Sage</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qc">QC</a></li>
 </ul>
             </nav>
@@ -3890,8 +3891,359 @@ document.write(`
 </ul>
 </section>
 </section>
-<section id="final">
-<h2>Final<a class="headerlink" href="#final" title="Link to this heading">#</a></h2>
+<section id="final-weyl-algebra-in-sage">
+<h2>Final - Weyl Algebra in Sage<a class="headerlink" href="#final-weyl-algebra-in-sage" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1-2. Basic Commutation Relations</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">comm</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">u</span> <span class="o">*</span> <span class="n">v</span> <span class="o">-</span> <span class="n">v</span> <span class="o">*</span> <span class="n">u</span>   <span class="c1"># commutator [u, v] = uv - vu</span>
+
+<span class="c1"># Create the Weyl algebra (position-momentum)</span>
+<span class="n">R</span><span class="o">.&lt;</span><span class="n">x</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">SR</span><span class="p">[]</span>
+<span class="n">W</span> <span class="o">=</span> <span class="n">R</span><span class="o">.</span><span class="n">weyl_algebra</span><span class="p">()</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">dx</span> <span class="o">=</span> <span class="n">W</span><span class="o">.</span><span class="n">gens</span><span class="p">()</span>  <span class="c1"># x = position, dx = d/dx</span>
+
+<span class="c1"># In units where ℏ = 1, momentum operator is p = -i*dx</span>
+<span class="c1"># For now, work with dx directly (represents -i*p in our conventions)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Basic commutators:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[x, dx] = </span><span class="si">{</span><span class="n">comm</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">dx</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>    <span class="c1">#  1</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[x, x] = </span><span class="si">{</span><span class="n">comm</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>      <span class="c1">#  0</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[dx, dx] = </span><span class="si">{</span><span class="n">comm</span><span class="p">(</span><span class="n">dx</span><span class="p">,</span><span class="w"> </span><span class="n">dx</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1">#  0</span>
+
+<span class="c1"># 2. Quantum Harmonic Oscillator - Define ladder operators (in units ℏ = ω = m = 1)</span>
+<span class="n">sqrt2</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">a</span>     <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">dx</span><span class="p">)</span> <span class="o">/</span> <span class="n">sqrt2</span>  <span class="c1"># a  = (x + i*p)/√2 = (x - dx)/√2  annihilation operator</span>
+<span class="n">a_dag</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">dx</span><span class="p">)</span> <span class="o">/</span> <span class="n">sqrt2</span>  <span class="c1"># a† = (x - i*p)/√2 = (x + dx)/√2  creation operator</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Harmonic Oscillator:&quot;</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="s2">&quot;[a, a†] = &quot;</span><span class="p">,</span> <span class="n">comm</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">a_dag</span><span class="p">))</span>
+<span class="n">H</span> <span class="o">=</span> <span class="n">a_dag</span> <span class="o">*</span> <span class="n">a</span> <span class="o">+</span> <span class="n">SR</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">s</span><span class="p">(</span><span class="s2">&quot;H = N + 1/2 =&quot;</span><span class="p">,</span> <span class="n">H</span><span class="p">)</span> <span class="c1"># Hamiltonian H = ℏω(N + 1/2) = N + 1/2 (in our units)</span>
+
+<span class="c1"># Verify [H, a] = -a</span>
+<span class="n">s</span><span class="p">(</span><span class="s2">&quot;[H, a†] =&quot;</span><span class="p">,</span> <span class="n">comm</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">a_dag</span><span class="p">))</span>  <span class="c1"># Should be a†</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Basic commutators:
+[x, dx] = -1
+[x, x] = 0
+[dx, dx] = 0
+Harmonic Oscillator:
+</pre></div>
+</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \text{\texttt{[a,{ }a†]{ }={ }}} \qquad   -1 \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \text{\texttt{H{ }={ }N{ }+{ }1/2{ }=}} \qquad   -\frac{1}{2} \frac{\partial^{2}}{\partial x^{2}} + \frac{1}{2} x^{2} + 1 \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \text{\texttt{[H,{ }a†]{ }=}} \qquad   -\frac{1}{2} \, \sqrt{2} \frac{\partial}{\partial x} - \frac{1}{2} \, \sqrt{2} x \qquad   \]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 3. Energy Eigenstates and Matrix Elements</span>
+
+<span class="c1"># Define position and momentum in terms of ladder operators</span>
+<span class="n">x_op</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">a_dag</span><span class="p">)</span> <span class="o">/</span> <span class="n">sqrt2</span>
+<span class="n">p_op</span> <span class="o">=</span> <span class="p">(</span><span class="n">a_dag</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">sqrt2</span><span class="p">)</span>  <span class="c1"># This is actually -i*p</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Reconstruct operators:&quot;</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="s2">&quot;x = (a + a†)/√2 =&quot;</span><span class="p">,</span> <span class="n">x_op</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="s2">&quot;Verify x = &quot;</span><span class="p">,</span> <span class="n">x_op</span><span class="p">,</span> <span class="s2">&quot;== x&quot;</span><span class="p">)</span>
+
+<span class="c1"># These expressions give matrix elements between Fock states</span>
+<span class="c1"># For example, x² = (a² + 2a†a + (a†)² + 1)/2</span>
+<span class="n">x_squared</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">a_dag</span><span class="o">*</span><span class="n">a</span> <span class="o">+</span> <span class="n">a_dag</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="n">s</span><span class="p">(</span><span class="s2">&quot;x² in ladder operators =&quot;</span><span class="p">,</span> <span class="n">x_squared</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Reconstruct operators:
+</pre></div>
+</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \text{\texttt{x{ }={ }(a{ }+{ }a†)/√2{ }=}} \qquad   x \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \text{\texttt{Verify{ }x{ }={ }}} \qquad   x \qquad   \text{\texttt{=={ }x}} \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \text{\texttt{x²{ }in{ }ladder{ }operators{ }=}} \qquad   x^{2} + 1 \qquad   \]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 4. Angular Momentum Algebra</span>
+
+<span class="c1"># For angular momentum, we need 3 operators: Jx, Jy, Jz</span>
+<span class="c1"># Create a 3D Weyl algebra (for position space in 3D)</span>
+<span class="n">R3</span><span class="o">.&lt;</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">SR</span><span class="p">[]</span>
+<span class="n">W3</span> <span class="o">=</span> <span class="n">R3</span><span class="o">.</span><span class="n">weyl_algebra</span><span class="p">()</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">,</span> <span class="n">dz</span> <span class="o">=</span> <span class="n">W3</span><span class="o">.</span><span class="n">gens</span><span class="p">()</span>
+
+<span class="c1"># Angular momentum operators: L = r × p = r × (-i ℏ ∇)</span>
+<span class="c1"># In units ℏ = 1: Lx = y*dz - z*dy, etc.</span>
+<span class="n">Lx</span> <span class="o">=</span> <span class="n">y</span> <span class="o">*</span> <span class="n">dz</span> <span class="o">-</span> <span class="n">z</span> <span class="o">*</span> <span class="n">dy</span>
+<span class="n">Ly</span> <span class="o">=</span> <span class="n">z</span> <span class="o">*</span> <span class="n">dx</span> <span class="o">-</span> <span class="n">x</span> <span class="o">*</span> <span class="n">dz</span>
+<span class="n">Lz</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">dy</span> <span class="o">-</span> <span class="n">y</span> <span class="o">*</span> <span class="n">dx</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Angular Momentum Commutators:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[Lx, Ly] = </span><span class="si">{</span><span class="n">comm</span><span class="p">(</span><span class="n">Lx</span><span class="p">,</span><span class="w"> </span><span class="n">Ly</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># Should be Lz</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[Ly, Lz] = </span><span class="si">{</span><span class="n">comm</span><span class="p">(</span><span class="n">Ly</span><span class="p">,</span><span class="w"> </span><span class="n">Lz</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># Should be Lx</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[Lz, Lx] = </span><span class="si">{</span><span class="n">comm</span><span class="p">(</span><span class="n">Lz</span><span class="p">,</span><span class="w"> </span><span class="n">Lx</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># Should be Ly</span>
+
+<span class="c1"># Check that commutators form the angular momentum algebra</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Verify [Lx, Ly] = Lz: </span><span class="si">{</span><span class="n">comm</span><span class="p">(</span><span class="n">Lx</span><span class="p">,</span><span class="w"> </span><span class="n">Ly</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Lz</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Verify [Ly, Lz] = Lx: </span><span class="si">{</span><span class="n">comm</span><span class="p">(</span><span class="n">Ly</span><span class="p">,</span><span class="w"> </span><span class="n">Lz</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Lx</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Verify [Lz, Lx] = Ly: </span><span class="si">{</span><span class="n">comm</span><span class="p">(</span><span class="n">Lz</span><span class="p">,</span><span class="w"> </span><span class="n">Lx</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Ly</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Total angular momentum squared</span>
+<span class="n">L_squared</span> <span class="o">=</span> <span class="n">Lx</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="n">Ly</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="n">Lz</span><span class="o">^</span><span class="mi">2</span>
+<span class="n">s</span><span class="p">(</span><span class="n">L_squared</span><span class="p">)</span>
+<span class="c1">#print(f&quot;\nL² = {L_squared}&quot;)</span>
+
+<span class="c1"># Verify [L², Li] = 0 for all i</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[L², Lx] = </span><span class="si">{</span><span class="n">comm</span><span class="p">(</span><span class="n">L_squared</span><span class="p">,</span><span class="w"> </span><span class="n">Lx</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[L², Ly] = </span><span class="si">{</span><span class="n">comm</span><span class="p">(</span><span class="n">L_squared</span><span class="p">,</span><span class="w"> </span><span class="n">Ly</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[L², Lz] = </span><span class="si">{</span><span class="n">comm</span><span class="p">(</span><span class="n">L_squared</span><span class="p">,</span><span class="w"> </span><span class="n">Lz</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Angular Momentum Commutators:
+[Lx, Ly] = -x*dy + y*dx
+[Ly, Lz] = -y*dz + z*dy
+[Lz, Lx] = x*dz - z*dx
+Verify [Lx, Ly] = Lz: False
+Verify [Ly, Lz] = Lx: False
+Verify [Lz, Lx] = Ly: False
+</pre></div>
+</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle y^{2} \frac{\partial^{2}}{\partial z^{2}} + x^{2} \frac{\partial^{2}}{\partial z^{2}} - 2 y z \frac{\partial^{2}}{\partial y \partial z} + z^{2} \frac{\partial^{2}}{\partial y^{2}} + x^{2} \frac{\partial^{2}}{\partial y^{2}} - 2 x z \frac{\partial^{2}}{\partial x \partial z} - 2 x y \frac{\partial^{2}}{\partial x \partial y} + z^{2} \frac{\partial^{2}}{\partial x^{2}} + y^{2} \frac{\partial^{2}}{\partial x^{2}} - 2 z \frac{\partial}{\partial z} - 2 y \frac{\partial}{\partial y} - 2 x \frac{\partial}{\partial x} \qquad   \]</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[L², Lx] = 0
+[L², Ly] = 0
+[L², Lz] = 0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 5. Baker-Campbell-Hausdorff Formula: e^A B e^(-A) = B + [A,B] + [A,[A,B]]/2! + [A,[A,[A,B]]]/3! + ...</span>
+<span class="c1"># Useful for computing time evolution and unitary transformations</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">nested_commutator</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>   <span class="c1"># Compute [A, [A, [...[A, B]...]]] (n times)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">B</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">comm</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="c1"># Example: Translation operator: e^(i*p*a) x e^(-i*p*a) = x + a</span>
+<span class="c1"># In our units (dx represents momentum), e^(dx*a) x e^(-dx*a)</span>
+<span class="n">R</span><span class="o">.&lt;</span><span class="n">x</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">QQ</span><span class="p">[]</span>
+<span class="n">W</span> <span class="o">=</span> <span class="n">R</span><span class="o">.</span><span class="n">weyl_algebra</span><span class="p">()</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">dx</span> <span class="o">=</span> <span class="n">W</span><span class="o">.</span><span class="n">gens</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;BCH Translation Example:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[dx, x] = </span><span class="si">{</span><span class="n">comm</span><span class="p">(</span><span class="n">dx</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[dx, [dx, x]] = </span><span class="si">{</span><span class="n">nested_commutator</span><span class="p">(</span><span class="n">dx</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[dx, [dx, [dx, x]]] = </span><span class="si">{</span><span class="n">nested_commutator</span><span class="p">(</span><span class="n">dx</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># The series terminates! This shows x → x + a under translation</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BCH Translation Example:
+[dx, x] = 1
+[dx, [dx, x]] = 0
+[dx, [dx, [dx, x]]] = 0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Midterm II - Q5</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">nested_commutator</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>   <span class="c1"># Compute [A, [A, [...[A, B]...]]] (n times)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">B</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">comm</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="n">R</span><span class="o">.&lt;</span><span class="n">m</span><span class="p">,</span> <span class="n">omega</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">x</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">QQ</span><span class="p">[]</span>
+<span class="n">W</span> <span class="o">=</span> <span class="n">R</span><span class="o">.</span><span class="n">weyl_algebra</span><span class="p">()</span>
+<span class="n">gens</span> <span class="o">=</span> <span class="n">W</span><span class="o">.</span><span class="n">gens</span><span class="p">()</span>
+<span class="n">m</span><span class="p">,</span> <span class="n">omega</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">gens</span><span class="p">[</span><span class="s1">&#39;m&#39;</span><span class="p">],</span> <span class="n">gens</span><span class="p">[</span><span class="s1">&#39;omega&#39;</span><span class="p">],</span> <span class="n">gens</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">],</span> <span class="n">gens</span><span class="p">[</span><span class="s1">&#39;l&#39;</span><span class="p">],</span> <span class="n">gens</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span>
+<span class="n">dm</span><span class="p">,</span> <span class="n">domega</span><span class="p">,</span> <span class="n">dt</span><span class="p">,</span> <span class="n">dl</span><span class="p">,</span> <span class="n">dx</span> <span class="o">=</span> <span class="n">gens</span><span class="p">[</span><span class="s1">&#39;dm&#39;</span><span class="p">],</span> <span class="n">gens</span><span class="p">[</span><span class="s1">&#39;domega&#39;</span><span class="p">],</span> <span class="n">gens</span><span class="p">[</span><span class="s1">&#39;dt&#39;</span><span class="p">],</span> <span class="n">gens</span><span class="p">[</span><span class="s1">&#39;dl&#39;</span><span class="p">],</span> <span class="n">gens</span><span class="p">[</span><span class="s1">&#39;dx&#39;</span><span class="p">]</span>
+
+<span class="n">correction</span><span class="o">=</span><span class="n">comm</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="n">omega</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">dx</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">t</span><span class="p">,</span><span class="n">l</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">s</span><span class="p">(</span><span class="s2">&quot;[A, B] =&quot;</span><span class="p">,</span><span class="n">correction</span><span class="p">)</span>
+<span class="n">comm2</span><span class="o">=</span><span class="n">nested_commutator</span><span class="p">(</span><span class="n">l</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">t</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="n">omega</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">dx</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">t</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">12</span>
+<span class="n">s</span><span class="p">(</span><span class="s2">&quot;[B, [B, A]] =&quot;</span><span class="p">,</span><span class="n">comm2</span><span class="p">)</span>
+<span class="n">ABcorrection</span><span class="o">=</span><span class="n">comm</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="n">omega</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">dx</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">t</span><span class="o">+</span><span class="n">l</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">t</span><span class="p">,</span><span class="n">correction</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">comm2</span><span class="o">-</span><span class="n">ABcorrection</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>                  <span class="c1"># answer D</span>
+
+<span class="n">s</span><span class="p">(</span><span class="o">-</span><span class="n">ABcorrection</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \text{\texttt{[A,{ }B]{ }=}} \qquad   \frac{1}{2} m \omega^{2} t^{2} l \frac{\partial}{\partial x} \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \text{\texttt{[B,{ }[B,{ }A]]{ }=}} \qquad   \frac{1}{12} m \omega^{2} t^{3} l^{2} \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{1}{3} m \omega^{2} t^{3} l^{2} \qquad   \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{1}{2} m \omega^{2} t^{3} l^{2} \qquad   \]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 6. Uncertainty Relations</span>
+<span class="c1"># Compute ⟨ΔA²⟩⟨ΔB²⟩ ≥ |⟨[A,B]⟩|²/4 for ground state of harmonic oscillator</span>
+<span class="n">R</span><span class="o">.&lt;</span><span class="n">x</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">SR</span><span class="p">[]</span>
+<span class="n">W</span> <span class="o">=</span> <span class="n">R</span><span class="o">.</span><span class="n">weyl_algebra</span><span class="p">()</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">dx</span> <span class="o">=</span> <span class="n">W</span><span class="o">.</span><span class="n">gens</span><span class="p">()</span>
+
+<span class="c1"># For the ground state |0⟩ of the harmonic oscillator:</span>
+<span class="c1"># ⟨0|x²|0⟩ = 1/2, ⟨0|x|0⟩ = 0</span>
+<span class="c1"># ⟨0|p²|0⟩ = 1/2, ⟨0|p|0⟩ = 0</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Uncertainty Relation:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[x, dx] = </span><span class="si">{</span><span class="n">comm</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">dx</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;For ground state: Δx² = 1/2, Δp² = 1/2&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Product: Δx² Δp² = 1/4&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Lower bound: |⟨[x,p]⟩|²/4 = 1/4&quot;</span><span class="p">)</span>  <span class="c1"># Uncertainty relation saturated!</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Uncertainty Relation:
+[x, dx] = -1
+For ground state: Δx² = 1/2, Δp² = 1/2
+Product: Δx² Δp² = 1/4
+Lower bound: |⟨[x,p]⟩|²/4 = 1/4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 7. Coherent States are eigenstates of the annihilation operator |α⟩ = e^(αa† - α*a)|0⟩</span>
+<span class="n">R</span><span class="o">.&lt;</span><span class="n">x</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">SR</span><span class="p">[]</span>
+<span class="n">W</span> <span class="o">=</span> <span class="n">R</span><span class="o">.</span><span class="n">weyl_algebra</span><span class="p">()</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">dx</span> <span class="o">=</span> <span class="n">W</span><span class="o">.</span><span class="n">gens</span><span class="p">()</span>
+
+<span class="n">sqrt2</span> <span class="o">=</span> <span class="n">SR</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">dx</span><span class="p">)</span> <span class="o">/</span> <span class="n">sqrt2</span>
+<span class="n">a_dag</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">dx</span><span class="p">)</span> <span class="o">/</span> <span class="n">sqrt2</span>
+
+<span class="c1"># Displacement operator properties</span>
+<span class="c1"># D(α) = e^(αa† - α*a)</span>
+<span class="c1"># D†(α) a D(α) = a + α</span>
+
+<span class="c1"># For real displacement (α real):</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="n">var</span><span class="p">(</span><span class="s1">&#39;alpha&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Coherent State Displacement:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;a|α⟩ = α|α⟩&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Action: a → a + α&quot;</span><span class="p">)</span>
+
+<span class="c1"># Example: what is x in the displaced frame?</span>
+<span class="c1"># x_displaced = D†xD = (a + a† + α + α*)/√2</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Original x = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;In coherent state, x is shifted by √2·Re(α)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Coherent State Displacement:
+a|α⟩ = α|α⟩
+Action: a → a + α
+
+Original x = x
+In coherent state, x is shifted by √2·Re(α)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 8. Time Evolution: A(t) = e^(iHt) A(0) e^(-iHt) for harmonic oscillator: H = ω(a†a + 1/2)</span>
+<span class="n">R</span><span class="o">.&lt;</span><span class="n">x</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">SR</span><span class="p">[]</span>
+<span class="n">W</span> <span class="o">=</span> <span class="n">R</span><span class="o">.</span><span class="n">weyl_algebra</span><span class="p">()</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">dx</span> <span class="o">=</span> <span class="n">W</span><span class="o">.</span><span class="n">gens</span><span class="p">()</span>
+
+<span class="n">sqrt2</span> <span class="o">=</span> <span class="n">SR</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">dx</span><span class="p">)</span> <span class="o">/</span> <span class="n">sqrt2</span>
+<span class="n">a_dag</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">dx</span><span class="p">)</span> <span class="o">/</span> <span class="n">sqrt2</span>
+<span class="n">H</span> <span class="o">=</span> <span class="n">a_dag</span> <span class="o">*</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span>
+
+<span class="c1"># For the annihilation operator under time evolution</span>
+<span class="c1"># a(t) = e^(iωt) a(0)</span>
+<span class="c1"># So: [H, a] = -a (which we verified earlier)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Time Evolution:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[H, a] = </span><span class="si">{</span><span class="n">comm</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This gives: da/dt = -iωa&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Solution: a(t) = e^(-iωt)a(0)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Position operator time evolution</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">[H, x] = </span><span class="si">{</span><span class="n">comm</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x(t) oscillates with frequency ω&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Time Evolution:
+[H, a] = -1/2*sqrt(2)*dx + 1/2*sqrt(2)*x
+This gives: da/dt = -iωa
+Solution: a(t) = e^(-iωt)a(0)
+
+[H, x] = -dx
+x(t) oscillates with frequency ω
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 9. Working with Multiple Particles - two particles: x1, x2, p1, p2</span>
+<span class="n">R2</span><span class="o">.&lt;</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">SR</span><span class="p">[]</span>
+<span class="n">W2</span> <span class="o">=</span> <span class="n">R2</span><span class="o">.</span><span class="n">weyl_algebra</span><span class="p">()</span>
+<span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">dx1</span><span class="p">,</span> <span class="n">dx2</span> <span class="o">=</span> <span class="n">W2</span><span class="o">.</span><span class="n">gens</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Two-Particle System:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[x1, dx1] = </span><span class="si">{</span><span class="n">comm</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="w"> </span><span class="n">dx1</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[x2, dx2] = </span><span class="si">{</span><span class="n">comm</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="w"> </span><span class="n">dx2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[x1, dx2] = </span><span class="si">{</span><span class="n">comm</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="w"> </span><span class="n">dx2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># Different particles commute</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[x1, x2] = </span><span class="si">{</span><span class="n">comm</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="w"> </span><span class="n">x2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Center of mass and relative coordinates</span>
+<span class="n">X_cm</span> <span class="o">=</span> <span class="p">(</span><span class="n">x1</span> <span class="o">+</span> <span class="n">x2</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="n">X_rel</span> <span class="o">=</span> <span class="n">x1</span> <span class="o">-</span> <span class="n">x2</span>
+<span class="n">P_cm</span> <span class="o">=</span> <span class="n">dx1</span> <span class="o">+</span> <span class="n">dx2</span>
+<span class="n">P_rel</span> <span class="o">=</span> <span class="p">(</span><span class="n">dx1</span> <span class="o">-</span> <span class="n">dx2</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">[X_cm, P_cm] = </span><span class="si">{</span><span class="n">comm</span><span class="p">(</span><span class="n">X_cm</span><span class="p">,</span><span class="w"> </span><span class="n">P_cm</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[X_rel, P_rel] = </span><span class="si">{</span><span class="n">comm</span><span class="p">(</span><span class="n">X_rel</span><span class="p">,</span><span class="w"> </span><span class="n">P_rel</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[X_cm, P_rel] = </span><span class="si">{</span><span class="n">comm</span><span class="p">(</span><span class="n">X_cm</span><span class="p">,</span><span class="w"> </span><span class="n">P_rel</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># Should be 0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Two-Particle System:
+[x1, dx1] = -1
+[x2, dx2] = -1
+[x1, dx2] = 0
+[x1, x2] = 0
+
+[X_cm, P_cm] = -1
+[X_rel, P_rel] = -1
+[X_cm, P_rel] = 0
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">comm</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
@@ -3911,7 +4263,6 @@ document.write(`
 <span class="nb">print</span><span class="p">(</span><span class="n">comm</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">adag</span><span class="p">))</span>              <span class="c1"># 1</span>
 
 <span class="c1">##### hbar</span>
-
 <span class="n">h</span> <span class="o">=</span> <span class="n">SR</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;h&#39;</span><span class="p">)</span>  <span class="c1"># Define hbar as a symbolic parameter first</span>
 <span class="n">R</span><span class="o">.&lt;</span><span class="n">x</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">SR</span><span class="p">[]</span>  <span class="c1"># # Create polynomial ring, Use Symbolic Ring as base</span>
 <span class="n">W</span> <span class="o">=</span> <span class="n">R</span><span class="o">.</span><span class="n">weyl_algebra</span><span class="p">()</span> <span class="c1"># Create Weyl algebra</span>
@@ -3921,38 +4272,6 @@ document.write(`
 
 <span class="n">p</span> <span class="o">=</span> <span class="o">-</span><span class="n">i</span> <span class="o">*</span> <span class="n">h</span> <span class="o">*</span> <span class="n">dx</span>
 <span class="n">s</span><span class="p">(</span><span class="n">comm</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">p</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.&lt;</span><span class="n">a1</span><span class="p">,</span><span class="n">adag1</span><span class="o">&gt;=</span><span class="n">EuclideanSpace</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">poisson_bracket</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">q_vars</span><span class="p">,</span> <span class="n">p_vars</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute Poisson bracket {f,g}&quot;&quot;&quot;</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">q_i</span><span class="p">,</span> <span class="n">p_i</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">q_vars</span><span class="p">,</span> <span class="n">p_vars</span><span class="p">):</span>
-        <span class="n">result</span> <span class="o">+=</span> <span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">q_i</span><span class="p">)</span><span class="o">*</span><span class="n">diff</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">p_i</span><span class="p">)</span> <span class="o">-</span> <span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">p_i</span><span class="p">)</span><span class="o">*</span><span class="n">diff</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">q_i</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">result</span>
-<span class="n">poisson_bracket</span><span class="p">(</span><span class="n">a1</span><span class="p">,</span><span class="n">a2</span><span class="p">,[</span><span class="n">a1</span><span class="p">],[</span><span class="n">a2</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
-<span class="n">s</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="n">a</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="n">x</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;Omega omega t gamma B_1 h&#39;</span><span class="p">)</span>
-<span class="n">A</span><span class="o">=</span><span class="n">matrix</span><span class="p">([[</span><span class="n">i</span><span class="o">*</span><span class="p">(</span><span class="n">Omega</span><span class="o">-</span><span class="n">omega</span><span class="p">)</span><span class="o">*</span><span class="n">t</span><span class="p">,</span><span class="n">i</span><span class="o">*</span><span class="n">gamma</span><span class="o">*</span><span class="n">B_1</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">h</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="mi">0</span><span class="p">],[</span><span class="n">i</span><span class="o">*</span><span class="n">gamma</span><span class="o">*</span><span class="n">B_1</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">h</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="mi">0</span><span class="p">,</span><span class="n">i</span><span class="o">*</span><span class="n">gamma</span><span class="o">*</span><span class="n">B_1</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">h</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)],[</span><span class="mi">0</span><span class="p">,</span><span class="n">i</span><span class="o">*</span><span class="n">gamma</span><span class="o">*</span><span class="n">B_1</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">h</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="o">-</span><span class="n">i</span><span class="o">*</span><span class="p">(</span><span class="n">Omega</span><span class="o">-</span><span class="n">omega</span><span class="p">)</span><span class="o">*</span><span class="n">t</span><span class="p">]])</span>
-<span class="n">v</span><span class="o">=</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">]])</span>
-<span class="n">s</span><span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">v</span><span class="p">,</span><span class="n">A</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">v</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -4250,7 +4569,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#material-notes">Material Notes</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final">Final</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-weyl-algebra-in-sage">Final - Weyl Algebra in Sage</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qc">QC</a></li>
 </ul>
   </nav></div>

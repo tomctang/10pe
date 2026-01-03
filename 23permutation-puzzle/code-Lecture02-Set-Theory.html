@@ -180,6 +180,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../past/Alevel_math_further.html">A-level-further</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Course_MCM.html">Math Computational Methods</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Course_Lean.html">Lean</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Course_Puzzle.html">Permutation Puzzles</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">CS &amp; Physics</span></p>
 <ul class="nav bd-sidenav">
@@ -387,9 +388,9 @@ Course notes booklet: <a class="reference external" href="http://www.sfu.ca/~jtm
 <h2>2.4 Examples Using Sage Math<a class="headerlink" href="#examples-using-sage-math" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>S1=set([1,2,3,4,5]);
-S2=set([3,4,5,6,7]);
-print S1,S2
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">S1</span><span class="o">=</span><span class="nb">set</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+<span class="n">S2</span><span class="o">=</span><span class="nb">set</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">S1</span><span class="p">,</span><span class="n">S2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -401,7 +402,7 @@ print S1,S2
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>S1.cardinality()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">S1</span><span class="p">)</span>     <span class="c1"># cardinality</span>
 </pre></div>
 </div>
 </div>
@@ -413,7 +414,7 @@ print S1,S2
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>S1.union(S2)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">S1</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">S2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -425,7 +426,7 @@ print S1,S2
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>S1.intersection(S2)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">S1</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">S2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -437,7 +438,7 @@ print S1,S2
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>S1.difference(S2)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">S1</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">S2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -449,7 +450,7 @@ print S1,S2
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>S2.difference(S1)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">S2</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">S1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -461,7 +462,7 @@ print S1,S2
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>cartesian_product([S1, S2])
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cartesian_product</span><span class="p">([</span><span class="n">S1</span><span class="p">,</span> <span class="n">S2</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -473,8 +474,8 @@ print S1,S2
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>for i in cartesian_product([S1,S2]):
-    print i
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">cartesian_product</span><span class="p">([</span><span class="n">S1</span><span class="p">,</span><span class="n">S2</span><span class="p">]):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -510,7 +511,7 @@ print S1,S2
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>2 in S1
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="ow">in</span> <span class="n">S1</span>
 </pre></div>
 </div>
 </div>
@@ -522,7 +523,7 @@ print S1,S2
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>1 in S2
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="ow">in</span> <span class="n">S2</span>
 </pre></div>
 </div>
 </div>
