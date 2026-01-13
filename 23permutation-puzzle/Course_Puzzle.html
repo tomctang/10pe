@@ -368,9 +368,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-0">Lecture 0</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-1">Lecture 1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-2">Lecture 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-0-course-intro">Lecture 0 - Course Intro</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-1-permutation-puzzles-intro">Lecture 1 - Permutation Puzzles Intro</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-2-set-theory">Lecture 2 - Set theory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-3-appendix-b-basic-properties-of-integers">Lecture 3 - Appendix B: Basic properties of integers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lectures-4-5-permutations">Lectures 4&amp;5 - Permutations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#book-exercises">Book exercises</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-6-permutations-cycle-form">Lecture 6 - Permutations: Cycle Form</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lectures-7-8-from-puzzles-to-permutations-representing-puzzles-by-permutations">Lectures 7&amp;8 - From puzzles to permutations: Representing puzzles by Permutations</a></li>
 </ul>
             </nav>
         </div>
@@ -384,8 +391,8 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="permutation-puzzles">
 <h1>Permutation Puzzles<a class="headerlink" href="#permutation-puzzles" title="Link to this heading">#</a></h1>
-<section id="lecture-0">
-<h2>Lecture 0<a class="headerlink" href="#lecture-0" title="Link to this heading">#</a></h2>
+<section id="lecture-0-course-intro">
+<h2>Lecture 0 - Course Intro<a class="headerlink" href="#lecture-0-course-intro" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>This course deals with permutation puzzles.</p>
 <ol class="arabic simple">
@@ -449,8 +456,8 @@ document.write(`
 </li>
 </ul>
 </section>
-<section id="lecture-1">
-<h2>Lecture 1<a class="headerlink" href="#lecture-1" title="Link to this heading">#</a></h2>
+<section id="lecture-1-permutation-puzzles-intro">
+<h2>Lecture 1 - Permutation Puzzles Intro<a class="headerlink" href="#lecture-1-permutation-puzzles-intro" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Swap Puzzle</span>
@@ -473,22 +480,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1,6)(3,5,7,8)
-(3,5,7,8)
-(3,5,7,8)
-(3,7,8)
-(3,8)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>IOStream.flush timed out
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3,5,8)
-(5,8)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1,8,5)(2,6,7)(3,4)
+(1,8,5)(2,6,7)(3,4)
+(1,5)(2,6,7)(3,4)
+(2,6,7)(3,4)
+(2,6,7)
+(2,7)
 DONE
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>IOStream.flush timed out
 </pre></div>
 </div>
 </div>
@@ -498,8 +496,9 @@ DONE
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Swap Puzzle</span>
 <span class="n">lst</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span>
 <span class="n">shuffle</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
+<span class="n">lst</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
 <span class="n">count</span><span class="o">=</span><span class="mi">0</span>
-<span class="k">while</span> <span class="n">lst</span><span class="o">!=</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">)):</span>
+<span class="k">while</span> <span class="n">lst</span><span class="o">!=</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">)):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="o">=</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter two numbers: &#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
@@ -523,8 +522,9 @@ DONE
 <li><p>[add notes about permutations puzzles]</p></li>
 </ul>
 </section>
-<section id="lecture-2">
-<h2>Lecture 2<a class="headerlink" href="#lecture-2" title="Link to this heading">#</a></h2>
+<section id="lecture-2-set-theory">
+<h2>Lecture 2 - Set theory<a class="headerlink" href="#lecture-2-set-theory" title="Link to this heading">#</a></h2>
+<p>Basic set theory</p>
 <ul class="simple">
 <li><p>A set is a well defined collection of objects.</p></li>
 <li><p>The objects in the set are called elements of the set.</p></li>
@@ -543,41 +543,787 @@ DONE
 </li>
 <li><p>Common sets</p>
 <ul>
-<li><p><span class="math notranslate nohighlight">\(\Z\)</span>: Set of integers(${\cdots,-2,-1,0,1,2,3,\cdots})</p></li>
-<li><p><span class="math notranslate nohighlight">\(\N\)</span>: Set of natural numbers or nonnegative integers(${0,1,2,3,\cdots})</p>
+<li><p><span class="math notranslate nohighlight">\(\Z\)</span>: Set of integers(<span class="math notranslate nohighlight">\(\{\cdots,-2,-1,0,1,2,3,\cdots\}\)</span>)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\N\)</span>: Set of natural numbers or nonnegative integers(<span class="math notranslate nohighlight">\(\{0,1,2,3,\cdots\}\)</span>)</p>
 <ul>
 <li><p>Some people disagree about whether it begins at 0 or 1. In this course we say it starts at 0.</p></li>
 </ul>
 </li>
 <li><p><span class="math notranslate nohighlight">\(\Z_+\)</span>: Set of positive integers(${1,2,3,\cdots})</p></li>
-<li><p><span class="math notranslate nohighlight">\(\\\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbb Q\)</span>: Set of rational numbers(<span class="math notranslate nohighlight">\(\{\frac ab|a,b\in\Z,b\ne0\}\)</span>)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbb Q_+\)</span>: Set of positive rational numbers(<span class="math notranslate nohighlight">\(\{x\in Q|x&gt;0\}\)</span>)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\R\)</span>: Set of real numbers</p></li>
+<li><p><span class="math notranslate nohighlight">\([n]=\{1,2,\cdots,n\}\)</span> is the set of integers from <span class="math notranslate nohighlight">\(1\)</span> to <span class="math notranslate nohighlight">\(n\)</span>, where <span class="math notranslate nohighlight">\(n\in Z_+\)</span>.</p></li>
+</ul>
+</li>
+<li><p>Let <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> be sets:</p>
+<ul>
+<li><p>If every element of <span class="math notranslate nohighlight">\(A\)</span> is an element of <span class="math notranslate nohighlight">\(B\)</span>, then <span class="math notranslate nohighlight">\(A\)</span> is a subset of <span class="math notranslate nohighlight">\(B\)</span>(<span class="math notranslate nohighlight">\(A\sub B\)</span>).</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(A\sub B\)</span> and <span class="math notranslate nohighlight">\(B\sub A\)</span>, <span class="math notranslate nohighlight">\(A=B\)</span>.</p></li>
+<li><p>The set with no elements is the empty set, denoted by <span class="math notranslate nohighlight">\(\emptyset\)</span> or <span class="math notranslate nohighlight">\(\{\}\)</span>.</p></li>
+</ul>
+</li>
+<li><p>Set operations</p>
+<ul>
+<li><p>Union: <span class="math notranslate nohighlight">\(A\cup B=\{x|x\in A\text{ or }x\in B\}\)</span></p></li>
+<li><p>Intersection: <span class="math notranslate nohighlight">\(A\cap B=\{x|x\in A\text{ and }x\in B\}\)</span></p></li>
+<li><p>Complement: <span class="math notranslate nohighlight">\(A^c=\bar A=\{x|x\notin A\}\)</span></p>
+<ul>
+<li><p>The complement only makes sense when you have specified what the universal set(something that <span class="math notranslate nohighlight">\(A\)</span> is a subset of) which is denoted by <span class="math notranslate nohighlight">\(U\)</span> is.</p></li>
+</ul>
+</li>
+<li><p>Difference: <span class="math notranslate nohighlight">\(A-B=\{x|x\in A\text{ and }x\notin B\}=A\cap B^c\)</span></p></li>
+<li><p>Cartesian product: <span class="math notranslate nohighlight">\(A\times B=\{(x,y)|x\in A\text{ and }y\in B\}\)</span></p></li>
+</ul>
+</li>
+<li><p>Cardinality: Number of elements in <span class="math notranslate nohighlight">\(A\)</span>(<span class="math notranslate nohighlight">\(|A|\)</span>)</p></li>
+<li><p>Laws of set theory</p>
+<ol class="arabic simple">
+<li><p>Law of Double Negation: <span class="math notranslate nohighlight">\((A^c)^c=A\)</span></p></li>
+<li><p>DeMorgan’s Laws: <span class="math notranslate nohighlight">\((A\cup B)^c=A^c\cap B^c\)</span> and <span class="math notranslate nohighlight">\((A\cap B)^c=A^c\cup B^c\)</span></p></li>
+<li><p>Commutative Laws: <span class="math notranslate nohighlight">\(A\cup B=B\cup A\)</span> and <span class="math notranslate nohighlight">\(A\cap B=B\cap A\)</span></p></li>
+<li><p>Associative Laws: <span class="math notranslate nohighlight">\(A\cup(B\cup C)+(A\cup B)\cup C\)</span> and <span class="math notranslate nohighlight">\(A\cap(B\cap C)=(A\cap B)\cap C\)</span></p></li>
+<li><p>Distributive Laws: <span class="math notranslate nohighlight">\(A\cup(B\cap C)=(A\cup B)\cap(A\cup C)\)</span> and <span class="math notranslate nohighlight">\(A\cap(B\cup C)=(A\cap B)\cup(A\cap C)\)</span></p></li>
+<li><p>Idempotent Laws: <span class="math notranslate nohighlight">\(A\cup A=A\)</span> and <span class="math notranslate nohighlight">\(A\cap A=A\)</span></p></li>
+<li><p>Identity Laws: <span class="math notranslate nohighlight">\(A\cup\emptyset=A\)</span> and <span class="math notranslate nohighlight">\(A\cap U=A\)</span></p></li>
+<li><p>Inverse Laws: <span class="math notranslate nohighlight">\(A\cup A^c=U\)</span> and <span class="math notranslate nohighlight">\(A\cap A^c=\emptyset\)</span></p></li>
+<li><p>Domination Laws: <span class="math notranslate nohighlight">\(A\cup U=A\)</span> and <span class="math notranslate nohighlight">\(A\cap\emptyset=\emptyset\)</span></p></li>
+<li><p>Absorbtion Laws: <span class="math notranslate nohighlight">\(A\cup(A\cap B)=A\)</span> and <span class="math notranslate nohighlight">\(A\cap(A\cup B)=A\)</span></p></li>
+</ol>
+</li>
+<li><p>Exercise: For a 3x3 grid <span class="math notranslate nohighlight">\(\begin{matrix}1&amp;2&amp;3\\4&amp;5&amp;6\\7&amp;8&amp;9\end{matrix}\)</span>, prove that it is impossible to obtain <span class="math notranslate nohighlight">\(\begin{matrix}1&amp;2&amp;3\\6&amp;5&amp;4\\7&amp;8&amp;9\end{matrix}\)</span> by swapping two columns or two rows at a time?</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\tiny\text{Because a column has to have the same numbers even if the ordering is different. The column sets remain invariant(don't change) under puzzle moves}\)</span>.</p></li>
 </ul>
 </li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">}</span>
+<span class="n">B</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">}</span>
+<span class="n">C</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">}</span>
+<span class="n">U</span><span class="o">=</span><span class="nb">set</span><span class="p">(</span><span class="mf">1..10</span><span class="p">)</span>
+<span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">B</span><span class="p">))</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">C</span><span class="p">),(</span><span class="n">A</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">B</span><span class="p">))</span><span class="o">-</span><span class="n">C</span><span class="p">,(</span><span class="n">U</span><span class="o">-</span><span class="n">A</span><span class="p">)</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">U</span><span class="o">-</span><span class="n">B</span><span class="p">),</span><span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">B</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>({1, 2, 3, 5}, {4, 8}, {6, 7, 9, 10}, 6)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">S1</span><span class="o">=</span><span class="nb">set</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
 <span class="n">S2</span><span class="o">=</span><span class="nb">set</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">S1</span><span class="p">,</span><span class="n">S2</span><span class="p">)</span>
-<span class="nb">len</span><span class="p">(</span><span class="n">S1</span><span class="p">)</span>     <span class="c1"># cardinality</span>
-<span class="n">S1</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">S2</span><span class="p">)</span>
-<span class="n">S1</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">S2</span><span class="p">)</span>
-<span class="n">S1</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">S2</span><span class="p">)</span>
-<span class="n">S2</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">S1</span><span class="p">)</span>
-<span class="n">cartesian_product</span><span class="p">([</span><span class="n">S1</span><span class="p">,</span> <span class="n">S2</span><span class="p">])</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">cartesian_product</span><span class="p">([</span><span class="n">S1</span><span class="p">,</span><span class="n">S2</span><span class="p">]):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-<span class="mi">2</span> <span class="ow">in</span> <span class="n">S1</span>
-<span class="mi">1</span> <span class="ow">in</span> <span class="n">S2</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">S1</span><span class="p">),</span>     <span class="c1"># cardinality</span>
+<span class="n">S1</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">S2</span><span class="p">),</span>
+<span class="n">S1</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">S2</span><span class="p">),</span>
+<span class="n">S1</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">S2</span><span class="p">),</span>                      <span class="c1"># S1-S2</span>
+<span class="n">S2</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">S1</span><span class="p">))</span>                      <span class="c1"># S2-S1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cartesian_product</span><span class="p">([</span><span class="n">S1</span><span class="p">,</span> <span class="n">S2</span><span class="p">]),</span><span class="nb">list</span><span class="p">(</span><span class="n">cartesian_product</span><span class="p">([</span><span class="n">S1</span><span class="p">,</span><span class="n">S2</span><span class="p">])))</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="ow">in</span> <span class="n">S1</span><span class="p">,</span><span class="mi">1</span> <span class="ow">in</span> <span class="n">S2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ZZ</span><span class="p">,</span><span class="mi">1</span> <span class="ow">in</span> <span class="n">ZZ</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span> <span class="ow">in</span> <span class="n">ZZ</span><span class="p">,</span><span class="mi">0</span> <span class="ow">in</span> <span class="n">NN</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span> <span class="ow">in</span> <span class="n">NN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">%</span><span class="k">2</span>==0),set(x for x in range(0,10) if x%2==1))
+<span class="nb">print</span><span class="p">(</span><span class="n">is_prime</span><span class="p">(</span><span class="mi">29</span><span class="p">),</span><span class="n">is_prime</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span><span class="nb">set</span><span class="p">(</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span> <span class="k">if</span> <span class="n">is_prime</span><span class="p">(</span><span class="n">x</span><span class="p">)),</span><span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span> <span class="k">if</span> <span class="n">is_prime</span><span class="p">(</span><span class="n">x</span><span class="p">))))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="n">is_prime</span><span class="p">,</span><span class="nb">set</span><span class="p">(</span><span class="mf">1..20</span><span class="p">))))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1, 2, 3, 4, 5} {3, 4, 5, 6, 7}
+5 {1, 2, 3, 4, 5, 6, 7} {3, 4, 5} {1, 2} {6, 7}
+The Cartesian product of ({1, 2, 3, 4, 5}, {3, 4, 5, 6, 7}) [(1, 3), (1, 4), (1, 5), (1, 6), (1, 7), (2, 3), (2, 4), (2, 5), (2, 6), (2, 7), (3, 3), (3, 4), (3, 5), (3, 6), (3, 7), (4, 3), (4, 4), (4, 5), (4, 6), (4, 7), (5, 3), (5, 4), (5, 5), (5, 6), (5, 7)]
+True False
+Integer Ring True False True False
+{0, 2, 4, 6, 8} {1, 3, 5, 7, 9}
+True False {2, 3, 5, 7} 168
+[2, 3, 5, 7, 11, 13, 17, 19]
 </pre></div>
 </div>
 </div>
 </div>
+<p>Appendix B: Properties of integers(Note: All numbers are integers in this section)</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(a\)</span> divides <span class="math notranslate nohighlight">\(b\)</span> (<span class="math notranslate nohighlight">\(a|b\)</span>) if <span class="math notranslate nohighlight">\(b=ad\)</span> for an integer <span class="math notranslate nohighlight">\(d\)</span>.</p></li>
+<li><p>We say that <span class="math notranslate nohighlight">\(d\)</span> is the greatest common divisor(gcd) of <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> if and only if <span class="math notranslate nohighlight">\(d|a\)</span> and <span class="math notranslate nohighlight">\(d|b\)</span>(common divisor) and if <span class="math notranslate nohighlight">\(c|a\)</span> and <span class="math notranslate nohighlight">\(c|b\)</span>, <span class="math notranslate nohighlight">\(c\leq d\)</span>(greatest such divisor).</p></li>
+<li><p>Below, we find that the gcd of 35 and 24 are 1, so they are relatively prime or coprime.</p></li>
+<li><p>Relatively prime: <span class="math notranslate nohighlight">\(gcd(a,b)=1\)</span></p></li>
+<li><p>Division Algorithm: Let <span class="math notranslate nohighlight">\(a,b\in\Z\)</span>. Suppose <span class="math notranslate nohighlight">\(b\ne0\)</span>. Then there exist such <span class="math notranslate nohighlight">\(q\)</span> and <span class="math notranslate nohighlight">\(r\)</span> with <span class="math notranslate nohighlight">\(0\leq r&lt;|b|\)</span> that <span class="math notranslate nohighlight">\(a=qb+r\)</span>.</p>
+<ul>
+<li><p>Quotient: <span class="math notranslate nohighlight">\(q\)</span></p></li>
+<li><p>Remainder: <span class="math notranslate nohighlight">\(r\)</span></p></li>
+<li><p>Example: <span class="math notranslate nohighlight">\(43=8*5+3\)</span></p></li>
+</ul>
+</li>
+<li><p>[continued in next section]</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gcd</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">18</span><span class="p">),</span><span class="n">gcd</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span><span class="mi">105</span><span class="p">),</span><span class="n">gcd</span><span class="p">(</span><span class="mi">35</span><span class="p">,</span><span class="mi">24</span><span class="p">),</span><span class="n">gcd</span><span class="p">(</span><span class="mi">2372</span><span class="p">,</span><span class="mi">2374</span><span class="p">),</span><span class="mi">43</span><span class="o">//</span><span class="mi">8</span><span class="p">,</span><span class="mi">43</span><span class="o">%</span><span class="k">8</span>,divmod(43,8)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2, 15, 1, 2, 5, 3, (5, 3))
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="lecture-3-appendix-b-basic-properties-of-integers">
+<h2>Lecture 3 - Appendix B: Basic properties of integers<a class="headerlink" href="#lecture-3-appendix-b-basic-properties-of-integers" title="Link to this heading">#</a></h2>
+<p>Appendix B(continued)</p>
+<ul class="simple">
+<li><p>If <span class="math notranslate nohighlight">\(a=bq+r\)</span> then <span class="math notranslate nohighlight">\(gcd(a,b)=gcd(b,r)\)</span>.</p></li>
+<li><p>Proof</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(d|a,b\implies d|a-bq=r\implies d|r\implies d|b,r\implies d\leq g\)</span></p></li>
+<li><p>We can do the same thing in reverse.</p></li>
+<li><p>Because <span class="math notranslate nohighlight">\(d\leq g\)</span> and <span class="math notranslate nohighlight">\(g\leq d\)</span>, <span class="math notranslate nohighlight">\(d=g\)</span>.</p></li>
+</ul>
+</li>
+<li><p>Using the equation above, we find that <span class="math notranslate nohighlight">\(gcd(210,154)=gcd(154,56)=gcd(56,42)=gcd(42,14)=14\)</span>.</p></li>
+<li><p>Extended Euclidean Algorithm: If <span class="math notranslate nohighlight">\(gcd(a,b)=d\)</span> then there exist integers <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span> such that <span class="math notranslate nohighlight">\(au+bv=d\)</span>.</p>
+<ul>
+<li><p>Converse it not true as scaled pronumerals cause <span class="math notranslate nohighlight">\(d\)</span> to be a multiple of the greatest common divisor.</p></li>
+</ul>
+</li>
+<li><p>Primes: Natural number &gt;1, and has only two factors(1 and itself).</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(p\)</span> is a prime number and <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are integers, <span class="math notranslate nohighlight">\(p|ab\implies p|a\text{ or }p|b\)</span>.</p></li>
+<li><p>Euler-phi function: <span class="math notranslate nohighlight">\(\phi(n)\)</span> is how many numbers from <span class="math notranslate nohighlight">\(1\)</span> to <span class="math notranslate nohighlight">\(n\)</span> are coprime with <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<ul>
+<li><p>Formula: <span class="math notranslate nohighlight">\(\phi(n)=|\{m\in \mathbb{Z} \mid 1\le m \le n, \gcd(m,n)=1 \}|\)</span></p></li>
+<li><p>Prime factorisation formula: <span class="math notranslate nohighlight">\(n=p_1^{\epsilon_1}p_2^{\epsilon_2}\cdots p_k^{\epsilon_k}\implies\phi(n)=p_1^{\epsilon_1-1}(p_1-1)p_2^{\epsilon_2-1}(p_2-1)\cdots p_k^{\epsilon_k-1}(p_k-1)\)</span></p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(a\text{ mod }n\)</span> denotes the remainder when <span class="math notranslate nohighlight">\(a\)</span> is divided by <span class="math notranslate nohighlight">\(n\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(a\equiv b\text{ mod }n\)</span> when <span class="math notranslate nohighlight">\(n\)</span> divides <span class="math notranslate nohighlight">\(a-b\)</span>.</p>
+<ul>
+<li><p>Example: <span class="math notranslate nohighlight">\(67\equiv22\text{ mod }9\)</span> since <span class="math notranslate nohighlight">\(67-22=45=5*9\)</span></p></li>
+</ul>
+</li>
+<li><p>If <span class="math notranslate nohighlight">\(a=c\)</span> mod <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(b=d\)</span> mod <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\((a+b)\equiv(c+d)\)</span> mod <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(a\cdot b\equiv c\cdot d\)</span> mod <span class="math notranslate nohighlight">\(n\)</span>.</p></li>
+<li><p>Show that <span class="math notranslate nohighlight">\(2^74+3^74\)</span> is divisible by 13.</p>
+<ul>
+<li><p>Rewrite: <span class="math notranslate nohighlight">\(2^74+3^74\)</span> mod <span class="math notranslate nohighlight">\(13=0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(2^2=4\)</span> mod 13</p></li>
+<li><p><span class="math notranslate nohighlight">\(2^3=8\)</span> mod 13</p></li>
+<li><p><span class="math notranslate nohighlight">\(2^4=3\)</span> mod 13</p></li>
+<li><p><span class="math notranslate nohighlight">\(2^5=3*2=6\)</span> mod 13</p></li>
+<li><p><span class="math notranslate nohighlight">\(2^6=6*2=12=-1\)</span> mod 13</p></li>
+<li><p><span class="math notranslate nohighlight">\(2^12=(2^6)^2=-1^2=1\)</span> mod 13</p></li>
+<li><p><span class="math notranslate nohighlight">\(3^2=9\)</span> mod 13</p></li>
+<li><p><span class="math notranslate nohighlight">\(3^3=27=1\)</span> mod 13</p></li>
+<li><p><span class="math notranslate nohighlight">\(2^74=(2^12)^6*2^2=1^6*2^2=4\)</span> mod 13</p></li>
+<li><p><span class="math notranslate nohighlight">\(3^74=(3^3)^24*3^2=1^24*3^2=9\)</span> mod 13</p></li>
+<li><p><span class="math notranslate nohighlight">\(2^74+3^74=4+9=13=0\)</span> mod 13</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">euclid_gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="nb">max</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">),</span><span class="nb">min</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+    <span class="k">while</span> <span class="n">b</span><span class="o">!=</span><span class="mi">0</span><span class="p">:</span>
+        <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="n">b</span><span class="p">,</span><span class="n">a</span><span class="o">%</span><span class="k">b</span>
+    <span class="k">return</span> <span class="n">a</span>
+<span class="n">a</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="o">^</span><span class="mi">2500</span><span class="p">,</span><span class="mi">10</span><span class="o">^</span><span class="mi">2501</span><span class="p">))</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span><span class="o">*</span><span class="mi">120</span><span class="p">))</span>
+<span class="n">b</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="o">^</span><span class="mi">2500</span><span class="p">,</span><span class="mi">10</span><span class="o">^</span><span class="mi">2501</span><span class="p">))</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span><span class="o">*</span><span class="mi">120</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">timeit</span><span class="p">(</span><span class="s1">&#39;gcd(a,b)&#39;</span><span class="p">))</span>                                       <span class="c1"># Time comparisons</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">timeit</span><span class="p">(</span><span class="s1">&#39;xgcd(a,b)&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">timeit</span><span class="p">(</span><span class="s1">&#39;euclid_gcd(a,b)&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">gcd</span><span class="p">(</span><span class="mi">210</span><span class="p">,</span><span class="mi">154</span><span class="p">),</span><span class="n">euclid_gcd</span><span class="p">(</span><span class="mi">210</span><span class="p">,</span><span class="mi">154</span><span class="p">),</span><span class="n">xgcd</span><span class="p">(</span><span class="mi">210</span><span class="p">,</span><span class="mi">154</span><span class="p">))</span>           <span class="c1"># Actual values</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>625 loops, best of 3: 86.3 μs per loop
+625 loops, best of 3: 141 μs per loop
+25 loops, best of 3: 7.94 ms per loop
+14 14 (14, 3, -4)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">euler_phi</span><span class="p">(</span><span class="mi">6</span><span class="p">),</span><span class="n">euler_phi</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span><span class="n">euler_phi</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2, 4, 8)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">25</span><span class="o">%</span><span class="k">7</span>,-37%3
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(4, 2)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="lectures-4-5-permutations">
+<h2>Lectures 4&amp;5 - Permutations<a class="headerlink" href="#lectures-4-5-permutations" title="Link to this heading">#</a></h2>
+<p><big><big><big>Note: All permutations listed below may be overrided by following permutations of the same name.</p>
+<ul class="simple">
+<li><p>Permutations: A permutation of a list of objects is a rearrangement of those objects.</p></li>
+<li><p><span class="math notranslate nohighlight">\(123,132,213,231,312,321\)</span> are all permutations of <span class="math notranslate nohighlight">\(\{1,2,3\}\)</span>.</p></li>
+<li><p>The number of permutations of <span class="math notranslate nohighlight">\(\{1,2,3,4,5,6,7,8\}\)</span> is <span class="math notranslate nohighlight">\(8!\)</span>.</p></li>
+<li><p>This means the number of permutations of the swap puzzle is <span class="math notranslate nohighlight">\(8!\)</span>.</p></li>
+<li><p>15 Puzzle, if the empty spot has to be box 16(bottom-right), the number of ways to arrange the tiles into permutations is <span class="math notranslate nohighlight">\(15!\)</span>.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Mathematical definition of permutation: A permutation of a set <span class="math notranslate nohighlight">\(A\)</span> is a function <span class="math notranslate nohighlight">\(\alpha:A\rightarrow A\)</span> that is bijective(one-to one and onto)</p>
+<ul>
+<li><p>A function or mapping from a nonempty set <span class="math notranslate nohighlight">\(A\)</span> to a nonempty set <span class="math notranslate nohighlight">\(B\)</span> is a rule that associates each element of <span class="math notranslate nohighlight">\(A\)</span> to an element of <span class="math notranslate nohighlight">\(B\)</span>.</p></li>
+<li><p>A function is injective if it is one-to-one(no two elements of <span class="math notranslate nohighlight">\(A\)</span> map to the same element of <span class="math notranslate nohighlight">\(B\)</span>).</p></li>
+<li><p>A function is surjective if every element of <span class="math notranslate nohighlight">\(B\)</span> is mapped by an element of <span class="math notranslate nohighlight">\(A\)</span>.</p></li>
+<li><p>A function is bijective if it is both injective and surjective.</p></li>
+</ul>
+</li>
+<li><p>We will focus on the permutations of the set <span class="math notranslate nohighlight">\([n]=\{1,2,\cdots,n\}\)</span> for various <span class="math notranslate nohighlight">\(n\)</span>.</p></li>
+<li><p>Examples of permutations</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\alpha:[3]\rightarrow[3]\)</span></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\alpha(1)=3\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha(2)=1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha(3)=2\)</span></p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\beta:[5]\rightarrow[5]\)</span></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\alpha(1)=1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha(2)=2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha(3)=3\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha(4)=5\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha(5)=4\)</span></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Array form</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\alpha=\begin{pmatrix}1&amp;2&amp;3\\\alpha(1)&amp;\alpha(2)&amp;\alpha(3)\end{pmatrix}=\begin{pmatrix}1&amp;2&amp;3\\3&amp;1&amp;2\end{pmatrix}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta=\begin{pmatrix}1&amp;2&amp;3&amp;4&amp;5\\\beta(1)&amp;\beta(2)&amp;\beta(3)&amp;\beta(4)&amp;\beta(5)\end{pmatrix}=\begin{pmatrix}1&amp;2&amp;3&amp;4&amp;5\\1&amp;2&amp;3&amp;5&amp;4\end{pmatrix}\)</span></p></li>
+</ul>
+</li>
+<li><p>Arrow form: Label the elements of the set in order on both top and bottom and draw arrows from top to bottom depending on the function output. This helps visualize what changes the function makes.</p></li>
+<li><p>Cycle form: We focus on this in lecture 6 or section 4.</p></li>
+<li><p>Composition: Since permutations are functions, we can combine two or more permutations together using function composition.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha=\begin{pmatrix}1&amp;2&amp;3&amp;4&amp;5\\5&amp;3&amp;1&amp;4&amp;2\end{pmatrix}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta=\begin{pmatrix}1&amp;2&amp;3&amp;4&amp;5\\5&amp;3&amp;2&amp;1&amp;4\end{pmatrix}\)</span></p></li>
+<li><p>We can use an arrow diagram and stack <span class="math notranslate nohighlight">\(\alpha\)</span> on top of <span class="math notranslate nohighlight">\(\beta\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha\beta=\begin{pmatrix}1&amp;2&amp;3&amp;4&amp;5\\4&amp;2&amp;5&amp;1&amp;3\end{pmatrix}\)</span></p></li>
+<li><p>We can use a similar process in array form and this is how we will do it in practice.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha\beta(k)=\beta(\alpha(k))\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha=\begin{pmatrix}1&amp;2&amp;3&amp;4&amp;5\\3&amp;4&amp;1&amp;5&amp;2\end{pmatrix}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta=\begin{pmatrix}1&amp;2&amp;3&amp;4&amp;5\\5&amp;3&amp;4&amp;1&amp;2\end{pmatrix}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\gamma=\begin{pmatrix}1&amp;2&amp;3&amp;4&amp;5\\3&amp;5&amp;1&amp;2&amp;4\end{pmatrix}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha(\beta\gamma)=\begin{pmatrix}1&amp;2&amp;3&amp;4&amp;5\\3&amp;4&amp;1&amp;5&amp;2\end{pmatrix}\begin{pmatrix}\begin{pmatrix}1&amp;2&amp;3&amp;4&amp;5\\5&amp;3&amp;4&amp;1&amp;2\end{pmatrix}\begin{pmatrix}1&amp;2&amp;3&amp;4&amp;5\\3&amp;5&amp;1&amp;2&amp;4\end{pmatrix}\end{pmatrix}=\begin{pmatrix}1&amp;2&amp;3&amp;4&amp;5\\3&amp;4&amp;1&amp;5&amp;2\end{pmatrix}\begin{pmatrix}1&amp;2&amp;3&amp;4&amp;5\\4&amp;1&amp;2&amp;3&amp;5\end{pmatrix}=\begin{pmatrix}1&amp;2&amp;3&amp;4&amp;5\\2&amp;3&amp;4&amp;5&amp;1\end{pmatrix}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((\alpha\beta)\gamma=\begin{pmatrix}\begin{pmatrix}1&amp;2&amp;3&amp;4&amp;5\\3&amp;4&amp;1&amp;5&amp;2\end{pmatrix}\begin{pmatrix}1&amp;2&amp;3&amp;4&amp;5\\5&amp;3&amp;4&amp;1&amp;2\end{pmatrix}\end{pmatrix}\begin{pmatrix}1&amp;2&amp;3&amp;4&amp;5\\3&amp;5&amp;1&amp;2&amp;4\end{pmatrix}=\begin{pmatrix}1&amp;2&amp;3&amp;4&amp;5\\2&amp;3&amp;4&amp;5&amp;1\end{pmatrix}\)</span></p></li>
+<li><p>It turns out that it doesn’t matter where the brackets are or if there are brackets at all.</p></li>
+<li><p>In general, <span class="math notranslate nohighlight">\(\alpha(\beta\gamma)=(\alpha\beta)\gamma\)</span> for permutation compositions.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha\gamma=\begin{pmatrix}1&amp;2&amp;3&amp;4&amp;5\\1&amp;2&amp;3&amp;4&amp;5\end{pmatrix}=\epsilon\)</span></p></li>
+<li><p>Because <span class="math notranslate nohighlight">\(\alpha\gamma\)</span> is the identity, so <span class="math notranslate nohighlight">\(\gamma\)</span> is the inverse of <span class="math notranslate nohighlight">\(\alpha\)</span> because it undos what <span class="math notranslate nohighlight">\(\alpha\)</span> did and vice versa.</p></li>
+<li><p>[continued in next section]</p></li>
+</ul>
+<ul class="simple">
+<li><p>We can also calculate <span class="math notranslate nohighlight">\(\alpha^n=\alpha\alpha\cdots\alpha\)</span> where there are <span class="math notranslate nohighlight">\(n\)</span> <span class="math notranslate nohighlight">\(\alpha\text{s}\)</span> on the RHS.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha^2=\begin{pmatrix}1&amp;2&amp;3&amp;4&amp;5\\1&amp;5&amp;3&amp;2&amp;4\end{pmatrix}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha^3=\begin{pmatrix}1&amp;2&amp;3&amp;4&amp;5\\3&amp;2&amp;1&amp;4&amp;5\end{pmatrix}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha^4=\begin{pmatrix}1&amp;2&amp;3&amp;4&amp;5\\1&amp;4&amp;3&amp;5&amp;2\end{pmatrix}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha^5=\begin{pmatrix}1&amp;2&amp;3&amp;4&amp;5\\3&amp;5&amp;1&amp;2&amp;4\end{pmatrix}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha^6=\epsilon\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha\beta=\begin{pmatrix}1&amp;2&amp;3&amp;4&amp;5\\4&amp;1&amp;5&amp;2&amp;3\end{pmatrix}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta\alpha=\begin{pmatrix}1&amp;2&amp;3&amp;4&amp;5\\2&amp;1&amp;5&amp;3&amp;4\end{pmatrix}\)</span></p></li>
+<li><p>If <span class="math notranslate nohighlight">\(\alpha\beta=\beta\alpha\)</span> then we say that <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> commute.</p></li>
+<li><p>In general, permutation compositions are not commutative.</p></li>
+<li><p>Inverse: Given a permutation <span class="math notranslate nohighlight">\(\alpha\)</span>, we can always find its inverse <span class="math notranslate nohighlight">\(\beta\)</span> such that <span class="math notranslate nohighlight">\(\alpha\beta=\beta\alpha=\epsilon\)</span> because permutations are bijective.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha=\begin{pmatrix}1&amp;2&amp;3&amp;4&amp;5\\4&amp;5&amp;1&amp;3&amp;2\end{pmatrix}\)</span></p></li>
+<li><p>We can find <span class="math notranslate nohighlight">\(\beta\)</span> its inverse using an arrow diagram: <span class="math notranslate nohighlight">\(\beta=\begin{pmatrix}1&amp;2&amp;3&amp;4&amp;5\\3&amp;5&amp;4&amp;1&amp;2\end{pmatrix}\)</span></p></li>
+<li><p>We denote the inverse of <span class="math notranslate nohighlight">\(\alpha\)</span> as <span class="math notranslate nohighlight">\(\alpha^{-1}\)</span></p></li>
+<li><p>It is also the same as flipping the original permutation in array form even though the input will become scrambled(it is just a convention to put the input in numerical order).</p></li>
+<li><p>We can find inverses either by flipping the diagram in arrow form or flipping the array in array form.</p></li>
+<li><p>Inverse of products: <span class="math notranslate nohighlight">\((\alpha\beta)^{-1}=\beta^{-1}\alpha^{-1}\)</span></p></li>
+<li><p>In general, <span class="math notranslate nohighlight">\((\alpha_1\alpha_2\cdots\alpha_k)^{-1}=\alpha_k^{-1}\alpha_{k-1}^{-1}\cdots\alpha_2^{-1}\alpha_1^{-1}\)</span></p></li>
+<li><p>Cancellation property</p>
+<ul>
+<li><p>Left cancellation: <span class="math notranslate nohighlight">\(\alpha\beta=\alpha\gamma\implies\beta=\gamma\)</span></p></li>
+<li><p>Right cancellation: <span class="math notranslate nohighlight">\(\beta\alpha=\gamma\alpha\implies\beta=\gamma\)</span></p></li>
+</ul>
+</li>
+<li><p>Proof of left cancellation</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\alpha\beta=\alpha\gamma\)</span></p></li>
+<li><p>Inverse: <span class="math notranslate nohighlight">\(\alpha^{-1}(\alpha\beta)=\alpha^{-1}\alpha\gamma\)</span></p></li>
+<li><p>Associative property: <span class="math notranslate nohighlight">\((\alpha^{-1}\alpha)\beta=(\alpha^{-1}\alpha)\gamma\)</span></p></li>
+<li><p>Cancellation: <span class="math notranslate nohighlight">\(\epsilon\beta=\epsilon\gamma\)</span></p></li>
+<li><p>Identity does nothing: <span class="math notranslate nohighlight">\(\beta=\gamma\)</span></p></li>
+<li><p>A similar proof can be found for the right cancellation.</p></li>
+</ul>
+</li>
+<li><p>Example: Is <span class="math notranslate nohighlight">\(RUF^{-1}\)</span> equivalent to <span class="math notranslate nohighlight">\(R^3F^3\)</span> on the Rubik’s cube?</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(RUF^{-1}\stackrel?=R^3F^3\)</span></p></li>
+<li><p>Left cancellation: <span class="math notranslate nohighlight">\(UF^{-1}\stackrel?=R^2F^3\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(F^{-1}\)</span> is equivalent to <span class="math notranslate nohighlight">\(F^3\)</span>: <span class="math notranslate nohighlight">\(UF^3\stackrel?=R^2F^3\)</span></p></li>
+<li><p>Right cancellation: <span class="math notranslate nohighlight">\(U\stackrel?=R^2\)</span></p></li>
+<li><p>But <span class="math notranslate nohighlight">\(U\ne R^2\)</span> so they are not equivalent.</p></li>
+</ul>
+</li>
+</ul>
+<p>Summary</p>
+<ul class="simple">
+<li><p>Symmetric group: <span class="math notranslate nohighlight">\(S_n=\{\alpha|\alpha\text{ is a permutation of }[n]\}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(S_n\)</span>, the symmetric group of degree <span class="math notranslate nohighlight">\(n\)</span>, is the set of all permutations of <span class="math notranslate nohighlight">\([n]=\{1,2,\cdots,n\}\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(|S_n|=n!\)</span></p></li>
+<li><p>Two elements <span class="math notranslate nohighlight">\(\alpha,\beta\in S_n\)</span> can be composed(multiplied) to make another element <span class="math notranslate nohighlight">\(\alpha\beta\in S_n^2\)</span>.</p></li>
+<li><p>Identity permutation: <span class="math notranslate nohighlight">\(\epsilon=\begin{pmatrix}1&amp;2&amp;\cdots&amp;n\\1&amp;2&amp;\cdots&amp;n\end{pmatrix}\)</span></p></li>
+<li><p>Inverse: Every permutation has an inverse such that <span class="math notranslate nohighlight">\(\alpha\alpha^{-1}=\alpha^{-1}\alpha=\epsilon\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\((\alpha_1\alpha_2\cdots\alpha_k)^{-1}=\alpha_k^{-1}\cdots\alpha_2^{-1}\alpha_1^{-1}\)</span></p></li>
+<li><p>Associative property: <span class="math notranslate nohighlight">\(\alpha(\beta\gamma)=(\alpha\beta)\gamma\)</span></p></li>
+<li><p>Permutation compositions are not necessarily commutative.</p></li>
+<li><p>Cancellation properties: <span class="math notranslate nohighlight">\(\alpha\beta=\alpha\gamma\implies\beta=\gamma\)</span> and <span class="math notranslate nohighlight">\(\beta\alpha=\gamma\alpha\implies\beta=\gamma\)</span></p></li>
+</ul>
+<ul class="simple">
+<li><p>Example: Show that <span class="math notranslate nohighlight">\(\alpha\beta\alpha^{-1}=\beta\)</span> if and only if <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> commute.</p>
+<ul>
+<li><p>To prove this, we have to show that <span class="math notranslate nohighlight">\(\alpha\beta\alpha^{-1}=\beta\)</span> means that <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> commute and vice versa.</p></li>
+<li><p>Assumption for first half: <span class="math notranslate nohighlight">\(\alpha\beta\alpha^{-1}=\beta\)</span></p></li>
+<li><p>Add <span class="math notranslate nohighlight">\(\alpha\)</span> using right cancellation: <span class="math notranslate nohighlight">\((\alpha\beta\alpha^{-1})\alpha=\beta\alpha\)</span></p></li>
+<li><p>Regroup and use inverse identity: <span class="math notranslate nohighlight">\(\alpha\beta=\beta\alpha\)</span></p></li>
+<li><p>Therefore, <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> must commute.</p></li>
+<li><p>Assumption for second half: <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> commute.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha\beta=\beta\alpha\)</span></p></li>
+<li><p>Add <span class="math notranslate nohighlight">\(\alpha^{-1}\)</span> to right because inverses must exist and right cancellation: <span class="math notranslate nohighlight">\((\alpha\beta)\alpha^{-1}=(\beta\alpha)\alpha^{-1}\)</span></p></li>
+<li><p>Regroup and use inverse identity: <span class="math notranslate nohighlight">\(\alpha\beta\alpha^{-1}=\beta\)</span></p></li>
+</ul>
+</li>
+<li><p>Order of a permutation: The smallest number <span class="math notranslate nohighlight">\(m\)</span> such that <span class="math notranslate nohighlight">\(\alpha^m=\epsilon\enspace(\text{ord}(\alpha))\)</span>.</p></li>
+<li><p>Example: Find the order of permutation of <span class="math notranslate nohighlight">\(\alpha=\begin{pmatrix}1&amp;2&amp;3&amp;4&amp;5\\3&amp;2&amp;5&amp;4&amp;1\end{pmatrix}\)</span></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\alpha^2=\begin{pmatrix}1&amp;2&amp;3&amp;4&amp;5\\5&amp;2&amp;1&amp;4&amp;3\end{pmatrix}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha^3=\begin{pmatrix}1&amp;2&amp;3&amp;4&amp;5\\1&amp;2&amp;3&amp;4&amp;5\end{pmatrix}=\epsilon\)</span></p></li>
+<li><p>Thus, the order of permutation of <span class="math notranslate nohighlight">\(\alpha\)</span> is 3.</p></li>
+</ul>
+</li>
+<li><p>In fact, such a number must always exist for any permutation because <span class="math notranslate nohighlight">\(S_n\)</span> is finite and there are not infinitely many permutations.</p></li>
+</ul>
+<p>Permutations have 3 representation forms: array, cycle(see next section) and matrix.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Feature</p></th>
+<th class="head"><p>Array Notation</p></th>
+<th class="head"><p>Cycle Notation</p></th>
+<th class="head"><p>Matrix Notation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Best Use Case</p></td>
+<td><p>Manual mapping</p></td>
+<td><p>Group Theory / Research</p></td>
+<td><p>Linear Algebra</p></td>
+</tr>
+<tr class="row-odd"><td><p>Space Efficiency</p></td>
+<td><p>Moderate (2n)</p></td>
+<td><p>High (minimal)</p></td>
+<td><p>Low (n2)</p></td>
+</tr>
+<tr class="row-even"><td><p>Visual Focus</p></td>
+<td><p>Direct mapping</p></td>
+<td><p>Orbits and Loops</p></td>
+<td><p>Linear Transformations</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span><span class="o">=</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+          <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+          <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+          <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+<span class="n">s</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">m</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span>             <span class="c1"># Matrix form is good for multiplication</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left(\begin{array}{rrrr}
+0 &amp; 0 &amp; 0 &amp; 1 \\
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0
+\end{array}\right) \qquad   \left(\begin{array}{rrrr}
+0 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1 \\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+1 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right) \qquad   \end{split}\]</div>
+</div>
+</div>
+<p>Permutation compositions: <span class="math notranslate nohighlight">\((\alpha \circ \beta) (k) = \beta(\alpha(k)), \text{ for k in [n].}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">set</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span><span class="o">==</span><span class="nb">set</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">]),{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">}</span><span class="o">==</span><span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">},</span>       <span class="c1"># Sets aren&#39;t ordered</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span><span class="o">==</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span>                                        <span class="c1"># Lists are ordered</span>
+<span class="n">factorial</span><span class="p">(</span><span class="mi">7</span><span class="p">))</span>                                            <span class="c1"># Ways to arrange 7 items</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True True False 5040
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">terms</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">Permutations</span><span class="p">(</span><span class="n">terms</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>                 <span class="c1"># Generator for list</span>
+<span class="nb">list</span><span class="p">(</span><span class="n">p</span><span class="p">),</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>                 <span class="c1"># Full list</span>
+<span class="n">p</span><span class="o">.</span><span class="n">cardinality</span><span class="p">(),</span>         <span class="c1"># Cardinality</span>
+<span class="n">factorial</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>            <span class="c1"># Formula for cardinality is the factorial of the length</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Standard permutations of 3 
+ [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]] 
+ 6 6
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;a,b&#39;</span><span class="p">)</span>
+<span class="n">terms</span><span class="o">=</span><span class="p">[</span><span class="n">a</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">b</span><span class="p">]</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">Permutations</span><span class="p">(</span><span class="n">terms</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>                                                <span class="c1"># Generator</span>
+<span class="nb">list</span><span class="p">(</span><span class="n">p</span><span class="p">),</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>                                                <span class="c1"># List</span>
+<span class="n">p</span><span class="o">.</span><span class="n">cardinality</span><span class="p">(),</span>                                        <span class="c1"># Cardinality</span>
+<span class="n">factorial</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">factorial</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">factorial</span><span class="p">(</span><span class="mi">3</span><span class="p">)))</span>               <span class="c1"># Formula now combination function(5C2/5C3)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Permutations of the multi-set [a, a, b, b, b] 
+ [[a, a, b, b, b], [a, b, a, b, b], [a, b, b, a, b], [a, b, b, b, a], [b, a, a, b, b], [b, a, b, a, b], [b, a, b, b, a], [b, b, a, a, b], [b, b, a, b, a], [b, b, b, a, a]] 
+ 10 10
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="n">Permutation</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">]);</span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">a</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="n">a</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>   <span class="c1"># permutation which maps 1-&gt;2, 2-&gt;1, 3-&gt;3</span>
+<span class="n">s</span><span class="p">(</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="n">a</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]]]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2, 1, 3] 2 1
+</pre></div>
+</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left(\begin{array}{rrr}
+1 &amp; 2 &amp; 3 \\
+2 &amp; 1 &amp; 3
+\end{array}\right) \qquad   \end{split}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="n">Permutation</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">]);</span>  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a =&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>       <span class="c1"># Permutation a</span>
+<span class="n">b</span><span class="o">=</span><span class="n">Permutation</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">]);</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;b =&quot;</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>        <span class="c1"># Permutation b</span>
+<span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="p">,</span><span class="n">b</span><span class="o">*</span><span class="n">a</span>                                            <span class="c1"># Permutations are generally noncommutative</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a = [5, 3, 1, 4, 2]
+b = [5, 3, 2, 1, 4]
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>([4, 2, 5, 1, 3], [2, 1, 3, 5, 4])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="n">Permutation</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+<span class="n">b</span><span class="o">=</span><span class="n">Permutation</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">a</span><span class="o">.</span><span class="n">inverse</span><span class="p">(),</span><span class="n">b</span><span class="o">.</span><span class="n">inverse</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>([2, 3, 1, 5, 4], [3, 4, 1, 2])
+</pre></div>
+</div>
+</div>
+</div>
+<section id="book-exercises">
+<h3>Book exercises<a class="headerlink" href="#book-exercises" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alpha</span><span class="o">=</span><span class="n">Permutation</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>                 <span class="c1"># Bottom row of array form</span>
+<span class="n">beta</span><span class="o">=</span><span class="n">Permutation</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">gamma</span><span class="o">=</span><span class="n">Permutation</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="p">(</span><span class="n">alpha</span><span class="o">*</span><span class="n">beta</span><span class="p">)</span><span class="o">*</span><span class="n">gamma</span><span class="p">,</span><span class="n">alpha</span><span class="o">*</span><span class="p">(</span><span class="n">beta</span><span class="o">*</span><span class="n">gamma</span><span class="p">)</span>        <span class="c1"># Evidence for associative law</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>([2, 3, 4, 1], [2, 3, 4, 1])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alpha</span><span class="o">=</span><span class="n">Permutation</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>          <span class="c1"># Permutations</span>
+<span class="n">beta</span><span class="o">=</span><span class="n">Permutation</span><span class="p">([</span><span class="mi">8</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">gamma</span><span class="o">=</span><span class="n">Permutation</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">alpha</span><span class="o">*</span><span class="n">beta</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+<span class="n">alpha</span><span class="o">*</span><span class="n">gamma</span><span class="o">*</span><span class="n">beta</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>                             <span class="c1"># Associative, so brackets not needed</span>
+<span class="n">beta</span><span class="o">.</span><span class="n">inverse</span><span class="p">(),</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>                               <span class="c1"># Inverse</span>
+<span class="p">(</span><span class="n">gamma</span><span class="o">*</span><span class="n">beta</span><span class="p">)</span><span class="o">.</span><span class="n">inverse</span><span class="p">(),</span>                            <span class="c1"># Proven to be equal to next line(this is an identity)</span>
+<span class="n">beta</span><span class="o">.</span><span class="n">inverse</span><span class="p">()</span><span class="o">*</span><span class="n">gamma</span><span class="o">.</span><span class="n">inverse</span><span class="p">(),</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+<span class="n">alpha</span><span class="o">.</span><span class="n">inverse</span><span class="p">()</span><span class="o">*</span><span class="n">gamma</span><span class="o">*</span><span class="n">alpha</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>                   <span class="c1"># Not commutative so not equal to gamma</span>
+<span class="n">order</span><span class="p">(</span><span class="n">alpha</span><span class="p">),</span>                                      <span class="c1"># Order(minimum number that &#39;kills&#39; the permutation)</span>
+<span class="n">order</span><span class="p">(</span><span class="n">beta</span><span class="p">),</span>
+<span class="n">order</span><span class="p">(</span><span class="n">alpha</span><span class="o">.</span><span class="n">inverse</span><span class="p">()</span><span class="o">*</span><span class="n">gamma</span><span class="o">*</span><span class="n">alpha</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[6, 5, 3, 2, 8, 4, 1, 7] 
+ [3, 2, 6, 7, 4, 8, 1, 5] 
+ [8, 7, 6, 5, 4, 3, 2, 1] 
+ [8, 4, 3, 1, 2, 6, 7, 5] [8, 4, 3, 1, 2, 6, 7, 5] 
+ [3, 2, 1, 7, 6, 5, 8, 4] 
+ 4 2 6
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alpha</span><span class="o">=</span><span class="n">Permutation</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">beta</span><span class="o">=</span><span class="n">Permutation</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
+<span class="n">alpha</span><span class="o">.</span><span class="n">inverse</span><span class="p">(),</span><span class="n">beta</span><span class="o">.</span><span class="n">inverse</span><span class="p">()</span>            <span class="c1"># Inverses can be verified using multiplication</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>([4, 3, 1, 2], [2, 7, 5, 1, 3, 8, 4, 6])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alpha</span><span class="o">=</span><span class="n">Permutation</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+<span class="n">power</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span><span class="mi">2011</span><span class="p">),</span><span class="n">power</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span><span class="mi">2011</span><span class="o">%</span><span class="k">order</span>(alpha)),order(alpha)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>([5, 1, 2, 3, 4], [5, 1, 2, 3, 4], 5)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="lecture-6-permutations-cycle-form">
+<h2>Lecture 6 - Permutations: Cycle Form<a class="headerlink" href="#lecture-6-permutations-cycle-form" title="Link to this heading">#</a></h2>
+<p>Unfinished work from last lecture</p>
+<ul class="simple">
+<li><p>Example: If <span class="math notranslate nohighlight">\(\alpha\)</span> has order 7, what is <span class="math notranslate nohighlight">\(\alpha^35\)</span>?</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\alpha^7=\epsilon\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha^35=(\alpha^7)^5=\epsilon^5=\epsilon\)</span></p></li>
+<li><p>Follow-up: <span class="math notranslate nohighlight">\(\alpha^37=\alpha^35\alpha^2=\epsilon\alpha^2=\alpha^2\)</span></p></li>
+</ul>
+</li>
+<li><p>Example: <span class="math notranslate nohighlight">\(\beta=\begin{pmatrix}1&amp;2&amp;3\\2&amp;3&amp;1\end{pmatrix}\)</span>, is <span class="math notranslate nohighlight">\(\beta^{62}=\epsilon\)</span>?</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\beta\)</span> has order 3 because it is just a 3-cycle.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta^{62}=\beta^{60}\beta^2=(\beta^3)^{20}\beta^2=\epsilon^{20}\beta^2=\beta^2=\beta^{-1}\ne\epsilon\)</span></p></li>
+</ul>
+</li>
+<li><p>Let <span class="math notranslate nohighlight">\(\alpha\)</span> be a permutation. Then if <span class="math notranslate nohighlight">\(\alpha^m=\epsilon\)</span>, <span class="math notranslate nohighlight">\(m\)</span> is a multiple of <span class="math notranslate nohighlight">\(ord(\alpha)\)</span></p></li>
+</ul>
+<p>Cycle Notation</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\alpha=\begin{pmatrix}1&amp;2&amp;3&amp;4&amp;5\\2&amp;3&amp;4&amp;5&amp;1\end{pmatrix}\)</span></p></li>
+<li><p>In normal arrow from, we draw an arrow from the 1 at the top to the 2 at the bottom. We express this as an arrow from 1 to 2(there is only 1 of each number) in cycle arrow form to help visualize cycles.</p></li>
+<li><p>Cycle form: <span class="math notranslate nohighlight">\(\alpha=\begin{pmatrix}1&amp;2&amp;3&amp;4&amp;5\end{pmatrix}\)</span></p></li>
+<li><p>This represents that each of the numbers in each of the brackets(cycles) map to the number on its right, and the rightmost number maps to the one on its left.t</p></li>
+<li><p>Since we are representing them in cycles, <span class="math notranslate nohighlight">\(\alpha=\begin{pmatrix}3&amp;4&amp;5&amp;1&amp;2\end{pmatrix}\)</span> is really just equivalent to the cycle form above. We just shifted the cycle and each number still maps to the same one.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta=\begin{pmatrix}1&amp;2&amp;3&amp;4&amp;5&amp;6&amp;7&amp;8\\3&amp;7&amp;6&amp;8&amp;5&amp;1&amp;4&amp;2\end{pmatrix}\)</span></p></li>
+<li><p>Cycle form: <span class="math notranslate nohighlight">\(\beta=\begin{pmatrix}1&amp;3&amp;6\end{pmatrix}\begin{pmatrix}2&amp;7&amp;4&amp;8\end{pmatrix}\begin{pmatrix}5\end{pmatrix}\)</span></p></li>
+<li><p>It can also sometimes be helpful to draw the cycle arrow form to identify which numbers are in which cycle.</p></li>
+<li><p>It turns out that there is no power <span class="math notranslate nohighlight">\(k\)</span> such that <span class="math notranslate nohighlight">\(\beta^k(1)=4\)</span> because <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(4\)</span> are in different cycles.</p></li>
+<li><p>Cycle form is a compact way to represent the permutation. It retains all the information, and also reveals more structure about the permutation than array form.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\gamma=\begin{pmatrix}1&amp;2&amp;3&amp;4&amp;5&amp;6&amp;7&amp;8&amp;9&amp;10\\4&amp;9&amp;5&amp;2&amp;3&amp;7&amp;10&amp;8&amp;1&amp;6\end{pmatrix}\)</span></p></li>
+<li><p>Cycle form: <span class="math notranslate nohighlight">\(\gamma=\begin{pmatrix}1&amp;4&amp;2&amp;9\end{pmatrix}\begin{pmatrix}3&amp;5\end{pmatrix}\begin{pmatrix}6&amp;7&amp;10\end{pmatrix}\)</span></p>
+<ul>
+<li><p>We have a convention to leave numbers of when they are part of a 1-cycle(we still don’t lose info).</p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\alpha=\begin{pmatrix}1&amp;5&amp;3&amp;7&amp;2\end{pmatrix}\begin{pmatrix}4&amp;6&amp;9\end{pmatrix}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha(3)=7\)</span> because 7 is the number after 3 in the cycle.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha(9)=4\)</span> because the last number in the cycle loops back to the front.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha^2(1)=3\)</span> because just move two numbers for <span class="math notranslate nohighlight">\(\alpha^2\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha(8)=8\)</span> because we assume that it is a one cycle when the number isn’t present.</p></li>
+<li><p>Example: Find the product <span class="math notranslate nohighlight">\(\alpha\beta\)</span> of <span class="math notranslate nohighlight">\(\alpha=\begin{pmatrix}1&amp;3&amp;5&amp;7\end{pmatrix}\)</span> and <span class="math notranslate nohighlight">\(\beta=\begin{pmatrix}1&amp;4\end{pmatrix}\begin{pmatrix}2&amp;5&amp;3\end{pmatrix}\)</span></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\alpha\beta=\begin{pmatrix}1&amp;3&amp;5&amp;7\end{pmatrix}\begin{pmatrix}1&amp;4\end{pmatrix}\begin{pmatrix}2&amp;5&amp;3\end{pmatrix}=\begin{pmatrix}1&amp;2&amp;5&amp;7&amp;4\end{pmatrix}\begin{pmatrix}3\end{pmatrix}\begin{pmatrix}6\end{pmatrix}=\begin{pmatrix}1&amp;2&amp;5&amp;7&amp;4\end{pmatrix}\)</span></p></li>
+<li><p>Each number is calculated by going through each of the cycles applying them.</p></li>
+<li><p>When a number goes back to the start of the cycle, simply close the bracket.</p></li>
+</ul>
+</li>
+<li><p>Properties of cycle form</p>
+<ul>
+<li><p>Every permutation can be represented as a product of disjoint cycles.</p></li>
+<li><p>Disjoint cycles commute.</p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\alpha=\begin{pmatrix}1&amp;3&amp;4\end{pmatrix}\quad\beta=\begin{pmatrix}2&amp;5\end{pmatrix}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha\beta=\begin{pmatrix}1&amp;3&amp;4\end{pmatrix}\begin{pmatrix}2&amp;5\end{pmatrix}=\begin{pmatrix}2&amp;5\end{pmatrix}\begin{pmatrix}1&amp;3&amp;4\end{pmatrix}=\beta\alpha\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta\alpha\beta=\begin{pmatrix}2&amp;5\end{pmatrix}\begin{pmatrix}1&amp;3&amp;4\end{pmatrix}\begin{pmatrix}2&amp;5\end{pmatrix}=\begin{pmatrix}2&amp;5\end{pmatrix}\begin{pmatrix}2&amp;5\end{pmatrix}\begin{pmatrix}1&amp;3&amp;4\end{pmatrix}=\begin{pmatrix}1&amp;3&amp;4\end{pmatrix}=\alpha\)</span></p></li>
+<li><p>In general, if <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> commute, <span class="math notranslate nohighlight">\((\alpha\beta)^m=\alpha^m\beta^m\)</span> for any <span class="math notranslate nohighlight">\(m\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha=\begin{pmatrix}1&amp;7&amp;4&amp;3&amp;2\end{pmatrix}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha^{-1}=\begin{pmatrix}2&amp;3&amp;7&amp;4&amp;1\end{pmatrix}=\begin{pmatrix}1&amp;2&amp;3&amp;7&amp;4\end{pmatrix}\)</span></p></li>
+<li><p>[continued]</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sg</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">SymmetricGroup</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">S5</span><span class="o">=</span><span class="n">SymmetricGroup</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>   <span class="c1"># symmetric group on 5 objects, and names it S5</span>
+<span class="n">a</span><span class="o">=</span><span class="n">S5</span><span class="p">(</span><span class="s2">&quot;(2,3)(1,4)&quot;</span><span class="p">)</span>     <span class="c1"># constructs the permutation (2,3)(1,4) in S5</span>
+<span class="n">b</span><span class="o">=</span><span class="n">S5</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>               <span class="c1"># constructs the identity permutation in S5</span>
+<span class="n">c</span><span class="o">=</span><span class="n">S5</span><span class="p">(</span><span class="s2">&quot;(2,5,3)&quot;</span><span class="p">)</span>        <span class="c1"># constructs the 3-cycle (2,5,3) in S5</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+<span class="n">a</span><span class="o">*</span><span class="n">c</span>                    <span class="c1"># compose permutations by using multiplication sign</span>
+<span class="n">c</span><span class="o">.</span><span class="n">inverse</span><span class="p">()</span>            <span class="c1"># computes inverse</span>
+<span class="n">c</span><span class="o">.</span><span class="n">order</span><span class="p">()</span>              <span class="c1"># computes order</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1,4)(2,3) () (2,5,3)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="n">Permutation</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">b</span><span class="o">=</span><span class="n">Permutation</span><span class="p">([</span><span class="mi">8</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">9</span><span class="p">])</span>
+<span class="n">c</span><span class="o">=</span><span class="n">Permutation</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">14</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">SymmetricGroup</span><span class="p">(</span><span class="mi">4</span><span class="p">)(</span><span class="n">a</span><span class="p">),</span>                                <span class="c1"># Use SymmetricGroup to convert into cycle form</span>
+<span class="n">SymmetricGroup</span><span class="p">(</span><span class="mi">10</span><span class="p">)(</span><span class="n">b</span><span class="p">),</span>
+<span class="n">SymmetricGroup</span><span class="p">(</span><span class="mi">15</span><span class="p">)(</span><span class="n">c</span><span class="p">))</span>
+<span class="n">S8</span><span class="o">=</span><span class="n">SymmetricGroup</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">a</span><span class="o">=</span><span class="n">S8</span><span class="p">(</span><span class="s1">&#39;(1,5,2)(3,4)(7,8)&#39;</span><span class="p">)</span>
+<span class="n">b</span><span class="o">=</span><span class="n">S8</span><span class="p">(</span><span class="s1">&#39;(1,7,4,6)(3,5,8)&#39;</span><span class="p">)</span>
+<span class="n">c</span><span class="o">=</span><span class="n">SymmetricGroup</span><span class="p">(</span><span class="mi">2</span><span class="p">)(</span><span class="s1">&#39;(1,2)&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Permutation</span><span class="p">(</span><span class="n">a</span><span class="p">),</span><span class="n">Permutation</span><span class="p">(</span><span class="n">b</span><span class="p">),</span><span class="n">Permutation</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>        <span class="c1"># Use Permutation to convert into array form</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1,2,4) (1,8,2,5)(3,4,7,6)(9,10) (1,10,3,9,7,5,8,2,11,6,15,14,13,12)
+[5, 1, 4, 3, 2, 6, 8, 7] [7, 2, 5, 6, 8, 1, 4, 3] [2, 1]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">S7</span><span class="o">=</span><span class="n">SymmetricGroup</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">S9</span><span class="o">=</span><span class="n">SymmetricGroup</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+<span class="n">alpha</span><span class="o">=</span><span class="n">S7</span><span class="p">(</span><span class="s1">&#39;(1,4,3,5)&#39;</span><span class="p">)</span><span class="o">*</span><span class="n">S7</span><span class="p">(</span><span class="s1">&#39;(3,7,6)&#39;</span><span class="p">)</span><span class="o">*</span><span class="n">S7</span><span class="p">(</span><span class="s1">&#39;(2,5,7,3,1)(6,4)&#39;</span><span class="p">)</span><span class="o">*</span><span class="n">S7</span><span class="p">(</span><span class="s1">&#39;(2,3,5,4)&#39;</span><span class="p">)</span><span class="o">*</span><span class="n">S7</span><span class="p">(</span><span class="s1">&#39;(4,5,3)&#39;</span><span class="p">)</span>
+<span class="n">beta</span><span class="o">=</span><span class="n">S9</span><span class="p">(</span><span class="s1">&#39;(1,2,3)&#39;</span><span class="p">)</span><span class="o">*</span><span class="n">S9</span><span class="p">(</span><span class="s1">&#39;(1,4,5)&#39;</span><span class="p">)</span><span class="o">*</span><span class="n">S9</span><span class="p">(</span><span class="s1">&#39;(1,6,7)&#39;</span><span class="p">)</span><span class="o">*</span><span class="n">S9</span><span class="p">(</span><span class="s1">&#39;(1,8,9)&#39;</span><span class="p">)</span>
+<span class="n">gamma</span><span class="o">=</span><span class="n">S9</span><span class="p">(</span><span class="s1">&#39;(9,3,5,6)&#39;</span><span class="p">)</span><span class="o">*</span><span class="n">S9</span><span class="p">(</span><span class="s1">&#39;(4,5,2,3,7)&#39;</span><span class="p">)</span><span class="o">*</span><span class="n">S9</span><span class="p">(</span><span class="s1">&#39;(3,7,8,2)(1,4)&#39;</span><span class="p">)</span><span class="o">*</span><span class="n">S9</span><span class="p">(</span><span class="s1">&#39;(7,4)&#39;</span><span class="p">)</span>
+<span class="n">alpha</span><span class="p">,</span><span class="n">beta</span><span class="p">,</span><span class="n">gamma</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>((1,6)(2,5,4,3,7), (1,2,3,4,5,6,7,8,9), (1,7)(2,4,5,6,9,8))
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="lectures-7-8-from-puzzles-to-permutations-representing-puzzles-by-permutations">
+<h2>Lectures 7&amp;8 - From puzzles to permutations: Representing puzzles by Permutations<a class="headerlink" href="#lectures-7-8-from-puzzles-to-permutations-representing-puzzles-by-permutations" title="Link to this heading">#</a></h2>
+<p>Cycle form[continued]</p>
+<ul class="simple">
+<li><p>First you reverse the cycle, then you put the smallest number back in front by convention.</p></li>
+<li><p>Another method is to simply reverse the numbers except for the first one because it is already in the correct spot by convention.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(\alpha\)</span> is expressed as a product of disjoint cycles <span class="math notranslate nohighlight">\(\alpha=\sigma_1\sigma_2\cdots\sigma_k\)</span> then <span class="math notranslate nohighlight">\(\alpha^{-1}=\sigma_k^{-1}\sigma_{k-1}^{-1}\cdots\sigma_2^{-1}\sigma_1^{-1}=\sigma_1^{-1}\sigma_2^{-1}\cdots\sigma_k^{-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha=\begin{pmatrix}2&amp;5&amp;4&amp;9\end{pmatrix}\begin{pmatrix}3&amp;7\end{pmatrix}\begin{pmatrix}6&amp;10&amp;8\end{pmatrix}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha^{-1}=\begin{pmatrix}2&amp;9&amp;4&amp;5\end{pmatrix}\begin{pmatrix}3&amp;7\end{pmatrix}\begin{pmatrix}6&amp;8&amp;10\end{pmatrix}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta=\begin{pmatrix}3&amp;7&amp;4\end{pmatrix}\begin{pmatrix}5&amp;9\end{pmatrix}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta^{-1}=\begin{pmatrix}3&amp;4&amp;7\end{pmatrix}\begin{pmatrix}5&amp;9\end{pmatrix}\)</span></p></li>
+<li><p>The structure of the permutations are staying the same even when we are taking the inverse because we are just changing each of the cycles individually so <span class="math notranslate nohighlight">\(\beta^{-1}\)</span> still contains a 2-cycle and a 3-cycle just like <span class="math notranslate nohighlight">\(\beta\)</span>.</p></li>
+<li><p>We will see how we can use cycle form to find the order now.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta=\begin{pmatrix}1&amp;3&amp;2&amp;5\end{pmatrix}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(ord(\beta)=4\)</span> because only after 4 times we put the numbers into the cycle do they go back to themselves.</p></li>
+<li><p>In general, <span class="math notranslate nohighlight">\(ord(\begin{pmatrix}a_1&amp;a_2\cdots a_m\end{pmatrix})=m\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha=\begin{pmatrix}1&amp;3\end{pmatrix}\begin{pmatrix}2&amp;4&amp;5\end{pmatrix}\)</span></p></li>
+<li><p>The order is 6 here because 6 is the smallest number(lcm) that kills both of the cycles.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta=\begin{pmatrix}2&amp;4&amp;5\end{pmatrix}\begin{pmatrix}3&amp;1&amp;7\end{pmatrix}\begin{pmatrix}6&amp;9&amp;10&amp;11\end{pmatrix}\)</span></p></li>
+<li><p>Order is 12 because <span class="math notranslate nohighlight">\(lcm(3,3,4)=12\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta^3=\begin{pmatrix}6&amp;11&amp;10&amp;9\end{pmatrix}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta^4=\begin{pmatrix}2&amp;4&amp;5\end{pmatrix}\begin{pmatrix}3&amp;1&amp;7\end{pmatrix}\)</span></p></li>
+<li><p>If <span class="math notranslate nohighlight">\(\alpha\)</span> has order 7,</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\alpha^{35}=\epsilon\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha^{106}=\alpha\)</span></p></li>
+</ul>
+</li>
+<li><p>The Rubik’s cube sequence RU contains a 15-cycle, a 3-cycle, and two 7-cycles.</p></li>
+<li><p><span class="math notranslate nohighlight">\(ord(RU)=lcm(15,3,7,7)=105\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha=\begin{pmatrix}2&amp;4&amp;3\end{pmatrix}\begin{pmatrix}1&amp;5\end{pmatrix}\)</span></p></li>
+<li><p>If <span class="math notranslate nohighlight">\(\alpha^k\)</span> is a 3-cycle, we can tell that <span class="math notranslate nohighlight">\(k\)</span> must be even because the 2-cycle vanishes.</p></li>
+<li><p>Now we prove that if <span class="math notranslate nohighlight">\(\alpha^m=\epsilon\)</span> then <span class="math notranslate nohighlight">\(ord(\alpha)(k)\)</span> divides <span class="math notranslate nohighlight">\(m\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(m=qk+r\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha^m=(\alpha^k)^q\alpha^r=\alpha^r=\epsilon\)</span></p></li>
+<li><p>But if <span class="math notranslate nohighlight">\(0\leq r&lt;k\)</span>, <span class="math notranslate nohighlight">\(r=0\)</span> is the only option that kills <span class="math notranslate nohighlight">\(\alpha\)</span>.</p></li>
+<li><p>Therefore <span class="math notranslate nohighlight">\(m=qk+r=qk\)</span> which means it is a multiple of <span class="math notranslate nohighlight">\(k\)</span>.</p></li>
+</ul>
 </section>
 </section>
 
@@ -645,9 +1391,16 @@ DONE
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-0">Lecture 0</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-1">Lecture 1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-2">Lecture 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-0-course-intro">Lecture 0 - Course Intro</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-1-permutation-puzzles-intro">Lecture 1 - Permutation Puzzles Intro</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-2-set-theory">Lecture 2 - Set theory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-3-appendix-b-basic-properties-of-integers">Lecture 3 - Appendix B: Basic properties of integers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lectures-4-5-permutations">Lectures 4&amp;5 - Permutations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#book-exercises">Book exercises</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-6-permutations-cycle-form">Lecture 6 - Permutations: Cycle Form</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lectures-7-8-from-puzzles-to-permutations-representing-puzzles-by-permutations">Lectures 7&amp;8 - From puzzles to permutations: Representing puzzles by Permutations</a></li>
 </ul>
   </nav></div>
 

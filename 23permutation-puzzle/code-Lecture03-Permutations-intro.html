@@ -397,149 +397,15 @@ Course notes booklet: <a class="reference external" href="http://www.sfu.ca/~jtm
 <p>Curly braces { } denote <em>sets</em>,  i.e. the order that elements are listed doesn’t matter.  Square braces [ ] denote lists, i.e. the order that elements appear does matter.  So as sets {1,2,3} = {2,1,3} but as lists [1,2,3] <span class="math notranslate nohighlight">\(\neq\)</span> [2,1,3].</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>Set([1,2,3])==Set([2,1,3])
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>[1,2,3]==[2,1,3]
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>Example 3.2</strong>: Find the number of ways to arrange 7 books on a shelf.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>factorial(7)
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5040
-</pre></div>
-</div>
-</div>
-</div>
-<p>We can use SageMath to generate permutations of a list, for example [1,2,3].</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>terms=[1,2,3]
-p = Permutations(terms)
-print p
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Permutations of the set [1, 2, 3]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>p.list()
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>p.cardinality()
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>factorial(3)
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>Example 3.5:</strong> Two permutations of the multi-set [a,a,b,b,b] are [b,a,b,a,b] and [b,b,a,a,b].  There are <span class="math notranslate nohighlight">\(\dfrac{5!}{2!\cdot3!}=10\)</span> permutations in total.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>var(&#39;a,b&#39;);
-terms=[a,a,b,b,b];
-p = Permutations(terms)
-print p
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Permutations of the multi-set [a, a, b, b, b]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>p.list()
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[a, a, b, b, b],
- [a, b, a, b, b],
- [a, b, b, a, b],
- [a, b, b, b, a],
- [b, a, a, b, b],
- [b, a, b, a, b],
- [b, a, b, b, a],
- [b, b, a, a, b],
- [b, b, a, b, a],
- [b, b, b, a, a]]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>p.cardinality()
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>factorial(5)/(factorial(2)*factorial(3))
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span><span class="o">==</span><span class="nb">set</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">]),[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span><span class="o">==</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">factorial</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">terms</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">Permutations</span><span class="p">(</span><span class="n">terms</span><span class="p">)</span>
+<span class="n">p</span><span class="p">,</span><span class="nb">list</span><span class="p">(</span><span class="n">p</span><span class="p">),</span><span class="n">p</span><span class="o">.</span><span class="n">cardinality</span><span class="p">(),</span><span class="n">factorial</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">var</span><span class="p">(</span><span class="s1">&#39;a,b&#39;</span><span class="p">);</span>
+<span class="n">terms</span><span class="o">=</span><span class="p">[</span><span class="n">a</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">b</span><span class="p">];</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">Permutations</span><span class="p">(</span><span class="n">terms</span><span class="p">)</span>
+<span class="n">p</span><span class="p">,</span><span class="nb">list</span><span class="p">(</span><span class="n">p</span><span class="p">),</span><span class="n">p</span><span class="o">.</span><span class="n">cardinality</span><span class="p">(),</span><span class="n">factorial</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">factorial</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">factorial</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -551,58 +417,26 @@ print p
 <h3>Section 3.2.2 Permutations<a class="headerlink" href="#section-3-2-2-permutations" title="Link to this heading">#</a></h3>
 <p>A <strong>permutation</strong> of a set A is a function <span class="math notranslate nohighlight">\(\alpha : A \rightarrow A\)</span> that is bijective (i.e. both one-to-one and onto).</p>
 <p>For example, we can define a permutation <span class="math notranslate nohighlight">\(\alpha\)</span> of the set <span class="math notranslate nohighlight">\(\{1,2,3\}\)</span> by stating:
-$<span class="math notranslate nohighlight">\(\alpha(1)=2, \quad \alpha(2)=1, \quad \alpha(3)=3.\)</span>$</p>
+<span class="math notranslate nohighlight">\(\alpha(1)=2, \quad \alpha(2)=1, \quad \alpha(3)=3.\)</span></p>
 <p>In SageMath we can use the <code class="docutils literal notranslate"><span class="pre">Permutation()</span></code> command to construct a permutation.  Here we define the permutation by the list of images <span class="math notranslate nohighlight">\([\alpha(1), \alpha(2), \ldots]\)</span>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>a=Permutation([2,1,3]); a   # permutation which maps 1-&gt;2, 2-&gt;1, 3-&gt;3
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2, 1, 3]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>a(1)
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>a(2)
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
-</pre></div>
-</div>
-</div>
-</div>
 <p>Here is an example of how to use matrices in SageMath to display a permutation in array form.  We can use the <code class="docutils literal notranslate"><span class="pre">matrix()</span></code> command, where the syntax is the following. <br />
 <code class="docutils literal notranslate"><span class="pre">matrix(</span> <span class="pre">[</span> <span class="pre">&lt;list</span> <span class="pre">for</span> <span class="pre">row</span> <span class="pre">1&gt;</span> <span class="pre">,</span> <span class="pre">&lt;list</span> <span class="pre">for</span> <span class="pre">row</span> <span class="pre">2&gt;</span> <span class="pre">]</span> <span class="pre">)</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>a=Permutation([2,1,3])
-matrix([[1,2,3],[a(i) for i in [1,2,3]]])
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="n">Permutation</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">]);</span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">a</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="n">a</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>   <span class="c1"># permutation which maps 1-&gt;2, 2-&gt;1, 3-&gt;3</span>
+<span class="n">s</span><span class="p">(</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="n">a</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]]]))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 2 3]
-[2 1 3]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2, 1, 3] 2 1
 </pre></div>
 </div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left(\begin{array}{rrr}
+1 &amp; 2 &amp; 3 \\
+2 &amp; 1 &amp; 3
+\end{array}\right) \qquad   \end{split}\]</div>
 </div>
 </div>
 </section>
@@ -610,13 +444,13 @@ matrix([[1,2,3],[a(i) for i in [1,2,3]]])
 <section id="section-3-3-composing-permutations">
 <h2>Section 3.3 Composing Permutations<a class="headerlink" href="#section-3-3-composing-permutations" title="Link to this heading">#</a></h2>
 <p>Let <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> be two permutations of [1,…,n]. We wish to define a new permutation <span class="math notranslate nohighlight">\(\alpha\circ \beta\)</span>, called the <em>permutation composition</em>. In order to define a function we just need to specify how it maps the elements.  For <span class="math notranslate nohighlight">\(k\in [n]\)</span> we’ll define <span class="math notranslate nohighlight">\((\alpha\circ \beta)(k)\)</span> to be the result of first applying <span class="math notranslate nohighlight">\(\alpha\)</span>, then applying <span class="math notranslate nohighlight">\(\beta\)</span> to the result.  In other words,</p>
-<div class="math notranslate nohighlight">
-\[(\alpha \circ \beta) (k) = \beta(\alpha(k)), \text{ for $k \in [n]$.}\]</div>
+<p><span class="math notranslate nohighlight">\((\alpha \circ \beta) (k) = \beta(\alpha(k)), \text{ for k in [n].}\)</span></p>
 <p>(Warning: Notice that the composition is from left-to-right, which is opposite to the way functions were combined in calculus.)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>a=Permutation([5,3,1,4,2]);  print &quot;a =&quot;, a
-b=Permutation([5,3,2,1,4]); print &quot;b =&quot;, b
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="n">Permutation</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">]);</span>  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a =&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>       <span class="c1"># Permutation a</span>
+<span class="n">b</span><span class="o">=</span><span class="n">Permutation</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">]);</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;b =&quot;</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>        <span class="c1"># Permutation b</span>
+<span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="p">,</span><span class="n">b</span><span class="o">*</span><span class="n">a</span>                                            <span class="c1"># Permutations are generally noncommutative</span>
 </pre></div>
 </div>
 </div>
@@ -625,29 +459,7 @@ b=Permutation([5,3,2,1,4]); print &quot;b =&quot;, b
 b = [5, 3, 2, 1, 4]
 </pre></div>
 </div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>a*b
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4, 2, 5, 1, 3]
-</pre></div>
-</div>
-</div>
-</div>
-<p>Permutation composition is not commutative in general.  That is, we typically have <span class="math notranslate nohighlight">\(\alpha\beta \ne\beta\alpha\)</span>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>b*a
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2, 1, 3, 5, 4]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>([4, 2, 5, 1, 3], [2, 1, 3, 5, 4])
 </pre></div>
 </div>
 </div>
@@ -658,26 +470,14 @@ b = [5, 3, 2, 1, 4]
 <p>SageMath has a built in <code class="docutils literal notranslate"><span class="pre">inverse</span></code> command.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>a=Permutation([3,1,2,5,4])
-a.inverse()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="n">Permutation</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+<span class="n">b</span><span class="o">=</span><span class="n">Permutation</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">a</span><span class="o">.</span><span class="n">inverse</span><span class="p">(),</span><span class="n">b</span><span class="o">.</span><span class="n">inverse</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2, 3, 1, 5, 4]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>b=Permutation([3,4,1,2])
-b.inverse()
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3, 4, 1, 2]
 </pre></div>
 </div>
 </div>

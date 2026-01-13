@@ -393,92 +393,21 @@ Course notes booklet: <a class="reference external" href="http://www.sfu.ca/~jtm
 <p>Python commands // and % are used to compute quotients and remainders respectively.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>29//8
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>29%8
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">29</span><span class="o">//</span><span class="mi">8</span><span class="p">,</span><span class="mi">29</span><span class="o">%</span><span class="k">8</span>.         # Python commands // and % are used to compute quotients and remainders respectively.
+<span class="n">gcd</span><span class="p">(</span><span class="mi">343</span><span class="p">,</span><span class="mi">273</span><span class="p">),</span>             <span class="c1"># Greatest common divisor</span>
+<span class="n">xgcd</span><span class="p">(</span><span class="mi">343</span><span class="p">,</span><span class="mi">273</span><span class="p">))</span>            <span class="c1"># Extended euclidean algorithm(xgcd)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p><strong>Greatest Common Divisor</strong> (gcd)</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>gcd(343,273)
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
-</pre></div>
-</div>
-</div>
-</div>
-<p>The extended euclidean algorithm is used to write the gcd of two numbers as a linear combination of the two numbers.  <code class="docutils literal notranslate"><span class="pre">xgcd</span></code> is the command for the extended euclidean algorithm.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>xgcd(343,273)
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(7, 4, -5)
-</pre></div>
-</div>
-</div>
-</div>
-<p>This means <span class="math notranslate nohighlight">\(7 = 4\cdot343+(-5)\cdot 273\)</span>.</p>
 </section>
 <section id="b-2-prime-numbers">
 <h2>B.2 Prime Numbers<a class="headerlink" href="#b-2-prime-numbers" title="Link to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">is_prime</span></code> is the command to check if a number is prime, or not.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>is_prime(3)
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>is_prime(6)
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
-</pre></div>
-</div>
-</div>
-</div>
-<p>Every interger can be factored into a product of primes.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>factor(4590872)
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2^3 * 11 * 13 * 4013
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">is_prime</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="n">is_prime</span><span class="p">(</span><span class="mi">6</span><span class="p">),</span>            <span class="c1"># Prime test</span>
+<span class="n">factor</span><span class="p">(</span><span class="mi">4590872</span><span class="p">))</span>                          <span class="c1"># Prime factorisation</span>
 </pre></div>
 </div>
 </div>
@@ -490,100 +419,9 @@ Course notes booklet: <a class="reference external" href="http://www.sfu.ca/~jtm
 $<span class="math notranslate nohighlight">\(\phi(n)=|\{m\in \mathbb{Z} \mid 1\le m \le n, \gcd(m,n)=1 \}|.\)</span>$</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>euler_phi(96)
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>32
-</pre></div>
-</div>
-</div>
-</div>
-<p>To find the 32 numbers relatively prime to 96 we can do the following.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>[n for n in range(1,97) if gcd(n,96)==1]
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1,
- 5,
- 7,
- 11,
- 13,
- 17,
- 19,
- 23,
- 25,
- 29,
- 31,
- 35,
- 37,
- 41,
- 43,
- 47,
- 49,
- 53,
- 55,
- 59,
- 61,
- 65,
- 67,
- 71,
- 73,
- 77,
- 79,
- 83,
- 85,
- 89,
- 91,
- 95]
-</pre></div>
-</div>
-</div>
-</div>
-<p>Or we could use a fliter with a lambda function.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>filter(lambda x: gcd(x,96)==1,range(1,97))
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1,
- 5,
- 7,
- 11,
- 13,
- 17,
- 19,
- 23,
- 25,
- 29,
- 31,
- 35,
- 37,
- 41,
- 43,
- 47,
- 49,
- 53,
- 55,
- 59,
- 61,
- 65,
- 67,
- 71,
- 73,
- 77,
- 79,
- 83,
- 85,
- 89,
- 91,
- 95]
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">euler_phi</span><span class="p">(</span><span class="mi">96</span><span class="p">)</span>                                      <span class="c1"># Euler phi function</span>
+<span class="p">[</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">97</span><span class="p">)</span> <span class="k">if</span> <span class="n">gcd</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="mi">96</span><span class="p">)</span><span class="o">==</span><span class="mi">1</span><span class="p">]</span>           <span class="c1"># List of coprime numbers with 96</span>
+<span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">gcd</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">96</span><span class="p">)</span><span class="o">==</span><span class="mi">1</span><span class="p">,</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">97</span><span class="p">))</span>         <span class="c1"># Another method</span>
 </pre></div>
 </div>
 </div>

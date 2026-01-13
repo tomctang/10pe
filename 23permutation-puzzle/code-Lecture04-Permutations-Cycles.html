@@ -397,52 +397,19 @@ Course notes booklet: <a class="reference external" href="http://www.sfu.ca/~jtm
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>S5=SymmetricGroup(5)   # symmetric group on 5 objects, and names it S5
-a=S5(&quot;(2,3)(1,4)&quot;)     # constructs the permutation (2,3)(1,4) in S5
-b=S5(&quot;&quot;)               # constructs the identity permutation in S5
-c=S5(&quot;(2,5,3)&quot;)        # constructs the 3-cycle (2,5,3) in S5
-print a, b, c,
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">S5</span><span class="o">=</span><span class="n">SymmetricGroup</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>   <span class="c1"># symmetric group on 5 objects, and names it S5</span>
+<span class="n">a</span><span class="o">=</span><span class="n">S5</span><span class="p">(</span><span class="s2">&quot;(2,3)(1,4)&quot;</span><span class="p">)</span>     <span class="c1"># constructs the permutation (2,3)(1,4) in S5</span>
+<span class="n">b</span><span class="o">=</span><span class="n">S5</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>               <span class="c1"># constructs the identity permutation in S5</span>
+<span class="n">c</span><span class="o">=</span><span class="n">S5</span><span class="p">(</span><span class="s2">&quot;(2,5,3)&quot;</span><span class="p">)</span>        <span class="c1"># constructs the 3-cycle (2,5,3) in S5</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+<span class="n">a</span><span class="o">*</span><span class="n">c</span>                    <span class="c1"># compose permutations by using multiplication sign</span>
+<span class="n">c</span><span class="o">.</span><span class="n">inverse</span><span class="p">()</span>            <span class="c1"># computes inverse</span>
+<span class="n">c</span><span class="o">.</span><span class="n">order</span><span class="p">()</span>              <span class="c1"># computes order</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1,4)(2,3) () (2,5,3)
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>a*c             # compose permutations by using multiplication sign
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1,4)(3,5)
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>c.inverse()     # computes inverse
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2,3,5)
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>c.order()       # computes order
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
 </pre></div>
 </div>
 </div>
