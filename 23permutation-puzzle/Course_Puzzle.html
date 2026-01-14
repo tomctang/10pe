@@ -391,6 +391,16 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="permutation-puzzles">
 <h1>Permutation Puzzles<a class="headerlink" href="#permutation-puzzles" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sg</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">SymmetricGroup</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">perm</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">Permutation</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 <section id="lecture-0-course-intro">
 <h2>Lecture 0 - Course Intro<a class="headerlink" href="#lecture-0-course-intro" title="Link to this heading">#</a></h2>
 <ul class="simple">
@@ -775,7 +785,7 @@ True False {2, 3, 5, 7} 168
 </section>
 <section id="lectures-4-5-permutations">
 <h2>Lectures 4&amp;5 - Permutations<a class="headerlink" href="#lectures-4-5-permutations" title="Link to this heading">#</a></h2>
-<p><big><big><big>Note: All permutations listed below may be overrided by following permutations of the same name.</p>
+<p><big><big>Note: All permutations listed below may be overrided by following permutations of the same name.</big></big></p>
 <ul class="simple">
 <li><p>Permutations: A permutation of a list of objects is a rearrangement of those objects.</p></li>
 <li><p><span class="math notranslate nohighlight">\(123,132,213,231,312,321\)</span> are all permutations of <span class="math notranslate nohighlight">\(\{1,2,3\}\)</span>.</p></li>
@@ -1217,14 +1227,6 @@ b = [5, 3, 2, 1, 4]
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sg</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">SymmetricGroup</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">S5</span><span class="o">=</span><span class="n">SymmetricGroup</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>   <span class="c1"># symmetric group on 5 objects, and names it S5</span>
 <span class="n">a</span><span class="o">=</span><span class="n">S5</span><span class="p">(</span><span class="s2">&quot;(2,3)(1,4)&quot;</span><span class="p">)</span>     <span class="c1"># constructs the permutation (2,3)(1,4) in S5</span>
 <span class="n">b</span><span class="o">=</span><span class="n">S5</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>               <span class="c1"># constructs the identity permutation in S5</span>
@@ -1324,6 +1326,162 @@ b = [5, 3, 2, 1, 4]
 <li><p>But if <span class="math notranslate nohighlight">\(0\leq r&lt;k\)</span>, <span class="math notranslate nohighlight">\(r=0\)</span> is the only option that kills <span class="math notranslate nohighlight">\(\alpha\)</span>.</p></li>
 <li><p>Therefore <span class="math notranslate nohighlight">\(m=qk+r=qk\)</span> which means it is a multiple of <span class="math notranslate nohighlight">\(k\)</span>.</p></li>
 </ul>
+<p>Puzzles to permutations</p>
+<ul class="simple">
+<li><p>Swap Puzzle: 5,4,1,2,3(in 1,2,3,4,5,boxes respectively)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha=\begin{pmatrix}1&amp;3&amp;5\end{pmatrix}\begin{pmatrix}2&amp;4\end{pmatrix}\)</span></p></li>
+<li><p>1 goes to 3 instead of 5 because the number 1 went to box 3 not box 1 has number 5.</p></li>
+<li><p>7,4,6,1,3,2,5 <span class="math notranslate nohighlight">\(\rightarrow\alpha=\begin{pmatrix}1&amp;4&amp;2&amp;6&amp;3&amp;5&amp;7\end{pmatrix}\)</span></p></li>
+<li><p>15 Puzzle(16 corresponds to empty square and is read in rows): 6,9,10,13,12,4,5,3,7,8,1,14,11,16,15,2 <span class="math notranslate nohighlight">\(\rightarrow\begin{pmatrix}1&amp;11&amp;13&amp;4&amp;6\end{pmatrix}\begin{pmatrix}2&amp;16&amp;14&amp;12&amp;5&amp;7&amp;9\end{pmatrix}\begin{pmatrix}3&amp;8&amp;10\end{pmatrix}\)</span></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alpha</span><span class="o">=</span><span class="n">Permutation</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>          <span class="c1"># Construct permutation</span>
+<span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="o">.</span><span class="n">inverse</span><span class="p">()</span>                   <span class="c1"># Because we want to know where the tile has gone instead</span>
+<span class="n">sg</span><span class="p">(</span><span class="mi">5</span><span class="p">)(</span><span class="n">alpha</span><span class="p">)</span>                            <span class="c1"># Convert into cycle form</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1,3,5)(2,4)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alpha</span><span class="o">=</span><span class="n">Permutation</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+<span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="o">.</span><span class="n">inverse</span><span class="p">()</span>
+<span class="n">sg</span><span class="p">(</span><span class="mi">7</span><span class="p">)(</span><span class="n">alpha</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1,4,2,6,3,5,7)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alpha</span><span class="o">=</span><span class="n">Permutation</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="o">.</span><span class="n">inverse</span><span class="p">()</span>
+<span class="n">sg</span><span class="p">(</span><span class="mi">16</span><span class="p">)(</span><span class="n">alpha</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1,11,13,4,6)(2,16,14,12,5,7,9)(3,8,10)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Below, we convert the permutation <span class="math notranslate nohighlight">\(\alpha=\begin{pmatrix}1&amp;5&amp;3&amp;2\end{pmatrix}\begin{pmatrix}4&amp;8\end{pmatrix}\)</span> into the swap puzzle position for length 8.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alpha</span><span class="o">=</span><span class="n">sg</span><span class="p">(</span><span class="mi">8</span><span class="p">)(</span><span class="s1">&#39;(1,5,3,2)(4,8)&#39;</span><span class="p">)</span>       <span class="c1"># Construct in cycle form</span>
+<span class="n">alpha</span><span class="o">=</span><span class="n">Permutation</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span>            <span class="c1"># Convert into array form</span>
+<span class="n">alpha</span><span class="o">.</span><span class="n">inverse</span><span class="p">()</span>                     <span class="c1"># Because the permutation says where the tiles went</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2, 3, 5, 8, 1, 6, 7, 4]
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the next two cells, we find what permutation takes us from the initial position to the end position.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ini</span><span class="o">=</span><span class="n">Permutation</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">end</span><span class="o">=</span><span class="n">Permutation</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">sg</span><span class="p">(</span><span class="mi">5</span><span class="p">)(</span><span class="n">end</span><span class="o">*</span><span class="n">ini</span><span class="o">.</span><span class="n">inverse</span><span class="p">())</span><span class="o">.</span><span class="n">inverse</span><span class="p">()</span>          <span class="c1"># Second inverse really not needed because it does nothing</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3,5)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ini</span><span class="o">=</span><span class="n">Permutation</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+<span class="n">end</span><span class="o">=</span><span class="n">Permutation</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">sg</span><span class="p">(</span><span class="mi">6</span><span class="p">)(</span><span class="n">end</span><span class="o">*</span><span class="n">ini</span><span class="o">.</span><span class="n">inverse</span><span class="p">())</span><span class="o">.</span><span class="n">inverse</span><span class="p">()</span>          <span class="c1"># Inverse because we care which square it went to</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1,5)(3,4,6)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we find the end position instead.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ini</span><span class="o">=</span><span class="n">Permutation</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">alpha</span><span class="o">=</span><span class="n">sg</span><span class="p">(</span><span class="mi">5</span><span class="p">)(</span><span class="s1">&#39;(1,4,5)&#39;</span><span class="p">)</span>
+<span class="n">Permutation</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span><span class="o">.</span><span class="n">inverse</span><span class="p">()</span><span class="o">*</span><span class="n">ini</span>            <span class="c1"># To not apply twice?</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2, 5, 1, 4, 3]
+</pre></div>
+</div>
+</div>
+</div>
+<p>We find the moves required to solve a random swap puzzle arrangement.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ini</span><span class="o">=</span><span class="n">perm</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sg</span><span class="p">(</span><span class="mi">8</span><span class="p">)(</span><span class="n">ini</span><span class="p">)</span><span class="o">.</span><span class="n">inverse</span><span class="p">())</span>                                                     <span class="c1"># Cycle form of initial position</span>
+<span class="n">beta1</span><span class="o">=</span><span class="n">sg</span><span class="p">(</span><span class="mi">8</span><span class="p">)(</span><span class="s1">&#39;(2,7)&#39;</span><span class="p">)</span>
+<span class="n">beta2</span><span class="o">=</span><span class="n">sg</span><span class="p">(</span><span class="mi">8</span><span class="p">)(</span><span class="s1">&#39;(3,4)&#39;</span><span class="p">)</span>
+<span class="n">beta3</span><span class="o">=</span><span class="n">sg</span><span class="p">(</span><span class="mi">8</span><span class="p">)(</span><span class="s1">&#39;(4,5)&#39;</span><span class="p">)</span>
+<span class="n">beta4</span><span class="o">=</span><span class="n">sg</span><span class="p">(</span><span class="mi">8</span><span class="p">)(</span><span class="s1">&#39;(5,8)&#39;</span><span class="p">)</span>
+<span class="n">beta5</span><span class="o">=</span><span class="n">sg</span><span class="p">(</span><span class="mi">8</span><span class="p">)(</span><span class="s1">&#39;(6,7)&#39;</span><span class="p">)</span>
+<span class="n">beta6</span><span class="o">=</span><span class="n">sg</span><span class="p">(</span><span class="mi">8</span><span class="p">)(</span><span class="s1">&#39;(7,8)&#39;</span><span class="p">)</span>
+<span class="n">end</span><span class="o">=</span><span class="n">perm</span><span class="p">(</span><span class="n">beta6</span><span class="p">)</span><span class="o">*</span><span class="n">perm</span><span class="p">(</span><span class="n">beta5</span><span class="p">)</span><span class="o">*</span><span class="n">perm</span><span class="p">(</span><span class="n">beta4</span><span class="p">)</span><span class="o">*</span><span class="n">perm</span><span class="p">(</span><span class="n">beta3</span><span class="p">)</span><span class="o">*</span><span class="n">perm</span><span class="p">(</span><span class="n">beta2</span><span class="p">)</span><span class="o">*</span><span class="n">perm</span><span class="p">(</span><span class="n">beta1</span><span class="p">)</span><span class="o">*</span><span class="n">ini</span> <span class="c1"># Initial and solved state shows that all of the permutations multiplied make the identity</span>
+<span class="n">ini</span><span class="p">,</span><span class="n">end</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2,7,3,4,5,8,6)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>([1, 6, 7, 3, 4, 8, 2, 5], [1, 2, 3, 4, 5, 6, 7, 8])
+</pre></div>
+</div>
+</div>
+</div>
+<p>We find that <span class="math notranslate nohighlight">\(\alpha\beta_1\beta_2\cdots\beta_k=\epsilon\)</span> where <span class="math notranslate nohighlight">\(\alpha\)</span> is the initial configuration, <span class="math notranslate nohighlight">\(\beta_n\)</span> are the moves, and <span class="math notranslate nohighlight">\(\epsilon\)</span> is the solved configuration.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ini</span><span class="o">=</span><span class="n">perm</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sg</span><span class="p">(</span><span class="mi">8</span><span class="p">)(</span><span class="n">ini</span><span class="p">)</span><span class="o">.</span><span class="n">inverse</span><span class="p">())</span>
+<span class="n">beta1</span><span class="o">=</span><span class="n">sg</span><span class="p">(</span><span class="mi">8</span><span class="p">)(</span><span class="s1">&#39;(1,8)&#39;</span><span class="p">)</span>
+<span class="n">beta2</span><span class="o">=</span><span class="n">sg</span><span class="p">(</span><span class="mi">8</span><span class="p">)(</span><span class="s1">&#39;(6,8)&#39;</span><span class="p">)</span>
+<span class="n">beta3</span><span class="o">=</span><span class="n">sg</span><span class="p">(</span><span class="mi">8</span><span class="p">)(</span><span class="s1">&#39;(4,5)&#39;</span><span class="p">)</span>
+<span class="n">end</span><span class="o">=</span><span class="n">perm</span><span class="p">(</span><span class="n">beta3</span><span class="p">)</span><span class="o">*</span><span class="n">perm</span><span class="p">(</span><span class="n">beta2</span><span class="p">)</span><span class="o">*</span><span class="n">perm</span><span class="p">(</span><span class="n">beta1</span><span class="p">)</span><span class="o">*</span><span class="n">ini</span>
+<span class="n">ini</span><span class="p">,</span><span class="n">end</span><span class="p">,</span><span class="n">end</span><span class="o">==</span><span class="n">perm</span><span class="p">(</span><span class="n">sg</span><span class="p">(</span><span class="mi">8</span><span class="p">)(</span><span class="s1">&#39;(2,3,4)(6,7)&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">inverse</span><span class="p">()</span>   <span class="c1"># Here we instead make the final permutation (2,3,4)(6,7)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1,8,6,7)(2,3,5,4)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>([7, 4, 2, 5, 3, 8, 6, 1], [1, 4, 2, 3, 5, 7, 6, 8], True)
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
