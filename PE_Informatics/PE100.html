@@ -30,7 +30,7 @@
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
@@ -51,7 +51,7 @@
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js?v=1ae7504c"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -183,6 +183,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../Course_MCM.html">Math Computational Methods</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Course_Lean.html">Lean</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../23permutation-puzzle/Course_Puzzle.html">Permutation Puzzles</a></li>
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">CS &amp; Physics</span></p>
 <ul class="current nav bd-sidenav">
@@ -782,11 +783,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>837799
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="pe-15">
@@ -1017,11 +1013,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1000
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1051,11 +1042,6 @@ document.write(`
     <span class="k">return</span> <span class="p">((</span><span class="n">s</span><span class="o">*</span><span class="p">(</span><span class="n">l</span><span class="o">^</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="n">s</span><span class="o">.</span><span class="n">inverse</span><span class="p">())</span><span class="o">*</span><span class="n">v</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
 <span class="n">eigenFib</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="n">num</span><span class="o">=</span><span class="n">matrixFib</span><span class="p">(</span><span class="mi">10</span><span class="o">^</span><span class="mi">4</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.618033988749895?
 </pre></div>
 </div>
 </div>
@@ -1227,6 +1213,38 @@ document.write(`
 </section>
 <section id="pe-31">
 <h2>PE 31<a class="headerlink" href="#pe-31" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># GF approach </span>
+<span class="k">def</span><span class="w"> </span><span class="nf">euler31_series</span><span class="p">():</span>
+    <span class="n">R</span><span class="o">.&lt;</span><span class="n">x</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">PowerSeriesRing</span><span class="p">(</span><span class="n">ZZ</span><span class="p">,</span> <span class="n">default_prec</span><span class="o">=</span><span class="mi">201</span><span class="p">)</span>
+    <span class="n">p1</span>  <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="p">)</span>           <span class="c1"># 1p</span>
+    <span class="n">p2</span>  <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span>         <span class="c1"># 2p</span>
+    <span class="n">p5</span>  <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="o">^</span><span class="mi">5</span><span class="p">)</span>         <span class="c1"># 5p</span>
+    <span class="n">p10</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="o">^</span><span class="mi">10</span><span class="p">)</span>        <span class="c1"># 10p</span>
+    <span class="n">p20</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="o">^</span><span class="mi">20</span><span class="p">)</span>        <span class="c1"># 20p</span>
+    <span class="n">p50</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="o">^</span><span class="mi">50</span><span class="p">)</span>        <span class="c1"># 50p</span>
+    <span class="n">p100</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="o">^</span><span class="mi">100</span><span class="p">)</span>      <span class="c1"># £1</span>
+    <span class="n">p200</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">x</span><span class="o">^</span><span class="mi">200</span>        <span class="c1"># £2 (only 0 or 1 coin)</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">p1</span> <span class="o">*</span> <span class="n">p2</span> <span class="o">*</span> <span class="n">p5</span> <span class="o">*</span> <span class="n">p10</span> <span class="o">*</span> <span class="n">p20</span> <span class="o">*</span> <span class="n">p50</span> <span class="o">*</span> <span class="n">p100</span> <span class="o">*</span> <span class="n">p200</span>
+    <span class="k">return</span> <span class="n">f</span><span class="p">[</span><span class="mi">200</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">euler31_series</span><span class="p">())</span>         
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">R</span><span class="o">.&lt;</span><span class="n">x</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">PowerSeriesRing</span><span class="p">(</span><span class="n">ZZ</span><span class="p">,</span> <span class="mi">201</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="n">prod</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="o">^</span><span class="n">d</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">100</span><span class="p">])</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">x</span><span class="o">^</span><span class="mi">200</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 1 +  x + 2 x^{2} + 2 x^{3} + 3 x^{4} + 4 x^{5} + 5 x^{6} + 6 x^{7} + 7 x^{8} + 8 x^{9} + 11 x^{10} + 12 x^{11} + 15 x^{12} + 16 x^{13} + 19 x^{14} + 22 x^{15} + 25 x^{16} + 28 x^{17} + 31 x^{18} + 34 x^{19} + 41 x^{20} + 44 x^{21} + 51 x^{22} + 54 x^{23} + 61 x^{24} + 68 x^{25} + 75 x^{26} + 82 x^{27} + 89 x^{28} + 96 x^{29} + 109 x^{30} + 116 x^{31} + 129 x^{32} + 136 x^{33} + 149 x^{34} + 162 x^{35} + 175 x^{36} + 188 x^{37} + 201 x^{38} + 214 x^{39} + 236 x^{40} + 249 x^{41} + 271 x^{42} + 284 x^{43} + 306 x^{44} + 328 x^{45} + 350 x^{46} + 372 x^{47} + 394 x^{48} + 416 x^{49} + 451 x^{50} + 473 x^{51} + 508 x^{52} + 530 x^{53} + 565 x^{54} + 600 x^{55} + 635 x^{56} + 670 x^{57} + 705 x^{58} + 740 x^{59} + 793 x^{60} + 828 x^{61} + 881 x^{62} + 916 x^{63} + 969 x^{64} + 1022 x^{65} + 1075 x^{66} + 1128 x^{67} + 1181 x^{68} + 1234 x^{69} + 1311 x^{70} + 1364 x^{71} + 1441 x^{72} + 1494 x^{73} + 1571 x^{74} + 1648 x^{75} + 1725 x^{76} + 1802 x^{77} + 1879 x^{78} + 1956 x^{79} + 2064 x^{80} + 2141 x^{81} + 2249 x^{82} + 2326 x^{83} + 2434 x^{84} + 2542 x^{85} + 2650 x^{86} + 2758 x^{87} + 2866 x^{88} + 2974 x^{89} + 3121 x^{90} + 3229 x^{91} + 3376 x^{92} + 3484 x^{93} + 3631 x^{94} + 3778 x^{95} + 3925 x^{96} + 4072 x^{97} + 4219 x^{98} + 4366 x^{99} + 4563 x^{100} + 4710 x^{101} + 4907 x^{102} + 5054 x^{103} + 5251 x^{104} + 5448 x^{105} + 5645 x^{106} + 5842 x^{107} + 6039 x^{108} + 6236 x^{109} + 6495 x^{110} + 6692 x^{111} + 6951 x^{112} + 7148 x^{113} + 7407 x^{114} + 7666 x^{115} + 7925 x^{116} + 8184 x^{117} + 8443 x^{118} + 8702 x^{119} + 9038 x^{120} + 9297 x^{121} + 9633 x^{122} + 9892 x^{123} + 10228 x^{124} + 10564 x^{125} + 10900 x^{126} + 11236 x^{127} + 11572 x^{128} + 11908 x^{129} + 12337 x^{130} + 12673 x^{131} + 13102 x^{132} + 13438 x^{133} + 13867 x^{134} + 14296 x^{135} + 14725 x^{136} + 15154 x^{137} + 15583 x^{138} + 16012 x^{139} + 16553 x^{140} + 16982 x^{141} + 17523 x^{142} + 17952 x^{143} + 18493 x^{144} + 19034 x^{145} + 19575 x^{146} + 20116 x^{147} + 20657 x^{148} + 21198 x^{149} + 21873 x^{150} + 22414 x^{151} + 23089 x^{152} + 23630 x^{153} + 24305 x^{154} + 24980 x^{155} + 25655 x^{156} + 26330 x^{157} + 27005 x^{158} + 27680 x^{159} + 28514 x^{160} + 29189 x^{161} + 30023 x^{162} + 30698 x^{163} + 31532 x^{164} + 32366 x^{165} + 33200 x^{166} + 34034 x^{167} + 34868 x^{168} + 35702 x^{169} + 36723 x^{170} + 37557 x^{171} + 38578 x^{172} + 39412 x^{173} + 40433 x^{174} + 41454 x^{175} + 42475 x^{176} + 43496 x^{177} + 44517 x^{178} + 45538 x^{179} + 46777 x^{180} + 47798 x^{181} + 49037 x^{182} + 50058 x^{183} + 51297 x^{184} + 52536 x^{185} + 53775 x^{186} + 55014 x^{187} + 56253 x^{188} + 57492 x^{189} + 58983 x^{190} + 60222 x^{191} + 61713 x^{192} + 62952 x^{193} + 64443 x^{194} + 65934 x^{195} + 67425 x^{196} + 68916 x^{197} + 70407 x^{198} + 71898 x^{199} + 73682 x^{200} + O(x^{201}) \qquad   \]</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 31 Coin Sums: use graph traversal (DFS) with memoization</span>
@@ -3705,11 +3723,6 @@ $<span class="math notranslate nohighlight">\(f(p)=\# \{(m,n,k)\in\N^3:m&gt;n,\q
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1217
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="pe-91">
@@ -4260,11 +4273,6 @@ $<span class="math notranslate nohighlight">\(f(p)=\# \{(m,n,k)\in\N^3:m&gt;n,\q
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 0, 4, 5, 6, 7]
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4285,11 +4293,6 @@ $<span class="math notranslate nohighlight">\(f(p)=\# \{(m,n,k)\in\N^3:m&gt;n,\q
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2, 1, 0, 3]
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4307,94 +4310,6 @@ $<span class="math notranslate nohighlight">\(f(p)=\# \{(m,n,k)\in\N^3:m&gt;n,\q
                 <span class="nb">print</span><span class="p">(</span><span class="n">new_pairing</span><span class="p">[</span><span class="n">word</span><span class="p">])</span>
                 <span class="nb">print</span><span class="p">(</span><span class="n">new_sn</span><span class="p">)</span>
                 <span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">sn</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CREATION
-REACTION
-5184729
-80514729
-BOARD
-BROAD
-18769
-17689
-SHUT
-THUS
-1764
-4761
-SHUT
-THUS
-4761
-1764
-RATE
-TEAR
-9604
-4096
-RATE
-TEAR
-2401
-1024
-POST
-STOP
-9604
-4096
-POST
-STOP
-2401
-1024
-NOTE
-TONE
-1296
-9216
-NOTE
-TONE
-9216
-1296
-MEAN
-NAME
-4096
-9604
-MEAN
-NAME
-1024
-2401
-MALE
-MEAL
-1936
-1369
-HATE
-HEAT
-1936
-1369
-FILE
-LIFE
-1296
-9216
-FILE
-LIFE
-9216
-1296
-EAST
-SEAT
-1296
-2916
-DEAL
-LEAD
-1764
-4761
-DEAL
-LEAD
-4761
-1764
-CARE
-RACE
-1296
-9216
-CARE
-RACE
-9216
-1296
 </pre></div>
 </div>
 </div>
