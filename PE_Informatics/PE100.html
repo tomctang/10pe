@@ -369,6 +369,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-leonhard">Project Leonhard</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-1">PE 1</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-2">PE 2</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-3">PE 3</a></li>
@@ -489,7 +490,258 @@ document.write(`
 </div>
 </div>
 </div>
+<p>All of the problems are finished except 88. Some of these problems have an extension at <a class="reference external" href="https://projectleonhard.net">Project Leonhard</a>.</p>
 <p>PE 18i for <a class="reference external" href="https://www.youtube.com/watch?v=Ct2fyigNgPY&amp;amp;list=WL&amp;amp;index=1">Youtube - Galois Theory Explained Simply</a></p>
+<section id="project-leonhard">
+<h2>Project Leonhard<a class="headerlink" href="#project-leonhard" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 611</span>
+<span class="n">count</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">lst</span><span class="o">=</span><span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">500</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">i</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">i</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="n">j</span><span class="o">^</span><span class="mi">2</span><span class="o">&lt;</span><span class="mi">3</span><span class="o">*</span><span class="mi">2</span><span class="o">^</span><span class="mi">16</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">i</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="n">j</span><span class="o">^</span><span class="mi">2</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">:</span>
+                <span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="n">j</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">lst</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">i</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="n">j</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">memo</span><span class="o">=</span><span class="n">memo1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">memo1</span><span class="o">=</span><span class="p">{</span><span class="n">i</span><span class="p">:</span><span class="n">g</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">%</span><span class="k">20092010</span> for i in range(3*10^6,3*10^6+2026)}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 258</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">g</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+    <span class="k">if</span> <span class="mi">0</span><span class="o">&lt;=</span><span class="n">k</span><span class="o">&lt;=</span><span class="mi">1999</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">memo</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">memo</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+    <span class="n">ans</span><span class="o">=</span><span class="n">g</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">2000</span><span class="p">)</span><span class="o">+</span><span class="n">g</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">1999</span><span class="p">)</span>
+    <span class="n">memo</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">k</span><span class="p">:</span><span class="n">ans</span><span class="p">})</span>
+    <span class="k">return</span> <span class="n">ans</span>
+<span class="n">g</span><span class="p">(</span><span class="mi">10</span><span class="o">^</span><span class="mi">7</span><span class="p">)</span><span class="o">%</span><span class="k">20092010</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1000</span><span class="o">*</span><span class="mi">4</span><span class="o">^</span><span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># count primes</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">prime_range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1000</span><span class="o">*</span><span class="mi">4</span><span class="o">^</span><span class="n">i</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">memo</span><span class="o">=</span><span class="n">memo1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">memo1</span><span class="o">=</span><span class="p">{</span><span class="n">i</span><span class="p">:</span><span class="n">g</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">%</span><span class="k">20092010</span> for i in range(3*10^6,3*10^6+2026)}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 258</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">g</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+    <span class="k">if</span> <span class="mi">0</span><span class="o">&lt;=</span><span class="n">k</span><span class="o">&lt;=</span><span class="mi">1999</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">memo</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">memo</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+    <span class="n">ans</span><span class="o">=</span><span class="n">g</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">2000</span><span class="p">)</span><span class="o">+</span><span class="n">g</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">1999</span><span class="p">)</span>
+    <span class="n">memo</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">k</span><span class="p">:</span><span class="n">ans</span><span class="p">})</span>
+    <span class="k">return</span> <span class="n">ans</span>
+<span class="n">g</span><span class="p">(</span><span class="mi">10</span><span class="o">^</span><span class="mi">7</span><span class="p">)</span><span class="o">%</span><span class="k">20092010</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://oeis.org/A055401/b055401.txt&quot;</span><span class="p">)</span>   <span class="c1"># Send a GET request to the URL</span>
+<span class="n">content</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span>     <span class="c1"># Read the content of the response</span>
+<span class="n">lst</span><span class="o">=</span><span class="n">content</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">lst</span><span class="o">=</span><span class="n">lst</span><span class="p">[:</span><span class="mi">100</span><span class="p">]</span>
+<span class="n">lst</span><span class="o">=</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">lst1</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">1</span><span class="p">])</span> <span class="k">for</span> <span class="n">lst1</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">]</span>
+<span class="nb">sum</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">re_cube</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="n">count</span><span class="o">=</span><span class="mi">0</span>
+    <span class="k">while</span> <span class="n">num</span><span class="o">!=</span><span class="mi">0</span><span class="p">:</span>
+        <span class="n">num</span><span class="o">-=</span><span class="n">floor</span><span class="p">(</span><span class="n">num</span><span class="o">^</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">))</span><span class="o">^</span><span class="mi">3</span>
+        <span class="n">count</span><span class="o">+=</span><span class="mi">1</span>
+    <span class="k">return</span> <span class="n">count</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">s</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">([</span><span class="n">re_cube</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)])</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">s</span><span class="p">(</span><span class="mi">3</span><span class="o">^</span><span class="n">i</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">a</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">([</span><span class="n">lcm</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)])</span><span class="o">//</span><span class="n">n</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">s</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">([</span><span class="n">a</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)])</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">16</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">s</span><span class="p">(</span><span class="mi">2</span><span class="o">^</span><span class="n">i</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">semiprime</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">lst</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">factor</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+    <span class="k">return</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span><span class="o">==</span><span class="mi">1</span> <span class="ow">and</span> <span class="n">lst</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="mi">2</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span><span class="o">==</span><span class="mi">2</span> <span class="ow">and</span> <span class="n">lst</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span> <span class="ow">and</span> <span class="n">lst</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">21</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="nb">len</span><span class="p">([</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="o">*</span><span class="mi">2</span><span class="o">^</span><span class="n">i</span><span class="p">)</span> <span class="k">if</span> <span class="n">semiprime</span><span class="p">(</span><span class="n">i</span><span class="p">)]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">memo</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">a</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">memo</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">memo</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+    <span class="n">ans</span><span class="o">=</span><span class="n">a</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="nb">sum</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)))))</span>
+    <span class="n">memo</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">n</span><span class="p">:</span><span class="n">ans</span><span class="p">})</span>
+    <span class="k">return</span> <span class="n">ans</span>
+<span class="k">for</span> <span class="n">limit</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">20000</span><span class="p">,</span><span class="mi">40000</span><span class="p">,</span><span class="mi">80000</span><span class="p">,</span><span class="mi">160000</span><span class="p">,</span><span class="mi">320000</span><span class="p">,</span><span class="mi">640000</span><span class="p">,</span><span class="mi">1000000</span><span class="p">,</span><span class="mi">1280000</span><span class="p">]:</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">limit</span><span class="p">,</span><span class="mi">2900</span><span class="p">):</span>
+        <span class="n">a</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">limit</span><span class="p">,</span><span class="n">a</span><span class="p">(</span><span class="n">limit</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">m</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">count</span><span class="o">=</span><span class="mi">1</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">factorial</span><span class="p">(</span><span class="n">count</span><span class="p">)</span><span class="o">%</span><span class="k">n</span>==0:
+            <span class="k">return</span> <span class="n">count</span>
+        <span class="n">count</span><span class="o">+=</span><span class="mi">1</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">s</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">([</span><span class="n">m</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)])</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">13</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">s</span><span class="p">(</span><span class="mi">2</span><span class="o">^</span><span class="n">i</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">([</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">divisors</span><span class="p">(</span><span class="n">i</span><span class="p">))</span><span class="o">==</span><span class="mi">8</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">16</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">f</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="mi">2</span><span class="o">^</span><span class="n">i</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">st</span><span class="o">=</span><span class="nb">set</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1000</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1000</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">i</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">j</span><span class="o">^</span><span class="mi">3</span><span class="o">&lt;</span><span class="mi">900</span><span class="p">:</span>
+            <span class="n">st</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">i</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">j</span><span class="o">^</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">st</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">g</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">([</span><span class="n">gcd</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)])</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">g</span><span class="p">(</span><span class="mi">2</span><span class="o">^</span><span class="n">i</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">s</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">([</span><span class="nb">list</span><span class="p">(</span><span class="n">factor</span><span class="p">(</span><span class="n">i</span><span class="p">))[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)])</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">21</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">s</span><span class="p">(</span><span class="mi">2</span><span class="o">^</span><span class="n">i</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">square_root_smooth</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="n">factor</span><span class="p">(</span><span class="n">num</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">&lt;</span><span class="n">sqrt</span><span class="p">(</span><span class="n">num</span><span class="p">))</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">count_sq</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">([</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="n">num</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="n">square_root_smooth</span><span class="p">(</span><span class="n">i</span><span class="p">)])</span><span class="o">+</span><span class="mi">1</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">count_sq</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="mi">2</span><span class="o">^</span><span class="n">i</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="pe-1">
 <h2>PE 1<a class="headerlink" href="#pe-1" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
@@ -497,10 +749,10 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#1 Multiples of 3 or 5</span>
 <span class="n">sum_num</span><span class="o">=</span><span class="mi">0</span>
 <span class="n">list_num</span><span class="o">=</span><span class="p">[]</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">999</span><span class="o">//</span><span class="mi">3</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">999</span><span class="o">//</span><span class="mi">3</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
     <span class="n">m</span><span class="o">=</span><span class="n">i</span><span class="o">*</span><span class="mi">3</span>
     <span class="n">list_num</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">999</span><span class="o">//</span><span class="mi">5</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">999</span><span class="o">//</span><span class="mi">5</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
     <span class="n">m</span><span class="o">=</span><span class="n">i</span><span class="o">*</span><span class="mi">5</span>
     <span class="k">if</span> <span class="n">m</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">list_num</span><span class="p">:</span>
         <span class="n">list_num</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
@@ -509,6 +761,15 @@ document.write(`
 <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">list_num</span><span class="p">:</span>
     <span class="n">sum_num</span><span class="o">+=</span><span class="n">num</span>
 <span class="n">sum_num</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inp</span><span class="o">=</span><span class="mi">7</span><span class="o">^</span><span class="p">(</span><span class="mi">2</span><span class="o">^</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">()))</span>
+<span class="n">inp</span><span class="o">-=</span><span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">inp</span><span class="o">//</span><span class="mi">3</span><span class="o">*</span><span class="p">(</span><span class="n">inp</span><span class="o">//</span><span class="mi">3</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="o">+</span><span class="mi">5</span><span class="o">*</span><span class="n">inp</span><span class="o">//</span><span class="mi">5</span><span class="o">*</span><span class="p">(</span><span class="n">inp</span><span class="o">//</span><span class="mi">5</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="o">-</span><span class="mi">15</span><span class="o">*</span><span class="n">inp</span><span class="o">//</span><span class="mi">15</span><span class="o">*</span><span class="p">(</span><span class="n">inp</span><span class="o">//</span><span class="mi">15</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="p">)))))</span>
 </pre></div>
 </div>
 </div>
@@ -621,7 +882,14 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#7 10001st Prime</span>
-<span class="n">fd_prime</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">count</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">inp</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">10</span><span class="o">^</span><span class="mi">8</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">is_prime</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+        <span class="n">count</span><span class="o">+=</span><span class="mi">1</span>
+    <span class="k">if</span> <span class="n">count</span><span class="o">==</span><span class="mi">4</span><span class="o">^</span><span class="n">inp</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="k">break</span>
 </pre></div>
 </div>
 </div>
@@ -696,12 +964,21 @@ document.write(`
 <h2>PE 10<a class="headerlink" href="#pe-10" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#10 Summation of Primes</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># PL</span>
+<span class="n">inp</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
 <span class="n">sum_prime</span><span class="o">=</span><span class="mi">0</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2000000</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">prime</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1000</span><span class="o">*</span><span class="mi">2</span><span class="o">^</span><span class="n">inp</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">is_prime</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
         <span class="n">sum_prime</span><span class="o">+=</span><span class="n">i</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">sum_prime</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#10 Summation of Primes</span>
+<span class="nb">sum</span><span class="p">(</span><span class="n">prime_range</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mi">10</span><span class="o">^</span><span class="mi">6</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -771,13 +1048,55 @@ document.write(`
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/media/tom/wk/Desktop/c2_003_050/txt/c2_0004.min.txt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="p">(</span><span class="n">log</span><span class="p">(</span><span class="mi">10000</span><span class="o">*</span><span class="mi">2</span><span class="o">^</span><span class="mi">60</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">collatz</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">memo</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">memo</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+    <span class="k">elif</span> <span class="n">n</span><span class="o">%</span><span class="k">2</span>==0:
+        <span class="n">ans</span><span class="o">=</span><span class="n">collatz</span><span class="p">(</span><span class="n">n</span><span class="o">//</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span>
+        <span class="n">memo</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">n</span><span class="p">:</span><span class="n">ans</span><span class="p">})</span>
+        <span class="k">return</span> <span class="n">ans</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">ans</span><span class="o">=</span><span class="n">collatz</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span>
+        <span class="n">memo</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">n</span><span class="p">:</span><span class="n">ans</span><span class="p">})</span>
+        <span class="k">return</span> <span class="n">ans</span>
+<span class="n">n</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">max_len</span><span class="o">=</span><span class="mi">1</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">8000001</span><span class="p">):</span>
+    <span class="n">culen</span><span class="o">=</span><span class="n">collatz</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">culen</span><span class="o">&gt;=</span><span class="mi">597</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">culen</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">culen</span><span class="o">&gt;</span><span class="n">max_len</span><span class="p">:</span>
+        <span class="n">max_len</span><span class="o">=</span><span class="n">culen</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#14 Longest Collatz Sequence</span>
 <span class="n">n</span><span class="o">=</span><span class="mi">1</span>
 <span class="n">max_len</span><span class="o">=</span><span class="mi">1</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1000001</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">100001</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
     <span class="n">culen</span><span class="o">=</span><span class="n">collatz_length</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">culen</span><span class="o">==</span><span class="mi">525</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">culen</span><span class="o">&gt;=</span><span class="mi">525</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">culen</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">culen</span><span class="o">&gt;</span><span class="n">max_len</span><span class="p">:</span>
         <span class="n">max_len</span><span class="o">=</span><span class="n">culen</span>
 </pre></div>
@@ -893,16 +1212,50 @@ document.write(`
 <h2>PE 21<a class="headerlink" href="#pe-21" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">([</span><span class="mi">220</span><span class="p">,</span>
+ <span class="mi">284</span><span class="p">,</span>
+ <span class="mi">2620</span><span class="p">,</span>
+ <span class="mi">2924</span><span class="p">,</span>
+ <span class="mi">5020</span><span class="p">,</span>
+ <span class="mi">5564</span><span class="p">,</span>
+ <span class="mi">10744</span><span class="p">,</span>
+ <span class="mi">10856</span><span class="p">,</span>
+ <span class="mi">17296</span><span class="p">,</span>
+ <span class="mi">18416</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://oeis.org/A002025/b002025.txt&quot;</span><span class="p">)</span>
+<span class="n">content</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span>
+<span class="n">lst</span><span class="o">=</span><span class="n">content</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">lst</span><span class="o">=</span><span class="n">lst</span><span class="p">[:</span><span class="o">-</span><span class="mi">10</span><span class="p">]</span>
+<span class="n">lst</span><span class="o">=</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">lst1</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">1</span><span class="p">])</span> <span class="k">for</span> <span class="n">lst1</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">]</span>
+<span class="n">new_lst</span><span class="o">=</span><span class="nb">set</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">:</span>
+    <span class="n">new_lst</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">sigma</span><span class="p">(</span><span class="n">num</span><span class="p">)</span><span class="o">-</span><span class="n">num</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">38</span><span class="p">,</span><span class="mi">44</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;:&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="n">x</span><span class="o">&lt;</span><span class="mi">10000</span><span class="o">*</span><span class="mi">2</span><span class="o">^</span><span class="n">i</span><span class="p">,</span><span class="n">new_lst</span><span class="p">))))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 21 Amicable Numbers</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">ami</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">sigma</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">-</span><span class="n">n</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">amicable</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">n</span><span class="o">==</span><span class="n">ami</span><span class="p">(</span><span class="n">ami</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
-<span class="n">amic</span><span class="o">=</span><span class="p">[]</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">10000</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">n</span><span class="o">==</span><span class="n">ami</span><span class="p">(</span><span class="n">ami</span><span class="p">(</span><span class="n">n</span><span class="p">))</span> <span class="ow">and</span> <span class="n">n</span><span class="o">!=</span><span class="n">ami</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="n">count</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">20000</span><span class="p">):</span>
+    <span class="n">count</span><span class="o">+=</span><span class="n">i</span><span class="o">*</span><span class="n">amicable</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">amicable</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
-        <span class="n">amic</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-<span class="nb">sum</span><span class="p">(</span><span class="n">amic</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="n">count</span>
 </pre></div>
 </div>
 </div>
@@ -1066,6 +1419,23 @@ document.write(`
 
 <span class="n">SortBy</span><span class="p">[</span><span class="n">Range</span><span class="p">[</span><span class="mi">888</span><span class="p">,</span> <span class="mi">999</span><span class="p">],</span> <span class="n">cycleLength</span><span class="p">]</span>
 <span class="n">cycleLength</span><span class="p">[</span><span class="mi">983</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">max_cycle</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">64001</span><span class="p">):</span>
+    <span class="n">num</span><span class="o">=</span><span class="n">i</span>
+    <span class="k">while</span> <span class="n">num</span><span class="o">%</span><span class="k">2</span>==0: num//=2
+    <span class="k">while</span> <span class="n">num</span><span class="o">%</span><span class="k">5</span>==0: num//=5
+    <span class="k">if</span> <span class="n">num</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+        <span class="k">continue</span>
+    <span class="n">cycle</span><span class="o">=</span><span class="n">mod</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="n">num</span><span class="p">)</span><span class="o">.</span><span class="n">multiplicative_order</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">cycle</span><span class="o">&gt;</span><span class="n">max_cycle</span><span class="p">:</span>
+        <span class="n">max_cycle</span><span class="o">=</span><span class="n">cycle</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1235,14 +1605,10 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">R</span><span class="o">.&lt;</span><span class="n">x</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">PowerSeriesRing</span><span class="p">(</span><span class="n">ZZ</span><span class="p">,</span> <span class="mi">201</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">R</span><span class="o">.&lt;</span><span class="n">x</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">PowerSeriesRing</span><span class="p">(</span><span class="n">ZZ</span><span class="p">,</span> <span class="mi">401</span><span class="p">)</span>
 <span class="n">s</span><span class="p">(</span><span class="n">prod</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="o">^</span><span class="n">d</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">100</span><span class="p">])</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">x</span><span class="o">^</span><span class="mi">200</span><span class="p">))</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle 1 +  x + 2 x^{2} + 2 x^{3} + 3 x^{4} + 4 x^{5} + 5 x^{6} + 6 x^{7} + 7 x^{8} + 8 x^{9} + 11 x^{10} + 12 x^{11} + 15 x^{12} + 16 x^{13} + 19 x^{14} + 22 x^{15} + 25 x^{16} + 28 x^{17} + 31 x^{18} + 34 x^{19} + 41 x^{20} + 44 x^{21} + 51 x^{22} + 54 x^{23} + 61 x^{24} + 68 x^{25} + 75 x^{26} + 82 x^{27} + 89 x^{28} + 96 x^{29} + 109 x^{30} + 116 x^{31} + 129 x^{32} + 136 x^{33} + 149 x^{34} + 162 x^{35} + 175 x^{36} + 188 x^{37} + 201 x^{38} + 214 x^{39} + 236 x^{40} + 249 x^{41} + 271 x^{42} + 284 x^{43} + 306 x^{44} + 328 x^{45} + 350 x^{46} + 372 x^{47} + 394 x^{48} + 416 x^{49} + 451 x^{50} + 473 x^{51} + 508 x^{52} + 530 x^{53} + 565 x^{54} + 600 x^{55} + 635 x^{56} + 670 x^{57} + 705 x^{58} + 740 x^{59} + 793 x^{60} + 828 x^{61} + 881 x^{62} + 916 x^{63} + 969 x^{64} + 1022 x^{65} + 1075 x^{66} + 1128 x^{67} + 1181 x^{68} + 1234 x^{69} + 1311 x^{70} + 1364 x^{71} + 1441 x^{72} + 1494 x^{73} + 1571 x^{74} + 1648 x^{75} + 1725 x^{76} + 1802 x^{77} + 1879 x^{78} + 1956 x^{79} + 2064 x^{80} + 2141 x^{81} + 2249 x^{82} + 2326 x^{83} + 2434 x^{84} + 2542 x^{85} + 2650 x^{86} + 2758 x^{87} + 2866 x^{88} + 2974 x^{89} + 3121 x^{90} + 3229 x^{91} + 3376 x^{92} + 3484 x^{93} + 3631 x^{94} + 3778 x^{95} + 3925 x^{96} + 4072 x^{97} + 4219 x^{98} + 4366 x^{99} + 4563 x^{100} + 4710 x^{101} + 4907 x^{102} + 5054 x^{103} + 5251 x^{104} + 5448 x^{105} + 5645 x^{106} + 5842 x^{107} + 6039 x^{108} + 6236 x^{109} + 6495 x^{110} + 6692 x^{111} + 6951 x^{112} + 7148 x^{113} + 7407 x^{114} + 7666 x^{115} + 7925 x^{116} + 8184 x^{117} + 8443 x^{118} + 8702 x^{119} + 9038 x^{120} + 9297 x^{121} + 9633 x^{122} + 9892 x^{123} + 10228 x^{124} + 10564 x^{125} + 10900 x^{126} + 11236 x^{127} + 11572 x^{128} + 11908 x^{129} + 12337 x^{130} + 12673 x^{131} + 13102 x^{132} + 13438 x^{133} + 13867 x^{134} + 14296 x^{135} + 14725 x^{136} + 15154 x^{137} + 15583 x^{138} + 16012 x^{139} + 16553 x^{140} + 16982 x^{141} + 17523 x^{142} + 17952 x^{143} + 18493 x^{144} + 19034 x^{145} + 19575 x^{146} + 20116 x^{147} + 20657 x^{148} + 21198 x^{149} + 21873 x^{150} + 22414 x^{151} + 23089 x^{152} + 23630 x^{153} + 24305 x^{154} + 24980 x^{155} + 25655 x^{156} + 26330 x^{157} + 27005 x^{158} + 27680 x^{159} + 28514 x^{160} + 29189 x^{161} + 30023 x^{162} + 30698 x^{163} + 31532 x^{164} + 32366 x^{165} + 33200 x^{166} + 34034 x^{167} + 34868 x^{168} + 35702 x^{169} + 36723 x^{170} + 37557 x^{171} + 38578 x^{172} + 39412 x^{173} + 40433 x^{174} + 41454 x^{175} + 42475 x^{176} + 43496 x^{177} + 44517 x^{178} + 45538 x^{179} + 46777 x^{180} + 47798 x^{181} + 49037 x^{182} + 50058 x^{183} + 51297 x^{184} + 52536 x^{185} + 53775 x^{186} + 55014 x^{187} + 56253 x^{188} + 57492 x^{189} + 58983 x^{190} + 60222 x^{191} + 61713 x^{192} + 62952 x^{193} + 64443 x^{194} + 65934 x^{195} + 67425 x^{196} + 68916 x^{197} + 70407 x^{198} + 71898 x^{199} + 73682 x^{200} + O(x^{201}) \qquad   \]</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -1260,12 +1626,7 @@ document.write(`
         <span class="k">for</span> <span class="n">coin</span> <span class="ow">in</span> <span class="n">valid_coins</span>
     <span class="p">)</span>
 
-<span class="n">graph_search_ways</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>73682
+<span class="n">graph_search_ways</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span><span class="mi">400</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1863,13 +2224,12 @@ Thus the answer should be 932618654.</p></li>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#48 Self Powers</span>
-<span class="n">n</span><span class="o">=</span><span class="mi">1</span>
-<span class="n">sum_num</span><span class="o">=</span><span class="mi">0</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
-    <span class="n">power</span><span class="o">=</span><span class="n">n</span><span class="o">**</span><span class="n">n</span>
-    <span class="n">sum_num</span><span class="o">+=</span><span class="n">power</span>
-    <span class="n">n</span><span class="o">+=</span><span class="mi">1</span>
-<span class="n">sum_num</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">):</span>
+    <span class="n">sum_num</span><span class="o">=</span><span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="o">^</span><span class="n">i</span><span class="p">):</span>
+        <span class="n">sum_num</span><span class="o">+=</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">^</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">sum_num</span><span class="o">%=</span><span class="mi">10</span><span class="o">^</span><span class="mi">10</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">sum_num</span><span class="o">%</span><span class="k">10</span>^10)
 </pre></div>
 </div>
 </div>
@@ -2588,13 +2948,15 @@ Thus the answer should be 932618654.</p></li>
     <span class="k">if</span> <span class="n">s1</span><span class="o">^</span><span class="mi">2</span><span class="o">-</span><span class="n">s2</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">num</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">s1</span>
 <span class="n">l</span><span class="o">=</span><span class="p">[]</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1001</span><span class="p">):</span>
-    <span class="n">cf</span><span class="o">=</span><span class="n">continued_fraction</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
-    <span class="n">lst</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span><span class="n">continued_fraction</span><span class="p">(</span><span class="n">cf</span><span class="p">[:</span><span class="mi">130</span><span class="p">])</span><span class="o">.</span><span class="n">convergents</span><span class="p">()))</span>
-    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">test</span><span class="p">(</span><span class="n">item</span><span class="p">,</span><span class="n">i</span><span class="p">):</span>
-            <span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">test</span><span class="p">(</span><span class="n">item</span><span class="p">,</span><span class="n">i</span><span class="p">),</span><span class="n">i</span><span class="p">))</span>
-            <span class="k">break</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2001</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">is_square</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+        <span class="n">cf</span><span class="o">=</span><span class="n">continued_fraction</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+        <span class="n">lst</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span><span class="n">continued_fraction</span><span class="p">(</span><span class="n">cf</span><span class="p">[:</span><span class="mi">130</span><span class="p">])</span><span class="o">.</span><span class="n">convergents</span><span class="p">()))</span>
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">test</span><span class="p">(</span><span class="n">item</span><span class="p">,</span><span class="n">i</span><span class="p">):</span>
+                <span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">test</span><span class="p">(</span><span class="n">item</span><span class="p">,</span><span class="n">i</span><span class="p">),</span><span class="n">i</span><span class="p">))</span>
+                <span class="k">break</span>
 <span class="nb">max</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -2756,7 +3118,9 @@ Thus the answer should be 932618654.</p></li>
 <span class="k">def</span><span class="w"> </span><span class="nf">num_fractions</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
     <span class="k">return</span> <span class="nb">sum</span><span class="p">([</span><span class="n">euler_phi</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">num</span><span class="o">+</span><span class="mi">1</span><span class="p">)])</span>
 
-<span class="c1"># print(num_fractions(1000000)) uncomment to show answer</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">21</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">num_fractions</span><span class="p">(</span><span class="mi">2</span><span class="o">^</span><span class="n">i</span><span class="p">))</span>        <span class="c1"># PL</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;PE answer:&#39;</span><span class="p">,</span><span class="n">num_fractions</span><span class="p">(</span><span class="mi">10</span><span class="o">^</span><span class="mi">6</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -4381,12 +4745,20 @@ $<span class="math notranslate nohighlight">\(f(p)=\# \{(m,n,k)\in\N^3:m&gt;n,\q
 <h2>PE 100<a class="headerlink" href="#pe-100" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span><span class="o">*</span><span class="mi">2</span><span class="o">^</span><span class="mi">12</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">blue</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
     <span class="k">return</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">k</span><span class="o">==</span><span class="mi">1</span> <span class="k">else</span> <span class="mi">3</span><span class="o">*</span><span class="n">blue</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">total</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="mi">2</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">total</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
     <span class="k">return</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">k</span><span class="o">==</span><span class="mi">1</span> <span class="k">else</span> <span class="mi">4</span><span class="o">*</span><span class="n">blue</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="n">total</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="mi">3</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">21</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">total</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">10</span><span class="o">^</span><span class="mi">12</span><span class="p">:</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">101</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">(</span><span class="n">log</span><span class="p">(</span><span class="n">total</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="mi">10</span><span class="p">)))</span>
+    <span class="k">if</span> <span class="n">total</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">10</span><span class="o">^</span><span class="mi">9</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">blue</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
         <span class="k">break</span>
 </pre></div>
@@ -4460,6 +4832,7 @@ $<span class="math notranslate nohighlight">\(f(p)=\# \{(m,n,k)\in\N^3:m&gt;n,\q
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-leonhard">Project Leonhard</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-1">PE 1</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-2">PE 2</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-3">PE 3</a></li>
