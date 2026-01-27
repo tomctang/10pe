@@ -10,7 +10,7 @@ parts:
   - file: past/Alevel_math_further
   - file: Course_MCM
   - file: Course_Lean  
-  - file: 23permutation-puzzle/Course_Puzzle
+  - file: Course_Puzzle
 
 - caption: CS & Physics
   numbered: false
