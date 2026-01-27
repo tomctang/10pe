@@ -182,8 +182,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../past/Alevel_math_further.html">A-level-further</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Course_MCM.html">Math Computational Methods</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Course_Lean.html">Lean</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../23permutation-puzzle/Course_Puzzle.html">Permutation Puzzles</a></li>
-
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">CS &amp; Physics</span></p>
 <ul class="current nav bd-sidenav">
@@ -442,6 +440,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-73">PE 73</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-74">PE 74</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-75">PE 75</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-76">PE 76</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-77">PE 77</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-78">PE 78</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-79">PE 79</a></li>
@@ -1077,12 +1076,11 @@ document.write(`
         <span class="k">return</span> <span class="n">ans</span>
 <span class="n">n</span><span class="o">=</span><span class="mi">1</span>
 <span class="n">max_len</span><span class="o">=</span><span class="mi">1</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">8000001</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">16000001</span><span class="p">):</span>
     <span class="n">culen</span><span class="o">=</span><span class="n">collatz</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">culen</span><span class="o">&gt;=</span><span class="mi">597</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">culen</span><span class="o">&gt;=</span><span class="mi">665</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">culen</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">culen</span><span class="o">&gt;</span><span class="n">max_len</span><span class="p">:</span>
-        <span class="n">max_len</span><span class="o">=</span><span class="n">culen</span>
+    <span class="n">max_len</span><span class="o">=</span><span class="nb">max</span><span class="p">(</span><span class="n">culen</span><span class="p">,</span><span class="n">max_len</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1425,17 +1423,18 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">max_cycle</span><span class="o">=</span><span class="mi">0</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">64001</span><span class="p">):</span>
-    <span class="n">num</span><span class="o">=</span><span class="n">i</span>
-    <span class="k">while</span> <span class="n">num</span><span class="o">%</span><span class="k">2</span>==0: num//=2
-    <span class="k">while</span> <span class="n">num</span><span class="o">%</span><span class="k">5</span>==0: num//=5
-    <span class="k">if</span> <span class="n">num</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
-        <span class="k">continue</span>
-    <span class="n">cycle</span><span class="o">=</span><span class="n">mod</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="n">num</span><span class="p">)</span><span class="o">.</span><span class="n">multiplicative_order</span><span class="p">()</span>
-    <span class="k">if</span> <span class="n">cycle</span><span class="o">&gt;</span><span class="n">max_cycle</span><span class="p">:</span>
-        <span class="n">max_cycle</span><span class="o">=</span><span class="n">cycle</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">86</span><span class="p">,</span><span class="mi">91</span><span class="p">):</span>
+    <span class="n">max_cycle</span><span class="o">=</span><span class="mi">0</span>
+    <span class="n">limit</span><span class="o">=</span><span class="mi">1000</span><span class="o">*</span><span class="mi">4</span><span class="o">^</span><span class="n">j</span>
+    <span class="n">count</span><span class="o">=</span><span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">limit</span><span class="o">-</span><span class="mi">1000</span><span class="p">,</span><span class="n">limit</span><span class="p">):</span>
+        <span class="n">num</span><span class="o">=</span><span class="n">i</span>
+        <span class="k">if</span> <span class="n">num</span><span class="o">%</span><span class="k">2</span>!=0 and num%5!=0:
+            <span class="n">cycle</span><span class="o">=</span><span class="n">mod</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="n">num</span><span class="p">)</span><span class="o">.</span><span class="n">multiplicative_order</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">cycle</span><span class="o">&gt;</span><span class="n">max_cycle</span><span class="p">:</span>
+                <span class="n">max_cycle</span><span class="o">=</span><span class="n">cycle</span>
+                <span class="n">count</span><span class="o">=</span><span class="n">i</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;:&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">count</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1510,11 +1509,11 @@ document.write(`
 <span class="n">n</span><span class="o">=</span><span class="mi">1</span>
 <span class="c1"># diagonal numbers included in n</span>
 <span class="c1"># 1001-1+2=1002</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1002</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="o">^</span><span class="p">(</span><span class="mi">3</span><span class="o">^</span><span class="mi">3</span><span class="p">),</span><span class="mi">2</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
         <span class="n">n</span><span class="o">+=</span><span class="n">i</span>
         <span class="n">s</span><span class="o">+=</span><span class="n">n</span>
-<span class="n">s</span>
+<span class="n">s</span><span class="o">%</span><span class="p">(</span><span class="mi">10</span><span class="o">^</span><span class="mi">9</span><span class="o">+</span><span class="mi">7</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1626,7 +1625,7 @@ document.write(`
         <span class="k">for</span> <span class="n">coin</span> <span class="ow">in</span> <span class="n">valid_coins</span>
     <span class="p">)</span>
 
-<span class="n">graph_search_ways</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span><span class="mi">400</span><span class="p">)</span>
+<span class="n">graph_search_ways</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -3080,14 +3079,22 @@ Thus the answer should be 932618654.</p></li>
 <h2>PE 71<a class="headerlink" href="#pe-71" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#71 Ordered Fractions </span>
-<span class="n">target</span> <span class="o">=</span> <span class="mi">3</span><span class="o">/</span><span class="mi">7</span>
-
-<span class="n">pairs</span> <span class="o">=</span> <span class="p">[(</span> <span class="n">floor</span><span class="p">(</span><span class="n">deno</span><span class="o">*</span><span class="n">target</span><span class="p">)</span> <span class="p">,</span> <span class="n">deno</span> <span class="p">)</span> <span class="k">for</span> <span class="n">deno</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1000000</span><span class="p">)]</span>
-
-<span class="n">fracs</span> <span class="o">=</span> <span class="p">[(</span> <span class="n">n</span><span class="p">,</span> <span class="n">deno</span> <span class="p">)</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">deno</span> <span class="ow">in</span> <span class="n">pairs</span> <span class="k">if</span> <span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="n">deno</span><span class="p">)</span><span class="o">&lt;</span><span class="n">target</span><span class="p">]</span>  <span class="c1"># Filter fractions &lt; target</span>
-
-<span class="n">maxFrac</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">fracs</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">frac</span><span class="p">:</span> <span class="n">frac</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">frac</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">)</span> <span class="p">;</span> <span class="n">maxFrac</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#71 Ordered Fractions</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">):</span>
+    <span class="n">target</span><span class="o">=</span><span class="n">i</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">pairs</span><span class="o">=</span><span class="p">[(</span> <span class="n">floor</span><span class="p">(</span><span class="n">deno</span><span class="o">*</span><span class="n">target</span><span class="p">)</span> <span class="p">,</span> <span class="n">deno</span> <span class="p">)</span> <span class="k">for</span> <span class="n">deno</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="o">^</span><span class="n">i</span><span class="p">)]</span>
+    <span class="n">fracs</span><span class="o">=</span><span class="p">[(</span> <span class="n">n</span><span class="p">,</span> <span class="n">deno</span> <span class="p">)</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">deno</span> <span class="ow">in</span> <span class="n">pairs</span> <span class="k">if</span> <span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="n">deno</span><span class="p">)</span><span class="o">&lt;</span><span class="n">target</span><span class="p">]</span>  <span class="c1"># Filter fractions &lt; target</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;:&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">fracs</span><span class="p">,</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">frac</span><span class="p">:</span> <span class="n">frac</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">frac</span><span class="p">[</span><span class="mi">1</span><span class="p">])[</span><span class="mi">0</span><span class="p">])</span><span class="o">+</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1:2,
+2:39,
+3:428,
+4:4443,
+5:45454,
+6:461537,
 </pre></div>
 </div>
 </div>
@@ -3134,7 +3141,12 @@ Thus the answer should be 932618654.</p></li>
 <span class="k">def</span><span class="w"> </span><span class="nf">fractions</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">[</span><span class="n">QQ</span><span class="p">((</span><span class="n">p</span><span class="p">,</span><span class="n">q</span><span class="p">))</span> <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">num</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">q</span><span class="o">//</span><span class="mi">3</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">ceil</span><span class="p">(</span><span class="n">q</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span> <span class="k">if</span> <span class="n">gcd</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">q</span><span class="p">)</span><span class="o">==</span><span class="mi">1</span><span class="p">]</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">fractions</span><span class="p">(</span><span class="mi">12000</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">fractions</span><span class="p">(</span><span class="mi">800</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>32461
 </pre></div>
 </div>
 </div>
@@ -3225,6 +3237,28 @@ $<span class="math notranslate nohighlight">\(f(p)=\# \{(m,n,k)\in\N^3:m&gt;n,\q
 <span class="n">lst</span><span class="o">=</span><span class="n">all_pythagorean_sums</span><span class="p">(</span><span class="mi">1500000</span><span class="p">)</span>
 <span class="n">d</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">Counter</span><span class="p">(</span><span class="n">lst</span><span class="p">))</span>
 <span class="nb">sum</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="n">num</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">d</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pe-76">
+<h2>PE 76<a class="headerlink" href="#pe-76" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number_of_partitions</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>  <span class="c1"># Because the number of partitions is basically the same thing except in the case where it is just the itself</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>190569291
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">number_of_partitions</span><span class="p">(</span><span class="mi">2</span><span class="o">^</span><span class="mi">47</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">%</span><span class="p">(</span><span class="mi">10</span><span class="o">^</span><span class="mi">9</span><span class="o">+</span><span class="mi">7</span><span class="p">)</span>    <span class="c1"># PL extension</span>
 </pre></div>
 </div>
 </div>
@@ -4905,6 +4939,7 @@ $<span class="math notranslate nohighlight">\(f(p)=\# \{(m,n,k)\in\N^3:m&gt;n,\q
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-73">PE 73</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-74">PE 74</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-75">PE 75</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-76">PE 76</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-77">PE 77</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-78">PE 78</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pe-79">PE 79</a></li>
