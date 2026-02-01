@@ -32,9 +32,5 @@ parts:
 - caption: Notes by Tom
   numbered: false
   chapters:
-  - file: math/00intro_math
-  - file: math/01number_algebra
-  - file: math/02discrete_continuous
-  - file: math/03real_world
   - file: How_Dad_organise_QM
   - file: Course_MCM_QFT
