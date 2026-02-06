@@ -63,7 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'PE_Informatics/PE100';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Project Euler Q101-" href="PE200.html" />
+    <link rel="next" title="Project Euler Q101-" href="../PE200.html" />
     <link rel="prev" title="MIT_CS6002-CS" href="../Course_MIT6002thinking.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -184,13 +184,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../Course_Lean.html">Lean</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Course_Puzzle.html">Permutation Puzzles</a></li>
 
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">CS &amp; Physics</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../Course_MIT6001Python.html">MIT_CS6001-Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Course_MIT6002thinking.html">MIT_CS6002-CS</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Project Euler Q1-100</a></li>
-<li class="toctree-l1"><a class="reference internal" href="PE200.html">Project Euler Q101-</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PE200.html">Project Euler Q101-</a></li>
 <li class="toctree-l1"><a class="reference internal" href="PE_tags.html">Project Euler Tag-Math</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Course_MCM_QM.html">Quantum Mechanics</a></li>
 </ul>
@@ -495,6 +496,18 @@ document.write(`
 <p>PE 18i for <a class="reference external" href="https://www.youtube.com/watch?v=Ct2fyigNgPY&amp;amp;list=WL&amp;amp;index=1">Youtube - Galois Theory Explained Simply</a></p>
 <section id="project-leonhard">
 <h2>Project Leonhard<a class="headerlink" href="#project-leonhard" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="n">x</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">,</span><span class="n">divisors</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="o">^</span><span class="mi">2</span><span class="p">))))</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">g</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">([</span><span class="n">f</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)])</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">16</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;:&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="mi">2</span><span class="o">^</span><span class="n">i</span><span class="p">))</span><span class="o">+</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">max_square</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
@@ -812,25 +825,6 @@ document.write(`
     <span class="k">return</span> <span class="nb">sum</span><span class="p">([</span><span class="n">sigma</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)])</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">16</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;:&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">sigma2</span><span class="p">(</span><span class="mi">2</span><span class="o">^</span><span class="n">i</span><span class="p">))</span><span class="o">+</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1:6,
-2:37,
-3:248,
-4:1822,
-5:13805,
-6:107829,
-7:851001,
-8:6768201,
-9:53953322,
-10:430940710,
-11:3444571411,
-12:27546846139,
-13:220324609528,
-14:1762416161668,
-15:14098564890993,
 </pre></div>
 </div>
 </div>
@@ -4917,7 +4911,7 @@ $<span class="math notranslate nohighlight">\(f(p)=\# \{(m,n,k)\in\N^3:m&gt;n,\q
       </div>
     </a>
     <a class="right-next"
-       href="PE200.html"
+       href="../PE200.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>

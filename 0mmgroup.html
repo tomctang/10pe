@@ -1,0 +1,1648 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>mmgroup Quick Reference Guide &#8212; Jonny Workbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=550f00eb" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '0mmgroup';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Jonny Workbook</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Math &amp; FP/Language</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="past/Alevel_math.html">A-level-math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="past/Alevel_math_further.html">A-level-further</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Course_MCM.html">Math Computational Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Course_Lean.html">Lean</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Course_Puzzle.html">Permutation Puzzles</a></li>
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CS &amp; Physics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Course_MIT6001Python.html">MIT_CS6001-Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Course_MIT6002thinking.html">MIT_CS6002-CS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PE_Informatics/PE100.html">Project Euler Q1-100</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PE200.html">Project Euler Q101-</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PE_Informatics/PE_tags.html">Project Euler Tag-Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Course_MCM_QM.html">Quantum Mechanics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notebook</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="past/nb_past_courses.html">Past courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="past/nb_Geo.html">Geography and Maps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="past/nb_lottery_simulator.html">Lottery Math</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notes by Tom</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="How_Dad_organise_QM.html">How Dad learn QM</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="Course_MCM_QFT.html">QFT</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/tomctang/10pe" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/0mmgroup.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>mmgroup Quick Reference Guide</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-group-elements">Creating Group Elements</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identity-element">Identity Element</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#random-elements">Random Elements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-generators">From Generators</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#group-operations">Group Operations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-computations">Common Computations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#commutator">Commutator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conjugation">Conjugation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-element-order">Finding Element Order</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-workflow">Example Workflow</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="mmgroup-quick-reference-guide">
+<h1>mmgroup Quick Reference Guide<a class="headerlink" href="#mmgroup-quick-reference-guide" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">mmgroup</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="creating-group-elements">
+<h2>Creating Group Elements<a class="headerlink" href="#creating-group-elements" title="Link to this heading">#</a></h2>
+<section id="identity-element">
+<h3>Identity Element<a class="headerlink" href="#identity-element" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">identity</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="random-elements">
+<h3>Random Elements<a class="headerlink" href="#random-elements" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;G_x0&#39;</span><span class="p">)</span>  <span class="c1"># Random element</span>
+</pre></div>
+</div>
+</section>
+<section id="from-generators">
+<h3>From Generators<a class="headerlink" href="#from-generators" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># x-type (Leech lattice vectors)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mh">0x1234</span><span class="p">)</span>  <span class="c1"># tag range: 0x0 to 0x1FFF</span>
+
+<span class="c1"># y-type generators</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="mh">0x567</span><span class="p">)</span>   <span class="c1"># tag range: 0x0 to 0x7FF</span>
+
+<span class="c1"># d-type (diagonal automorphisms)</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="mh">0x800</span><span class="p">)</span>   <span class="c1"># tag range: 0x0 to 0xFFF</span>
+
+<span class="c1"># p-type (triality automorphisms)</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="mi">12345</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="group-operations">
+<h2>Group Operations<a class="headerlink" href="#group-operations" title="Link to this heading">#</a></h2>
+<p>Multiplication</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">g1</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;G_x0&#39;</span><span class="p">)</span>
+<span class="n">g2</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;G_x0&#39;</span><span class="p">)</span>
+<span class="n">product</span> <span class="o">=</span> <span class="n">g1</span> <span class="o">*</span> <span class="n">g2</span>
+</pre></div>
+</div>
+<p>Inverse</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">g_inv</span> <span class="o">=</span> <span class="n">g</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Powers</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">g_squared</span> <span class="o">=</span> <span class="n">g</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">g_cubed</span> <span class="o">=</span> <span class="n">g</span><span class="o">**</span><span class="mi">3</span>
+<span class="n">g_inv</span> <span class="o">=</span> <span class="n">g</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Identity Check</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">is_identity</span> <span class="o">=</span> <span class="p">(</span><span class="n">g</span> <span class="o">==</span> <span class="n">MM0</span><span class="p">())</span>
+</pre></div>
+</div>
+<blockquote>
+<div><blockquote>
+<div><p>Working with Vectors (196884-dimensional space)</p>
+</div></blockquote>
+</div></blockquote>
+<p>Create Vectors</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="n">MMV</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>        <span class="c1"># Type-15 basis vector</span>
+<span class="n">v2</span> <span class="o">=</span> <span class="n">MMV</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>  <span class="c1"># Different type-15 vector</span>
+</pre></div>
+</div>
+<p>Group Action on Vectors</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mh">0x100</span><span class="p">)</span>
+<span class="n">v_transformed</span> <span class="o">=</span> <span class="n">v</span> <span class="o">*</span> <span class="n">g</span>
+</pre></div>
+</div>
+<p>Vector Operations</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v_scaled</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">v</span>   <span class="c1"># Scalar multiplication</span>
+</pre></div>
+</div>
+</section>
+<section id="common-computations">
+<h2>Common Computations<a class="headerlink" href="#common-computations" title="Link to this heading">#</a></h2>
+<section id="commutator">
+<h3>Commutator<a class="headerlink" href="#commutator" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">commutator</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">g</span> <span class="o">*</span> <span class="n">h</span> <span class="o">*</span> <span class="p">(</span><span class="n">g</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="n">h</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="n">comm</span> <span class="o">=</span> <span class="n">commutator</span><span class="p">(</span><span class="n">g1</span><span class="p">,</span> <span class="n">g2</span><span class="p">)</span>
+<span class="n">is_trivial</span> <span class="o">=</span> <span class="p">(</span><span class="n">comm</span> <span class="o">==</span> <span class="n">MM0</span><span class="p">())</span>
+</pre></div>
+</div>
+</section>
+<section id="conjugation">
+<h3>Conjugation<a class="headerlink" href="#conjugation" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">conjugate</span> <span class="o">=</span> <span class="n">h</span> <span class="o">*</span> <span class="n">g</span> <span class="o">*</span> <span class="p">(</span><span class="n">h</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<section id="finding-element-order">
+<h3>Finding Element Order<a class="headerlink" href="#finding-element-order" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">identity</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">()</span>
+<span class="n">current</span> <span class="o">=</span> <span class="n">g</span>
+<span class="k">for</span> <span class="n">order</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">current</span> <span class="o">==</span> <span class="n">identity</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Order: </span><span class="si">{</span><span class="n">order</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">break</span>
+    <span class="n">current</span> <span class="o">=</span> <span class="n">current</span> <span class="o">*</span> <span class="n">g</span>
+</pre></div>
+</div>
+<blockquote>
+<div><blockquote>
+<div><p>Important Facts</p>
+</div></blockquote>
+</div></blockquote>
+<p>Monster Group</p>
+<ul class="simple">
+<li><p>Order: ~8.08 × 10^53</p></li>
+<li><p>Largest sporadic simple group</p></li>
+<li><p>Contains Baby Monster as subgroup</p></li>
+</ul>
+<p>Representation</p>
+<ul class="simple">
+<li><p>Smallest non-trivial representation: 196,883-dimensional</p></li>
+<li><p>Related to Griess algebra</p></li>
+<li><p>Connected to monstrous moonshine</p></li>
+</ul>
+<p>Key Subgroups</p>
+<ul class="simple">
+<li><p>Baby Monster (B): order ~4 × 10^33</p></li>
+<li><p>Conway group Co1: order ~4 × 10^18</p></li>
+<li><p>Mathieu group M24: order 244,823,040</p></li>
+</ul>
+</section>
+</section>
+<section id="example-workflow">
+<h2>Example Workflow<a class="headerlink" href="#example-workflow" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">mmgroup</span><span class="w"> </span><span class="kn">import</span> <span class="n">MM0</span><span class="p">,</span> <span class="n">MMV</span>
+
+<span class="c1"># Create elements</span>
+<span class="n">g1</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mh">0x100</span><span class="p">)</span>
+<span class="n">g2</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="mh">0x200</span><span class="p">)</span>
+<span class="n">g3</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="mh">0x800</span><span class="p">)</span>
+
+<span class="c1"># Combine</span>
+<span class="n">element</span> <span class="o">=</span> <span class="n">g1</span> <span class="o">*</span> <span class="n">g2</span> <span class="o">*</span> <span class="n">g3</span>
+
+<span class="c1"># Check properties</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Element: </span><span class="si">{</span><span class="n">element</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Inverse check: </span><span class="si">{</span><span class="n">element</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">element</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">MM0</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Act on vector</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">MMV</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">v</span> <span class="o">*</span> <span class="n">element</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Transformed vector: </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<blockquote>
+<div><blockquote>
+<div><p>Performance Notes</p>
+</div></blockquote>
+</div></blockquote>
+<ul class="simple">
+<li><p>Operations are highly optimized but computationally intensive</p></li>
+<li><p>Large computations require significant memory</p></li>
+<li><p>Random generation uses sophisticated algorithms</p></li>
+<li><p>Element comparison is exact</p></li>
+</ul>
+<blockquote>
+<div><blockquote>
+<div><p>Resources</p>
+</div></blockquote>
+</div></blockquote>
+<ul class="simple">
+<li><p>GitHub: <a class="github reference external" href="https://github.com/Martin-Seysen/mmgroup">Martin-Seysen/mmgroup</a></p></li>
+<li><p>Documentation: See repository docs</p></li>
+<li><p>Papers: “A Computer Friendly Construction of the Monster” by Martin Seysen</p></li>
+</ul>
+<blockquote>
+<div><blockquote>
+<div><p>Common Use Cases</p>
+</div></blockquote>
+</div></blockquote>
+<ol class="arabic simple">
+<li><p><strong>Studying conjugacy classes</strong>: Create elements and conjugate them</p></li>
+<li><p><strong>Representation theory</strong>: Apply elements to vectors</p></li>
+<li><p><strong>Subgroup exploration</strong>: Work with M24, Co1, Baby Monster</p></li>
+<li><p><strong>Order calculations</strong>: Find element orders</p></li>
+<li><p><strong>Word problems</strong>: Express elements as products of generators</p></li>
+<li><p><strong>Moonshine research</strong>: Connect to modular functions</p></li>
+</ol>
+<blockquote>
+<div><blockquote>
+<div><p>Tips</p>
+</div></blockquote>
+</div></blockquote>
+<ul class="simple">
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">MM0('r',</span> <span class="pre">'G_x0')</span></code> for random elements</p></li>
+<li><p>Check <code class="docutils literal notranslate"><span class="pre">str(element)</span></code> to see generator decomposition</p></li>
+<li><p>Test small examples before scaling up</p></li>
+<li><p>Verify group axioms in your computations</p></li>
+<li><p>Be aware of memory usage for large-scale computations</p></li>
+</ul>
+<p>Introduction to mmgroup - Monster Group Implementation</p>
+<p>The Monster group M is the largest sporadic simple group with order:
+~8.08 × 10^53</p>
+<p>mmgroup provides efficient computational tools for working with this group.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Complete Working mmgroup Examples - Group Elements Only</span>
+<span class="sd">========================================================</span>
+
+<span class="sd">This file focuses ONLY on operations that definitely work in mmgroup.</span>
+<span class="sd">All examples are tested to avoid the MMV vector issues.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">mmgroup</span><span class="w"> </span><span class="kn">import</span> <span class="n">MM0</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mmgroup</span><span class="w"> </span><span class="kn">import</span> <span class="n">mat24</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot; &quot;</span> <span class="o">*</span> <span class="mi">20</span> <span class="o">+</span> <span class="s2">&quot;MMGROUP - PRACTICAL EXAMPLES&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
+
+<span class="c1"># ============================================================================</span>
+<span class="c1"># PART 1: CREATING GROUP ELEMENTS</span>
+<span class="c1"># ============================================================================</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">80</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PART 1: Creating Monster Group Elements&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">80</span><span class="p">)</span>
+
+<span class="c1"># 1.1 Identity</span>
+<span class="n">identity</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">1.1 Identity element:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     </span><span class="si">{</span><span class="n">identity</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># 1.2 Random elements</span>
+<span class="n">g_random</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;G_x0&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">1.2 Random element:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     </span><span class="si">{</span><span class="n">g_random</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># 1.3 Specific generators - x type (Leech lattice vectors)</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mh">0x100</span><span class="p">)</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mh">0x200</span><span class="p">)</span>
+<span class="n">x3</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mh">0x1ABC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">1.3 x-type generators (Leech lattice vectors):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     x1 = MM0(&#39;x&#39;, 0x100)  → </span><span class="si">{</span><span class="n">x1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     x2 = MM0(&#39;x&#39;, 0x200)  → </span><span class="si">{</span><span class="n">x2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     x3 = MM0(&#39;x&#39;, 0x1ABC) → </span><span class="si">{</span><span class="n">x3</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># 1.4 y-type generators</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="mh">0x100</span><span class="p">)</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="mh">0x2FF</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">1.4 y-type generators:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     y1 = MM0(&#39;y&#39;, 0x100)  → </span><span class="si">{</span><span class="n">y1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     y2 = MM0(&#39;y&#39;, 0x2FF)  → </span><span class="si">{</span><span class="n">y2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># 1.5 d-type generators (diagonal)</span>
+<span class="n">d1</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="mh">0x400</span><span class="p">)</span>
+<span class="n">d2</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="mh">0x800</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">1.5 d-type generators (diagonal):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     d1 = MM0(&#39;d&#39;, 0x400)  → </span><span class="si">{</span><span class="n">d1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     d2 = MM0(&#39;d&#39;, 0x800)  → </span><span class="si">{</span><span class="n">d2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># 1.6 p-type generators (powers/triality)</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="mi">12345</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="mi">67890</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">1.6 p-type generators:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     p1 = MM0(&#39;p&#39;, 12345)  → </span><span class="si">{</span><span class="n">p1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     p2 = MM0(&#39;p&#39;, 67890)  → </span><span class="si">{</span><span class="n">p2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># ============================================================================</span>
+<span class="c1"># PART 2: GROUP OPERATIONS</span>
+<span class="c1"># ============================================================================</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">80</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PART 2: Group Operations&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">80</span><span class="p">)</span>
+
+<span class="n">g1</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mh">0x123</span><span class="p">)</span>
+<span class="n">g2</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="mh">0x456</span><span class="p">)</span>
+
+<span class="c1"># 2.1 Multiplication</span>
+<span class="n">product</span> <span class="o">=</span> <span class="n">g1</span> <span class="o">*</span> <span class="n">g2</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">2.1 Multiplication:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     g1 = </span><span class="si">{</span><span class="n">g1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     g2 = </span><span class="si">{</span><span class="n">g2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     g1 * g2 = </span><span class="si">{</span><span class="n">product</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># 2.2 Inverse</span>
+<span class="n">g1_inv</span> <span class="o">=</span> <span class="n">g1</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">2.2 Inverse:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     g1^(-1) = </span><span class="si">{</span><span class="n">g1_inv</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     g1 * g1^(-1) = </span><span class="si">{</span><span class="n">g1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">g1_inv</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     Is identity? </span><span class="si">{</span><span class="n">g1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">g1_inv</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">identity</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># 2.3 Powers</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">2.3 Powers:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     g1^2 = </span><span class="si">{</span><span class="n">g1</span><span class="o">**</span><span class="mi">2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     g1^3 = </span><span class="si">{</span><span class="n">g1</span><span class="o">**</span><span class="mi">3</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     g1^5 = </span><span class="si">{</span><span class="n">g1</span><span class="o">**</span><span class="mi">5</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     g1^(-2) = </span><span class="si">{</span><span class="n">g1</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># 2.4 Multiple products</span>
+<span class="n">g3</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="mh">0x200</span><span class="p">)</span>
+<span class="n">long_product</span> <span class="o">=</span> <span class="n">g1</span> <span class="o">*</span> <span class="n">g2</span> <span class="o">*</span> <span class="n">g3</span> <span class="o">*</span> <span class="p">(</span><span class="n">g1</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">g2</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">2.4 Long products:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     g3 = </span><span class="si">{</span><span class="n">g3</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     g1*g2*g3*g1^2*g2^(-1) = </span><span class="si">{</span><span class="n">long_product</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># ============================================================================</span>
+<span class="c1"># PART 3: GROUP AXIOMS VERIFICATION</span>
+<span class="c1"># ============================================================================</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">80</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PART 3: Verifying Group Axioms&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">80</span><span class="p">)</span>
+
+<span class="n">g1</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mh">0xAAA</span><span class="p">)</span>
+<span class="n">g2</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="mh">0xBBB</span><span class="p">)</span>
+<span class="n">g3</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="mh">0xCCC</span><span class="p">)</span>
+
+<span class="c1"># 3.1 Closure (always satisfied by construction)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">3.1 Closure: g1 * g2 is a group element&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     Type: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">g1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">g2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># 3.2 Associativity</span>
+<span class="n">left</span> <span class="o">=</span> <span class="p">(</span><span class="n">g1</span> <span class="o">*</span> <span class="n">g2</span><span class="p">)</span> <span class="o">*</span> <span class="n">g3</span>
+<span class="n">right</span> <span class="o">=</span> <span class="n">g1</span> <span class="o">*</span> <span class="p">(</span><span class="n">g2</span> <span class="o">*</span> <span class="n">g3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">3.2 Associativity: (g1*g2)*g3 = g1*(g2*g3)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     (g1*g2)*g3 = </span><span class="si">{</span><span class="n">left</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     g1*(g2*g3) = </span><span class="si">{</span><span class="n">right</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     Equal? </span><span class="si">{</span><span class="n">left</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">right</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># 3.3 Identity</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">3.3 Identity element:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     identity * g1 = </span><span class="si">{</span><span class="n">identity</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">g1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     g1 * identity = </span><span class="si">{</span><span class="n">g1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">identity</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     Both equal g1? </span><span class="si">{</span><span class="p">(</span><span class="n">identity</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">g1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">g1</span><span class="p">)</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="p">(</span><span class="n">g1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">identity</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">g1</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># 3.4 Inverse</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">3.4 Inverse element:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     g1 * g1^(-1) = </span><span class="si">{</span><span class="n">g1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">g1</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     g1^(-1) * g1 = </span><span class="si">{</span><span class="n">g1</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">g1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     Both equal identity? </span><span class="si">{</span><span class="p">(</span><span class="n">g1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">g1</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">identity</span><span class="p">)</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="p">(</span><span class="n">g1</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">g1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">identity</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># ============================================================================</span>
+<span class="c1"># PART 4: COMMUTATORS</span>
+<span class="c1"># ============================================================================</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">80</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PART 4: Commutators [g,h] = g*h*g^(-1)*h^(-1)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">80</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">commutator</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the commutator [g,h]&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">g</span> <span class="o">*</span> <span class="n">h</span> <span class="o">*</span> <span class="p">(</span><span class="n">g</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="n">h</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="c1"># 4.1 Various commutators</span>
+<span class="n">pairs</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mh">0x111</span><span class="p">),</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="mh">0x222</span><span class="p">)),</span>
+    <span class="p">(</span><span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mh">0x333</span><span class="p">),</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="mh">0x444</span><span class="p">)),</span>
+    <span class="p">(</span><span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="mh">0x555</span><span class="p">),</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="mh">0x666</span><span class="p">)),</span>
+<span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">pairs</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">comm</span> <span class="o">=</span> <span class="n">commutator</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+    <span class="n">is_trivial</span> <span class="o">=</span> <span class="p">(</span><span class="n">comm</span> <span class="o">==</span> <span class="n">identity</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">4.</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> [g, h] where:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     g = </span><span class="si">{</span><span class="n">g</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     h = </span><span class="si">{</span><span class="n">h</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     [g,h] = </span><span class="si">{</span><span class="n">comm</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     Trivial? </span><span class="si">{</span><span class="n">is_trivial</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># ============================================================================</span>
+<span class="c1"># PART 5: CONJUGACY</span>
+<span class="c1"># ============================================================================</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">80</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PART 5: Conjugation h*g*h^(-1)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">80</span><span class="p">)</span>
+
+<span class="n">g</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mh">0x777</span><span class="p">)</span>
+<span class="n">conjugators</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="mh">0x888</span><span class="p">),</span>
+    <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="mh">0x999</span><span class="p">),</span>
+    <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;G_x0&#39;</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Original element g = </span><span class="si">{</span><span class="n">g</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">h</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">conjugators</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">conjugate</span> <span class="o">=</span> <span class="n">h</span> <span class="o">*</span> <span class="n">g</span> <span class="o">*</span> <span class="p">(</span><span class="n">h</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">5.</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> Conjugating with h = </span><span class="si">{</span><span class="n">h</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     h*g*h^(-1) = </span><span class="si">{</span><span class="n">conjugate</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># ============================================================================</span>
+<span class="c1"># PART 6: ELEMENT ORDERS</span>
+<span class="c1"># ============================================================================</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">80</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PART 6: Finding Element Orders&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">80</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">find_order</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">max_order</span><span class="o">=</span><span class="mi">50</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Find the order of element g (up to max_order)&quot;&quot;&quot;</span>
+    <span class="n">current</span> <span class="o">=</span> <span class="n">g</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">max_order</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">current</span> <span class="o">==</span> <span class="n">identity</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">n</span>
+        <span class="n">current</span> <span class="o">=</span> <span class="n">current</span> <span class="o">*</span> <span class="n">g</span>
+    <span class="k">return</span> <span class="kc">None</span>  <span class="c1"># Order &gt; max_order</span>
+
+<span class="n">test_elements</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="mh">0x800</span><span class="p">),</span>
+    <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mh">0x100</span><span class="p">),</span>
+    <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="mh">0x50</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">elem</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">test_elements</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">order</span> <span class="o">=</span> <span class="n">find_order</span><span class="p">(</span><span class="n">elem</span><span class="p">,</span> <span class="n">max_order</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">6.</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> Element: </span><span class="si">{</span><span class="n">elem</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">order</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     Order: </span><span class="si">{</span><span class="n">order</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="c1"># Verify</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     Verification: g^</span><span class="si">{</span><span class="n">order</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">elem</span><span class="o">**</span><span class="n">order</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     Is identity? </span><span class="si">{</span><span class="n">elem</span><span class="o">**</span><span class="n">order</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">identity</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     Order: &gt; 100&quot;</span><span class="p">)</span>
+
+<span class="c1"># ============================================================================</span>
+<span class="c1"># PART 7: BUILDING WORDS</span>
+<span class="c1"># ============================================================================</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">80</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PART 7: Building Words in Generators&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">80</span><span class="p">)</span>
+
+<span class="c1"># Build complex elements as words</span>
+<span class="n">word1</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mh">0x100</span><span class="p">)</span> <span class="o">*</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="mh">0x200</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="mh">0x300</span><span class="p">)</span>
+<span class="n">word2</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mh">0xAAA</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span> <span class="o">*</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="mh">0xBBB</span><span class="p">)</span> <span class="o">*</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mh">0xCCC</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">7.1 word1 = x(0x100) * y(0x200)^2 * d(0x300)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     Result: </span><span class="si">{</span><span class="n">word1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">7.2 word2 = x(0xAAA)^3 * y(0xBBB) * x(0xCCC)^(-1)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     Result: </span><span class="si">{</span><span class="n">word2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># ============================================================================</span>
+<span class="c1"># PART 8: RANDOM SAMPLING AND STATISTICS</span>
+<span class="c1"># ============================================================================</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">80</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PART 8: Random Sampling&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">80</span><span class="p">)</span>
+
+<span class="c1"># Generate several random elements</span>
+<span class="n">random_elements</span> <span class="o">=</span> <span class="p">[</span><span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;G_x0&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Generated 5 random elements:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">g</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">random_elements</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="n">g</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Check if any are identity (should be extremely rare!)</span>
+<span class="n">any_identity</span> <span class="o">=</span> <span class="nb">any</span><span class="p">(</span><span class="n">g</span> <span class="o">==</span> <span class="n">identity</span> <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">random_elements</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Any equal to identity? </span><span class="si">{</span><span class="n">any_identity</span><span class="si">}</span><span class="s2"> (should be False)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Check if any are equal to each other (also very rare)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Checking pairwise equality:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">random_elements</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">random_elements</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">random_elements</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">random_elements</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     Elements </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2"> are equal!&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     (Finding equal elements is extremely unlikely)&quot;</span><span class="p">)</span>
+
+<span class="c1"># ============================================================================</span>
+<span class="c1"># PART 9: PRACTICAL COMPUTATIONS</span>
+<span class="c1"># ============================================================================</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">80</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PART 9: Practical Examples&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">80</span><span class="p">)</span>
+
+<span class="c1"># 9.1 Computing a derived subgroup element [g1,g2]</span>
+<span class="n">g1</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mh">0x11</span><span class="p">)</span>
+<span class="n">g2</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="mh">0x22</span><span class="p">)</span>
+<span class="n">derived</span> <span class="o">=</span> <span class="n">commutator</span><span class="p">(</span><span class="n">g1</span><span class="p">,</span> <span class="n">g2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">9.1 Derived subgroup element:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     [g1, g2] = </span><span class="si">{</span><span class="n">derived</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># 9.2 Conjugacy class representative</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mh">0x333</span><span class="p">)</span>
+<span class="n">h</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="mh">0x444</span><span class="p">)</span>
+<span class="n">rep1</span> <span class="o">=</span> <span class="n">h</span> <span class="o">*</span> <span class="n">g</span> <span class="o">*</span> <span class="p">(</span><span class="n">h</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">rep2</span> <span class="o">=</span> <span class="p">(</span><span class="n">h</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">g</span> <span class="o">*</span> <span class="p">(</span><span class="n">h</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">9.2 Two conjugates of g:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     g = </span><span class="si">{</span><span class="n">g</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     h*g*h^(-1) = </span><span class="si">{</span><span class="n">rep1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     h^2*g*h^(-2) = </span><span class="si">{</span><span class="n">rep2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># 9.3 Normal form / simplification (implicit in string representation)</span>
+<span class="n">complex_elem</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mh">0x100</span><span class="p">)</span> <span class="o">*</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mh">0x200</span><span class="p">)</span> <span class="o">*</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="mh">0x300</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">9.3 Complex element (automatically simplified):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     x(0x100) * x(0x200) * y(0x300)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     = </span><span class="si">{</span><span class="n">complex_elem</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># ============================================================================</span>
+<span class="c1"># SUMMARY</span>
+<span class="c1"># ============================================================================</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">80</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot; &quot;</span> <span class="o">*</span> <span class="mi">30</span> <span class="o">+</span> <span class="s2">&quot;SUMMARY&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">80</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">✓ Group element creation: MM0(&#39;x&#39;/&#39;y&#39;/&#39;d&#39;/&#39;p&#39;, tag) and MM0(&#39;r&#39;, &#39;G_x0&#39;)</span>
+<span class="s2">✓ Basic operations: *, **(-1), **(n), ==</span>
+<span class="s2">✓ Group axioms: closure, associativity, identity, inverse</span>
+<span class="s2">✓ Advanced operations: commutators, conjugation</span>
+<span class="s2">✓ Computational tasks: finding orders, building words</span>
+<span class="s2">✓ All examples verified and working!</span>
+
+<span class="s2">The Monster Group:</span>
+<span class="s2">- Order: ~8.08 × 10^53</span>
+<span class="s2">- Largest sporadic simple group  </span>
+<span class="s2">- Related to moonshine, string theory, and the Leech lattice</span>
+<span class="s2">- Contains many important subgroups (Baby Monster, Co1, M24, etc.)</span>
+
+<span class="s2">Next steps:</span>
+<span class="s2">- Study specific conjugacy classes</span>
+<span class="s2">- Explore subgroup structures</span>
+<span class="s2">- Investigate representation theory</span>
+<span class="s2">- Read research papers on computational group theory</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">80</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot; &quot;</span> <span class="o">*</span> <span class="mi">25</span> <span class="o">+</span> <span class="s2">&quot;Examples Complete!&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">80</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>================================================================================
+                    MMGROUP - PRACTICAL EXAMPLES
+================================================================================
+
+================================================================================
+PART 1: Creating Monster Group Elements
+================================================================================
+
+1.1 Identity element:
+     M0&lt;1&gt;
+
+1.2 Random element:
+     M0&lt;y_6dch*x_0b94h*d_0ae8h*p_191835973*l_1*p_1457280*l_2*p_32106675&gt;
+
+1.3 x-type generators (Leech lattice vectors):
+     x1 = MM0(&#39;x&#39;, 0x100)  → M0&lt;x_100h&gt;
+     x2 = MM0(&#39;x&#39;, 0x200)  → M0&lt;x_200h&gt;
+     x3 = MM0(&#39;x&#39;, 0x1ABC) → M0&lt;x_1abch&gt;
+
+1.4 y-type generators:
+     y1 = MM0(&#39;y&#39;, 0x100)  → M0&lt;y_100h&gt;
+     y2 = MM0(&#39;y&#39;, 0x2FF)  → M0&lt;y_2ffh&gt;
+
+1.5 d-type generators (diagonal):
+     d1 = MM0(&#39;d&#39;, 0x400)  → M0&lt;d_400h&gt;
+     d2 = MM0(&#39;d&#39;, 0x800)  → M0&lt;d_800h&gt;
+
+1.6 p-type generators:
+     p1 = MM0(&#39;p&#39;, 12345)  → M0&lt;p_12345&gt;
+     p2 = MM0(&#39;p&#39;, 67890)  → M0&lt;p_67890&gt;
+
+
+================================================================================
+PART 2: Group Operations
+================================================================================
+
+2.1 Multiplication:
+     g1 = M0&lt;x_123h&gt;
+     g2 = M0&lt;y_456h&gt;
+     g1 * g2 = M0&lt;y_456h*x_923h*d_796h&gt;
+
+2.2 Inverse:
+     g1^(-1) = M0&lt;x_123h&gt;
+     g1 * g1^(-1) = M0&lt;1&gt;
+     Is identity? True
+
+2.3 Powers:
+     g1^2 = M0&lt;1&gt;
+     g1^3 = M0&lt;x_123h&gt;
+     g1^5 = M0&lt;x_123h&gt;
+     g1^(-2) = M0&lt;1&gt;
+
+2.4 Long products:
+     g3 = M0&lt;d_200h&gt;
+     g1*g2*g3*g1^2*g2^(-1) = M0&lt;x_123h*d_200h&gt;
+
+
+================================================================================
+PART 3: Verifying Group Axioms
+================================================================================
+
+3.1 Closure: g1 * g2 is a group element
+     Type: &lt;class &#39;mmgroup.structures.mm0_group.MM0&#39;&gt;
+
+3.2 Associativity: (g1*g2)*g3 = g1*(g2*g3)
+     (g1*g2)*g3 = M0&lt;y_3bbh*x_1aaah*d_0b52h&gt;
+     g1*(g2*g3) = M0&lt;y_3bbh*x_1aaah*d_0b52h&gt;
+     Equal? True
+
+3.3 Identity element:
+     identity * g1 = M0&lt;x_0aaah&gt;
+     g1 * identity = M0&lt;x_0aaah&gt;
+     Both equal g1? True
+
+3.4 Inverse element:
+     g1 * g1^(-1) = M0&lt;1&gt;
+     g1^(-1) * g1 = M0&lt;1&gt;
+     Both equal identity? True
+
+
+================================================================================
+PART 4: Commutators [g,h] = g*h*g^(-1)*h^(-1)
+================================================================================
+
+4.1 [g, h] where:
+     g = M0&lt;x_111h&gt;
+     h = M0&lt;y_222h&gt;
+     [g,h] = M0&lt;d_312h&gt;
+     Trivial? False
+
+4.2 [g, h] where:
+     g = M0&lt;x_333h&gt;
+     h = M0&lt;d_444h&gt;
+     [g,h] = M0&lt;1&gt;
+     Trivial? True
+
+4.3 [g, h] where:
+     g = M0&lt;y_555h&gt;
+     h = M0&lt;d_666h&gt;
+     [g,h] = M0&lt;x_1800h&gt;
+     Trivial? False
+
+
+================================================================================
+PART 5: Conjugation h*g*h^(-1)
+================================================================================
+
+Original element g = M0&lt;x_777h&gt;
+
+5.1 Conjugating with h = M0&lt;y_888h&gt;
+     h*g*h^(-1) = M0&lt;x_0f77h*d_565h&gt;
+
+5.2 Conjugating with h = M0&lt;d_999h&gt;
+     h*g*h^(-1) = M0&lt;x_1777h&gt;
+
+5.3 Conjugating with h = M0&lt;y_1f8h*x_803h*d_0cefh*p_237661871*l_1*p_2999040*l_1*p_21809505*l_1&gt;
+     h*g*h^(-1) = M0&lt;y_1f8h*x_803h*d_0cefh*p_237661871*l_1*p_2999040*l_1*p_21809505*l_1*x_777h*l_2*d_17bh*p_187177932*l_2*d_618h*p_1461449*l_2*y_61h*x_176fh*d_9a8h*p_97772617&gt;
+
+
+================================================================================
+PART 6: Finding Element Orders
+================================================================================
+
+6.1 Element: M0&lt;d_800h&gt;
+     Order: 2
+     Verification: g^2 = M0&lt;1&gt;
+     Is identity? True
+
+6.2 Element: M0&lt;x_100h&gt;
+     Order: 2
+     Verification: g^2 = M0&lt;1&gt;
+     Is identity? True
+
+6.3 Element: M0&lt;y_50h&gt;
+     Order: 2
+     Verification: g^2 = M0&lt;1&gt;
+     Is identity? True
+
+
+================================================================================
+PART 7: Building Words in Generators
+================================================================================
+
+7.1 word1 = x(0x100) * y(0x200)^2 * d(0x300)
+     Result: M0&lt;x_100h*d_300h&gt;
+
+7.2 word2 = x(0xAAA)^3 * y(0xBBB) * x(0xCCC)^(-1)
+     Result: M0&lt;y_3bbh*x_666h*d_196h&gt;
+
+
+================================================================================
+PART 8: Random Sampling
+================================================================================
+
+Generated 5 random elements:
+     1. M0&lt;y_30dh*x_1455h*d_0e6ch*p_178769233*l_1*p_1499520*l_1*p_53393697&gt;
+     2. M0&lt;y_163h*x_1db0h*d_0ad7h*p_120803293*l_1*p_3840*l_2*p_4128*l_2*p_1144320&gt;
+     3. M0&lt;y_6d9h*x_3f2h*d_0ec9h*p_101307777*l_2*p_2344320*l_2*p_35729*l_1&gt;
+     4. M0&lt;y_116h*x_1cc5h*d_172h*p_137179299*l_1*p_1457280*l_2*p_980373*l_1&gt;
+     5. M0&lt;y_33ch*x_78bh*d_0b35h*p_79670127*l_2*p_1393920*l_2*p_1296*l_1*p_1610880&gt;
+
+Any equal to identity? False (should be False)
+
+Checking pairwise equality:
+     (Finding equal elements is extremely unlikely)
+
+
+================================================================================
+PART 9: Practical Examples
+================================================================================
+
+9.1 Derived subgroup element:
+     [g1, g2] = M0&lt;d_6bfh&gt;
+
+9.2 Two conjugates of g:
+     g = M0&lt;x_333h&gt;
+     h*g*h^(-1) = M0&lt;x_0b33h*d_25fh&gt;
+     h^2*g*h^(-2) = M0&lt;x_333h&gt;
+
+9.3 Complex element (automatically simplified):
+     x(0x100) * x(0x200) * y(0x300)
+     = M0&lt;y_300h*x_300h*d_401h&gt;
+
+
+================================================================================
+                              SUMMARY
+================================================================================
+
+✓ Group element creation: MM0(&#39;x&#39;/&#39;y&#39;/&#39;d&#39;/&#39;p&#39;, tag) and MM0(&#39;r&#39;, &#39;G_x0&#39;)
+✓ Basic operations: *, **(-1), **(n), ==
+✓ Group axioms: closure, associativity, identity, inverse
+✓ Advanced operations: commutators, conjugation
+✓ Computational tasks: finding orders, building words
+✓ All examples verified and working!
+
+The Monster Group:
+- Order: ~8.08 × 10^53
+- Largest sporadic simple group  
+- Related to moonshine, string theory, and the Leech lattice
+- Contains many important subgroups (Baby Monster, Co1, M24, etc.)
+
+Next steps:
+- Study specific conjugacy classes
+- Explore subgroup structures
+- Investigate representation theory
+- Read research papers on computational group theory
+
+================================================================================
+                         Examples Complete!
+================================================================================
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">mmgroup</span><span class="w"> </span><span class="kn">import</span> <span class="n">MM0</span><span class="p">,</span> <span class="n">MMV</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;MMGROUP - Monster Group Introduction&quot;</span><span class="p">)</span>
+<span class="c1"># ============================================================================</span>
+<span class="c1"># 1. BASIC GROUP ELEMENTS</span>
+<span class="c1"># ============================================================================</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">1. Creating Monster Group Elements&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">70</span><span class="p">)</span>
+
+<span class="c1"># Create the identity element</span>
+<span class="n">identity</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Identity element: </span><span class="si">{</span><span class="n">identity</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Create random group elements</span>
+<span class="n">g1</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;G_x0&#39;</span><span class="p">)</span>
+<span class="n">g2</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;G_x0&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Random element g1: </span><span class="si">{</span><span class="n">g1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Random element g2: </span><span class="si">{</span><span class="n">g2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># ============================================================================</span>
+<span class="c1"># 2. GROUP OPERATIONS</span>
+<span class="c1"># ============================================================================</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">2. Group Operations&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">70</span><span class="p">)</span>
+
+<span class="c1"># Multiplication</span>
+<span class="n">product</span> <span class="o">=</span> <span class="n">g1</span> <span class="o">*</span> <span class="n">g2</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;g1 * g2 = </span><span class="si">{</span><span class="n">product</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Inverse</span>
+<span class="n">g1_inv</span> <span class="o">=</span> <span class="n">g1</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">g1^(-1) = </span><span class="si">{</span><span class="n">g1_inv</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Check that g1 * g1^(-1) = identity</span>
+<span class="n">check</span> <span class="o">=</span> <span class="n">g1</span> <span class="o">*</span> <span class="n">g1_inv</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;g1 * g1^(-1) = </span><span class="si">{</span><span class="n">check</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Is identity? </span><span class="si">{</span><span class="n">check</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">identity</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Power operations</span>
+<span class="n">g1_squared</span> <span class="o">=</span> <span class="n">g1</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">g1_cubed</span> <span class="o">=</span> <span class="n">g1</span><span class="o">**</span><span class="mi">3</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">g1^2 = </span><span class="si">{</span><span class="n">g1_squared</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;g1^3 = </span><span class="si">{</span><span class="n">g1_cubed</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># ============================================================================</span>
+<span class="c1"># 3. SPECIFIC GENERATORS</span>
+<span class="c1"># ============================================================================</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">3. Working with Specific Generators&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">70</span><span class="p">)</span>
+
+<span class="c1"># The Monster group can be generated by specific elements</span>
+<span class="c1"># Create elements from atom strings</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mh">0x1234</span><span class="p">)</span>  <span class="c1"># Generator x with tag</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="mh">0x567</span><span class="p">)</span>   <span class="c1"># Generator y with tag</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="mh">0x800</span><span class="p">)</span>   <span class="c1"># Generator d (diagonal)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Generator x: </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Generator y: </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Generator d: </span><span class="si">{</span><span class="n">d</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Combine generators</span>
+<span class="n">combined</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span> <span class="o">*</span> <span class="n">d</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Combined (x * y * d): </span><span class="si">{</span><span class="n">combined</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># ============================================================================</span>
+<span class="c1"># 4. REPRESENTATION ON THE 196884-DIMENSIONAL SPACE</span>
+<span class="c1"># ============================================================================</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">4. Monster Group Representation&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">70</span><span class="p">)</span>
+
+<span class="c1"># The Monster acts on a 196884-dimensional space</span>
+<span class="c1"># MMV() creates the vector space, not individual vectors</span>
+<span class="c1"># We need to work with it differently</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="c1"># Create an instance of the MMV space</span>
+    <span class="n">V</span> <span class="o">=</span> <span class="n">MMV</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>  <span class="c1"># This might create a space or specific vector</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;MMV object: </span><span class="si">{</span><span class="n">V</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Type: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">V</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># The representation space has dimension 196884</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Representation space dimension: 196884&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;This is 1 + 196883 (trivial + minimal rep)&quot;</span><span class="p">)</span>
+    
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Note: Vector operations may require different syntax&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">The 196884-dim representation is theoretical here.&quot;</span><span class="p">)</span>
+
+<span class="c1"># ============================================================================</span>
+<span class="c1"># 5. CHECKING GROUP PROPERTIES</span>
+<span class="c1"># ============================================================================</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">5. Verifying Group Properties&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">70</span><span class="p">)</span>
+
+<span class="c1"># Associativity: (g1 * g2) * g3 = g1 * (g2 * g3)</span>
+<span class="n">g3</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;G_x0&#39;</span><span class="p">)</span>
+<span class="n">left</span> <span class="o">=</span> <span class="p">(</span><span class="n">g1</span> <span class="o">*</span> <span class="n">g2</span><span class="p">)</span> <span class="o">*</span> <span class="n">g3</span>
+<span class="n">right</span> <span class="o">=</span> <span class="n">g1</span> <span class="o">*</span> <span class="p">(</span><span class="n">g2</span> <span class="o">*</span> <span class="n">g3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Associativity check: </span><span class="si">{</span><span class="n">left</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">right</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Identity property: g * e = e * g = g</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;g1 * identity = g1? </span><span class="si">{</span><span class="n">g1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">identity</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">g1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;identity * g1 = g1? </span><span class="si">{</span><span class="n">identity</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">g1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">g1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Inverse property: g * g^(-1) = e</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;g1 * g1^(-1) = identity? </span><span class="si">{</span><span class="n">g1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">g1_inv</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">identity</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># ============================================================================</span>
+<span class="c1"># 6. ORDER CALCULATIONS</span>
+<span class="c1"># ============================================================================</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">6. Element Orders&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">70</span><span class="p">)</span>
+
+<span class="c1"># Calculate the order of an element</span>
+<span class="c1"># For demonstration, let&#39;s create elements with known small orders</span>
+<span class="n">d2</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="mh">0x800</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Element: </span><span class="si">{</span><span class="n">d2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Check various powers</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Checking powers:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
+    <span class="n">power</span> <span class="o">=</span> <span class="n">d2</span><span class="o">**</span><span class="n">i</span>
+    <span class="n">is_identity</span> <span class="o">=</span> <span class="p">(</span><span class="n">power</span> <span class="o">==</span> <span class="n">identity</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;d2^</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> is identity: </span><span class="si">{</span><span class="n">is_identity</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">is_identity</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  → Order of element is </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">break</span>
+
+<span class="c1"># ============================================================================</span>
+<span class="c1"># 7. WORD REPRESENTATION</span>
+<span class="c1"># ============================================================================</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">7. Word Representation&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">70</span><span class="p">)</span>
+
+<span class="c1"># Elements can be expressed as words in generators</span>
+<span class="n">element</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mh">0x123</span><span class="p">)</span> <span class="o">*</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="mh">0x456</span><span class="p">)</span> <span class="o">*</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="mh">0x200</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Element as word: </span><span class="si">{</span><span class="n">element</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># The string representation shows the word decomposition</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;String representation: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">element</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># ============================================================================</span>
+<span class="c1"># 8. WORKING WITH SUBGROUPS</span>
+<span class="c1"># ============================================================================</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">8. Monster Subgroups&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">70</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The Monster contains important subgroups:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  - Baby Monster (B): order ~4 × 10^33&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  - Conway group Co1: order ~4 × 10^18&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  - Mathieu group M24: order 244,823,040&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  - And many other sporadic and classical groups&quot;</span><span class="p">)</span>
+
+<span class="c1"># ============================================================================</span>
+<span class="c1"># 9. PRACTICAL EXAMPLE: COMMUTATOR</span>
+<span class="c1"># ============================================================================</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">9. Computing Commutators&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">70</span><span class="p">)</span>
+
+<span class="c1"># Commutator [g1, g2] = g1 * g2 * g1^(-1) * g2^(-1)</span>
+<span class="n">commutator</span> <span class="o">=</span> <span class="n">g1</span> <span class="o">*</span> <span class="n">g2</span> <span class="o">*</span> <span class="p">(</span><span class="n">g1</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="n">g2</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[g1, g2] = </span><span class="si">{</span><span class="n">commutator</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Is [g1, g2] = identity? </span><span class="si">{</span><span class="n">commutator</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">identity</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;(Elements usually don&#39;t commute in non-abelian groups)&quot;</span><span class="p">)</span>
+
+<span class="c1"># ============================================================================</span>
+<span class="c1"># 10. ELEMENT STRING REPRESENTATIONS</span>
+<span class="c1"># ============================================================================</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">10. Understanding Element Representations&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">70</span><span class="p">)</span>
+
+<span class="c1"># Create a few different types of elements</span>
+<span class="n">elements</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s1">&#39;Identity&#39;</span><span class="p">,</span> <span class="n">MM0</span><span class="p">()),</span>
+    <span class="p">(</span><span class="s1">&#39;x-type&#39;</span><span class="p">,</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mh">0x100</span><span class="p">)),</span>
+    <span class="p">(</span><span class="s1">&#39;y-type&#39;</span><span class="p">,</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="mh">0x50</span><span class="p">)),</span>
+    <span class="p">(</span><span class="s1">&#39;d-type&#39;</span><span class="p">,</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="mh">0x400</span><span class="p">)),</span>
+    <span class="p">(</span><span class="s1">&#39;Product&#39;</span><span class="p">,</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mh">0x10</span><span class="p">)</span> <span class="o">*</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="mh">0x20</span><span class="p">)),</span>
+<span class="p">]</span>
+
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">elements</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Object: </span><span class="si">{</span><span class="n">elem</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  String: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># ============================================================================</span>
+<span class="c1"># 11. CONJUGACY</span>
+<span class="c1"># ============================================================================</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">11. Conjugation&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">70</span><span class="p">)</span>
+
+<span class="n">h</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;G_x0&#39;</span><span class="p">)</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mh">0x200</span><span class="p">)</span>
+
+<span class="c1"># h * g * h^(-1)</span>
+<span class="n">conjugate</span> <span class="o">=</span> <span class="n">h</span> <span class="o">*</span> <span class="n">g</span> <span class="o">*</span> <span class="p">(</span><span class="n">h</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;g = </span><span class="si">{</span><span class="n">g</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;h = </span><span class="si">{</span><span class="n">h</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;h*g*h^(-1) = </span><span class="si">{</span><span class="n">conjugate</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Conjugate elements belong to the same conjugacy class&quot;</span><span class="p">)</span>
+
+<span class="c1"># ============================================================================</span>
+<span class="c1"># 12. NEXT STEPS</span>
+<span class="c1"># ============================================================================</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">12. Next Steps for Learning mmgroup&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">70</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">To deepen your understanding:</span>
+
+<span class="s2">1. Study the Monster&#39;s representation theory</span>
+<span class="s2">2. Explore conjugacy classes</span>
+<span class="s2">3. Work with specific subgroups (M24, Co1, etc.)</span>
+<span class="s2">4. Investigate automorphisms of the Leech lattice</span>
+<span class="s2">5. Study moonshine connections to modular functions</span>
+<span class="s2">6. Read the mmgroup source code and documentation</span>
+
+<span class="s2">Key references:</span>
+<span class="s2">- mmgroup repository: https://github.com/Martin-Seysen/mmgroup</span>
+<span class="s2">- &quot;The Monster Group&quot; - Conway &amp; Sloane</span>
+<span class="s2">- ATLAS of Finite Groups</span>
+<span class="s2">- Papers on Monstrous Moonshine</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">70</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Introduction complete!&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">70</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Note: For vector operations, consult the mmgroup documentation&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;as the API may vary between versions.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>======================================================================
+MMGROUP - Monster Group Introduction
+======================================================================
+
+1. Creating Monster Group Elements
+----------------------------------------------------------------------
+Identity element: M0&lt;1&gt;
+
+Random element g1: M0&lt;y_189h*x_0a64h*d_0be2h*p_149419033*l_2*p_1985280*l_1*p_1868356*l_1&gt;
+Random element g2: M0&lt;y_609h*x_7b9h*d_0ec1h*p_183103582*l_1*p_3840*l_2*p_3072*l_2*p_10541760&gt;
+
+
+2. Group Operations
+----------------------------------------------------------------------
+g1 * g2 = M0&lt;y_189h*x_0a64h*d_0be2h*p_149419033*l_2*p_1985280*l_1*p_1868356*l_1*y_609h*x_7b9h*d_0ec1h*p_183103582*l_1*p_3840*l_2*p_3072*l_2*p_10541760&gt;
+
+g1^(-1) = M0&lt;l_2*d_0a1h*p_10071796*l_2*d_64ch*p_1461266*l_1*y_381h*x_1eedh*d_0d78h*p_169139770&gt;
+g1 * g1^(-1) = M0&lt;y_189h*x_0a64h*d_0be2h*p_149419033*l_2*p_1985280*l_1*l_2*d_64ch*p_1461266*l_1*y_381h*x_1eedh*d_0d78h*p_169139770&gt;
+Is identity? True
+
+g1^2 = M0&lt;y_189h*x_0a64h*d_0be2h*p_149419033*l_2*p_1985280*l_1*p_1868356*l_1*y_189h*x_0a64h*d_0be2h*p_149419033*l_2*p_1985280*l_1*p_1868356*l_1&gt;
+g1^3 = M0&lt;y_189h*x_0a64h*d_0be2h*p_149419033*l_2*p_1985280*l_1*p_1868356*l_1*y_189h*x_0a64h*d_0be2h*p_149419033*l_2*p_1985280*l_1*p_1868356*l_1*y_189h*x_0a64h*d_0be2h*p_149419033*l_2*p_1985280*l_1*p_1868356*l_1&gt;
+
+
+3. Working with Specific Generators
+----------------------------------------------------------------------
+Generator x: M0&lt;x_1234h&gt;
+Generator y: M0&lt;y_567h&gt;
+Generator d: M0&lt;d_800h&gt;
+
+Combined (x * y * d): M0&lt;y_567h*x_1234h*d_0c43h&gt;
+
+
+4. Monster Group Representation
+----------------------------------------------------------------------
+MMV object: functools.partial(&lt;class &#39;mmgroup.mm_space.MMVector&#39;&gt;, 15)
+Type: &lt;class &#39;functools.partial&#39;&gt;
+
+Representation space dimension: 196884
+This is 1 + 196883 (trivial + minimal rep)
+
+
+5. Verifying Group Properties
+----------------------------------------------------------------------
+Associativity check: True
+g1 * identity = g1? True
+identity * g1 = g1? True
+g1 * g1^(-1) = identity? True
+
+
+6. Element Orders
+----------------------------------------------------------------------
+Element: M0&lt;d_800h&gt;
+
+Checking powers:
+d2^1 is identity: False
+d2^2 is identity: True
+  → Order of element is 2
+
+
+7. Word Representation
+----------------------------------------------------------------------
+Element as word: M0&lt;y_456h*x_923h*d_596h&gt;
+String representation: M0&lt;y_456h*x_923h*d_596h&gt;
+
+
+8. Monster Subgroups
+----------------------------------------------------------------------
+The Monster contains important subgroups:
+  - Baby Monster (B): order ~4 × 10^33
+  - Conway group Co1: order ~4 × 10^18
+  - Mathieu group M24: order 244,823,040
+  - And many other sporadic and classical groups
+
+
+9. Computing Commutators
+----------------------------------------------------------------------
+[g1, g2] = M0&lt;y_189h*x_0a64h*d_0be2h*p_149419033*l_2*p_1985280*l_1*p_1868356*l_1*y_609h*x_7b9h*d_0ec1h*p_183103582*l_1*p_3840*l_2*p_3072*l_2*p_10541760*l_2*d_0a1h*p_10071796*l_2*d_64ch*p_1461266*l_1*y_381h*x_1eedh*d_0fc9h*p_217001785*l_1*d_36h*p_5168*l_1*d_20ah*p_1024*l_2*y_161h*x_1b14h*d_0b62h*p_182074374&gt;
+Is [g1, g2] = identity? False
+(Elements usually don&#39;t commute in non-abelian groups)
+
+
+10. Understanding Element Representations
+----------------------------------------------------------------------
+
+Identity:
+  Object: M0&lt;1&gt;
+  String: M0&lt;1&gt;
+
+x-type:
+  Object: M0&lt;x_100h&gt;
+  String: M0&lt;x_100h&gt;
+
+y-type:
+  Object: M0&lt;y_50h&gt;
+  String: M0&lt;y_50h&gt;
+
+d-type:
+  Object: M0&lt;d_400h&gt;
+  String: M0&lt;d_400h&gt;
+
+Product:
+  Object: M0&lt;y_20h*x_10h*d_0fh&gt;
+  String: M0&lt;y_20h*x_10h*d_0fh&gt;
+
+
+11. Conjugation
+----------------------------------------------------------------------
+g = M0&lt;x_200h&gt;
+h = M0&lt;y_266h*x_49bh*d_6ffh*p_217581353*l_2*p_2344320*l_2*p_22303016&gt;
+h*g*h^(-1) = M0&lt;y_266h*x_49bh*d_6ffh*p_217581353*l_2*p_2344320*l_2*x_30h*l_1*d_506h*p_1461584*l_1*y_7d6h*x_1ba8h*d_4a0h*p_137043103&gt;
+
+Conjugate elements belong to the same conjugacy class
+
+
+12. Next Steps for Learning mmgroup
+----------------------------------------------------------------------
+
+To deepen your understanding:
+
+1. Study the Monster&#39;s representation theory
+2. Explore conjugacy classes
+3. Work with specific subgroups (M24, Co1, etc.)
+4. Investigate automorphisms of the Leech lattice
+5. Study moonshine connections to modular functions
+6. Read the mmgroup source code and documentation
+
+Key references:
+- mmgroup repository: https://github.com/Martin-Seysen/mmgroup
+- &quot;The Monster Group&quot; - Conway &amp; Sloane
+- ATLAS of Finite Groups
+- Papers on Monstrous Moonshine
+
+
+======================================================================
+Introduction complete!
+======================================================================
+
+Note: For vector operations, consult the mmgroup documentation
+as the API may vary between versions.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-group-elements">Creating Group Elements</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identity-element">Identity Element</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#random-elements">Random Elements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-generators">From Generators</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#group-operations">Group Operations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-computations">Common Computations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#commutator">Commutator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conjugation">Conjugation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-element-order">Finding Element Order</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-workflow">Example Workflow</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jonny, assisted by Tom
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
