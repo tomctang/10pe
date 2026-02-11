@@ -385,7 +385,10 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Book exercises</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-9-products-of-2-cycles">Lecture 9 - Products of 2-cycles</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-9-products-of-2-cycles">Lecture 9 - Products of 2-cycles</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Book exercises</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-10-11-the-parity-theorem">Lecture 10&amp;11 - The parity theorem</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-12-a-n-and-3-cycles">Lecture 12 - <span class="math notranslate nohighlight">\(A_n\)</span> and 3-cycles</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lectures-13-14-the-15-puzzle">Lectures 13&amp;14 - The 15-puzzle</a></li>
@@ -398,6 +401,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-18-subgroups">Lecture 18 - Subgroups</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-19-puzzle-groups">Lecture 19 - Puzzle Groups</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#puzzles-jamie-coding">Puzzles - Jamie Coding</a><ul class="visible nav section-nav flex-column">
@@ -425,12 +429,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#u-groups">U Groups</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-12-puzzle-groups">Lecture 12: Puzzle Groups</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rubik-s-2x2x2-cube">Rubik’s 2x2x2 Cube</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oval-track-puzzle">Oval Track Puzzle</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hungarian-rings-puzzle">Hungarian Rings Puzzle</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-12-puzzle-groups">Lecture 12: Puzzle Groups</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-20-identification-numbers">Lecture 20: Identification Numbers</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#universal-product-code-upc">Universal Product Code (UPC)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#international-standard-book-number-isbn-10">International Standard Book Number (ISBN-10)###</a></li>
@@ -1753,6 +1752,14 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>((),
+ (1,20,19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2),
+ (2,5)(3,4),
+ (1,3,5,2,4))
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1763,11 +1770,68 @@ document.write(`
 </div>
 </div>
 </div>
-<blockquote>
-<div><blockquote>
-<div><p><strong>continue for hungarian rings and rubik’s cube</strong></p>
-</div></blockquote>
-</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ini</span><span class="o">=</span><span class="n">perm</span><span class="p">([</span><span class="mi">9</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">33</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">19</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">24</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">26</span><span class="p">,</span><span class="mi">27</span><span class="p">,</span><span class="mi">28</span><span class="p">,</span><span class="mi">29</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">31</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">34</span><span class="p">,</span><span class="mi">35</span><span class="p">,</span><span class="mi">36</span><span class="p">,</span><span class="mi">37</span><span class="p">,</span><span class="mi">38</span><span class="p">])</span>
+<span class="n">end</span><span class="o">=</span><span class="n">perm</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">19</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">24</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">26</span><span class="p">,</span><span class="mi">27</span><span class="p">,</span><span class="mi">28</span><span class="p">,</span><span class="mi">29</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">31</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="mi">33</span><span class="p">,</span><span class="mi">34</span><span class="p">,</span><span class="mi">35</span><span class="p">,</span><span class="mi">36</span><span class="p">,</span><span class="mi">37</span><span class="p">,</span><span class="mi">38</span><span class="p">])</span>
+<span class="n">sg</span><span class="p">(</span><span class="mi">38</span><span class="p">)(</span><span class="n">end</span><span class="o">*</span><span class="n">ini</span><span class="o">.</span><span class="n">inverse</span><span class="p">())</span><span class="o">.</span><span class="n">inverse</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span><span class="o">=</span><span class="n">sg</span><span class="p">(</span><span class="mi">38</span><span class="p">)(</span><span class="s2">&quot;(1,20,19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2)&quot;</span><span class="p">)</span>
+<span class="n">R</span><span class="o">=</span><span class="n">sg</span><span class="p">(</span><span class="mi">38</span><span class="p">)(</span><span class="s2">&quot;(1,38,37,36,35,6,34,33,32,31,30,29,28,27,26,25,24,23,22,21)&quot;</span><span class="p">)</span>
+<span class="n">R</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span><span class="n">R</span><span class="o">*</span><span class="n">L</span><span class="p">,</span><span class="n">L</span><span class="o">^</span><span class="mi">5</span><span class="o">*</span><span class="n">R</span><span class="o">^</span><span class="mi">5</span><span class="o">*</span><span class="n">L</span><span class="o">^-</span><span class="mi">5</span><span class="o">*</span><span class="n">R</span><span class="o">^-</span><span class="mi">6</span><span class="o">*</span><span class="n">L</span><span class="o">*</span><span class="n">R</span><span class="o">^</span><span class="mi">6</span><span class="o">*</span><span class="n">L</span><span class="o">^</span><span class="mi">5</span><span class="o">*</span><span class="n">R</span><span class="o">^-</span><span class="mi">5</span><span class="o">*</span><span class="n">L</span><span class="o">^-</span><span class="mi">5</span><span class="o">*</span><span class="n">R</span><span class="o">^-</span><span class="mi">1</span><span class="o">*</span><span class="n">L</span><span class="o">^-</span><span class="mi">1</span><span class="o">*</span><span class="n">R</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>((1,37,35,34,32,30,28,26,24,22)(6,33,31,29,27,25,23,21,38,36),
+ (1,38,37,36,35,5,4,3,2)(6,34,33,32,31,30,29,28,27,26,25,24,23,22,21,20,19,18,17,16,15,14,13,12,11,10,9,8,7),
+ (6,11,12))
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Rubik&#39;s Cube</span>
+<span class="n">S48</span><span class="o">=</span><span class="n">SymmetricGroup</span><span class="p">(</span><span class="mi">48</span><span class="p">)</span>
+<span class="n">R</span><span class="o">=</span><span class="n">S48</span><span class="p">(</span><span class="s2">&quot;(25,27,32,30)(26,29,31,28)(3,38,43,19)(5,36,45,21)(8,33,48,24)&quot;</span><span class="p">)</span>
+<span class="n">L</span><span class="o">=</span><span class="n">S48</span><span class="p">(</span><span class="s2">&quot;(9,11,16,14)(10,13,15,12)(1,17,41,40)(4,20,44,37)(6,22,46,35)&quot;</span><span class="p">)</span>
+<span class="n">U</span><span class="o">=</span><span class="n">S48</span><span class="p">(</span><span class="s2">&quot;(1,3,8,6)(2,5,7,4)(9,33,25,17)(10,34,26,18)(11,35,27,19)&quot;</span><span class="p">)</span>
+<span class="n">D</span><span class="o">=</span><span class="n">S48</span><span class="p">(</span><span class="s2">&quot;(41,43,48,46)(42,45,47,44)(14,22,30,38)(15,23,31,39)(16,24,32,40)&quot;</span><span class="p">)</span>
+<span class="n">F</span><span class="o">=</span><span class="n">S48</span><span class="p">(</span><span class="s2">&quot;(17,19,24,22)(18,21,23,20)(6,25,43,16)(7,28,42,13)(8,30,41,11)&quot;</span><span class="p">)</span>
+<span class="n">B</span><span class="o">=</span><span class="n">S48</span><span class="p">(</span><span class="s2">&quot;(33,35,40,38)(34,37,39,36)(3,9,46,32)(2,12,47,29)(1,14,48,27)&quot;</span><span class="p">)</span>
+<span class="n">R</span><span class="o">*</span><span class="n">U</span><span class="p">,(</span><span class="n">R</span><span class="o">*</span><span class="n">U</span><span class="p">)</span><span class="o">.</span><span class="n">order</span><span class="p">(),(</span><span class="n">R</span><span class="o">*</span><span class="n">U</span><span class="p">)</span><span class="o">^</span><span class="p">(</span><span class="mi">15</span><span class="p">),</span><span class="n">R</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">U</span><span class="o">^</span><span class="mi">2</span><span class="p">,(</span><span class="n">R</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">U</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span><span class="o">^</span><span class="mi">3</span><span class="p">,(</span><span class="n">R</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">U</span><span class="o">*</span><span class="n">F</span><span class="p">)</span><span class="o">^</span><span class="p">(</span><span class="mi">18</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>((1,3,38,43,11,35,27,32,30,17,9,33,48,24,6)(2,5,36,45,21,7,4)(8,25,19)(10,34,26,29,31,28,18),
+ 105,
+ (2,5,36,45,21,7,4)(10,34,26,29,31,28,18),
+ (1,8,48)(2,7)(3,43,6)(4,5,45)(9,25,32)(10,26,31)(11,27,30)(17,33,24)(18,34)(19,38,35)(21,36)(28,29),
+ (2,7)(18,34)(21,36)(28,29),
+ (1,16)(3,6)(9,22)(11,27)(17,33)(35,41))
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">U</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">F</span><span class="o">*</span><span class="n">U</span><span class="o">*</span><span class="n">R</span><span class="o">*</span><span class="n">U</span><span class="o">^-</span><span class="mi">1</span><span class="o">*</span><span class="n">R</span><span class="o">^-</span><span class="mi">1</span><span class="o">*</span><span class="n">F</span><span class="o">^-</span><span class="mi">1</span><span class="o">*</span><span class="n">U</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">R</span><span class="o">*</span><span class="n">U</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">R</span><span class="o">^-</span><span class="mi">1</span><span class="o">*</span><span class="n">U</span><span class="o">^-</span><span class="mi">1</span><span class="o">*</span><span class="n">R</span><span class="o">*</span><span class="n">U</span><span class="o">^-</span><span class="mi">1</span><span class="o">*</span><span class="n">R</span><span class="o">^-</span><span class="mi">1</span><span class="o">*</span><span class="n">U</span><span class="o">^-</span><span class="mi">1</span><span class="o">*</span><span class="n">R</span><span class="o">*</span><span class="n">U</span><span class="o">*</span><span class="n">R</span><span class="o">^-</span><span class="mi">1</span><span class="o">*</span><span class="n">U</span><span class="o">*</span><span class="n">R</span><span class="o">*</span><span class="n">U</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">R</span><span class="o">^-</span><span class="mi">1</span><span class="o">*</span><span class="n">R</span><span class="o">*</span><span class="n">B</span><span class="o">^-</span><span class="mi">1</span><span class="o">*</span><span class="n">R</span><span class="o">*</span><span class="n">F</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">R</span><span class="o">^-</span><span class="mi">1</span><span class="o">*</span><span class="n">B</span><span class="o">*</span><span class="n">R</span><span class="o">*</span><span class="n">F</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">R</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">U</span><span class="o">^-</span><span class="mi">1</span><span class="o">*</span><span class="n">R</span><span class="o">*</span><span class="n">B</span><span class="o">^-</span><span class="mi">1</span><span class="o">*</span><span class="n">R</span><span class="o">*</span><span class="n">F</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">R</span><span class="o">^-</span><span class="mi">1</span><span class="o">*</span><span class="n">B</span><span class="o">*</span><span class="n">R</span><span class="o">*</span><span class="n">F</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">R</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">U</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">inverse</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2,10,26)(4,5,34)
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 <section id="lecture-9-products-of-2-cycles">
@@ -1863,6 +1927,21 @@ document.write(`
 </div>
 </div>
 </div>
+<section id="id2">
+<h3>Book exercises<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sg</span><span class="p">(</span><span class="mi">3</span><span class="p">)(</span><span class="s1">&#39;(1,2,3)&#39;</span><span class="p">)</span><span class="o">==</span><span class="n">sg</span><span class="p">(</span><span class="mi">3</span><span class="p">)(</span><span class="s1">&#39;(2,3)&#39;</span><span class="p">)</span><span class="o">*</span><span class="n">sg</span><span class="p">(</span><span class="mi">3</span><span class="p">)(</span><span class="s1">&#39;(1,2)&#39;</span><span class="p">)</span>          <span class="c1"># decomposing using our formula(sage reads permutation composition from right to left)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 <section id="lecture-10-11-the-parity-theorem">
 <h2>Lecture 10&amp;11 - The parity theorem<a class="headerlink" href="#lecture-10-11-the-parity-theorem" title="Link to this heading">#</a></h2>
@@ -2375,10 +2454,20 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(120, (1,4,3,2), True, False)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dg</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(), (1,3)(2,4), (1,4,3,2), (1,2,3,4), (2,4), (1,3), (1,4)(2,3), (1,2)(3,4)]
 </pre></div>
 </div>
 </div>
@@ -2387,6 +2476,13 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">pg</span><span class="p">([</span><span class="n">dg</span><span class="p">(</span><span class="mi">4</span><span class="p">)(</span><span class="s1">&#39;(1,2,3,4)&#39;</span><span class="p">)])),</span><span class="nb">list</span><span class="p">(</span><span class="n">pg</span><span class="p">([</span><span class="n">dg</span><span class="p">(</span><span class="mi">4</span><span class="p">)(</span><span class="s1">&#39;(1,3)(2,4)&#39;</span><span class="p">)])),</span><span class="nb">list</span><span class="p">(</span><span class="n">pg</span><span class="p">([</span><span class="n">dg</span><span class="p">(</span><span class="mi">4</span><span class="p">)(</span><span class="s1">&#39;(1,4)(2,3)&#39;</span><span class="p">),</span><span class="n">dg</span><span class="p">(</span><span class="mi">4</span><span class="p">)(</span><span class="s1">&#39;(1,2)(3,4)&#39;</span><span class="p">)]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>([(), (1,2,3,4), (1,3)(2,4), (1,4,3,2)],
+ [(), (1,3)(2,4)],
+ [(), (1,2)(3,4), (1,4)(2,3), (1,3)(2,4)])
 </pre></div>
 </div>
 </div>
@@ -2525,6 +2621,61 @@ document.write(`
  8: {3, 9, 15, 21},
  12: {2, 10, 14, 22},
  24: {1, 5, 7, 11, 13, 17, 19, 23}}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="lecture-19-puzzle-groups">
+<h2>Lecture 19 - Puzzle Groups<a class="headerlink" href="#lecture-19-puzzle-groups" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#RC3</span>
+<span class="n">S48</span><span class="o">=</span><span class="n">SymmetricGroup</span><span class="p">(</span><span class="mi">48</span><span class="p">)</span>
+<span class="n">R</span><span class="o">=</span><span class="n">S48</span><span class="p">(</span><span class="s2">&quot;(25,27,32,30)(26,29,31,28)(3,38,43,19)(5,36,45,21)(8,33,48,24)&quot;</span><span class="p">)</span>
+<span class="n">L</span><span class="o">=</span><span class="n">S48</span><span class="p">(</span><span class="s2">&quot;(9,11,16,14)(10,13,15,12)(1,17,41,40)(4,20,44,37)(6,22,46,35)&quot;</span><span class="p">)</span>
+<span class="n">U</span><span class="o">=</span><span class="n">S48</span><span class="p">(</span><span class="s2">&quot;(1,3,8,6)(2,5,7,4)(9,33,25,17)(10,34,26,18)(11,35,27,19)&quot;</span><span class="p">)</span>
+<span class="n">D</span><span class="o">=</span><span class="n">S48</span><span class="p">(</span><span class="s2">&quot;(41,43,48,46)(42,45,47,44)(14,22,30,38)(15,23,31,39)(16,24,32,40)&quot;</span><span class="p">)</span>
+<span class="n">F</span><span class="o">=</span><span class="n">S48</span><span class="p">(</span><span class="s2">&quot;(17,19,24,22)(18,21,23,20)(6,25,43,16)(7,28,42,13)(8,30,41,11)&quot;</span><span class="p">)</span>
+<span class="n">B</span><span class="o">=</span><span class="n">S48</span><span class="p">(</span><span class="s2">&quot;(33,35,40,38)(34,37,39,36)(3,9,46,32)(2,12,47,29)(1,14,48,27)&quot;</span><span class="p">)</span>
+<span class="n">RC3</span><span class="o">=</span><span class="n">S48</span><span class="o">.</span><span class="n">subgroup</span><span class="p">([</span><span class="n">R</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">U</span><span class="p">,</span><span class="n">D</span><span class="p">,</span><span class="n">F</span><span class="p">,</span><span class="n">B</span><span class="p">])</span>
+<span class="n">S48</span><span class="p">(</span><span class="s2">&quot;(7,18)&quot;</span><span class="p">)</span> <span class="ow">in</span> <span class="n">RC3</span><span class="p">,</span><span class="n">S48</span><span class="p">(</span><span class="s2">&quot;(7,18)(5,26)&quot;</span><span class="p">)</span> <span class="ow">in</span> <span class="n">RC3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rubik</span><span class="o">=</span><span class="n">CubeGroup</span><span class="p">();</span>
+<span class="n">state</span> <span class="o">=</span> <span class="n">rubik</span><span class="p">(</span><span class="s2">&quot;(7,18)(5,26)&quot;</span><span class="p">)</span>  <span class="c1"># current state of the cube</span>
+<span class="n">rubik</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>             <span class="c1"># calls the solve algorithm(this means state is equivalent to moves)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;F2 R2 B&#39; F&#39; D&#39; F D B R2 F&#39; R&#39; F&#39; R&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#RC2</span>
+<span class="n">S24</span><span class="o">=</span><span class="n">SymmetricGroup</span><span class="p">(</span><span class="mi">24</span><span class="p">)</span>
+<span class="n">R</span><span class="o">=</span><span class="n">S24</span><span class="p">(</span><span class="s2">&quot;(13,14,16,15)(10,2,19,22)(12,4,17,24)&quot;</span><span class="p">)</span> 
+<span class="n">L</span><span class="o">=</span><span class="n">S24</span><span class="p">(</span><span class="s2">&quot;(5,6,8,7)(3,11,23,18)(1,9,21,20)&quot;</span><span class="p">)</span>
+<span class="n">U</span><span class="o">=</span><span class="n">S24</span><span class="p">(</span><span class="s2">&quot;(1,2,4,3)(9,5,17,13)(10,6,18,14)&quot;</span><span class="p">)</span>
+<span class="n">D</span><span class="o">=</span><span class="n">S24</span><span class="p">(</span><span class="s2">&quot;(21,22,24,23)(11,15,19,7)(12,16,20,8)&quot;</span><span class="p">)</span> 
+<span class="n">F</span><span class="o">=</span><span class="n">S24</span><span class="p">(</span><span class="s2">&quot;(9,10,12,11)(3,13,22,8)(4,15,21,6)&quot;</span><span class="p">)</span>
+<span class="n">B</span><span class="o">=</span><span class="n">S24</span><span class="p">(</span><span class="s2">&quot;(17,18,20,19)(1,7,24,14)(2,5,23,16)&quot;</span><span class="p">)</span>
+<span class="n">RC2</span><span class="o">=</span><span class="n">S24</span><span class="o">.</span><span class="n">subgroup</span><span class="p">([</span><span class="n">R</span><span class="p">,</span><span class="n">D</span><span class="p">,</span><span class="n">F</span><span class="p">])</span>
+<span class="n">H</span><span class="o">=</span><span class="n">S24</span><span class="o">.</span><span class="n">subgroup</span><span class="p">([</span><span class="n">R</span><span class="p">,</span><span class="n">D</span><span class="p">,</span><span class="n">F</span><span class="p">,</span><span class="n">U</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">B</span><span class="p">])</span>
+<span class="n">RC2</span><span class="o">.</span><span class="n">order</span><span class="p">(),</span><span class="n">H</span><span class="o">.</span><span class="n">order</span><span class="p">(),</span><span class="n">H</span><span class="o">.</span><span class="n">order</span><span class="p">()</span><span class="o">/</span><span class="n">RC2</span><span class="o">.</span><span class="n">order</span><span class="p">()</span>       <span class="c1"># symmetries of the cube is 24(no center pieces -&gt; you can move every piece)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3674160, 88179840, 24)
 </pre></div>
 </div>
 </div>
@@ -2718,94 +2869,6 @@ $<span class="math notranslate nohighlight">\(\phi(n)=|\{m\in \mathbb{Z} \mid 1\
 </section>
 <section id="lecture-12-puzzle-groups">
 <h2>Lecture 12: Puzzle Groups<a class="headerlink" href="#lecture-12-puzzle-groups" title="Link to this heading">#</a></h2>
-<p>Rubik’s 3x3x3 Cube</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#RC3</span>
-<span class="n">S48</span><span class="o">=</span><span class="n">SymmetricGroup</span><span class="p">(</span><span class="mi">48</span><span class="p">)</span>
-<span class="n">R</span><span class="o">=</span><span class="n">S48</span><span class="p">(</span><span class="s2">&quot;(25,27,32,30)(26,29,31,28)(3,38,43,19)(5,36,45,21)(8,33,48,24)&quot;</span><span class="p">)</span>
-<span class="n">L</span><span class="o">=</span><span class="n">S48</span><span class="p">(</span><span class="s2">&quot;(9,11,16,14)(10,13,15,12)(1,17,41,40)(4,20,44,37)(6,22,46,35)&quot;</span><span class="p">)</span>
-<span class="n">U</span><span class="o">=</span><span class="n">S48</span><span class="p">(</span><span class="s2">&quot;(1,3,8,6)(2,5,7,4)(9,33,25,17)(10,34,26,18)(11,35,27,19)&quot;</span><span class="p">)</span>
-<span class="n">D</span><span class="o">=</span><span class="n">S48</span><span class="p">(</span><span class="s2">&quot;(41,43,48,46)(42,45,47,44)(14,22,30,38)(15,23,31,39)(16,24,32,40)&quot;</span><span class="p">)</span>
-<span class="n">F</span><span class="o">=</span><span class="n">S48</span><span class="p">(</span><span class="s2">&quot;(17,19,24,22)(18,21,23,20)(6,25,43,16)(7,28,42,13)(8,30,41,11)&quot;</span><span class="p">)</span>
-<span class="n">B</span><span class="o">=</span><span class="n">S48</span><span class="p">(</span><span class="s2">&quot;(33,35,40,38)(34,37,39,36)(3,9,46,32)(2,12,47,29)(1,14,48,27)&quot;</span><span class="p">)</span>
-<span class="n">RC3</span><span class="o">=</span><span class="n">S48</span><span class="o">.</span><span class="n">subgroup</span><span class="p">([</span><span class="n">R</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">U</span><span class="p">,</span><span class="n">D</span><span class="p">,</span><span class="n">F</span><span class="p">,</span><span class="n">B</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">S48</span><span class="p">(</span><span class="s2">&quot;(7,18)&quot;</span><span class="p">)</span> <span class="ow">in</span> <span class="n">RC3</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">S48</span><span class="p">(</span><span class="s2">&quot;(7,18)(5,26)&quot;</span><span class="p">)</span> <span class="ow">in</span> <span class="n">RC3</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Sage has a built in cube solver:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rubik</span><span class="o">=</span><span class="n">CubeGroup</span><span class="p">();</span>
-<span class="n">state</span> <span class="o">=</span> <span class="n">rubik</span><span class="p">(</span><span class="s2">&quot;(7,18)(5,26)&quot;</span><span class="p">)</span>  <span class="c1"># current state of the cube</span>
-<span class="n">rubik</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>             <span class="c1"># calls the solve algorithm</span>
-</pre></div>
-</div>
-</div>
-</div>
-<section id="rubik-s-2x2x2-cube">
-<h3>Rubik’s 2x2x2 Cube<a class="headerlink" href="#rubik-s-2x2x2-cube" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#RC2</span>
-<span class="n">S24</span><span class="o">=</span><span class="n">SymmetricGroup</span><span class="p">(</span><span class="mi">24</span><span class="p">)</span>
-<span class="n">R</span><span class="o">=</span><span class="n">S24</span><span class="p">(</span><span class="s2">&quot;(13,14,16,15)(10,2,19,22)(12,4,17,24)&quot;</span><span class="p">)</span> 
-<span class="n">L</span><span class="o">=</span><span class="n">S24</span><span class="p">(</span><span class="s2">&quot;(5,6,8,7)(3,11,23,18)(1,9,21,20)&quot;</span><span class="p">)</span>
-<span class="n">U</span><span class="o">=</span><span class="n">S24</span><span class="p">(</span><span class="s2">&quot;(1,2,4,3)(9,5,17,13)(10,6,18,14)&quot;</span><span class="p">)</span>
-<span class="n">D</span><span class="o">=</span><span class="n">S24</span><span class="p">(</span><span class="s2">&quot;(21,22,24,23)(11,15,19,7)(12,16,20,8)&quot;</span><span class="p">)</span> 
-<span class="n">F</span><span class="o">=</span><span class="n">S24</span><span class="p">(</span><span class="s2">&quot;(9,10,12,11),(3,13,22,8),(4,15,21,6)&quot;</span><span class="p">)</span>
-<span class="n">B</span><span class="o">=</span><span class="n">S24</span><span class="p">(</span><span class="s2">&quot;(17,18,20,19),(1,7,24,14),(2,5,23,16)&quot;</span><span class="p">)</span>
-<span class="n">RC2</span><span class="o">=</span><span class="n">S24</span><span class="o">.</span><span class="n">subgroup</span><span class="p">([</span><span class="n">R</span><span class="p">,</span><span class="n">D</span><span class="p">,</span><span class="n">F</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">RC2</span><span class="o">.</span><span class="n">order</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">H</span><span class="o">=</span><span class="n">S24</span><span class="o">.</span><span class="n">subgroup</span><span class="p">([</span><span class="n">R</span><span class="p">,</span><span class="n">D</span><span class="p">,</span><span class="n">F</span><span class="p">,</span><span class="n">U</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">B</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">H</span><span class="o">.</span><span class="n">order</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">H</span><span class="o">.</span><span class="n">order</span><span class="p">()</span><span class="o">/</span><span class="n">RC2</span><span class="o">.</span><span class="n">order</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="oval-track-puzzle">
-<h3>Oval Track Puzzle<a class="headerlink" href="#oval-track-puzzle" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#OT</span>
@@ -2823,10 +2886,12 @@ $<span class="math notranslate nohighlight">\(\phi(n)=|\{m\in \mathbb{Z} \mid 1\
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
 </div>
-</section>
-<section id="hungarian-rings-puzzle">
-<h3>Hungarian Rings Puzzle<a class="headerlink" href="#hungarian-rings-puzzle" title="Link to this heading">#</a></h3>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#HR</span>
@@ -2834,11 +2899,16 @@ $<span class="math notranslate nohighlight">\(\phi(n)=|\{m\in \mathbb{Z} \mid 1\
 <span class="n">L</span><span class="o">=</span><span class="n">S38</span><span class="p">(</span><span class="s2">&quot;(1,20,19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2)&quot;</span><span class="p">)</span>
 <span class="n">R</span><span class="o">=</span><span class="n">S38</span><span class="p">(</span><span class="s2">&quot;(1,38,37,36,35,6,34,33,32,31,30,29,28,27,26,25,24,23,22,21)&quot;</span><span class="p">)</span>
 <span class="n">HR</span><span class="o">=</span><span class="n">S38</span><span class="o">.</span><span class="n">subgroup</span><span class="p">([</span><span class="n">L</span><span class="p">,</span><span class="n">R</span><span class="p">])</span>
+<span class="n">HR</span><span class="o">.</span><span class="n">order</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>523022617466601111760007224100074291200000000
 </pre></div>
 </div>
 </div>
 </div>
-</section>
 </section>
 <section id="lecture-20-identification-numbers">
 <h2>Lecture 20: Identification Numbers<a class="headerlink" href="#lecture-20-identification-numbers" title="Link to this heading">#</a></h2>
@@ -3400,7 +3470,10 @@ From linear algebra we know</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Book exercises</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-9-products-of-2-cycles">Lecture 9 - Products of 2-cycles</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-9-products-of-2-cycles">Lecture 9 - Products of 2-cycles</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Book exercises</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-10-11-the-parity-theorem">Lecture 10&amp;11 - The parity theorem</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-12-a-n-and-3-cycles">Lecture 12 - <span class="math notranslate nohighlight">\(A_n\)</span> and 3-cycles</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lectures-13-14-the-15-puzzle">Lectures 13&amp;14 - The 15-puzzle</a></li>
@@ -3413,6 +3486,7 @@ From linear algebra we know</p>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-18-subgroups">Lecture 18 - Subgroups</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-19-puzzle-groups">Lecture 19 - Puzzle Groups</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#puzzles-jamie-coding">Puzzles - Jamie Coding</a><ul class="visible nav section-nav flex-column">
@@ -3440,12 +3514,7 @@ From linear algebra we know</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#u-groups">U Groups</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-12-puzzle-groups">Lecture 12: Puzzle Groups</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rubik-s-2x2x2-cube">Rubik’s 2x2x2 Cube</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oval-track-puzzle">Oval Track Puzzle</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hungarian-rings-puzzle">Hungarian Rings Puzzle</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-12-puzzle-groups">Lecture 12: Puzzle Groups</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-20-identification-numbers">Lecture 20: Identification Numbers</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#universal-product-code-upc">Universal Product Code (UPC)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#international-standard-book-number-isbn-10">International Standard Book Number (ISBN-10)###</a></li>
