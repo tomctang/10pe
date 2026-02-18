@@ -8,20 +8,21 @@ parts:
   chapters:
   - file: past/Alevel_math
   - file: past/Alevel_math_further
-  - file: Course_MCM
+  - file: past/Course_MCM
   - file: Course_Lean  
   - file: Course_Puzzle
+  - file: Course_Ext_III
 
 - caption: CS & Physics
   numbered: false
   chapters:
-  - file: Course_MIT6001Python
-  - file: Course_MIT6002thinking
-  - file: PE_Informatics/PE100
-  - file: PE200 
+  - file: past/Course_MIT6001Python
+  - file: past/Course_MIT6002thinking
+  - file: PE100
+  # - file: PE200 
   - file: PE_Informatics/PE_tags
-  - file: Course_MCM_QM
-  - file: mmgroup
+  - file: past/Course_MCM_QM
+  - file: 0mmgroup
   
 - caption: Notebook
   numbered: false
@@ -33,5 +34,5 @@ parts:
 - caption: Notes by Tom
   numbered: false
   chapters:
-  - file: How_Dad_organise_QM
+  - file: past/How_Dad_organise_QM
   - file: Course_MCM_QFT
