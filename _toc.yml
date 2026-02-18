@@ -12,6 +12,7 @@ parts:
   - file: Course_Lean  
   - file: Course_Puzzle
   - file: Course_Ext_III
+  - file: 0mmgroup
 
 - caption: CS & Physics
   numbered: false
@@ -22,17 +23,12 @@ parts:
   # - file: PE200 
   - file: PE_Informatics/PE_tags
   - file: past/Course_MCM_QM
-  - file: 0mmgroup
   
-- caption: Notebook
+- caption: Notebook & Tom
   numbered: false
   chapters:
   - file: past/nb_past_courses
   - file: past/nb_Geo
   - file: past/nb_lottery_simulator
-
-- caption: Notes by Tom
-  numbered: false
-  chapters:
   - file: past/How_Dad_organise_QM
   - file: Course_MCM_QFT
