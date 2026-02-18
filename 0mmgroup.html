@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>mmgroup Quick Reference Guide &#8212; Jonny Workbook</title>
+    <title>mmgroup Guide &#8212; Jonny Workbook</title>
   
   
   
@@ -61,8 +61,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '0mmgroup';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Past courses" href="past/nb_past_courses.html" />
-    <link rel="prev" title="Quantum Mechanics" href="past/Course_MCM_QM.html" />
+    <link rel="next" title="MIT_CS6001-Python" href="past/Course_MIT6001Python.html" />
+    <link rel="prev" title="Ext III" href="Course_Ext_III.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -175,7 +175,7 @@
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Math &amp; FP/Language</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="past/Alevel_math.html">A-level-math</a></li>
 <li class="toctree-l1"><a class="reference internal" href="past/Alevel_math_further.html">A-level-further</a></li>
 <li class="toctree-l1"><a class="reference internal" href="past/Course_MCM.html">Math Computational Methods</a></li>
@@ -184,9 +184,10 @@
 
 
 <li class="toctree-l1"><a class="reference internal" href="Course_Ext_III.html">Ext III</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">mmgroup Guide</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">CS &amp; Physics</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="past/Course_MIT6001Python.html">MIT_CS6001-Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="past/Course_MIT6002thinking.html">MIT_CS6002-CS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="PE100.html">Project Euler Q1-50</a></li>
@@ -194,16 +195,12 @@
 
 <li class="toctree-l1"><a class="reference internal" href="PE_Informatics/PE_tags.html">Project Euler Tag-Math</a></li>
 <li class="toctree-l1"><a class="reference internal" href="past/Course_MCM_QM.html">Quantum Mechanics</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">mmgroup Quick Reference Guide</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notebook</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notebook &amp; Tom</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="past/nb_past_courses.html">Past courses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="past/nb_Geo.html">Geography and Maps</a></li>
 <li class="toctree-l1"><a class="reference internal" href="past/nb_lottery_simulator.html">Lottery Math</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notes by Tom</span></p>
-<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="past/How_Dad_organise_QM.html">How Dad learn QM</a></li>
 
 
@@ -361,7 +358,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>mmgroup Quick Reference Guide</h1>
+    <h1>mmgroup Guide</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -371,19 +368,6 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-group-elements">Creating Group Elements</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identity-element">Identity Element</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#random-elements">Random Elements</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-generators">From Generators</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#group-operations">Group Operations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-computations">Common Computations</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#commutator">Commutator</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conjugation">Conjugation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-element-order">Finding Element Order</a></li>
-</ul>
-</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-workflow">Example Workflow</a></li>
 </ul>
             </nav>
@@ -396,32 +380,37 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="mmgroup-quick-reference-guide">
-<h1>mmgroup Quick Reference Guide<a class="headerlink" href="#mmgroup-quick-reference-guide" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="mmgroup-guide">
+<h1>mmgroup Guide<a class="headerlink" href="#mmgroup-guide" title="Link to this heading">#</a></h1>
+<p>mmgroup - Monster Group Implementation package - mmgroup provides efficient computational tools for working with this group.</p>
+<p><strong>Monster Group</strong></p>
+<ul class="simple">
+<li><p>Order: ~8.08 × 10^53</p></li>
+<li><p>Largest sporadic simple group</p></li>
+<li><p>Key Subgroups</p>
+<ul>
+<li><p>Baby Monster (B): order ~4 × 10^33</p></li>
+<li><p>Conway group Co1: order ~4 × 10^18</p></li>
+<li><p>Mathieu group M24: order 244,823,040</p></li>
+</ul>
+</li>
+<li><p>Representation</p>
+<ul>
+<li><p>Smallest non-trivial representation: 196,883-dimensional</p></li>
+<li><p>Related to Griess algebra</p></li>
+<li><p>Connected to monstrous moonshine</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Creating Group Elements</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">mmgroup</span>
-</pre></div>
-</div>
-</div>
-</div>
-<section id="creating-group-elements">
-<h2>Creating Group Elements<a class="headerlink" href="#creating-group-elements" title="Link to this heading">#</a></h2>
-<section id="identity-element">
-<h3>Identity Element<a class="headerlink" href="#identity-element" title="Link to this heading">#</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">identity</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">()</span>
-</pre></div>
-</div>
-</section>
-<section id="random-elements">
-<h3>Random Elements<a class="headerlink" href="#random-elements" title="Link to this heading">#</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;G_x0&#39;</span><span class="p">)</span>  <span class="c1"># Random element</span>
-</pre></div>
-</div>
-</section>
-<section id="from-generators">
-<h3>From Generators<a class="headerlink" href="#from-generators" title="Link to this heading">#</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># x-type (Leech lattice vectors)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">identity</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">()</span>  <span class="c1"># Identity Element</span>
+
+<span class="n">g</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;G_x0&#39;</span><span class="p">)</span>  <span class="c1"># Random element</span>
+
+<span class="c1"># From Generators</span>
+<span class="c1"># x-type (Leech lattice vectors)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mh">0x1234</span><span class="p">)</span>  <span class="c1"># tag range: 0x0 to 0x1FFF</span>
 
 <span class="c1"># y-type generators</span>
@@ -431,74 +420,77 @@ document.write(`
 <span class="n">d</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="mh">0x800</span><span class="p">)</span>   <span class="c1"># tag range: 0x0 to 0xFFF</span>
 
 <span class="c1"># p-type (triality automorphisms)</span>
-<span class="n">p</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="mi">12345</span><span class="p">)</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="mi">12345</span><span class="p">)</span> 
 </pre></div>
 </div>
-</section>
-</section>
-<section id="group-operations">
-<h2>Group Operations<a class="headerlink" href="#group-operations" title="Link to this heading">#</a></h2>
-<p>Multiplication</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">g1</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;G_x0&#39;</span><span class="p">)</span>
+</div>
+</div>
+<p><strong>Group Operations</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Multiplication</span>
+<span class="n">g1</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;G_x0&#39;</span><span class="p">)</span>
 <span class="n">g2</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;G_x0&#39;</span><span class="p">)</span>
 <span class="n">product</span> <span class="o">=</span> <span class="n">g1</span> <span class="o">*</span> <span class="n">g2</span>
-</pre></div>
-</div>
-<p>Inverse</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">g_inv</span> <span class="o">=</span> <span class="n">g</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Powers</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">g_squared</span> <span class="o">=</span> <span class="n">g</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="c1"># Inverse</span>
+<span class="n">g_inv</span> <span class="o">=</span> <span class="n">g</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Powers </span>
+<span class="n">g_squared</span> <span class="o">=</span> <span class="n">g</span><span class="o">**</span><span class="mi">2</span>
 <span class="n">g_cubed</span> <span class="o">=</span> <span class="n">g</span><span class="o">**</span><span class="mi">3</span>
 <span class="n">g_inv</span> <span class="o">=</span> <span class="n">g</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Identity Check</span>
+<span class="n">is_identity</span> <span class="o">=</span> <span class="p">(</span><span class="n">g</span> <span class="o">==</span> <span class="n">MM0</span><span class="p">())</span>
 </pre></div>
 </div>
-<p>Identity Check</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">is_identity</span> <span class="o">=</span> <span class="p">(</span><span class="n">g</span> <span class="o">==</span> <span class="n">MM0</span><span class="p">())</span>
-</pre></div>
 </div>
-<blockquote>
-<div><blockquote>
-<div><p>Working with Vectors (196884-dimensional space)</p>
-</div></blockquote>
-</div></blockquote>
-<p>Create Vectors</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="n">MMV</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>        <span class="c1"># Type-15 basis vector</span>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Working with Vectors (196884-dimensional space)</span>
+
+<span class="c1"># Create Vectors</span>
+
+<span class="n">v</span> <span class="o">=</span> <span class="n">MMV</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>        <span class="c1"># Type-15 basis vector</span>
 <span class="n">v2</span> <span class="o">=</span> <span class="n">MMV</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>  <span class="c1"># Different type-15 vector</span>
-</pre></div>
-</div>
-<p>Group Action on Vectors</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mh">0x100</span><span class="p">)</span>
+
+
+<span class="c1"># Group Action on Vectors</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mh">0x100</span><span class="p">)</span>
 <span class="n">v_transformed</span> <span class="o">=</span> <span class="n">v</span> <span class="o">*</span> <span class="n">g</span>
+
+<span class="c1"># Vector Operations</span>
+<span class="n">v_scaled</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">v</span>   <span class="c1"># Scalar multiplication </span>
 </pre></div>
 </div>
-<p>Vector Operations</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v_scaled</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">v</span>   <span class="c1"># Scalar multiplication</span>
-</pre></div>
 </div>
-</section>
-<section id="common-computations">
-<h2>Common Computations<a class="headerlink" href="#common-computations" title="Link to this heading">#</a></h2>
-<section id="commutator">
-<h3>Commutator<a class="headerlink" href="#commutator" title="Link to this heading">#</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">commutator</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span>
+</div>
+<p><strong>Commutator</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">commutator</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">g</span> <span class="o">*</span> <span class="n">h</span> <span class="o">*</span> <span class="p">(</span><span class="n">g</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="n">h</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
 
 <span class="n">comm</span> <span class="o">=</span> <span class="n">commutator</span><span class="p">(</span><span class="n">g1</span><span class="p">,</span> <span class="n">g2</span><span class="p">)</span>
 <span class="n">is_trivial</span> <span class="o">=</span> <span class="p">(</span><span class="n">comm</span> <span class="o">==</span> <span class="n">MM0</span><span class="p">())</span>
 </pre></div>
 </div>
-</section>
-<section id="conjugation">
-<h3>Conjugation<a class="headerlink" href="#conjugation" title="Link to this heading">#</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">conjugate</span> <span class="o">=</span> <span class="n">h</span> <span class="o">*</span> <span class="n">g</span> <span class="o">*</span> <span class="p">(</span><span class="n">h</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+</div>
+</div>
+<p><strong>Conjugation</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conjugate</span> <span class="o">=</span> <span class="n">h</span> <span class="o">*</span> <span class="n">g</span> <span class="o">*</span> <span class="p">(</span><span class="n">h</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
 </pre></div>
 </div>
-</section>
-<section id="finding-element-order">
-<h3>Finding Element Order<a class="headerlink" href="#finding-element-order" title="Link to this heading">#</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">identity</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">()</span>
+</div>
+</div>
+<p><strong>Finding Element Order</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">identity</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">()</span>
 <span class="n">current</span> <span class="o">=</span> <span class="n">g</span>
 <span class="k">for</span> <span class="n">order</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">current</span> <span class="o">==</span> <span class="n">identity</span><span class="p">:</span>
@@ -507,34 +499,14 @@ document.write(`
     <span class="n">current</span> <span class="o">=</span> <span class="n">current</span> <span class="o">*</span> <span class="n">g</span>
 </pre></div>
 </div>
-<blockquote>
-<div><blockquote>
-<div><p>Important Facts</p>
-</div></blockquote>
-</div></blockquote>
-<p>Monster Group</p>
-<ul class="simple">
-<li><p>Order: ~8.08 × 10^53</p></li>
-<li><p>Largest sporadic simple group</p></li>
-<li><p>Contains Baby Monster as subgroup</p></li>
-</ul>
-<p>Representation</p>
-<ul class="simple">
-<li><p>Smallest non-trivial representation: 196,883-dimensional</p></li>
-<li><p>Related to Griess algebra</p></li>
-<li><p>Connected to monstrous moonshine</p></li>
-</ul>
-<p>Key Subgroups</p>
-<ul class="simple">
-<li><p>Baby Monster (B): order ~4 × 10^33</p></li>
-<li><p>Conway group Co1: order ~4 × 10^18</p></li>
-<li><p>Mathieu group M24: order 244,823,040</p></li>
-</ul>
-</section>
-</section>
+</div>
+</div>
 <section id="example-workflow">
 <h2>Example Workflow<a class="headerlink" href="#example-workflow" title="Link to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">mmgroup</span><span class="w"> </span><span class="kn">import</span> <span class="n">MM0</span><span class="p">,</span> <span class="n">MMV</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">mmgroup</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mmgroup</span><span class="w"> </span><span class="kn">import</span> <span class="n">MM0</span><span class="p">,</span> <span class="n">MMV</span>
 
 <span class="c1"># Create elements</span>
 <span class="n">g1</span> <span class="o">=</span> <span class="n">MM0</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mh">0x100</span><span class="p">)</span>
@@ -554,10 +526,13 @@ document.write(`
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Transformed vector: </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
+<ul class="simple">
+<li><p>GitHub: <a class="github reference external" href="https://github.com/Martin-Seysen/mmgroup">Martin-Seysen/mmgroup</a>, and paper “A Computer Friendly Construction of the Monster” by Martin Seysen</p></li>
+</ul>
 <blockquote>
-<div><blockquote>
 <div><p>Performance Notes</p>
-</div></blockquote>
 </div></blockquote>
 <ul class="simple">
 <li><p>Operations are highly optimized but computationally intensive</p></li>
@@ -566,19 +541,7 @@ document.write(`
 <li><p>Element comparison is exact</p></li>
 </ul>
 <blockquote>
-<div><blockquote>
-<div><p>Resources</p>
-</div></blockquote>
-</div></blockquote>
-<ul class="simple">
-<li><p>GitHub: <a class="github reference external" href="https://github.com/Martin-Seysen/mmgroup">Martin-Seysen/mmgroup</a></p></li>
-<li><p>Documentation: See repository docs</p></li>
-<li><p>Papers: “A Computer Friendly Construction of the Monster” by Martin Seysen</p></li>
-</ul>
-<blockquote>
-<div><blockquote>
 <div><p>Common Use Cases</p>
-</div></blockquote>
 </div></blockquote>
 <ol class="arabic simple">
 <li><p><strong>Studying conjugacy classes</strong>: Create elements and conjugate them</p></li>
@@ -589,9 +552,7 @@ document.write(`
 <li><p><strong>Moonshine research</strong>: Connect to modular functions</p></li>
 </ol>
 <blockquote>
-<div><blockquote>
 <div><p>Tips</p>
-</div></blockquote>
 </div></blockquote>
 <ul class="simple">
 <li><p>Use <code class="docutils literal notranslate"><span class="pre">MM0('r',</span> <span class="pre">'G_x0')</span></code> for random elements</p></li>
@@ -600,31 +561,17 @@ document.write(`
 <li><p>Verify group axioms in your computations</p></li>
 <li><p>Be aware of memory usage for large-scale computations</p></li>
 </ul>
-<p>Introduction to mmgroup - Monster Group Implementation</p>
-<p>The Monster group M is the largest sporadic simple group with order:
-~8.08 × 10^53</p>
-<p>mmgroup provides efficient computational tools for working with this group.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">Complete Working mmgroup Examples - Group Elements Only</span>
-<span class="sd">========================================================</span>
-
-<span class="sd">This file focuses ONLY on operations that definitely work in mmgroup.</span>
-<span class="sd">All examples are tested to avoid the MMV vector issues.</span>
-<span class="sd">&quot;&quot;&quot;</span>
-
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Complete Working mmgroup Examples - Group Elements Only</span>
+<span class="c1"># This file focuses ONLY on operations that definitely work in mmgroup.</span>
+<span class="c1"># All examples are tested to avoid the MMV vector issues.</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">mmgroup</span><span class="w"> </span><span class="kn">import</span> <span class="n">MM0</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">mmgroup</span><span class="w"> </span><span class="kn">import</span> <span class="n">mat24</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; &quot;</span> <span class="o">*</span> <span class="mi">20</span> <span class="o">+</span> <span class="s2">&quot;MMGROUP - PRACTICAL EXAMPLES&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
-
 <span class="c1"># ============================================================================</span>
 <span class="c1"># PART 1: CREATING GROUP ELEMENTS</span>
 <span class="c1"># ============================================================================</span>
-
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">80</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PART 1: Creating Monster Group Elements&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">80</span><span class="p">)</span>
@@ -1565,20 +1512,20 @@ as the API may vary between versions.
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="past/Course_MCM_QM.html"
+       href="Course_Ext_III.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Quantum Mechanics</p>
+        <p class="prev-next-title">Ext III</p>
       </div>
     </a>
     <a class="right-next"
-       href="past/nb_past_courses.html"
+       href="past/Course_MIT6001Python.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Past courses</p>
+        <p class="prev-next-title">MIT_CS6001-Python</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1598,19 +1545,6 @@ as the API may vary between versions.
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-group-elements">Creating Group Elements</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identity-element">Identity Element</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#random-elements">Random Elements</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-generators">From Generators</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#group-operations">Group Operations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-computations">Common Computations</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#commutator">Commutator</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conjugation">Conjugation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-element-order">Finding Element Order</a></li>
-</ul>
-</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-workflow">Example Workflow</a></li>
 </ul>
   </nav></div>
