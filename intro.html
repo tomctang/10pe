@@ -181,20 +181,23 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="past/Alevel_math.html">A-level-math</a></li>
 <li class="toctree-l1"><a class="reference internal" href="past/Alevel_math_further.html">A-level-further</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Course_MCM.html">Math Computational Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="past/Course_MCM.html">Math Computational Methods</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Course_Lean.html">Lean</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Course_Puzzle.html">Permutation Puzzles</a></li>
 
 
+<li class="toctree-l1"><a class="reference internal" href="Course_Ext_III.html">Ext III</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">CS &amp; Physics</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Course_MIT6001Python.html">MIT_CS6001-Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Course_MIT6002thinking.html">MIT_CS6002-CS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="PE_Informatics/PE100.html">Project Euler Q1-100</a></li>
-<li class="toctree-l1"><a class="reference internal" href="PE200.html">Project Euler Q101-</a></li>
+<li class="toctree-l1"><a class="reference internal" href="past/Course_MIT6001Python.html">MIT_CS6001-Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="past/Course_MIT6002thinking.html">MIT_CS6002-CS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PE100.html">Project Euler Q1-50</a></li>
+
+
 <li class="toctree-l1"><a class="reference internal" href="PE_Informatics/PE_tags.html">Project Euler Tag-Math</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Course_MCM_QM.html">Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="past/Course_MCM_QM.html">Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0mmgroup.html">mmgroup Quick Reference Guide</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Notebook</span></p>
 <ul class="nav bd-sidenav">
@@ -204,7 +207,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Notes by Tom</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="How_Dad_organise_QM.html">How Dad learn QM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="past/How_Dad_organise_QM.html">How Dad learn QM</a></li>
 
 
 <li class="toctree-l1"><a class="reference internal" href="Course_MCM_QFT.html">QFT</a></li>
@@ -371,6 +374,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introduction</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#timeline-qa">Timeline &amp; QA</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ubuntu-sce-scientific-computing-environment">Ubuntu &amp; SCE (Scientific Computing Environment)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oop-to-fp">OOP to FP</a><ul class="nav section-nav flex-column">
@@ -378,6 +382,13 @@ document.write(`
 </ul>
 </li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#experiment">Experiment</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gpt-llm">GPT, LLM</a></li>
+</ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -390,7 +401,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="introduction">
 <h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h1>
-<p>I’m a 11YO Sydney boy. I’m currently working on <a class="reference internal" href="Course_Puzzle.html"><span class="std std-doc">Permutation Puzzles</span></a> and <a class="reference internal" href="PE_Informatics/PE100.html"><span class="std std-doc">Project Euler</span></a>.</p>
+<p>I’m a 11YO Sydney boy. I’m currently working on <a class="reference internal" href="Course_Puzzle.html"><span class="std std-doc">Permutation Puzzles</span></a> and <a class="reference internal" href="#../10pe/PE_Informatics/PE100.ipynb"><span class="xref myst">Project Euler</span></a>.</p>
 <p>For completed courses, see my <a class="reference external" href="https://www.linkedin.com/in/jonny-jingzhe-tang-853a57274/details/certifications/">LinkedIn certificates</a>. Any questions, please email: <a class="reference external" href="mailto:jonny&#46;tang745&#37;&#52;&#48;education&#46;nsw&#46;gov&#46;au">jonny<span>&#46;</span>tang745<span>&#64;</span>education<span>&#46;</span>nsw<span>&#46;</span>gov<span>&#46;</span>au</a></p>
 <blockquote>
 <div><p><strong>Mathematics &amp; FP(Functional Programming)/Language</strong> (updating)</p>
@@ -682,10 +693,10 @@ document.write(`
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-mathematica notranslate"><div class="highlight"><pre><span></span><span class="c">(*Convert nb file into vsnb using the wl coding*)</span>
-<span class="n">Get</span><span class="p">[</span><span class="s">&quot;_static/Mathematica2VSCode.wl&quot;</span><span class="p">]</span><span class="w"> </span>
-<span class="n">Needs</span><span class="p">[</span><span class="s">&quot;Mathematica2VSCode`&quot;</span><span class="p">]</span>
-<span class="n">Mathematica2VSCode</span><span class="p">[</span><span class="s">&quot;a/1_MOESM1.nb&quot;</span><span class="p">]</span><span class="w">  </span><span class="c">(*path and specific MMA notebook*)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">*</span><span class="n">Convert</span> <span class="n">nb</span> <span class="n">file</span> <span class="n">into</span> <span class="n">vsnb</span> <span class="n">using</span> <span class="n">the</span> <span class="n">wl</span> <span class="n">coding</span><span class="o">*</span><span class="p">)</span>
+<span class="n">Get</span><span class="p">[</span><span class="s2">&quot;_static/Mathematica2VSCode.wl&quot;</span><span class="p">]</span> 
+<span class="n">Needs</span><span class="p">[</span><span class="s2">&quot;Mathematica2VSCode`&quot;</span><span class="p">]</span>
+<span class="n">Mathematica2VSCode</span><span class="p">[</span><span class="s2">&quot;a/1_MOESM1.nb&quot;</span><span class="p">]</span>  <span class="p">(</span><span class="o">*</span><span class="n">path</span> <span class="ow">and</span> <span class="n">specific</span> <span class="n">MMA</span> <span class="n">notebook</span><span class="o">*</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -799,6 +810,211 @@ document.write(`
 </ol>
 </section>
 </section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="experiment">
+<h1>Experiment<a class="headerlink" href="#experiment" title="Link to this heading">#</a></h1>
+<section id="gpt-llm">
+<h2>GPT, LLM<a class="headerlink" href="#gpt-llm" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Complete algorithm to train and inference a GPT. Everything else is just efficiency.</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>       <span class="c1"># os.path.exists</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>     <span class="c1"># math.log, math.exp</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>   <span class="c1"># random.seed, random.choices, random.gauss, random.shuffle</span>
+<span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span> <span class="c1"># Let there be order among chaos</span>
+
+<span class="c1"># Let there be an input dataset `docs`: list[str] of documents (e.g. a dataset of names)</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s1">&#39;input.txt&#39;</span><span class="p">):</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">urllib.request</span>
+    <span class="n">names_url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/karpathy/makemore/refs/heads/master/names.txt&#39;</span>
+    <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">names_url</span><span class="p">,</span> <span class="s1">&#39;input.txt&#39;</span><span class="p">)</span>
+<span class="n">docs</span> <span class="o">=</span> <span class="p">[</span><span class="n">l</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;input.txt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="n">l</span><span class="o">.</span><span class="n">strip</span><span class="p">()]</span> <span class="c1"># list[str] of documents</span>
+<span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">docs</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;num docs: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">docs</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Let there be a Tokenizer to translate strings to discrete symbols and back</span>
+<span class="n">uchars</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">docs</span><span class="p">)))</span> <span class="c1"># unique characters in the dataset become token ids 0..n-1</span>
+<span class="n">BOS</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">uchars</span><span class="p">)</span> <span class="c1"># token id for the special Beginning of Sequence (BOS) token</span>
+<span class="n">vocab_size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">uchars</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># total number of unique tokens, +1 is for BOS</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;vocab size: </span><span class="si">{</span><span class="n">vocab_size</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Let there be Autograd, to recursively apply the chain rule through a computation graph</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Value</span><span class="p">:</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;grad&#39;</span><span class="p">,</span> <span class="s1">&#39;_children&#39;</span><span class="p">,</span> <span class="s1">&#39;_local_grads&#39;</span><span class="p">)</span> <span class="c1"># Python optimization for memory usage</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">(),</span> <span class="n">local_grads</span><span class="o">=</span><span class="p">()):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>                <span class="c1"># scalar value of this node calculated during forward pass</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">grad</span> <span class="o">=</span> <span class="mi">0</span>                   <span class="c1"># derivative of the loss w.r.t. this node, calculated in backward pass</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_children</span> <span class="o">=</span> <span class="n">children</span>       <span class="c1"># children of this node in the computation graph</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_local_grads</span> <span class="o">=</span> <span class="n">local_grads</span> <span class="c1"># local derivative of this node w.r.t. its children</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="n">other</span> <span class="o">=</span> <span class="n">other</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Value</span><span class="p">)</span> <span class="k">else</span> <span class="n">Value</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__mul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="n">other</span> <span class="o">=</span> <span class="n">other</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Value</span><span class="p">)</span> <span class="k">else</span> <span class="n">Value</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">*</span> <span class="n">other</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">),</span> <span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">))</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__pow__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span> <span class="k">return</span> <span class="n">Value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">**</span><span class="n">other</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="p">,),</span> <span class="p">(</span><span class="n">other</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">**</span><span class="p">(</span><span class="n">other</span><span class="o">-</span><span class="mi">1</span><span class="p">),))</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">log</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="k">return</span> <span class="n">Value</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">),</span> <span class="p">(</span><span class="bp">self</span><span class="p">,),</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,))</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">exp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="k">return</span> <span class="n">Value</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">),</span> <span class="p">(</span><span class="bp">self</span><span class="p">,),</span> <span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">),))</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">relu</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="k">return</span> <span class="n">Value</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">),</span> <span class="p">(</span><span class="bp">self</span><span class="p">,),</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">),))</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__neg__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="k">return</span> <span class="bp">self</span> <span class="o">*</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__radd__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span> <span class="k">return</span> <span class="bp">self</span> <span class="o">+</span> <span class="n">other</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__sub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span> <span class="k">return</span> <span class="bp">self</span> <span class="o">+</span> <span class="p">(</span><span class="o">-</span><span class="n">other</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__rsub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span> <span class="k">return</span> <span class="n">other</span> <span class="o">+</span> <span class="p">(</span><span class="o">-</span><span class="bp">self</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__rmul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span> <span class="k">return</span> <span class="bp">self</span> <span class="o">*</span> <span class="n">other</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__truediv__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span> <span class="k">return</span> <span class="bp">self</span> <span class="o">*</span> <span class="n">other</span><span class="o">**-</span><span class="mi">1</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__rtruediv__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span> <span class="k">return</span> <span class="n">other</span> <span class="o">*</span> <span class="bp">self</span><span class="o">**-</span><span class="mi">1</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">backward</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">topo</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">visited</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">build_topo</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">v</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
+                <span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">v</span><span class="o">.</span><span class="n">_children</span><span class="p">:</span>
+                    <span class="n">build_topo</span><span class="p">(</span><span class="n">child</span><span class="p">)</span>
+                <span class="n">topo</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+        <span class="n">build_topo</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">grad</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">topo</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">child</span><span class="p">,</span> <span class="n">local_grad</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">_children</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">_local_grads</span><span class="p">):</span>
+                <span class="n">child</span><span class="o">.</span><span class="n">grad</span> <span class="o">+=</span> <span class="n">local_grad</span> <span class="o">*</span> <span class="n">v</span><span class="o">.</span><span class="n">grad</span>
+
+<span class="c1"># Initialize the parameters, to store the knowledge of the model.</span>
+<span class="n">n_embd</span> <span class="o">=</span> <span class="mi">16</span>     <span class="c1"># embedding dimension</span>
+<span class="n">n_head</span> <span class="o">=</span> <span class="mi">4</span>      <span class="c1"># number of attention heads</span>
+<span class="n">n_layer</span> <span class="o">=</span> <span class="mi">1</span>     <span class="c1"># number of layers</span>
+<span class="n">block_size</span> <span class="o">=</span> <span class="mi">16</span> <span class="c1"># maximum sequence length</span>
+<span class="n">head_dim</span> <span class="o">=</span> <span class="n">n_embd</span> <span class="o">//</span> <span class="n">n_head</span> <span class="c1"># dimension of each head</span>
+<span class="n">matrix</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">nout</span><span class="p">,</span> <span class="n">nin</span><span class="p">,</span> <span class="n">std</span><span class="o">=</span><span class="mf">0.08</span><span class="p">:</span> <span class="p">[[</span><span class="n">Value</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">gauss</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">std</span><span class="p">))</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nin</span><span class="p">)]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nout</span><span class="p">)]</span>
+<span class="n">state_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;wte&#39;</span><span class="p">:</span> <span class="n">matrix</span><span class="p">(</span><span class="n">vocab_size</span><span class="p">,</span> <span class="n">n_embd</span><span class="p">),</span> <span class="s1">&#39;wpe&#39;</span><span class="p">:</span> <span class="n">matrix</span><span class="p">(</span><span class="n">block_size</span><span class="p">,</span> <span class="n">n_embd</span><span class="p">),</span> <span class="s1">&#39;lm_head&#39;</span><span class="p">:</span> <span class="n">matrix</span><span class="p">(</span><span class="n">vocab_size</span><span class="p">,</span> <span class="n">n_embd</span><span class="p">)}</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_layer</span><span class="p">):</span>
+    <span class="n">state_dict</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;layer</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">.attn_wq&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">(</span><span class="n">n_embd</span><span class="p">,</span> <span class="n">n_embd</span><span class="p">)</span>
+    <span class="n">state_dict</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;layer</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">.attn_wk&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">(</span><span class="n">n_embd</span><span class="p">,</span> <span class="n">n_embd</span><span class="p">)</span>
+    <span class="n">state_dict</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;layer</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">.attn_wv&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">(</span><span class="n">n_embd</span><span class="p">,</span> <span class="n">n_embd</span><span class="p">)</span>
+    <span class="n">state_dict</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;layer</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">.attn_wo&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">(</span><span class="n">n_embd</span><span class="p">,</span> <span class="n">n_embd</span><span class="p">)</span>
+    <span class="n">state_dict</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;layer</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">.mlp_fc1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">n_embd</span><span class="p">,</span> <span class="n">n_embd</span><span class="p">)</span>
+    <span class="n">state_dict</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;layer</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">.mlp_fc2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">(</span><span class="n">n_embd</span><span class="p">,</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">n_embd</span><span class="p">)</span>
+<span class="n">params</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">mat</span> <span class="ow">in</span> <span class="n">state_dict</span><span class="o">.</span><span class="n">values</span><span class="p">()</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">mat</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">row</span><span class="p">]</span> <span class="c1"># flatten params into a single list[Value]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;num params: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">params</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Define the model architecture: a stateless function mapping token sequence and parameters to logits over what comes next.</span>
+<span class="c1"># Follow GPT-2, blessed among the GPTs, with minor differences: layernorm -&gt; rmsnorm, no biases, GeLU -&gt; ReLU</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">linear</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">w</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="nb">sum</span><span class="p">(</span><span class="n">wi</span> <span class="o">*</span> <span class="n">xi</span> <span class="k">for</span> <span class="n">wi</span><span class="p">,</span> <span class="n">xi</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">wo</span><span class="p">,</span> <span class="n">x</span><span class="p">))</span> <span class="k">for</span> <span class="n">wo</span> <span class="ow">in</span> <span class="n">w</span><span class="p">]</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">softmax</span><span class="p">(</span><span class="n">logits</span><span class="p">):</span>
+    <span class="n">max_val</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">val</span><span class="o">.</span><span class="n">data</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">logits</span><span class="p">)</span>
+    <span class="n">exps</span> <span class="o">=</span> <span class="p">[(</span><span class="n">val</span> <span class="o">-</span> <span class="n">max_val</span><span class="p">)</span><span class="o">.</span><span class="n">exp</span><span class="p">()</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">logits</span><span class="p">]</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">exps</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">e</span> <span class="o">/</span> <span class="n">total</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">exps</span><span class="p">]</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">rmsnorm</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">ms</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">xi</span> <span class="o">*</span> <span class="n">xi</span> <span class="k">for</span> <span class="n">xi</span> <span class="ow">in</span> <span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">scale</span> <span class="o">=</span> <span class="p">(</span><span class="n">ms</span> <span class="o">+</span> <span class="mf">1e-5</span><span class="p">)</span> <span class="o">**</span> <span class="o">-</span><span class="mf">0.5</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">xi</span> <span class="o">*</span> <span class="n">scale</span> <span class="k">for</span> <span class="n">xi</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">gpt</span><span class="p">(</span><span class="n">token_id</span><span class="p">,</span> <span class="n">pos_id</span><span class="p">,</span> <span class="n">keys</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
+    <span class="n">tok_emb</span> <span class="o">=</span> <span class="n">state_dict</span><span class="p">[</span><span class="s1">&#39;wte&#39;</span><span class="p">][</span><span class="n">token_id</span><span class="p">]</span> <span class="c1"># token embedding</span>
+    <span class="n">pos_emb</span> <span class="o">=</span> <span class="n">state_dict</span><span class="p">[</span><span class="s1">&#39;wpe&#39;</span><span class="p">][</span><span class="n">pos_id</span><span class="p">]</span> <span class="c1"># position embedding</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">t</span> <span class="o">+</span> <span class="n">p</span> <span class="k">for</span> <span class="n">t</span><span class="p">,</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">tok_emb</span><span class="p">,</span> <span class="n">pos_emb</span><span class="p">)]</span> <span class="c1"># joint token and position embedding</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">rmsnorm</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">li</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_layer</span><span class="p">):</span>
+        <span class="c1"># 1) Multi-head attention block</span>
+        <span class="n">x_residual</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">rmsnorm</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">q</span> <span class="o">=</span> <span class="n">linear</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">state_dict</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;layer</span><span class="si">{</span><span class="n">li</span><span class="si">}</span><span class="s1">.attn_wq&#39;</span><span class="p">])</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="n">linear</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">state_dict</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;layer</span><span class="si">{</span><span class="n">li</span><span class="si">}</span><span class="s1">.attn_wk&#39;</span><span class="p">])</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="n">linear</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">state_dict</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;layer</span><span class="si">{</span><span class="n">li</span><span class="si">}</span><span class="s1">.attn_wv&#39;</span><span class="p">])</span>
+        <span class="n">keys</span><span class="p">[</span><span class="n">li</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+        <span class="n">values</span><span class="p">[</span><span class="n">li</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+        <span class="n">x_attn</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_head</span><span class="p">):</span>
+            <span class="n">hs</span> <span class="o">=</span> <span class="n">h</span> <span class="o">*</span> <span class="n">head_dim</span>
+            <span class="n">q_h</span> <span class="o">=</span> <span class="n">q</span><span class="p">[</span><span class="n">hs</span><span class="p">:</span><span class="n">hs</span><span class="o">+</span><span class="n">head_dim</span><span class="p">]</span>
+            <span class="n">k_h</span> <span class="o">=</span> <span class="p">[</span><span class="n">ki</span><span class="p">[</span><span class="n">hs</span><span class="p">:</span><span class="n">hs</span><span class="o">+</span><span class="n">head_dim</span><span class="p">]</span> <span class="k">for</span> <span class="n">ki</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">[</span><span class="n">li</span><span class="p">]]</span>
+            <span class="n">v_h</span> <span class="o">=</span> <span class="p">[</span><span class="n">vi</span><span class="p">[</span><span class="n">hs</span><span class="p">:</span><span class="n">hs</span><span class="o">+</span><span class="n">head_dim</span><span class="p">]</span> <span class="k">for</span> <span class="n">vi</span> <span class="ow">in</span> <span class="n">values</span><span class="p">[</span><span class="n">li</span><span class="p">]]</span>
+            <span class="n">attn_logits</span> <span class="o">=</span> <span class="p">[</span><span class="nb">sum</span><span class="p">(</span><span class="n">q_h</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">*</span> <span class="n">k_h</span><span class="p">[</span><span class="n">t</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">head_dim</span><span class="p">))</span> <span class="o">/</span> <span class="n">head_dim</span><span class="o">**</span><span class="mf">0.5</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">k_h</span><span class="p">))]</span>
+            <span class="n">attn_weights</span> <span class="o">=</span> <span class="n">softmax</span><span class="p">(</span><span class="n">attn_logits</span><span class="p">)</span>
+            <span class="n">head_out</span> <span class="o">=</span> <span class="p">[</span><span class="nb">sum</span><span class="p">(</span><span class="n">attn_weights</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">*</span> <span class="n">v_h</span><span class="p">[</span><span class="n">t</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">v_h</span><span class="p">)))</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">head_dim</span><span class="p">)]</span>
+            <span class="n">x_attn</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">head_out</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">linear</span><span class="p">(</span><span class="n">x_attn</span><span class="p">,</span> <span class="n">state_dict</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;layer</span><span class="si">{</span><span class="n">li</span><span class="si">}</span><span class="s1">.attn_wo&#39;</span><span class="p">])</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x_residual</span><span class="p">)]</span>
+        <span class="c1"># 2) MLP block</span>
+        <span class="n">x_residual</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">rmsnorm</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">linear</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">state_dict</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;layer</span><span class="si">{</span><span class="n">li</span><span class="si">}</span><span class="s1">.mlp_fc1&#39;</span><span class="p">])</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">xi</span><span class="o">.</span><span class="n">relu</span><span class="p">()</span> <span class="k">for</span> <span class="n">xi</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">linear</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">state_dict</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;layer</span><span class="si">{</span><span class="n">li</span><span class="si">}</span><span class="s1">.mlp_fc2&#39;</span><span class="p">])</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x_residual</span><span class="p">)]</span>
+
+    <span class="n">logits</span> <span class="o">=</span> <span class="n">linear</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">state_dict</span><span class="p">[</span><span class="s1">&#39;lm_head&#39;</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">logits</span>
+
+<span class="c1"># Let there be Adam, the blessed optimizer and its buffers</span>
+<span class="n">learning_rate</span><span class="p">,</span> <span class="n">beta1</span><span class="p">,</span> <span class="n">beta2</span><span class="p">,</span> <span class="n">eps_adam</span> <span class="o">=</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.85</span><span class="p">,</span> <span class="mf">0.99</span><span class="p">,</span> <span class="mf">1e-8</span>
+<span class="n">m</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">params</span><span class="p">)</span> <span class="c1"># first moment buffer</span>
+<span class="n">v</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">params</span><span class="p">)</span> <span class="c1"># second moment buffer</span>
+
+<span class="c1"># Repeat in sequence</span>
+<span class="n">num_steps</span> <span class="o">=</span> <span class="mi">1000</span> <span class="c1"># number of training steps</span>
+<span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_steps</span><span class="p">):</span>
+
+    <span class="c1"># Take single document, tokenize it, surround it with BOS special token on both sides</span>
+    <span class="n">doc</span> <span class="o">=</span> <span class="n">docs</span><span class="p">[</span><span class="n">step</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">docs</span><span class="p">)]</span>
+    <span class="n">tokens</span> <span class="o">=</span> <span class="p">[</span><span class="n">BOS</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">uchars</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">ch</span><span class="p">)</span> <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">doc</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">BOS</span><span class="p">]</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">block_size</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># Forward the token sequence through the model, building up the computation graph all the way to the loss.</span>
+    <span class="n">keys</span><span class="p">,</span> <span class="n">values</span> <span class="o">=</span> <span class="p">[[]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_layer</span><span class="p">)],</span> <span class="p">[[]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_layer</span><span class="p">)]</span>
+    <span class="n">losses</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">pos_id</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">token_id</span><span class="p">,</span> <span class="n">target_id</span> <span class="o">=</span> <span class="n">tokens</span><span class="p">[</span><span class="n">pos_id</span><span class="p">],</span> <span class="n">tokens</span><span class="p">[</span><span class="n">pos_id</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="n">logits</span> <span class="o">=</span> <span class="n">gpt</span><span class="p">(</span><span class="n">token_id</span><span class="p">,</span> <span class="n">pos_id</span><span class="p">,</span> <span class="n">keys</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
+        <span class="n">probs</span> <span class="o">=</span> <span class="n">softmax</span><span class="p">(</span><span class="n">logits</span><span class="p">)</span>
+        <span class="n">loss_t</span> <span class="o">=</span> <span class="o">-</span><span class="n">probs</span><span class="p">[</span><span class="n">target_id</span><span class="p">]</span><span class="o">.</span><span class="n">log</span><span class="p">()</span>
+        <span class="n">losses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">loss_t</span><span class="p">)</span>
+    <span class="n">loss</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">n</span><span class="p">)</span> <span class="o">*</span> <span class="nb">sum</span><span class="p">(</span><span class="n">losses</span><span class="p">)</span> <span class="c1"># final average loss over the document sequence. May yours be low.</span>
+
+    <span class="c1"># Backward the loss, calculating the gradients with respect to all model parameters.</span>
+    <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+
+    <span class="c1"># Adam optimizer update: update the model parameters based on the corresponding gradients.</span>
+    <span class="n">lr_t</span> <span class="o">=</span> <span class="n">learning_rate</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">step</span> <span class="o">/</span> <span class="n">num_steps</span><span class="p">)</span> <span class="c1"># linear learning rate decay</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">params</span><span class="p">):</span>
+        <span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">beta1</span> <span class="o">*</span> <span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">beta1</span><span class="p">)</span> <span class="o">*</span> <span class="n">p</span><span class="o">.</span><span class="n">grad</span>
+        <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">beta2</span> <span class="o">*</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">beta2</span><span class="p">)</span> <span class="o">*</span> <span class="n">p</span><span class="o">.</span><span class="n">grad</span> <span class="o">**</span> <span class="mi">2</span>
+        <span class="n">m_hat</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">beta1</span> <span class="o">**</span> <span class="p">(</span><span class="n">step</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+        <span class="n">v_hat</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">beta2</span> <span class="o">**</span> <span class="p">(</span><span class="n">step</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">data</span> <span class="o">-=</span> <span class="n">lr_t</span> <span class="o">*</span> <span class="n">m_hat</span> <span class="o">/</span> <span class="p">(</span><span class="n">v_hat</span> <span class="o">**</span> <span class="mf">0.5</span> <span class="o">+</span> <span class="n">eps_adam</span><span class="p">)</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">grad</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;step </span><span class="si">{</span><span class="n">step</span><span class="o">+</span><span class="mi">1</span><span class="si">:</span><span class="s2">4d</span><span class="si">}</span><span class="s2"> / </span><span class="si">{</span><span class="n">num_steps</span><span class="si">:</span><span class="s2">4d</span><span class="si">}</span><span class="s2"> | loss </span><span class="si">{</span><span class="n">loss</span><span class="o">.</span><span class="n">data</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Inference: may the model babble back to us</span>
+<span class="n">temperature</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="c1"># in (0, 1], control the &quot;creativity&quot; of generated text, low to high</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- inference (new, hallucinated names) ---&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">sample_idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">):</span>
+    <span class="n">keys</span><span class="p">,</span> <span class="n">values</span> <span class="o">=</span> <span class="p">[[]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_layer</span><span class="p">)],</span> <span class="p">[[]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_layer</span><span class="p">)]</span>
+    <span class="n">token_id</span> <span class="o">=</span> <span class="n">BOS</span>
+    <span class="n">sample</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">pos_id</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">block_size</span><span class="p">):</span>
+        <span class="n">logits</span> <span class="o">=</span> <span class="n">gpt</span><span class="p">(</span><span class="n">token_id</span><span class="p">,</span> <span class="n">pos_id</span><span class="p">,</span> <span class="n">keys</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
+        <span class="n">probs</span> <span class="o">=</span> <span class="n">softmax</span><span class="p">([</span><span class="n">l</span> <span class="o">/</span> <span class="n">temperature</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">logits</span><span class="p">])</span>
+        <span class="n">token_id</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choices</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">vocab_size</span><span class="p">),</span> <span class="n">weights</span><span class="o">=</span><span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">data</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">probs</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">token_id</span> <span class="o">==</span> <span class="n">BOS</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="n">sample</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">uchars</span><span class="p">[</span><span class="n">token_id</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;sample </span><span class="si">{</span><span class="n">sample_idx</span><span class="o">+</span><span class="mi">1</span><span class="si">:</span><span class="s2">2d</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
@@ -818,16 +1034,16 @@ document.write(`
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "wolframlanguage14.2"
+            mode: "sagemath"
         },
         kernelOptions: {
-            name: "wolframlanguage14.2",
+            name: "sagemath",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'wolframlanguage14.2'</script>
+    <script>kernelName = 'sagemath'</script>
 
                 </article>
               
@@ -864,6 +1080,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introduction</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#timeline-qa">Timeline &amp; QA</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ubuntu-sce-scientific-computing-environment">Ubuntu &amp; SCE (Scientific Computing Environment)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oop-to-fp">OOP to FP</a><ul class="nav section-nav flex-column">
@@ -871,6 +1088,13 @@ document.write(`
 </ul>
 </li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#experiment">Experiment</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gpt-llm">GPT, LLM</a></li>
+</ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>
